@@ -17,11 +17,16 @@ elixir((mix) => {
     mix.sass('app.scss')
        .webpack('app.js')
        .styles([
-       	'./node_modules/normalize.css/normalize.css',
-       	'styles.css',
+            'bootstrap.css',
+       	'style.css',
+       	'icons.css',
+       	'revolutionslider.css',
+       	'colors/blue.css',
+            './node_modules/sweetalert/dist/sweetalert.css',
+       	'custom.css',
        	])
-       .scripts([
-       	'./bower_components/parallax.js/parallax.js',
-       	'custom.js',
-       	]);
+       .copy('./node_modules/sweetalert/dist/sweetalert-dev.js', 'public/js')
+       .copy('resources/assets/js/theme','public/js')
+       .copy('resources/assets/fonts', 'public/fonts')
+      // .scriptsIn('resources/assets/js');;
 });

@@ -1,0 +1,39 @@
+.full-width.portfolio-container {
+	display: inline-block;
+	width: 100%; 
+	text-align: center;
+	margin-top: 30px;
+
+}
+
+.logo-container {
+	background-color: #f8f8f8;
+	display: inline-block;
+	width: 100%; 
+	text-align: center;
+	overflow: visible;
+}
+
+ul.logos {
+	list-style-type: none;
+}
+
+ul.logos li {
+	display: inline;
+	margin: 0 50px 20px 0;
+
+}
+
+ul.logos li img {
+	filter: grayscale(100%);
+	max-width: 150px;
+	max-height: 50px;
+}
+
+ul.logos li img:hover {
+	filter: grayscale(0%);
+}
+
+.parallax-content-container {
+	background-image: url('../images/code.jpg');
+}

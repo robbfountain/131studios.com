@@ -14,7 +14,10 @@
         "backpack/pagemanager": "^1.1",
         "backpack/permissionmanager": "^2.1",
         "backpack/settings": "^2.0",
-        "laravel/framework": "5.3.*"
+        "guzzlehttp/guzzle": "^6.2",
+        "laravel/framework": "5.3.*",
+        "spatie/laravel-newsletter": "^3.4",
+        "greggilbert/recaptcha": "dev-master"
     },
     "require-dev": {
         "backpack/generators": "^1.1",

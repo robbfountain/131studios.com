@@ -13,10 +13,9 @@
 
 
 Route::get('/home', 'HomeController@index');
-Route::get('/', function () {
-    return view('welcome');
-});
-
+Route::get('/','WebsiteController@index');
+Route::get('/contact','WebsiteController@contact');
+Route::post('/contact','WebsiteController@sendMessage');
 Auth::routes();
 
 /**
@@ -28,7 +27,6 @@ Route::group(['prefix' => config('backpack.base.route_prefix'), 'namespace' => '
     Route::get('/', 'AdminController@redirect');
     Route::auth();
 });
-
 
 
 /** CATCH-ALL ROUTE **/

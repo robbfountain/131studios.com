@@ -192,6 +192,17 @@ return [
         Backpack\PageManager\PageManagerServiceProvider::class,
         Backpack\NewsCRUD\NewsCRUDServiceProvider::class,
 
+        /**
+         * Mailchimp
+         */
+        Spatie\Newsletter\NewsletterServiceProvider::class,
+
+        /**
+         * Recaptcha
+         */
+        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
+
+
     ],
 
     /*
@@ -239,6 +250,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Newsletter' => Spatie\Newsletter\NewsletterFacade::class, // Mailchimp
+        'Recaptcha' => Greggilbert\Recaptcha\Facades\Recaptcha::class,  // Recaptcha
 
     ],
 
