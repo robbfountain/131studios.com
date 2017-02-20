@@ -40,7 +40,7 @@
 				<textarea name="comments" cols="40" rows="3" id="comments" placeholder="Message" spellcheck="true" required="required" v-model="formData.message"></textarea>
 			</div>
 
-			<div class="checkbox" >
+			<div class=" pull-left" >
 				<label>
 					<input type="checkbox" name="newsletter" v-model="formData.newsletter">Occcassionally receive email updates from us?
 				</label>  

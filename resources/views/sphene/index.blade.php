@@ -66,8 +66,8 @@
 					<img src="images/project-01.jpg" alt="">
 					<div class="overlay">
 						<div class="overlay-content">
-							<h4>Food Branding</h4>
-							<span>Nice Title Here</span>
+							<h4>Berkley Bottling Company</h4>
+							<span>Custom Development</span>
 						</div>
 					</div>
 				</a>
@@ -79,8 +79,8 @@
 					<img src="images/project-02.jpg" alt="">
 					<div class="overlay">
 						<div class="overlay-content">
-							<h4>Bilboard</h4>
-							<span>February 2016</span>
+							<h4>Corner Creamery &amp; Cafe</h4>
+							<span>Web Design &amp; Development</span>
 						</div>
 					</div>
 				</a>
@@ -92,8 +92,8 @@
 					<img src="images/project-03.jpg" alt="">
 					<div class="overlay">
 						<div class="overlay-content">
-							<h4>Coffee Cup</h4>
-							<span>January 2016</span>
+							<h4>Whitetail Ski Patrol</h4>
+							<span>Web Design &amp; Development</span>
 						</div>
 					</div>
 				</a>
@@ -105,8 +105,8 @@
 					<img src="images/project-04.jpg" alt="">
 					<div class="overlay">
 						<div class="overlay-content">
-							<h4>Wall Sign</h4>
-							<span>December 2016</span>
+							<h4>DNS Locker</h4>
+							<span>Web Application</span>
 						</div>
 					</div>
 				</a>
@@ -118,8 +118,8 @@
 					<img src="images/project-05.jpg" alt="">
 					<div class="overlay">
 						<div class="overlay-content">
-							<h4>Sketches</h4>
-							<span>November 2015</span>
+							<h4>Rocket REI</h4>
+							<span>Web Application</span>
 						</div>
 					</div>
 				</a>
@@ -131,51 +131,12 @@
 					<img src="images/project-06.jpg" alt="">
 					<div class="overlay">
 						<div class="overlay-content">
-							<h4>Mobile App</h4>
-							<span>November 2015</span>
+							<h4>Park Overlook Townhomes</h4>
+							<span>Web Design &amp; Development</span>
 						</div>
 					</div>
 				</a>
 			</div>
-
-			<!-- Item -->
-			<div class="print">
-				<a href="single-project-content-right.html">
-					<img src="images/project-07.jpg" alt="">
-					<div class="overlay">
-						<div class="overlay-content">
-							<h4>Magazine</h4>
-							<span>September 2015</span>
-						</div>
-					</div>
-				</a>
-			</div>
-
-			<!-- Item -->
-			<div class="identity">
-				<a href="single-project-content-right.html">
-					<img src="images/project-08.jpg" alt="">
-					<div class="overlay">
-						<div class="overlay-content">
-							<h4>Wall Sign</h4>
-							<span>November 2015</span>
-						</div>
-					</div>
-				</a>
-			</div>
-			
-			<!-- Item -->
-			<div class="identity print">
-				<a href="single-project-content-right.html">
-					<img src="images/project-09.jpg" alt="">
-					<div class="overlay">
-						<div class="overlay-content">
-							<h4>Shopping Bag</h4>
-							<span>November 2015</span>
-						</div>
-					</div>
-				</a>
-			</div>	
 			</div> <!-- owl-carousel owl-theme -->
 			<div class="clearfix"></div>
 		</div>
