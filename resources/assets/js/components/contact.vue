@@ -56,7 +56,6 @@
 </template>
 
 <script>
-	import VueRecaptcha from 'vue-recaptcha';
     export default {
     	data() {
     		return {
@@ -73,9 +72,6 @@
     			
     		}
     	},
-
-    	components: { VueRecaptcha },
-
     	methods: {
     		submitMessage() {
     			var elm = this;

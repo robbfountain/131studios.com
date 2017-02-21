@@ -198,11 +198,6 @@ return [
         Spatie\Newsletter\NewsletterServiceProvider::class,
 
         /**
-         * Recaptcha
-         */
-        Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
-
-        /**
          * View Composer
          */
         App\Providers\ComposerServiceProvider::class,

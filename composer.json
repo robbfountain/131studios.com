@@ -16,8 +16,7 @@
         "backpack/settings": "^2.0",
         "guzzlehttp/guzzle": "^6.2",
         "laravel/framework": "5.3.*",
-        "spatie/laravel-newsletter": "^3.4",
-        "greggilbert/recaptcha": "dev-master"
+        "spatie/laravel-newsletter": "^3.4"
     },
     "require-dev": {
         "backpack/generators": "^1.1",

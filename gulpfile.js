@@ -17,12 +17,12 @@ elixir((mix) => {
     mix.sass('app.scss')
        .webpack('app.js')
        .styles([
-            'bootstrap.css',
+        'bootstrap.css',
        	'style.css',
        	'icons.css',
        	'revolutionslider.css',
        	'colors/blue.css',
-            './node_modules/sweetalert/dist/sweetalert.css',
+        './node_modules/sweetalert/dist/sweetalert.css',
        	'custom.css',
        	])
        .copy('./node_modules/sweetalert/dist/sweetalert-dev.js', 'public/js')

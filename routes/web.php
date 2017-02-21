@@ -18,6 +18,7 @@ Route::get('/contact','WebsiteController@contact');
 Route::post('/contact','WebsiteController@sendMessage');
 Route::get('/about','WebsiteController@about');
 Route::get('/services','WebsiteController@services');
+Route::get('/longform','WebsiteController@longForm');
 Auth::routes();
 
 /**
@@ -29,13 +30,8 @@ Route::group(['prefix' => config('backpack.base.route_prefix'), 'namespace' => '
     Route::get('/', 'AdminController@redirect');
     CRUD::resource('menu-item', 'MenuItemCrudController');
     CRUD::resource('project', 'ProjectCrudController');
-    Route::auth();
+    Auth::routes();
 });
-
-Route::get('test',function() {
-return	App\Models\Page::find()->withFakes();
-});
-
 
 /** CATCH-ALL ROUTE **/
 Route::get('{page}/{subs?}', ['uses' => 'PageController@index'])

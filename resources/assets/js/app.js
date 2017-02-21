@@ -14,6 +14,7 @@ require('./bootstrap');
 
 Vue.component('example', require('./components/Example.vue'));
 Vue.component('contact', require('./components/contact.vue'));
+Vue.component('longform', require('./components/longform.vue'));
 
 
 const app = new Vue({
