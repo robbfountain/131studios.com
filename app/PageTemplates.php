@@ -19,6 +19,26 @@ trait PageTemplates
     | - page title
     | - page slug
     */
+   
+   private function terms_of_service()
+   {
+
+    $this->crud->addField([
+        'name' => 'content',
+        'label' => 'Content',
+        'type' => 'wysiwyg',
+        'placeholder' => 'Your content here',
+    ]);
+
+    $this->crud->addField([ 
+        'name' => 'hidden_on_menu',
+        'label' => 'Hidden In Menu',
+        'type' => 'checkbox',
+        'fake'  => true,
+        'store_in' => 'extras',
+    ]);
+       
+   } // terms_of_service
 
     private function services()
     {

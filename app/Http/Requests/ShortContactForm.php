@@ -27,9 +27,7 @@ class ShortContactForm extends FormRequest
             'name'  =>  'required|string|min:3|max:100',
             'email' =>  'required|email',
             'subject'   =>  'required|string|min:3|max:100',
-            'message'   =>  'required|min:10|string',
-            'g-recaptcha-response' => 'required|recaptcha',
-            
+            'message'   =>  'required|min:10|string',            
         ];
     }
 }

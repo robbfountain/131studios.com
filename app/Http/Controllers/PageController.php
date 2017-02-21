@@ -18,6 +18,7 @@ class PageController extends Controller
 
         $this->data['title'] = $page->title;
         $this->data['page'] = $page->withFakes();
+        $this->data['heading'] = $page->title;
 
         return view('pages.'.$page->template, $this->data);
     }

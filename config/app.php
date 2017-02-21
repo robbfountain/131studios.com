@@ -202,6 +202,11 @@ return [
          */
         Greggilbert\Recaptcha\RecaptchaServiceProvider::class,
 
+        /**
+         * View Composer
+         */
+        App\Providers\ComposerServiceProvider::class,
+
 
     ],
 

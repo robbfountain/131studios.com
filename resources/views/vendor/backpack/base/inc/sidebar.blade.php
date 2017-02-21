@@ -24,6 +24,14 @@
             <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page') }}"><i class="fa fa-file-o"></i> <span>Pages</span></a>
           </li>
 
+              <li>
+            <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/project') }}"><i class="fa fa-file-o"></i> <span>Projects</span></a>
+          </li>
+
+          <li>
+            <a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a>
+          </li>
+
           <li class="treeview">
             <a href="#"><i class="fa fa-newspaper-o"></i> <span>News</span> <i class="fa fa-angle-left pull-right"></i></a>
             <ul class="treeview-menu">

@@ -1,5 +1,9 @@
 @extends('sphene.partials.layout')
 
+@section('header')
+	@include('sphene.partials.header-main')
+@stop
+
 @section('content')
 <!-- Featured Services -->
 <div class="container margin-bottom-80">
@@ -59,84 +63,21 @@
 			<div class="isotope-sizer"></div>
 			
 			<div class="owl-carousel" >
-			     
-			<!-- Item -->
-			<div class=" print">
-				<a href="#">
-					<img src="images/project-01.jpg" alt="">
-					<div class="overlay">
-						<div class="overlay-content">
-							<h4>Berkley Bottling Company</h4>
-							<span>Custom Development</span>
-						</div>
-					</div>
-				</a>
-			</div>
 
-			<!-- Item -->
-			<div class="print">
-				<a href="single-project-creative-style-1.html">
-					<img src="images/project-02.jpg" alt="">
-					<div class="overlay">
-						<div class="overlay-content">
-							<h4>Corner Creamery &amp; Cafe</h4>
-							<span>Web Design &amp; Development</span>
+			@foreach($projects as $project)
+				<!-- Item -->
+				<div class="">
+					<a href="/projects/{{$project->slug}}">
+						<img src="{{$project->primary_image}}" alt="">
+						<div class="overlay">
+							<div class="overlay-content">
+								<h4>{{$project->title}}</h4>
+								<span>{{$project->sub_title}}</span>
+							</div>
 						</div>
-					</div>
-				</a>
-			</div>
-
-			<!-- Item -->
-			<div class="identity">
-				<a href="http://google.pl">
-					<img src="images/project-03.jpg" alt="">
-					<div class="overlay">
-						<div class="overlay-content">
-							<h4>Whitetail Ski Patrol</h4>
-							<span>Web Design &amp; Development</span>
-						</div>
-					</div>
-				</a>
-			</div>
-
-			<!-- Item -->
-			<div class="identity">
-				<a href="single-project-creative-style-1.html">
-					<img src="images/project-04.jpg" alt="">
-					<div class="overlay">
-						<div class="overlay-content">
-							<h4>DNS Locker</h4>
-							<span>Web Application</span>
-						</div>
-					</div>
-				</a>
-			</div>
-
-			<!-- Item -->
-			<div class="print other">
-				<a href="single-project-content-right.html">
-					<img src="images/project-05.jpg" alt="">
-					<div class="overlay">
-						<div class="overlay-content">
-							<h4>Rocket REI</h4>
-							<span>Web Application</span>
-						</div>
-					</div>
-				</a>
-			</div>
-
-			<!-- Item -->
-			<div class="other">
-				<a href="single-project-content-right.html">
-					<img src="images/project-06.jpg" alt="">
-					<div class="overlay">
-						<div class="overlay-content">
-							<h4>Park Overlook Townhomes</h4>
-							<span>Web Design &amp; Development</span>
-						</div>
-					</div>
-				</a>
-			</div>
+					</a>
+				</div>
+			@endforeach
 			</div> <!-- owl-carousel owl-theme -->
 			<div class="clearfix"></div>
 		</div>

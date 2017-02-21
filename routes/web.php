@@ -16,6 +16,8 @@ Route::get('/home', 'HomeController@index');
 Route::get('/','WebsiteController@index');
 Route::get('/contact','WebsiteController@contact');
 Route::post('/contact','WebsiteController@sendMessage');
+Route::get('/about','WebsiteController@about');
+Route::get('/services','WebsiteController@services');
 Auth::routes();
 
 /**
@@ -25,7 +27,13 @@ Route::get(config('backpack.base.route_prefix') . '/logout','Auth\LoginControlle
 Route::group(['prefix' => config('backpack.base.route_prefix'), 'namespace' => '\Admin'], function () {
     Route::get('dashboard', 'AdminController@dashboard');
     Route::get('/', 'AdminController@redirect');
+    CRUD::resource('menu-item', 'MenuItemCrudController');
+    CRUD::resource('project', 'ProjectCrudController');
     Route::auth();
+});
+
+Route::get('test',function() {
+return	App\Models\Page::find()->withFakes();
 });
 
 

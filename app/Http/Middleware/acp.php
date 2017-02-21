@@ -16,7 +16,12 @@ class acp
      */
     public function handle($request, Closure $next)
     {
-        if(Auth::check() && (!$request->user()->hasRole('Administrator') && !$request->user()->hasRole('Administrators')))
+        if(!Auth::check())
+        {
+            return redirect('/login');
+        }
+
+        if(!$request->user()->hasRole('Administrator') && !$request->user()->hasRole('Administrators'))
         {
             return redirect('/login');
         }

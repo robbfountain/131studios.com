@@ -1,4 +1,8 @@
-@extends('sphene.partials.layout-condensed-header')
+@extends('sphene.partials.layout')
+
+@section('header')
+	@include('sphene.partials.header-sub')
+@stop
 
 @section('meta-csrf')
 	<meta name="csrf-token" content="{{ csrf_token() }}">
@@ -13,12 +17,12 @@
           <contact></contact>
           <div class="col-md-5 margin-left-50 martin-top-40" id="">
                <h3 class="margin-bottom-25 margin-top-65">Contact Details</h3>
-		<p>Collaboratively administrate turnkey channels whereas virtual e-tailers. Objectively seize scalable metrics whereas proactive e-services.</p>
+		<p>We would love to hear work with you on your next project.  Please contact us and let us know how we can help.</p>
 
 		<div class="sidebar-textbox">
 			<ul class="contact-details">
 				<li><i class="ln ln-icon-Phone-2"></i> <strong>Phone:</strong> <span>(717) 977-3306 </span></li>
-				<li><i class="ln ln-icon-Globe"></i> <strong>Web:</strong> <span><a href="#">www.example.com</a></span></li>
+				<li><i class="ln ln-icon-Globe"></i> <strong>Web:</strong> <span><a href="#">www.131Studios.com</a></span></li>
 				<li><i class="ln ln-icon-Envelope"></i> <strong>E-Mail:</strong> <span><a href="#">contact@131studios.com</a></span></li>
 			</ul>
 		</div>

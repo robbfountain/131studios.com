@@ -7,6 +7,7 @@ use Backpack\PermissionManager\app\Models\Role;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
+use Backpack\PermissionManager\app\Models\Permission;
 
 class SetupCms extends Command
 {
@@ -41,19 +42,25 @@ class SetupCms extends Command
      */
     public function handle()
     {
+        // Check for setup variable in database
         if($setupComplete = DB::table('settings')->where('key', 'setup_complete')->first())
         {
             $this->error('Setup has already been completed');
             return;
         }
+
+        // Migrate Database
+        $this->call('migrate');
        
+        // Create admin user
         $this->info('Create Initial Administrator Account');
 
+        // User input
         $name = $this->ask('Full Name of Admin User');
         $email = $this->ask('Email Address of Admin User');
         $password = $this->secret('Password for Admin User (hidden)');
         $confirm = $this->secret('Confirm Password');
-
+        //
         if($password != $confirm)
         {
             $this->error('Passwords do not match');
@@ -68,11 +75,25 @@ class SetupCms extends Command
 
        $this->info("User {$newUser->name} created");
 
-       $newRole = Role::create(['name' => 'Administrator']);
-       $this->info('Administrator Role Created');
+       $canEditAll = Permission::create(['name' => 'Edit All Articles']);
+       $canEditOwn = Permission::create(['name' => 'Edit Own Articles']);
+       $calDeleteOwn = Permission::create(['name' => 'Delete Own Articles']);
+       $canCreateArticles = Permission::create(['name' => 'Create Articles']);
+
+       $adminRole = Role::create(['name' => 'Administrator']);
+       $authorRole = Role::create(['name' => 'Author']);
+       $editorRole = Role::create(['name' => 'Editor']);
+
+       $authorRole->givePermissionTo('Edit Own Articles');
+       $authorRole->givePermissionTo('Create Articles');
+       $authorRole->givePermissionTo('Delete Own Articles');
+
+       $editorRole->givePermissionTo('Edit All Articles');
+
+       $this->info('Roles and Permissions Created');
 
        $newUser->assignRole('Administrator');
-       $this->info("User {$newUser->name} added to {$newRole->name} role.");
+       $this->info("User {$newUser->name} added to {$adminRole->name} role.");
 
        DB::table('settings')->insert([
             'key' => 'setup_complete',
