@@ -92,7 +92,7 @@ $style = [
                                         <!-- Intro -->
                                         
                                             <p style="{{ $style['paragraph'] }}">
-                                               {{$info->name }}  has just submitted a the <strong>extended contact form</strong>on your website.                                   
+                                               {{$info->name }}  has just submitted the <strong>extended contact form</strong>on your website.                                   
 
                                         <!-- Action Button -->
                                        
