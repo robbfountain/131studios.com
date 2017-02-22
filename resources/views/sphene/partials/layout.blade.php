@@ -18,6 +18,7 @@
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
 <meta name="theme-color" content="#ffffff">
+@yield('meta-csrf','')
 <!-- Basic Page Needs
 ================================================== -->
 <meta charset="utf-8">
@@ -68,7 +69,7 @@
 			<div class="col-md-5 col-sm-6">
 				<h4>About Us</h4>
 				<p>131 Studios is a Web Development and IT Consulting company in Pennsylvania. We specialize in writing top-notch web applications as well as offer superb IT consulting services.</p> <p> We have over 15 years of experience providing high level products and services.</p>
-				<a href="#" class="button social-btn"><i class="fa fa-facebook-official"></i> Like Us on Facebook</a>
+				<a href="http://facebook.com/131studiosweb" target="_blank" class="button social-btn"><i class="fa fa-facebook-official"></i> Like Us on Facebook</a>
 			</div>
 
 			<div class="col-md-4  col-sm-6">
@@ -103,7 +104,7 @@
 		<!-- Copyright -->
 		<div class="row">
 			<div class="col-md-12">
-				<div class="copyrights">©  Copyright 2017 by <a href="#">{{env('COMPANY_NAME')}}</a>. All Rights Reserved.</div>
+				<div class="copyrights">© Copyright 2017 <a href="#">{{env('COMPANY_NAME')}}</a>. All Rights Reserved.</div>
 			</div>
 		</div>
 
@@ -140,6 +141,7 @@
 <script type="text/javascript" src="js/modernizr.custom.js"></script>
 <script type="text/javascript" src="js/puregrid.js"></script>
 <script type="text/javascript" src="js/flexibility.js"></script>
+<script type="text/javascript" src="js/sweetalert-dev.js"></script>
 <script type="text/javascript" src="js/custom.js"></script>
 
 </div>

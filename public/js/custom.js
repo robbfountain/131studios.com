@@ -18,10 +18,6 @@ $(document).ready(function(){
 		// OwlCarousel
 		runOwl();
 
-		// Isotope init
-		$(window).on('resize',setWidth);
-		isotopeInit();
-
 		// Preloader init
 		preloaderLoad();
 
@@ -33,12 +29,6 @@ $(document).ready(function(){
 
 		// Fullscreen menu trigger positioning 
 		triggerPositioning();
-
-		// Counters
-		$('.counter').counterUp({
-	        delay: 100,
-	        time: 1600
-	    });
 	});
 
 	/*----------------------------------------------------*/

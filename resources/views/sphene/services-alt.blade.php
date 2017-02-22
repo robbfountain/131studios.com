@@ -28,11 +28,40 @@
 <div class="image-edge margin-top-70" >
 
 	<div class="image-edge-content">
-		<h2>Whatever We Start, We Think Through To The End</h2>
+		<h2>Web Development</h2>
 		<br>
-		<p>Globally incubate standards compliant channels before scalable benefits. Quickly disseminate superior deliverables whereas web-enabled applications.  </p>
+		<p>We have over 15 years of web development experience and can custom almost any functional aspect of your website.  We can add e-commerce abilities to your page, custom blogs, content management systems, event scheduling and more.  You name it, we can make it happen.  </p>
+		
+	</div>
+
+	<div class="edge-bg" data-background-image="images/service-02a.jpg"></div>
+
+</div>
+<!-- Image Edge / End -->
+
+<!-- Image Edge -->
+<div class="image-edge left dark margin-top-0" >
+
+	<div class="image-edge-content">
+		<h2>IT Consulting Services</h2>
 		<br>
-		<a href="about-us.html" class="button border medium margin-bottom-40">Read More</a>
+		<p>We offer mmall office and home office IT Consulting services.  From server and workstation procurement, installation and maintenance to networking and IT security services we can help your business run smoothly while you focus on what matters...your business!  We offer remote assistance, patching, virus removal and prevention as well as network security and itrusion prevention.  Whatever your IT needs, we can do it for you.</p>
+		
+	</div>
+
+	<div class="edge-bg" data-background-image="images/service-02c.jpg"></div>
+
+</div>
+<!-- Image Edge / End -->
+
+<!-- Image Edge -->
+<div class="image-edge margin-top-0" >
+
+	<div class="image-edge-content">
+		<h2>Hosting</h2>
+		<br>
+		<p>We host all of our client's websites on top of the line virtual private servers.  You can rest assured that your website will be accessible and available 24/7/365.  We also offer email management, transactional email service and maintenance for an affordable price.    </p>
+		
 	</div>
 
 	<div class="edge-bg" data-background-image="images/service-02a.jpg"></div>
@@ -55,7 +84,11 @@
 
 </div>
 <!-- Image Edge / End -->
-<!-- Image Edge / End -->
 
-</div> <!-- container -->
+<!-- Content -->
+<div class="info-banner-fw boxed light">
+	Contact us for a customized quote.
+	<a class="button border medium" href="/longform">Contact Us</a>
+</div>
+
 @stop

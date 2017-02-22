@@ -24,8 +24,12 @@
             <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page') }}"><i class="fa fa-file-o"></i> <span>Pages</span></a>
           </li>
 
-              <li>
-            <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/project') }}"><i class="fa fa-file-o"></i> <span>Projects</span></a>
+          <li>
+            <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/project') }}"><i class="fa fa-paint-brush"></i> <span>Projects</span></a>
+          </li>
+
+          <li>
+            <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/contact') }}"><i class="fa fa-address-card-o"></i> <span>Contacts</span></a>
           </li>
 
           <li>

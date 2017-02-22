@@ -33,7 +33,7 @@
 				<div class="icon-box-1">
 					<i class="ln ln-icon-Code-Window"></i>
 					<h4>Web Development</h4>
-					<p>Custom backend development, Content Management Systems and SaaS applications are just some of the development works we have done..</p>
+					<p>Custom backend development, Content Management Systems and SaaS applications are just some of the development works we have done.</p>
 				</div>
 			</div>
 			<div class="col-md-6 col-sm-6">

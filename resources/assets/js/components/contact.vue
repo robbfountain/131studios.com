@@ -5,10 +5,8 @@
 		<h3 class="headline centered margin-bottom-45">Contact Us</h3>
 		<div class="alert alert-info" v-show="! hasError">Please consider using our <a href="/contact/longform">expanded contact form</a> to provide additional details about your project needs. </div>
 
-		<div class="alert alert-danger" v-show="hasError">
-		     <div >
-		          <strong>Oops, something went wrong.</strong>
-		     </div> 
+		<div class="notification error " v-show="hasError">
+		     <p><span><strong>Oops, something went wrong.</strong></span></p> 
 		     <ul>
 		     	<li v-for="error in errors">
 		     		{{error[0]}}

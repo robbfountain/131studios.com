@@ -15,10 +15,11 @@
 Route::get('/home', 'HomeController@index');
 Route::get('/','WebsiteController@index');
 Route::get('/contact','WebsiteController@contact');
-Route::post('/contact','WebsiteController@sendMessage');
+Route::post('/contact','ContactController@sendMessage');
 Route::get('/about','WebsiteController@about');
 Route::get('/services','WebsiteController@services');
 Route::get('/longform','WebsiteController@longForm');
+Route::post('/longform','ContactController@submitForm');
 Auth::routes();
 
 /**
@@ -30,7 +31,14 @@ Route::group(['prefix' => config('backpack.base.route_prefix'), 'namespace' => '
     Route::get('/', 'AdminController@redirect');
     CRUD::resource('menu-item', 'MenuItemCrudController');
     CRUD::resource('project', 'ProjectCrudController');
+    CRUD::resource('contact','ContactCrudController');
     Auth::routes();
+});
+
+Route::get('test',function() {
+	 $contact = App\Contact::findOrFail(1);
+
+      return view('admin.details_row')->with(['contact' => $contact])->render();
 });
 
 /** CATCH-ALL ROUTE **/

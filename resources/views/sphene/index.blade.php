@@ -9,27 +9,35 @@
 <div class="container margin-bottom-80">
 	<div class="row margin-top-80">	
 		
-		<div class="col-md-4 col-sm-12">
+		<div class="col-md-3 col-sm-12">
 			<div class="icon-box-3 rounded light">
 				<i class="ln ln-icon-Code-Window"></i>
 				<h4>Web Development</h4>
-				<p>Pellentesque habitant morbi tristique senectus netus ante et malesuada fames ac turpis egestas maximus neque.</p>
+				<p>Custom backend development, Content Management Systems and SaaS applications are just some of the development works we have done...</p>
 			</div>
 		</div>
 
-		<div class="col-md-4 col-sm-12">
+		<div class="col-md-3 col-sm-12">
 			<div class="icon-box-3  rounded light">
 				<i class="ln ln-icon-Support"></i>
 				<h4>IT Consulting</h4>
-				<p>Nunc ultricies porttitor est, ut rutrum ante. Vivamus interdum sodales sem. In  lorem ipsum ultrices augue eget.</p>
+				<p>SoHo IT Solutions for your business. Server &amp; worstation management, patching, security and software management are just some of the consulting services we offer.</p>
 			</div>
 		</div>
 
-		<div class="col-md-4 col-sm-12">
+		<div class="col-md-3 col-sm-12">
 			<div class="icon-box-3 rounded light">
 				<i class="ln  ln-icon-Server"></i>
 				<h4>Hosting &amp; Maintenance</h4>
-				<p>Pellentesque habitant morbi tristique senectus netus ante et malesuada fames ac turpis egestas maximus.</p>
+				<p>We offer powerful VPS hosting systems for your website and we take care of everything from server maintenance to application deployment.</p>
+			</div>
+		</div>
+
+		<div class="col-md-3 col-sm-12">
+			<div class="icon-box-3 rounded light">
+				<i class="ln ln-icon-Paintbrush"></i>
+				<h4>Web Design</h4>
+				<p>We can give your website a new look with modern touches.  We partner with top notch graphics artists for one-of-a-kind web sites.</p>
 			</div>
 		</div>
 
@@ -41,7 +49,7 @@
 <div class="info-banner-fw margin-bottom-80">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">Hire us for your next project <a href="/contact">Contact Us</a></div>
+			<div class="col-md-12">Hire us for your next project <a href="/longform">Contact Us</a></div>
 		</div>
 	</div>
 </div>
