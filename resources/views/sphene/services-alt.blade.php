@@ -34,7 +34,7 @@
 		
 	</div>
 
-	<div class="edge-bg" data-background-image="images/service-02a.jpg"></div>
+	<div class="edge-bg" data-background-image="images/services/development.jpeg"></div>
 
 </div>
 <!-- Image Edge / End -->
@@ -49,7 +49,7 @@
 		
 	</div>
 
-	<div class="edge-bg" data-background-image="images/service-02c.jpg"></div>
+	<div class="edge-bg" data-background-image="images/services/consulting.jpg"></div>
 
 </div>
 <!-- Image Edge / End -->
@@ -64,23 +64,7 @@
 		
 	</div>
 
-	<div class="edge-bg" data-background-image="images/service-02a.jpg"></div>
-
-</div>
-<!-- Image Edge / End -->
-
-<!-- Image Edge -->
-<div class="image-edge left dark margin-top-0" >
-
-	<div class="image-edge-content">
-		<h2>Everybody Gets Exactly What They Need</h2>
-		<br>
-		<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation.</p>
-		<br>
-		<a href="services-classic.html" class="button border medium margin-bottom-40">Read More</a>
-	</div>
-
-	<div class="edge-bg" data-background-image="images/service-02c.jpg"></div>
+	<div class="edge-bg" data-background-image="images/services/host.jpeg"></div>
 
 </div>
 <!-- Image Edge / End -->

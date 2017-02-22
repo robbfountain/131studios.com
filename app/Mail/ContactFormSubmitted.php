@@ -13,15 +13,17 @@ class ContactFormSubmitted extends Mailable
     use Queueable, SerializesModels;
 
     public $info;
+    public $standard;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Request $info)
+    public function __construct(Request $info, $standard = true)
     {
         $this->info = $info;
+        $this->standard = $standard;
     }
 
     /**
@@ -31,7 +33,8 @@ class ContactFormSubmitted extends Mailable
      */
     public function build()
     {
-        return $this->view('email.contact.contactform-html')
-                    ->text('email.contact.contactform-plain');
+        return $this->standard ? 
+                $this->view('email.contact.contactform-html')->text('email.contact.contactform-plain') :
+                $this->view('email.contact.contactformlong-html')->text('email.contat.contacxtformlong-plain');
     }
 }

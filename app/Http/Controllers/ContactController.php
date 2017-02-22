@@ -43,6 +43,8 @@ class ContactController extends Controller
     {
     	Contact::create(Request::all());
 
+        Mail::to(env('CONTACT_EMAIL'))->send(new ContactFormSubmitted($request, false));
+
     	return [
             'success'   =>  true,
             'message'   =>  'Your message has ben sent',

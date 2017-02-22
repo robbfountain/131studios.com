@@ -104,7 +104,7 @@ $style = [
 
                                         <!-- Action Button -->
                                        
-                                            <table style="{{ $style['body_action'] }}" align="center" width="100%" cellpadding="0" cellspacing="0">
+                                            {{-- <table style="{{ $style['body_action'] }}" align="center" width="100%" cellpadding="0" cellspacing="0">
                                                 <tr>
                                                     <td align="center">
                                                         <?php
@@ -119,11 +119,11 @@ $style = [
                                                         </a>
                                                     </td>
                                                 </tr>
-                                            </table>
+                                            </table> --}}
  
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Regards,<br>{{ env('APP_NAME') }}
+                                            Regards,<br>{{ env('COMPANY_NAME') }}
                                         </p>
 
                                         <!-- Sub Copy -->
@@ -157,7 +157,7 @@ $style = [
                                     <td style="{{ $fontFamily }} {{ $style['email-footer_cell'] }}">
                                         <p style="{{ $style['paragraph-sub'] }}">
                                             &copy; {{ date('Y') }}
-                                            <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ env('APP_NAME') }}</a>.
+                                            <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ env('COMPANY_NAME') }}</a>.
                                             All rights reserved.
                                         </p>
                                     </td>
