@@ -75,15 +75,13 @@
 			<div class="col-md-4  col-sm-6">
 				<h4>Navigation</h4>
 				<ul class="footer-links">
-					<li><a href="/about">About Us</a></li>
-					<li><a href="/services">Services</a></li>
-					<li><a href="/projects">Projects</a></li>
-					<li ><a href="/contact">Contact Us</a></li>
-					
+					@foreach($menu as $item)
+						<li><a href="{{$item->link}}">{{$item->name}}</a></li>
+					@endforeach
 				</ul>
 
 				<ul class="footer-links">
-					<li><a href="/news">In the News</a></li>
+					{{-- <li><a href="/news">In the News</a></li> --}}
 					<li><a href="/privacy">Privacy Policy</a></li>
 					<li><a href="/terms">Terms of Service</a></li>
 					

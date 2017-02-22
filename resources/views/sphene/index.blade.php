@@ -112,7 +112,7 @@
 			    <li><img src="images/logos/php.png" alt="PHP" /></li>
 			    <li><img src="images/logos/forge.png" alt="Laravel Forge" /></li>
 			   	<li ><img src="images/logos/vue.png" alt="Vue JS"></li>
-			   	<li ><img src="images/logos/jquery-logo.png"></li>
+			   	<li ><img src="images/logos/jQuery-Logo.png"></li>
 			</ul>
 		</div>
 	</div>
