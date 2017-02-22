@@ -107,7 +107,7 @@ $style = [
                                             Regards,<br>{{ env('COMPANY_NAME') }}
                                         </p>
 
-                                        
+        
                                     </td>
                                 </tr>
                             </table>

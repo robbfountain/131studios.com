@@ -16,14 +16,11 @@ class acp
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::check())
-        {
-            return redirect('/login');
-        }
+        if(!Auth::check()) return redirect('/login');
 
-        if(!$request->user()->hasRole('Administrator') && !$request->user()->hasRole('Administrators'))
+        if(!$request->user()->hasPermission('Access Admin Panel'))
         {
-            return redirect('/login');
+           abort(403, 'Unauthorized Action');
         }
         return $next($request);
     }

@@ -14,6 +14,7 @@ class CreateArticlesTable extends Migration
     {
         Schema::create('articles', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->string('title');
             $table->string('slug')->default('');
@@ -24,6 +25,12 @@ class CreateArticlesTable extends Migration
             $table->boolean('featured')->default(0);
             $table->timestamps();
             $table->softDeletes();
+        });
+
+        Schema::table('articles', function(Blueprint $table) {
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
         });
     }
 

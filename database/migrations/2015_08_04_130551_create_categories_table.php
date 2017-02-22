@@ -14,6 +14,7 @@ class CreateCategoriesTable extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->integer('parent_id')->default(0)->nullable();
             $table->integer('lft')->unsigned()->nullable();
             $table->integer('rgt')->unsigned()->nullable();
@@ -21,6 +22,12 @@ class CreateCategoriesTable extends Migration
             $table->string('name');
             $table->timestamps();
             $table->softDeletes();
+        });
+
+        Schema::table('categories', function(Blueprint $table) {
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
         });
     }
 

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-// VALIDATION: change the requests to match your own file names if you need form validation
 use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest as StoreRequest;
 use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest as UpdateRequest;
+use Illuminate\Support\Facades\Auth;
 
 class CategoryCrudController extends CrudController
 {
-    public function __construct()
+    public function setup()
     {
         parent::__construct();
 
@@ -46,7 +46,7 @@ class CategoryCrudController extends CrudController
                                 'name' => 'parent_id',
                                 'entity' => 'parent',
                                 'attribute' => 'name',
-                                'model' => "Backpack\NewsCRUD\app\Models\Category",
+                                'model' => "App\Models\Category",
                             ]);
 
         // ------ CRUD FIELDS
@@ -67,8 +67,19 @@ class CategoryCrudController extends CrudController
                                 'name' => 'parent_id',
                                 'entity' => 'parent',
                                 'attribute' => 'name',
-                                'model' => "Backpack\NewsCRUD\app\Models\Category",
+                                'model' => "App\Models\Category",
                             ]);
+
+        // Permissions
+        if(Auth::user()->hasRole('Author') && ! Auth::user()->hasRole('Administrator'))
+        {
+            $this->crud->addClause('where', 'user_id', '=', Auth::user()->id);
+        }
+
+        if(!Auth::user()->hasAnyRole(['Administrator', 'Author', 'Editor']))
+        {
+            $this->crud->denyAccess(['list','create','delete','update']);
+        }
     }
 
     public function store(StoreRequest $request)

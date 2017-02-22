@@ -41,7 +41,10 @@ class SetupCms extends Command
      * @return mixed
      */
     public function handle()
-    {
+    {   
+        // Migrate Database
+        $this->call('migrate');
+
         // Check for setup variable in database
         if($setupComplete = DB::table('settings')->where('key', 'setup_complete')->first())
         {
@@ -49,9 +52,6 @@ class SetupCms extends Command
             return;
         }
 
-        // Migrate Database
-        $this->call('migrate');
-       
         // Create admin user
         $this->info('Create Initial Administrator Account');
 
@@ -79,16 +79,21 @@ class SetupCms extends Command
        $canEditOwn = Permission::create(['name' => 'Edit Own Articles']);
        $calDeleteOwn = Permission::create(['name' => 'Delete Own Articles']);
        $canCreateArticles = Permission::create(['name' => 'Create Articles']);
+       $canAccessAdminPanel = Permission::create(['name' => 'Access Admin Panel']);
 
        $adminRole = Role::create(['name' => 'Administrator']);
        $authorRole = Role::create(['name' => 'Author']);
        $editorRole = Role::create(['name' => 'Editor']);
 
+       $adminRole->givePermissionTo('Access Admin Panel');
+
        $authorRole->givePermissionTo('Edit Own Articles');
        $authorRole->givePermissionTo('Create Articles');
        $authorRole->givePermissionTo('Delete Own Articles');
+       $authorRole->givePermissionTo('Access Admin Panel');
 
        $editorRole->givePermissionTo('Edit All Articles');
+       $editorRole->givePermissionTo('Access Admin Panel');
 
        $this->info('Roles and Permissions Created');
 

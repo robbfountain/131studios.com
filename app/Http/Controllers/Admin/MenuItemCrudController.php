@@ -4,13 +4,13 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-// VALIDATION: change the requests to match your own file names if you need form validation
 use Backpack\CRUD\app\Http\Requests\CrudRequest as StoreRequest;
 use Backpack\CRUD\app\Http\Requests\CrudRequest as UpdateRequest;
+use Illuminate\Support\Facades\Auth;
 
 class MenuItemCrudController extends CrudController
 {
-    public function __construct()
+    public function setup()
     {
         parent::__construct();
 
@@ -52,6 +52,11 @@ class MenuItemCrudController extends CrudController
                                 'type' => 'page_or_link',
                                 'page_model' => '\Backpack\PageManager\app\Models\Page',
                             ]);
+
+        if(! Auth::user()->hasRole('Administrator'))
+        {
+            $this->crud->denyAccess(['list','edit','update','delete','create']);
+        }
     }
 
     public function store(StoreRequest $request)

@@ -2,14 +2,18 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Article;
+use App\User;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-// VALIDATION: change the requests to match your own file names if you need form validation
 use Backpack\NewsCRUD\app\Http\Requests\ArticleRequest as StoreRequest;
 use Backpack\NewsCRUD\app\Http\Requests\ArticleRequest as UpdateRequest;
+use Illuminate\Auth\AuthManager;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ArticleCrudController extends CrudController
 {
-    public function __construct()
+    public function setup()
     {
         parent::__construct();
 
@@ -53,7 +57,7 @@ class ArticleCrudController extends CrudController
                                 'name' => 'category_id',
                                 'entity' => 'category',
                                 'attribute' => 'name',
-                                'model' => "App\Models\Category",
+                                'model' => "Backpack\NewsCRUD\app\Models\Category",
                             ]);
 
         // ------ CRUD FIELDS
@@ -122,16 +126,56 @@ class ArticleCrudController extends CrudController
                                 'type' => 'checkbox',
                             ]);
 
+        $this->crud->addField([
+            'name' => 'user_id',
+            'type'  =>  'hidden',
+            'value' =>  Auth::user()->id,
+        ],'create');
+
+        $this->crud->addField([
+            'name' => 'user_id',
+            'type'  =>  'hidden',
+        ],'update');
+
         $this->crud->enableAjaxTable();
+
+        // Permissions
+        if(Auth::user()->hasRole('Author') && ! Auth::user()->hasRole('Administrator'))
+        {
+            $this->crud->addClause('where', 'user_id', '=', Auth::user()->id);
+        }
+
+        if(!Auth::user()->hasAnyRole(['Administrator', 'Author', 'Editor']))
+        {
+            $this->crud->denyAccess(['list','create','delete','update']);
+        }
     }
 
-    public function store(StoreRequest $request)
-    {
-        return parent::storeCrud();
-    }
+   
 
     public function update(UpdateRequest $request)
     {
-        return parent::updateCrud();
+        $article = Article::findOrFail($request->id);
+        if(Auth::user()->can('update', $article))
+        {
+            return parent::updateCrud();
+        }
+
+        abort(403, 'Unauthorized Action');
+       
     }
+
+    public function edit($id) 
+    {
+        $article = Article::findOrFail($id);
+
+        if(Auth::user()->can('edit', $article))
+        {
+            return parent::edit($id);
+        }
+
+        abort(403, 'Unauthorized Action');
+        
+    } // edit
+  
 }

@@ -54,23 +54,18 @@ class Category extends Model
 
     public function parent()
     {
-        return $this->belongsTo('App\Models\Category', 'parent_id');
+        return $this->belongsTo('Backpack\NewsCRUD\app\Models\Category', 'parent_id');
     }
 
     public function children()
     {
-        return $this->hasMany('App\Models\Category', 'parent_id');
+        return $this->hasMany('Backpack\NewsCRUD\app\Models\Category', 'parent_id');
     }
 
     public function articles()
     {
-        return $this->hasMany('App\Models\Article');
+        return $this->hasMany('Backpack\NewsCRUD\app\Models\Article');
     }
-
-    public function projects() 
-    {
-        return $this->hasMany('App\Models\Project');
-    } // projects
 
     /*
     |--------------------------------------------------------------------------

@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-// VALIDATION: change the requests to match your own file names if you need form validation
 use Backpack\NewsCRUD\app\Http\Requests\TagRequest as StoreRequest;
 use Backpack\NewsCRUD\app\Http\Requests\TagRequest as UpdateRequest;
+use Illuminate\Support\Facades\Auth;
 
 class TagCrudController extends CrudController
 {
-    public function __construct()
+    public function setup()
     {
         parent::__construct();
 
@@ -50,6 +50,17 @@ class TagCrudController extends CrudController
                                 'hint' => 'Will be automatically generated from your name, if left empty.',
                                 // 'disabled' => 'disabled'
                             ]);
+
+        // Permissions
+        if(Auth::user()->hasRole('Author') && ! Auth::user()->hasRole('Administrator'))
+        {
+            $this->crud->addClause('where', 'user_id', '=', Auth::user()->id);
+        }
+
+        if(!Auth::user()->hasAnyRole(['Administrator', 'Author', 'Editor']))
+        {
+            $this->crud->denyAccess(['list','create','delete','update']);
+        }
     }
 
     public function store(StoreRequest $request)

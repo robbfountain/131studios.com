@@ -14,10 +14,17 @@ class CreateArticleTagTable extends Migration
     {
         Schema::create('article_tag', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->integer('article_id')->unsigned();
             $table->integer('tag_id')->unsigned();
             $table->nullableTimestamps();
             $table->softDeletes();
+        });
+
+        Schema::table('article_tag', function(Blueprint $table) {
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users');
         });
     }
 
