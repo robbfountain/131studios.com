@@ -22,7 +22,7 @@
 <!-- Basic Page Needs
 ================================================== -->
 <meta charset="utf-8">
-<title>@yield('title', env('APP_NAME'))</title>
+<title>@yield('title', env('COMPANY_NAME'))</title>
 
 <!-- Mobile Specific Metas
 ================================================== -->
