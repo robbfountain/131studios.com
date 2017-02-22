@@ -101,48 +101,13 @@ $style = [
                                             <p>Message:</p>
                                             <p>{{$info->message}}</p>
                                      
-
-                                        <!-- Action Button -->
-                                       
-                                            {{-- <table style="{{ $style['body_action'] }}" align="center" width="100%" cellpadding="0" cellspacing="0">
-                                                <tr>
-                                                    <td align="center">
-                                                        <?php
-                                                            $actionColor = 'button--blue';
-                                                        ?>
-
-                                                        <a href="{{url('/admin/contact/')}}"
-                                                            style="{{ $fontFamily }} {{ $style['button'] }} {{ $style[$actionColor] }}"
-                                                            class="button"
-                                                            target="_blank">
-                                                           View Form Details
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            </table> --}}
  
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
                                             Regards,<br>{{ env('COMPANY_NAME') }}
                                         </p>
 
-                                        <!-- Sub Copy -->
-                                            <table style="{{ $style['body_sub'] }}">
-                                                <tr>
-                                                    <td style="{{ $fontFamily }}">
-                                                        <p style="{{ $style['paragraph-sub'] }}">
-                                                            If you’re having trouble clicking the "View Form Details" button,
-                                                            copy and paste the URL below into your web browser:
-                                                        </p>
-
-                                                        <p style="{{ $style['paragraph-sub'] }}">
-                                                            <a style="{{ $style['anchor'] }}" href="{{url('/admin/contact/')}}" target="_blank">
-                                                                {{url('/admin/contact/')}}
-                                                            </a>
-                                                        </p>
-                                                    </td>
-                                                </tr>
-                                            </table>
+                                        
                                     </td>
                                 </tr>
                             </table>

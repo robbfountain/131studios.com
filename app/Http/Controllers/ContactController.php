@@ -9,7 +9,7 @@ use App\Mail\ContactFormSubmitted;
 
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Request;
-use Spatie\Newsletter\Newsletter;
+use Newsletter;
 
 class ContactController extends Controller
 {
@@ -17,16 +17,10 @@ class ContactController extends Controller
     {
         if($request->newsletter == "true")
         {
-           if(! Newsletter::subscribe($request->email))
+            if(! Newsletter::hasMember($request->email))
             {
-                return [
-                    'success' => true,
-                    'message'   =>  Newsletter::getLastError(),
-                    'title' =>  'Oops, something went wrong',
-                    'type'  =>  'error',
-                ];
+                Newsletter::subscribe($request->email);
             }
-
         }
 
         Mail::to(env('CONTACT_EMAIL'))->send(new ContactFormSubmitted($request));
