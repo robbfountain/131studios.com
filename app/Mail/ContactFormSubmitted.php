@@ -35,6 +35,6 @@ class ContactFormSubmitted extends Mailable
     {
         return $this->standard ? 
                 $this->view('email.contact.contactform-html')->text('email.contact.contactform-plain') :
-                $this->view('email.contact.contactformlong-html')->text('email.contact.contacxtformlong-plain');
+                $this->view('email.contact.contactformlong-html')->text('email.contact.contactformlong-plain');
     }
 }
