@@ -14,6 +14,11 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         Commands\SetupCms::class,
+        Commands\CreatePermission::class,
+        Commands\AssignPermission::class,
+        Commands\AssignRole::class,
+        Commands\GrantPermission::class,
+        Commands\RoleCreate::class,
     ];
 
     /**

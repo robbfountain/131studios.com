@@ -18,7 +18,7 @@ class Project extends Model
 	|--------------------------------------------------------------------------
 	*/
 
-    //protected $table = 'projects';
+    protected $table = 'projects';
     //protected $primaryKey = 'id';
     // public $timestamps = false;
      protected $guarded = ['id'];

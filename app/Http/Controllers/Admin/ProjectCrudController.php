@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class ProjectCrudController extends CrudController
 {
 
-    public function setUp()
+    public function setup()
     {
         /*
 		|--------------------------------------------------------------------------

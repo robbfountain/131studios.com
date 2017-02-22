@@ -21,7 +21,7 @@ class CreateProjectsTable extends Migration
             $table->string('primary_image');
             $table->boolean('hidden')->default(0);
             $table->json('alternate_images')->nullable();
-            $table->integer('parent_id')->default(0);
+            $table->integer('parent_id')->nullable();
             $table->integer('lft')->nullable();
             $table->integer('rgt')->nullable();
             $table->integer('depth')->nullable();
