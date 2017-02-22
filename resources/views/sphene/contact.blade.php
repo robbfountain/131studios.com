@@ -27,7 +27,7 @@
 			</ul>
 		</div>
 		<h3>Project Details</h3>
-		<p>If you would like to give us a little more information regarding your needs please use our expanded contact form <a href="/contact/longform">here.</a></p>
+		<p>If you would like to give us a little more information regarding your needs please use our expanded contact form <a href="/longform">here.</a></p>
         </div> <!-- col-md-6 -->
      </div> <!-- row -->
 </div> <!-- container -->
