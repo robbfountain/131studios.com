@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-	<div class="container">
+<div class="container" id="app">
 	<div class="row sticky-wrapper margin-top-50">
 
 			<!-- Photos -->

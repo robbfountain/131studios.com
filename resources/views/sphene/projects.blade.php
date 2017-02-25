@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-	<div class="container margin-top-50">
+	<div class="container margin-top-50" id="app">
 		<div class="row">
 			<div class="col-md-12">
 

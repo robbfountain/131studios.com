@@ -12,7 +12,6 @@
 	<!-- Contact
 ================================================== -->
 <div class="container" id="app" >
-
      <div class="row" >
           <longform></longform>
      </div> <!-- row -->

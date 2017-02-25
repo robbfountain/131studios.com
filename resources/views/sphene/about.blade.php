@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-<div class="container margin-top-60">
+<div class="container margin-top-60" id="app">
 	<div class="row">
 		
 		<!-- Intro text -->
