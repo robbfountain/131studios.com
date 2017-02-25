@@ -20,6 +20,8 @@ Route::get('/about','WebsiteController@about');
 Route::get('/services','WebsiteController@services');
 Route::get('/longform','WebsiteController@longForm');
 Route::post('/longform','ContactController@submitForm');
+Route::get('projects/{slug}','ProjectController@show');
+Route::get('projects','ProjectController@index');
 Auth::routes();
 
 /**
@@ -60,12 +62,6 @@ Route::group(['prefix' => config('backpack.base.route_prefix'), 'namespace' => '
     CRUD::resource('project', 'ProjectCrudController');
     CRUD::resource('contact','ContactCrudController');
     Auth::routes();
-});
-
-Route::get('test',function() {
-	 $contact = App\Contact::findOrFail(1);
-
-      return view('admin.details_row')->with(['contact' => $contact])->render();
 });
 
 /** CATCH-ALL ROUTE **/
