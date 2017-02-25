@@ -46,8 +46,8 @@
 				</a>
 			</div>
 			@endforeach
+		</div>
 	</div>
-</div>
 <div class="clearfix"></div>
 
 <br>
