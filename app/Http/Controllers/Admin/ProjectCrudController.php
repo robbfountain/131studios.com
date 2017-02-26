@@ -61,6 +61,17 @@ class ProjectCrudController extends CrudController
             'type' => 'browse',
             
         ]);
+        $this->crud->addField([
+            'name'  =>  'alternate_image',
+            'label' =>  'Alternate Image',
+            'type'  =>  'browse',
+        ]);
+
+        $this->crud->addField([
+            'name'  =>  'alternate_image_title',
+            'label' =>  'Alternate Image Title',
+            'type'  =>  'text',
+        ]);
 
         $this->crud->addField([ 
             'name' => 'alternate_images',

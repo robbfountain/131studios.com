@@ -14,13 +14,13 @@
 		
 		<!-- Intro text -->
 		<div class="col-md-8">
-			<p class="about-me-intro margin-top-20">Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation towards a streamlined cloud solution.</p>
+			<p class="about-me-intro margin-top-20">131 Studios is web development and IT consulting company based in Greencastle, Pennsylvania.  We produce high-quality websites, custom applications and customize IT serives for your small business.</p>
 		</div>
 
 		<!-- Intro buttons -->
 		<div class="col-md-4 margin-top-50">
-			<a href="" class="button medium border margin-bottom-10">Our Services</a>
-			<a href="#" class="button medium">Contact Us</a>
+			<a href="/services" class="button medium border margin-bottom-10">Our Services</a>
+			<a href="/longform" class="button medium">Contact Us</a>
 		</div>
 
 	</div>
@@ -38,7 +38,7 @@
 		<div class="content-alignment">
 			<div class="box-content">
 				<h3><strong>Who We Are?</strong></h3>
-				<p>Podcasting operational change management inside of workflows to establish a framework. Taking seamless key performance indicators offline to maximise the long tail.</p>
+				<p>We have been in in the web development and IT industry for 15 years. We have a wide range of knowledge.</p>
 			</div>
 		</div>
 	</div>
@@ -58,7 +58,7 @@
 		<div class="content-alignment">
 			<div class="box-content">
 				<h3><strong>Our Mission</strong></h3>
-				<p>Interactively procrastinate high-payoff content without backward-compatible data. Quickly cultivate optimal processes and tactical architectures</p>
+				<p>Our mission is to simplify your business' web presence and IT infrustructure allowing you to focus on what matters most to you...your business.</p>
 			</div>
 		</div>
 	</div>
@@ -72,7 +72,7 @@
 		<div class="content-alignment">
 			<div class="box-content">
 				<h3><strong>Our Approach </strong></h3>
-				<p>Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits.</p>
+				<p>Develop rich applications customized to our client's needs.</p>
 			</div>
 		</div>
 	</div>
