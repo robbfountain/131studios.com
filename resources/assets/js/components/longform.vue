@@ -165,6 +165,11 @@
 			          </select>
 			     </div> <!-- col-md-3 -->
 			</div> <!--  -->
+
+			<div class="checkboxes" >
+				<input type="checkbox" name="newsletter" id="newsletter" v-model="formData.newsletter"> 
+				<label for="newsletter">Occassionally receive email updates from us </label> 
+			</div>
 			
 			<div class="clearfix" >
 			     &nbsp;
@@ -202,6 +207,7 @@
 	    			host:'',
 	    			redesign: '',
 	    			components: '',
+	    			newsletter: true,
     			},
     			errors: [],
     			hasError: false,
