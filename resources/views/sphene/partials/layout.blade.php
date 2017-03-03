@@ -38,7 +38,7 @@
 <![endif]-->
 
 <!-- Analytics -->
-@include(env('THEME').'.google-analytics')
+@include(env('THEME').'.partials.google-analytics')
 
 </head>
 
