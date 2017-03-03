@@ -862,6 +862,9 @@ $(document).ready(function(){
 	// Puregrid init
 	PureGrid.init();
 
+	// isotope select
+	$('.projects.isotope-wrapper').isotope({ filter: '*'});
+
 
 	/*----------------------------------------------------*/
 	/*  Magnific Popup

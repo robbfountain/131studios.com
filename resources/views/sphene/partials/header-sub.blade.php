@@ -1,6 +1,6 @@
 <!-- Header
 ================================================== -->
-<div id="header-container" data-background="images/code.jpg" data-color="#303133" data-color-opacity="0.95">
+<div id="header-container" data-background="/images/code.jpg" data-color="#303133" data-color-opacity="0.95">
 
 	<div id="main-header">
 	<div class="container">
@@ -10,7 +10,7 @@
 
 				<div class="col-md-2 col-sm-12">
 					<div id="logo" class="margin-top-25 margin-bottom-10">
-						<a href="/"><img src="images/logo-image-30x30.png" class="img-thumbnail img-circle"></a>
+						<a href="/"><img src="/images/logo-image-30x30.png" class="img-thumbnail img-circle"></a>
 					</div>
 				</div>
 

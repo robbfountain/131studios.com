@@ -6,7 +6,7 @@
 
 @section('content')
 <!-- Featured Services -->
-<div class="container margin-bottom-80">
+<div class="container margin-bottom-80" id="app">
 	<div class="row margin-top-80">	
 		
 		<div class="col-md-3 col-sm-12">

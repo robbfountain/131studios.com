@@ -30,8 +30,8 @@
 
 <!-- CSS
 ================================================== -->
-<link rel="stylesheet" href="css/app.css">
-<link rel="stylesheet" href="css/all.css" id="colors">
+<link rel="stylesheet" href="/css/app.css">
+<link rel="stylesheet" href="/css/all.css" id="colors">
 
 <!--[if lt IE 9]>
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -119,31 +119,31 @@
 
 <!-- Scripts
 ================================================== -->
-<script type="text/javascript" src="js/app.js"></script>
-<script type="text/javascript" src="js/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="js/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="js/counterup.min.js"></script>
-<script type="text/javascript" src="js/waypoints.min.js"></script>
-<script type="text/javascript" src="js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="js/jquery.themepunch.revolution.min.js"></script>
-<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
-<script type="text/javascript" src="js/jquery.magnific-popup.min.js"></script>
-<script type="text/javascript" src="js/jquery.sticky-kit.min.js"></script>
-<script type="text/javascript" src="js/jquery.twentytwenty.js"></script>
-<script type="text/javascript" src="js/jquery.event.move.js"></script>
-<script type="text/javascript" src="js/jquery.photogrid.js"></script>
-<script type="text/javascript" src="js/jquery.tooltips.min.js"></script>
-<script type="text/javascript" src="js/jquery.pricefilter.js"></script>
-<script type="text/javascript" src="js/jquery.stacktable.js"></script>
-<script type="text/javascript" src="js/jquery.contact-form.js"></script>
-<script type="text/javascript" src="js/jquery.jpanelmenu.js"></script>
-<script type="text/javascript" src="js/headroom.min.js"></script>
-<script type="text/javascript" src="js/modernizr.custom.js"></script>
-<script type="text/javascript" src="js/puregrid.js"></script>
-<script type="text/javascript" src="js/flexibility.js"></script>
-<script type="text/javascript" src="js/sweetalert-dev.js"></script>
-<script type="text/javascript" src="js/custom.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
+<script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="/js/jquery.flexslider-min.js"></script>
+<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="/js/counterup.min.js"></script>
+<script type="text/javascript" src="/js/waypoints.min.js"></script>
+<script type="text/javascript" src="/js/jquery.themepunch.tools.min.js"></script>
+<script type="text/javascript" src="/js/jquery.themepunch.revolution.min.js"></script>
+<script type="text/javascript" src="/js/jquery.isotope.min.js"></script>
+<script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
+<script type="text/javascript" src="/js/jquery.sticky-kit.min.js"></script>
+<script type="text/javascript" src="/js/jquery.twentytwenty.js"></script>
+<script type="text/javascript" src="/js/jquery.event.move.js"></script>
+<script type="text/javascript" src="/js/jquery.photogrid.js"></script>
+<script type="text/javascript" src="/js/jquery.tooltips.min.js"></script>
+<script type="text/javascript" src="/js/jquery.pricefilter.js"></script>
+<script type="text/javascript" src="/js/jquery.stacktable.js"></script>
+<script type="text/javascript" src="/js/jquery.contact-form.js"></script>
+<script type="text/javascript" src="/js/jquery.jpanelmenu.js"></script>
+<script type="text/javascript" src="/js/headroom.min.js"></script>
+<script type="text/javascript" src="/js/modernizr.custom.js"></script>
+<script type="text/javascript" src="/js/puregrid.js"></script>
+<script type="text/javascript" src="/js/flexibility.js"></script>
+<script type="text/javascript" src="/js/sweetalert-dev.js"></script>
+<script type="text/javascript" src="/js/custom.js"></script>
 
 </div>
 <!-- Wrapper / End -->
