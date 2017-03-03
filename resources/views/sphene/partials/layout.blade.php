@@ -37,6 +37,9 @@
 	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 
+<!-- Analytics -->
+@include(env('THEME').'.google-analytics')
+
 </head>
 
 <body>
