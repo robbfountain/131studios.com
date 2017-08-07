@@ -14,15 +14,15 @@
 			<div class="col-md-12">
 
 				<!-- Filters -->
-				<div id="filters">
-					<ul class="option-set margin-bottom-40">
-						<li><a href="#filter" class="selected" data-filter="*">All</a></li>
-						<li><a href="#filter" data-filter=".design">Web Design</a></li>
-						<li><a href="#filter" data-filter=".hosting">Hosting</a></li>
-						<li><a href="#filter" data-filter=".other">Other</a></li>
-					</ul>
-					<div class="clearfix"></div>
-				</div>
+				{{--<div id="filters">--}}
+					{{--<ul class="option-set margin-bottom-40">--}}
+						{{--<li><a href="#filter" class="selected" data-filter="*">All</a></li>--}}
+						{{--<li><a href="#filter" data-filter=".design">Web Design</a></li>--}}
+						{{--<li><a href="#filter" data-filter=".hosting">Hosting</a></li>--}}
+						{{--<li><a href="#filter" data-filter=".other">Other</a></li>--}}
+					{{--</ul>--}}
+					{{--<div class="clearfix"></div>--}}
+				{{--</div>--}}
 
 			</div>
 		</div>
@@ -35,7 +35,7 @@
 			@foreach($projects as $project)
 			<!-- Item -->
 			<div class="isotope-item design hosting">
-				<a href="/projects/{{$project->slug}}">
+				<a href="/#">
 					<img src="{{$project->primary_image}}" alt="">
 					<div class="overlay">
 						<div class="overlay-content">
