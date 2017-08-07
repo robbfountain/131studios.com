@@ -14,7 +14,7 @@
 		
 		<!-- Intro text -->
 		<div class="col-md-8">
-			<p class="about-me-intro margin-top-20">131 Studios is web development and IT consulting company based in Greencastle, Pennsylvania.  We produce high-quality websites, custom applications and customize IT serives for your small business.</p>
+			<p class="about-me-intro margin-top-20">131 Studios is Web Development and IT consulting company based in Greencastle, Pennsylvania.  We produce high-quality websites, custom applications and customize IT services for your business.</p>
 		</div>
 
 		<!-- Intro buttons -->
@@ -38,7 +38,7 @@
 		<div class="content-alignment">
 			<div class="box-content">
 				<h3><strong>Who We Are?</strong></h3>
-				<p>We have been in in the web development and IT industry for 15 years. We have a wide range of knowledge.</p>
+				<p>We have been in in the web development and IT industry for 15 years. We have a wide range of knowledge of leading industry trends and can help you with your web and IT needs.</p>
 			</div>
 		</div>
 	</div>
