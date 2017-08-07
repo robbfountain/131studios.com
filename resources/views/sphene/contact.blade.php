@@ -17,7 +17,7 @@
           <contact></contact>
           <div class="col-md-5 margin-left-50 martin-top-40" id="">
                <h3 class="margin-bottom-25 margin-top-65">Contact Details</h3>
-		<p>We would love to hear work with you on your next project.  Please contact us and let us know how we can help.</p>
+		<p>We would love to work with you on your next project.  Please contact us and let us know how we can help.</p>
 
 		<div class="sidebar-textbox">
 			<ul class="contact-details">
