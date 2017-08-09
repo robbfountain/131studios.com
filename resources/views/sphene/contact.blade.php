@@ -12,7 +12,6 @@
 	<!-- Contact
 ================================================== -->
 <div class="container" id="app" >
-
      <div class="row" >
           <contact></contact>
           <div class="col-md-5 margin-left-50 martin-top-40" id="">
