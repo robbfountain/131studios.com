@@ -1,7 +1,7 @@
 @extends('sphene.partials.layout')
 
 @section('header')
-    @include('sphene.partials.header-main')
+    @include('sphene.partials.header-sub')
 @stop
 
 @section('content')
