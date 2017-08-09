@@ -10,7 +10,7 @@
     </div>>
     <script language="javascript">
         var iframe = document.getElementById('invoiceIFrame');
-        iframe.src = 'http://portal.131studios.com/view/'
+        iframe.src = 'https://portal.131studios.com/view/'
             + window.location.search.substring(1, 33);
     </script>
 @endsection
