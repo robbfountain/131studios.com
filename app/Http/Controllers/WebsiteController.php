@@ -43,4 +43,9 @@ class WebsiteController extends Controller
     {
         return view(env('THEME').'.services-alt')->with(['heading' => 'Services']);
     } // services
+
+    public function portal()
+    {
+        return view(env('THEME').'.portal')->with(['heading' => 'Client Portal']);
+    }
 }
