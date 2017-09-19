@@ -49,4 +49,9 @@ class WebsiteController extends Controller {
             ->view(env('THEME') . '.portal',['heading' => 'Client Portal'])
             ->header('X-Frame-Options', ' ALLOW FROM https://131studios.com');
     }
+    
+    public function passport()
+    {
+        return view(env('THEME') . '.passport')->with(['heading' => 'API']);
+    }
 }

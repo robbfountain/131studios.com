@@ -201,6 +201,12 @@ return [
          */
         App\Providers\ComposerServiceProvider::class,
 
+        /*
+         * Passport
+         */
+        Laravel\Passport\PassportServiceProvider::class,
+
+
 
     ],
 

@@ -15,6 +15,7 @@
         "backpack/settings": "^2.0",
         "guzzlehttp/guzzle": "^6.2",
         "laravel/framework": "5.3.*",
+        "laravel/passport": "~1.0",
         "spatie/laravel-newsletter": "^3.4"
     },
     "require-dev": {
