@@ -32,5 +32,5 @@ Vue.component(
 
 
 const app = new Vue({
-    el: '#wrapper'
+    el: '#app'
 });

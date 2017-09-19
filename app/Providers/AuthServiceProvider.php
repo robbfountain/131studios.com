@@ -28,6 +28,10 @@ class AuthServiceProvider extends ServiceProvider
 
         Passport::routes();
 
+        Passport::tokensCan([
+            'portal-data' => 'Receive Portal Client Data'
+        ]);
+
         //
     }
 }
