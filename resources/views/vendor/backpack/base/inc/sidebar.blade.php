@@ -49,7 +49,6 @@
 
                 @hasrole('Administrator')
 
-
                 <!-- Menu -->
                 <li>
                     <a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a>
@@ -74,6 +73,14 @@
                 <li>
                     <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/contact') }}"><i
                                 class="fa fa-address-card-o"></i> <span>Contacts</span></a>
+                </li>
+
+                <li>
+                    <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/client') }}"> <i class="fa fa-user"></i> Clients</a>
+                </li>
+
+                <li>
+                    <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/portal') }}"> <i class="fa fa-user"></i> Portals</a>
                 </li>
                 <!-- Roles & Permissions -->
                 <li class="treeview">

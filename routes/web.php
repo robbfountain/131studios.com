@@ -57,6 +57,12 @@ Route::group(['prefix' => config('backpack.base.route_prefix'), 'middleware' => 
 
     // Settings
     CRUD::resource('setting', 'SettingCrudController')->middleware('Administrator');
+
+    // CLients
+    CRUD::resource('client','ClientCrudController')->middleware('Administrator');
+
+    // Portals
+    CRUD::resource('portal','PortalCrudController')->middleware('Administrator');
     
     CRUD::resource('menu-item', 'MenuItemCrudController')->middleware('Administrator');
     CRUD::resource('project', 'ProjectCrudController')->middleware('Administrator');
