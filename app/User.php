@@ -58,4 +58,9 @@ class User extends Authenticatable
     {
         return $this->portal()->exists();
     }
+
+    public function portalData()
+    {
+        return $this->hasManyThrough(PortalData::class, Portal::class, 'client_id', 'portal_id');
+    }
 }

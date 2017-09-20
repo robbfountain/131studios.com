@@ -12,4 +12,9 @@ class PortalData extends Model
     protected $casts = [
         'data' => 'array',
     ];
+    
+    public function portal()
+    {
+        return $this->belongsTo(Portal::class);
+    }
 }
