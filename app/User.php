@@ -33,6 +33,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function($user) {
+            if($user->hasPortal())
+            {
+                $user->portal()->delete();
+            }
+        });
+    }
+
     /**
      * Send the password reset notification.
      *
