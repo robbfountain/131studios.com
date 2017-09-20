@@ -22,7 +22,6 @@ Route::post('/longform','ContactController@submitForm');
 Route::get('projects/{slug}','ProjectController@show');
 Route::get('projects','ProjectController@index');
 Route::get('portal', 'WebsiteController@portal');
-Auth::routes();
 
 /**
  * Admin Panel Routes
@@ -68,8 +67,6 @@ Route::group(['prefix' => config('backpack.base.route_prefix'), 'middleware' => 
     CRUD::resource('project', 'ProjectCrudController')->middleware('Administrator');
     CRUD::resource('contact','ContactCrudController')->middleware('Administrator');
 
-    Route::get('api','AdminApiController@index')->middleware('Administrator');
-    Auth::routes();
 });
 
 /** CATCH-ALL ROUTE **/

@@ -61,11 +61,6 @@
                 </li>
 
                 <li>
-                    <a href="{{url(config('backpack.base.route_prefix','admin').'/api') }}"><i class="fa fa-key"></i>
-                        <span>API</span></a>
-                </li>
-
-                <li>
                     <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/project') }}"><i
                                 class="fa fa-paint-brush"></i> <span>Projects</span></a>
                 </li>

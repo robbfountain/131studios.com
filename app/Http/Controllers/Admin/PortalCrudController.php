@@ -28,7 +28,7 @@ class PortalCrudController extends CrudController {
         |--------------------------------------------------------------------------
         */
 
-        $this->crud->setFromDb();
+       // $this->crud->setFromDb();
 
         $this->crud->removeFields(['url','client_id','access_token']);
 
@@ -51,6 +51,22 @@ class PortalCrudController extends CrudController {
             'label' => 'Access Token',
             'type' => 'textarea',
         ],'update');
+
+        $this->crud->addColumn([
+            'label' => 'Client',
+            'type' => 'select',
+            'name' => 'client_id',
+            'entity' => 'client',
+            'attribute' => 'name',
+            'model' => 'App\User',
+        ]);
+
+        $this->crud->addColumn([
+            'label' => 'URL',
+            'name' => 'url'
+
+        ]);
+
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
