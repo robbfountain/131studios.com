@@ -18,7 +18,6 @@ class WebsiteController extends Controller {
     {
         $projects = Project::where('hidden', 0)->orderBy('lft', 'ASC')->get();
 
-        // $pages = Page::find(3)->withFakes();
         return view(env('THEME') . '.index', compact('projects', 'pages'));
     } // index
 
@@ -43,10 +42,4 @@ class WebsiteController extends Controller {
         return view(env('THEME') . '.services-alt')->with(['heading' => 'Services']);
     } // services
 
-    public function portal()
-    {
-        return response()
-            ->view(env('THEME') . '.portal',['heading' => 'Client Portal'])
-            ->header('X-Frame-Options', ' ALLOW FROM https://131studios.com');
-    }
 }
