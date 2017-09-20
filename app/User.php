@@ -48,4 +48,14 @@ class User extends Authenticatable
     {
         return $query->role('client');
     }
+
+    public function portal()
+    {
+        return $this->hasOne(Portal::class, 'client_id');
+    }
+
+    public function hasPortal()
+    {
+        return $this->portal()->exists();
+    }
 }
