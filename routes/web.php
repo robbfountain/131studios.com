@@ -21,7 +21,6 @@ Route::get('/longform','WebsiteController@longForm');
 Route::post('/longform','ContactController@submitForm');
 Route::get('projects/{slug}','ProjectController@show');
 Route::get('projects','ProjectController@index');
-Route::get('portal', 'WebsiteController@portal');
 
 /**
  * Admin Panel Routes
