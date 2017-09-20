@@ -35,13 +35,13 @@ class ContactController extends Controller
 
     public function submitForm(LongForm $request) 
     {
-    	Contact::create(Request::all());
+    	Contact::create($request->except(['newsletter']));
 
         Mail::to(env('CONTACT_EMAIL'))->send(new ContactFormSubmitted($request, false));
 
     	return [
             'success'   =>  true,
-            'message'   =>  'Your message has ben sent',
+            'message'   =>  'Your message has been sent',
             'title'     =>  'Thank You',
             'type'  =>  'success',
         ];
