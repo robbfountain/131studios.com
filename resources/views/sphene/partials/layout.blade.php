@@ -126,7 +126,7 @@
 <!-- Wrapper / End -->
 <!-- Scripts
 ================================================== -->
-<script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
+{{--<script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>--}}
 <script type="text/javascript" src="/js/app.js"></script>
 <script type="text/javascript" src="/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="/js/owl.carousel.min.js"></script>

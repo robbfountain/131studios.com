@@ -33,6 +33,18 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function($user) {
+            if($user->hasPortal())
+            {
+                $user->portal()->delete();
+            }
+        });
+    }
+
     /**
      * Send the password reset notification.
      *
@@ -47,5 +59,20 @@ class User extends Authenticatable
     public function scopeClient($query)
     {
         return $query->role('client');
+    }
+
+    public function portal()
+    {
+        return $this->hasOne(Portal::class, 'client_id');
+    }
+
+    public function hasPortal()
+    {
+        return $this->portal()->exists();
+    }
+
+    public function portalData()
+    {
+        return $this->hasManyThrough(PortalData::class, Portal::class, 'client_id', 'portal_id');
     }
 }

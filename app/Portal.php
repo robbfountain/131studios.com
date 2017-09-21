@@ -9,7 +9,11 @@ class Portal extends Model
 {
     use CrudTrait;
 
-    protected $fillable = ['client_id','url','access_token'];
+    protected $fillable = ['client_id','url','access_token','callback'];
+
+    protected $casts = [
+        'callback' => 'boolean',
+    ];
 
     public function client()
     {

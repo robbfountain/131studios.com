@@ -2,14 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\PortalRequest as StoreRequest;
-use App\Http\Requests\PortalRequest as UpdateRequest;
+use App\Classes\LicenseRepository;
+use App\Http\Requests\LicenseRequest as StoreRequest;
+use App\Http\Requests\LicenseRequest as UpdateRequest;
+use App\Models\Product;
 use App\User;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
+use Carbon\Carbon;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
 
-class PortalCrudController extends CrudController {
+class LicenseCrudController extends CrudController {
     public function setup()
     {
 
@@ -18,9 +21,9 @@ class PortalCrudController extends CrudController {
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Portal');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/portal');
-        $this->crud->setEntityNameStrings('portal', 'portals');
+        $this->crud->setModel('App\Models\License');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/license');
+        $this->crud->setEntityNameStrings('license', 'licenses');
 
         /*
         |--------------------------------------------------------------------------
@@ -28,43 +31,69 @@ class PortalCrudController extends CrudController {
         |--------------------------------------------------------------------------
         */
 
-       // $this->crud->setFromDb();
-
-        $this->crud->removeFields(['url','client_id','access_token']);
-
         $this->crud->addField([
-            'name'        => 'client_id',
-            'label'       => 'Client',
-            'type'        => 'select2_from_array',
-            'options'     => $this->getClientArray(),
-            'allows_null' => false,
+            'name'      => 'product_id',
+            'label'     => 'Product',
+            'type'      => 'select2',
+            'entity'    => 'product',
+            'attribute' => 'name',
+            'model'     => 'App\Models\Product',
         ]);
 
         $this->crud->addField([
-            'name' => 'url',
-            'label' => 'URL',
-            'type' => 'url',
+            'name'      => 'user_id',
+            'label'     => 'User',
+            'type'      => 'select2',
+            'entity'    => 'user',
+            'attribute' => 'name',
+            'model'     => 'App\User',
         ]);
 
         $this->crud->addField([
-            'name' => 'access_token',
-            'label' => 'Access Token',
-            'type' => 'textarea',
-        ],'update');
+            'name'  => 'expires_at',
+            'label' => 'Expiration Date',
+            'type'  => 'date',
+            'value' => Carbon::now()->addDays(366),
+        ], 'create');
+
+        $this->crud->addField([
+            'name'  => 'expires_at',
+            'label' => 'Expiration Date',
+            'type'  => 'date',
+        ], 'update');
 
         $this->crud->addColumn([
-            'label' => 'Client',
+            'name' => 'user_id',
             'type' => 'select',
-            'name' => 'client_id',
-            'entity' => 'client',
+            'label' => 'User',
+            'entity' => 'user',
             'attribute' => 'name',
             'model' => 'App\User',
         ]);
 
         $this->crud->addColumn([
-            'label' => 'URL',
-            'name' => 'url'
+            'name' => 'product_id',
+            'type' => 'select',
+            'label' => 'Product',
+            'entity' => 'product',
+            'attribute' => 'name',
+            'model' => 'App\Models\Product',
+        ]);
 
+        $this->crud->addColumn([
+            'name' => 'verified_at',
+            'label' => 'Last Checked',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'expires_at',
+            'label' => 'Expires',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'license_key',
+            'label' => 'License Key',
+            'type' => 'license'
         ]);
 
 
@@ -137,28 +166,14 @@ class PortalCrudController extends CrudController {
         // $this->crud->limit();
     }
 
-    private function getClientArray()
-    {
-        $clientArr = collect();
-
-        foreach( User::client()->get() as $client)
-        {
-           $clientArr->put($client->id,$client->name);
-        }
-
-       return $clientArr->toArray();
-    }
-
     public function store(StoreRequest $request)
     {
-        // your additional operations before save here
+        $licenseRepo = new LicenseRepository(User::findOrFail($request->user_id));
+        $licenseKey = $licenseRepo->generateLicense(Product::findOrFail($request->product_id));
+        $request->request->set('license_key', $licenseKey);
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
-        $token = $this->crud->entry->client->createToken($request->url);
-
-        $this->crud->entry->update(['access_token' => $token->accessToken]);
-
         return $redirect_location;
     }
 

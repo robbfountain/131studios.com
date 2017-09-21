@@ -8,6 +8,7 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use App\Http\Requests\ClientRequest as StoreRequest;
 use App\Http\Requests\ClientRequest as UpdateRequest;
 use Spatie\Permission\Models\Role;
+use function str_random;
 
 class ClientCrudController extends CrudController
 {
@@ -30,6 +31,15 @@ class ClientCrudController extends CrudController
         */
 
         $this->crud->setFromDb();
+
+        $this->crud->removeFields(['password'],'both');
+
+        $this->crud->addField([
+            'name' => 'password',
+            'label' => 'password',
+            'type' => 'hidden',
+            'value' => str_random(15),
+        ]);
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
@@ -103,7 +113,6 @@ class ClientCrudController extends CrudController
 
     public function store(StoreRequest $request)
     {
-        // your additional operations before save here
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry

@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\PortalRequest as StoreRequest;
-use App\Http\Requests\PortalRequest as UpdateRequest;
-use App\User;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
+use App\Http\Requests\ProductRequest as StoreRequest;
+use App\Http\Requests\ProductRequest as UpdateRequest;
 
-class PortalCrudController extends CrudController {
+class ProductCrudController extends CrudController
+{
     public function setup()
     {
 
@@ -18,9 +18,9 @@ class PortalCrudController extends CrudController {
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-        $this->crud->setModel('App\Portal');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/portal');
-        $this->crud->setEntityNameStrings('portal', 'portals');
+        $this->crud->setModel('App\Models\Product');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/product');
+        $this->crud->setEntityNameStrings('product', 'products');
 
         /*
         |--------------------------------------------------------------------------
@@ -28,45 +28,7 @@ class PortalCrudController extends CrudController {
         |--------------------------------------------------------------------------
         */
 
-       // $this->crud->setFromDb();
-
-        $this->crud->removeFields(['url','client_id','access_token']);
-
-        $this->crud->addField([
-            'name'        => 'client_id',
-            'label'       => 'Client',
-            'type'        => 'select2_from_array',
-            'options'     => $this->getClientArray(),
-            'allows_null' => false,
-        ]);
-
-        $this->crud->addField([
-            'name' => 'url',
-            'label' => 'URL',
-            'type' => 'url',
-        ]);
-
-        $this->crud->addField([
-            'name' => 'access_token',
-            'label' => 'Access Token',
-            'type' => 'textarea',
-        ],'update');
-
-        $this->crud->addColumn([
-            'label' => 'Client',
-            'type' => 'select',
-            'name' => 'client_id',
-            'entity' => 'client',
-            'attribute' => 'name',
-            'model' => 'App\User',
-        ]);
-
-        $this->crud->addColumn([
-            'label' => 'URL',
-            'name' => 'url'
-
-        ]);
-
+        $this->crud->setFromDb();
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
@@ -137,28 +99,12 @@ class PortalCrudController extends CrudController {
         // $this->crud->limit();
     }
 
-    private function getClientArray()
-    {
-        $clientArr = collect();
-
-        foreach( User::client()->get() as $client)
-        {
-           $clientArr->put($client->id,$client->name);
-        }
-
-       return $clientArr->toArray();
-    }
-
     public function store(StoreRequest $request)
     {
         // your additional operations before save here
         $redirect_location = parent::storeCrud($request);
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
-        $token = $this->crud->entry->client->createToken($request->url);
-
-        $this->crud->entry->update(['access_token' => $token->accessToken]);
-
         return $redirect_location;
     }
 
