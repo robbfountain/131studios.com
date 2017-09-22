@@ -5,10 +5,14 @@ namespace App\Http\Controllers\Admin;
 use App\Classes\LicenseRepository;
 use App\Http\Requests\LicenseRequest as StoreRequest;
 use App\Http\Requests\LicenseRequest as UpdateRequest;
+use App\Mail\LicenseKeyGenerated;
+use App\Models\License;
 use App\Models\Product;
 use App\User;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Mail;
+use function wordwrap;
 
 // VALIDATION: change the requests to match your own file names if you need form validation
 
@@ -49,52 +53,49 @@ class LicenseCrudController extends CrudController {
             'model'     => 'App\User',
         ]);
 
-        $this->crud->addField([
-            'name'  => 'expires_at',
-            'label' => 'Expiration Date',
-            'type'  => 'date',
-            'value' => Carbon::now()->addDays(366),
-        ], 'create');
 
         $this->crud->addField([
             'name'  => 'expires_at',
             'label' => 'Expiration Date',
             'type'  => 'date',
-        ], 'update');
+        ],
+            'update');
 
         $this->crud->addColumn([
-            'name' => 'user_id',
-            'type' => 'select',
-            'label' => 'User',
-            'entity' => 'user',
+            'name'      => 'user_id',
+            'type'      => 'select',
+            'label'     => 'User',
+            'entity'    => 'user',
             'attribute' => 'name',
-            'model' => 'App\User',
+            'model'     => 'App\User',
         ]);
 
         $this->crud->addColumn([
-            'name' => 'product_id',
-            'type' => 'select',
-            'label' => 'Product',
-            'entity' => 'product',
+            'name'      => 'product_id',
+            'type'      => 'select',
+            'label'     => 'Product',
+            'entity'    => 'product',
             'attribute' => 'name',
-            'model' => 'App\Models\Product',
+            'model'     => 'App\Models\Product',
         ]);
 
         $this->crud->addColumn([
-            'name' => 'verified_at',
+            'name'  => 'verified_at',
             'label' => 'Last Checked',
         ]);
 
         $this->crud->addColumn([
-            'name' => 'expires_at',
+            'name'  => 'expires_at',
             'label' => 'Expires',
         ]);
 
         $this->crud->addColumn([
-            'name' => 'license_key',
+            'name'  => 'license_key',
             'label' => 'License Key',
-            'type' => 'license'
+            'type'  => 'license',
         ]);
+
+        $this->crud->enableDetailsRow();
 
 
         // ------ CRUD FIELDS
@@ -168,12 +169,16 @@ class LicenseCrudController extends CrudController {
 
     public function store(StoreRequest $request)
     {
-        $licenseRepo = new LicenseRepository(User::findOrFail($request->user_id));
-        $licenseKey = $licenseRepo->generateLicense(Product::findOrFail($request->product_id));
+        $user = User::findOrFail($request->user_id);
+        $product = Product::findOrFail($request->product_id);
+
+        $licenseKey = (new LicenseRepository($user, $product))->generateLicense();
+
         $request->request->set('license_key', $licenseKey);
+        $request->request->set('expires_at', Carbon::now()->addDays($product->support_term + 1));
         $redirect_location = parent::storeCrud($request);
-        // your additional operations after save here
-        // use $this->data['entry'] or $this->crud->entry
+        Mail::to($user)->send(new LicenseKeyGenerated($this->crud->entry));
+
         return $redirect_location;
     }
 
@@ -184,5 +189,16 @@ class LicenseCrudController extends CrudController {
         // your additional operations after save here
         // use $this->data['entry'] or $this->crud->entry
         return $redirect_location;
+    }
+
+    public function showDetailsRow($id)
+    {
+        $license = License::findOrFail($id);
+
+        return "<div class='col-md-12'>
+                    <textarea cols='150' rows='15' class='form-control'>
+                        " . wordwrap($license->license_key, 100, "\n", true) .
+            "</textarea>
+                </div>";
     }
 }

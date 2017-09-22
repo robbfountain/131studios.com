@@ -70,13 +70,16 @@
                                 class="fa fa-address-card-o"></i> <span>Contacts</span></a>
                 </li>
 
-                <li>
-                    <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/client') }}"> <i class="fa fa-user"></i> Clients</a>
+                <!-- Roles & Permissions -->
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-cogs"></i> <span>Products & Licenses</span> <i
+                                class="fa fa-angle-left pull-right"></i></a>
+                    <ul class="treeview-menu">
+                        <li><a href="{{ url('admin/product') }}"><i class="fa fa-book"></i> <span>Products</span></a></li>
+                        <li><a href="{{ url('admin/license') }}"><i class="fa fa-key"></i> <span>Licenses</span></a></li>
+                    </ul>
                 </li>
 
-                <li>
-                    <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/portal') }}"> <i class="fa fa-user"></i> Portals</a>
-                </li>
                 <!-- Roles & Permissions -->
                 <li class="treeview">
                     <a href="#"><i class="fa fa-group"></i> <span>Users, Roles &amp; Permissions</span> <i

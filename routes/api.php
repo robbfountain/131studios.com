@@ -18,4 +18,12 @@ Route::get('/user',
         return $request->user();
     })->middleware('auth:api');
 
-Route::post('/portal/stats', 'APIController@portalStats')->middleware('auth:api');
+Route::get('/license/check',
+    function(Request $request) {
+        return $request->user();
+    })->middleware('auth:api');
+
+Route::post('/license/activate','LicenseController@activate')->middleware('auth:api');
+Route::post('/license/check','LicenseController@check')->middleware('auth:api');
+
+

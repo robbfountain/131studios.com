@@ -22,13 +22,60 @@ class ProductCrudController extends CrudController
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/product');
         $this->crud->setEntityNameStrings('product', 'products');
 
+        $this->crud->addField([
+            'name' => 'name',
+            'label' => 'Name',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'monthly_price',
+            'label' => 'Monthly Price',
+            'description' => 'Price if paid per month',
+            'type' => 'number',
+            'prefix' => '$',
+        ]);
+
+
+        $this->crud->addField([
+            'name' => 'yearly_price',
+            'label' => 'Yearly Price',
+            'type' => 'number',
+            'prefix' => '$',
+        ]);
+
+        $this->crud->addField([
+            'name' => 'support_term',
+            'label' => 'Support Term',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'name',
+            'label' => 'Name',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'monthly_price',
+            'label' => 'Monthly Price',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'yearly_price',
+            'label' => 'Yearly Price',
+        ]);
+
+        $this->crud->addColumn([
+            'name' => 'support_term',
+            'label' => 'Support Term',
+        ]);
+
+
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION
         |--------------------------------------------------------------------------
         */
-
-        $this->crud->setFromDb();
 
         // ------ CRUD FIELDS
         // $this->crud->addField($options, 'update/create/both');
