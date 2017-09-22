@@ -13,7 +13,7 @@ class ComposerServiceProvider extends ServiceProvider {
     public function boot()
     {
         // Using class based composers...
-        View::composer('sphene.*', 'App\Http\ViewComposers\FrontendComposer');
+        View::composer('*', 'App\Http\ViewComposers\FrontendComposer');
     }
 
     /**
