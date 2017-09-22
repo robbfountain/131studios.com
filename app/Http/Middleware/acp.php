@@ -16,7 +16,7 @@ class acp
      */
     public function handle($request, Closure $next)
     {
-        if(!Auth::check()) return redirect('/login');
+        if(!Auth::check()) return redirect('/admin/login');
 
         if(!$request->user()->hasPermission('Access Admin Panel'))
         {

@@ -18,7 +18,7 @@ class Administrator
     {
         if(!Auth::check())
         {
-            return redirect('/login');
+            return redirect('/admin/login');
         }
 
         if(! Auth::user()->hasRole('Administrator'))
