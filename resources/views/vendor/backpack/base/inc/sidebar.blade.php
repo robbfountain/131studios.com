@@ -72,11 +72,13 @@
 
                 <!-- Roles & Permissions -->
                 <li class="treeview">
-                    <a href="#"><i class="fa fa-cogs"></i> <span>Products & Licenses</span> <i
+                    <a href="#"><i class="fa fa-cogs"></i> <span>Clients & Portals</span> <i
                                 class="fa fa-angle-left pull-right"></i></a>
                     <ul class="treeview-menu">
-                        <li><a href="{{ url('admin/product') }}"><i class="fa fa-book"></i> <span>Products</span></a></li>
-                        <li><a href="{{ url('admin/license') }}"><i class="fa fa-key"></i> <span>Licenses</span></a></li>
+                        <li><a href="{{ url('admin/client') }}"><i class="fa fa-user"></i> <span>Clients</span></a></li>
+                        <li><a href="{{ url('admin/portal') }}"><i class="fa fa-share-alt"></i> <span>Portals</span></a></li>
+                        {{--<li><a href="{{ url('admin/product') }}"><i class="fa fa-book"></i> <span>Products</span></a></li>--}}
+                        {{--<li><a href="{{ url('admin/license') }}"><i class="fa fa-key"></i> <span>Licenses</span></a></li>--}}
                     </ul>
                 </li>
 

@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class APIController extends Controller {
 
-    public function portalStats(Request $request)
+    public function recordPortalData(Request $request)
     {
         if($request->user()->hasPortal() && ($request->data['referrer'] == $request->user()->portal->url)) {
             $data = PortalData::create([

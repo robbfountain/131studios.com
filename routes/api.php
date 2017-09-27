@@ -26,4 +26,6 @@ Route::get('/license/check',
 Route::post('/license/activate','LicenseController@activate')->middleware('auth:api');
 Route::post('/license/check','LicenseController@check')->middleware('auth:api');
 
+Route::post('/portal/record','APIController@recordPortalData')->middleware('auth:api');
+
 
