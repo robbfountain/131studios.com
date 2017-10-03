@@ -73,12 +73,6 @@ class ProjectCrudController extends CrudController
             'type'  =>  'text',
         ]);
 
-        $this->crud->addField([ 
-            'name' => 'alternate_images',
-            'label' => 'Alternate Images',
-            'type' => 'upload_multiple',
-            'upload' => true, 
-        ],'create');
 
         $this->crud->addField([ 
             'name' => 'hidden',
