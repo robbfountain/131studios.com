@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\PortalRegister;
+use App\Portal;
 use App\PortalData;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use function response;
 
 class APIController extends Controller {
 
@@ -26,5 +31,42 @@ class APIController extends Controller {
             'code'    => 404,
             'message' => 'Portal not found',
         ]);
+    }
+
+    public function register(PortalRegister $request)
+    {
+        $client = $this->getClientInfo($request);
+
+        if(!$client->hasRole('client')) {
+            $client->assignRole('client');
+        }
+
+        $token = $client->createToken($request->referrer, ['portal-data']);
+
+        $this->createPortal($client, $request, $token);
+
+        return response()->json([
+            'access_token' => $token->accessToken,
+        ]);
+    }
+
+    public function createPortal($client, $request, $token)
+    {
+        Portal::create([
+            'client_id'    => $client->fresh()->id,
+            'url'          => $request->referrer,
+            'access_token' => $token->accessToken,
+        ]);
+
+    }
+
+    public function getClientInfo($request)
+    {
+        $client = User::firstOrNew(['email' => $request->email]);
+        $client->name = $request->name;
+        $client->password = bcrypt(Str::random(12));
+        $client->save();
+
+        return $client->fresh();
     }
 }
