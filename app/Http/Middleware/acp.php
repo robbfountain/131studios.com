@@ -18,7 +18,7 @@ class acp
     {
         if(!Auth::check()) return redirect('/admin/login');
 
-        if(!$request->user()->hasPermission('Access Admin Panel'))
+        if(!$request->user()->hasPermissionTo('Access Admin Panel'))
         {
            abort(403, 'Unauthorized Action');
         }

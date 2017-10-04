@@ -9,7 +9,6 @@ use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
-use function response;
 
 class APIController extends Controller {
 

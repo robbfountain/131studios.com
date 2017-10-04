@@ -14,7 +14,7 @@ $(document).ready(function(){
 	/*----------------------------------------------------*/
 	/*  Window Load Stuff */
 
-	$(window).on('load', function() {
+	$(window).load(function() {
 		// OwlCarousel
 		runOwl();
 
@@ -143,7 +143,7 @@ $(document).ready(function(){
 			}
 
 		// Firefox fix
-		$(window).on('unload',function () { $(window).unbind('unload'); });
+		$(window).unload(function () { $(window).unbind('unload'); });
 
 		// iOS Safari fix
 		$(window).bind('pageshow', function(event) {
@@ -552,7 +552,7 @@ $(document).ready(function(){
 	}
 	$(window).resize(backgroundResize);
 	$(window).focus(backgroundResize);
-	$(window).on('load',function() {	backgroundResize(); });
+	$(window).load(function() {	backgroundResize(); });
 
 
 

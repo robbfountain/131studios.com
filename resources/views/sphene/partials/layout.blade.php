@@ -127,9 +127,11 @@
 <!-- Scripts
 ================================================== -->
 {{--<script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>--}}
+<script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
+<script type="text/javascript" src="/js/bootstrap.js"></script>
 <script type="text/javascript" src="/js/app.js"></script>
 <script type="text/javascript" src="/js/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="/js/owl.carousel.js"></script>
+<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
 <script type="text/javascript" src="/js/counterup.min.js"></script>
 <script type="text/javascript" src="/js/waypoints.min.js"></script>
 <script type="text/javascript" src="/js/jquery.themepunch.tools.min.js"></script>
@@ -143,7 +145,6 @@
 <script type="text/javascript" src="/js/jquery.tooltips.min.js"></script>
 <script type="text/javascript" src="/js/jquery.pricefilter.js"></script>
 <script type="text/javascript" src="/js/jquery.stacktable.js"></script>
-<script type="text/javascript" src="/js/jquery.contact-form.js"></script>
 <script type="text/javascript" src="/js/jquery.jpanelmenu.js"></script>
 <script type="text/javascript" src="/js/headroom.min.js"></script>
 <script type="text/javascript" src="/js/modernizr.custom.js"></script>

@@ -12,4 +12,16 @@ const { mix } = require('laravel-mix');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/app.scss', 'public/css');
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .styles([
+        'resources/assets/css/bootstrap.css',
+        'resources/assets/css/style.css',
+        'resources/assets/css/icons.css',
+        'resources/assets/css/revolutionslider.css',
+        'resources/assets/css/colors/blue.css',
+        './node_modules/sweetalert/dist/sweetalert.css',
+        'resources/assets/css/custom.css'
+    ],'public/css/all.css')
+    .copy('./node_modules/sweetalert/dist/sweetalert.min.js', 'public/js')
+    .copy('resources/assets/js/theme','public/js')
+    .copy('resources/assets/fonts', 'public/fonts');

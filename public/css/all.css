@@ -2125,10 +2125,11 @@ legend span {
 /* ------------------------------------------------------------------- */
 /* 01. Import Section
 ---------------------------------------------------------------------- */
+@import url("bootstrap.css");					/* Default Reset, Typography, Forms, Responsive Grid etc. */
 @import url("icons.css");						/* Webfont Icons: FontAwesome, Linear Icons, Simple Line */
 @import url("revolutionslider.css");			/* Revolution Slider Style Sheets */
 @import url("http://fonts.googleapis.com/css?family=Montserrat:400,700");
-@import url("http://fonts.googleapis.com/css?family=Lato:400,700,300|Montserrat:700|Trochut:700");
+@import url("http://fonts.googleapis.com/css?family=Lato:400,700,300");
 
 
 /* ------------------------------------------------------------------- */
@@ -10122,7 +10123,7 @@ img.mfp-img {
 
 
 /* Some styles for video background */
-.fullscreen video, .fullscren section { 
+.fullscreen video { 
 	top: 0
 	left: 0;
 	min-width: 100%;
@@ -25030,5 +25031,3 @@ ul.logos li img:hover {
 	border: 2px solid transparent;
 	transition: border-color 0s;
 }
-
-/*# sourceMappingURL=all.css.map */
