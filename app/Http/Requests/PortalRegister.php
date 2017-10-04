@@ -32,7 +32,7 @@ class PortalRegister extends FormRequest
     public function messages()
     {
         return [
-            'referrer.unique' => 'This portal has already been registered.',
+            'data.referrer.unique' => 'This portal has already been registered.',
         ];
     }
 }
