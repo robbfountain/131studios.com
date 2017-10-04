@@ -75,11 +75,11 @@
 
                 <div class="isotope-sizer"></div>
 
-                <div class="owl-carousel">
+                <div class="owl-carousel dots projects">
 
                 @foreach($projects as $project)
                     <!-- Item -->
-                        <div class="">
+                        <div class="item">
                             <a href="/projects">
                                 <img src="{{$project->primary_image}}" alt="">
                                 <div class="overlay">

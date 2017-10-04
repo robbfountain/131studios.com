@@ -40,7 +40,7 @@ class APIController extends Controller {
             $client->assignRole('client');
         }
 
-        $token = $client->createToken($request->referrer, ['portal-data']);
+        $token = $client->createToken($request->data['referrer'], ['portal-data']);
 
         $this->createPortal($client, $request, $token);
 
@@ -53,7 +53,7 @@ class APIController extends Controller {
     {
         Portal::create([
             'client_id'    => $client->fresh()->id,
-            'url'          => $request->referrer,
+            'url'          => $request->data['referrer'],
             'access_token' => $token->accessToken,
         ]);
 
@@ -61,8 +61,8 @@ class APIController extends Controller {
 
     public function getClientInfo($request)
     {
-        $client = User::firstOrNew(['email' => $request->email]);
-        $client->name = $request->name;
+        $client = User::firstOrNew(['email' => $request->data['email']]);
+        $client->name = $request->data['name'];
         $client->password = bcrypt(Str::random(12));
         $client->save();
 
