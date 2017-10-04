@@ -7,7 +7,7 @@
     "require": {
         "php": ">=5.6.4",
         "backpack/backupmanager": "^1.1",
-        "backpack/base": "0.7.*",web
+        "backpack/base": "0.7.*",
         "backpack/crud": "^3.1",
         "backpack/logmanager": "^2.3",
         "backpack/pagemanager": "^1.1",
