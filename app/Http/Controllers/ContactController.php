@@ -27,7 +27,7 @@ class ContactController extends Controller
 
         return [
             'success'   =>  true,
-            'message'   =>  'Your message has ben sent',
+            'message'   =>  'Your message has been sent',
             'title'     =>  'Thank You',
             'type'  =>  'success',
         ];
