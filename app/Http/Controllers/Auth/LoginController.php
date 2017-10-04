@@ -40,7 +40,7 @@ class LoginController extends Controller
 
     public function redirectTo() 
     {
-        return Auth::user()->hasPermission('Access Admin Panel') ? '/admin' : '/';
+        return Auth::user()->hasPermissionTo('Access Admin Panel') ? '/admin' : '/';
         
     } // redirectTo
 }
