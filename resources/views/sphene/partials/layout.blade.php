@@ -19,7 +19,7 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-@yield('meta-csrf','')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- Basic Page Needs
 ================================================== -->
     <meta charset="utf-8">

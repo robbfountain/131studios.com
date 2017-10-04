@@ -4,10 +4,6 @@
 	@include('sphene.partials.header-sub')
 @stop
 
-@section('meta-csrf')
-	<meta name="csrf-token" content="{{ csrf_token() }}">
-@endsection
-
 @section('content')
 	<div class="container margin-top-50" id="app">
 		<div class="row">
