@@ -44,9 +44,7 @@ class APIController extends Controller {
 
         $this->createPortal($client, $request, $token);
 
-        return response()->json([
-            'access_token' => $token->accessToken,
-        ]);
+        return  ['access_token' => $token->accessToken];
     }
 
     public function createPortal($client, $request, $token)
