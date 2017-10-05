@@ -34,7 +34,7 @@ class APIController extends Controller {
 
     public function register(Request $request)
     {
-        return $request;
+        return $request->data['name'];
 
         $client = $this->getClientInfo($request);
 
