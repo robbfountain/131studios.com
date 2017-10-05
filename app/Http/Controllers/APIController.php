@@ -32,10 +32,8 @@ class APIController extends Controller {
         ]);
     }
 
-    public function register(Request $request)
+    public function register(PortalRegister $request)
     {
-        return $request->data['name'];
-
         $client = $this->getClientInfo($request);
 
         if(!$client->hasRole('client')) {

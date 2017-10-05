@@ -24,15 +24,15 @@ class PortalRegister extends FormRequest
     public function rules()
     {
         return [
-            'data.name' => 'required|string',
-            'data.email' => 'required|email',
-            'data.referrer' => 'required|url|unique:portals,url'
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'referrer' => 'required|url|unique:portals,url'
         ];
     }
     public function messages()
     {
         return [
-            'data.referrer.unique' => 'This portal has already been registered.',
+            'referrer.unique' => 'This portal has already been registered.',
         ];
     }
 }
