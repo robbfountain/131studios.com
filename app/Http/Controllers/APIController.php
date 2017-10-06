@@ -23,13 +23,12 @@ class APIController extends Controller {
 
             $request->user()->portal()->update(['callback' => true]);
 
-            return response()->json(['code' => 200, 'message' => 'ok']);
+            return response()->json(['called_at' => Carbon::now()],200);
         }
 
         return response()->json([
-            'code'    => 404,
             'message' => 'Portal not found',
-        ]);
+        ],402);
     }
 
     public function register(PortalRegister $request)
