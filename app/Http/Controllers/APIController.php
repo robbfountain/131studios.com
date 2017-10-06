@@ -23,7 +23,7 @@ class APIController extends Controller {
 
             $request->user()->portal()->update(['callback' => true]);
 
-            return response()->json(['called_at' => Carbon::now()],200);
+            return response()->json(['called_at' => Carbon::now(), 'data' => $data],200);
         }
 
         return response()->json([
