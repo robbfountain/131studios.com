@@ -15,8 +15,22 @@ class Portal extends Model
         'callback' => 'boolean',
     ];
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::deleting(function($portal) {
+                $portal->data->delete();
+        });
+    }
+
     public function client()
     {
         return $this->belongsTo(User::class);
+    }
+
+    public function data()
+    {
+        return $this->hasMany(PortalData::class);
     }
 }
