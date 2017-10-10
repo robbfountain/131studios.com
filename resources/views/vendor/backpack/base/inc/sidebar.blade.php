@@ -77,7 +77,8 @@
                     <ul class="treeview-menu">
                         <li><a href="{{ url('admin/client') }}"><i class="fa fa-user"></i> <span>Clients</span></a></li>
                         <li><a href="{{ url('admin/portal') }}"><i class="fa fa-share-alt"></i> <span>Portals</span></a></li>
-                        {{--<li><a href="{{ url('admin/product') }}"><i class="fa fa-book"></i> <span>Products</span></a></li>--}}
+                        <li><a href="{{ url('admin/portal/data') }}"><i class="fa fa-bar-graph"></i> <span>Portal Data</span></a></li>
+                        {{--<li><a href="{{ url('admin/invoice') }}"><i class="fa fa-dollar"></i> <span>Invoices</span></a></li>--}}
                         {{--<li><a href="{{ url('admin/license') }}"><i class="fa fa-key"></i> <span>Licenses</span></a></li>--}}
                     </ul>
                 </li>

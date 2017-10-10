@@ -17,4 +17,6 @@ class PortalData extends Model
     {
         return $this->belongsTo(Portal::class);
     }
+
+
 }
