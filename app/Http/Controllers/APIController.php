@@ -23,12 +23,13 @@ class APIController extends Controller {
 
             $request->user()->portal()->update(['callback' => true]);
 
-            return response()->json(['called_at' => Carbon::now(), 'data' => $data],200);
+            return response()->json(['called_at' => Carbon::now(), 'data' => $data], 200);
         }
 
         return response()->json([
             'message' => 'Portal not found',
-        ],402);
+        ],
+            402);
     }
 
     public function register(PortalRegister $request)
@@ -43,7 +44,20 @@ class APIController extends Controller {
 
         $this->createPortal($client, $request, $token);
 
-        return  ['access_token' => $token->accessToken];
+        return ['access_token' => $token->accessToken];
+    }
+
+    public function getClientInfo($request)
+    {
+        if($client = User::where('email', $request->data['email'])->first()) {
+            return $client;
+        }
+
+        return User::create([
+            'name'     => $request->data['name'],
+            'email'    => $request->data['email'],
+            'password' => bcrypt(Str::random(12)),
+        ]);
     }
 
     public function createPortal($client, $request, $token)
@@ -54,15 +68,5 @@ class APIController extends Controller {
             'access_token' => $token->accessToken,
         ]);
 
-    }
-
-    public function getClientInfo($request)
-    {
-        $client = User::firstOrNew(['email' => $request->data['email']]);
-        $client->name = $request->data['name'];
-        $client->password = bcrypt(Str::random(12));
-        $client->save();
-
-        return $client->fresh();
     }
 }
