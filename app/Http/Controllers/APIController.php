@@ -17,7 +17,8 @@ class APIController extends Controller {
         if($request->user()->hasPortal() && ($request->data['referrer'] == $request->user()->portal->url)) {
             $data = PortalData::create([
                 'portal_id'   => $request->user()->portal->id,
-                'time_period' => Carbon::now()->startOfMonth()->subMonth(1),
+                'client_id'   => $request->user()->id,
+                'time_period' => Carbon::now()->startOfMonth()->subMonth(1)->toDateTimeString(),
                 'data'        => $request->data,
             ]);
 

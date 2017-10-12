@@ -66,7 +66,8 @@ Route::group(['prefix' => config('backpack.base.route_prefix'), 'middleware' => 
     CRUD::resource('project', 'ProjectCrudController')->middleware('Administrator');
     CRUD::resource('contact','ContactCrudController')->middleware('Administrator');
 
-    Route::get('portal/data', 'PortalController@index')->middleware('Administrator');
+    CRUD::resource('portal/data','PortalDataCrudController')->middleware('Administrator');
+ //   Route::get('portal/data', 'PortalController@index')->middleware('Administrator');
 
     CRUD::resource('portal','PortalCrudController')->middleware('Administrator');
     CRUD::resource('client','ClientCrudController')->middleware('Administrator');
