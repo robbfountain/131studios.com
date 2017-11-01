@@ -1,3 +1,3 @@
 <td>
-    {{ $entry->$column['name'] }}
+    {{ $entry->{$column['name']} }}
 </td>
