@@ -14,6 +14,15 @@ class APIController extends Controller {
 
     public function recordPortalData(Request $request)
     {
+        return $request->data;
+        
+        if($request->user()->hasPortal())
+        {
+            return response()->json([
+                'message' => 'portal found',
+            ],
+                200);
+        }
         if($request->user()->hasPortal() && ($request->data['referrer'] == $request->user()->portal->url)) {
             $data = PortalData::create([
                 'portal_id'   => $request->user()->portal->id,
