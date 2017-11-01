@@ -14,8 +14,6 @@ class APIController extends Controller {
 
     public function recordPortalData(Request $request)
     {
-        return $request->data;
-        
         if($request->user()->hasPortal())
         {
             return response()->json([
