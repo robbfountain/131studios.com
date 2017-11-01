@@ -1,3 +1,3 @@
 <td>
-    {{ Carbon\Carbon::createFromTimestamp($entry->$column['name'])->toDateTimeString() }}
+    {{ $entry->$column['name'] }}
 </td>
