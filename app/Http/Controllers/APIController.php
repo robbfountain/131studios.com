@@ -17,7 +17,7 @@ class APIController extends Controller {
         if($request->user()->hasPortal())
         {
             return response()->json([
-                'message' => 'portal found',
+                'data' => $request->data,
             ],
                 200);
         }
