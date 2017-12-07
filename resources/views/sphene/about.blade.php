@@ -33,14 +33,14 @@
 	<div class="full-width-box-content alt dark-text" data-background-color="#f6f6f6">
 		<div class="content-alignment">
 			<div class="box-content">
-				<h3><strong>Who We Are?</strong></h3>
+				<h3><strong>Who We Are</strong></h3>
 				<p>We have been in in the web development and IT industry for 15 years. We have a wide range of knowledge of leading industry trends and can help you with your web and IT needs.</p>
 			</div>
 		</div>
 	</div>
 
 	<!-- Icon Container -->
-	<div class="full-width-box-content alt image-bg" data-background-image="images/about-01b.jpg"></div>
+	<div class="full-width-box-content alt image-bg" data-background-image="/uploads/about/maze.jpg"></div>
 
 </div>
 <!-- Full Width Icons / End -->
