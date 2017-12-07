@@ -11,7 +11,7 @@
 			<!-- Photos -->
 			<div class="col-md-8">
 				<div class="project-photos">
-					<a href="#"  title="{{$project->alternate_image_title}}" class="mfp-gallery img-hover"><img src="/{{$project->alternate_image}}" alt=""></a>
+					<a href="#"  title="{{$project->primary_image}}" class="mfp-gallery img-hover"><img src="/{{$project->primary_image}}" alt=""></a>
 				</div>
 			</div>
 
