@@ -27,7 +27,7 @@
 <div class="full-width-box-container flex margin-top-70">
 
 	<!-- Icon Container -->
-	<div class="full-width-box-content alt image-bg" data-background-image="images/about-01a.jpg"></div>
+	<div class="full-width-box-content alt image-bg" data-background-image="/uploads/About/about-team.jpg"></div>
 
 	<!-- Icon Container -->
 	<div class="full-width-box-content alt dark-text" data-background-color="#f6f6f6">

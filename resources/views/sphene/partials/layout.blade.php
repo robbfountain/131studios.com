@@ -77,6 +77,9 @@
                     <p> We have over 15 years of experience providing high level products and services.</p>
                     <a href="http://facebook.com/131studiosweb" target="_blank" class="button social-btn"><i
                                 class="fa fa-facebook-official"></i> Like Us on Facebook</a>
+
+                    <a href="https://github.com/131StudiosWeb" target="_blank" class="button github-btn"><i
+                                class="fa fa-github fa-lg"></i> Github Projects</a>
                 </div>
 
                 <div class="col-md-4  col-sm-6">
@@ -126,7 +129,6 @@
 <!-- Wrapper / End -->
 <!-- Scripts
 ================================================== -->
-{{--<script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>--}}
 <script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
 <script type="text/javascript" src="/js/bootstrap.js"></script>
 <script type="text/javascript" src="/js/app.js"></script>
@@ -152,7 +154,6 @@
 <script type="text/javascript" src="/js/flexibility.js"></script>
 <script type="text/javascript" src="/js/sweetalert-dev.js"></script>
 <script type="text/javascript" src="/js/custom.js"></script>
-
 
 </body>
 </html>
