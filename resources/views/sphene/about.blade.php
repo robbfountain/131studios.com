@@ -40,7 +40,7 @@
 	</div>
 
 	<!-- Icon Container -->
-	<div class="full-width-box-content alt image-bg" data-background-image="/uploads/about/maze.jpg"></div>
+	<div class="full-width-box-content alt image-bg" data-background-image="/uploads/About/maze.jpg"></div>
 
 </div>
 <!-- Full Width Icons / End -->
@@ -61,7 +61,7 @@
 
 
 	<!-- Icon Container -->
-	<div class="full-width-box-content alt image-bg" data-background-image="images/about-01c.jpg"></div>
+	<div class="full-width-box-content alt image-bg" data-background-image="/uploads/About/mission.jpg"></div>
 
 	<!-- Icon Container -->
 	<div class="full-width-box-content alt light-text" data-background-color="#44b272">
