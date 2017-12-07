@@ -80,7 +80,7 @@
                 @foreach($projects as $project)
                     <!-- Item -->
                         <div class="item">
-                            <a href="/projects/{$project->slug}">
+                            <a href="/projects/{{$project->slug}}">
                                 <img src="{{$project->primary_image}}" alt="">
                                 <div class="overlay">
                                     <div class="overlay-content">
