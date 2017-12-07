@@ -31,7 +31,7 @@
 			@foreach($projects as $project)
 			<!-- Item -->
 			<div class="isotope-item design hosting">
-				<a href="{{route('project.show'. $project->slug)}}">
+				<a href="{{route('project.show', $project->slug)}}">
 					<img src="{{$project->primary_image}}" alt="">
 					<div class="overlay">
 						<div class="overlay-content">

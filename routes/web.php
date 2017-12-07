@@ -74,8 +74,6 @@ Route::group(['prefix' => config('backpack.base.route_prefix'), 'middleware' => 
 
     Route::get('invoice','InvoiceController@index')->middleware('Administrator');
 
-
-
 });
 
 /** CATCH-ALL ROUTE **/
