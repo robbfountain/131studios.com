@@ -48,6 +48,12 @@ class ProjectCrudController extends CrudController
             
         ]);
 
+        $this->crud->addField([
+            'name' => 'url',
+            'label' => 'Website URL',
+            'type' => 'text',
+        ]);
+
         $this->crud->addField([ 
             'name' => 'description',
             'label' => 'Description',

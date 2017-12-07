@@ -23,7 +23,7 @@
                     <p>{!!$project->description!!}</p>
 
                     <ul class="details">
-                        <li><span>Website:</span></li>
+                        <li><span>Website:</span> <a href="{{$project->url}}" target="_blank">{{$project->url}}</a></li>
                         <li><span>Category:</span> {{$project->sub_title}}</li>
                     </ul>
                 </div>
