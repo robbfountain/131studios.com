@@ -17,11 +17,13 @@ Route::get('/contact','WebsiteController@contact');
 Route::post('/contact','ContactController@sendMessage');
 Route::get('/about','WebsiteController@about');
 Route::get('/services','WebsiteController@services');
+Route::get('/services/hosting', 'WebsiteController@hosting');
 Route::get('/longform','WebsiteController@longForm');
 Route::post('/longform','ContactController@submitForm');
 Route::get('projects/{slug}','ProjectController@show')->name('project.show');
 Route::get('projects','ProjectController@index');
-Auth::routes();
+//Auth::routes();
+
 /**
  * Admin Panel Routes
  */

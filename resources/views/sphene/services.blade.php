@@ -5,8 +5,7 @@
 @stop
 
 @section('content')
-    <!-- Contact
-================================================== -->
+
     <div class="container" id="app">
         <div class="row">
             <!-- Text Block -->
@@ -54,6 +53,9 @@
                         <h4>Hosting &amp; Maintenance</h4>
                         <p>We offer powerful VPS hosting systems for your website and we take care of everything from
                             server maintenance to application deployment. </p>
+                        <p>
+                            <a href="/services/hosting">More Info.</a>
+                        </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6">

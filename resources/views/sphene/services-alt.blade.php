@@ -73,6 +73,10 @@
                 that your website will be accessible and available 24/7/365. We also offer email management,
                 transactional email service and maintenance for an affordable price. </p>
 
+            <p>
+                <a href="/services/hosting">More Info <i class="fa fa-angle-double-right"></i></a>
+            </p>
+
         </div>
 
         <div class="edge-bg" data-background-image="images/services/host.jpeg"></div>

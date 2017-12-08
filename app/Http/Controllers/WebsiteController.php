@@ -42,4 +42,9 @@ class WebsiteController extends Controller {
         return view(env('THEME') . '.services-alt')->with(['heading' => 'Services']);
     } // services
 
+    public function hosting()
+    {
+        return view(env('THEME') . '.services.hosting')->with(['heading' => 'Hosting']);
+    }
+
 }
