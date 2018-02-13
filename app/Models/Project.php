@@ -7,72 +7,42 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model
-{
-    use CrudTrait;
-    use Sluggable, SluggableScopeHelpers;
+class Project extends Model {
 
-     /*
-	|--------------------------------------------------------------------------
-	| GLOBAL VARIABLES
-	|--------------------------------------------------------------------------
-	*/
+    use CrudTrait, Sluggable, SluggableScopeHelpers;
 
-    protected $table = 'projects';
-    //protected $primaryKey = 'id';
-    // public $timestamps = false;
-     protected $guarded = ['id'];
-    // protected $fillable = [];
-    // protected $hidden = [];
-    // protected $dates = [];
+    protected $guarded = ['id'];
+
     protected $casts = [
-    	'alternate_images' => 'array',
+        'hidden' => 'boolean',
     ];
 
-    public function sluggable() 
+
+    /**
+     * @return array
+     */
+    public function sluggable()
     {
-    	return [
-    		'slug'	=> [
-    			'source'	=> 'slug_or_title',
-    		],
-    	];
-    } // sluggable	
+        return [
+            'slug' => [
+                'source' => 'slug_or_title',
+            ],
+        ];
+    }
 
-    /*
-	|--------------------------------------------------------------------------
-	| FUNCTIONS
-	|--------------------------------------------------------------------------
-	*/
-
-    /*
-	|--------------------------------------------------------------------------
-	| RELATIONS
-	|--------------------------------------------------------------------------
-	*/
-
-    /*
-	|--------------------------------------------------------------------------
-	| SCOPES
-	|--------------------------------------------------------------------------
-	*/
-
-    /*
-	|--------------------------------------------------------------------------
-	| ACCESORS
-	|--------------------------------------------------------------------------
-	*/
-	// The slug is created automatically from the "title" field if no slug exists.
+    // The slug is created automatically from the "title" field if no slug exists.
     public function getSlugOrTitleAttribute()
     {
-        if ($this->slug != '') {
+        if($this->slug != '') {
             return $this->slug;
         }
+
         return $this->title;
     }
 
-    /*
-	|--------------------------------------------------------------------------
-	| MUTATORS
-	|--------------------------------------------------------------------------
-	*/
+    public function scopeVisible($query)
+    {
+        return $query->where('hidden', false);
+    }
+
 }

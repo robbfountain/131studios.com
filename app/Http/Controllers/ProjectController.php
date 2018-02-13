@@ -2,20 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Project;
 
-class ProjectController extends Controller
-{
-	public function index() 
-	{
-		return view(env('THEME').'.projects')->with(['heading' => 'Projects', 'projects' => Project::where('hidden',0)->orderBy('lft','ASC')->get()]);
-	} // index
+class ProjectController extends Controller {
 
-    public function show($slug) 
+    /**
+     * @param null $slug
+     *
+     * @return $this
+     */
+    public function index($slug = null)
     {
-    	 $project = Project::findBySlug($slug);
+        return $slug
+            ? $this->show($slug)
+            : view('frontend.projects')->with(['heading'  => 'Projects',
+                                               'projects' => Project::visible()->orderBy('lft', 'ASC')->get()]);
+    }
 
-    	 return view(env('THEME').'.portfolio-item')->with(['heading' => $project->title, 'project' => $project]);
-    } // show
+    /**
+     * @param $slug
+     *
+     * @return $this
+     */
+    public function show($slug)
+    {
+        $project = Project::findBySlug($slug);
+
+        return view('frontend.portfolio-item')->with(['heading' => $project->title, 'project' => $project]);
+    }
 }

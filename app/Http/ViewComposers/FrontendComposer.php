@@ -3,6 +3,7 @@
 use App\Models\MenuItem as Menu;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Request;
+use Laravel\Passport\Bridge\UserRepository;
 
 class FrontendComposer {
 

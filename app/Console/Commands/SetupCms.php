@@ -84,6 +84,7 @@ class SetupCms extends Command
        $adminRole = Role::create(['name' => 'Administrator']);
        $authorRole = Role::create(['name' => 'Author']);
        $editorRole = Role::create(['name' => 'Editor']);
+       $clientRole = Role::create(['name' => 'Client']);
 
        $adminRole->givePermissionTo('Access Admin Panel');
 

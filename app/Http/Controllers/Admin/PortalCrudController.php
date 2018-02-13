@@ -7,12 +7,11 @@ use App\Http\Requests\PortalRequest as UpdateRequest;
 use App\User;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 
-// VALIDATION: change the requests to match your own file names if you need form validation
 
 class PortalCrudController extends CrudController {
+
     public function setup()
     {
-
         /*
         |--------------------------------------------------------------------------
         | BASIC CRUD INFORMATION

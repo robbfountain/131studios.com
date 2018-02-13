@@ -7,44 +7,46 @@ use App\Models\Project;
 class WebsiteController extends Controller {
 
     /**
-     * Constructor
+     * @return $this
      */
-    public function __construct()
-    {
-        //
-    } // __construct
-
     public function index()
     {
-        $projects = Project::where('hidden', 0)->orderBy('lft', 'ASC')->get();
+        return view('frontend.index')->with(['projects' => Project::visible()->orderBy('lft', 'ASC')->get()]);
+    }
 
-        return view(env('THEME') . '.index', compact('projects', 'pages'));
-    } // index
-
-    public function contact()
-    {
-        //   dd(Req::route()->uri());
-        return view(env('THEME') . '.contact')->with(['heading' => 'Contact Us']);
-    } // contact
-
-    public function longForm()
-    {
-        return view(env('THEME') . '.longform')->with(['heading' => 'Contact Us']);
-    } // longForm
-
+    /**
+     * @return WebsiteController
+     */
     public function about()
     {
-        return view(env('THEME') . '.about')->with(['heading' => 'About Us']);
-    } // about
+        return $this->renderView('about', 'About Us');
+    }
 
+    /**
+     * @param $view
+     * @param $heading
+     *
+     * @return $this
+     */
+    private function renderView($view, $heading)
+    {
+        return view('frontend.' . $view)->with(['heading' => $heading]);
+    }
+
+    /**
+     * @return WebsiteController
+     */
     public function services()
     {
-        return view(env('THEME') . '.services-alt')->with(['heading' => 'Services']);
-    } // services
+        return $this->renderView('services-alt', 'Services');
+    }
 
+    /**
+     * @return WebsiteController
+     */
     public function hosting()
     {
-        return view(env('THEME') . '.services.hosting')->with(['heading' => 'Hosting']);
+        return $this->renderView('services.hosting', 'Hosting');
     }
 
 }
