@@ -14,7 +14,7 @@
 Route::get('/home', 'HomeController@index');
 Route::get('/','WebsiteController@index')->name('index');
 Route::get('/client', function() {
-    return response()->view('frontend.client')->header('X-Frame-Options', 'ALLOW FROM https://client.131studios.com');
+    return view('frontend.client')->with(['heading' => 'Client Portal');
 });
 Route::get('/contact','ContactController@contact');
 Route::post('/contact','ContactController@sendMessage');
