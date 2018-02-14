@@ -1,12 +1,12 @@
 @extends('frontend.partials.layout')
 
 @section('header')
-    {{--@include('frontend.partials.header-sub')--}}
+    @include('frontend.partials.header-sub')
 @stop
 
 @section('content')
     @php
-    header('X-Frame-Options: ALLOW-FROM https://example.com/');
+    header('X-Frame-Options: ALLOW-FROM https://client.131studios.com/');
     @endphp
 
     <center>
