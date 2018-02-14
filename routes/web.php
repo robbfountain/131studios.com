@@ -13,20 +13,25 @@
 
 Route::get('/home', 'HomeController@index');
 Route::get('/','WebsiteController@index')->name('index');
-Route::get('/contact','WebsiteController@contact');
+Route::get('/client', function() {
+    return view('frontend.client');
+});
+Route::get('/contact','ContactController@contact');
 Route::post('/contact','ContactController@sendMessage');
+Route::get('/contact/project','ContactController@longForm')->name('contact.project');
+Route::post('/contact/project','ContactController@submitForm')->name('contact.project.submit');
 Route::get('/about','WebsiteController@about');
 Route::get('/services','WebsiteController@services');
-Route::get('/longform','WebsiteController@longForm');
-Route::post('/longform','ContactController@submitForm');
-Route::get('projects/{slug}','ProjectController@show');
-Route::get('projects','ProjectController@index');
-Auth::routes();
+Route::get('/services/hosting', 'WebsiteController@hosting');
+Route::get('projects/{slug?}','ProjectController@index');
+Route::Auth();
+
 /**
  * Admin Panel Routes
  */
 Route::get(config('backpack.base.route_prefix') . '/logout','Auth\LoginController@logout');
 Route::group(['prefix' => config('backpack.base.route_prefix'), 'middleware' => ['auth','acp'], 'namespace' => '\Admin'], function () {
+
     // Admin
     Route::get('dashboard', 'AdminController@dashboard');
     Route::get('/', 'AdminController@redirect');
@@ -56,9 +61,6 @@ Route::group(['prefix' => config('backpack.base.route_prefix'), 'middleware' => 
     // Settings
     CRUD::resource('setting', 'SettingCrudController')->middleware('Administrator');
 
-    // Licenses
-    CRUD::resource('license','LicenseCrudController')->middleware('Administrator');
-
     // Products
     CRUD::resource('product','ProductCrudController')->middleware('Administrator');
     
@@ -73,8 +75,6 @@ Route::group(['prefix' => config('backpack.base.route_prefix'), 'middleware' => 
     CRUD::resource('client','ClientCrudController')->middleware('Administrator');
 
     Route::get('invoice','InvoiceController@index')->middleware('Administrator');
-
-
 
 });
 

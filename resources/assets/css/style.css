@@ -3161,6 +3161,21 @@ a.icon-box-4:hover i { color: #fff; }
 	top: 4px;
  }
 
+.button.github-btn i {
+	font-size: 21px;
+	position: absolute;
+	left: 19px;
+	top: 13px;
+}
+
+.button.github-btn {
+	padding-left: 50px;
+	position: relative;
+	background-color: #000;
+	top: 4px;
+}
+
+
 
 #footer a.button { margin-top: 12px; }
 #footer a.button:hover { background-color: #fff; color: #333; }

@@ -48,7 +48,13 @@ class ProjectCrudController extends CrudController
             
         ]);
 
-        $this->crud->addField([ 
+        $this->crud->addField([
+            'name' => 'url',
+            'label' => 'Website URL',
+            'type' => 'text',
+        ]);
+
+        $this->crud->addField([
             'name' => 'description',
             'label' => 'Description',
             'type' => 'ckeditor',
@@ -61,6 +67,18 @@ class ProjectCrudController extends CrudController
             'type' => 'browse',
             
         ]);
+//        $this->crud->addField([
+//            'name'  =>  'alternate_image',
+//            'label' =>  'Alternate Image',
+//            'type'  =>  'browse',
+//        ]);
+//
+//        $this->crud->addField([
+//            'name'  =>  'alternate_image_title',
+//            'label' =>  'Alternate Image Title',
+//            'type'  =>  'text',
+//        ]);
+
 
         $this->crud->addField([ 
             'name' => 'hidden',
