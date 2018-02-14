@@ -1,7 +1,7 @@
 @extends('frontend.partials.layout')
 
 @section('header')
-    @include('frontend.partials.header-sub')
+    {{--@include('frontend.partials.header-sub')--}}
 @stop
 
 @section('content')
