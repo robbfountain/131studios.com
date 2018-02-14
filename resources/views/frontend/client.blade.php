@@ -8,7 +8,7 @@
     @php
     header('X-Frame-Options: ALLOW-FROM https://example.com/');
     @endphp
-    
+
     <center>
         <iframe id="invoiceIFrame" width="100%" height="1200" style="max-width:1000px"></iframe>
     </center>

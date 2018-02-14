@@ -14,7 +14,7 @@
 Route::get('/home', 'HomeController@index');
 Route::get('/','WebsiteController@index')->name('index');
 Route::get('/client', function() {
-    return view('frontend.client')->with(['heading' => 'Client Portal');
+    return view('frontend.client')->with(['heading' => 'Client Portal']);
 });
 Route::get('/contact','ContactController@contact');
 Route::post('/contact','ContactController@sendMessage');
