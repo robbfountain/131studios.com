@@ -23,7 +23,7 @@ Route::post('/contact/project','ContactController@submitForm')->name('contact.pr
 Route::get('/about','WebsiteController@about');
 Route::get('/services','WebsiteController@services');
 Route::get('/services/hosting', 'WebsiteController@hosting');
-Route::get('projects/{slug?}','ProjectController@index');
+Route::get('projects/{slug?}','ProjectController@index')->name('projects.show');
 Route::Auth();
 
 /**
