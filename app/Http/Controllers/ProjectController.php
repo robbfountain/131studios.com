@@ -13,7 +13,7 @@ class ProjectController extends Controller {
      */
     public function index($slug = null)
     {
-        return $slug
+        return ! is_null($slug)
             ? $this->show($slug)
             : view('frontend.projects')->with(['heading'  => 'Projects',
                                                'projects' => Project::visible()->orderBy('lft', 'ASC')->get()]);
