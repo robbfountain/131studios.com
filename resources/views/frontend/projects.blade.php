@@ -31,7 +31,7 @@
 			@foreach($projects as $project)
 			<!-- Item -->
 			<div class="isotope-item design hosting">
-				<a href="{{route('project.show', $project->slug)}}">
+				<a href="{{route('projects.show', $project->slug)}}">
 					<img src="{{$project->primary_image}}" alt="">
 					<div class="overlay">
 						<div class="overlay-content">
@@ -53,7 +53,7 @@
 <div class="info-banner-fw">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12">We're a Quality-Focused Creative Company <a href="{{route('con')}}">Contact Us</a></div>
+			<div class="col-md-12">We're a Quality-Focused Creative Company <a href="{{route('contact.project')}}">Contact Us</a></div>
 		</div>
 	</div>
 </div>
