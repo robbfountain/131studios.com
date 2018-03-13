@@ -1,7 +1,7 @@
-@extends(env('THEME').'.partials.layout')
+@extends('frontend.partials.layout')
 
 @section('header')
-	@include(env('THEME').'.partials.header-sub')
+	@include('frontend.partials.header-sub')
 @stop
 
 @section('content')

@@ -10,16 +10,12 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/home', 'HomeController@index');
-Route::get('/','WebsiteController@index')->name('index');
-Route::get('/client', function() {
-    return view('frontend.client')->with(['heading' => 'Client Portal']);
-});
 Route::get('/contact','ContactController@contact');
 Route::post('/contact','ContactController@sendMessage');
 Route::get('/contact/project','ContactController@longForm')->name('contact.project');
 Route::post('/contact/project','ContactController@submitForm')->name('contact.project.submit');
+
+Route::get('/','WebsiteController@index')->name('index');
 Route::get('/about','WebsiteController@about');
 Route::get('/services','WebsiteController@services');
 Route::get('/services/hosting', 'WebsiteController@hosting');
