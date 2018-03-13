@@ -54,7 +54,7 @@ class ProjectCrudController extends CrudController
             'type' => 'text',
         ]);
 
-        $this->crud->addField([ 
+        $this->crud->addField([
             'name' => 'description',
             'label' => 'Description',
             'type' => 'ckeditor',
