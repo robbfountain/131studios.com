@@ -14,7 +14,7 @@ class AddClientToPortalData extends Migration
     public function up()
     {
         Schema::table('portal_data', function (Blueprint $table) {
-            $table->unsignedInteger('client_id');
+            $table->unsignedInteger('client_id')->default('');
         });
     }
 

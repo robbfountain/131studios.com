@@ -13,7 +13,7 @@ class AddSlugToTagsTable extends Migration
     public function up()
     {
         Schema::table('tags', function (Blueprint $table) {
-            $table->string('slug')->unique()->after('name');
+            $table->string('slug')->unique()->after('name')->default('');
         });
     }
 
