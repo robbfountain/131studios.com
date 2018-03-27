@@ -4,9 +4,5 @@ use Backpack\BackupManager\app\Http\Controllers\BackupController as BackpackBack
 
 class BackupController extends BackpackBackupController {
 
-	public function __construct() 
-	{
-		$this->middleware('Administrator');
-		
-	} // __construct
+
 }
