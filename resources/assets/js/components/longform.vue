@@ -8,7 +8,7 @@
 		     <p><span><strong>Oops, something went wrong.</strong></span></p> 
 		     <ul>
 		     	<li v-for="error in errors">
-		     		{{error[0]}}
+		     		{{error}}
 		     	</li>
 		     </ul>
 
@@ -112,7 +112,7 @@
 			<div class="col-md-12" >
 			   <div class="checkboxes" >
 					<input type="checkbox" name="redesign" id="redesign" v-model="formData.redesign"> 
-					<label for="redesign">Intestered in website redesign </label> 
+					<label for="redesign">Interested in website redesign </label>
 				</div>  
 
 				<div class="checkboxes" >
@@ -222,7 +222,7 @@
     			elm.sending = true;
     			$.ajax({
     				type: 'POST',
-    				url: '/longform',
+    				url: '/contact/project',
     				data: elm.formData,
     				success: function(data) {
     					elm.hasError = false;

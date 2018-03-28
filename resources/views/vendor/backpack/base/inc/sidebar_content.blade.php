@@ -29,19 +29,7 @@
     @endhasanyrole
 
 
-
     @hasrole('Administrator')
-
-    <!-- Menu -->
-    <li>
-        <a href="{{ url('admin/menu-item') }}"><i class="fa fa-list"></i> <span>Menu</span></a>
-    </li>
-
-    <!-- Pages -->
-    <li>
-        <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/page') }}"><i
-                    class="fa fa-file-o"></i> <span>Pages</span></a>
-    </li>
 
     <li>
         <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/project') }}"><i
@@ -55,19 +43,6 @@
 
     <!-- Roles & Permissions -->
     <li class="treeview">
-        <a href="#"><i class="fa fa-cogs"></i> <span>Clients & Portals</span> <i
-                    class="fa fa-angle-left pull-right"></i></a>
-        <ul class="treeview-menu">
-            <li><a href="{{ url('admin/client') }}"><i class="fa fa-user"></i> <span>Clients</span></a></li>
-            <li><a href="{{ url('admin/portal') }}"><i class="fa fa-share-alt"></i> <span>Portals</span></a></li>
-            <li><a href="{{ url('admin/portal/data') }}"><i class="fa fa-bar-graph"></i> <span>Portal Data</span></a></li>
-            {{--<li><a href="{{ url('admin/invoice') }}"><i class="fa fa-dollar"></i> <span>Invoices</span></a></li>--}}
-            {{--<li><a href="{{ url('admin/license') }}"><i class="fa fa-key"></i> <span>Licenses</span></a></li>--}}
-        </ul>
-    </li>
-
-    <!-- Roles & Permissions -->
-    <li class="treeview">
         <a href="#"><i class="fa fa-group"></i> <span>Users, Roles &amp; Permissions</span> <i
                     class="fa fa-angle-left pull-right"></i></a>
         <ul class="treeview-menu">
@@ -76,19 +51,6 @@
             <li><a href="{{ url('admin/permission') }}"><i class="fa fa-key"></i>
                     <span>Permissions</span></a></li>
         </ul>
-    </li>
-
-    <!-- Settings -->
-    <li>
-        <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/setting') }}"><i
-                    class="fa fa-cog"></i> <span>Settings</span></a>
-    </li>
-
-
-    <!-- Backups -->
-    <li>
-        <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/backup') }}"><i
-                    class="fa fa-hdd-o"></i> <span>Backups</span></a>
     </li>
 
     <!-- Logs -->

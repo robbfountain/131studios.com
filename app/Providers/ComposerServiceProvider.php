@@ -15,7 +15,6 @@ class ComposerServiceProvider extends ServiceProvider {
         // Using class based composers...
         View::composer('frontend.*', 'App\Http\ViewComposers\FrontendComposer');
     }
-
     /**
      * Register the service provider.
      *

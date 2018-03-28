@@ -162,13 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-        /*
-         * Package Service Providers...
-         */
-
-        //
-
+        
         /*
          * Application Service Providers...
          */
@@ -182,18 +176,6 @@ return [
          * Mailchimp
          */
         Spatie\Newsletter\NewsletterServiceProvider::class,
-
-        /**
-         * View Composer
-         */
-        App\Providers\ComposerServiceProvider::class,
-
-        /*
-         * Passport
-         */
-        Laravel\Passport\PassportServiceProvider::class,
-
-
     ],
 
     /*

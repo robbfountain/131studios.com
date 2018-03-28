@@ -17,3 +17,7 @@ section {
 	paddin: 50px;
 	min-height: 500px;
 }
+
+.swal2-popup {
+	font-size: 1.6rem !important;
+}
