@@ -51,4 +51,9 @@ class Project extends Model {
         return $this->belongsTo(Category::class);
     }
 
+    public function imagePath()
+    {
+        return starts_with('http://', $this->primary_image) ? $this->primary_image : url($this->primary_image);
+    }
+
 }

@@ -12,7 +12,7 @@
             <div class="col-md-8">
                 <div class="project-photos">
                     <a href="#" title="{{$project->title}}" class="mfp-gallery img-hover">
-                        <img src="{{$project->primary_image}}" alt="" >
+                        <img src="{{$project->imagePath()}}" alt="" >
                     </a>
                 </div>
             </div>
