@@ -23,7 +23,6 @@
 
         <!-- Projects -->
         <div class="projects gutter style-4 isotope-wrapper">
-
             <div class="isotope-sizer"></div>
 
             @foreach($projects as $project)
