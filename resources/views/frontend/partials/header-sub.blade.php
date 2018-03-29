@@ -35,11 +35,12 @@
 					
 					<!-- Main Navigation -->
 					<nav id="navigation">
-
 						<ul class="menu alt2" id="responsive">
-							@foreach($menu as $item)
-								<li><a href="{{$item->link}}" class="{{$route == strtolower($item->name) ? 'current' : ''}}">{{$item->name}}</a></li>
-							@endforeach
+							<li><a href="{{route('index')}}">Home</a></li>
+							<li><a href="{{route('about')}}">About Us</a></li>
+							<li><a href="{{route('services')}}">Services</a></li>
+							<li><a href="{{route('projects')}}">Our Work</a></li>
+							<li><a href="{{route('contact')}}">Contact Us</a></li>
 						</ul>
 					</nav>
 

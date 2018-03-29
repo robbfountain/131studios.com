@@ -128,3 +128,7 @@ ul.logos li img:hover {
 	background: #000000;
 	color: white;
 }
+
+.swal2-popup {
+	font-size: 1.6rem !important;
+}

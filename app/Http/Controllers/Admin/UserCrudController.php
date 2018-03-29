@@ -4,10 +4,4 @@ use Backpack\PermissionManager\app\Http\Controllers\UserCrudController as Backpa
 
 class UserCrudController extends BackpackUserCrudController {
 
-	public function __construct() 
-	{
-		$this->middleware('Administrator');
-
-		parent::__construct();
-	} // __construct
 }

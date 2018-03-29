@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('COMPANY_NAME'),
+    'name' => env('APP_NAME'),
 
     /*
     |--------------------------------------------------------------------------
@@ -64,7 +64,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'America/New_York',
 
     /*
     |--------------------------------------------------------------------------
@@ -162,13 +162,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
-        /*
-         * Package Service Providers...
-         */
-
-        //
-
+        
         /*
          * Application Service Providers...
          */
@@ -178,35 +172,10 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-//        /*
-//        * Backpack Service Providers...
-//        */
-//        Backpack\Base\BaseServiceProvider::class,
-//        Backpack\CRUD\CrudServiceProvider::class,
-//        Backpack\PermissionManager\PermissionManagerServiceProvider::class,
-//        Spatie\Backup\BackupServiceProvider::class,
-//        Backpack\BackupManager\BackupManagerServiceProvider::class,
-//        Backpack\LogManager\LogManagerServiceProvider::class,
-//        Backpack\Settings\SettingsServiceProvider::class,
-//        Cviebrock\EloquentSluggable\ServiceProvider::class,
-//        Backpack\PageManager\PageManagerServiceProvider::class,
-
         /**
          * Mailchimp
          */
         Spatie\Newsletter\NewsletterServiceProvider::class,
-
-        /**
-         * View Composer
-         */
-        App\Providers\ComposerServiceProvider::class,
-
-        /*
-         * Passport
-         */
-        Laravel\Passport\PassportServiceProvider::class,
-
-
     ],
 
     /*

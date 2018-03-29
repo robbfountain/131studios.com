@@ -3,6 +3,12 @@
 <html class="ie ie9" lang="en">
 <![endif]-->
 <head>
+    <meta charset="utf-8">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <link rel="apple-touch-icon" sizes="57x57" href="/images/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/images/favicon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/images/favicon/apple-icon-72x72.png">
@@ -17,14 +23,10 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/images/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon/favicon-16x16.png">
     <link rel="manifest" href="/images/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/images/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Basic Page Needs
     ================================================== -->
-    <meta charset="utf-8">
-    <title>@yield('title', env('COMPANY_NAME'))</title>
+
+    <title>@yield('title', config('app.name'))</title>
 
     <!-- Mobile Specific Metas
     ================================================== -->
@@ -84,9 +86,13 @@
                 <div class="col-md-4  col-sm-6">
                     <h4>Navigation</h4>
                     <ul class="footer-links">
-                        @foreach($menu as $item)
-                            <li><a href="{{$item->link}}">{{$item->name}}</a></li>
-                        @endforeach
+                        <ul>
+                            <li><a href="{{route('index')}}">Home</a></li>
+                            <li><a href="{{route('about')}}">About Us</a></li>
+                            <li><a href="{{route('services')}}">Services</a></li>
+                            <li><a href="{{route('projects')}}">Our Work</a></li>
+                            <li><a href="{{route('contact')}}">Contact Us</a></li>
+                        </ul>
                     </ul>
 
                     <ul class="footer-links">
@@ -128,31 +134,30 @@
 <!-- Wrapper / End -->
 <!-- Scripts
 ================================================== -->
+
 <script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
-<script type="text/javascript" src="/js/bootstrap.js"></script>
 <script type="text/javascript" src="/js/app.js"></script>
-<script type="text/javascript" src="/js/jquery.flexslider-min.js"></script>
-<script type="text/javascript" src="/js/owl.carousel.min.js"></script>
-<script type="text/javascript" src="/js/counterup.min.js"></script>
-<script type="text/javascript" src="/js/waypoints.min.js"></script>
-<script type="text/javascript" src="/js/jquery.themepunch.tools.min.js"></script>
-<script type="text/javascript" src="/js/jquery.themepunch.revolution.min.js"></script>
-<script type="text/javascript" src="/js/jquery.isotope.min.js"></script>
-<script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>
-<script type="text/javascript" src="/js/jquery.sticky-kit.min.js"></script>
-<script type="text/javascript" src="/js/jquery.twentytwenty.js"></script>
-<script type="text/javascript" src="/js/jquery.event.move.js"></script>
-<script type="text/javascript" src="/js/jquery.photogrid.js"></script>
-<script type="text/javascript" src="/js/jquery.tooltips.min.js"></script>
-<script type="text/javascript" src="/js/jquery.pricefilter.js"></script>
-<script type="text/javascript" src="/js/jquery.stacktable.js"></script>
-<script type="text/javascript" src="/js/jquery.jpanelmenu.js"></script>
-<script type="text/javascript" src="/js/headroom.min.js"></script>
-<script type="text/javascript" src="/js/modernizr.custom.js"></script>
-<script type="text/javascript" src="/js/puregrid.js"></script>
-<script type="text/javascript" src="/js/flexibility.js"></script>
-<script type="text/javascript" src="/js/sweetalert-dev.js"></script>
+<script type="text/javascript" src="/js/vendor.js"></script>
+{{--<script type="text/javascript" src="/js/app.js"></script>--}}
+{{--<script type="text/javascript" src="/js/jquery.flexslider-min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/owl.carousel.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/waypoints.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/jquery.isotope.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/jquery.magnific-popup.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/jquery.sticky-kit.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/jquery.twentytwenty.js"></script>--}}
+{{--<script type="text/javascript" src="/js/jquery.event.move.js"></script>--}}
+{{--<script type="text/javascript" src="/js/jquery.photogrid.js"></script>--}}
+{{--<script type="text/javascript" src="/js/jquery.tooltips.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/jquery.stacktable.js"></script>--}}
+{{--<script type="text/javascript" src="/js/jquery.jpanelmenu.js"></script>--}}
+{{--<script type="text/javascript" src="/js/headroom.min.js"></script>--}}
+{{--<script type="text/javascript" src="/js/modernizr.custom.js"></script>--}}
+{{--<script type="text/javascript" src="/js/puregrid.js"></script>--}}
+{{--<script type="text/javascript" src="/js/flexibility.js"></script>--}}
+{{--<script type="text/javascript" src="/js/sweetalert-dev.js"></script>--}}
 <script type="text/javascript" src="/js/custom.js"></script>
+
 
 </body>
 </html>

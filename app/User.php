@@ -2,26 +2,27 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Backpack\CRUD\CrudTrait;
-use Laravel\Passport\HasApiTokens;
-use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Foundation\Auth\User as Authenticatable;
 use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
+use Backpack\CRUD\CrudTrait;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
     use Notifiable;
     use CrudTrait;
     use HasRoles;
-    use HasApiTokens;
+
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'password',
     ];
 
     /**
@@ -30,16 +31,16 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     protected static function boot()
     {
         parent::boot();
 
-        static::deleting(function($user) {
-            if($user->hasPortal())
-            {
+        static::deleting(function ($user) {
+            if ($user->hasPortal()) {
                 $user->portal()->delete();
             }
         });
@@ -48,7 +49,7 @@ class User extends Authenticatable
     /**
      * Send the password reset notification.
      *
-     * @param  string  $token
+     * @param  string $token
      * @return void
      */
     public function sendPasswordResetNotification($token)
@@ -61,14 +62,19 @@ class User extends Authenticatable
         return $query->role('client');
     }
 
-    public function portal()
+    public function scopeContact($query)
     {
-        return $this->hasOne(Portal::class, 'client_id');
+        return $query->role('Contact Recipient');
     }
 
     public function hasPortal()
     {
         return $this->portal()->exists();
+    }
+
+    public function portal()
+    {
+        return $this->hasOne(Portal::class, 'client_id');
     }
 
     public function portalData()

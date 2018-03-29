@@ -39,7 +39,7 @@
 
         </div>
 
-        <div class="edge-bg" data-background-image="images/services/development.jpeg"></div>
+        <div class="edge-bg" data-background-image="images/services/development.png"></div>
 
     </div>
     <!-- Image Edge / End -->

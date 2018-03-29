@@ -4,10 +4,5 @@ use Backpack\PageManager\app\Http\Controllers\Admin\PageCrudController as Backpa
 
 class PageCrudController extends BackpackPageCrudController {
 
-	public function __construct() 
-	{
-		$this->middleware('Administrator');
 
-		parent::__construct();
-	} // __construct
 }

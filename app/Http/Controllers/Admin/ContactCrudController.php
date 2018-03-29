@@ -12,7 +12,6 @@ class ContactCrudController extends CrudController
 
     public function setUp()
     {
-
         /*
 		|--------------------------------------------------------------------------
 		| BASIC CRUD INFORMATION

@@ -19,9 +19,22 @@ mix.js('resources/assets/js/app.js', 'public/js')
         'resources/assets/css/icons.css',
         'resources/assets/css/revolutionslider.css',
         'resources/assets/css/colors/blue.css',
-        './node_modules/sweetalert/dist/sweetalert.css',
         'resources/assets/css/custom.css'
-    ],'public/css/all.css')
-    .copy('./node_modules/sweetalert/dist/sweetalert.min.js', 'public/js')
-    .copy('resources/assets/js/theme','public/js')
-    .copy('resources/assets/fonts', 'public/fonts');
+    ],'public/css/all.css');
+
+mix.scripts([
+    'resources/assets/js/jquery.flexslider-min.js',
+    'resources/assets/js/owl.carousel.min.js',
+    'resources/assets/js/jquery.magnific-popup.min.js',
+    'resources/assets/js/jquery.sticky-kit.min.js',
+    'resources/assets/js/jquery.twentytwenty.js',
+    'resources/assets/js/jquery.event.move.js',
+    'resources/assets/js/jquery.tooltips.min.js',
+    'resources/assets/js/jquery.stacktable.js',
+    'resources/assets/js/jquery.jpanelmenu.js',
+    'resources/assets/js/headroom.min.js',
+    'resources/assets/js/modernizr.custom.js',
+    'resources/assets/js/puregrid.js',
+    'resources/assets/js/flexibility.js',
+], 'public/js/vendor.js')
+    .copy('resources/assets/js/custom.js','public/js/custom.js');

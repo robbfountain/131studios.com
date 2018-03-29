@@ -1,25 +1,56 @@
 <?php
 
-abstract class TestCase extends Illuminate\Foundation\Testing\TestCase
+namespace Tests;
+
+use App\Exceptions\Handler;
+use Illuminate\Contracts\Debug\ExceptionHandler;
+use Illuminate\Foundation\Testing\TestCase as BaseTestCase;
+use Illuminate\Support\Facades\DB;
+
+abstract class TestCase extends BaseTestCase
 {
-    /**
-     * The base URL to use while testing the application.
-     *
-     * @var string
-     */
-    protected $baseUrl = 'http://localhost';
+    use CreatesApplication;
 
-    /**
-     * Creates the application.
-     *
-     * @return \Illuminate\Foundation\Application
-     */
-    public function createApplication()
+    protected function setUp()
     {
-        $app = require __DIR__.'/../bootstrap/app.php';
+        parent::setUp();
+        DB::statement('PRAGMA foreign_keys=on;');
+        $this->disableExceptionHandling();
+    }
 
-        $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+    protected function disableExceptionHandling()
+    {
+        $this->oldExceptionHandler = $this->app->make(ExceptionHandler::class);
+        $this->app->instance(ExceptionHandler::class, new class extends Handler
+        {
 
-        return $app;
+            public function __construct()
+            {
+            }
+
+            public function report(\Exception $e)
+            {
+            }
+
+            public function render($request, \Exception $e)
+            {
+                throw $e;
+            }
+        });
+    }
+
+    protected function signIn($user = null)
+    {
+        $user = $user ?: create('App\User');
+        $this->actingAs($user);
+
+        return $this;
+    }
+
+    protected function withExceptionHandling()
+    {
+        $this->app->instance(ExceptionHandler::class, $this->oldExceptionHandler);
+
+        return $this;
     }
 }
