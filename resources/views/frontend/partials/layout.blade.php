@@ -26,7 +26,7 @@
     <!-- Basic Page Needs
     ================================================== -->
 
-    <title>@yield('title', config('app.name'))</title>
+    <title>{{config('app.name')}}</title>
 
     <!-- Mobile Specific Metas
     ================================================== -->

@@ -17,6 +17,7 @@ class Project extends Model {
         'hidden' => 'boolean',
     ];
 
+    protected $with = ['category'];
 
     /**
      * @return array
@@ -43,6 +44,11 @@ class Project extends Model {
     public function scopeVisible($query)
     {
         return $query->where('hidden', false);
+    }
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
     }
 
 }

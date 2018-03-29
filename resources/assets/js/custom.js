@@ -832,28 +832,28 @@ $(document).ready(function(){
 	/*  Isotope
 	/*----------------------------------------------------*/
 
-	// // Isotope Fix
-	// function setWidth() {
-	// 	$('.isotope-wrapper.fw.style-1, .isotope-wrapper.fw.style-2, .isotope-wrapper.fw.style-3').not(".isotope-wrapper.fw.style-3.photo-gallery").width( $(window).width() );
-	// }
-    //
-	// function isotopeInit() {
-	// 	$('.isotope-wrapper').isotope({
-	// 	  itemSelector: '.isotope-item',
-	// 	  percentPosition: false,
-	// 	  masonry: {
-	// 	    // use outer width of grid-sizer for columnWidth
-	// 	    columnWidth: '.isotope-sizer'
-	// 	  }
-	// 	})
-	// }
+	// Isotope Fix
+	function setWidth() {
+		$('.isotope-wrapper.fw.style-1, .isotope-wrapper.fw.style-2, .isotope-wrapper.fw.style-3').not(".isotope-wrapper.fw.style-3.photo-gallery").width( $(window).width() );
+	}
+
+	function isotopeInit() {
+		$('.isotope-wrapper').isotope({
+		  itemSelector: '.isotope-item',
+		  percentPosition: false,
+		  masonry: {
+		    // use outer width of grid-sizer for columnWidth
+		    columnWidth: '.isotope-sizer'
+		  }
+		})
+	}
 
 	// Filters
 	$('#filters a').on('click', function(e){
 	  e.preventDefault();
 
-	  // var selector = $(this).attr('data-filter');
-	  // $('.projects.isotope-wrapper').isotope({ filter: selector });
+	  var selector = $(this).attr('data-filter');
+	  $('.projects.isotope-wrapper').isotope({ filter: selector });
 
 	  $(this).parents('ul').find('a').removeClass('selected');
 	  $(this).addClass('selected');
@@ -863,7 +863,7 @@ $(document).ready(function(){
 	PureGrid.init();
 
 	// isotope select
-	// $('.projects.isotope-wrapper').isotope({ filter: '*'});
+	$('.projects.isotope-wrapper').isotope({ filter: '*'});
 
 
 	/*----------------------------------------------------*/

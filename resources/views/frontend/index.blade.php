@@ -71,12 +71,9 @@
             </div>
 
             <!-- Projects -->
-            <div class="projects gutter style-4 isotope-wrapper">
+            <div class="projects gutter style-4">
 
-                <div class="isotope-sizer"></div>
-
-                <div class="owl-carousel dots projects">
-
+                <div class="owl-carousel  projects">
                 @foreach($projects as $project)
                     <!-- Item -->
                         <div class="item">
@@ -96,10 +93,6 @@
             </div>
         </div>
     </div>
-    <div class="clearfix"></div>
-
-    <br>
-    <br>
 
     <!-- Logos -->
     <div class="container logo-container full-width margin-top-80">

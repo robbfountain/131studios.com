@@ -3,8 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest as StoreRequest;
-use Backpack\NewsCRUD\app\Http\Requests\CategoryRequest as UpdateRequest;
+use App\Http\Requests\CategoryRequest as StoreRequest;
+use App\Http\Requests\CategoryRequest as UpdateRequest;
 use Illuminate\Support\Facades\Auth;
 
 class CategoryCrudController extends CrudController

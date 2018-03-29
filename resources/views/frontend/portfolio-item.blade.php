@@ -11,8 +11,9 @@
             <!-- Photos -->
             <div class="col-md-8">
                 <div class="project-photos">
-                    <a href="#" title="{{$project->primary_image}}" class="mfp-gallery img-hover"><img
-                                src="/{{$project->primary_image}}" alt=""></a>
+                    <a href="#" title="{{$project->title}}" class="mfp-gallery img-hover">
+                        <img src="{{$project->primary_image}}" alt="" >
+                    </a>
                 </div>
             </div>
 
@@ -24,7 +25,7 @@
 
                     <ul class="details">
                         <li><span>Website:</span> <a href="{{$project->url}}" target="_blank">{{$project->url}}</a></li>
-                        <li><span>Category:</span> {{$project->sub_title}}</li>
+                        <li><span>Category:</span> {{$project->category->name}}</li>
                     </ul>
                 </div>
             </div>

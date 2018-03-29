@@ -34,6 +34,15 @@ class ProjectCrudController extends CrudController
             
         ]);
 
+        $this->crud->addField([
+            'name' => 'category_id',
+            'label' => 'Category',
+            'type' => 'select2',
+            'entity' => 'category',
+            'attribute' => 'name',
+            'model' => 'App\Models\Category',
+        ]);
+
         $this->crud->addField([ 
             'name' => 'slug',
             'label' => 'Slug',
