@@ -13,7 +13,7 @@
                     <ul class="option-set margin-bottom-40">
                         <li><a href="#filter" class="selected" data-filter="*">All</a></li>
                         @foreach(App\Models\Category::all() as $category)
-                            <li><a href="#filter" data-filter=".{{$category->name}}">{{$category->name}}</a></li>
+                            <li><a href="#filter" data-filter=".{{kebab_case($category->name)}}">{{$category->name}}</a></li>
                         @endforeach
                     </ul>
                     <div class="clearfix"></div>
@@ -28,7 +28,7 @@
 
             @foreach($projects as $project)
                 <!-- Item -->
-                    <div class="isotope-item {{$project->category->name}}">
+                    <div class="isotope-item {{kebab_case($project->category->name)}}">
                         <a href="{{route('projects.show', $project->slug)}}">
                             <img src="{{$project->primary_image}}" alt="">
                             <div class="overlay">
