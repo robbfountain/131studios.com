@@ -14,7 +14,7 @@ class RemoveSubtitleFromProjects extends Migration
     public function up()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->removeColumn(['sub_title']);
+            $table->dropColumn('sub_title');
         });
     }
 
