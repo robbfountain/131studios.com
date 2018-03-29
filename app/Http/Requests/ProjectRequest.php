@@ -27,7 +27,7 @@ class ProjectRequest extends \Backpack\CRUD\app\Http\Requests\CrudRequest
         return [
             // 'name' => 'required|min:5|max:255'
             'title' => 'required|string',
-            'category' => 'required|integer',
+            'category_id' => 'required|integer',
             'website_url' => 'nullable|string',
             'description' => 'nullable|string',
             'primary_image' => 'required',
