@@ -101,14 +101,14 @@ ul.logos li img:hover {
 
 
 /* Style all font awesome icons */
-.fa {
-	padding: 20px;
-	font-size: 30px;
-	width: 50px;
-	text-align: center;
-	text-decoration: none;
-	border-radius: 50%;
-}
+/*.fa {*/
+	/*padding: 20px;*/
+	/*font-size: 30px;*/
+	/*width: 50px;*/
+	/*text-align: center;*/
+	/*text-decoration: none;*/
+	/*border-radius: 50%;*/
+/*}*/
 
 /* Add a hover effect if you want */
 .fa:hover {
@@ -123,7 +123,7 @@ ul.logos li img:hover {
 	color: white;
 }
 
-/* Twitter */
+/* Github */
 .fa-github {
 	background: #000000;
 	color: white;

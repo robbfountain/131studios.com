@@ -14004,17 +14004,17 @@ a.icon-box-4:hover i { color: #fff; }
  }
 
 .button.github-btn i {
-	font-size: 21px;
+	font-size: 23px;
 	position: absolute;
 	left: 19px;
-	top: 13px;
+	top: 15px;
 }
 
 .button.github-btn {
 	padding-left: 50px;
 	position: relative;
 	background-color: #000;
-	top: 4px;
+	top: 6px;
 }
 
 
@@ -22623,14 +22623,14 @@ ul.logos li img:hover {
 
 
 /* Style all font awesome icons */
-.fa {
-	padding: 20px;
-	font-size: 30px;
-	width: 50px;
-	text-align: center;
-	text-decoration: none;
-	border-radius: 50%;
-}
+/*.fa {*/
+	/*padding: 20px;*/
+	/*font-size: 30px;*/
+	/*width: 50px;*/
+	/*text-align: center;*/
+	/*text-decoration: none;*/
+	/*border-radius: 50%;*/
+/*}*/
 
 /* Add a hover effect if you want */
 .fa:hover {
@@ -22645,7 +22645,7 @@ ul.logos li img:hover {
 	color: white;
 }
 
-/* Twitter */
+/* Github */
 .fa-github {
 	background: #000000;
 	color: white;
