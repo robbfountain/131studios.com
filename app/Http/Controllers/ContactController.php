@@ -31,20 +31,17 @@ class ContactController extends Controller {
     {
         Contact::create($request->except(['newsletter']));
 
-        Mail::to(env('CONTACT_EMAIL'))->send(new ContactFormSubmitted($request, false));
+        Mail::to(User::contact()->get())->send(new ContactFormSubmitted($request, false));
 
-        return [
-            'success' => true,
-            'message' => 'Your message has been sent',
-            'title'   => 'Thank You',
-            'type'    => 'success',
-        ];
+        return response()->json([
+            'status' => 'ok',
+        ]);
     }
 
     public function longForm()
     {
         return view('frontend.longform')->with(['heading' => 'Contact Us']);
-    } // longForm
+    }
 
     public function contact()
     {

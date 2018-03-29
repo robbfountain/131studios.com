@@ -33259,6 +33259,8 @@ module.exports = Component.exports
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert2__ = __webpack_require__(45);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_sweetalert2__);
 //
 //
 //
@@ -33443,68 +33445,58 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      formData: {
-        name: '',
-        email: '',
-        phone: '',
-        website: '',
-        company: '',
-        contact_method: '',
-        project_type: '',
-        project_timeframe: '',
-        project_budget: '',
-        project_description: '',
-        clones: '',
-        ownership: '',
-        workstations: '',
-        servers: '',
-        server_os: '',
-        likes: '',
-        dont_like: '',
-        host: '',
-        redesign: '',
-        components: '',
-        newsletter: true
-      },
-      errors: [],
-      hasError: false,
-      sending: false
-
-    };
-  },
+    data: function data() {
+        return {
+            form: new Form({
+                name: '',
+                email: '',
+                phone: '',
+                website: '',
+                company: '',
+                contact_method: '',
+                project_type: '',
+                project_timeframe: '',
+                project_budget: '',
+                project_description: '',
+                clones: '',
+                ownership: '',
+                workstations: '',
+                servers: '',
+                server_os: '',
+                likes: '',
+                dont_like: '',
+                host: '',
+                redesign: '',
+                components: '',
+                newsletter: true
+            })
+        };
+    },
 
 
-  methods: {
-    submitForm: function submitForm() {
-      var elm = this;
-      elm.sending = true;
-      $.ajax({
-        type: 'POST',
-        url: '/contact/project',
-        data: elm.formData,
-        success: function success(data) {
-          elm.hasError = false;
-
-          swal({
-            title: data.title,
-            text: data.message,
-            type: data.type,
-            confirmButtonText: "Ok"
-          });
-          elm.sending = false;
-        },
-        error: function error(xhr, ajaxOptions, thrownError) {
-          elm.errors = JSON.parse(xhr.responseText);
-          elm.hasError = true;
-          elm.sending = false;
+    methods: {
+        submitForm: function submitForm() {
+            this.form.post('/contact/project').then(function (data) {
+                __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default()('Thank you for contacting us.  We will get back to you shortly.');
+            }).catch(function (error) {});
         }
-      });
     }
-  }
 });
 
 /***/ }),
@@ -33528,8 +33520,8 @@ var render = function() {
             {
               name: "show",
               rawName: "v-show",
-              value: _vm.hasError,
-              expression: "hasError"
+              value: _vm.form.errors.any(),
+              expression: "form.errors.any()"
             }
           ],
           staticClass: "notification error "
@@ -33537,14 +33529,49 @@ var render = function() {
         [
           _vm._m(0),
           _vm._v(" "),
-          _c(
-            "ul",
-            _vm._l(_vm.errors, function(error) {
-              return _c("li", [
-                _vm._v("\n\t\t     \t\t" + _vm._s(error) + "\n\t\t     \t")
-              ])
+          _c("ul", [
+            _c("li", {
+              domProps: { innerHTML: _vm._s(_vm.form.errors.get("name")) }
+            }),
+            _vm._v(" "),
+            _c("li", {
+              domProps: { innerHTML: _vm._s(_vm.form.errors.get("email")) }
+            }),
+            _vm._v(" "),
+            _c("li", {
+              domProps: { innerHTML: _vm._s(_vm.form.errors.get("phone")) }
+            }),
+            _vm._v(" "),
+            _c("li", {
+              domProps: {
+                innerHTML: _vm._s(_vm.form.errors.get("contact_method"))
+              }
+            }),
+            _vm._v(" "),
+            _c("li", {
+              domProps: {
+                innerHTML: _vm._s(_vm.form.errors.get("project_type"))
+              }
+            }),
+            _vm._v(" "),
+            _c("li", {
+              domProps: {
+                innerHTML: _vm._s(_vm.form.errors.get("project_timeframe"))
+              }
+            }),
+            _vm._v(" "),
+            _c("li", {
+              domProps: {
+                innerHTML: _vm._s(_vm.form.errors.get("project_budget"))
+              }
+            }),
+            _vm._v(" "),
+            _c("li", {
+              domProps: {
+                innerHTML: _vm._s(_vm.form.errors.get("project_description"))
+              }
             })
-          )
+          ])
         ]
       ),
       _vm._v(" "),
@@ -33566,8 +33593,8 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.formData.name,
-                    expression: "formData.name"
+                    value: _vm.form.name,
+                    expression: "form.name"
                   }
                 ],
                 attrs: {
@@ -33576,13 +33603,13 @@ var render = function() {
                   id: "name",
                   placeholder: "Your Name"
                 },
-                domProps: { value: _vm.formData.name },
+                domProps: { value: _vm.form.name },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.formData, "name", $event.target.value)
+                    _vm.$set(_vm.form, "name", $event.target.value)
                   }
                 }
               })
@@ -33596,8 +33623,8 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.formData.email,
-                    expression: "formData.email"
+                    value: _vm.form.email,
+                    expression: "form.email"
                   }
                 ],
                 attrs: {
@@ -33606,13 +33633,13 @@ var render = function() {
                   id: "email",
                   placeholder: "Email Address"
                 },
-                domProps: { value: _vm.formData.email },
+                domProps: { value: _vm.form.email },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.formData, "email", $event.target.value)
+                    _vm.$set(_vm.form, "email", $event.target.value)
                   }
                 }
               })
@@ -33626,8 +33653,8 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.formData.phone,
-                    expression: "formData.phone"
+                    value: _vm.form.phone,
+                    expression: "form.phone"
                   }
                 ],
                 attrs: {
@@ -33636,13 +33663,13 @@ var render = function() {
                   id: "phone",
                   placeholder: "Phone Number"
                 },
-                domProps: { value: _vm.formData.phone },
+                domProps: { value: _vm.form.phone },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.formData, "phone", $event.target.value)
+                    _vm.$set(_vm.form, "phone", $event.target.value)
                   }
                 }
               })
@@ -33658,8 +33685,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.formData.contact_method,
-                      expression: "formData.contact_method"
+                      value: _vm.form.contact_method,
+                      expression: "form.contact_method"
                     }
                   ],
                   attrs: { name: "contact_method" },
@@ -33674,7 +33701,7 @@ var render = function() {
                           return val
                         })
                       _vm.$set(
-                        _vm.formData,
+                        _vm.form,
                         "contact_method",
                         $event.target.multiple
                           ? $$selectedVal
@@ -33705,8 +33732,8 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.formData.company,
-                    expression: "formData.company"
+                    value: _vm.form.company,
+                    expression: "form.company"
                   }
                 ],
                 attrs: {
@@ -33715,13 +33742,13 @@ var render = function() {
                   id: "company",
                   placeholder: "Company Name"
                 },
-                domProps: { value: _vm.formData.company },
+                domProps: { value: _vm.form.company },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.formData, "company", $event.target.value)
+                    _vm.$set(_vm.form, "company", $event.target.value)
                   }
                 }
               })
@@ -33735,8 +33762,8 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.formData.website,
-                    expression: "formData.website"
+                    value: _vm.form.website,
+                    expression: "form.website"
                   }
                 ],
                 attrs: {
@@ -33745,13 +33772,13 @@ var render = function() {
                   id: "website",
                   placeholder: "Your Website"
                 },
-                domProps: { value: _vm.formData.website },
+                domProps: { value: _vm.form.website },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
-                    _vm.$set(_vm.formData, "website", $event.target.value)
+                    _vm.$set(_vm.form, "website", $event.target.value)
                   }
                 }
               })
@@ -33767,8 +33794,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.formData.project_type,
-                      expression: "formData.project_type"
+                      value: _vm.form.project_type,
+                      expression: "form.project_type"
                     }
                   ],
                   attrs: { name: "type" },
@@ -33783,7 +33810,7 @@ var render = function() {
                           return val
                         })
                       _vm.$set(
-                        _vm.formData,
+                        _vm.form,
                         "project_type",
                         $event.target.multiple
                           ? $$selectedVal
@@ -33818,8 +33845,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.formData.project_timeframe,
-                      expression: "formData.project_timeframe"
+                      value: _vm.form.project_timeframe,
+                      expression: "form.project_timeframe"
                     }
                   ],
                   attrs: { name: "timeframe" },
@@ -33834,7 +33861,7 @@ var render = function() {
                           return val
                         })
                       _vm.$set(
-                        _vm.formData,
+                        _vm.form,
                         "project_timeframe",
                         $event.target.multiple
                           ? $$selectedVal
@@ -33873,8 +33900,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.formData.project_budget,
-                      expression: "formData.project_budget"
+                      value: _vm.form.project_budget,
+                      expression: "form.project_budget"
                     }
                   ],
                   attrs: { name: "budget" },
@@ -33889,7 +33916,7 @@ var render = function() {
                           return val
                         })
                       _vm.$set(
-                        _vm.formData,
+                        _vm.form,
                         "project_budget",
                         $event.target.multiple
                           ? $$selectedVal
@@ -33926,8 +33953,8 @@ var render = function() {
                   {
                     name: "model",
                     rawName: "v-model",
-                    value: _vm.formData.project_description,
-                    expression: "formData.project_description"
+                    value: _vm.form.project_description,
+                    expression: "form.project_description"
                   }
                 ],
                 attrs: {
@@ -33938,14 +33965,14 @@ var render = function() {
                   placeholder: "Project Description",
                   spellcheck: "true"
                 },
-                domProps: { value: _vm.formData.project_description },
+                domProps: { value: _vm.form.project_description },
                 on: {
                   input: function($event) {
                     if ($event.target.composing) {
                       return
                     }
                     _vm.$set(
-                      _vm.formData,
+                      _vm.form,
                       "project_description",
                       $event.target.value
                     )
@@ -33962,8 +33989,8 @@ var render = function() {
                 {
                   name: "show",
                   rawName: "v-show",
-                  value: _vm.formData.project_type == "web development",
-                  expression: "formData.project_type == 'web development'"
+                  value: _vm.form.project_type == "web development",
+                  expression: "form.project_type == 'web development'"
                 }
               ]
             },
@@ -33974,8 +34001,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.formData.clones,
-                      expression: "formData.clones"
+                      value: _vm.form.clones,
+                      expression: "form.clones"
                     }
                   ],
                   attrs: {
@@ -33986,13 +34013,13 @@ var render = function() {
                     placeholder:
                       "Please list a few other websites that you like which would help us determine an overall design for your site"
                   },
-                  domProps: { value: _vm.formData.clones },
+                  domProps: { value: _vm.form.clones },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.formData, "clones", $event.target.value)
+                      _vm.$set(_vm.form, "clones", $event.target.value)
                     }
                   }
                 })
@@ -34004,8 +34031,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.formData.likes,
-                      expression: "formData.likes"
+                      value: _vm.form.likes,
+                      expression: "form.likes"
                     }
                   ],
                   attrs: {
@@ -34016,13 +34043,13 @@ var render = function() {
                     placeholder:
                       "Please list any aspects of your current website you would like to keep (if applicable)"
                   },
-                  domProps: { value: _vm.formData.likes },
+                  domProps: { value: _vm.form.likes },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.formData, "likes", $event.target.value)
+                      _vm.$set(_vm.form, "likes", $event.target.value)
                     }
                   }
                 })
@@ -34034,8 +34061,8 @@ var render = function() {
                     {
                       name: "model",
                       rawName: "v-model",
-                      value: _vm.formData.dont_like,
-                      expression: "formData.dont_like"
+                      value: _vm.form.dont_like,
+                      expression: "form.dont_like"
                     }
                   ],
                   attrs: {
@@ -34046,13 +34073,13 @@ var render = function() {
                     placeholder:
                       "Please list any aspects of your current website you do not like (if applicable)"
                   },
-                  domProps: { value: _vm.formData.dont_like },
+                  domProps: { value: _vm.form.dont_like },
                   on: {
                     input: function($event) {
                       if ($event.target.composing) {
                         return
                       }
-                      _vm.$set(_vm.formData, "dont_like", $event.target.value)
+                      _vm.$set(_vm.form, "dont_like", $event.target.value)
                     }
                   }
                 })
@@ -34067,8 +34094,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.redesign,
-                        expression: "formData.redesign"
+                        value: _vm.form.redesign,
+                        expression: "form.redesign"
                       }
                     ],
                     attrs: {
@@ -34077,13 +34104,13 @@ var render = function() {
                       id: "redesign"
                     },
                     domProps: {
-                      checked: Array.isArray(_vm.formData.redesign)
-                        ? _vm._i(_vm.formData.redesign, null) > -1
-                        : _vm.formData.redesign
+                      checked: Array.isArray(_vm.form.redesign)
+                        ? _vm._i(_vm.form.redesign, null) > -1
+                        : _vm.form.redesign
                     },
                     on: {
                       change: function($event) {
-                        var $$a = _vm.formData.redesign,
+                        var $$a = _vm.form.redesign,
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
@@ -34091,21 +34118,17 @@ var render = function() {
                             $$i = _vm._i($$a, $$v)
                           if ($$el.checked) {
                             $$i < 0 &&
-                              _vm.$set(
-                                _vm.formData,
-                                "redesign",
-                                $$a.concat([$$v])
-                              )
+                              _vm.$set(_vm.form, "redesign", $$a.concat([$$v]))
                           } else {
                             $$i > -1 &&
                               _vm.$set(
-                                _vm.formData,
+                                _vm.form,
                                 "redesign",
                                 $$a.slice(0, $$i).concat($$a.slice($$i + 1))
                               )
                           }
                         } else {
-                          _vm.$set(_vm.formData, "redesign", $$c)
+                          _vm.$set(_vm.form, "redesign", $$c)
                         }
                       }
                     }
@@ -34122,8 +34145,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.components,
-                        expression: "formData.components"
+                        value: _vm.form.components,
+                        expression: "form.components"
                       }
                     ],
                     attrs: {
@@ -34132,13 +34155,13 @@ var render = function() {
                       id: "components"
                     },
                     domProps: {
-                      checked: Array.isArray(_vm.formData.components)
-                        ? _vm._i(_vm.formData.components, null) > -1
-                        : _vm.formData.components
+                      checked: Array.isArray(_vm.form.components)
+                        ? _vm._i(_vm.form.components, null) > -1
+                        : _vm.form.components
                     },
                     on: {
                       change: function($event) {
-                        var $$a = _vm.formData.components,
+                        var $$a = _vm.form.components,
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
@@ -34147,20 +34170,20 @@ var render = function() {
                           if ($$el.checked) {
                             $$i < 0 &&
                               _vm.$set(
-                                _vm.formData,
+                                _vm.form,
                                 "components",
                                 $$a.concat([$$v])
                               )
                           } else {
                             $$i > -1 &&
                               _vm.$set(
-                                _vm.formData,
+                                _vm.form,
                                 "components",
                                 $$a.slice(0, $$i).concat($$a.slice($$i + 1))
                               )
                           }
                         } else {
-                          _vm.$set(_vm.formData, "components", $$c)
+                          _vm.$set(_vm.form, "components", $$c)
                         }
                       }
                     }
@@ -34168,7 +34191,7 @@ var render = function() {
                   _vm._v(" "),
                   _c("label", { attrs: { for: "components" } }, [
                     _vm._v(
-                      "Interested in custom website components (Ex: Blog, Shopping Cart, Admin Panel, User Accounts) "
+                      "Interested in custom website components (Ex: Blog, Shopping Cart,\n                            Admin Panel, User Accounts) "
                     )
                   ])
                 ]),
@@ -34179,19 +34202,19 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.host,
-                        expression: "formData.host"
+                        value: _vm.form.host,
+                        expression: "form.host"
                       }
                     ],
                     attrs: { type: "checkbox", name: "hosting", id: "hosting" },
                     domProps: {
-                      checked: Array.isArray(_vm.formData.host)
-                        ? _vm._i(_vm.formData.host, null) > -1
-                        : _vm.formData.host
+                      checked: Array.isArray(_vm.form.host)
+                        ? _vm._i(_vm.form.host, null) > -1
+                        : _vm.form.host
                     },
                     on: {
                       change: function($event) {
-                        var $$a = _vm.formData.host,
+                        var $$a = _vm.form.host,
                           $$el = $event.target,
                           $$c = $$el.checked ? true : false
                         if (Array.isArray($$a)) {
@@ -34199,17 +34222,17 @@ var render = function() {
                             $$i = _vm._i($$a, $$v)
                           if ($$el.checked) {
                             $$i < 0 &&
-                              _vm.$set(_vm.formData, "host", $$a.concat([$$v]))
+                              _vm.$set(_vm.form, "host", $$a.concat([$$v]))
                           } else {
                             $$i > -1 &&
                               _vm.$set(
-                                _vm.formData,
+                                _vm.form,
                                 "host",
                                 $$a.slice(0, $$i).concat($$a.slice($$i + 1))
                               )
                           }
                         } else {
-                          _vm.$set(_vm.formData, "host", $$c)
+                          _vm.$set(_vm.form, "host", $$c)
                         }
                       }
                     }
@@ -34232,8 +34255,8 @@ var render = function() {
                 {
                   name: "show",
                   rawName: "v-show",
-                  value: _vm.formData.project_type == "consulting",
-                  expression: "formData.project_type == 'consulting'"
+                  value: _vm.form.project_type == "consulting",
+                  expression: "form.project_type == 'consulting'"
                 }
               ]
             },
@@ -34246,8 +34269,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.servers,
-                        expression: "formData.servers"
+                        value: _vm.form.servers,
+                        expression: "form.servers"
                       }
                     ],
                     attrs: { name: "servers" },
@@ -34262,7 +34285,7 @@ var render = function() {
                             return val
                           })
                         _vm.$set(
-                          _vm.formData,
+                          _vm.form,
                           "servers",
                           $event.target.multiple
                             ? $$selectedVal
@@ -34272,8 +34295,8 @@ var render = function() {
                     }
                   },
                   [
-                    _c("option", { attrs: { value: "0" } }, [
-                      _vm._v("Number of Onsite Servers")
+                    _c("option", { attrs: { value: "" } }, [
+                      _vm._v("Number of Servers")
                     ]),
                     _vm._v(" "),
                     _c("option", { attrs: { value: "< 10" } }, [
@@ -34297,8 +34320,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.server_os,
-                        expression: "formData.server_os"
+                        value: _vm.form.server_os,
+                        expression: "form.server_os"
                       }
                     ],
                     attrs: { name: "os" },
@@ -34313,7 +34336,7 @@ var render = function() {
                             return val
                           })
                         _vm.$set(
-                          _vm.formData,
+                          _vm.form,
                           "server_os",
                           $event.target.multiple
                             ? $$selectedVal
@@ -34350,8 +34373,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.workstations,
-                        expression: "formData.workstations"
+                        value: _vm.form.workstations,
+                        expression: "form.workstations"
                       }
                     ],
                     attrs: { name: "workstations" },
@@ -34366,7 +34389,7 @@ var render = function() {
                             return val
                           })
                         _vm.$set(
-                          _vm.formData,
+                          _vm.form,
                           "workstations",
                           $event.target.multiple
                             ? $$selectedVal
@@ -34403,8 +34426,8 @@ var render = function() {
                       {
                         name: "model",
                         rawName: "v-model",
-                        value: _vm.formData.ownership,
-                        expression: "formData.ownership"
+                        value: _vm.form.ownership,
+                        expression: "form.ownership"
                       }
                     ],
                     attrs: { name: "leaseorbuy" },
@@ -34419,7 +34442,7 @@ var render = function() {
                             return val
                           })
                         _vm.$set(
-                          _vm.formData,
+                          _vm.form,
                           "ownership",
                           $event.target.multiple
                             ? $$selectedVal
@@ -34446,65 +34469,18 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("div", { staticClass: "checkboxes" }, [
-            _c("input", {
-              directives: [
-                {
-                  name: "model",
-                  rawName: "v-model",
-                  value: _vm.formData.newsletter,
-                  expression: "formData.newsletter"
-                }
-              ],
-              attrs: { type: "checkbox", name: "newsletter", id: "newsletter" },
-              domProps: {
-                checked: Array.isArray(_vm.formData.newsletter)
-                  ? _vm._i(_vm.formData.newsletter, null) > -1
-                  : _vm.formData.newsletter
-              },
-              on: {
-                change: function($event) {
-                  var $$a = _vm.formData.newsletter,
-                    $$el = $event.target,
-                    $$c = $$el.checked ? true : false
-                  if (Array.isArray($$a)) {
-                    var $$v = null,
-                      $$i = _vm._i($$a, $$v)
-                    if ($$el.checked) {
-                      $$i < 0 &&
-                        _vm.$set(_vm.formData, "newsletter", $$a.concat([$$v]))
-                    } else {
-                      $$i > -1 &&
-                        _vm.$set(
-                          _vm.formData,
-                          "newsletter",
-                          $$a.slice(0, $$i).concat($$a.slice($$i + 1))
-                        )
-                    }
-                  } else {
-                    _vm.$set(_vm.formData, "newsletter", $$c)
-                  }
-                }
-              }
-            }),
-            _vm._v(" "),
-            _c("label", { attrs: { for: "newsletter" } }, [
-              _vm._v("Occassionally receive email updates from us ")
-            ])
-          ]),
-          _vm._v(" "),
           _c("div", { staticClass: "clearfix" }, [
-            _vm._v("\n\t\t\t      \n\t\t\t")
+            _vm._v("\n                 \n            ")
           ]),
           _vm._v(" "),
-          !_vm.sending
+          !_vm.form.busy
             ? _c("input", {
                 staticClass: "submit button border center margin-top-10",
                 attrs: {
                   type: "submit",
                   value: "Submit",
                   id: "submit",
-                  disabled: _vm.sending
+                  disabled: _vm.form.busy
                 },
                 on: {
                   click: function($event) {
