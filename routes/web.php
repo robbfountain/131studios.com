@@ -1,5 +1,6 @@
 <?php
 
+
 Route::get('/contact','ContactController@contact')->name('contact');
 Route::post('/contact','ContactController@sendMessage')->name('contact.post');
 Route::get('/contact/project','ContactController@longForm')->name('contact.project');
@@ -7,6 +8,7 @@ Route::post('/contact/project','ContactController@submitForm')->name('contact.pr
 Route::get('/longform', function() {
     return redirect()->route('contact.project');
 });
+
 
 Route::get('/','WebsiteController@index')->name('index');
 Route::get('/about','WebsiteController@about')->name('about');

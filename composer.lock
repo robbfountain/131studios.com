@@ -51,6 +51,7 @@
         },
         {
             "name": "backpack/base",
+
             "version": "0.9.1",
             "source": {
                 "type": "git",
@@ -1915,7 +1916,9 @@
             },
             "require": {
                 "doctrine/inflector": "~1.1",
+
                 "dragonmantank/cron-expression": "~2.0",
+
                 "erusev/parsedown": "~1.7",
                 "ext-mbstring": "*",
                 "ext-openssl": "*",
@@ -2471,6 +2474,7 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/paragonie/random_compat/zipball/5da4d3c796c275c55f057af5a643ae297d96b4d8",
                 "reference": "5da4d3c796c275c55f057af5a643ae297d96b4d8",
+
                 "shasum": ""
             },
             "require": {
@@ -2958,6 +2962,7 @@
                 "uuid"
             ],
             "time": "2018-01-20T00:28:24+00:00"
+
         },
         {
             "name": "spatie/laravel-newsletter",
@@ -3018,6 +3023,7 @@
                 "newsletter"
             ],
             "time": "2018-03-10T07:53:32+00:00"
+
         },
         {
             "name": "spatie/laravel-permission",
@@ -4256,7 +4262,7 @@
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
-                "MIT"
+                "proprietary"
             ],
             "authors": [
                 {
