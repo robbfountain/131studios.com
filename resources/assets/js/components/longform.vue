@@ -229,9 +229,12 @@
         methods: {
             submitForm() {
                 this.form.post('/contact/project').then(data => {
-                    swal('Thank you for contacting us.  We will get back to you shortly.')
-                }).catch(error => {
-                });
+                    swal({
+                        type: 'success',
+                        title: 'Thank you',
+                        message: 'Thank you for contacting us.  We will get back to you shortly.'
+                    });
+                }).catch(error => {});
             }
         }
     }

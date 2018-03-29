@@ -863,7 +863,7 @@ $(document).ready(function(){
 	PureGrid.init();
 
 	// isotope select
-	$('.projects.isotope-wrapper').isotope({ filter: '*'});
+	// $('.projects.isotope-wrapper').isotope({ filter: '*'});
 
 
 	/*----------------------------------------------------*/

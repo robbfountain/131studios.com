@@ -1,4 +1,3 @@
-
 window._ = require('lodash');
 window.Popper = require('popper.js').default;
 
@@ -54,3 +53,10 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+window.swal = function (message, level = 'success') {
+    $.sweetAlert({
+        type: level,
+        title: level == 'success' ? 'Success' : 'Oops',
+        text: message
+    });
+};

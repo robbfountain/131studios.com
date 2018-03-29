@@ -18,7 +18,7 @@
                 </ul>
 
             </div> <!-- alert alert-danger -->
-            <form id="contactForm" @submit.prevent >
+            <form id="contactForm" @submit.prevent>
 
                 <div class="row">
                     <div class="col-md-6">
@@ -39,7 +39,8 @@
 
                 <div class="row">
                     <div class="col-md-12">
-                         <textarea name="comments" cols="40" rows="3" id="comments" placeholder="Message" spellcheck="true"
+                         <textarea name="comments" cols="40" rows="3" id="comments" placeholder="Message"
+                                   spellcheck="true"
                                    v-model="form.message"></textarea>
                     </div>
                 </div>
@@ -78,11 +79,11 @@
             submitMessage() {
                 this.form.post('/contact').then(data => {
                     swal({
-                        title: 'Thank you!',
-                        text: 'Your message has been sent.',
                         type: 'success',
-                        confirmButtonText: 'Ok'
+                        title: 'Thank You',
+                        text: 'Your message has been sent.'
                     })
+
                 }).catch(errors => {
                 });
             }
