@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="container" id="app">
-        <div class="row no-gutters">
+        <div class="row margin-top-20">
             <!-- Text Block -->
             <div class="col-md-12 ">
                 <h3 class="headline with-border margin-bottom-45 margin-top-20">Website Hosting</h3>
@@ -83,14 +83,14 @@
                 <!-- Plan #3 -->
                 <div class="plan color-1">
                     <div class="plan-price">
-                        <h3>Extended</h3>
-                        <span class="value">$</span>
+                        <h3>Dedicated Plus</h3>
+                        <span class="value">$30</span>
                         <span class="period">per month & up</span>
                     </div>
                     <div class="plan-features">
                         <ul>
                             <li>Dedicated VPS Server</li>
-                            <li>Dedicated VPS Database Server</li>
+                            <li>Dedicated VPS MySQL Server</li>
                             <li>Nightly Backups</li>
                             <li>SSL Certificate</li>
                             <li>DNS Hosting</li>
