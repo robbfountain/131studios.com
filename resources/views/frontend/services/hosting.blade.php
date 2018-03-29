@@ -96,7 +96,6 @@
                             <li>DNS Hosting</li>
                             <li>Advanced Logging</li>
                         </ul>
-
                     </div>
                 </div>
             </div>
