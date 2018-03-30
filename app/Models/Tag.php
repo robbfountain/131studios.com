@@ -9,22 +9,27 @@ use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Tag extends Model
 {
-    use CrudTrait;
-    use Sluggable, SluggableScopeHelpers;
+    use CrudTrait,Sluggable, SluggableScopeHelpers;
 
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
-
+    /**
+     * @var string
+     */
     protected $table = 'tags';
+
+    /**
+     * @var string
+     */
     protected $primaryKey = 'id';
+
+    /**
+     * @var bool
+     */
     public $timestamps = true;
-    // protected $guarded = ['id'];
+
+    /**
+     * @var array
+     */
     protected $fillable = ['name'];
-    // protected $hidden = [];
-    // protected $dates = [];
 
     /**
      * Return the sluggable configuration array for this model.
@@ -40,36 +45,19 @@ class Tag extends Model
         ];
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
 
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function articles()
     {
         return $this->hasMany('Backpack\NewsCRUD\app\Models\Article');
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
 
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESORS
-    |--------------------------------------------------------------------------
-    */
-
-    // The slug is created automatically from the "name" field if no slug exists.
+    /**
+     * @return mixed
+     */
     public function getSlugOrNameAttribute()
     {
         if ($this->slug != '') {
@@ -78,10 +66,4 @@ class Tag extends Model
 
         return $this->name;
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
 }

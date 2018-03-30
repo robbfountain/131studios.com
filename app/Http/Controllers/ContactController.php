@@ -12,14 +12,12 @@ use Newsletter;
 
 class ContactController extends Controller {
 
+    /**
+     * @param ShortContactForm $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function sendMessage(ShortContactForm $request)
     {
-        //if($request->newsletter == "true") {
-        //    if(!Newsletter::hasMember($request->email)) {
-        //        Newsletter::subscribe($request->email);
-        //    }
-        //}
-
         Mail::to(User::contact()->get())->send(new ContactFormSubmitted($request));
 
         return response()->json([
@@ -27,6 +25,10 @@ class ContactController extends Controller {
         ]);
     }
 
+    /**
+     * @param LongForm $request
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function submitForm(LongForm $request)
     {
         Contact::create($request->except(['newsletter']));
@@ -38,11 +40,17 @@ class ContactController extends Controller {
         ]);
     }
 
+    /**
+     * @return $this
+     */
     public function longForm()
     {
         return view('frontend.longform')->with(['heading' => 'Contact Us']);
     }
 
+    /**
+     * @return $this
+     */
     public function contact()
     {
         return view('frontend.contact')->with(['heading' => 'Contact Us']);

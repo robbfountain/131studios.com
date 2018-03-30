@@ -11,12 +11,21 @@ class Project extends Model {
 
     use CrudTrait, Sluggable, SluggableScopeHelpers;
 
+    /**
+     * @var array
+     */
     protected $guarded = ['id'];
 
+    /**
+     * @var array
+     */
     protected $casts = [
         'hidden' => 'boolean',
     ];
 
+    /**
+     * @var array
+     */
     protected $with = ['category'];
 
     /**
@@ -31,7 +40,10 @@ class Project extends Model {
         ];
     }
 
-    // The slug is created automatically from the "title" field if no slug exists.
+
+    /**
+     * @return mixed
+     */
     public function getSlugOrTitleAttribute()
     {
         if($this->slug != '') {
@@ -41,19 +53,31 @@ class Project extends Model {
         return $this->title;
     }
 
+    /**
+     * @param $query
+     * @return mixed
+     */
     public function scopeVisible($query)
     {
         return $query->where('hidden', false);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function category()
     {
         return $this->belongsTo(Category::class);
     }
 
+    /**
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|mixed|string
+     */
     public function imagePath()
     {
-        return starts_with('http://', $this->primary_image) ? $this->primary_image : url($this->primary_image);
+        return starts_with('http://', $this->primary_image)
+            ? $this->primary_image
+            : url($this->primary_image);
     }
 
 }

@@ -9,25 +9,35 @@ use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Article extends Model
 {
-    use CrudTrait;
-    use Sluggable, SluggableScopeHelpers;
+    use CrudTrait,Sluggable, SluggableScopeHelpers;
 
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
 
+    /**
+     * @var string
+     */
     protected $table = 'articles';
+
+    /**
+     * @var string
+     */
     protected $primaryKey = 'id';
+
+    /**
+     * @var bool
+     */
     public $timestamps = true;
-    // protected $guarded = ['id'];
-    protected $fillable = ['slug', 'title', 'content', 'image', 'status', 'category_id', 'featured', 'date','user_id'];
-    // protected $hidden = [];
-    // protected $dates = [];
+
+    /**
+     * @var array
+     */
+    protected $fillable = ['slug', 'title', 'content', 'image', 'status', 'category_id', 'featured', 'date', 'user_id'];
+
+    /**
+     * @var array
+     */
     protected $casts = [
-        'featured'  => 'boolean',
-        'date'      => 'date',
+        'featured' => 'boolean',
+        'date' => 'date',
     ];
 
     /**
@@ -44,48 +54,39 @@ class Article extends Model
         ];
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
 
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function category()
     {
         return $this->belongsTo('Backpack\NewsCRUD\app\Models\Category', 'category_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
     public function tags()
     {
         return $this->belongsToMany('Backpack\NewsCRUD\app\Models\Tag', 'article_tag');
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
 
+    /**
+     * @param $query
+     * @return mixed
+     */
     public function scopePublished($query)
     {
         return $query->where('status', 'PUBLISHED')
-                    ->where('date', '<=', date('Y-m-d'))
-                    ->orderBy('date', 'DESC');
+                     ->where('date', '<=', date('Y-m-d'))
+                     ->orderBy('date', 'DESC');
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESORS
-    |--------------------------------------------------------------------------
-    */
 
-    // The slug is created automatically from the "title" field if no slug exists.
+    /**
+     * @return mixed
+     */
     public function getSlugOrTitleAttribute()
     {
         if ($this->slug != '') {
@@ -94,10 +95,4 @@ class Article extends Model
 
         return $this->title;
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
 }

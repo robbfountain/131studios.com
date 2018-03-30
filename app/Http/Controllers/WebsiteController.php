@@ -4,14 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 
-class WebsiteController extends Controller {
+class WebsiteController extends Controller
+{
 
     /**
      * @return $this
      */
     public function index()
     {
-        return view('frontend.index')->with(['projects' => Project::visible()->orderBy('lft', 'ASC')->get()]);
+        return view('frontend.index')->with([
+            'projects' => Project::visible()->orderBy('lft', 'ASC')->get()
+        ]);
     }
 
     /**

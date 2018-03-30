@@ -9,22 +9,22 @@ use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Category extends Model
 {
-    use CrudTrait;
-    use Sluggable, SluggableScopeHelpers;
+    use CrudTrait,Sluggable, SluggableScopeHelpers;
 
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
-
+    /**
+     * @var string
+     */
     protected $table = 'categories';
+
+    /**
+     * @var string
+     */
     protected $primaryKey = 'id';
-    // public $timestamps = false;
-    // protected $guarded = ['id'];
+
+    /**
+     * @var array
+     */
     protected $fillable = ['name', 'parent_id'];
-    // protected $hidden = [];
-    // protected $dates = [];
 
     /**
      * Return the sluggable configuration array for this model.
@@ -40,44 +40,44 @@ class Category extends Model
         ];
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
 
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
     public function parent()
     {
         return $this->belongsTo('App\Models\Category', 'parent_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function children()
     {
         return $this->hasMany('App\Models\Category', 'parent_id');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function articles()
     {
         return $this->hasMany('App\Models\Article');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function project()
     {
         return $this->hasMany(Project::class);
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
 
+    /**
+     * @param $query
+     * @return mixed
+     */
     public function scopeFirstLevelItems($query)
     {
         return $query->where('depth', '1')
@@ -85,13 +85,10 @@ class Category extends Model
                     ->orderBy('lft', 'ASC');
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESORS
-    |--------------------------------------------------------------------------
-    */
 
-    // The slug is created automatically from the "name" field if no slug exists.
+    /**
+     * @return mixed
+     */
     public function getSlugOrNameAttribute()
     {
         if ($this->slug != '') {
@@ -100,10 +97,4 @@ class Category extends Model
 
         return $this->name;
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
 }

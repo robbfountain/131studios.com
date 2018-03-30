@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 
-class ProjectController extends Controller {
+class ProjectController extends Controller
+{
 
     /**
      * @param null $slug
@@ -13,10 +14,12 @@ class ProjectController extends Controller {
      */
     public function index($slug = null)
     {
-        return ! is_null($slug)
+        return !is_null($slug)
             ? $this->show($slug)
-            : view('frontend.projects')->with(['heading'  => 'Projects',
-                                               'projects' => Project::visible()->orderBy('lft', 'ASC')->get()]);
+            : view('frontend.projects')->with([
+                'heading' => 'Projects',
+                'projects' => Project::visible()->orderBy('lft', 'ASC')->get()
+            ]);
     }
 
     /**
@@ -28,6 +31,9 @@ class ProjectController extends Controller {
     {
         $project = Project::findBySlug($slug);
 
-        return view('frontend.portfolio-item')->with(['heading' => $project->title, 'project' => $project]);
+        return view('frontend.portfolio-item')->with([
+            'heading' => $project->title,
+            'project' => $project
+        ]);
     }
 }
