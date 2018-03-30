@@ -1,9 +1,6 @@
 <template>
     <div class="col-md-12">
         <section id="contact">
-
-            <h3 class="headline centered margin-bottom-45">Contact Us</h3>
-
             <div class="notification error " v-show="form.errors.any()">
                 <p><span><strong>Oops, something went wrong.</strong></span></p>
                 <ul>
