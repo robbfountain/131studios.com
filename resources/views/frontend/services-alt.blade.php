@@ -19,7 +19,7 @@
                     we can create a custom web application for your business. </p>
 
                 <p>Hosting your website is a breeze. We handle everything. We use powerful virtual private servers which
-                    allow us to maximize resources while reducing costs. Hosting plans start at $15.00 / month.</p>
+                    allow us to maximize resources while reducing costs. Hosting plans start at $10.00 / month.</p>
 
                 <p>Additionally we offer local IT consulting services for small and home-based businesses. We can
                     source, manage and administer your servers, workstations and network equipment so you only have to
