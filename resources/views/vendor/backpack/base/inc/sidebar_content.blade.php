@@ -41,6 +41,11 @@
                     class="fa fa-address-card-o"></i> <span>Contacts</span></a>
     </li>
 
+    <li>
+        <a href="{{ url(config('backpack.base.route_prefix', 'admin').'/clients') }}"><i
+                    class="fa fa-address-card-o"></i> <span>Clients</span></a>
+    </li>
+
     <!-- Roles & Permissions -->
     <li class="treeview">
         <a href="#"><i class="fa fa-group"></i> <span>Users, Roles &amp; Permissions</span> <i

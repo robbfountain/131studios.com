@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Traits\ClientTrait;
 use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
 use Backpack\CRUD\CrudTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -10,7 +11,7 @@ use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use Notifiable,CrudTrait,HasRoles;
+    use Notifiable, CrudTrait, HasRoles, ClientTrait;
 
     /**
      * The attributes that are mass assignable.
@@ -21,6 +22,9 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'account_key',
+        'account_id',
+        'deleted_at',
     ];
 
     /**
@@ -32,20 +36,6 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
-    /**
-     *  Boot
-     */
-    protected static function boot()
-    {
-        parent::boot();
-
-        static::deleting(function ($user) {
-            if ($user->hasPortal()) {
-                $user->portal()->delete();
-            }
-        });
-    }
 
     /**
      * Send the password reset notification.
@@ -74,29 +64,5 @@ class User extends Authenticatable
     public function scopeContact($query)
     {
         return $query->role('Contact Recipient');
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasPortal()
-    {
-        return $this->portal()->exists();
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasOne
-     */
-    public function portal()
-    {
-        return $this->hasOne(Portal::class, 'client_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasManyThrough
-     */
-    public function portalData()
-    {
-        return $this->hasManyThrough(PortalData::class, Portal::class, 'client_id', 'portal_id');
     }
 }

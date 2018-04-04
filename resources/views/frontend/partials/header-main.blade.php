@@ -1,41 +1,63 @@
 <!-- Header
 ================================================== -->
-<div id="main-header" class="fullscreen-nav">
+<div id="main-header">
     <div class="container">
         <div class="row">
             <div class="header">
-                <div class="col-md-2 col-sm-4">
-                    <div id="logo" class="margin-top-25">
-                        <a href="{{route('index')}}"><img src="images/logo-image-55x55.png"
-                                                          class="img-thumbnail img-circle"></a>
+
+                <div class="col-md-2 col-sm-12">
+                    <div id="logo" class="margin-top-25 margin-bottom-10">
+                        <a href="/"><img src="/images/logo-image-30x30.png" class="img-thumbnail img-circle"></a>
                     </div>
                 </div>
-                <div class="col-md-10 col-sm-8">
-                    <!-- Trigger Navigation -->
-                    <div class="fullscreen-nav-trigger">
-						<span class="fullscreen-nav-trigger-box">
-							<span class="fullscreen-nav-trigger-inner"></span>
-						</span>
+
+                <!-- Search Form -->
+                <div class="search-container">
+                    <form action="#" method="get">
+                        <input type="text" name="s" id="s"
+                               onblur="if(this.value==''){this.value='to search type and hit enter';
+}"
+                               onfocus="if(this.value=='to search type and hit enter'){this.value='';
+}"
+                               value="to search type and hit enter"/>
+                    </form>
+                    <div class="close-search"><a class="sl sl-icon-close" href="#"></a></div>
+                </div>
+
+                <div class="col-md-10 col-sm-12">
+
+                    <!-- Mobile Navigation -->
+                    <div class="menu-responsive">
+                        <i class="fa fa-reorder menu-trigger"></i>
+                        <i class="fa fa-search search-trigger"></i>
+                        <form action="#" method="get" class="responsive-search">
+                            <input type="text" onblur="if(this.value==''){this.value='to search type and hit enter';
+}"
+                                   onfocus="if(this.value=='to search type and hit enter'){this.value='';
+}"
+                                   value="to search type and hit enter"/>
+                        </form>
                     </div>
-                    <!-- Menu -->
-                    <nav class="fullscreen-nav-container" data-nav-bg-color="#1b3990" data-nav-bg-opacity="0.96">
-                        <ul>
+
+                    <!-- Main Navigation -->
+                    <nav id="navigation">
+                        <ul class="menu alt2" id="responsive">
                             <li><a href="{{route('index')}}">Home</a></li>
                             <li><a href="{{route('about')}}">About Us</a></li>
                             <li><a href="{{route('services')}}">Services</a></li>
                             <li><a href="{{route('projects')}}">Our Work</a></li>
                             <li><a href="{{route('contact')}}">Contact Us</a></li>
+                            <li><a href="{{route('account')}}t"><i class="fa fa-user fa-lg"></i></a></li>
                         </ul>
                     </nav>
+
                 </div>
                 <div class="clearfix"></div>
             </div>
         </div>
+
     </div>
 </div>
-
-
-<!--  Background -->
 <div class="fullscreen video background" data-color="#1b3990" data-color-opacity="0.92">
     <section poster="images/code.jpg" id="bgvid"></section>
     <div class="parallax-content-container">

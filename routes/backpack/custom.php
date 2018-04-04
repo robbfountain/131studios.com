@@ -19,4 +19,7 @@ Route::group([
     CRUD::resource('project', 'ProjectCrudController');
     CRUD::resource('contact','ContactCrudController');
 
+    Route::get('/clients', 'ClientController@index')->name('client.show');
+    Route::get('/clients/{id}/create','ClientController@store')->name('client.store');
+
 }); // this should be the absolute last line of this file

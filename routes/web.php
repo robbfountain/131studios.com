@@ -16,6 +16,7 @@ Route::get('/services','WebsiteController@services')->name('services');
 Route::get('/services/hosting', 'WebsiteController@hosting')->name('hosting');
 Route::get('/projects','ProjectController@index')->name('projects');
 Route::get('projects/{slug}','ProjectController@show')->name('projects.show');
+Route::get('/account', 'AccountController@index')->name('account');
 
 Route::get('/privacy', function() {
     return view('frontend.privacy')->with(['heading' => 'Privacy Policy']);
