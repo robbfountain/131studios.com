@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use InvoiceNinja\Config as NinjaConfig;
 use InvoiceNinja\Models\Client;
 
@@ -17,6 +18,7 @@ class AccountController extends Controller
     
     public function index()
     {
+        Auth::user();
         return view('account.index')->with(['client' => Client::find(auth()->user()->account_id)]);
     }
 }

@@ -1,5 +1,5 @@
 <?php
-
+Auth::routes();
 
 Route::get('/contact','ContactController@contact')->name('contact');
 Route::post('/contact','ContactController@sendMessage')->name('contact.post');
