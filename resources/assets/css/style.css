@@ -2566,9 +2566,9 @@ body .counter-boxes-inside-parallax .counter-box-icon i,
 ------------------------------------- */
 #backtotop {
 	position: fixed;
-	right: 0;
+	right: 245px;
 	display: none;
-	bottom: 35px;
+	bottom: 0px;
 	margin: 0 35px 0 0;
 	z-index: 9999;
 }
