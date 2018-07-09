@@ -1,4 +1,4 @@
-@extends('frontend.partials.layout')
+@extends('frontend.layouts.app')
 
 @section('header')
     @include('frontend.partials.header-main')
