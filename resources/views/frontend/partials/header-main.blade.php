@@ -47,7 +47,7 @@
                             <li><a href="{{route('services')}}">Services</a></li>
                             <li><a href="{{route('projects')}}">Our Work</a></li>
                             <li><a href="{{route('contact')}}">Contact Us</a></li>
-                            <li><a href="{{route('account')}}t"><i class="fa fa-user fa-lg"></i></a></li>
+                            {{--<li><a href="{{route('account')}}t"><i class="fa fa-user fa-lg"></i></a></li>--}}
                         </ul>
                     </nav>
 
