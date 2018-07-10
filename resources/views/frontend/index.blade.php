@@ -1,9 +1,4 @@
 @extends('frontend.layouts.app')
-
-@section('header')
-    @include('frontend.partials.header-main')
-@stop
-
 @section('content')
     <!-- Featured Services -->
     <div class="container margin-bottom-80" id="app">
