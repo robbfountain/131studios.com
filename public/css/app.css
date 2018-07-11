@@ -10,6 +10,10 @@
   background: #12283a;
   background: url("../images/code.png");
 }
+
+.fb {
+  background: rgb(59, 89, 152);
+}
 /**
  * This injects Tailwind's base styles, which is a combination of
  * Normalize.css and some additional base styles.
