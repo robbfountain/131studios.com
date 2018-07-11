@@ -8,7 +8,7 @@
 
 .banner {
   background: #12283a;
-  background: url("../images/code.jpg");
+  background: url("../images/code.png");
 }
 /**
  * This injects Tailwind's base styles, which is a combination of

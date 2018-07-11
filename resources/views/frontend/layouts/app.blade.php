@@ -19,7 +19,7 @@
     <body class="">
         <div id="app">
             <div class="flex flex-col min-h-screen">
-                <header class="border-b border-grey-dark py-6 bg-blue-darker">
+                <header class="banner border-b border-grey-dark py-6 bg-blue-darker">
                     <div class="container mx-auto">
                         <div class="flex xs:flex-col lg:flex-row justify-between items-center">
                             <!-- Logo -->
