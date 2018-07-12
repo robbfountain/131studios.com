@@ -14,7 +14,7 @@ class ProjectsTableSeeder extends Seeder
     public function run()
     {
         factory(Category::class, 5)->create()->each( function($c) {
-            for($i=0;$i<5;$i++)
+            for($i=1;$i<5;$i++)
             {
                 $c->project()->save(factory(Project::class)->make());
             }

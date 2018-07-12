@@ -6,6 +6,8 @@ body {
     font-family : 'Montserrat', sans-serif;
 }
 
+
+
 .banner {
     background : #12283a;
     background : url("../images/code.png");
@@ -14,3 +16,18 @@ body {
 .fb {
     background: rgb(59, 89, 152);
 }
+
+.transition {
+    transition: 0.5s;
+}
+
+.title:after {
+    padding-bottom: 1rem;
+    display: block;
+    content: '';
+    border-bottom: solid 4px #12283a;
+    transform: scaleX(0.05);
+    transition: transform 250ms ease-in-out;
+}
+
+.title:hover:after {transform: scaleX(.15); }

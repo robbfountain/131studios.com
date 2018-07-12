@@ -33,16 +33,19 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/pro-solid-svg-icons'
 import {far} from '@fortawesome/pro-regular-svg-icons'
 import {fal} from '@fortawesome/pro-light-svg-icons'
+import {fab} from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(fas)
 library.add(far)
 library.add(fal)
+library.add(fab)
 
 /**
  * Global Vue Components
  */
 Vue.component('HeaderNav', require('./components/HeaderNav'));
 Vue.component('fa', FontAwesomeIcon);
+Vue.component('pinned', require('./components/pinned'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

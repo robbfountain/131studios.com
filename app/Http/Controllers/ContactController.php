@@ -16,9 +16,9 @@ class ContactController extends Controller {
      * @param ShortContactForm $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function sendMessage(ShortContactForm $request)
+    public function store(ShortContactForm $request)
     {
-        Mail::to(User::contact()->get())->send(new ContactFormSubmitted($request));
+        Mail::to('robb@131studios.com')->send(new ContactFormSubmitted($request));
 
         return response()->json([
             'status' => 'ok'

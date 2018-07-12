@@ -844,7 +844,7 @@ module.exports = {
     modules: {
         appearance: ['responsive'],
         backgroundAttachment: ['responsive'],
-        backgroundColors: ['responsive', 'hover'],
+        backgroundColors: ['responsive', 'hover','group-hover'],
         backgroundPosition: ['responsive'],
         backgroundRepeat: ['responsive'],
         backgroundSize: ['responsive'],
@@ -877,7 +877,7 @@ module.exports = {
         svgFill: [],
         svgStroke: [],
         textAlign: ['responsive'],
-        textColors: ['responsive', 'hover'],
+        textColors: ['responsive', 'hover', 'group-hover'],
         textSizes: ['responsive'],
         textStyle: ['responsive', 'hover'],
         tracking: ['responsive'],
