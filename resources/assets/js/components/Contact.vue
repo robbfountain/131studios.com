@@ -24,6 +24,10 @@
             <div class="container mx-auto">
                 <div class="flex">
                     <form @submit.prevent class="flex-1 mr-6 border-r pr-4">
+=======
+                <div class="flex justify-between">
+                    <form @submit.prevent>
+>>>>>>> 1cd297027a7c5173d402443b94bcad0c29efd09d
                         <label for="name" class="block text-grey-darker text-sm font-bold mb-1">Your Name</label>
                         <input name="name" type="text" id="name"
                                class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight"
@@ -55,6 +59,7 @@
                             Send Message
                         </button>
                     </form>
+<<<<<<< HEAD
 
                     <div class="flex flex-col mr-6 mt-6">
                         <h2 class="mb-4 font-medium font-grey-darkest">Contact Us</h2>
@@ -78,6 +83,33 @@
         <section>
 
         </section>
+=======
+                    <div>
+                        <div>
+                            <div>
+                                <fa icon="phone"></fa>
+                                (717) 977-3306
+                            </div>
+                            <div>
+                                <fa icon="map-pin"></fa>
+                                P.O. Box 704 | Greencastle | PA | 17225
+                            </div>
+                            <div>
+                                <fa icon="envelope"></fa>
+                                <a href="mailto:contact@131studios.com">contact@131studios.com</a>
+                            </div>
+                        </div>
+                        <div>
+                            <iframe frameborder="0" class="w-full border-t"
+                                    src="https://www.google.com/maps/embed/v1/place?q=Greencastle%20PA&key=AIzaSyDMdkeuPSK3DbuZvCTK4W6WBnPnho_K54k"
+                                    allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+>>>>>>> 1cd297027a7c5173d402443b94bcad0c29efd09d
     </div>
 </template>
 
