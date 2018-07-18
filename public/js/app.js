@@ -35084,7 +35084,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Home.vue"
+Component.options.__file = "resources/assets/js/components/Home.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -35093,9 +35093,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-85ef4954", Component.options)
+    hotAPI.createRecord("data-v-6707e3d4", Component.options)
   } else {
-    hotAPI.reload("data-v-85ef4954", Component.options)
+    hotAPI.reload("data-v-6707e3d4", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -35710,7 +35710,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-85ef4954", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-6707e3d4", module.exports)
   }
 }
 
@@ -35740,7 +35740,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\About.vue"
+Component.options.__file = "resources/assets/js/components/About.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -35749,9 +35749,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-18887826", Component.options)
+    hotAPI.createRecord("data-v-10e9c534", Component.options)
   } else {
-    hotAPI.reload("data-v-18887826", Component.options)
+    hotAPI.reload("data-v-10e9c534", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -35935,7 +35935,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-18887826", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-10e9c534", module.exports)
   }
 }
 
@@ -35965,7 +35965,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Contact.vue"
+Component.options.__file = "resources/assets/js/components/Contact.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -35974,9 +35974,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-1ac7daf9", Component.options)
+    hotAPI.createRecord("data-v-43b63039", Component.options)
   } else {
-    hotAPI.reload("data-v-1ac7daf9", Component.options)
+    hotAPI.reload("data-v-43b63039", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -36079,6 +36079,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
 
 
 
@@ -36088,14 +36090,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             form: new Form({
                 name: '',
                 email: '',
-                message: '',
-                newsletter: true
+                message: ''
             })
         };
     },
 
     methods: {
-        submitMessage: function submitMessage() {
+        send: function send() {
             this.form.post('/contact').then(function () {
                 __WEBPACK_IMPORTED_MODULE_0_sweetalert2___default()({
                     type: 'success',
@@ -39674,6 +39675,7 @@ var render = function() {
           _c(
             "form",
             {
+              staticClass: "flex-1 mr-4 border-r pr-3",
               on: {
                 submit: function($event) {
                   $event.preventDefault()
@@ -39868,7 +39870,7 @@ var render = function() {
                 {
                   staticClass:
                     "mt-8 rounded-full border border-blue-darker text-blue-darker px-4 py-3 hover:bg-blue-darker hover:text-white",
-                  on: { click: _vm.submitMessage }
+                  on: { click: _vm.send }
                 },
                 [
                   _vm._v(
@@ -39879,44 +39881,62 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _c("div", [
-            _c("div", [
-              _c(
-                "div",
-                [
-                  _c("fa", { attrs: { icon: "phone" } }),
-                  _vm._v(
-                    "\n                            (717) 977-3306\n                        "
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                [
-                  _c("fa", { attrs: { icon: "map-pin" } }),
-                  _vm._v(
-                    "\n                            P.O. Box 704 | Greencastle | PA | 17225\n                        "
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                [
-                  _c("fa", { attrs: { icon: "envelope" } }),
-                  _vm._v(" "),
-                  _c(
-                    "a",
-                    { attrs: { href: "mailto:contact@131studios.com" } },
-                    [_vm._v("contact@131studios.com")]
-                  )
-                ],
-                1
-              )
+          _c("div", { staticClass: "flex flex-col mr-6" }, [
+            _c("h2", { staticClass: "mb-4 font-medium font-grey-darkest" }, [
+              _vm._v("Contact Us")
             ]),
+            _vm._v(" "),
+            _c(
+              "p",
+              { staticClass: "mb-4 text-grey-darker" },
+              [
+                _c("fa", {
+                  staticClass: "text-blue-darker",
+                  attrs: { icon: "phone" }
+                }),
+                _vm._v(
+                  "\n                        (717) 977-3306\n                    "
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "p",
+              { staticClass: "mb-4 text-grey-darker" },
+              [
+                _c("fa", {
+                  staticClass: "text-blue-darker",
+                  attrs: { icon: "envelope" }
+                }),
+                _vm._v(" "),
+                _c(
+                  "a",
+                  {
+                    staticClass:
+                      "text-grey-darkest no-underline hover:underline",
+                    attrs: { href: "mailto:robb@131studios.com" }
+                  },
+                  [_vm._v("robb@131studios.com")]
+                )
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "p",
+              { staticClass: "mb-4 text-grey-darker" },
+              [
+                _c("fa", {
+                  staticClass: "text-blue-darker",
+                  attrs: { icon: "map-pin" }
+                }),
+                _vm._v(
+                  "\n                        P.O. Box 704 | Greencastle | PA | 17225\n                    "
+                )
+              ],
+              1
+            ),
             _vm._v(" "),
             _vm._m(1)
           ])
@@ -39947,9 +39967,9 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
+    return _c("div", { staticClass: "mt-6" }, [
       _c("iframe", {
-        staticClass: "w-full border-t",
+        staticClass: "min-h-full border-2",
         attrs: {
           frameborder: "0",
           src:
@@ -39965,7 +39985,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-1ac7daf9", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-43b63039", module.exports)
   }
 }
 
@@ -39995,7 +40015,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\Services.vue"
+Component.options.__file = "resources/assets/js/components/Services.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -40004,9 +40024,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-0b29d7d5", Component.options)
+    hotAPI.createRecord("data-v-00062a95", Component.options)
   } else {
-    hotAPI.reload("data-v-0b29d7d5", Component.options)
+    hotAPI.reload("data-v-00062a95", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -40056,6 +40076,30 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -40067,56 +40111,116 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("div", [
+    _vm._m(0),
+    _vm._v(" "),
+    _c("section", { staticClass: "mt-8" }),
+    _vm._v(" "),
+    _c("section", { staticClass: "mt-8 py-8" }, [
+      _c("div", { staticClass: "container mx-auto" }, [
+        _c("div", { staticClass: "flex" }, [
+          _c(
+            "div",
+            { staticClass: "lg:w-1/2 rounded overflow-hidden shadow-lg mr-8" },
+            [
+              _c("img", {
+                staticClass: "w-full",
+                attrs: { src: "images/code.jpg", alt: "" }
+              }),
+              _vm._v(" "),
+              _c("div", { staticClass: "p-4" }, [
+                _c("h2", { staticClass: "text-2xl text-grey-darkest" }, [
+                  _vm._v("Web Development")
+                ]),
+                _vm._v(" "),
+                _c(
+                  "p",
+                  { staticClass: "text-grey-darkest leading-normal mt-4" },
+                  [
+                    _vm._v(
+                      "\n                            We have over 15 years of web development experience and can custom design almost any\n                            functional aspect of your website. From updating your current website to designing a new\n                            website for your business, we have the creative experience to help. We specialize in\n                            backend development, CMS, Administrator panels, CRM, Contact Forms, Forums, Online\n                            Contests, eCommerce solutions and much more\n                        "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  { staticClass: "mt-8" },
+                  [
+                    _c(
+                      "router-link",
+                      {
+                        staticClass:
+                          "border rounded border-orange-dark px-4 py-2 no-underline text-white bg-orange hover:bg-orange-dark",
+                        attrs: { to: "/quote" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                                Get a Quote\n                                "
+                        ),
+                        _c("fa", { attrs: { icon: "chevron-right" } })
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ])
+            ]
+          ),
+          _vm._v(" "),
+          _vm._m(1)
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", [
-      _c(
-        "div",
-        {
-          staticClass:
-            "banner bg-blue-darker text-center xs:px-2 xs:py-2 lg:py-12"
-        },
-        [
-          _c(
-            "h1",
-            { staticClass: "text-white text-5xl mt-6 mb-1 font-light" },
-            [_vm._v("What We Do")]
-          )
-        ]
-      ),
-      _vm._v(" "),
-      _c("section", { staticClass: "mt-8" }),
-      _vm._v(" "),
-      _c("section", { staticClass: "mt-8 py-8" }, [
-        _c("div", { staticClass: "container mx-auto" }, [
-          _c("div", { staticClass: "flex" }, [
-            _c(
-              "div",
-              { staticClass: "max-w-sm rounded overflow-hidden shadow-lg" },
-              [
-                _c("img", {
-                  staticClass: "w-full",
-                  attrs: { src: "images/code.jpg", alt: "" }
-                }),
-                _vm._v(" "),
-                _c("div", { staticClass: "p-4" }, [
-                  _c("h2", { staticClass: "text-2xl text-grey-darkest" }, [
-                    _vm._v("Web Development")
-                  ]),
-                  _vm._v(" "),
-                  _c("p")
-                ])
-              ]
-            )
-          ])
+    return _c(
+      "div",
+      {
+        staticClass:
+          "banner bg-blue-darker text-center xs:px-2 xs:py-2 lg:py-12"
+      },
+      [
+        _c("h1", { staticClass: "text-white text-5xl mt-6 mb-1 font-light" }, [
+          _vm._v("What We Do")
         ])
-      ])
-    ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "lg:w-1/2 rounded overflow-hidden shadow-lg mr-8" },
+      [
+        _c("img", {
+          staticClass: "w-full",
+          attrs: { src: "images/hosting.jpg", alt: "" }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "p-4" }, [
+          _c("h2", { staticClass: "text-2xl text-grey-darkest" }, [
+            _vm._v("Hosting & Maintenance")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "text-grey-darkest leading-normal mt-4" }, [
+            _vm._v(
+              "\n                            We offer robust hosting services at reasonable prices. We host all of our websites on\n                            our own dedicated VPS servers. We offer SSL certificates for all of our websites as a\n                            standard feature and all of our hosting plans include monthly maintenance.\n                        "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-8" })
+        ])
+      ]
+    )
   }
 ]
 render._withStripped = true
@@ -40124,7 +40228,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-0b29d7d5", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-00062a95", module.exports)
   }
 }
 
@@ -51027,7 +51131,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\HeaderNav.vue"
+Component.options.__file = "resources/assets/js/components/HeaderNav.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -51036,9 +51140,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-18b57222", Component.options)
+    hotAPI.createRecord("data-v-cb5967a2", Component.options)
   } else {
-    hotAPI.reload("data-v-18b57222", Component.options)
+    hotAPI.reload("data-v-cb5967a2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -51076,7 +51180,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-18b57222", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-cb5967a2", module.exports)
   }
 }
 
@@ -51106,7 +51210,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources\\assets\\js\\components\\pinned.vue"
+Component.options.__file = "resources/assets/js/components/pinned.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -51115,9 +51219,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-2217c422", Component.options)
+    hotAPI.createRecord("data-v-1f73bea2", Component.options)
   } else {
-    hotAPI.reload("data-v-2217c422", Component.options)
+    hotAPI.reload("data-v-1f73bea2", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -51168,7 +51272,7 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-2217c422", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-1f73bea2", module.exports)
   }
 }
 

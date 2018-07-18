@@ -22,12 +22,9 @@
         </section>
         <section class="py-8 px-2">
             <div class="container mx-auto">
-                <div class="flex">
-                    <form @submit.prevent class="flex-1 mr-6 border-r pr-4">
-=======
+
                 <div class="flex justify-between">
-                    <form @submit.prevent>
->>>>>>> 1cd297027a7c5173d402443b94bcad0c29efd09d
+                    <form @submit.prevent class="flex-1 mr-4 border-r pr-3">
                         <label for="name" class="block text-grey-darker text-sm font-bold mb-1">Your Name</label>
                         <input name="name" type="text" id="name"
                                class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight"
@@ -54,53 +51,30 @@
                             {{form.errors.get('message')}}
                         </div>
 
-                        <button @click="submitMessage"
+                        <button @click="send"
                                 class="mt-8 rounded-full border border-blue-darker text-blue-darker px-4 py-3 hover:bg-blue-darker hover:text-white">
                             Send Message
                         </button>
                     </form>
-<<<<<<< HEAD
 
-                    <div class="flex flex-col mr-6 mt-6">
+                    <div class="flex flex-col mr-6">
                         <h2 class="mb-4 font-medium font-grey-darkest">Contact Us</h2>
-                        <p class="mb-4 text-grey-darker"><fa icon="phone" class="text-blue-darker"></fa> (717) 977-3306</p>
-                        <p class="mb-4 text-grey-darker"><fa icon="envelope" class="text-blue-darker"></fa>
+                        <p class="mb-4 text-grey-darker">
+                            <fa icon="phone" class="text-blue-darker"></fa>
+                            (717) 977-3306
+                        </p>
+                        <p class="mb-4 text-grey-darker">
+                            <fa icon="envelope" class="text-blue-darker"></fa>
                             <a href="mailto:robb@131studios.com" class="text-grey-darkest no-underline hover:underline">robb@131studios.com</a>
                         </p>
-                        <p class="mb-4 text-grey-darker"><fa icon="map-pin" class="text-blue-darker"></fa> P.O. Box 704 | Greencastle | PA | 17225</p>
+                        <p class="mb-4 text-grey-darker">
+                            <fa icon="map-pin" class="text-blue-darker"></fa>
+                            P.O. Box 704 | Greencastle | PA | 17225
+                        </p>
 
 
-                    <div class="mt-6">
-                        <iframe frameborder="0" class="min-h-full border-2"
-                                src="https://www.google.com/maps/embed/v1/place?q=Greencastle%20PA&key=AIzaSyDMdkeuPSK3DbuZvCTK4W6WBnPnho_K54k"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>
-                </div>
-            </div>
-        </section>
-
-        <section>
-
-        </section>
-=======
-                    <div>
-                        <div>
-                            <div>
-                                <fa icon="phone"></fa>
-                                (717) 977-3306
-                            </div>
-                            <div>
-                                <fa icon="map-pin"></fa>
-                                P.O. Box 704 | Greencastle | PA | 17225
-                            </div>
-                            <div>
-                                <fa icon="envelope"></fa>
-                                <a href="mailto:contact@131studios.com">contact@131studios.com</a>
-                            </div>
-                        </div>
-                        <div>
-                            <iframe frameborder="0" class="w-full border-t"
+                        <div class="mt-6">
+                            <iframe frameborder="0" class="min-h-full border-2"
                                     src="https://www.google.com/maps/embed/v1/place?q=Greencastle%20PA&key=AIzaSyDMdkeuPSK3DbuZvCTK4W6WBnPnho_K54k"
                                     allowfullscreen></iframe>
                         </div>
@@ -108,8 +82,6 @@
                 </div>
             </div>
         </section>
-
->>>>>>> 1cd297027a7c5173d402443b94bcad0c29efd09d
     </div>
 </template>
 
@@ -123,12 +95,11 @@
                     name: '',
                     email: '',
                     message: '',
-                    newsletter: true,
                 }),
             }
         },
         methods: {
-            submitMessage() {
+            send() {
                 this.form.post('/contact').then(() => {
                     swal({
                         type: 'success',
