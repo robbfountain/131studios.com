@@ -20,5 +20,4 @@ if (mix.inProduction()) {
     mix.version();
 }
 
-
 mix.browserSync('131studios.test');

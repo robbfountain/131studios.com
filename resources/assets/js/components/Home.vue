@@ -74,16 +74,13 @@
                     <h2 class="title font-medium text-3xl mt-4 mb-8">Recent Work</h2>
                 </div>
 
-                <div class="flex px-2 xs:flex-col lg:flex-row">
-
+                <div class="flex px-2 xs:flex-col lg:flex-row owl-carousel owl-theme">
                     <!-- Project -->
-                    <div class="shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-6">
-                        <img src="https://loremflickr.com/600/400/all?random=3" alt="" class="">
+                    <div v-for="(project, index) in projects" :key="project.id" class="shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-6">
+                        <img :src="project.primary_image" alt="" class="">
                         <div class="px-6 py-4">
-                            <div class="font-bold text-xl mb-2">Title</div>
-                            <p class="text-grey-darker">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Voluptatibus quia, nulla!
-                                Maiores et perferendis eaque, exercitationem praesentium nihil.
+                            <div class="font-bold text-xl mb-2">{{project.title}}</div>
+                            <p class="text-grey-darker">{{project.description}}
                             </p>
                         </div>
                         <div class="px-6 py-4">
@@ -91,41 +88,6 @@
                             <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
                             <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
 
-                        </div>
-                    </div>
-
-                    <!-- Project -->
-                    <div class="shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-6">
-                        <img src="https://loremflickr.com/600/400/all?ramdom=1" alt="" class="">
-                        <div class="px-6 py-4">
-                            <div class="font-bold text-xl mb-2">Title</div>
-                            <p class="text-grey-darker">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Voluptatibus quia, nulla!
-                                Maiores et perferendis eaque, exercitationem praesentium nihil.
-                            </p>
-                        </div>
-                        <div class="px-6 py-4">
-                            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-                            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-                            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
-
-                        </div>
-                    </div>
-
-                    <!-- Project -->
-                    <div class="shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-6">
-                        <img src="https://loremflickr.com/600/400/all?random=2" alt="" class="">
-                        <div class="px-6 py-4">
-                            <div class="font-bold text-xl mb-2">Title</div>
-                            <p class="text-grey-darker">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Voluptatibus quia, nulla!
-                                Maiores et perferendis eaque, exercitationem praesentium nihil.
-                            </p>
-                        </div>
-                        <div class="px-6 py-4">
-                            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-                            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-                            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
                         </div>
                     </div>
                 </div>
@@ -165,7 +127,10 @@
 
         methods: {
             fetchProjects() {
-                //
+                axios.get('/projects')
+                    .then(({data}) => {
+                        this.projects = data.data;
+                    });
             }
         }
     }

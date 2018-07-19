@@ -8,11 +8,11 @@
 
         </section>
 
-        <section class="mt-8 py-8">
+        <section class="mt-8 py-8 px-2">
             <div class="container mx-auto">
-                <div class="flex">
+                <div class="flex xs:flex-col md:flex-row">
                     <!-- Service Card -->
-                    <div class="lg:w-1/2 rounded overflow-hidden shadow-lg mr-8">
+                    <div class="lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4">
                         <img src="images/code.jpg" alt="" class="w-full">
                         <div class="p-4">
                             <h2 class="text-2xl text-grey-darkest">Web Development</h2>
@@ -34,7 +34,7 @@
 
                     </div>
                     <!-- Service Card -->
-                    <div class="lg:w-1/2 rounded overflow-hidden shadow-lg mr-8">
+                    <div class="lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4">
                         <img src="images/hosting.jpg" alt="" class="w-full">
                         <div class="p-4">
                             <h2 class="text-2xl text-grey-darkest">Hosting & Maintenance</h2>
@@ -43,6 +43,24 @@
                                 our own dedicated VPS servers. We offer SSL certificates for all of our websites as a
                                 standard feature and all of our hosting plans include monthly maintenance.
                             </p>
+                            <div class="mt-8">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card -->
+                    <div class="lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4">
+                        <img src="images/itservices2.jpg" alt="" class="w-full">
+                        <div class="p-4">
+                            <h2 class="text-2xl text-grey-darkest">IT Services</h2>
+                            <p class="text-grey-darkest leading-normal mt-4">
+                                We offer small office and home office IT Consulting services. From server and
+                                workstation procurement, installation and maintenance to networking and IT security
+                                services, we can help your business run smoothly while you focus on what matters most to
+                                you...your business! We offer remote assistance, patching, virus removal and prevention
+                                as well as network security and intrusion prevention. Whatever your IT needs, we can do
+                                it for you. </p>
                             <div class="mt-8">
 
                             </div>

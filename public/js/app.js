@@ -35226,44 +35226,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
@@ -35278,7 +35240,13 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
     methods: {
         fetchProjects: function fetchProjects() {
-            //
+            var _this = this;
+
+            axios.get('/projects').then(function (_ref) {
+                var data = _ref.data;
+
+                _this.projects = data.data;
+            });
         }
     }
 });
@@ -35397,9 +35365,47 @@ var render = function() {
       ]
     ),
     _vm._v(" "),
-    _vm._m(4),
+    _c("section", { staticClass: "py-10 bg-grey-lightest" }, [
+      _c("div", { staticClass: "container mx-auto" }, [
+        _vm._m(4),
+        _vm._v(" "),
+        _c(
+          "div",
+          {
+            staticClass:
+              "flex px-2 xs:flex-col lg:flex-row owl-carousel owl-theme"
+          },
+          _vm._l(_vm.projects, function(project, index) {
+            return _c(
+              "div",
+              {
+                key: project.id,
+                staticClass: "shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-6"
+              },
+              [
+                _c("img", { attrs: { src: project.primary_image, alt: "" } }),
+                _vm._v(" "),
+                _c("div", { staticClass: "px-6 py-4" }, [
+                  _c("div", { staticClass: "font-bold text-xl mb-2" }, [
+                    _vm._v(_vm._s(project.title))
+                  ]),
+                  _vm._v(" "),
+                  _c("p", { staticClass: "text-grey-darker" }, [
+                    _vm._v(
+                      _vm._s(project.description) + "\n                        "
+                    )
+                  ])
+                ]),
+                _vm._v(" "),
+                _vm._m(5, true)
+              ]
+            )
+          })
+        )
+      ])
+    ]),
     _vm._v(" "),
-    _vm._m(5)
+    _vm._m(6)
   ])
 }
 var staticRenderFns = [
@@ -35474,184 +35480,43 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("section", { staticClass: "py-10 bg-grey-lightest" }, [
-      _c("div", { staticClass: "container mx-auto" }, [
-        _c("div", { staticClass: "text-center" }, [
-          _c("h2", { staticClass: "title font-medium text-3xl mt-4 mb-8" }, [
-            _vm._v("Recent Work")
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex px-2 xs:flex-col lg:flex-row" }, [
-          _c(
-            "div",
-            {
-              staticClass: "shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-6"
-            },
-            [
-              _c("img", {
-                attrs: {
-                  src: "https://loremflickr.com/600/400/all?random=3",
-                  alt: ""
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "px-6 py-4" }, [
-                _c("div", { staticClass: "font-bold text-xl mb-2" }, [
-                  _vm._v("Title")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-grey-darker" }, [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n                            Voluptatibus quia, nulla!\n                            Maiores et perferendis eaque, exercitationem praesentium nihil.\n                        "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "px-6 py-4" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                  },
-                  [_vm._v("#photography")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                  },
-                  [_vm._v("#travel")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                  },
-                  [_vm._v("#winter")]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-6"
-            },
-            [
-              _c("img", {
-                attrs: {
-                  src: "https://loremflickr.com/600/400/all?ramdom=1",
-                  alt: ""
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "px-6 py-4" }, [
-                _c("div", { staticClass: "font-bold text-xl mb-2" }, [
-                  _vm._v("Title")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-grey-darker" }, [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n                            Voluptatibus quia, nulla!\n                            Maiores et perferendis eaque, exercitationem praesentium nihil.\n                        "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "px-6 py-4" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                  },
-                  [_vm._v("#photography")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                  },
-                  [_vm._v("#travel")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                  },
-                  [_vm._v("#winter")]
-                )
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-6"
-            },
-            [
-              _c("img", {
-                attrs: {
-                  src: "https://loremflickr.com/600/400/all?random=2",
-                  alt: ""
-                }
-              }),
-              _vm._v(" "),
-              _c("div", { staticClass: "px-6 py-4" }, [
-                _c("div", { staticClass: "font-bold text-xl mb-2" }, [
-                  _vm._v("Title")
-                ]),
-                _vm._v(" "),
-                _c("p", { staticClass: "text-grey-darker" }, [
-                  _vm._v(
-                    "Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n                            Voluptatibus quia, nulla!\n                            Maiores et perferendis eaque, exercitationem praesentium nihil.\n                        "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "px-6 py-4" }, [
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                  },
-                  [_vm._v("#photography")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
-                  },
-                  [_vm._v("#travel")]
-                ),
-                _vm._v(" "),
-                _c(
-                  "span",
-                  {
-                    staticClass:
-                      "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
-                  },
-                  [_vm._v("#winter")]
-                )
-              ])
-            ]
-          )
-        ])
+    return _c("div", { staticClass: "text-center" }, [
+      _c("h2", { staticClass: "title font-medium text-3xl mt-4 mb-8" }, [
+        _vm._v("Recent Work")
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "px-6 py-4" }, [
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+        },
+        [_vm._v("#photography")]
+      ),
+      _vm._v(" "),
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2"
+        },
+        [_vm._v("#travel")]
+      ),
+      _vm._v(" "),
+      _c(
+        "span",
+        {
+          staticClass:
+            "inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker"
+        },
+        [_vm._v("#winter")]
+      )
     ])
   },
   function() {
@@ -40100,6 +39965,24 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({});
 
@@ -40116,12 +39999,15 @@ var render = function() {
     _vm._v(" "),
     _c("section", { staticClass: "mt-8" }),
     _vm._v(" "),
-    _c("section", { staticClass: "mt-8 py-8" }, [
+    _c("section", { staticClass: "mt-8 py-8 px-2" }, [
       _c("div", { staticClass: "container mx-auto" }, [
-        _c("div", { staticClass: "flex" }, [
+        _c("div", { staticClass: "flex xs:flex-col md:flex-row" }, [
           _c(
             "div",
-            { staticClass: "lg:w-1/2 rounded overflow-hidden shadow-lg mr-8" },
+            {
+              staticClass:
+                "lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4"
+            },
             [
               _c("img", {
                 staticClass: "w-full",
@@ -40169,7 +40055,9 @@ var render = function() {
             ]
           ),
           _vm._v(" "),
-          _vm._m(1)
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2)
         ])
       ])
     ])
@@ -40199,7 +40087,9 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c(
       "div",
-      { staticClass: "lg:w-1/2 rounded overflow-hidden shadow-lg mr-8" },
+      {
+        staticClass: "lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4"
+      },
       [
         _c("img", {
           staticClass: "w-full",
@@ -40214,6 +40104,37 @@ var staticRenderFns = [
           _c("p", { staticClass: "text-grey-darkest leading-normal mt-4" }, [
             _vm._v(
               "\n                            We offer robust hosting services at reasonable prices. We host all of our websites on\n                            our own dedicated VPS servers. We offer SSL certificates for all of our websites as a\n                            standard feature and all of our hosting plans include monthly maintenance.\n                        "
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "mt-8" })
+        ])
+      ]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4"
+      },
+      [
+        _c("img", {
+          staticClass: "w-full",
+          attrs: { src: "images/itservices2.jpg", alt: "" }
+        }),
+        _vm._v(" "),
+        _c("div", { staticClass: "p-4" }, [
+          _c("h2", { staticClass: "text-2xl text-grey-darkest" }, [
+            _vm._v("IT Services")
+          ]),
+          _vm._v(" "),
+          _c("p", { staticClass: "text-grey-darkest leading-normal mt-4" }, [
+            _vm._v(
+              "\n                            We offer small office and home office IT Consulting services. From server and\n                            workstation procurement, installation and maintenance to networking and IT security\n                            services, we can help your business run smoothly while you focus on what matters most to\n                            you...your business! We offer remote assistance, patching, virus removal and prevention\n                            as well as network security and intrusion prevention. Whatever your IT needs, we can do\n                            it for you. "
             )
           ]),
           _vm._v(" "),
