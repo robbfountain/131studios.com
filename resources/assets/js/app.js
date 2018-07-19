@@ -12,11 +12,17 @@ require('./bootstrap');
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routes from './routes';
-
 /**
  * Import our form class
  */
 import Form from './classes/Form';
+import {library} from '@fortawesome/fontawesome-svg-core'
+import {fas} from '@fortawesome/pro-solid-svg-icons'
+import {far} from '@fortawesome/pro-regular-svg-icons'
+import {fal} from '@fortawesome/pro-light-svg-icons'
+import {fab} from '@fortawesome/free-brands-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
+
 window.Form = Form;
 
 /**
@@ -29,16 +35,15 @@ const router = new VueRouter({
 });
 
 
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/pro-solid-svg-icons'
-import {far} from '@fortawesome/pro-regular-svg-icons'
-import {fal} from '@fortawesome/pro-light-svg-icons'
-import {fab} from '@fortawesome/free-brands-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 library.add(fas)
 library.add(far)
 library.add(fal)
 library.add(fab)
+
+require('owl.carousel');
+
+require('../../../node_modules/imagesloaded/imagesloaded.pkgd');
+require('../../../node_modules/isotope-layout/dist/isotope.pkgd');
 
 /**
  * Global Vue Components

@@ -14,9 +14,8 @@ class ProjectController extends Controller
      */
     public function index($slug = null)
     {
-
         return response()->json([
-            'data' => Project::visible()->orderBy('lft', 'ASC')->take(6)->get()
+            'data' => Project::visible()->orderBy('lft', 'ASC')->get()
         ]);
     }
 

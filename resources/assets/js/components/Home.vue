@@ -74,22 +74,23 @@
                     <h2 class="title font-medium text-3xl mt-4 mb-8">Recent Work</h2>
                 </div>
 
-                <div class="flex px-2 xs:flex-col lg:flex-row owl-carousel owl-theme">
-                    <!-- Project -->
-                    <div v-for="(project, index) in projects" :key="project.id" class="shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-6">
-                        <img :src="project.primary_image" alt="" class="">
-                        <div class="px-6 py-4">
-                            <div class="font-bold text-xl mb-2">{{project.title}}</div>
-                            <p class="text-grey-darker">{{project.description}}
-                            </p>
-                        </div>
-                        <div class="px-6 py-4">
-                            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-                            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-                            <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
+                <div class="owl-carousel owl-theme">
+                        <!-- Project -->
+                        <div v-for="(project, index) in projects" :key="project.id"
+                             class="shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-6">
+                            <img :src="project.primary_image" alt="" class="">
+                            <div class="px-6 py-4">
+                                <div class="font-bold text-xl mb-2">{{project.title}}</div>
+                                <p class="text-grey-darker">{{project.description}}
+                                </p>
+                            </div>
+                            <div class="px-6 py-4">
+                                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
+                                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
+                                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
 
+                            </div>
                         </div>
-                    </div>
                 </div>
             </div>
         </section>
@@ -115,6 +116,7 @@
 
 <script>
     export default {
+
         data() {
             return {
                 projects: {},
@@ -123,6 +125,26 @@
 
         created() {
             this.fetchProjects();
+        },
+
+        mounted(){
+            var owl = $('.owl-carousel');
+            owl.owlCarousel({
+                items: 3,
+                loop: true,
+                margin: 10,
+                autoplay: true,
+                autoplayTimeout: 3000,
+                autoplayHoverPause: true,
+                nav: true
+            });
+            $('.play').on('click', function () {
+                owl.trigger('play.owl.autoplay', [3000])
+            })
+            $('.stop').on('click', function () {
+                owl.trigger('stop.owl.autoplay')
+            });
+
         },
 
         methods: {

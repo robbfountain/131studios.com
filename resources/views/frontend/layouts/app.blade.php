@@ -19,7 +19,7 @@
     <body>
         <div id="app">
             <div class="flex flex-col min-h-screen">
-                <pinned>
+                {{--<pinned>--}}
                     <header class="border-b border-grey-dark py-6 bg-blue-darker">
                         <div class="container mx-auto">
                             <div class="flex xs:flex-col lg:flex-row justify-between items-center">
@@ -66,10 +66,13 @@
                             </div>
                         </div>
                     </header>
-                </pinned>
+                {{--</pinned>--}}
 
                 <div class="flex-1">
-                    <router-view></router-view>
+                    <transition name="slide">
+                        <router-view></router-view>
+                    </transition>
+
                 </div>
 
                 <footer class="bg-blue-darker pt-8 pb-4 flex flex-col text-grey-light leading-normal border-t px-2">
@@ -147,6 +150,7 @@
         </div>
 
         <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
+        <script type="text/javascript" src="{{mix('js/custom.js')}}"></script>
 
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
