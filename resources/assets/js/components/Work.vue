@@ -1,19 +1,25 @@
 <template>
     <section class="py-8 px-2">
         <div class="filters-button-group text-center border-b pb-6 mb-8">
-            <button class="border rounded-full bg-blue-darker text-white mr-6 px-4 py-2" data-filter="*">all</button>
-            <button class="border rounded-full bg-blue-darker text-white mr-6 px-4 py-2" data-filter=".sint">sint</button>
-            <button class="border rounded-full bg-blue-darker text-white mr-6 px-4 py-2" data-filter=".odit">odit</button>
-            <button class="border rounded-full bg-blue-darker text-white mr-6 px-4 py-2" data-filter=".pleb">pleb</button>
+            <button class="border rounded-full bg-transparent border-transparent text-grey-darkest hover:bg-blue-darkest hover:text-white hover:border-blue-darkest uppercase text-xs px-4 py-2 font-medium mr-3" data-filter="*">all</button>
+            <button class="border rounded-full bg-transparent border-transparent text-grey-darkest hover:bg-blue-darkest hover:text-white hover:border-blue-darkest uppercase text-xs px-4 py-2 font-medium mr-3" data-filter="web-development">Web Development</button>
+            <button class="border rounded-full bg-transparent border-transparent text-grey-darkest hover:bg-blue-darkest hover:text-white hover:border-blue-darkest uppercase text-xs px-4 py-2 font-medium mr-3" data-filter="application-development">Application Development</button>
+            <button class="border rounded-full bg-transparent border-transparent text-grey-darkest hover:bg-blue-darkest hover:text-white hover:border-blue-darkest uppercase text-xs px-4 py-2 font-medium mr-3" data-filter="other">Other</button>
+
         </div>
 
         <div class="container mx-auto">
             <div class="text-center">
                 <h2 class="title font-medium text-3xl my-4">Our Work</h2>
             </div>
-            <div class="text-center grid">
-                    <img v-for="(project, index) in projects" :key="project.id" class="grid-item max-w-xs" :src="project.primary_image" :class="project.category.name">
-                <!-- Project -->
+            <div class="grid">
+                <div v-for="(project, index) in projects" :key="project.id" class="grid-item max-w-xs flex flex-col" :class="project.category.slug">
+                    <img :src="project.primary_image" >
+                    <div class="bg-blue-darker p-4 text-center text-4xl text-white">
+                        {{project.title}}
+                    </div>
+                </div>
+                     <!-- Project -->
                 <!--<div v-for="(project, index) in projects" :key="project.id"-->
                      <!--class="grid-item shadow-lg rounded overflow-hidden xs:mb-4 lg:mr-1 w-1/4"-->
                     <!--:class="project.category.name">-->
@@ -37,33 +43,19 @@
     export default {
         data() {
             return {
-                projects: {}
+                projects: {},
+                categories: {},
             }
         },
         mounted() {
             this.fetch();
-
-            var $grid = $('.grid');
-            $grid.imagesLoaded(function () {
-                $grid.isotope({
-                    itemSelector: ".grid-item",
-                    masonry: {
-                        columnWidth: 100
-                    }
-                });
-            });
-
-            $('.filters-button-group').on('click', 'button', function () {
-                var filterValue = $(this).attr('data-filter');
-                // use filterFn if matches value
-                $grid.isotope({filter: filterValue});
-            });
         },
         methods: {
             fetch() {
                 axios.get('/projects')
                     .then(({data}) => {
                         this.projects = data.data;
+                        this.categories = data.categories
                     })
             }
         }

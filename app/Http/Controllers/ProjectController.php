@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
 use App\Models\Project;
 
 class ProjectController extends Controller
@@ -15,7 +16,8 @@ class ProjectController extends Controller
     public function index($slug = null)
     {
         return response()->json([
-            'data' => Project::visible()->orderBy('lft', 'ASC')->get()
+            'data' => Project::visible()->orderBy('lft', 'ASC')->get(),
+            'categories' => Category::all(),
         ]);
     }
 

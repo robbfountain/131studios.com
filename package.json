@@ -31,6 +31,7 @@
     "@fortawesome/pro-regular-svg-icons": "^5.1.0",
     "@fortawesome/pro-solid-svg-icons": "^5.1.0",
     "@fortawesome/vue-fontawesome": "0.1.0-5",
+    "animate.css": "^3.6.1",
     "imagesloaded": "^4.1.4",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.3.1",

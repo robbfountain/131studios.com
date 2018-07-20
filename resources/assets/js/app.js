@@ -48,6 +48,7 @@ require('../../../node_modules/isotope-layout/dist/isotope.pkgd');
 /**
  * Global Vue Components
  */
+Vue.component('IndexPage',require('./components/IndexPage'));
 Vue.component('HeaderNav', require('./components/HeaderNav'));
 Vue.component('fa', FontAwesomeIcon);
 Vue.component('pinned', require('./components/pinned'));

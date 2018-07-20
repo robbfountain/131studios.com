@@ -127,26 +127,6 @@
             this.fetchProjects();
         },
 
-        mounted(){
-            var owl = $('.owl-carousel');
-            owl.owlCarousel({
-                items: 3,
-                loop: true,
-                margin: 10,
-                autoplay: true,
-                autoplayTimeout: 3000,
-                autoplayHoverPause: true,
-                nav: true
-            });
-            $('.play').on('click', function () {
-                owl.trigger('play.owl.autoplay', [3000])
-            })
-            $('.stop').on('click', function () {
-                owl.trigger('stop.owl.autoplay')
-            });
-
-        },
-
         methods: {
             fetchProjects() {
                 axios.get('/projects')
