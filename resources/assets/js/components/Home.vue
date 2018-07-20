@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page">
 
         <div class="banner bg-blue-darker text-center xs:px-2 xs:py-2 lg:py-12">
             <img src="/images/logo-hero.png" alt="">

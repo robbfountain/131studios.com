@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="page">
         <div class="banner bg-blue-darker text-center xs:px-2 xs:py-2 lg:py-12">
             <h1 class="text-white text-5xl mt-6 mb-1 font-light">About Us</h1>
         </div>

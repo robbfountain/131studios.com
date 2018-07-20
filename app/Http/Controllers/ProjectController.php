@@ -17,7 +17,6 @@ class ProjectController extends Controller
     {
         return response()->json([
             'data' => Project::visible()->orderBy('lft', 'ASC')->get(),
-            'categories' => Category::all(),
         ]);
     }
 

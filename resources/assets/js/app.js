@@ -43,7 +43,7 @@ library.add(fab)
 require('owl.carousel');
 
 require('../../../node_modules/imagesloaded/imagesloaded.pkgd');
-require('../../../node_modules/isotope-layout/dist/isotope.pkgd');
+require('../../../node_modules/masonry-layout/dist/masonry.pkgd');
 
 /**
  * Global Vue Components

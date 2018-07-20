@@ -69,7 +69,7 @@
             {{--</pinned>--}}
 
             <div class="flex-1">
-                <transition name="router-anim" enter-active-class="animated slideInLeft" leave-active-class="animated slideInRight">
+                <transition name="router-anim" enter-active-class="animated slideInLeft" leave-active-class="animated slideOutRight">
                     <router-view></router-view>
                 </transition>
 
