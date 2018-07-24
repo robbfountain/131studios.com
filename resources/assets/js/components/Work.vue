@@ -8,11 +8,11 @@
                 <div class="text-center">
                     <h2 class="title font-medium text-3xl my-4">Our Work</h2>
                 </div>
-                <div class="grid text-center">
+                <div class="text-center flex justify-between flex-wrap">
                     <div v-for="(project, index) in projects" :key="project.id"
-                         class="grid-item max-w-sm flex flex-col">
+                         class="max-w-sm w-1/4 flex flex-col">
                         <img :src="project.primary_image">
-                        <div class="bg-blue-darker p-4 text-center text-4xl text-white">
+                        <div class="bg-blue-darker p-4 text-center text-2xl text-white">
                             {{project.title}}
                         </div>
                     </div>

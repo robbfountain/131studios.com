@@ -25,10 +25,10 @@
                     <div class="flex xs:flex-col lg:flex-row justify-between items-center">
                         <!-- Logo -->
                         <div class="text-xl ">
-                            <a href="/" class="text-white no-underline flex items-center">
+                            <router-link to="/" class="text-white no-underline flex items-center">
                                 <img src="/images/logo-image-30x30.png" class="rounded-full p-1 bg-white mr-2">
                                 <span>131 Studios</span>
-                            </a>
+                            </router-link>
                         </div>
 
                         <!-- Main Navigation -->
