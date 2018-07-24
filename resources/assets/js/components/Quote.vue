@@ -1,175 +1,189 @@
+`
 <template>
     <div>
         <section class="px-2 py-8">
             <div class="container mx-auto">
                 <form id="contactForm" @submit.prevent>
-                    <div class="flex flex-wrap">
-                        <div class="w-1/4 mr-3 my-3">
-                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3 leading-tight"
+                    <div class="flex flex-col flex-wrap">
+                        <div class="mr-3 my-3">
+                            <label class="mt-4 text-xs uppercase font-bold" :class="form.errors.has('name') ? 'text-red' : 'text-grey-darker'" for="name">Your Name</label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 leading-tight hover:border-blue-darkest"
+                                   :class="form.errors.has('name') ? 'border-red' : 'border-grey'"
                                    name="name" type="text" id="name" placeholder="Your Name" v-model="form.name"/>
+                            <span class="text-xs text-red italic font-semibold" v-show="form.errors.has('name')">
+                                {{form.errors.get('name')}}
+                            </span>
                         </div>
 
-                        <div class="w-1/4 mr-3 my-3">
-                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3 leading-tight"
+                        <div class="mr-3 my-3">
+                            <label class="mt-4 text-xs uppercase font-bold" :class="form.errors.has('email') ? 'text-red' : 'text-grey-darker'" for="email">Your Email</label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 leading-tight hover:border-blue-darkest"
+                                   :class="form.errors.has('email') ? 'border-red' : 'border-grey'"
                                    name="email" type="email" id="email" placeholder="Email Address"
                                    v-model="form.email"/>
+                            <span class="text-xs text-red italic font-semibold" v-show="form.errors.has('email')">
+                                {{form.errors.get('email')}}
+                            </span>
                         </div>
 
-                        <div class="w-1/4 mr-3 my-3">
-                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3 leading-tight"
+                        <div class="mr-3 my-3">
+                            <label class="mt-4 text-xs uppercase font-bold" :class="form.errors.has('phone') ? 'text-red' : 'text-grey-darker'" for="phone">Phone Number</label>
+                            <masked-input mask="(111) 111-1111" class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 leading-tight hover:border-blue-darkest"
+                                   :class="form.errors.has('phone') ? 'border-red' : 'border-grey'"
                                    name="phone" type="text" id="phone" placeholder="Phone Number"
-                                   v-model="form.phone"/>
+                                          v-model="form.phone"/>
+                            <span class="text-xs text-red italic font-semibold" v-show="form.errors.has('phone')">
+                                {{form.errors.get('phone')}}
+                            </span>
                         </div>
 
-                        <div class="w-1/4 mr-3 my-3">
-                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3 leading-tight"
+                        <div class="mr-3 my-3">
+                            <label class="mt-4 text-xs text-grey-darker uppercase font-bold" for="company">Company</label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey rounded py-3 px-4 leading-tight hover:border-blue-darkest"
                                    name="company" type="text" id="company" placeholder="Company Name"
                                    v-model="form.company"/>
                         </div>
 
-                        <div class="w-1/4 mr-3 my-3">
-                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-red rounded py-3 px-4 mb-3 leading-tight"
+                        <div class="mr-3 my-3">
+                            <label class="mt-4 text-xs text-grey-darker uppercase font-bold" for="website">Your Website</label>
+                            <input class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey rounded py-3 px-4 leading-tight hover:border-blue-darkest"
                                    name="website" type="text" id="website" placeholder="Your Website"
                                    v-model="form.website"/>
                         </div>
 
-                        <div class="w-1/4 mr-3 my-3">
-                            <select class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight"
+                        <div class="mr-3 my-3 inline-block relative">
+                            <label class="mt-4 text-xs text-grey-darker uppercase font-bold" :class="form.errors.has('contact_method') ? 'text-red' : 'text-grey-darker'" for="contact_method">Best Contact Method</label>
+                            <select class="block appearance-none w-full bg-grey-lighter border border-grey hover:border-grey px-4 py-3 pr-8 rounded shadow leading-tight hover:border-blue-darkest"
+                                    :class="form.errors.has('contact_method') ? 'border-red' : 'border-grey'"
                                     name="contact_method" v-model="form.contact_method">
                                 <option value=''>Best Contact Method</option>
                                 <option value='email'>Email</option>
                                 <option value='phone'>Phone</option>
                             </select>
+                            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
                         </div>
+                        <span class="text-xs text-red italic font-semibold" v-show="form.errors.has('contact_method')">
+                                {{form.errors.get('contact_method')}}
+                            </span>
 
-                        <div class="w-1/4 mr-3 my-3">
-                            <select class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight"
-                                    name="type" v-model="form.project_type">
-                                <option value="">Select Project Type</option>
-                                <option value="web development">Web Development</option>
-                                <option value="consulting">IT Consulting</option>
-                            </select>
-                        </div>
+                        <!--<div class="mr-3 my-3">-->
+                        <!--<label class="mt-4 text-xs text-grey-darker uppercase font-bold" for="project_type">Project Type</label>-->
+                        <!--<select class="block appearance-none w-full bg-grey-lighter border border-grey hover:border-grey px-4 py-3 pr-8 rounded shadow leading-tight hover:border-blue-darkest"-->
+                        <!--name="type" v-model="form.project_type">-->
+                        <!--<option value="">Select Project Type</option>-->
+                        <!--<option value="web development">Web Development</option>-->
+                        <!--<option value="consulting">IT Consulting</option>-->
+                        <!--</select>-->
+                        <!--</div>-->
 
-                        <div class="w-1/4 mr-3 my-3">
-                            <select class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight"
+                        <div class="mr-3 my-3 inline-block relative">
+                            <label class="mt-4 text-xs uppercase font-bold" :class="form.errors.has('project_timeframe') ? 'text-red' : 'text-grey-darker'" for="timeframe">Time Frame</label>
+                            <select class="block appearance-none w-full bg-grey-lighter border hover:border-grey px-4 py-3 pr-8 rounded shadow leading-tight hover:border-blue-darkest"
+                                    :class="form.errors.has('project_timeframe') ? 'border-red' : 'border-grey'"
                                     name="timeframe" v-model="form.project_timeframe">
                                 <option value="">Select Project Timeframe</option>
                                 <option value="immediately">Immediately</option>
                                 <option value="3 to 6 months">3 to 6 Months</option>
                                 <option value="> 6 months">More than 6 Months</option>
                             </select>
+                            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
                         </div>
+                        <span class="text-xs text-red italic font-semibold" v-show="form.errors.has('project_timeframe')">
+                                {{form.errors.get('project_timeframe')}}
+                            </span>
 
-                        <div class="w-1/4 mr-3 my-3">
-                            <select class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight"
+                        <div class="mr-3 my-3 inline-block relative">
+                            <label class="mt-4 text-xs uppercase font-bold" :class="form.errors.has('project_timeframe') ? 'text-red' : 'text-grey-darker'" for="budget">Your Budget</label>
+                            <select class="block appearance-none w-full bg-grey-lighter border hover:border-grey px-4 py-3 pr-8 rounded shadow leading-tight hover:border-blue-darkest"
+                                    :class="form.errors.has('project_timeframe') ? 'border-red' : 'border-grey'"
                                     name="budget" v-model="form.project_budget">
                                 <option value="">Project Budget</option>
                                 <option value="< 1000">Under $1000.00 USD</option>
                                 <option value="1000 to 2000">$1000.00 to $2000.00 USD</option>
                                 <option value="> 2000">Over $2000.00 USD</option>
                             </select>
+                            <div class="pointer-events-none absolute pin-y pin-r flex items-center px-2 text-grey-darker">
+                                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
                         </div>
+                        <span class="text-xs text-red italic font-semibold" v-show="form.errors.has('project_budget')">
+                                {{form.errors.get('project_budget')}}
+                            </span>
 
 
+                        <label class="mt-4 text-xs text-grey-darker uppercase font-bold" :class="form.errors.has('project_description') ? 'text-red' : 'text-grey-darker'" for="description">Project Description</label>
                         <textarea
-                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight"
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border rounded py-3 px-4 leading-tight hover:border-blue-darkest"
                                 name="description" cols="40" rows="3" id="description"
+                                :class="form.errors.has('project_description') ? 'border-red' : 'border-grey'"
                                 placeholder="Project Description" spellcheck="true"
                                 v-model="form.project_description"></textarea>
+                        <span class="text-xs text-red italic font-semibold" v-show="form.errors.has('project_description')">
+                                {{form.errors.get('project_description')}}
+                            </span>
 
 
-                        <textarea v-show="form.project_type == 'web development'"
-                                  class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight"
-                                  name="clones" cols="40" rows="3" id="clones"
-                                  placeholder="Please list a few other websites that you like which would help us determine an overall design for your site"
-                                  v-model="form.clones"
+                        <label class="mt-4 text-xs text-grey-darker uppercase font-bold" for="clones">Websites you Like</label>
+                        <textarea
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey rounded py-3 px-4 leading-tight hover:border-blue-darkest"
+                                name="clones" cols="40" rows="3" id="clones"
+                                placeholder="Please list a few other websites that you like which would help us determine an overall design for your site"
+                                v-model="form.clones"
                         ></textarea>
 
 
-                        <textarea v-show="form.project_type == 'web development'"
-                                  class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight"
-                                  name="likes" cols="40" rows="3" id="like"
-                                  placeholder="Please list any aspects of your current website you would like to keep (if applicable)"
-                                  v-model="form.likes"></textarea>
+                        <label class="mt-4 text-xs text-grey-darker uppercase font-bold" for="likes">What do you like about your current website?</label>
+                        <textarea
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey rounded py-3 px-4 leading-tight hover:border-blue-darkest"
+                                name="likes" cols="40" rows="3" id="like"
+                                placeholder="Please list any aspects of your current website you would like to keep (if applicable)"
+                                v-model="form.likes"></textarea>
 
 
-                        <textarea v-show="form.project_type == 'web development'"
-                                  class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey-lighter rounded py-3 px-4 mb-3 leading-tight"
-                                  name="dontlike" cols="40" rows="3" id="dontlike"
-                                  placeholder="Please list any aspects of your current website you do not like (if applicable)"
-                                  v-model="form.dont_like"></textarea>
+                        <label class="mt-4 text-xs text-grey-darker uppercase font-bold" for="dontlike">What do you NOT like about your current website?</label>
+                        <textarea
+                                class="appearance-none block w-full bg-grey-lighter text-grey-darker border border-grey rounded py-3 px-4 leading-tight hover:border-blue-darkest"
+                                name="dontlike" cols="40" rows="3" id="dontlike"
+                                placeholder="Please list any aspects of your current website you do not like (if applicable)"
+                                v-model="form.dont_like"></textarea>
 
 
-                        <h4>Select all that apply from the list below:</h4>
+                        <h4 class="my-4">Select all that apply from the list below:</h4>
 
+                        <label for="redesign" class="block text-grey font-semibold">
+                            <input type="checkbox" class="mr-2 leading-tight hover:border-blue-darkest" name="redesign" id="redesign"
+                                   v-model="form.redesign">
+                            Interested in website redesign
+                        </label>
 
-                        <label for="redesign" class="block text-grey font-bold">Interested in website redesign
-                            <input type="checkbox" class="mr-2 leading-tight" name="redesign" id="redesign" v-model="form.redesign">
+                        <label for="components">
+                            <input type="checkbox" class="mr-2 leading-tight hover:border-blue-darkest" name="components" id="components"
+                                   v-model="form.components">
+                            Interested in custom website components (Ex: Blog, Shopping Cart, Admin Panel, User
+                            Accounts)
                         </label>
 
 
-                        <label for="components">Interested in custom website components (Ex: Blog, Shopping
-                            Cart,
-                            Admin Panel, User Accounts)
-                            <input type="checkbox" class="mr-2 leading-tight" name="components" id="components" v-model="form.components">
-                        </label>
-
-
-                        <label for="hosting">Interested in having 131 Studios host and manage your
+                        <label for="hosting">
+                            <input type="checkbox" class="mr-2 leading-tight hover:border-blue-darkest" name="hosting" id="hosting"
+                                   v-model="form.host">
+                            Interested in having 131 Studios host and manage your
                             website?
-                            <input type="checkbox" class="mr-2 leading-tight" name="hosting" id="hosting" v-model="form.host">
                         </label>
 
-
-                        <div class="w-1/4 mr-3 my-3" v-show="form.project_type == 'consulting'">
-                            <select class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight"
-                                    name="servers" v-model="form.servers">
-                                <option value="">Number of Servers</option>
-                                <option value="< 10">&lt; 10</option>
-                                <option value="10 to 25">Between 10 &amp; 25</option>
-                                <option value="> 25">&gt; 25</option>
-                            </select>
-
+                        <div class="my-6">
+                            <button v-if="! form.busy" type="submit"
+                                    class="rounded-full border border-grey px-4 py-2 hover:bg-blue-darkest hover:border-transparent hover:text-white"
+                                    :disabled="form.busy" @click="submitForm()">
+                                <span v-if="form.busy"><fa icon="spinner" spin></fa></span>
+                                <span v-else>Submit</span>
+                            </button>
                         </div>
 
-                        <div class="w-1/4 mr-3 my-3" v-show="form.project_type == 'consulting'">
-                            <select class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight"
-                                    name="os" v-model="form.server_os">
-                                <option value="">Server Operating Systems</option>
-                                <option value="N/A">N/A</option>
-                                <option value="windows">Windows</option>
-                                <option value="Linux/Uinx">Linux/Unix</option>
-                                <option value="Mix">Mix</option>
-                            </select>
-                        </div>
-
-                        <div class="w-1/4 mr-3 my-3" v-show="form.project_type == 'consulting'">
-                            <select class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight"
-                                    name="workstations" v-model="form.workstations">
-                                <option value="">Number of Laptops / Desktops</option>
-                                <option value="< 50">&lt; 50</option>
-                                <option value="50 to 100">Between 50 &amp; 100</option>
-                                <option value="> 100">&gt; 100</option>
-                            </select>
-                        </div>
-
-                        <div class="w-1/4 mr-3 my-3" v-show="form.project_type == 'consulting'">
-                            <select class="block appearance-none w-full bg-white border border-grey-light hover:border-grey px-4 py-2 pr-8 rounded shadow leading-tight"
-                                    name="leaseorbuy" v-model="form.ownership">
-                                <option value="">Hardware Ownership</option>
-                                <option value="leased">Leased</option>
-                                <option value="buy">Buy</option>
-                                <option value="both">Both</option>
-                            </select>
-                        </div>
-
-                        <button v-if="! form.busy" type="submit"
-                                class="rounded-full border border-blue-darkest px-4 py-2 hover:bg-blue-darkest hover:border-transparent hover:text-white"
-                                :disabled="form.busy" @click="submitForm()">
-                            <span v-if="form.busy"><fa icon="spinner" spin></fa></span>
-                            <span v-else>Submit</span>
-                        </button>
                     </div>
                 </form>
             </div>
@@ -179,8 +193,10 @@
 
 <script>
     import swal from 'sweetalert2';
+    import MaskedInput from 'vue-masked-input';
 
     export default {
+        components: {MaskedInput},
         data() {
             return {
                 form: new Form({
@@ -211,7 +227,7 @@
 
         methods: {
             submitForm() {
-                this.form.post('/contact/project').then(data => {
+                this.form.post('/quote').then(data => {
                     swal({
                         type: 'success',
                         title: 'Thank you',

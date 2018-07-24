@@ -29,7 +29,7 @@ class ContactController extends Controller {
      * @param LongForm $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function submitForm(LongForm $request)
+    public function quote(LongForm $request)
     {
         Contact::create($request->except(['newsletter']));
 
@@ -37,7 +37,7 @@ class ContactController extends Controller {
 
         return response()->json([
             'status' => 'ok',
-        ]);
+        ],200);
     }
 
     /**
