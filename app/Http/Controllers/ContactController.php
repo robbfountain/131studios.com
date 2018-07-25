@@ -33,7 +33,7 @@ class ContactController extends Controller {
     {
         Contact::create($request->except(['newsletter']));
 
-        Mail::to(User::contact()->get())->send(new ContactFormSubmitted($request, false));
+        Mail::to('robb@131studios.com')->send(new ContactFormSubmitted($request, false));
 
         return response()->json([
             'status' => 'ok',
