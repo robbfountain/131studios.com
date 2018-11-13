@@ -14,7 +14,7 @@
                 throttle(function() {
                     el.classList[
                         window.scrollY >= originalOffsetTop ? 'add' : 'remove'
-                        ]('lg:pin-t', 'lg:fixed', 'lg:w-full','lg:z-10');
+                        ]('lg:pin-t', 'lg:fixed', 'lg:w-full','lg:z-10','header','shadow-lg');
                 }, 300)
             );
         }

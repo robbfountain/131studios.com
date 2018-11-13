@@ -37,6 +37,20 @@
   -webkit-transform: scaleX(.15);
           transform: scaleX(.15);
 }
+
+.header {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
+}
+
+a {
+  -webkit-transition: color .2s ease-out, background .2s ease-in;
+  transition: color .2s ease-out, background .2s ease-in;
+}
+
+.hero {
+  background: url("../images/logo-hero.png");
+}
 /**
  * Owl Carousel v2.3.4
  * Copyright 2013-2018 David Deutsch

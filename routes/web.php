@@ -1,5 +1,4 @@
 <?php
-
 Route::get('/projects','ProjectController@index');
 Route::get('/{any?}','WebsiteController@index')->name('index');
 
