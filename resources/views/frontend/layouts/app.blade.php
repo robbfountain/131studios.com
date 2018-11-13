@@ -19,7 +19,7 @@
     <body class="bg-grey-light">
         <div id="app">
             <div class="flex flex-col min-h-screen">
-                <pinned>
+
                     <header class="header pb-10 pt-4 bg-blue-darker">
                         <div class="container mx-auto">
                             <div class="flex xs:flex-col lg:flex-row justify-between items-center">
@@ -62,7 +62,7 @@
                             </div>
                         </div>
                     </header>
-                </pinned>
+              
 
                 <div class="flex-1">
                     @yield('content')

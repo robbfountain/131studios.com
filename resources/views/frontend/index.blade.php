@@ -2,19 +2,19 @@
 @section('content')
     <div class="page">
 
-        <div class="bg-orange h-auto">
+        <div class="bg-white py-10">
             <div class="container mx-auto">
-                <div class="hero flex justify-center items-center">
+                <div class="flex justify-center items-center">
                     <div class="mr-6">
-                        <h1 class="text-blue-darker text-5xl mt-6 mb-1 font-light">131 Studios</h1>
-                        <h2 class="text-blue-darker text-xg font-light">Web Development, Web Design and Consulting</h2>
+                        <h1 class="text-blue-darker text-5xl mt-6 mb-1">Web Development, Web Design and Consulting</h1>
                         <p class="mt-8">Offering a wide range of web and IT services for your business.  Contact us for a quote.</p>
                     </div>
+                    <img src="/images/logo-hero.png" alt="">
                 </div>
             </div>
         </div>
 
-        <section class="bg-white py-12 px-2">
+        <section class="bg-grey-light py-12 px-2 border-t">
             <div class="container mx-auto flex justify-between xs:flex-col lg:flex-row ">
                 <!-- Service Box -->
                 <div class="group mr-4 flex xs:mb-4">
