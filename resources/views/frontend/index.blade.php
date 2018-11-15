@@ -115,7 +115,7 @@
                     <!-- Project -->
                     @foreach($projects as $project)
                         <div class="shadow-lg border overflow-hidden xs:pb-4 lg:mr-6">
-                            <img src="{{$project->primary_image}}" alt="" class="">
+                            <img src="{{public_path('storage/'. $project->primary_image)}}" alt="" class="">
                             <div class="px-6 py-4">
                                 <div class="font-bold text-xl mb-2">{{$project->title}}</div>
                                 <p class="text-grey-darker">{!! $project->description !!}
@@ -131,7 +131,7 @@
                 </div>
             </div>
         </section>
-        
+
         <section class="border-t py-8 bg-grey-lightest" id="contact">
             <div class="container mx-auto">
                 <div class="text-center px-2">
