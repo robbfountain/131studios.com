@@ -10,15 +10,19 @@ use App\User;
 use Illuminate\Support\Facades\Mail;
 use Newsletter;
 
+/**
+ * Class ContactController
+ * @package App\Http\Controllers
+ */
 class ContactController extends Controller {
 
     /**
      * @param ShortContactForm $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function sendMessage(ShortContactForm $request)
+    public function store(ShortContactForm $request)
     {
-        Mail::to(User::contact()->get())->send(new ContactFormSubmitted($request));
+        Mail::to('robb@131studios.com')->send(new ContactFormSubmitted($request));
 
         return response()->json([
             'status' => 'ok'
@@ -29,30 +33,14 @@ class ContactController extends Controller {
      * @param LongForm $request
      * @return \Illuminate\Http\JsonResponse
      */
-    public function submitForm(LongForm $request)
+    public function quote(LongForm $request)
     {
         Contact::create($request->except(['newsletter']));
 
-        Mail::to(User::contact()->get())->send(new ContactFormSubmitted($request, false));
+        Mail::to('robb@131studios.com')->send(new ContactFormSubmitted($request, false));
 
         return response()->json([
             'status' => 'ok',
-        ]);
-    }
-
-    /**
-     * @return $this
-     */
-    public function longForm()
-    {
-        return view('frontend.longform')->with(['heading' => 'Contact Us']);
-    }
-
-    /**
-     * @return $this
-     */
-    public function contact()
-    {
-        return view('frontend.contact')->with(['heading' => 'Contact Us']);
+        ],200);
     }
 }

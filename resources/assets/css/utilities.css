@@ -1,0 +1,51 @@
+@import '../../../node_modules/animate.css';
+
+body {
+    font-family : 'Roboto', sans-serif;
+}
+
+.mont {
+    font-family : 'Montserrat', sans-serif;
+}
+
+.banner {
+    background : url("../images/code_banner.png");
+}
+
+.fb {
+    background : rgb(59, 89, 152);
+}
+
+.transition {
+    transition : 0.5s;
+}
+
+.title:after {
+    padding-bottom : 1rem;
+    display        : block;
+    content        : '';
+    border-bottom  : solid 4px #12283A;
+    transform      : scaleX(0.05);
+    transition     : transform 250ms ease-in-out;
+}
+
+.title:hover:after {
+    transform : scaleX(.15);
+}
+
+.header {
+    clip-path : polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            0 calc(100% - 2vw)
+    );
+}
+
+a {
+    transition : color .2s ease-out, background .2s ease-in;
+}
+
+.hero {
+    background: url("../images/logo-hero.png");
+}

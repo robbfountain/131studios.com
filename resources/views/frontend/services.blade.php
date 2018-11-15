@@ -1,78 +1,79 @@
-@extends('frontend.partials.layout')
+@extends('frontend.layouts.app')
 
-@section('header')
-    @include('frontend.partials.header-sub')
-@stop
+
 
 @section('content')
 
-    <div class="container" id="app">
-        <div class="row">
-            <!-- Text Block -->
-            <div class="col-md-12 text-center">
-                <h3 class="service-intro margin-bottom-25"><strong>We are your solution for your web and IT
-                        needs.</strong></h3>
-                <p>We offer a wide range of services for your business. We have over 15 years of web application
-                    development and can write custom applications to increase your productivity and maximize profits.
-                    From user-friendly content management systems, social media management, blogging systems and more,
-                    we can create a custom web application for your business. </p>
-
-                <p>Hosting your website is a breeze. We handle everything. We use powerful virtual private servers which
-                    allow us to maximize resources while reducing costs. Hosting plans start at $15.00 / month.</p>
-
-                <p>Additionally we offer local IT consulting services for small and home-based businesses. We can
-                    source, manage and administer your servers, workstations and network equipment so you only have to
-                    focus on your business. </p>
-            </div>
-        </div> <!-- row -->
-    </div>
-    <!-- Image Edge -->
-    <div class="image-edge margin-top-50">
-
-        <div class="image-edge-content">
-            <div class="row">
-                <div class="col-md-6 col-sm-6">
-                    <div class="icon-box-1">
-                        <i class="ln ln-icon-Code-Window"></i>
-                        <h4>Web Development</h4>
-                        <p>Custom backend development, Content Management Systems and SaaS applications are just some of
-                            the development works we have done.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="icon-box-1">
-                        <i class="ln ln-icon-Support"></i>
-                        <h4>IT Consulting</h4>
-                        <p>SoHo IT Solutions for your business. Server &amp; worstation management, patching, security
-                            and software management are just some of the consulting services we offer.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="icon-box-1">
-                        <i class="ln ln-icon-Server"></i>
-                        <h4>Hosting &amp; Maintenance</h4>
-                        <p>We offer powerful VPS hosting systems for your website and we take care of everything from
-                            server maintenance to application deployment. </p>
-                        <p>
-                            <a href="/services/hosting">More Info.</a>
-                        </p>
-                    </div>
-                </div>
-                <div class="col-md-6 col-sm-6">
-                    <div class="icon-box-1">
-                        <i class="ln ln-icon-Paintbrush"></i>
-                        <h4>Web Design</h4>
-                        <p>We can give your website a new look and modern touches. We partner with top notch graphics
-                            artists for one-of-a-kind web sites.</p>
-                    </div>
-                </div>
-            </div>
+    <div>
+        <div class="banner bg-blue-darker text-center xs:px-2 xs:py-2 lg:py-12">
+            <h1 class="text-white text-5xl mt-6 mb-1 font-light">What We Do</h1>
         </div>
 
-        <div class="edge-bg" data-background-image="images/service-02c.jpg"></div>
+        <section class="mt-8">
+
+        </section>
+
+        <section class="mt-8 py-8 px-2">
+            <div class="container mx-auto">
+                <div class="flex xs:flex-col md:flex-row">
+                    <!-- Service Card -->
+                    <div class="lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4">
+                        <img src="images/code.jpg" alt="" class="w-full">
+                        <div class="p-4">
+                            <h2 class="text-2xl text-grey-darkest">Web Development</h2>
+                            <p class="text-grey-darkest leading-normal mt-4">
+                                We have over 15 years of web development experience and can custom design almost any
+                                functional aspect of your website. From updating your current website to designing a new
+                                website for your business, we have the creative experience to help. We specialize in
+                                backend development, CMS, Administrator panels, CRM, Contact Forms, Forums, Online
+                                Contests, eCommerce solutions and much more
+                            </p>
+                            <div class="mt-8">
+                                <router-link to="/quote"
+                                             class="border rounded border-orange-dark px-4 py-2 no-underline text-white bg-orange hover:bg-orange-dark">
+                                    Get a Quote
+                                    <fa icon="chevron-right"></fa>
+                                </router-link>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- Service Card -->
+                    <div class="lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4">
+                        <img src="images/hosting.jpg" alt="" class="w-full">
+                        <div class="p-4">
+                            <h2 class="text-2xl text-grey-darkest">Hosting & Maintenance</h2>
+                            <p class="text-grey-darkest leading-normal mt-4">
+                                We offer robust hosting services at reasonable prices. We host all of our websites on
+                                our own dedicated VPS servers. We offer SSL certificates for all of our websites as a
+                                standard feature and all of our hosting plans include monthly maintenance.
+                            </p>
+                            <div class="mt-8">
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service Card -->
+                    <div class="lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4">
+                        <img src="images/itservices2.jpg" alt="" class="w-full">
+                        <div class="p-4">
+                            <h2 class="text-2xl text-grey-darkest">IT Services</h2>
+                            <p class="text-grey-darkest leading-normal mt-4">
+                                We offer small office and home office IT Consulting services. From server and
+                                workstation procurement, installation and maintenance to networking and IT security
+                                services, we can help your business run smoothly while you focus on what matters most to
+                                you...your business! We offer remote assistance, patching, virus removal and prevention
+                                as well as network security and intrusion prevention. Whatever your IT needs, we can do
+                                it for you. </p>
+                            <div class="mt-8">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </div>
-    <!-- Image Edge / End -->
-
-    </div> <!-- container -->
 @stop

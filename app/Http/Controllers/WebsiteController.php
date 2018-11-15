@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
+use App\Project;
 
 class WebsiteController extends Controller
 {
@@ -10,19 +10,50 @@ class WebsiteController extends Controller
     /**
      * @return $this
      */
-    public function index()
+    public function index($page = 'index')
+    {
+        $methodName = 'handle' . studly_case($page);
+
+        if (method_exists($this, $methodName)) {
+            return $this->{$methodName}();
+        }
+
+        abort(404);
+    }
+
+    public function handleIndex()
     {
         return view('frontend.index')->with([
-            'projects' => Project::visible()->orderBy('lft', 'ASC')->get()
+            'projects' => Project::visible()->orderBy('lft', 'ASC')->get(),
         ]);
     }
 
     /**
      * @return WebsiteController
      */
-    public function about()
+    public function handleAbout()
     {
         return $this->renderView('about', 'About Us');
+    }
+    
+    public function handleServices()
+    {
+        return $this->renderView('services','Services');
+    }
+    
+    public function handleWork()
+    {
+        return $this->renderView('projects','Our Work');
+    }
+    
+    public function handleContact()
+    {
+        return $this->renderView('Contact','Contact Us');
+    }
+    
+    public function handleQuote()
+    {
+        return $this->renderView('longform','Quote');
     }
 
     /**

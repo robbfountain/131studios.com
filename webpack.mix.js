@@ -1,5 +1,5 @@
-const { mix } = require('laravel-mix');
-var tailwindcss = require('tailwindcss');
+const {mix} = require('laravel-mix');
+require('laravel-mix-tailwind');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,33 +13,13 @@ var tailwindcss = require('tailwindcss');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .sass('resources/assets/sass/tailwind.scss', 'public/css')
-    .options({
-        processCssUrls: false,
-        postCss: [ tailwindcss('./tailwind.js')],
-    })
-    .styles([
-        'resources/assets/css/bootstrap.css',
-        'resources/assets/css/icons.css',
-        'resources/assets/css/style.css',
-        'resources/assets/css/colors/blue.css',
-        'resources/assets/css/custom.css',
-    ],'public/css/all.css');
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .tailwind();
 
-mix.scripts([
-    'resources/assets/js/jquery.flexslider-min.js',
-    'resources/assets/js/owl.carousel.min.js',
-    'resources/assets/js/jquery.magnific-popup.min.js',
-    'resources/assets/js/jquery.sticky-kit.min.js',
-    'resources/assets/js/jquery.twentytwenty.js',
-    'resources/assets/js/jquery.event.move.js',
-    'resources/assets/js/jquery.tooltips.min.js',
-    'resources/assets/js/jquery.stacktable.js',
-    'resources/assets/js/jquery.jpanelmenu.js',
-    'resources/assets/js/headroom.min.js',
-    'resources/assets/js/modernizr.custom.js',
-    'resources/assets/js/puregrid.js',
-    'resources/assets/js/flexibility.js',
-    'resources/assets/js/jquery.isotope.min.js'
-], 'public/js/vendor.js')
-    .copy('resources/assets/js/custom.js','public/js/custom.js');
+mix.scripts(['resources/assets/js/custom.js'], 'public/js/custom.js');
+
+if (mix.inProduction()) {
+    mix.version();
+}
+
+mix.browserSync('131studios.test');

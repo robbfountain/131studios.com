@@ -14,7 +14,7 @@ class AddCategoryToProjects extends Migration
     public function up ()
     {
         Schema::table('projects', function (Blueprint $table) {
-            $table->integer('category_id')->after('id')->default(1);
+            $table->integer('category_id')->after('id')->nullable();
         });
     }
 

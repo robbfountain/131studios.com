@@ -26,11 +26,11 @@ class LongForm extends FormRequest
         return [
             'name'  =>  'required|string|min:2',
             'email' => 'required|email',
-            'phone' => 'required',
+            'phone' => 'required|string',
             'contact_method' => 'required|string',
             'company'   =>  'nullable|string',
             'website'   =>  'nullable|string|min:6',
-            'project_type'  =>  'required|string',
+            'project_type'  =>  'nullable|string',
             'project_timeframe' =>  'required|string',
             'project_budget'    =>  'required|string',
             'project_description'   =>  'required|string|min:10',

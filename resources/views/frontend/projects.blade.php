@@ -1,58 +1,27 @@
-@extends('frontend.partials.layout')
+@extends('frontend.layouts.app')
 
-@section('header')
-    @include('frontend.partials.header-sub')
-@stop
 
 @section('content')
-    <div class="container margin-top-50" id="app">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- Filters -->
-                <div id="filters">
-                    <ul class="option-set margin-bottom-40">
-                        <li><a href="#filter" class="selected" data-filter="*">All</a></li>
-                        @foreach(App\Models\Category::all() as $category)
-                            <li><a href="#filter" data-filter=".{{kebab_case($category->name)}}">{{$category->name}}</a></li>
-                        @endforeach
-                    </ul>
-                    <div class="clearfix"></div>
-                </div>
+    <section class="py-8 px-2">
+        <div class="container mx-auto">
+            <div class="text-center">
+                <h2 class="title font-medium text-3xl my-4">Our Work</h2>
             </div>
-        </div>
 
-        <!-- Projects -->
-        <div class="projects gutter style-4 isotope-wrapper">
-            <div class="isotope-sizer"></div>
-
-            @foreach($projects as $project)
-                <!-- Item -->
-                    <div class="isotope-item {{kebab_case($project->category->name)}}">
-                        <a href="{{route('projects.show', $project->slug)}}">
-                            <img src="{{$project->primary_image}}" alt="">
-                            <div class="overlay">
-                                <div class="overlay-content">
-                                    <h4>{{$project->title}}</h4>
-                                    <span>{{$project->sub_title}}</span>
-                                </div>
-                            </div>
-                        </a>
+            <div class="button-group filters-button-group">
+                <button class="button is-checked" data-filter="*">show all</button>
+                <button class="button" data-filter=".web">metal</button>
+            </div>
+            <div class="text-center flex flex-wrap grid">
+                @foreach($projects as $project)
+                    <div class=" w-1/3 flex flex-col grid-item {{$project->tagString()}}">
+                        <img src="{{$project->primary_image}}" alt="Not Found">
+                        <div class="bg-blue-darker p-2 text-center text-xl text-white name">
+                            {{$project->title}}
+                        </div>
                     </div>
                 @endforeach
-        </div>
-    </div>
-    <div class="clearfix"></div>
-
-    <br>
-    <br>
-
-    <!-- Infobox -->
-    <div class="info-banner-fw">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">We're a Quality-Focused Creative Company <a href="{{route('contact.project')}}">Contact
-                        Us</a></div>
             </div>
         </div>
-    </div>
+    </section>
 @stop

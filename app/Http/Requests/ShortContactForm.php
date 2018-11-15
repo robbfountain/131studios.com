@@ -26,7 +26,6 @@ class ShortContactForm extends FormRequest
         return [
             'name' => 'required|string|min:3|max:100',
             'email' => 'required|email',
-            'subject' => 'required|string|min:3|max:100',
             'message' => 'required|min:10|string',
         ];
     }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Project;
+use App\Project;
 
 class ProjectController extends Controller
 {
@@ -14,12 +14,12 @@ class ProjectController extends Controller
      */
     public function index($slug = null)
     {
-        return !is_null($slug)
-            ? $this->show($slug)
-            : view('frontend.projects')->with([
-                'heading' => 'Projects',
-                'projects' => Project::visible()->orderBy('lft', 'ASC')->get()
-            ]);
+        return request()->expectsJson()
+            ? response()->json([
+                'data' => Project::visible()->orderBy('title', 'ASC')->get(),
+            ])
+            : view('frontend.projects')->with(['projects' => Project::visible()->orderBy('lft', 'ASC')->get()]);
+
     }
 
     /**
@@ -33,7 +33,7 @@ class ProjectController extends Controller
 
         return view('frontend.portfolio-item')->with([
             'heading' => $project->title,
-            'project' => $project
+            'project' => $project,
         ]);
     }
 }
