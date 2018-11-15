@@ -1,5 +1,7 @@
 <template>
-    <div><slot></slot></div>
+    <div>
+        <slot />
+    </div>
 </template>
 
 <script>
@@ -13,8 +15,8 @@
                 'scroll',
                 throttle(function() {
                     el.classList[
-                        window.scrollY >= originalOffsetTop ? 'add' : 'remove'
-                        ]('lg:pin-t', 'lg:fixed', 'lg:w-full','lg:z-10','header','shadow-lg');
+                        window.scrollY > originalOffsetTop ? 'add' : 'remove'
+                        ]('lg:pin-t', 'lg:fixed', 'lg:w-full','lg:z-10');
                 }, 300)
             );
         }

@@ -7000,6 +7000,10 @@ button,
   height: 1px;
 }
 
+.h-half {
+  height: 50%;
+}
+
 .h-full {
   height: 100%;
 }
@@ -11737,6 +11741,10 @@ button,
     height: 1px;
   }
 
+  .xs\:h-half {
+    height: 50%;
+  }
+
   .xs\:h-full {
     height: 100%;
   }
@@ -16450,6 +16458,10 @@ button,
 
   .sm\:h-px {
     height: 1px;
+  }
+
+  .sm\:h-half {
+    height: 50%;
   }
 
   .sm\:h-full {
@@ -21167,6 +21179,10 @@ button,
     height: 1px;
   }
 
+  .md\:h-half {
+    height: 50%;
+  }
+
   .md\:h-full {
     height: 100%;
   }
@@ -25882,6 +25898,10 @@ button,
     height: 1px;
   }
 
+  .lg\:h-half {
+    height: 50%;
+  }
+
   .lg\:h-full {
     height: 100%;
   }
@@ -30595,6 +30615,10 @@ button,
 
   .xl\:h-px {
     height: 1px;
+  }
+
+  .xl\:h-half {
+    height: 50%;
   }
 
   .xl\:h-full {

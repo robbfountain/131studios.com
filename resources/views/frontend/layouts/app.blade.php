@@ -19,8 +19,8 @@
     <body class="bg-grey-light">
         <div id="app">
             <div class="flex flex-col min-h-screen">
-
-                    <header class="header pb-10 pt-4 bg-blue-darker">
+                <pinned>
+                    <div class="header pb-10 pt-4 bg-blue-darker">
                         <div class="container mx-auto">
                             <div class="flex xs:flex-col lg:flex-row justify-between items-center">
                                 <!-- Logo -->
@@ -44,24 +44,25 @@
                                         About
                                     </a>
 
-                                    <a href="#services" v-smooth-scroll="{duration: 500}"
+                                    <a href="#services" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         Services
                                     </a>
 
-                                    <a href="/work"
+                                    <a href="#projects" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         Our Work
                                     </a>
 
-                                    <a href="/contact"
+                                    <a href="#contact" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         Contact
                                     </a>
                                 </nav>
                             </div>
                         </div>
-                    </header>
+                    </div>
+                </pinned>
               
 
                 <div class="flex-1">

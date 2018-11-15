@@ -66,4 +66,9 @@ class User extends Authenticatable
     {
         return $query->role('Contact Recipient');
     }
+
+    public function articles()
+    {
+        return $this->hasMany(Article::class);
+    }
 }

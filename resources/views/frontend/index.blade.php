@@ -1,19 +1,18 @@
 @extends('frontend.layouts.app')
 @section('content')
     <div>
-        <div class="bg-white lg:py-10 xs:pb-4 min-h-screen flex flex-col">
+        <div class="bg-white lg:py-10 xs:pb-4 flex flex-col">
             <div class="container mx-auto flex xs:flex-col lg:flex-row justify-center items-center">
-                <div class="lg:mr-6 xs:mb-8  px-2">
+                <div class="lg:mr-6 xs:mb-8 px-2 -mt-8">
                     <h1 class="text-blue-darker text-5xl mt-6 mb-1">Web Development, Web Design and Consulting</h1>
                     <p class="mt-8 text-xl text-grey-dark">We specialize in offering a wide range of web and IT services
                         for your business. Contact us for a quote.</p>
                 </div>
-                <div>
-                    <img src="/images/heroimg.png" alt="131 Studios Logo" class="px-2">
+                <div class="">
+                    <img src="/images/heroimg.png" alt="131 Studios Logo" class="px-2 max-h-screen">
                 </div>
-
             </div>
-            <div class="text-center flex-1 py-10">
+            <div class="text-center lg:flex-1 lg:-mt-6">
                 <fa :icon="['fas','arrow-down']" size="2x" class="text-blue-darker animated bounce infinite slow"></fa>
             </div>
         </div>
@@ -97,7 +96,7 @@
                         Hire us for your next project
                     </h2>
                     <div class="mt-10">
-                        <a @click="modal = true" href="#"
+                        <a href="#contact" v-smooth-scroll="{duration: 500}"
                            class="border rounded-full border-white px-4 py-3 text-white no-underline text-2xl hover:bg-white hover:text-blue-dark hover:border-transparent">
                             Get A Quote
                         </a>
@@ -106,7 +105,7 @@
             </div>
         </section>
 
-        <section class="lg:py-10 xs:py-4 bg-white">
+        <section class="lg:py-10 xs:py-4 bg-white" id="projects">
             <div class="container mx-auto">
                 <div class="text-center">
                     <h2 class="title font-medium text-blue-darker text-3xl mb-8">Recent Work</h2>
@@ -132,7 +131,7 @@
                 </div>
             </div>
         </section>
-        <section class="border-t py-8 bg-grey-lightest">
+        <section class="border-t py-8 bg-grey-lightest" id="contact">
             <div class="container mx-auto">
                 <div class="text-center px-2">
                     <h2 class="title font-medium text-blue-darker text-3xl">Contact Us</h2>
