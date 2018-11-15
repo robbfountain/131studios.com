@@ -9,7 +9,7 @@ use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
 class Category extends Model
 {
-    use CrudTrait,Sluggable, SluggableScopeHelpers;
+    use Sluggable, SluggableScopeHelpers;
 
     /**
      * @var string

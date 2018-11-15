@@ -114,23 +114,24 @@
                 <div class="owl-carousel owl-theme">
                     <!-- Project -->
                     @foreach($projects as $project)
-                        <div class="shadow-lg rounded overflow-hidden xs:pb-4 lg:mr-6">
+                        <div class="shadow-lg border overflow-hidden xs:pb-4 lg:mr-6">
                             <img src="{{$project->primary_image}}" alt="" class="">
                             <div class="px-6 py-4">
                                 <div class="font-bold text-xl mb-2">{{$project->title}}</div>
-                                <p class="text-grey-darker">{{$project->description}}
+                                <p class="text-grey-darker">{!! $project->description !!}
                                 </p>
                             </div>
                             <div class="px-6 py-4">
-                                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-                                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-                                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>\
+                                @foreach($project->tags as $tag)
+                                    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#{{$tag->name}}</span>
+                                @endforeach
                             </div>
                         </div>
                     @endforeach
                 </div>
             </div>
         </section>
+        
         <section class="border-t py-8 bg-grey-lightest" id="contact">
             <div class="container mx-auto">
                 <div class="text-center px-2">
@@ -139,32 +140,33 @@
                 <div class="flex justify-between xs:flex-col lg:flex-row my-6">
                     <div class="w-1/4 rounded shadow-lg p-4 text-center flex flex-col bg-white">
                         <div class="mb-3">
-                            <fa :icon="['fal','map-pin']" size="2x" class="text-orange" ></fa>
+                            <fa :icon="['fal','map-pin']" size="2x" class="text-orange"></fa>
                         </div>
 
                         <div class="text-sm text-grey-dark">
-                            <p>P.O. Box 704 <br />Greencastle, PA 17225</p>
+                            <p>P.O. Box 704 <br/>Greencastle, PA 17225</p>
                         </div>
 
                     </div>
                     <div class="w-1/4 rounded shadow-lg p-4 text-center flex flex-col bg-white">
                         <div class="mb-3">
-                            <fa :icon="['fal','envelope']" size="2x" class="text-orange" ></fa>
+                            <fa :icon="['fal','envelope']" size="2x" class="text-orange"></fa>
                         </div>
 
                         <div class="text-sm text-grey-dark">
-                            <a href="mailto:robb@131studios.com" class="text-blue-dark no-underline">robb@131studios.com</a>
+                            <a href="mailto:robb@131studios.com"
+                               class="text-blue-dark no-underline">robb@131studios.com</a>
                         </div>
 
                     </div>
 
                     <div class="w-1/4 rounded shadow-lg p-4 text-center flex flex-col bg-white">
                         <div class="mb-3">
-                            <fa :icon="['fal','mobile-alt']" size="2x" class="text-orange" ></fa>
+                            <fa :icon="['fal','mobile-alt']" size="2x" class="text-orange"></fa>
                         </div>
 
                         <div class="text-sm text-grey-dark">
-                           (301) 992-0962
+                            (301) 992-0962
                         </div>
 
                     </div>
@@ -193,7 +195,7 @@
             </div>
         </section>
         <modal v-show="modal">
-            <quote slot="body" />
+            <quote slot="body"/>
         </modal>
     </div>
 @stop

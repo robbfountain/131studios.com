@@ -2,25 +2,28 @@
 
 namespace App;
 
-use Backpack\CRUD\CrudTrait;
+use Cartalyst\Tags\TaggableInterface;
+use Cartalyst\Tags\TaggableTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 
-class Project extends Model {
+class Project extends Model implements TaggableInterface
+{
 
-    use CrudTrait, Sluggable, SluggableScopeHelpers;
+    use Sluggable, SluggableScopeHelpers, TaggableTrait;
 
     /**
      * @var array
      */
-    protected $guarded = ['id'];
+    protected $guarded = [];
 
     /**
      * @var array
      */
     protected $casts = [
         'hidden' => 'boolean',
+        'visible' => 'boolean',
     ];
 
     /**
@@ -46,7 +49,7 @@ class Project extends Model {
      */
     public function getSlugOrTitleAttribute()
     {
-        if($this->slug != '') {
+        if ($this->slug != '') {
             return $this->slug;
         }
 
@@ -55,11 +58,12 @@ class Project extends Model {
 
     /**
      * @param $query
+     *
      * @return mixed
      */
     public function scopeVisible($query)
     {
-        return $query->where('hidden', false);
+        return $query->where('visible', true);
     }
 
     /**
@@ -75,9 +79,19 @@ class Project extends Model {
      */
     public function imagePath()
     {
-        return starts_with('http://', $this->primary_image)
+        return starts_with($this->primary_image, 'http')
             ? $this->primary_image
             : url($this->primary_image);
+    }
+
+    public function tagString()
+    {
+        $string = '';
+        foreach ($this->tags as $tag) {
+            $string .= ' ' . $tag->name;
+        }
+         dump($string);
+        return $string;
     }
 
 }

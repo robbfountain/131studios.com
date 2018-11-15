@@ -1,7 +1,6 @@
 <?php
 
-use App\Models\Category;
-use App\Models\Project;
+use App\Project;
 use Illuminate\Database\Seeder;
 
 class ProjectsTableSeeder extends Seeder
@@ -13,12 +12,6 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(Category::class, 5)->create()->each( function($c) {
-            for($i=1;$i<5;$i++)
-            {
-                $c->project()->save(factory(Project::class)->make());
-            }
-        });
-
+        factory(Project::class, 15)->create();
     }
 }

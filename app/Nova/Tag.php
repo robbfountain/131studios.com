@@ -21,7 +21,7 @@ class Tag extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'name';
 
     /**
      * The columns that should be searched.
@@ -30,6 +30,7 @@ class Tag extends Resource
      */
     public static $search = [
         'id',
+        'name',
     ];
 
     /**
@@ -41,8 +42,9 @@ class Tag extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
+            Text::make('Namespace')->sortable()->hideWhenUpdating(),
             Text::make('Name'),
+            Text::make('Slug'),
         ];
     }
 

@@ -18,7 +18,7 @@
     </head>
     <body class="bg-grey-light">
         <div id="app">
-            <div class="flex flex-col min-h-screen">
+            <div class="flex flex-col min-h-screen" id="home">
                 <pinned>
                     <div class="header pb-10 pt-4 bg-blue-darker">
                         <div class="container mx-auto">
@@ -34,12 +34,12 @@
                                 <!-- Main Navigation -->
                                 <nav class="px-2 flex xs:flex-col xs:min-w-full xs:mt-6 lg:flex-row lg:min-w-0">
 
-                                    <a href="/"
+                                    <a href="#home" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4 ">
                                         Home
                                     </a>
 
-                                    <a href="/about"
+                                    <a href="#about" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         About
                                     </a>
@@ -71,7 +71,7 @@
 
                 <footer class="bg-blue-darker pt-8 pb-4 flex flex-col text-grey-light leading-normal border-t px-2">
                     <div class="container mx-auto flex justify-between xs:flex-col lg:flex-row">
-                        <div class="mr-4 pr-4 lg:w-1/3 ">
+                        <div class="mr-4 pr-4 lg:w-1/3 " id="about">
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">About Us</h4>
                             <p>131 Studios is a Web Development and IT Consulting company in Pennsylvania. We specialize
                                 in
@@ -98,25 +98,25 @@
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">Navigation</h4>
                             <div class="flex">
                                 <div class="flex flex-col mr-12">
-                                    <a class="no-underline text-white hover:text-grey-dark" to="/">Home
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#home" v-smooth-scroll="{duration: 1000}">Home
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" to="/about">About
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#about" v-smooth-scroll="{duration: 1000}">About
                                         Us
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" to="/">Services
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#services" v-smooth-scroll="{duration: 1000}">Services
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" to="/">Our Work
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#projects" v-smooth-scroll="{duration: 1000}">Our Work
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" to="/">Contact
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#contact" v-smooth-scroll="{duration: 1000}">Contact
                                         Us
                                     </a>
                                 </div>
                                 <div>
                                     <div class="flex flex-col">
-                                        <a class="text-white hover:text-grey-dark no-underline" to="/privacy">
+                                        <a class="text-white hover:text-grey-dark no-underline" href="/privacy">
                                             Privacy Policy
                                         </a>
-                                        <a class="text-white hover:text-grey-dark no-underline" to="/terms">
+                                        <a class="text-white hover:text-grey-dark no-underline" href="/terms">
                                             Terms of Service
                                         </a>
                                     </div>
@@ -130,8 +130,8 @@
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">Contact Us</h4>
                             <div class="text-widget">
                                 <div class="mb-3">P.O. Box 704 &middot; Greencastle &middot; PA &middot; 17225</div>
-                                <div class="mb-3"> Phone: (717) 977-3306</div>
-                                <div class="mb-3">E-Mail: contact@131studios.com</div>
+                                <div class="mb-3"> Phone: (301) 992-0962</div>
+                                <div class="mb-3">E-Mail: Robb@131studios.com</div>
                             </div>
                         </div>
                     </div>

@@ -10,6 +10,10 @@ use App\User;
 use Illuminate\Support\Facades\Mail;
 use Newsletter;
 
+/**
+ * Class ContactController
+ * @package App\Http\Controllers
+ */
 class ContactController extends Controller {
 
     /**
@@ -38,21 +42,5 @@ class ContactController extends Controller {
         return response()->json([
             'status' => 'ok',
         ],200);
-    }
-
-    /**
-     * @return $this
-     */
-    public function longForm()
-    {
-        return view('frontend.longform')->with(['heading' => 'Contact Us']);
-    }
-
-    /**
-     * @return $this
-     */
-    public function contact()
-    {
-        return view('frontend.contact')->with(['heading' => 'Contact Us']);
     }
 }
