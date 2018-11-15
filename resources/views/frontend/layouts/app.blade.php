@@ -44,7 +44,7 @@
                                         About
                                     </a>
 
-                                    <a href="/services"
+                                    <a href="#services" v-smooth-scroll="{duration: 500}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         Services
                                     </a>

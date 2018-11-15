@@ -1,7 +1,7 @@
 `
 <template>
     <div>
-        <section class="px-2 py-8">
+        <section class="px-6 py-8">
             <div class="container mx-auto">
                 <div class="border-l-4 border-blue text-blue-darker bg-blue-lightest p-3">
                     <h2 class="font-md font-semibold tracking-tight mb-1">Get a Quote</h2>

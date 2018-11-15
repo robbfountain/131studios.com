@@ -12,6 +12,11 @@ require('./bootstrap');
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import routes from './routes';
+
+
+import SmoothScroll from 'vue-smooth-scroll';
+Vue.use(SmoothScroll);
+
 /**
  * Import our form class
  */
@@ -52,6 +57,13 @@ Vue.component('IndexPage',require('./components/IndexPage'));
 Vue.component('HeaderNav', require('./components/HeaderNav'));
 Vue.component('fa', FontAwesomeIcon);
 Vue.component('pinned', require('./components/pinned'));
+Vue.component('Home',require('./components/Home'));
+Vue.component('About',require('./components/About'));
+Vue.component('Contact',require('./components/Contact'));
+Vue.component('Services',require('./components/Services'));
+Vue.component('Projects',require('./components/Work'));
+Vue.component('Quote',require('./components/Quote'));
+Vue.component('Modal',require('./components/Modal'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -61,4 +73,9 @@ Vue.component('pinned', require('./components/pinned'));
 const app = new Vue({
     el: '#app',
     router,
+    data() {
+        return {
+            modal: false,
+        }
+    }
 });

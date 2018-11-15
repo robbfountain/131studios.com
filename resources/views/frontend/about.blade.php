@@ -1,84 +1,47 @@
-@extends('frontend.partials.layout')
-
-@section('header')
-    @include('frontend.partials.header-sub')
-@stop
+@extends('frontend.layouts.app')
 
 @section('content')
-    <div class="container margin-top-60" id="app">
-        <div class="row">
-
-            <!-- Intro text -->
-            <div class="col-md-8">
-                <p class="about-me-intro margin-top-20">131 Studios is Web Development and IT consulting company based
-                    in Greencastle, Pennsylvania. We produce high-quality websites, custom applications and customize IT
-                    services for your business.</p>
-            </div>
-
-            <!-- Intro buttons -->
-            <div class="col-md-4 margin-top-50">
-                <a href="/services" class="button medium border margin-bottom-10">Our Services</a>
-                <a href="/longform" class="button medium">Contact Us</a>
-            </div>
-
+    <div class="page">
+        <div class="banner bg-blue-darker text-center xs:px-2 xs:py-2 lg:py-12">
+            <h1 class="text-white text-5xl mt-6 mb-1 font-light">About Us</h1>
         </div>
-    </div>
-
-
-    <!-- Full Width Icons -->
-    <div class="full-width-box-container flex margin-top-70">
-
-        <!-- Icon Container -->
-        <div class="full-width-box-content alt image-bg" data-background-image="/uploads/About/about-team.jpg"></div>
-
-        <!-- Icon Container -->
-        <div class="full-width-box-content alt dark-text" data-background-color="#f6f6f6">
-            <div class="content-alignment">
-                <div class="box-content">
-                    <h3><strong>Who We Are</strong></h3>
-                    <p>We have been in in the web development and IT industry for 15 years. We have a wide range of
-                        knowledge of leading industry trends and can help you with your web and IT needs.</p>
+        <section class="mt-8 py-8">
+            <div class="flex">
+                <div class="w-1/2 p-10">
+                    <h2 class="text-3xl text-grey-darker">Who We Are</h2>
+                    <p class="text-lg leading-normal mb-10">
+                        We have been in in the web development and IT industry for 15 years. We have a wide range of knowledge of leading industry trends and can help you with your web and IT needs.
+                    </p>
+                    <a href=""/services"
+                                 class="rounded-full border border-blue-dark bg-transparent text-blue-dark uppercase text-sm px-8 py-4 no-underline hover:bg-blue-dark hover:text-white mr-4">
+                        Our Services
+                    </a>
+                    <a href="/contact"
+                                 class="rounded-full border border-blue-dark bg-blue-dark text-white uppercase text-sm px-8 py-4 no-underline hover:bg-blue-darker">
+                        Contact Us
+                    </a>
+                </div>
+                <div class="w-1/2">
+                    <img src="images/programming.jpg" alt="" class="h-64">
                 </div>
             </div>
-        </div>
 
-        <!-- Icon Container -->
-        <div class="full-width-box-content alt image-bg" data-background-image="/images/programming.jpg"></div>
-
-    </div>
-    <!-- Full Width Icons / End -->
-
-
-    <!-- Full Width Icons -->
-    <div class="full-width-box-container flex">
-
-        <!-- Icon Container -->
-        <div class="full-width-box-content alt light-text" data-background-color="#262626">
-            <div class="content-alignment">
-                <div class="box-content">
-                    <h3><strong>Our Mission</strong></h3>
-                    <p>Our mission is to simplify your business' web presence and IT infrustructure allowing you to
-                        focus on what matters most to you...your business.</p>
+            <div class="flex flex-row-reverse">
+                <div class="w-1/2 p-10">
+                    <h2 class="text-3xl text-grey-darker">Who We Are</h2>
+                    <p class="text-lg leading-normal">
+                        We have been in in the web development and IT industry for 15 years. We have a wide range of knowledge of leading industry trends and can help you with your web and IT needs.
+                    </p>
+                </div>
+                <div class="w-1/2">
+                    <img src="images/programming.jpg" alt="">
                 </div>
             </div>
-        </div>
 
 
-        <!-- Icon Container -->
-        <div class="full-width-box-content alt image-bg" data-background-image="/images/mission.jpg"></div>
-
-        <!-- Icon Container -->
-        <div class="full-width-box-content alt light-text" data-background-color="#44b272">
-            <div class="content-alignment">
-                <div class="box-content">
-                    <h3><strong>Our Approach </strong></h3>
-                    <p>Develop rich applications customized to our client's needs.</p>
-                </div>
-            </div>
-        </div>
+        </section>
 
     </div>
-    <!-- Full Width Icons / End -->
 
 
 @stop

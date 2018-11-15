@@ -1,3 +1,5 @@
+@import '../../../node_modules/animate.css';
+
 body {
     font-family : 'Roboto', sans-serif;
 }
@@ -7,8 +9,7 @@ body {
 }
 
 .banner {
-    background : #12283A;
-    background : url("../images/code.png");
+    background : url("../images/code_banner.png");
 }
 
 .fb {

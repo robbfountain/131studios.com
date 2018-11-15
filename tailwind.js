@@ -572,6 +572,7 @@ module.exports = {
 
     minHeight: {
         '0': '0',
+        'half': '50%',
         'full': '100%',
         'screen': '100vh'
     },
@@ -621,6 +622,8 @@ module.exports = {
     */
 
     maxHeight: {
+        'half': '50%',
+        'most': '75%',
         'full': '100%',
         'screen': '100vh',
     },
