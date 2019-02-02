@@ -22,17 +22,18 @@
                 <pinned>
                     <div class="header pb-10 pt-4 bg-blue-darker">
                         <div class="container mx-auto">
-                            <div class="flex xs:flex-col lg:flex-row justify-between items-center">
+                            <div class="flex xs:flex-col lg:flex-row justify-between xs:px-3 lg:px-0">
                                 <!-- Logo -->
-                                <div class="text-xl">
+                                <div class="flex justify-between items-center text-xl">
                                     <a href="/" class="text-white no-underline flex items-center">
                                         <img src="/images/logo-image-30x30.png" class="rounded-full p-1 bg-white mr-2">
                                         <span>131 Studios</span>
                                     </a>
+                                    <fa :icon="['far','bars']" size="lg" class="text-white lg:hidden xs:inline" onClick="toggleMenu()"></fa>
                                 </div>
 
                                 <!-- Main Navigation -->
-                                <nav class="px-2 flex xs:flex-col xs:min-w-full xs:mt-6 lg:flex-row lg:min-w-0">
+                                <nav class="px-2 flex xs:flex-col xs:min-w-full xs:mt-6 lg:flex-row lg:min-w-0 xs:hidden lg:inline" id="menu">
 
                                     <a href="#home" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4 ">
@@ -63,7 +64,6 @@
                         </div>
                     </div>
                 </pinned>
-              
 
                 <div class="flex-1">
                     @yield('content')
@@ -98,16 +98,21 @@
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">Navigation</h4>
                             <div class="flex">
                                 <div class="flex flex-col mr-12">
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#home" v-smooth-scroll="{duration: 1000}">Home
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#home"
+                                       v-smooth-scroll="{duration: 1000}">Home
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#about" v-smooth-scroll="{duration: 1000}">About
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#about"
+                                       v-smooth-scroll="{duration: 1000}">About
                                         Us
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#services" v-smooth-scroll="{duration: 1000}">Services
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#services"
+                                       v-smooth-scroll="{duration: 1000}">Services
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#projects" v-smooth-scroll="{duration: 1000}">Our Work
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#projects"
+                                       v-smooth-scroll="{duration: 1000}">Our Work
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#contact" v-smooth-scroll="{duration: 1000}">Contact
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#contact"
+                                       v-smooth-scroll="{duration: 1000}">Contact
                                         Us
                                     </a>
                                 </div>
@@ -158,7 +163,7 @@
                 s0.parentNode.insertBefore(s1, s0);
             })();
 
-            $(document).ready(function() {
+            $(document).ready(function () {
                 $('.owl-carousel').owlCarousel({
                     items: 3,
                     loop: true,
@@ -166,13 +171,37 @@
                     autoplay: true,
                     autoplayTimeout: 3000,
                     autoplayHoverPause: true,
-                    nav: false
+                    nav: false,
+                    responsive: {
+                        0: {
+                            items: 1,
+                            nav: false,
+                            dots: false,
+                        },
+                        480: {
+                            items: 1,
+                            nav: false,
+                            dots: false,
+                        },
+                        768: {
+                            items: 3,
+                        }
+                    }
                 });
 
-                $('.owl-carousel').on('changed.owl.carousel', function(event) {
+                $('.owl-carousel').on('changed.owl.carousel', function (event) {
                     $('.owl-carousel').owlCarousel();
-                })
+                });
             });
+
+            function toggleMenu() {
+                var element = document.getElementById('menu');
+                if (element.classList.contains('xs:hidden')) {
+                    element.classList.remove('xs:hidden');
+                } else {
+                    element.classList.add('xs:hidden');
+                }
+            }
         </script>
         <!--End of Tawk.to Script-->
     </body>

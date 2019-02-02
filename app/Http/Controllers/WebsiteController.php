@@ -35,36 +35,25 @@ class WebsiteController extends Controller
     {
         return $this->renderView('about', 'About Us');
     }
-    
+
     public function handleServices()
     {
-        return $this->renderView('services','Services');
-    }
-    
-    public function handleWork()
-    {
-        return $this->renderView('projects','Our Work');
-    }
-    
-    public function handleContact()
-    {
-        return $this->renderView('Contact','Contact Us');
-    }
-    
-    public function handleQuote()
-    {
-        return $this->renderView('longform','Quote');
+        return $this->renderView('services', 'Services');
     }
 
-    /**
-     * @param $view
-     * @param $heading
-     *
-     * @return $this
-     */
-    private function renderView($view, $heading)
+    public function handleWork()
     {
-        return view('frontend.' . $view)->with(['heading' => $heading]);
+        return $this->renderView('projects', 'Our Work');
+    }
+
+    public function handleContact()
+    {
+        return $this->renderView('Contact', 'Contact Us');
+    }
+
+    public function handleQuote()
+    {
+        return $this->renderView('longform', 'Quote');
     }
 
     /**
@@ -81,6 +70,17 @@ class WebsiteController extends Controller
     public function hosting()
     {
         return $this->renderView('services.hosting', 'Hosting');
+    }
+
+    /**
+     * @param $view
+     * @param $heading
+     *
+     * @return $this
+     */
+    private function renderView($view, $heading)
+    {
+        return view('frontend.' . $view)->with(['heading' => $heading]);
     }
 
 }

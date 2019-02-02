@@ -3,7 +3,7 @@
     <div>
         <div class="bg-white lg:py-10 xs:pb-4 flex flex-col">
             <div class="container mx-auto flex xs:flex-col lg:flex-row justify-center items-center">
-                <div class="lg:mr-6 xs:mb-8 px-2 -mt-8">
+                <div class="lg:mr-6 xs:mb-8 px-2 lg:-mt-8">
                     <h1 class="text-blue-darker text-5xl mt-6 mb-1">Web Development, Web Design and Consulting</h1>
                     <p class="mt-8 text-xl text-grey-dark">We specialize in offering a wide range of web and IT services
                         for your business. Contact us for a quote.</p>
@@ -12,7 +12,7 @@
                     <img src="/images/heroimg.png" alt="131 Studios Logo" class="px-2 max-h-screen">
                 </div>
             </div>
-            <div class="text-center lg:flex-1 lg:-mt-6">
+            <div class="text-center lg:flex-1 lg:-mt-6 xs:hidden lg:inline">
                 <fa :icon="['fas','arrow-down']" size="2x" class="text-blue-darker animated bounce infinite slow"></fa>
             </div>
         </div>
@@ -89,7 +89,7 @@
             </div>
         </section>
 
-        <section class="banner border-t border-b border-blue-darkest py-12 bg-blue-darker">
+        <section class="banner border-t border-b border-blue-darkest xs:py-4 lg:py-10 bg-blue-darker">
             <div class="container mx-auto">
                 <div class="flex justify-center items-center px-2 flex-col">
                     <h2 class="text-5xl font-bold text-white xs:text-center">
@@ -105,7 +105,7 @@
             </div>
         </section>
 
-        <section class="lg:py-10 xs:py-4 bg-white" id="projects">
+        <section class="lg:py-10 xs:py-4 xs:px-3 lg:px-0 bg-white" id="projects">
             <div class="container mx-auto">
                 <div class="text-center">
                     <h2 class="title font-medium text-blue-darker text-3xl mb-8">Recent Work</h2>
@@ -132,13 +132,13 @@
             </div>
         </section>
 
-        <section class="border-t py-8 bg-grey-lightest" id="contact">
+        <section class="border-t py-8 xs:px-3 lg:px-0 bg-grey-lightest" id="contact">
             <div class="container mx-auto">
                 <div class="text-center px-2">
                     <h2 class="title font-medium text-blue-darker text-3xl">Contact Us</h2>
                 </div>
                 <div class="flex justify-between xs:flex-col lg:flex-row my-6">
-                    <div class="w-1/4 rounded shadow-lg p-4 text-center flex flex-col bg-white">
+                    <div class="xs:w-full lg:w-1/4 xs:mb-6 lg:mb-0 rounded shadow-lg p-4 text-center flex flex-col bg-white">
                         <div class="mb-3">
                             <fa :icon="['fal','map-pin']" size="2x" class="text-orange"></fa>
                         </div>
@@ -148,7 +148,7 @@
                         </div>
 
                     </div>
-                    <div class="w-1/4 rounded shadow-lg p-4 text-center flex flex-col bg-white">
+                    <div class="xs:w-full lg:w-1/4 xs:mb-6 lg:mb-0 rounded shadow-lg p-4 text-center flex flex-col bg-white">
                         <div class="mb-3">
                             <fa :icon="['fal','envelope']" size="2x" class="text-orange"></fa>
                         </div>
@@ -160,7 +160,7 @@
 
                     </div>
 
-                    <div class="w-1/4 rounded shadow-lg p-4 text-center flex flex-col bg-white">
+                    <div class="xs:w-full lg:w-1/4 xs:mb-6 lg:mb-0 rounded shadow-lg p-4 text-center flex flex-col bg-white">
                         <div class="mb-3">
                             <fa :icon="['fal','mobile-alt']" size="2x" class="text-orange"></fa>
                         </div>
@@ -182,15 +182,15 @@
                 </div>
                 <div class="flex flex-wrap justify-between items-center justify-center mt-8 xs:flex-col lg:flex-row">
                     <img src="/images/logos/laravel.png" alt="Laravel Logo"
-                         class="h-12 xs:mb-4 lg:mb-0 lg:mr-6 xs:mb-4">
+                         class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
                     <img src="/images/logos/digital-ocean.png" alt="DigitalOcean Logo"
-                         class="h-12 xs:mb-4 lg:mb-0 lg:mr-6 xs:mb-4">
-                    <img src="/images/logos/php.png" alt="PHP Logo" class="h-12 xs:mb-4 lg:mb-0 lg:mr-6 xs:mb-4">
+                         class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
+                    <img src="/images/logos/php.png" alt="PHP Logo" class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
                     <img src="/images/logos/forge.png" alt="Laravel Forge Logo"
-                         class="h-12 xs:mb-4 lg:mb-0 lg:mr-6 xs:mb-4">
-                    <img src="/images/logos/vue.png" alt="Vue Logo" class="h-12 xs:mb-4 lg:mb-0 lg:mr-6 xs:mb-4">
+                         class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
+                    <img src="/images/logos/vue.png" alt="Vue Logo" class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
                     <img src="/images/logos/jQuery-Logo.png" alt="jQuery Logo"
-                         class="h-12 xs:mb-4 lg:mb-0 lg:mr-6 xs:mb-4">
+                         class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
                 </div>
             </div>
         </section>
