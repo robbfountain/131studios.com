@@ -142,7 +142,7 @@
                     </div>
                     <!-- Copyright -->
                     <div class="text-center mt-6">
-                        © Copyright 2017 131 Studios. All Rights Reserved.
+                        © Copyright {{ date('Y') }} 131 Studios. All Rights Reserved.
                     </div>
                 </footer>
             </div>
