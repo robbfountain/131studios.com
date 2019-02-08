@@ -55,6 +55,11 @@
                                         Our Work
                                     </a>
 
+                                    <a href="{{route('blog.index')}}"
+                                       class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                        Blog
+                                    </a>
+
                                     <a href="#contact" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         Contact

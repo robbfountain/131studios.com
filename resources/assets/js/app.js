@@ -77,6 +77,8 @@ Vue.use(SmoothScroll);
 
 window.Form = Form;
 
+import Prism from 'prismjs';
+
 
 
 /**
