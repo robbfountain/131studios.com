@@ -2,12 +2,15 @@
 
 namespace App;
 
-use GrahamCampbell\Markdown\Facades\Markdown;
+use App\Classes\ParseMarkdown;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Spatie\Tags\HasTags;
 
 class Blog extends Model
 {
+    use HasTags;
+
     protected $guarded = [];
 
     protected $casts = [
@@ -36,6 +39,11 @@ class Blog extends Model
         return $this->belongsTo(Category::class);
     }
 
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
     public function scopePublished($query)
     {
         return $query->where([
@@ -46,7 +54,7 @@ class Blog extends Model
 
     public function toHtml()
     {
-        return (new \Parsedown())->text($this->body);
+        return (new ParseMarkdown())->text($this->body);
     }
 
 

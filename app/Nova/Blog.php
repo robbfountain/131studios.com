@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
@@ -9,6 +10,7 @@ use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
+use Spatie\TagsField\Tags;
 
 class Blog extends Resource
 {
@@ -44,12 +46,14 @@ class Blog extends Resource
     public function fields(Request $request)
     {
         return [
+            BelongsTo::make('Category'),
             Text::make('Title'),
             Text::make('Slug')->onlyOnForms(),
             Markdown::make('Body'),
             Boolean::make('Published','is_published'),
-            DateTime::make('Publish Date','published_at'),
+            DateTime::make('Publish Date','published_at')->format('MM DD YYYY'),
             Boolean::make('Featured','is_featured'),
+            Tags::make('Tags'),
 
         ];
     }

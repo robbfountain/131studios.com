@@ -77,7 +77,8 @@ Vue.use(SmoothScroll);
 
 window.Form = Form;
 
-import Prism from 'prismjs';
+import hljs from 'highlight.js';
+window.hljs = hljs;
 
 
 
