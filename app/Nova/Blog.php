@@ -50,9 +50,9 @@ class Blog extends Resource
             Text::make('Title'),
             Text::make('Slug')->onlyOnForms(),
             Markdown::make('Body'),
-            Boolean::make('Published','is_published'),
-            DateTime::make('Publish Date','published_at')->format('MM DD YYYY'),
-            Boolean::make('Featured','is_featured'),
+            Boolean::make('Published','is_published')->sortable(),
+            DateTime::make('Publish Date','published_at')->format('MMM D, YYYY')->sortable(),
+            Boolean::make('Featured','is_featured')->sortable(),
             Tags::make('Tags'),
 
         ];
