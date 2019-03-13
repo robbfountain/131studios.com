@@ -155,6 +155,8 @@
 
         <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
         <script type="text/javascript" src="{{mix('js/custom.js')}}"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyC-rbJPsS1QcKxd4NjpFteDQdRV8u-O17M"></script>
+
 
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
@@ -208,7 +210,24 @@
                     element.classList.add('xs:hidden');
                 }
             }
+
+            function initialize() {
+                var myLatLng = {lat: 39.7904, lng: -77.7278};
+
+                var map = new google.maps.Map(document.getElementById('map_canvas'), {
+                    zoom: 8,
+                    center: myLatLng
+                });
+
+                var marker = new google.maps.Marker({
+                    position: myLatLng,
+                    map: map,
+                    title: 'Rhodes Computer Services'
+                });
+            }
+
+            google.maps.event.addDomListener(window, 'load', initialize);
         </script>
-        <!--End of Tawk.to Script-->
+
     </body>
 </html>

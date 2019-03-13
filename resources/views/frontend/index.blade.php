@@ -135,46 +135,50 @@
             </div>
         </section>
 
-        <section class="border-t py-8 xs:px-3 lg:px-0 bg-grey-lightest" id="contact">
+        <section class="border-t pb-8 xs:px-3 lg:px-0 bg-white" id="contact">
+            <div id="map_canvas" class="h-64 w-full mb-8"></div>
             <div class="container mx-auto">
                 <div class="text-center px-2">
                     <h2 class="title font-medium text-blue-darker text-3xl">Contact Us</h2>
                 </div>
-                <div class="flex justify-between xs:flex-col lg:flex-row my-6">
-                    <div class="xs:w-full lg:w-1/4 xs:mb-6 lg:mb-0 rounded shadow-lg p-4 text-center flex flex-col bg-white">
-                        <div class="mb-3">
-                            <fa :icon="['fal','map-pin']" size="2x" class="text-orange"></fa>
-                        </div>
-
-                        <div class="text-sm text-grey-dark">
-                            <p>P.O. Box 704 <br/>Greencastle, PA 17225</p>
-                        </div>
-
-                    </div>
-                    <div class="xs:w-full lg:w-1/4 xs:mb-6 lg:mb-0 rounded shadow-lg p-4 text-center flex flex-col bg-white">
-                        <div class="mb-3">
-                            <fa :icon="['fal','envelope']" size="2x" class="text-orange"></fa>
-                        </div>
-
-                        <div class="text-sm text-grey-dark">
-                            <a href="mailto:robb@131studios.com"
-                               class="text-blue-dark no-underline">robb@131studios.com</a>
-                        </div>
-
+                <div class="flex xs:flex-col lg:flex-row justify-between mt-6 ">
+                    <div class="lg:w-1/2 px-4 border-r xs:w-full mr-6 xs:mb-6 lg:mb-0">
+                       @include('frontend.contact-form')
                     </div>
 
-                    <div class="xs:w-full lg:w-1/4 xs:mb-6 lg:mb-0 rounded shadow-lg p-4 text-center flex flex-col bg-white">
-                        <div class="mb-3">
-                            <fa :icon="['fal','mobile-alt']" size="2x" class="text-orange"></fa>
+                    <div class="flex flex-col flex-1">
+                        <div class="xs:mb-6 lg:mb-0 rounded  p-4 flex items-center border-b  ">
+                            <div class="mr-3 align-right">
+                                <fa :icon="['fal','map-pin']" size="2x" class="text-orange"></fa>
+                            </div>
+
+                            <div class="text-sm text-left text-grey-dark">
+                                <p>P.O. Box 704 <br/>Greencastle, PA 17225</p>
+                            </div>
                         </div>
 
-                        <div class="text-sm text-grey-dark">
-                            (301) 992-0962
+                        <div class="xs:mb-6 lg:mb-0 rounded p-4 flex items-center border-b ">
+                            <div class="mr-3 text-right">
+                                <fa :icon="['fal','envelope']" size="2x" class="text-orange"></fa>
+                            </div>
+
+                            <div class="text-sm text-left text-grey-dark">
+                                <a href="mailto:robb@131studios.com"
+                                   class="text-blue-dark no-underline">robb@131studios.com</a>
+                            </div>
                         </div>
 
+                        <div class="xs:mb-6 lg:mb-0 rounded  p-4 flex items-center border-b ">
+                            <div class="mr-3 text-right">
+                                <fa :icon="['fal','mobile-alt']" size="2x" class="text-orange"></fa>
+                            </div>
+
+                            <div class="text-sm text-left text-grey-dark">
+                                (301) 992-0962
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <contact></contact>
             </div>
         </section>
 
