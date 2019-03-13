@@ -121,7 +121,7 @@
 
                             <div class="px-6 py-4">
                                 <h2 class="font-semibold text-grey-darker tracking-wide text-lg mb-2">{{$project->title}}</h2>
-                                <p class="text-grey-dark leading-normal text-sm">{!! $project->description !!}
+                                <p class="text-grey-dark leading-normal text-sm">{{ $project->description }}
                                 </p>
                             </div>
                             <div class="px-6 py-4">
