@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Textarea;
 use Laravel\Nova\Fields\Trix;
 use PalauaAndSons\TagsField\Tags;
 
@@ -50,7 +51,7 @@ class Project extends Resource
             Text::make('Slug')->hideFromIndex(),
             BelongsTo::make('Category'),
             Image::make('Primary Image'),
-            Text::make('Description'),
+            Textarea::make('Description'),
             Boolean::make('Visible'),
             Tags::make('Tags'),
         ];
