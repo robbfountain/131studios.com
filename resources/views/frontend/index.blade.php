@@ -124,6 +124,14 @@
                                 <p class="text-grey-dark leading-normal text-sm">{{ $project->description }}
                                 </p>
                             </div>
+                            <div class="px-6">
+                                @if($project->url)
+                                    <a href="{{$project->url}}" Target="_blank" class="no-underline text-grey-darker text-sm hover:text-grey hover:underline">
+                                        <fa :icon="['far','external-link']" class="mr-px"></fa>
+                                        Visit Website
+                                    </a>
+                                @endif
+                            </div>
                             <div class="px-6 py-4">
                                 @foreach($project->tags as $tag)
                                     <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#{{$tag->name}}</span>
@@ -143,7 +151,7 @@
                 </div>
                 <div class="flex xs:flex-col lg:flex-row justify-between mt-6 ">
                     <div class="lg:w-1/2 px-4 border-r xs:w-full mr-6 xs:mb-6 lg:mb-0">
-                       @include('frontend.contact-form')
+                        @include('frontend.contact-form')
                     </div>
 
                     <div class="flex flex-col flex-1">

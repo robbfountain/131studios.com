@@ -22,7 +22,6 @@ class Project extends Model implements TaggableInterface
      * @var array
      */
     protected $casts = [
-        'hidden' => 'boolean',
         'visible' => 'boolean',
     ];
 

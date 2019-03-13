@@ -47,12 +47,13 @@ class Project extends Resource
     public function fields(Request $request)
     {
         return [
-            Text::make('Title'),
+            Text::make('Title')->rules('required','string'),
             Text::make('Slug')->hideFromIndex(),
             BelongsTo::make('Category'),
             Image::make('Primary Image'),
-            Textarea::make('Description'),
-            Boolean::make('Visible'),
+            Textarea::make('Description')->rules('required','string'),
+            Text::make('URL'),
+            Boolean::make('Visible')->withMeta(['default', true]),
             Tags::make('Tags'),
         ];
     }
