@@ -24,7 +24,7 @@ class WebsiteController extends Controller
     public function handleIndex()
     {
         return view('frontend.index')->with([
-            'projects' => Project::visible()->orderBy('lft', 'ASC')->get(),
+            'projects' => Project::visible()->orderBy('id', 'DESC')->get(),
         ]);
     }
 
