@@ -2,16 +2,15 @@
 
 namespace App;
 
-use Cartalyst\Tags\TaggableInterface;
-use Cartalyst\Tags\TaggableTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Tags\HasTags;
 
-class Project extends Model implements TaggableInterface
+class Project extends Model
 {
 
-    use Sluggable, SluggableScopeHelpers, TaggableTrait;
+    use Sluggable, SluggableScopeHelpers, HasTags;
 
     /**
      * @var array
@@ -81,16 +80,6 @@ class Project extends Model implements TaggableInterface
         return starts_with($this->primary_image, 'http')
             ? $this->primary_image
             : url($this->primary_image);
-    }
-
-    public function tagString()
-    {
-        $string = '';
-        foreach ($this->tags as $tag) {
-            $string .= ' ' . $tag->name;
-        }
-         dump($string);
-        return $string;
     }
 
 }
