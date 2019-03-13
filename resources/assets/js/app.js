@@ -77,6 +77,9 @@ Vue.use(SmoothScroll);
 
 window.Form = Form;
 
+import hljs from 'highlight.js';
+window.hljs = hljs;
+
 
 
 /**

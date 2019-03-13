@@ -56,6 +56,15 @@ class WebsiteController extends Controller
         return $this->renderView('longform', 'Quote');
     }
 
+    public function handlePrivacy()
+    {
+        return view('frontend.privacy');
+    }
+
+    public function handleTerms() {
+        return view('frontend.terms');
+    }
+
     /**
      * @return WebsiteController
      */
