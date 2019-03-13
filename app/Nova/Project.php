@@ -50,7 +50,7 @@ class Project extends Resource
             Text::make('Slug')->hideFromIndex(),
             BelongsTo::make('Category'),
             Image::make('Primary Image'),
-            Trix::make('Description'),
+            Text::make('Description'),
             Boolean::make('Visible'),
             Tags::make('Tags'),
         ];
