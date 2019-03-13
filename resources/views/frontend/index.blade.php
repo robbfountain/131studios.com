@@ -114,11 +114,14 @@
                 <div class="owl-carousel owl-theme">
                     <!-- Project -->
                     @foreach($projects as $project)
-                        <div class="shadow-lg border overflow-hidden xs:pb-4 lg:mr-6">
-                            <img src="{{'/storage/'. $project->primary_image}}" alt="" class="">
+                        <div class="border xs:pb-4 rounded-t lg:mr-3 h-half">
+                            <div class="h-64 overflow-hidden border-b">
+                                <img src="{{'/storage/'. $project->primary_image}}" alt="" class="">
+                            </div>
+
                             <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2">{{$project->title}}</div>
-                                <p class="text-grey-darker">{!! $project->description !!}
+                                <h2 class="font-semibold text-grey-darker tracking-wide text-lg mb-2">{{$project->title}}</h2>
+                                <p class="text-grey-dark leading-normal text-sm">{!! $project->description !!}
                                 </p>
                             </div>
                             <div class="px-6 py-4">
