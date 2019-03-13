@@ -52,7 +52,7 @@ class Project extends Resource
             Image::make('Primary Image'),
             Textarea::make('Description')->rules('required', 'string'),
             Text::make('URL'),
-            Boolean::make('Visible')->withMeta(['default', true]),
+            Boolean::make('Visible'),
             Tags::make('Tags'),
         ];
     }
