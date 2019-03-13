@@ -35,27 +35,32 @@
                                 <!-- Main Navigation -->
                                 <nav class="px-2 flex xs:flex-col xs:min-w-full xs:mt-6 lg:flex-row lg:min-w-0 xs:hidden lg:inline" id="menu">
 
-                                    <a href="#home" v-smooth-scroll="{duration: 1000}"
+                                    <a href="/#home" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4 ">
                                         Home
                                     </a>
 
-                                    <a href="#about" v-smooth-scroll="{duration: 1000}"
+                                    <a href="/#about" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         About
                                     </a>
 
-                                    <a href="#services" v-smooth-scroll="{duration: 1000}"
+                                    <a href="/#services" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         Services
                                     </a>
 
-                                    <a href="#projects" v-smooth-scroll="{duration: 1000}"
+                                    <a href="/#projects" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         Our Work
                                     </a>
 
-                                    <a href="#contact" v-smooth-scroll="{duration: 1000}"
+                                    <a href="{{route('blog.index')}}"
+                                       class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                        Blog
+                                    </a>
+
+                                    <a href="/#contact" v-smooth-scroll="{duration: 1000}"
                                        class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         Contact
                                     </a>
@@ -153,6 +158,8 @@
 
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
+            hljs.initHighlightingOnLoad();
+
             var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
             (function () {
                 var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
@@ -167,7 +174,6 @@
                 $('.owl-carousel').owlCarousel({
                     items: 3,
                     loop: true,
-                    margin: 10,
                     autoplay: true,
                     autoplayTimeout: 3000,
                     autoplayHoverPause: true,
