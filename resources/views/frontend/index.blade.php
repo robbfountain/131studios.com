@@ -1,4 +1,5 @@
 @extends('frontend.layouts.app')
+
 @section('content')
     <div>
         <div class="bg-white lg:py-10 xs:pb-4 flex flex-col">
@@ -6,7 +7,7 @@
                 <div class="lg:mr-6 xs:mb-8 px-2 lg:-mt-8">
                     <h1 class="text-blue-darker text-5xl mt-6 mb-1">Web Development, Web Design and Consulting</h1>
                     <p class="mt-8 text-xl text-grey-dark">We specialize in offering a wide range of web and IT services
-                        for your business. Contact us for a quote.</p>
+                                                           for your business. Contact us for a quote.</p>
                 </div>
                 <div class="">
                     <img src="/images/heroimg.png" alt="131 Studios Logo" class="px-2 max-h-screen">
@@ -33,8 +34,9 @@
                     <div class="mt-3 text-center">
                         <h3 class="text-2xl font-bold text-blue-darkest">Web Development</h3>
                         <p class="leading-normal text-grey-dark mt-4 text-sm">Custom backend development, Content
-                            Management Systems, Online
-                            Contests, Custom Applications, Shopping Carts, Online Stores.</p>
+                                                                              Management Systems, Online
+                                                                              Contests, Custom Applications, Shopping
+                                                                              Carts, Online Stores.</p>
                     </div>
                 </div>
 
@@ -49,8 +51,9 @@
                     <div class="mt-3 text-center">
                         <h3 class="text-2xl font-bold text-blue-darkest">Application Development</h3>
                         <p class="leading-normal text-grey-dark mt-4 text-sm">Custom backend development, Content
-                            Management Systems, Online
-                            Contests, Custom Applications, Shopping Carts, Online Stores.</p>
+                                                                              Management Systems, Online
+                                                                              Contests, Custom Applications, Shopping
+                                                                              Carts, Online Stores.</p>
                     </div>
                 </div>
 
@@ -66,8 +69,8 @@
                     <div class="mt-3 text-center">
                         <h3 class="text-2xl font-bold text-blue-darkest">Web Design</h3>
                         <p class="leading-normal text-grey-dark mt-4 text-sm">We offer services to completely redesign
-                            your current website or
-                            create you a brand new website. </p>
+                                                                              your current website or
+                                                                              create you a brand new website. </p>
                     </div>
                 </div>
 
@@ -82,8 +85,9 @@
                     <div class="mt-3 text-center">
                         <h3 class="text-2xl font-bold text-blue-darkest">Hosting</h3>
                         <p class="leading-normal text-grey-dark mt-4 text-sm">We offer powerful VPS hosting systems for
-                            your website and we take
-                            care of everything from server maintenance to application deployment.</p>
+                                                                              your website and we take
+                                                                              care of everything from server maintenance
+                                                                              to application deployment.</p>
                     </div>
                 </div>
             </div>
@@ -126,7 +130,8 @@
                             </div>
                             <div class="px-6">
                                 @if($project->url)
-                                    <a href="{{$project->url}}" Target="_blank" class="no-underline text-grey-darker text-sm hover:text-grey hover:underline">
+                                    <a href="{{$project->url}}" Target="_blank"
+                                       class="no-underline text-grey-darker text-sm hover:text-grey hover:underline">
                                         <fa :icon="['far','external-link']" class="mr-px"></fa>
                                         Visit Website
                                     </a>
@@ -142,6 +147,32 @@
                 </div>
             </div>
         </section>
+
+        <section class="bg-grey-lightest lg:pt-6 lg:pb-10 xs:py-4 xs:px-3 lg:px-0 border-t" id="about">
+            <div class="container mx-auto">
+                <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">About Us</h2>
+                <div class="flex justify-between">
+                    <div class="w-1/2">
+                        <img src="/images/family.jpg" alt="Family" class="p-1 bg-white border">
+                    </div>
+                    <div class="w-1/2 leading-normal text-lg text-grey-dark">
+                        <p class="mb-4">
+                            131 Studios is a Web Development and IT Consulting company based in Greencastle, Pennsylvania. We started out creating websites for fun while focusing on learning the newest web programming trends.
+                            We specialize in writing top-notch web applications as well as offer superb IT consulting services.  We love working with local, small business in order to give them the web presence they need all at an affordable cost.
+                        </p>
+                        <p class="mb-4">
+                           We have the experience and knowledge to turn your website in to a true extension of your business.  If you have custom needs and wants for your website we can help you bring them to live.  Online eCommerce shopping, appointment scheduling, event planning etc.  We can provide you with whatever it is you need to make your business thrive.
+                        </p>
+                        <p>
+                            Give us a call or send us an email today to see how we can help you.
+                        </p>
+                    </div>
+                </div>
+
+
+            </div>
+        </section>
+
 
         <section class="border-t pb-8 xs:px-3 lg:px-0 bg-white" id="contact">
             <div id="map_canvas" class="h-64 w-full mb-8"></div>
