@@ -7,6 +7,7 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\ID;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Http\Requests\NovaRequest;
@@ -49,6 +50,7 @@ class Blog extends Resource
             BelongsTo::make('Category'),
             Text::make('Title'),
             Text::make('Slug')->onlyOnForms(),
+            Image::make('image'),
             Markdown::make('Body'),
             Boolean::make('Published','is_published')->sortable(),
             DateTime::make('Publish Date','published_at')->format('MMM D, YYYY')->sortable(),

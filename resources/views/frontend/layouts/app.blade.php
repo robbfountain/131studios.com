@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>{{config('app.name')}}</title>
+        <title>{{ $title ?? config('app.name') }}</title>
 
         <!-- CSS
         ================================================== -->
@@ -16,60 +16,57 @@
         @include('frontend.partials.google-analytics')
 
     </head>
-    <body class="bg-grey-light">
+    <body class="bg-white">
         <div id="app">
             <div class="flex flex-col min-h-screen" id="home">
                 <pinned>
-                    <div class="header pb-10 pt-4 bg-blue-darker">
-                        <div class="container mx-auto">
-                            <div class="flex xs:flex-col lg:flex-row justify-between xs:px-3 lg:px-0">
-                                <!-- Logo -->
-                                <div class="flex justify-between items-center text-xl">
-                                    <a href="/" class="text-white no-underline flex items-center">
-                                        <img src="/images/logo-image-30x30.png" class="rounded-full p-1 bg-white mr-2">
-                                        <span>131 Studios</span>
-                                    </a>
-                                    <fa :icon="['far','bars']" size="lg" class="text-white lg:hidden xs:inline"
-                                        onClick="toggleMenu()"></fa>
-                                </div>
-
-                                <!-- Main Navigation -->
-                                <nav class="px-2 flex xs:flex-col xs:min-w-full xs:mt-6 lg:flex-row lg:min-w-0 xs:hidden lg:inline"
-                                     id="menu">
-
-                                    <a href="/#home" v-smooth-scroll="{duration: 1000}"
-                                       class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4 ">
-                                        Home
-                                    </a>
-
-                                    <a href="/#about" v-smooth-scroll="{duration: 1000}"
-                                       class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
-                                        About
-                                    </a>
-
-                                    <a href="/#services" v-smooth-scroll="{duration: 1000}"
-                                       class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
-                                        Services
-                                    </a>
-
-                                    <a href="/#projects" v-smooth-scroll="{duration: 1000}"
-                                       class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
-                                        Our Work
-                                    </a>
-
-                                    <a href="{{route('blog.index')}}"
-                                       class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
-                                        Blog
-                                    </a>
-
-                                    <a href="/#contact" v-smooth-scroll="{duration: 1000}"
-                                       class="no-underline uppercase text-white hover:text-grey-dark xs:mb-2 lg:mr-4">
-                                        Contact
-                                    </a>
-                                </nav>
+                    <header class="container mx-auto py-3">
+                        <div class="flex xs:flex-col lg:flex-row justify-between items-center">
+                            <!-- Logo -->
+                            <div class="flex justify-between items-center">
+                                <a href="/" class="">
+                                    <img src="/images/131-logo-210x53.png" alt="131 Studios Logo">
+                                </a>
+                                <fa :icon="['far','bars']" size="lg" class="text-grey-darker lg:hidden xs:inline"
+                                    onClick="toggleMenu()"></fa>
                             </div>
+
+                            <!-- Main Navigation -->
+                            <nav class="flex xs:flex-col xs:min-w-full lg:flex-row lg:min-w-0 xs:hidden lg:inline"
+                                 id="menu">
+
+                                <a href="/#home" v-smooth-scroll="{duration: 1000}"
+                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4 ">
+                                    Home
+                                </a>
+
+                                <a href="/#about" v-smooth-scroll="{duration: 1000}"
+                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                    About
+                                </a>
+
+                                <a href="/#services" v-smooth-scroll="{duration: 1000}"
+                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                    Services
+                                </a>
+
+                                <a href="/#projects" v-smooth-scroll="{duration: 1000}"
+                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                    Our Work
+                                </a>
+
+                                <a href="{{route('blog.index')}}"
+                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                    Blog
+                                </a>
+
+                                <a href="/#contact" v-smooth-scroll="{duration: 1000}"
+                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                    Contact
+                                </a>
+                            </nav>
                         </div>
-                    </div>
+                    </header>
                 </pinned>
 
                 <div class="flex-1">
@@ -79,7 +76,7 @@
                 <footer class="bg-blue-darker pt-8 pb-4 flex flex-col text-grey-light leading-normal border-t px-2">
                     <div class="container mx-auto flex justify-between xs:flex-col lg:flex-row">
                         <div class="mr-4 pr-4 lg:w-1/3 ">
-                            <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">About Us</h4>
+                            <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">How Can We Help You</h4>
                             <p>131 Studios is a Web Development and IT Consulting company in Pennsylvania. We specialize
                                in
                                writing top-notch web applications as well as offer superb IT consulting services.</p>

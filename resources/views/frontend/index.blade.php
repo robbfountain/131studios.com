@@ -2,114 +2,159 @@
 
 @section('content')
     <div>
-        <div class="bg-white lg:py-10 xs:pb-4 flex flex-col">
-            <div class="container mx-auto flex xs:flex-col lg:flex-row justify-center items-center">
-                <div class="lg:mr-6 xs:mb-8 px-2 lg:-mt-8">
-                    <h1 class="text-blue-darker text-5xl mt-6 mb-1">Web Development, Web Design and Consulting</h1>
-                    <p class="mt-8 text-xl text-grey-dark">We specialize in offering a wide range of web and IT services
-                                                           for your business. Contact us for a quote.</p>
+        <div class="bg-cover lg:py-10 xs:pb-4 flex flex-col"
+             style="background-image: url('images/web-design-greencastle-pa.png');">
+
+            <h1 class="mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1">
+                Website Design, Hosting, Social Media Management & SEO.
+            </h1>
+
+            <section class="bg-transparent p-4 " id="services">
+                <div class="flex justify-between xs:flex-col lg:flex-row ">
+
+                    <!-- Service Box -->
+                    <div class="w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
+                         style="background-color: rgba(0,0,0,0.6);">
+                        <div class="text-center flex items-center border-b pb-4 justify-center">
+                            <div class="transition bg-white p-2 rounded-full inline-block align-middle">
+                                <fa :icon="['fas','paint-brush']" class="text-blue-dark group-hover:text-white"></fa>
+                            </div>
+                            <h3 class="ml-4 text-2xl tracking-wide font-normal text-grey-light">Website Design</h3>
+                        </div>
+
+                        <p class="mt-2 text-center leading-normal text-grey text-base">
+                            Stand out from your competitors with a professionally designed website from 131 Studios.
+                        </p>
+
+                        <div class="text-center mt-6">
+                            <a href="/website-design" class="border rounded px-4 py-2 text-teal-dark no-underline">
+                                Learn More
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Service Box -->
+                    <div class="w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
+                         style="background-color: rgba(0,0,0,0.6);">
+                        <div class="text-center flex items-center border-b pb-4 justify-center">
+                            <div class="transition bg-white p-2 rounded-full inline-block align-middle">
+                                <fa :icon="['fas','server']" class="text-blue-dark group-hover:text-white"></fa>
+                            </div>
+                            <h3 class="ml-2 text-2xl tracking-wide font-normal text-grey-light">Hosting</h3>
+                        </div>
+
+                        <p class="mt-2 text-center leading-normal text-grey text-base">
+                            We can host your website on industry leading Virtual Private Servers (VPS) that are 100%
+                            maintained by us.</p>
+                        <div class="text-center mt-6">
+                            <a href="/website-design" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
+                                                                                                                   More</a>
+                        </div>
+                    </div>
+
+                    <!-- Service Box -->
+                    <div class="w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
+                         style="background-color: rgba(0,0,0,0.6);">
+                        <div class="text-center flex items-center border-b pb-4 justify-center">
+                            <div class="transition bg-white p-2 rounded-full inline-block align-middle">
+                                <fa :icon="['fas','share-alt']" class="text-blue-dark group-hover:text-white"></fa>
+                            </div>
+                            <h3 class="ml-4 text-2xl tracking-wide font-normal text-grey-light">Social Media</h3>
+                        </div>
+
+                        <p class="mt-2 text-center leading-normal text-grey text-base">
+                            Your digital presence is more than just your website. Social media plays a huge role in
+                            getting your business noticed. We can setup and manage your social media accounts. </p>
+                        <div class="text-center mt-6">
+                            <a href="/website-design" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
+                                                                                                                   More</a>
+                        </div>
+                    </div>
+
+                    <!-- Service Box -->
+                    <div class="w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
+                         style="background-color: rgba(0,0,0,0.6);">
+                        <div class="text-center flex items-center border-b pb-4 justify-center">
+                            <div class="transition bg-white p-2 rounded-full inline-block align-middle">
+                                <fa :icon="['fas','search']" class="text-blue-dark group-hover:text-white"></fa>
+                            </div>
+                            <h3 class="ml-4 text-2xl tracking-wide font-normal text-grey-light">SEO</h3>
+                        </div>
+
+                        <p class="mt-2 text-center leading-normal text-grey text-base">
+                            Your customers need to be able to find you on the web. We can make sure your business is
+                            listed where it should be.
+                        </p>
+                        <div class="text-center mt-6">
+                            <a href="/website-design" class="border rounded px-4 py-2 text-teal-dark no-underline">
+                                Learn More</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="">
-                    <img src="/images/heroimg.png" alt="131 Studios Logo" class="px-2 max-h-screen">
-                </div>
-            </div>
-            <div class="text-center lg:flex-1 lg:-mt-6 xs:hidden lg:inline">
-                <fa :icon="['fas','arrow-down']" size="2x" class="text-blue-darker animated bounce infinite slow"></fa>
-            </div>
+            </section>
         </div>
 
-        <section class="bg-grey-lightest xs:py-4 lg:py-6 px-2 border-t" id="services">
-            <div class="text-center">
-                <h2 class="title font-medium text-blue-darker text-3xl mb-8">Services</h2>
-            </div>
-            <div class="container mx-auto flex justify-between xs:flex-col lg:flex-row ">
-
-                <!-- Service Box -->
-                <div class="rounded-lg p-4 group mr-4 flex flex-col xs:mb-4 hover:bg-grey-light">
-                    <div class="text-center flex justify-center">
-                        <div class="transition group-hover:bg-blue-darker group-hover:text-white rounded-full border bg-grey-lightest p-6 text-center text-2xl">
-                            <fa :icon="['fas','code']" size="xl" class="text-orange-light group-hover:text-white"></fa>
-                        </div>
-                    </div>
-                    <div class="mt-3 text-center">
-                        <h3 class="text-2xl font-bold text-blue-darkest">Web Development</h3>
-                        <p class="leading-normal text-grey-dark mt-4 text-sm">Custom backend development, Content
-                                                                              Management Systems, Online
-                                                                              Contests, Custom Applications, Shopping
-                                                                              Carts, Online Stores.</p>
-                    </div>
-                </div>
-
-                <!-- Service Box -->
-                <div class="rounded-lg p-4 group mr-4 flex flex-col xs:mb-4 hover:bg-grey-light">
-                    <div class="text-center flex justify-center">
-                        <div class="transition group-hover:bg-blue-darker group-hover:text-white rounded-full border bg-grey-lightest p-6 text-center text-2xl">
-                            <fa :icon="['fas','desktop-alt']" size="xl"
-                                class="text-orange-light group-hover:text-white"></fa>
-                        </div>
-                    </div>
-                    <div class="mt-3 text-center">
-                        <h3 class="text-2xl font-bold text-blue-darkest">Application Development</h3>
-                        <p class="leading-normal text-grey-dark mt-4 text-sm">Custom backend development, Content
-                                                                              Management Systems, Online
-                                                                              Contests, Custom Applications, Shopping
-                                                                              Carts, Online Stores.</p>
-                    </div>
-                </div>
-
-                <!-- Service Box -->
-                <div class="rounded-lg p-4 group mr-4 flex flex-col xs:mb-4 hover:bg-grey-light">
-                    <div class="text-center flex justify-center">
-                        <div class="transition group-hover:bg-blue-darker group-hover:text-white rounded-full border bg-grey-lightest p-6 text-center text-2xl">
-
-                            <fa :icon="['fas','paint-brush']" size="xl"
-                                class="text-orange-light group-hover:text-white"></fa>
-                        </div>
-                    </div>
-                    <div class="mt-3 text-center">
-                        <h3 class="text-2xl font-bold text-blue-darkest">Web Design</h3>
-                        <p class="leading-normal text-grey-dark mt-4 text-sm">We offer services to completely redesign
-                                                                              your current website or
-                                                                              create you a brand new website. </p>
-                    </div>
-                </div>
-
-                <!-- Service Box -->
-                <div class="rounded-lg p-4 group mr-4 flex flex-col xs:mb-4 hover:bg-grey-light">
-                    <div class="text-center flex justify-center">
-                        <div class="transition group-hover:bg-blue-darker group-hover:text-white rounded-full border bg-grey-lightest p-6 text-center text-2xl">
-                            <fa :icon="['fas','server']" size="xl"
-                                class="text-orange-light group-hover:text-white"></fa>
-                        </div>
-                    </div>
-                    <div class="mt-3 text-center">
-                        <h3 class="text-2xl font-bold text-blue-darkest">Hosting</h3>
-                        <p class="leading-normal text-grey-dark mt-4 text-sm">We offer powerful VPS hosting systems for
-                                                                              your website and we take
-                                                                              care of everything from server maintenance
-                                                                              to application deployment.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="banner border-t border-b border-blue-darkest xs:py-4 lg:py-10 bg-blue-darker">
+        <section class="bg-grey-lightest lg:pt-6 lg:pb-10 xs:py-4 xs:px-3 lg:px-0 border-t" id="about">
             <div class="container mx-auto">
-                <div class="flex justify-center items-center px-2 flex-col">
-                    <h2 class="text-5xl font-bold text-white xs:text-center">
-                        Hire us for your next project
-                    </h2>
-                    <div class="mt-10">
-                        <a href="#contact" v-smooth-scroll="{duration: 500}"
-                           class="border rounded-full border-white px-4 py-3 text-white no-underline text-2xl hover:bg-white hover:text-blue-dark hover:border-transparent">
-                            Get A Quote
-                        </a>
+                <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">How can We Help <span
+                            style="background-color: rgba(0,0,0,0.5);" class="text-white px-3 py-1">You?</span></h2>
+                <div class="flex flex-row-reverse justify-between">
+                    <div class="w-1/2">
+                        <img src="/images/family.jpg" alt="The Family" class="p-1 bg-white border">
+                    </div>
+                    <div class="w-1/2 leading-normal text-lg text-grey-dark px-2">
+                        <p class="mb-4">
+                            We get it...It can be difficult to establish your online presence. From designing your
+                            website or updating an existing site, there's a lot to handle.
+                            We want to make this process easy for you.
+                        </p>
+                        <p class="mb-4">
+                            We offer website design services, hosting, social media management and seo services to
+                            ensure your business thrives in the digital world.
+                        </p>
+                        <p class="mb-4">
+                            We service Greencastle, Hagerstown, Waynesboro, Chambersburg and the surrounding areas. We
+                            have over 15 years experience in the industry and can help you get your business noticed
+                            online.
+                        </p>
+                        <p>
+                            Give us a call or send us an email today to see how we can help you.
+                        </p>
+                        <div class="text-center text-4xl mt-6 text-grey-darkest font-semibold">
+                            Call Us Today! <span class="text-blue">301.992.0962</span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="lg:py-10 xs:py-4 xs:px-3 lg:px-0 bg-white" id="projects">
+        <section class="bg-white border-t lg:py-8 xs:py-4 xs:px-3 lg:px-0 " id="blogs">
+            <div class="container mx-auto">
+                <div class="text-center">
+                    <h2 class="title font-medium text-blue-darker text-3xl mb-8">Latest From The Blog</h2>
+                </div>
+                <div class="flex">
+                    @foreach($blogs as $blog)
+                        <article class="w-1/4 mr-3 border rounded shadow">
+                            <h4 class="p-2 text-center font-semibold tracking-loose text-blue">
+                                {{$blog->title}}
+                            </h4>
+                            
+                            <div class="my-3">
+                                <img src="{{$blog->image}}" alt="{{$blog->title}}">
+                            </div>
+                            
+                            <div class="text-center mt-6 mb-4">
+                                <a class="rounded border text-blue tracking-loose px-4 py-2 border-blue no-underline" href="blog/{{$blog->slug}}">Read More</a>
+                            </div>
+
+                        </article>
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section class="lg:py-10 xs:py-4 xs:px-3 lg:px-0 bg-grey-lightest border-t" id="projects">
             <div class="container mx-auto">
                 <div class="text-center">
                     <h2 class="title font-medium text-blue-darker text-3xl mb-8">Recent Work</h2>
@@ -145,31 +190,6 @@
                         </div>
                     @endforeach
                 </div>
-            </div>
-        </section>
-
-        <section class="bg-grey-lightest lg:pt-6 lg:pb-10 xs:py-4 xs:px-3 lg:px-0 border-t" id="about">
-            <div class="container mx-auto">
-                <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">About Us</h2>
-                <div class="flex justify-between">
-                    <div class="w-1/2">
-                        <img src="/images/family.jpg" alt="Family" class="p-1 bg-white border">
-                    </div>
-                    <div class="w-1/2 leading-normal text-lg text-grey-dark">
-                        <p class="mb-4">
-                            131 Studios is a Web Development and IT Consulting company based in Greencastle, Pennsylvania. We started out creating websites for fun while focusing on learning the newest web programming trends.
-                            We specialize in writing top-notch web applications as well as offer superb IT consulting services.  We love working with local, small business in order to give them the web presence they need all at an affordable cost.
-                        </p>
-                        <p class="mb-4">
-                           We have the experience and knowledge to turn your website in to a true extension of your business.  If you have custom needs and wants for your website we can help you bring them to live.  Online eCommerce shopping, appointment scheduling, event planning etc.  We can provide you with whatever it is you need to make your business thrive.
-                        </p>
-                        <p>
-                            Give us a call or send us an email today to see how we can help you.
-                        </p>
-                    </div>
-                </div>
-
-
             </div>
         </section>
 

@@ -2,12 +2,26 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Project;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\View\View;
 
+/**
+ * Class WebsiteController
+ * @package App\Http\Controllers
+ */
 class WebsiteController extends Controller
 {
 
     /**
+     * @var
+     */
+    protected $title = ['title' => 'Web Design, Hosting & SEO | 131 Studios'];
+
+    /**
+     * @param string $page
+     *
      * @return $this
      */
     public function index($page = 'index')
@@ -21,11 +35,15 @@ class WebsiteController extends Controller
         abort(404);
     }
 
+    /**
+     * @return Factory|View
+     */
     public function handleIndex()
     {
-        return view('frontend.index')->with([
+        return view('frontend.index')->with(array_merge($this->title, [
             'projects' => Project::visible()->orderBy('id', 'DESC')->get(),
-        ]);
+            'blogs' =>   Blog::published()->latest('published_at')->take(4)->get(),
+        ]));
     }
 
     /**
@@ -36,31 +54,49 @@ class WebsiteController extends Controller
         return $this->renderView('about', 'About Us');
     }
 
+    /**
+     * @return WebsiteController
+     */
     public function handleServices()
     {
         return $this->renderView('services', 'Services');
     }
 
+    /**
+     * @return WebsiteController
+     */
     public function handleWork()
     {
         return $this->renderView('projects', 'Our Work');
     }
 
+    /**
+     * @return WebsiteController
+     */
     public function handleContact()
     {
         return $this->renderView('Contact', 'Contact Us');
     }
 
+    /**
+     * @return WebsiteController
+     */
     public function handleQuote()
     {
         return $this->renderView('longform', 'Quote');
     }
 
+    /**
+     * @return Factory|View
+     */
     public function handlePrivacy()
     {
         return view('frontend.privacy');
     }
 
+    /**
+     * @return Factory|View
+     */
     public function handleTerms() {
         return view('frontend.terms');
     }
