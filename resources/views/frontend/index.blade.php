@@ -136,132 +136,23 @@
                 <div class="flex">
                     @foreach($blogs as $blog)
                         <article class="w-1/4 mr-3 border rounded shadow">
-                            <h4 class="p-2 text-center font-semibold tracking-loose text-blue">
+                            <h4 class="p-2 text-center font-semibold text-lg tracking-loose text-blue">
                                 {{$blog->title}}
                             </h4>
-                            
                             <div class="my-3">
                                 <img src="{{$blog->image}}" alt="{{$blog->title}}">
                             </div>
-                            
                             <div class="text-center mt-6 mb-4">
                                 <a class="rounded border text-blue tracking-loose px-4 py-2 border-blue no-underline" href="blog/{{$blog->slug}}">Read More</a>
                             </div>
-
                         </article>
                     @endforeach
                 </div>
             </div>
         </section>
 
-        <section class="lg:py-10 xs:py-4 xs:px-3 lg:px-0 bg-grey-lightest border-t" id="projects">
-            <div class="container mx-auto">
-                <div class="text-center">
-                    <h2 class="title font-medium text-blue-darker text-3xl mb-8">Recent Work</h2>
-                </div>
-
-                <div class="owl-carousel owl-theme">
-                    <!-- Project -->
-                    @foreach($projects as $project)
-                        <div class="border xs:pb-4 rounded-t lg:mr-3 h-half">
-                            <div class="h-64 overflow-hidden border-b">
-                                <img src="{{'/storage/'. $project->primary_image}}" alt="" class="">
-                            </div>
-
-                            <div class="px-6 py-4">
-                                <h2 class="font-semibold text-grey-darker tracking-wide text-lg mb-2">{{$project->title}}</h2>
-                                <p class="text-grey-dark leading-normal text-sm">{{ $project->description }}
-                                </p>
-                            </div>
-                            <div class="px-6">
-                                @if($project->url)
-                                    <a href="{{$project->url}}" Target="_blank"
-                                       class="no-underline text-grey-darker text-sm hover:text-grey hover:underline">
-                                        <fa :icon="['far','external-link']" class="mr-px"></fa>
-                                        Visit Website
-                                    </a>
-                                @endif
-                            </div>
-                            <div class="px-6 py-4">
-                                @foreach($project->tags as $tag)
-                                    <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#{{$tag->name}}</span>
-                                @endforeach
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
-        </section>
-
-
-        <section class="border-t pb-8 xs:px-3 lg:px-0 bg-white" id="contact">
+        <section class="border-t bg-white" id="contact">
             <div id="map_canvas" class="h-64 w-full mb-8"></div>
-            <div class="container mx-auto">
-                <div class="text-center px-2">
-                    <h2 class="title font-medium text-blue-darker text-3xl">Contact Us</h2>
-                </div>
-                <div class="flex xs:flex-col lg:flex-row justify-between mt-6 ">
-                    <div class="lg:w-1/2 px-4 border-r xs:w-full mr-6 xs:mb-6 lg:mb-0">
-                        @include('frontend.contact-form')
-                    </div>
-
-                    <div class="flex flex-col flex-1">
-                        <div class="xs:mb-6 lg:mb-0 rounded  p-4 flex items-center border-b  ">
-                            <div class="mr-3 align-right">
-                                <fa :icon="['fal','map-pin']" size="2x" class="text-orange"></fa>
-                            </div>
-
-                            <div class="text-sm text-left text-grey-dark">
-                                <p>P.O. Box 704 <br/>Greencastle, PA 17225</p>
-                            </div>
-                        </div>
-
-                        <div class="xs:mb-6 lg:mb-0 rounded p-4 flex items-center border-b ">
-                            <div class="mr-3 text-right">
-                                <fa :icon="['fal','envelope']" size="2x" class="text-orange"></fa>
-                            </div>
-
-                            <div class="text-sm text-left text-grey-dark">
-                                <a href="mailto:robb@131studios.com"
-                                   class="text-blue-dark no-underline">robb@131studios.com</a>
-                            </div>
-                        </div>
-
-                        <div class="xs:mb-6 lg:mb-0 rounded  p-4 flex items-center border-b ">
-                            <div class="mr-3 text-right">
-                                <fa :icon="['fal','mobile-alt']" size="2x" class="text-orange"></fa>
-                            </div>
-
-                            <div class="text-sm text-left text-grey-dark">
-                                (301) 992-0962
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
         </section>
-
-        <section class="border-t py-8 bg-white">
-            <div class="container mx-auto">
-                <div class="text-center px-2">
-                    <h2 class="title font-medium text-blue-darker text-3xl">Platforms We Use</h2>
-                </div>
-                <div class="flex flex-wrap justify-between items-center justify-center mt-8 xs:flex-col lg:flex-row">
-                    <img src="/images/logos/laravel.png" alt="Laravel Logo"
-                         class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
-                    <img src="/images/logos/digital-ocean.png" alt="DigitalOcean Logo"
-                         class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
-                    <img src="/images/logos/php.png" alt="PHP Logo" class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
-                    <img src="/images/logos/forge.png" alt="Laravel Forge Logo"
-                         class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
-                    <img src="/images/logos/vue.png" alt="Vue Logo" class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
-                    <img src="/images/logos/jQuery-Logo.png" alt="jQuery Logo"
-                         class="h-12 xs:mb-8 lg:mb-0 lg:mr-6 ">
-                </div>
-            </div>
-        </section>
-        <modal v-show="modal">
-            <quote slot="body"/>
-        </modal>
     </div>
 @stop

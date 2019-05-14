@@ -48,7 +48,7 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('frontend.blog.show',compact('blog'));
+        return view('frontend.blog.show',compact('blog'))->with(['title' => $blog->title]);
     }
 
     /**

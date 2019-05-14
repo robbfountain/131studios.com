@@ -115,6 +115,7 @@ Vue.component('Services', require('./components/Services'));
 Vue.component('Projects', require('./components/Work'));
 Vue.component('Quote', require('./components/Quote'));
 Vue.component('Modal', require('./components/Modal'));
+Vue.component('Dropdown',require('./components/Dropdown'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

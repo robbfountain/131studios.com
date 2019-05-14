@@ -92,7 +92,7 @@
 
       if (element.parent('.dropdown-menu').length) {
         element
-          .closest('li.dropdown')
+          .closest('dropdown')
             .addClass('active')
           .end()
           .find('[data-toggle="tab"]')

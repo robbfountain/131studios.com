@@ -116,7 +116,7 @@
 
     if (active.parent('.dropdown-menu').length) {
       active = active
-        .closest('li.dropdown')
+        .closest('dropdown')
         .addClass('active')
     }
 
