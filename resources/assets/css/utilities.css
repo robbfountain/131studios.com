@@ -72,3 +72,11 @@ blockquote p {
 
 
 
+ul.breadcrumb > li:after {
+    content: " >  ";
+}
+
+ul.breadcrumb:last-child:after {
+    content: '' !important;
+}
+

@@ -3768,6 +3768,14 @@ blockquote:before {
 blockquote p {
   display: inline;
 }
+
+ul.breadcrumb > li:after {
+  content: " >  ";
+}
+
+ul.breadcrumb:last-child:after {
+  content: '' !important;
+}
 /**
  * Owl Carousel v2.3.4
  * Copyright 2013-2018 David Deutsch
@@ -4124,6 +4132,10 @@ blockquote p {
 
 .dropdown-menu-link:hover {
   background: rgba(0, 0, 0, .1);
+}
+
+.blog-container > h1 {
+  color: #3490dc;
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */
