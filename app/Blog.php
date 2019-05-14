@@ -89,8 +89,4 @@ class Blog extends Model
     {
         return (new \Parsedown())->text($this->body);
     }
-
-
-
-
 }
