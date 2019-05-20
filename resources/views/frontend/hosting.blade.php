@@ -22,7 +22,7 @@
             </div>
 
             <div class="flex">
-                <div class="px-2">
+                <div class="px-4 w-1/2">
                     <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">
                         Web Hosting for Greencastle, Chambersburg and Hagerstown
                     </h2>
@@ -42,8 +42,8 @@
                                         fast response times, security and support</p>
                     </div>
                 </div>
-                <div class="bg-grey-lighter">
-                    lkjlkj
+                <div class="w-1/2 px-4">
+                    <img src="images/web-hosting.jpg" alt="Web Hosting in Greencastle, Chambersburg and Hagerstown">
                 </div>
             </div>
         </div>
@@ -51,7 +51,7 @@
 
     <section class="py-10 bg-grey-lightest">
         <div class="flex container mx-auto">
-            <div class="flex p-3 w-1/4">
+            <div class="flex p-3 w-1/2">
                 <div class="mr-4">
                     <fa :icon="['fal','database']" class="mr-2" size="3x"></fa>
                 </div>

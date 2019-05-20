@@ -22,7 +22,7 @@
                 Website Design
             </div>
             <div class="flex">
-                <div class="text-lg text-grey-darker pr-6">
+                <div class="text-lg text-grey-darker pr-6 w-1/2">
                     <p class="mb-6">Let's face it, in today's digital world your business needs a website that stands our from your
                        competitors.
                        131 Studios designs custom websites for our clients that meet the needs of their business. </p>
@@ -41,30 +41,36 @@
                     </div>
                 </div>
 
-                <div class="p-4 bg-grey-lighter">
-                    <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">Standard Features</h2>
-                    <ul class="text-lg text-grey-darker list-reset">
-                        <li class="mb-3 text-base"><fa :icon="['far','check']" class="mr-2 text-green"  ></fa>Mobile and Desktop Optimized. Your website looks great on phones, tablets and computers</li>
-                        <li class="mb-3 text-base"><fa :icon="['far','check']" class="mr-2 text-green"  ></fa>
-                            <a href="/seo" class="text-blue hover:text-blue-dark no-underline">Search Engine Optimization</a></li>
-                        <li class="mb-3 text-base"><fa :icon="['far','check']" class="mr-2 text-green"  ></fa>Website submitted to all major search engines (Google, Bing, Yahoo)</li>
-                        <li class="mb-3 text-base"><fa :icon="['far','check']" class="mr-2 text-green"  ></fa>Email Contact Form</li>
-                    </ul>
+                <div class="px-2 w-1/2">
+                    <img src="images/website-design-131-studios-formats.jpg" alt="Website Design 131 Studios">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-10">
+    <section class="py-10 bg-grey-lightest border-t">
         <div class="container mx-auto flex">
+            <div class="flex p-3 w-1/4">
+                <div class="mr-4">
+                    <fa :icon="['fal','star']" class="mr-2" size="3x"></fa>
+                </div>
+                <div class="flex flex-col text-blue-darker">
+                    <h3 class="tracking-wide">Unique Design</h3>
+                    <div class="mt-2 leading-normal">
+                        Your website will have a unique design tailored to your business that will stand out from the competition.
+                    </div>
+                </div>
+            </div>
+
+
             <div class="flex p-3 w-1/4">
                 <div class="mr-4">
                     <fa :icon="['fal','mobile-alt']" class="mr-2" size="3x"></fa>
                 </div>
                 <div class="flex flex-col text-blue-darker">
-                    <h3 class="tracking-wide">Mobile Optimized</h3>
-                    <div class="mt-2">
-                       Your website is optimized for phones, tablets and desktop computers.
+                    <h3 class="tracking-wide">Fully Responsive</h3>
+                    <div class="mt-2 leading-normal">
+                       Your website will look great on any device...Phones, Tablets and computers
                     </div>
                 </div>
             </div>
@@ -76,7 +82,7 @@
                 </div>
                 <div class="flex flex-col text-blue-darker">
                     <h3 class="tracking-wide">Search Engine Optimized</h3>
-                    <div class="mt-2">
+                    <div class="mt-2 leading-normal">
                         Get your business recognized by ensuring your site is ranked in all major search engines.
                     </div>
                 </div>
@@ -89,7 +95,7 @@
                 </div>
                 <div class="flex flex-col text-blue-darker">
                     <h3 class="tracking-wide">Email Contact Form</h3>
-                    <div class="mt-2">
+                    <div class="mt-2 leading-normal">
                         Your visitors can contact you directly from your website with your email contact form.
                     </div>
                 </div>
@@ -98,24 +104,26 @@
         </div>
     </section>
 
-    <section class="bg-grey-lightest py-8">
-        <div class="container mx-auto p-2">
-            <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">Additional Products & Services </h2>
-            <p class="text-center text-lg">
-                In addition to website design we offer a range of additional services
-            </p>
-            <div class="flex p-3 w-1/4">
+    <section class="py-10 bg-white border-t">
+        <div class="container mx-auto flex">
+            <div class="flex p-3 w-1/3">
                 <div class="mr-4">
                     <fa :icon="['fal','search']" class="mr-2" size="3x"></fa>
                 </div>
                 <div class="flex flex-col text-blue-darker">
-                    <h3 class="tracking-wide">Search Engine Optimized</h3>
-                    <div class="mt-2">
-                        Get your business recognized by ensuring your site is ranked in all major search engines.
+                    <div class="flex items-center justify-between">
+                        <h3 class="tracking-wide">SEO Checkup</h3>
+                        <div class="ml-6 text-sm font-semibold text-grey-darker">
+                            $FREE</div>
+                    </div>
+
+                    <div class="mt-2 leading-normal text-grey-darker">
+                        Is your website doing everything it can to bring traffic to your business? Let us analyze your website and provide a report on your web presence.
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
+
+
 @endsection

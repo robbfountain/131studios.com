@@ -8,6 +8,7 @@ Route::get('contact','ContactController@index');
 
 Route::get('hosting','WebsiteController@handle');
 Route::get('seo','WebsiteController@handle');
+Route::get('social-media','WebsiteController@handle');
 
 Route::get('/','WebsiteController@index')->name('index');
 

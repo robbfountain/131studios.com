@@ -40,12 +40,12 @@ class WebsiteController extends Controller
      */
     public function handleWebsiteDesign()
     {
-        return view('frontend.website-design')->with(['title' => 'Website Design | 131 Studios']);
+        return view('frontend.website-design')->with(['title' => 'Website Design']);
     }
 
     public function handleHosting()
     {
-        return view('frontend.hosting')->with(['title' => 'Web Hosting In Greencastle, Chambersburg & Hagerstown | 131 Studios']);
+        return view('frontend.hosting')->with(['title' => 'Web Hosting In Greencastle, Chambersburg & Hagerstown']);
     }
 
     /**
@@ -81,6 +81,11 @@ class WebsiteController extends Controller
     public function handleAbout()
     {
         return $this->renderView('about', 'About Us');
+    }
+
+    public function handleSocialMedia()
+    {
+        return view('frontend.social-media')->with(['title' => 'Social Media']);
     }
 
     /**
