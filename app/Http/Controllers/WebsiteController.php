@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Project;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\View\View;
+use Illuminate\Contracts\View\Factory;
 
 /**
  * Class WebsiteController
@@ -18,6 +18,35 @@ class WebsiteController extends Controller
      * @var
      */
     protected $title = ['title' => 'Web Design, Hosting & SEO | 131 Studios'];
+
+
+    /**
+     * @return mixed
+     */
+    public function handle()
+    {
+        $methodName = 'handle' . studly_case(request()->path());
+
+        if (method_exists($this, $methodName)) {
+            return $this->{$methodName}();
+        }
+
+        abort(404);
+    }
+
+
+    /**
+     * @return Factory|View
+     */
+    public function handleWebsiteDesign()
+    {
+        return view('frontend.website-design')->with(['title' => 'Website Design | 131 Studios']);
+    }
+
+    public function handleHosting()
+    {
+        return view('frontend.hosting')->with(['title' => 'Web Hosting In Greencastle, Chambersburg & Hagerstown | 131 Studios']);
+    }
 
     /**
      * @param string $page
@@ -42,7 +71,7 @@ class WebsiteController extends Controller
     {
         return view('frontend.index')->with(array_merge($this->title, [
             'projects' => Project::visible()->orderBy('id', 'DESC')->get(),
-            'blogs' =>   Blog::published()->latest('published_at')->take(4)->get(),
+            'blogs' => Blog::published()->latest('published_at')->take(4)->get(),
         ]));
     }
 
@@ -52,6 +81,17 @@ class WebsiteController extends Controller
     public function handleAbout()
     {
         return $this->renderView('about', 'About Us');
+    }
+
+    /**
+     * @param $view
+     * @param $heading
+     *
+     * @return $this
+     */
+    private function renderView($view, $heading)
+    {
+        return view('frontend.' . $view)->with(['heading' => $heading]);
     }
 
     /**
@@ -97,7 +137,8 @@ class WebsiteController extends Controller
     /**
      * @return Factory|View
      */
-    public function handleTerms() {
+    public function handleTerms()
+    {
         return view('frontend.terms');
     }
 
@@ -115,17 +156,6 @@ class WebsiteController extends Controller
     public function hosting()
     {
         return $this->renderView('services.hosting', 'Hosting');
-    }
-
-    /**
-     * @param $view
-     * @param $heading
-     *
-     * @return $this
-     */
-    private function renderView($view, $heading)
-    {
-        return view('frontend.' . $view)->with(['heading' => $heading]);
     }
 
 }

@@ -1,5 +1,5 @@
 <template>
-    <div class="dropdown relative">
+    <div class="dropdown relative lg:inline-block">
         <div class="dropdown-toggle"
              aria-haspopup="true"
              :aria-expanded="isOpen"
@@ -9,7 +9,7 @@
         </div>
 
         <div v-show="isOpen"
-             class="dropdown-menu absolute bg-card py-2 rounded shadow mt-2"
+             class="dropdown-menu absolute bg-white py-2 rounded shadow mt-2"
              :class="align === 'left' ? 'pin-l' : 'pin-r'"
              :style="{ width }"
         >

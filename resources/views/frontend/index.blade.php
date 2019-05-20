@@ -47,7 +47,7 @@
                             We can host your website on industry leading Virtual Private Servers (VPS) that are 100%
                             maintained by us.</p>
                         <div class="text-center mt-6">
-                            <a href="/website-design" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
+                            <a href="/hosting" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
                                                                                                                    More</a>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
                             Your digital presence is more than just your website. Social media plays a huge role in
                             getting your business noticed. We can setup and manage your social media accounts. </p>
                         <div class="text-center mt-6">
-                            <a href="/website-design" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
+                            <a href="/social-media" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
                                                                                                                    More</a>
                         </div>
                     </div>
@@ -86,7 +86,7 @@
                             listed where it should be.
                         </p>
                         <div class="text-center mt-6">
-                            <a href="/website-design" class="border rounded px-4 py-2 text-teal-dark no-underline">
+                            <a href="/seo" class="border rounded px-4 py-2 text-teal-dark no-underline">
                                 Learn More</a>
                         </div>
                     </div>
@@ -96,7 +96,7 @@
 
         <section class="bg-grey-lightest lg:pt-6 lg:pb-10 xs:py-4 xs:px-3 lg:px-0 border-t" id="about">
             <div class="container mx-auto">
-                <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">How can We Help <span
+                <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">How Can We Help <span
                             style="background-color: rgba(0,0,0,0.5);" class="text-white px-3 py-1">You?</span></h2>
                 <div class="flex flex-row-reverse justify-between">
                     <div class="w-1/2">

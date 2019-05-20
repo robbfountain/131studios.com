@@ -40,15 +40,17 @@
                                     Home
                                 </a>
 
-                                <a href="/about" v-smooth-scroll="{duration: 1000}"
-                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
-                                    About
-                                </a>
+                                <dropdown>
+                                    <a slot="trigger" href="#"
+                                       class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                        Our Services
+                                    </a>
+                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/website-design">Website Design</a>
+                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/hosting">Hosting</a>
+                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/social-media">Social Media</a>
+                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/seo">SEO</a>
+                                </dropdown>
 
-                                <a href="/services"
-                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
-                                    Our Services
-                                </a>
 
                                 <a href="/projects"
                                    class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">

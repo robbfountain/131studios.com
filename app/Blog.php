@@ -34,7 +34,7 @@ class Blog extends Model
     protected $dates = ['published_at'];
 
     /**
-     *
+     * Boot
      */
     protected static function boot()
     {

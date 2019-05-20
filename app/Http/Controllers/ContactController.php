@@ -16,6 +16,11 @@ use Newsletter;
  */
 class ContactController extends Controller {
 
+    public function index()
+    {
+        return view('frontend.contact');
+    }
+
     /**
      * @param ShortContactForm $request
      * @return \Illuminate\Http\JsonResponse
