@@ -15,12 +15,13 @@
 
     <section class="py-10">
         <div class="container mx-auto">
-            <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
+            <div class="mb-8 text-base flex items-center p-2 bg-grey-lighter rounded">
                 <fa :icon="['fas','home']" class="mr-2"  ></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2" ></fa>
                 Website Design
             </div>
+
             <div class="flex">
                 <div class="text-lg text-grey-darker pr-6 w-1/2">
                     <p class="mb-6">Let's face it, in today's digital world your business needs a website that stands our from your
@@ -36,8 +37,8 @@
                         a call and let us know how we can help you.
                     </p>
 
-                    <div class="text-center text-4xl mt-6 text-grey-darkest font-semibold">
-                        Call Us Today! <span class="text-blue">301.992.0962</span>
+                    <div class="text-center text-4xl mt-6 text-grey-darkest font-semibold px-4 py-2 border-2 rounded bg-blue-dark text-white">
+                        Call Us Today! <span class="text-blue-darker">301.992.0962</span>
                     </div>
                 </div>
 
@@ -103,27 +104,4 @@
 
         </div>
     </section>
-
-    <section class="py-10 bg-white border-t">
-        <div class="container mx-auto flex">
-            <div class="flex p-3 w-1/3">
-                <div class="mr-4">
-                    <fa :icon="['fal','search']" class="mr-2" size="3x"></fa>
-                </div>
-                <div class="flex flex-col text-blue-darker">
-                    <div class="flex items-center justify-between">
-                        <h3 class="tracking-wide">SEO Checkup</h3>
-                        <div class="ml-6 text-sm font-semibold text-grey-darker">
-                            $FREE</div>
-                    </div>
-
-                    <div class="mt-2 leading-normal text-grey-darker">
-                        Is your website doing everything it can to bring traffic to your business? Let us analyze your website and provide a report on your web presence.
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
 @endsection

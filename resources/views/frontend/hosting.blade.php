@@ -7,7 +7,7 @@
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
-                Web Hosting
+                Web Hosting for Greencastle, Chambersburg and Hagerstown
             </h1>
         </div>
     </div>
@@ -23,9 +23,6 @@
 
             <div class="flex">
                 <div class="px-4 w-1/2">
-                    <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">
-                        Web Hosting for Greencastle, Chambersburg and Hagerstown
-                    </h2>
 
                     <div class="text-lg text-grey-darkest leading-normal">
                         <p class="mb-4">
@@ -51,7 +48,7 @@
 
     <section class="py-10 bg-grey-lightest">
         <div class="flex container mx-auto">
-            <div class="flex p-3 w-1/2">
+            <div class="flex p-3 w-1/4">
                 <div class="mr-4">
                     <fa :icon="['fal','database']" class="mr-2" size="3x"></fa>
                 </div>

@@ -59,6 +59,11 @@ class WebsiteController extends Controller
         return view('frontend.seo')->with(['title' => 'SEO']);
     }
 
+    public function handleAdditionalServices()
+    {
+        return view('frontend.additional-services')->with(['title' => 'Additional Services']);
+    }
+
     /**
      * @param string $page
      *

@@ -1,5 +1,5 @@
 <?php
-Route::get('/projects','ProjectController@index');
+Route::get('projects','ProjectController@index');
 Route::post('contact', 'ContactController@store');
 Route::post('quote','ContactController@quote');
 
@@ -9,6 +9,7 @@ Route::get('contact','ContactController@index');
 Route::get('hosting','WebsiteController@handle');
 Route::get('seo','WebsiteController@handle');
 Route::get('social-media','WebsiteController@handle');
+Route::get('additional-services','WebsiteController@handle');
 
 Route::get('/','WebsiteController@index')->name('index');
 

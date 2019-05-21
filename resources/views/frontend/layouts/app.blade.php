@@ -40,7 +40,7 @@
                                     Home
                                 </a>
 
-                                <dropdown>
+                                <dropdown width="200px">
                                     <a slot="trigger" href="#"
                                        class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         Our Services
@@ -49,6 +49,8 @@
                                     <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/hosting">Hosting</a>
                                     <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/social-media">Social Media</a>
                                     <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/seo">SEO</a>
+                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/additional-services">Additional Services</a>
+
                                 </dropdown>
 
 
@@ -160,7 +162,6 @@
         </div>
 
         <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
-        <script type="text/javascript" src="{{mix('js/custom.js')}}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyC-rbJPsS1QcKxd4NjpFteDQdRV8u-O17M"></script>
 
 
@@ -177,36 +178,6 @@
                 s1.setAttribute('crossorigin', '*');
                 s0.parentNode.insertBefore(s1, s0);
             })();
-
-            $(document).ready(function () {
-                $('.owl-carousel').owlCarousel({
-                    items: 3,
-                    loop: true,
-                    autoplay: true,
-                    autoplayTimeout: 3000,
-                    autoplayHoverPause: true,
-                    nav: false,
-                    responsive: {
-                        0: {
-                            items: 1,
-                            nav: false,
-                            dots: false,
-                        },
-                        480: {
-                            items: 1,
-                            nav: false,
-                            dots: false,
-                        },
-                        768: {
-                            items: 3,
-                        }
-                    }
-                });
-
-                $('.owl-carousel').on('changed.owl.carousel', function (event) {
-                    $('.owl-carousel').owlCarousel();
-                });
-            });
 
             function toggleMenu() {
                 var element = document.getElementById('menu');

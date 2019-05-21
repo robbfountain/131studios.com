@@ -5,6 +5,10 @@
         <div class="bg-cover lg:py-10 xs:pb-4 flex flex-col"
              style="background-image: url('images/web-design-greencastle-pa.png');">
 
+            <div class="container mx-auto">
+
+
+
             <h1 class="mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1">
                 Website Design, Hosting, Social Media Management & SEO.
             </h1>
@@ -19,7 +23,7 @@
                             <div class="transition bg-white p-2 rounded-full inline-block align-middle">
                                 <fa :icon="['fas','paint-brush']" class="text-blue-dark group-hover:text-white"></fa>
                             </div>
-                            <h3 class="ml-4 text-2xl tracking-wide font-normal text-grey-light">Website Design</h3>
+                            <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">Website Design</h3>
                         </div>
 
                         <p class="mt-2 text-center leading-normal text-grey text-base">
@@ -40,7 +44,7 @@
                             <div class="transition bg-white p-2 rounded-full inline-block align-middle">
                                 <fa :icon="['fas','server']" class="text-blue-dark group-hover:text-white"></fa>
                             </div>
-                            <h3 class="ml-2 text-2xl tracking-wide font-normal text-grey-light">Hosting</h3>
+                            <h3 class="ml-2 text-xl tracking-wide font-normal text-grey-light">Hosting</h3>
                         </div>
 
                         <p class="mt-2 text-center leading-normal text-grey text-base">
@@ -59,11 +63,11 @@
                             <div class="transition bg-white p-2 rounded-full inline-block align-middle">
                                 <fa :icon="['fas','share-alt']" class="text-blue-dark group-hover:text-white"></fa>
                             </div>
-                            <h3 class="ml-4 text-2xl tracking-wide font-normal text-grey-light">Social Media</h3>
+                            <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">Social Media</h3>
                         </div>
 
                         <p class="mt-2 text-center leading-normal text-grey text-base">
-                            Your digital presence is more than just your website. Social media plays a huge role in
+                            Social media plays a huge role in
                             getting your business noticed. We can setup and manage your social media accounts. </p>
                         <div class="text-center mt-6">
                             <a href="/social-media" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
@@ -78,7 +82,7 @@
                             <div class="transition bg-white p-2 rounded-full inline-block align-middle">
                                 <fa :icon="['fas','search']" class="text-blue-dark group-hover:text-white"></fa>
                             </div>
-                            <h3 class="ml-4 text-2xl tracking-wide font-normal text-grey-light">SEO</h3>
+                            <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">SEO</h3>
                         </div>
 
                         <p class="mt-2 text-center leading-normal text-grey text-base">
@@ -92,6 +96,7 @@
                     </div>
                 </div>
             </section>
+            </div>
         </div>
 
         <section class="bg-grey-lightest lg:pt-6 lg:pb-10 xs:py-4 xs:px-3 lg:px-0 border-t" id="about">
