@@ -2,40 +2,53 @@
 @import '../../../node_modules/highlight.js/styles/solarized-dark.css';
 
 body {
-    font-family : 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .mont {
-    font-family : 'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
 }
 
 .banner {
-    background : url("../images/code_banner.png");
+    background: url("../images/code_banner.png");
 }
 
 .fb {
-    background : rgb(59, 89, 152);
+    background: rgb(59, 89, 152);
 }
 
 .transition {
-    transition : 0.5s;
+    transition: 0.5s;
+}
+
+.title {
+    display: inline-block;
 }
 
 .title:after {
-    padding-bottom : 1rem;
-    display        : block;
-    content        : '';
-    border-bottom  : solid 4px #12283A;
-    transform      : scaleX(0.05);
-    transition     : transform 250ms ease-in-out;
+    padding-bottom: .2rem;
+    display: block;
+    content: '';
+    border-bottom: solid 4px #12283A;
+    transform: scaleX(0.1);
+    transition: transform 250ms ease-in-out;
 }
 
 .title:hover:after {
-    transform : scaleX(.15);
+    transform: scaleX(1);
+}
+
+.title:after {
+    transform-origin: 0 50%;
 }
 
 .header {
-    clip-path : polygon(
+    clip-path: polygon(
             0 0,
             100% 0,
             100% 100%,
@@ -44,7 +57,7 @@ body {
 }
 
 a {
-    transition : color .2s ease-out, background .2s ease-in;
+    transition: color .2s ease-out, background .2s ease-in;
 }
 
 .hero {
@@ -56,8 +69,9 @@ blockquote {
     border-left: 10px solid #ccc;
     margin: 1.5em 0 !important;
     padding: 2.5em 10px;
-    quotes: "\201C""\201D""\2018""\2019";
+    quotes: "\201C" "\201D" "\2018" "\2019";
 }
+
 blockquote:before {
     color: #ccc;
     content: open-quote;
@@ -66,10 +80,10 @@ blockquote:before {
     margin-right: 0.25em;
     vertical-align: -0.4em;
 }
+
 blockquote p {
     display: inline;
 }
-
 
 
 ul.breadcrumb > li:after {

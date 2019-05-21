@@ -43,9 +43,20 @@ class WebsiteController extends Controller
         return view('frontend.website-design')->with(['title' => 'Website Design']);
     }
 
+    /**
+     * @return Factory|View
+     */
     public function handleHosting()
     {
         return view('frontend.hosting')->with(['title' => 'Web Hosting In Greencastle, Chambersburg & Hagerstown']);
+    }
+
+    /**
+     * @return Factory|View
+     */
+    public function handleSeo()
+    {
+        return view('frontend.seo')->with(['title' => 'SEO']);
     }
 
     /**
@@ -83,11 +94,6 @@ class WebsiteController extends Controller
         return $this->renderView('about', 'About Us');
     }
 
-    public function handleSocialMedia()
-    {
-        return view('frontend.social-media')->with(['title' => 'Social Media']);
-    }
-
     /**
      * @param $view
      * @param $heading
@@ -97,6 +103,14 @@ class WebsiteController extends Controller
     private function renderView($view, $heading)
     {
         return view('frontend.' . $view)->with(['heading' => $heading]);
+    }
+
+    /**
+     * @return Factory|View
+     */
+    public function handleSocialMedia()
+    {
+        return view('frontend.social-media')->with(['title' => 'Social Media']);
     }
 
     /**

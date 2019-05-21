@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="px-2 w-1/2">
-                    <img src="images/website-design-131-studios-formats.jpg" alt="Website Design 131 Studios">
+                    <img src="images/website-design-131-studios-formats.jpg" class="-mt-8" alt="Website Design 131 Studios">
                 </div>
             </div>
         </div>

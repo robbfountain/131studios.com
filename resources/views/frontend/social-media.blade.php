@@ -7,7 +7,7 @@
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
-               Social Media
+                Social Media
             </h1>
         </div>
     </div>
@@ -15,23 +15,25 @@
     <section class="py-10">
         <div class="container mx-auto">
             <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
-                <fa :icon="['fas','home']" class="mr-2"  ></fa>
+                <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
-                <fa :icon="['far','chevron-right']" size="xs" class="mr-2" ></fa>
-               Social Media
+                <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
+                Social Media
             </div>
-            <div class="flex">
-                <div>
-                    <div class="text-lg text-grey-darker pr-6 w-1/2">
-                        <p class="mb-6">There are over 2 billion people using social media with Facebook having the greatest presence.  </p>
 
-                        <p class="mb-6">We will work with your every step of the way to determine your needs and wants.
-                            We'll make suggestions and recommendations to make sure you're getting what you want and we keep
-                            you informed every step of the process</p>
-                        <p>
-                            If you currently have a website and just want to make some changes, we can help you out. Just
-                            give us
-                            a call and let us know how we can help you.
+            <h2 class="title roboto">Social Media</h2>
+            <div class="flex">
+                <div class="w-1/2">
+                    <div class="text-lg text-grey-darker pr-6">
+                        <p class="mb-6">
+                            There are over 2 billion people on social media networks worldwide.
+                            Your Facebook, Instagram and LinkedIn profiles will speak volumes and paired with
+                            a beautiful <a href="/website-design" class="no-underline text-blue">website</a> can drive people to your business.
+                        </p>
+
+                        <p class="mb-6">
+                            We know there's a lot to think about and social media may not always be on the top of your list. Leave your social media profile up to us. We have a variety of social media packages to help you
+                            manage your profiles.
                         </p>
 
                         <div class="text-center text-4xl mt-6 text-grey-darkest font-semibold">
@@ -39,8 +41,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
-    @endsection
+@endsection

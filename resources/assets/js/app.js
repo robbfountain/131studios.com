@@ -10,9 +10,6 @@ require('./bootstrap');
  * for Router, Vuex, Routes etc
  */
 import Vue from 'vue';
-import VueRouter from 'vue-router';
-import routes from './routes';
-
 
 import SmoothScroll from 'vue-smooth-scroll';
 /**
@@ -25,53 +22,6 @@ import {far} from '@fortawesome/pro-regular-svg-icons'
 import {fal} from '@fortawesome/pro-light-svg-icons'
 import {fab} from '@fortawesome/free-brands-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
-//
-// import Isotope from 'isotope-layout';
-// import ImagesLoaded from 'imagesloaded';
-//
-//
-// var elem = document.querySelector('.grid');
-//
-// ImagesLoaded(elem, function(instance) {
-//     var iso = new Isotope( elem, {
-//         itemSelector: '.grid-item',
-//         layoutMode: 'fitRows',
-//         getSortData: {
-//             id: '.id parseInt',
-//             name: '.name',
-//         },
-//         sortBy: 'name'
-//     });
-//
-//     // bind sort button click
-//     var sortByGroup = document.querySelector('.sort-by-button-group');
-//     sortByGroup.addEventListener( 'click', function( event ) {
-//         // only button clicks
-//         if ( !matchesSelector( event.target, '.button' ) ) {
-//             return;
-//         }
-//         var sortValue = event.target.getAttribute('data-sort-value');
-//         iso.arrange({ sortBy: sortValue });
-//     });
-//
-// // change is-checked class on buttons
-//     var buttonGroups = document.querySelectorAll('.button-group');
-//     for ( var i=0; i < buttonGroups.length; i++ ) {
-//         buttonGroups[i].addEventListener( 'click', onButtonGroupClick );
-//     }
-//
-//     function onButtonGroupClick( event ) {
-//         // only button clicks
-//         if ( !matchesSelector( event.target, '.button' ) ) {
-//             return;
-//         }
-//         var button = event.target;
-//         button.parentNode.querySelector('.is-checked').classList.remove('is-checked');
-//         button.classList.add('is-checked');
-//     }
-// });
-
-
 
 Vue.use(SmoothScroll);
 
@@ -80,21 +30,10 @@ window.Form = Form;
 import hljs from 'highlight.js';
 window.hljs = hljs;
 
-
-
-/**
- * Load Vue Router and initialize it
- */
-Vue.use(VueRouter);
-const router = new VueRouter({
-    routes,
-    mode: 'history'
-});
-
-library.add(fas)
-library.add(far)
-library.add(fal)
-library.add(fab)
+library.add(fas);
+library.add(far);
+library.add(fal);
+library.add(fab);
 
 require('owl.carousel');
 
@@ -124,7 +63,6 @@ Vue.component('Dropdown',require('./components/Dropdown'));
  */
 const app = new Vue({
     el: '#app',
-    router,
     data() {
         return {
             modal: false,

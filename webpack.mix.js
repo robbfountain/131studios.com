@@ -16,8 +16,6 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .tailwind();
 
-mix.scripts(['resources/assets/js/custom.js'], 'public/js/custom.js');
-
 if (mix.inProduction()) {
     mix.version();
 }
