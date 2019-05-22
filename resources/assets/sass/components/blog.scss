@@ -1,3 +1,65 @@
 .blog-container > h1 {
- @apply .text-blue;
+  @apply .text-grey-darker;
+  @apply .text-3xl;
+}
+
+.blog-container > h2 {
+  @apply .text-grey-dark;
+  @apply .text-xl;
+  @apply .my-4;
+}
+
+.blog-container > p {
+  @apply .my-2;
+  @apply .leading-normal;
+  @apply .text-lg;
+  @apply .text-grey-darker;
+}
+
+.blog-container > a {
+  @apply .text-blue;
+  @apply .no-underline;
+}
+
+.blog-container > a:hover {
+  @apply .underline;
+}
+
+.blog-container > ol {
+  @apply .text-grey-darker;
+  @apply .my-3;
+}
+
+
+.blog-container > ol li {
+  @apply .my-2;
+}
+
+blockquote {
+  @apply .bg-grey-lighter;
+  @apply .border-l-4 .border-grey;
+  margin: 1.5em 0 !important;
+  padding: 2.5em 10px;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  @apply .text-base;
+  @apply .leading-normal;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+a.facebook {
+  color: #3C5A99;
+}
+
+a.twitter {
+  color: #1DA1F2;
 }

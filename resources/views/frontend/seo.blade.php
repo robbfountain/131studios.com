@@ -24,7 +24,7 @@
 
             <div class="flex">
                 <div class="w-1/2">
-                    <div class="text-lg text-grey-darker pr-6">
+                    <div class="text-lg text-grey-darker pr-6 leading-normal">
                         <p class="mb-6">
                             Your website is the first step in getting your business recognized on the web.
                             Having organic traffic to your website and providing relevant content
@@ -52,6 +52,10 @@
                             Call Us Today! <span class="text-blue">301.992.0962</span>
                         </div>
                     </div>
+
+                </div>
+                <div class="w-1/2">
+                    <img src="/images/seo.jpg" alt="SEO">
                 </div>
             </div>
         </div>

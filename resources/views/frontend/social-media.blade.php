@@ -23,7 +23,7 @@
 
             <div class="flex">
                 <div class="w-1/2">
-                    <div class="text-lg text-grey-darker pr-6">
+                    <div class="text-lg text-grey-darkest leading-normal pr-6">
                         <p class="mb-6">
                             There are over 2 billion people on social media networks worldwide.
                             Your Facebook, Instagram and LinkedIn profiles will speak volumes and paired with
@@ -39,6 +39,9 @@
                             Call Us Today! <span class="text-blue">301.992.0962</span>
                         </div>
                     </div>
+                </div>
+                <div class="w-1/2">
+                    <img src="/images/social-media.jpg" alt="Social Media">
                 </div>
             </div>
         </div>

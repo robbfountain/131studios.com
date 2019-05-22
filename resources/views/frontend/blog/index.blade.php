@@ -17,26 +17,7 @@
         <div class="bg-white lg:py-10 xs:pb-4 px-2">
             <div class="container mx-auto flex flex-wrap">
                 @foreach($blogs as $blog)
-                    <div class="w-1/4 flex flex-col p-4 mb-6 rounded-lg hover:bg-grey-lighter transition">
-                        <div class="mb-2">
-                            <a href="{{route('blog.show',$blog->slug)}}"
-                               class="tracking-wide text-xl text-grey-darker no-underline hover:text-blue">
-                                {{$blog->title}}
-                            </a>
-                            <div class="text-grey-dark text-xs mt-1">
-                                Posted by: <span class="text-blue">131 Studios</span> on {{$blog->published_at->format('M d, Y')}}
-                            </div>
-                        </div>
-                        <div>
-                            <img src="{{$blog->image}}" alt="">
-                        </div>
-                        <div class="mt-6 mb-6 text-center">
-                            <a href="{{route('blog.show', $blog->slug)}}" class="rounded border no-underline text-blue border-blue px-4 py-2 hover:bg-blue hover:text-white hover:border-transparent">
-                                Read More
-                            </a>
-                        </div>
-                    </div>
-
+                    @include('frontend.partials.blogitem')
                 @endforeach
             </div>
         </div>

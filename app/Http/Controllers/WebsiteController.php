@@ -13,7 +13,6 @@ use Illuminate\Contracts\View\Factory;
  */
 class WebsiteController extends Controller
 {
-
     /**
      * @var
      */
@@ -33,7 +32,6 @@ class WebsiteController extends Controller
 
         abort(404);
     }
-
 
     /**
      * @return Factory|View
@@ -62,6 +60,16 @@ class WebsiteController extends Controller
     public function handleAdditionalServices()
     {
         return view('frontend.additional-services')->with(['title' => 'Additional Services']);
+    }
+
+    public function handleEmailHosting()
+    {
+        return view('frontend.email-hosting')->with(['title' => 'Email Hosting']);
+    }
+
+    public function handleDnsHosting()
+    {
+        return view('frontend.dns-hosting')->with(['title' => 'DNS Hosting and Management']);
     }
 
     /**

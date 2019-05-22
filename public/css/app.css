@@ -3623,11 +3623,83 @@
 }
 
 .blog-container > h1 {
+  color: #606f7b;
+  font-size: 1.875rem;
+}
+
+.blog-container > h2 {
+  color: #8795a1;
+  font-size: 1.25rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.blog-container > p {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  line-height: 1.5;
+  font-size: 1.125rem;
+  color: #606f7b;
+}
+
+.blog-container > a {
   color: #3490dc;
+  text-decoration: none;
+}
+
+.blog-container > a:hover {
+  text-decoration: underline;
+}
+
+.blog-container > ol {
+  color: #606f7b;
+  margin-top: .75rem;
+  margin-bottom: .75rem;
+}
+
+.blog-container > ol li {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
+blockquote {
+  background-color: #f1f5f8;
+  border-left-width: 4px;
+  border-color: #b8c2cc;
+  margin: 1.5em 0 !important;
+  padding: 2.5em 10px;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-right: .25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  display: inline;
+}
+
+a.facebook {
+  color: #3c5a99;
+}
+
+a.twitter {
+  color: #1da1f2;
 }
 
 body {
   font-family: 'Montserrat', sans-serif;
+}
+
+.required:after {
+  content: "*";
+  color: #e3342f;
+  font-weight: 600;
 }
 
 .mont {
@@ -3646,10 +3718,6 @@ body {
 
 .price span {
   text-decoration: line-through;
-}
-
-.banner {
-  background: url("../images/code_banner.png");
 }
 
 .fb {
@@ -3689,47 +3757,9 @@ body {
           transform-origin: 0 50%;
 }
 
-.header {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
-          clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 2vw));
-}
-
 a {
   -webkit-transition: color .2s ease-out, background .2s ease-in;
   transition: color .2s ease-out, background .2s ease-in;
-}
-
-.hero {
-  background: url("../images/logo-hero.png");
-}
-
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 0 !important;
-  padding: 2.5em 10px;
-  quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: .1em;
-  margin-right: .25em;
-  vertical-align: -0.4em;
-}
-
-blockquote p {
-  display: inline;
-}
-
-ul.breadcrumb > li:after {
-  content: " >  ";
-}
-
-ul.breadcrumb:last-child:after {
-  content: '' !important;
 }
 
 /*! normalize.css v7.0.0 | MIT License | github.com/necolas/normalize.css */

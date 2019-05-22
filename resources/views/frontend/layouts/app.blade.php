@@ -5,6 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        @yield('meta')
 
         <title>{{ $title ?? config('app.name') }} | {{config('app.name')}}</title>
 
@@ -93,16 +94,14 @@
 
                             <div class="mt-4 flex xs:flex-col lg:flex-row">
                                 <a href="http://facebook.com/131studiosweb" target="_blank"
-                                   class="rounded-full fb px-4 py-2 text-white no-underline lg:mr-2 xs:mb-4 lg:mb-0">
-                                    <fa
-                                            :icon="['fab', 'facebook-f']"></fa>
-                                    Like Us on Facebook</a>
+                                class="text-grey-dark hover:text-grey-darker mr-2">
+                                    <fa :icon="['fab', 'facebook-square']" size="2x"></fa>
+                                </a>
 
-                                <a href="https://github.com/131StudiosWeb" target="_blank"
-                                   class="rounded-full px-4 py-2 text-white no-underline bg-black">
-                                    <fa
-                                            :icon="['fab', 'github']"></fa>
-                                    Github Projects</a>
+                                <a href="http://facebook.com/131studiosweb" target="_blank"
+                                   class="text-grey-dark hover:text-grey-darker">
+                                    <fa :icon="['fab', 'twitter-square']" size="2x"></fa>
+                                </a>
                             </div>
 
                         </div>
@@ -111,21 +110,17 @@
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">Navigation</h4>
                             <div class="flex">
                                 <div class="flex flex-col mr-12">
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#home"
-                                       v-smooth-scroll="{duration: 1000}">Home
+                                    <a class="no-underline text-white hover:text-grey-dark" href="/"
+                                       >Home
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#about"
-                                       v-smooth-scroll="{duration: 1000}">About
-                                                                          Us
+                                    <a class="no-underline text-white hover:text-grey-dark" href="/services"
+                                       >Services
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#services"
-                                       v-smooth-scroll="{duration: 1000}">Services
+                                    <a class="no-underline text-white hover:text-grey-dark" href="/projects"
+                                       >Our Work
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#projects"
-                                       v-smooth-scroll="{duration: 1000}">Our Work
-                                    </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#contact"
-                                       v-smooth-scroll="{duration: 1000}">Contact
+                                    <a class="no-underline text-white hover:text-grey-dark" href="/contact"
+                                       >Contact
                                                                           Us
                                     </a>
                                 </div>

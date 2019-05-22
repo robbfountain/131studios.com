@@ -13,6 +13,7 @@
     "require": {
         "php": ">=7.0.0",
         "cartalyst/tags": "7.0.*",
+        "creativeorange/gravatar": "^1.0",
         "cviebrock/eloquent-sluggable": "^4.5",
         "davidbadura/faker-markdown-generator": "^1.0",
         "erusev/parsedown": "^1.7",

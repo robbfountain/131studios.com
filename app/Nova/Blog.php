@@ -48,9 +48,10 @@ class Blog extends Resource
     {
         return [
             BelongsTo::make('Category'),
+            BelongsTo::make('User'),
             Text::make('Title'),
             Text::make('Slug')->onlyOnForms(),
-            Image::make('image'),
+            Image::make('Image'),
             Markdown::make('Body'),
             Boolean::make('Published','is_published')->sortable(),
             DateTime::make('Publish Date','published_at')->format('MMM D, YYYY')->sortable(),

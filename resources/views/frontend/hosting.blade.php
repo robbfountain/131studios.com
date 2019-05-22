@@ -14,8 +14,9 @@
 
     <section class="py-10">
         <div class="container mx-auto">
-            <div class="mb-4 text-base flex items-center">
-                <fa :icon="['fas','home']" class="mr-2"></fa>
+            <div class="mb-8 text-base flex items-center p-2 bg-grey-lighter rounded">
+
+            <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
                 Website Hosting
@@ -33,6 +34,11 @@
                         <p class="mb-4">We utilize industry leading virtual private servers from some of the top names
                                         in the industry
                                         such as Amazon, Digital Ocean and Linode.</p>
+
+                        <p class="mb-4">We take security very seriously. All of our web servers are patched regularly with the latest
+                           security updates. Access to servers is restricted to authorized users only using SSH key
+                           authentication. Password authentication is disabled. All access attempts are logged and monitored
+                           constantly.</p>
 
                         <p class="mb-4">Your website hosted with 131 Studios will comes with loads of features including
                                         lightning
@@ -91,8 +97,9 @@
                 <div class="flex flex-col text-blue-darker">
                     <h3 class="tracking-wide">Email Options</h3>
                     <div class="mt-2">
-                        30GB Storage, Cloud Drive Storage, Ultimate Spam Protection and More. Starting at $6/user
-                        monthly
+                        30GB Storage, Cloud Drive Storage, Ultimate Spam Protection and More. Starting at <a
+                                href="/email-hosting" class="no-underline text-blue">$7/user
+                                                      monthly</a>
                     </div>
                 </div>
             </div>

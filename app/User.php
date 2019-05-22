@@ -5,11 +5,16 @@ namespace App;
 use App\Traits\ClientTrait;
 use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
 use Backpack\CRUD\CrudTrait;
+use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
+/**
+ * Class User
+ * @package App
+ */
 class User extends Authenticatable
 {
     use Notifiable, HasApiTokens, HasRoles;
@@ -39,26 +44,6 @@ class User extends Authenticatable
     ];
 
     /**
-     * Send the password reset notification.
-     *
-     * @param  string $token
-     * @return void
-     */
-    public function sendPasswordResetNotification($token)
-    {
-        $this->notify(new ResetPasswordNotification($token));
-    }
-
-    /**
-     * @param $query
-     * @return mixed
-     */
-    public function scopeClient($query)
-    {
-        return $query->role('client');
-    }
-
-    /**
      * @param $query
      * @return mixed
      */
@@ -67,8 +52,19 @@ class User extends Authenticatable
         return $query->role('Contact Recipient');
     }
 
-    public function articles()
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function blogs()
     {
-        return $this->hasMany(Article::class);
+        return $this->hasMany(Blog::class);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function avatar()
+    {
+        return Gravatar::get($this->email);
     }
 }

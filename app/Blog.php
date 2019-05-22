@@ -89,4 +89,19 @@ class Blog extends Model
     {
         return (new \Parsedown())->text($this->body);
     }
+
+    public function preview()
+    {
+        return strip_tags(substr($this->toHtml(), 0, 100));
+    }
+
+    public function shareUrl()
+    {
+        return route('blog.show',$this->slug);
+    }
+
+    public function imageUrl()
+    {
+        return config('app.url') . '/storage/' . $this->image;
+    }
 }

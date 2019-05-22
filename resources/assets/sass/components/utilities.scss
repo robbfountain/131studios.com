@@ -5,6 +5,12 @@ body {
   font-family: 'Montserrat', sans-serif;
 }
 
+.required:after {
+  content: "*";
+  @apply .text-red;
+  @apply .font-semibold;
+}
+
 .mont {
   font-family: 'Montserrat', sans-serif;
 }
@@ -14,7 +20,6 @@ body {
   font-weight: bold;
 }
 
-
 .price {
   @apply .text-grey-dark;
   @apply .font-semibold;
@@ -22,10 +27,6 @@ body {
 
 .price span {
   @apply .line-through;
-}
-
-.banner {
-  background: url("../images/code_banner.png");
 }
 
 .fb {
@@ -58,50 +59,6 @@ body {
   transform-origin: 0 50%;
 }
 
-.header {
-  clip-path: polygon(
-                  0 0,
-                  100% 0,
-                  100% 100%,
-                  0 calc(100% - 2vw)
-  );
-}
-
 a {
   transition: color .2s ease-out, background .2s ease-in;
 }
-
-.hero {
-  background: url("../images/logo-hero.png");
-}
-
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 0 !important;
-  padding: 2.5em 10px;
-  quotes: "\201C" "\201D" "\2018" "\2019";
-}
-
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
-}
-
-blockquote p {
-  display: inline;
-}
-
-
-ul.breadcrumb > li:after {
-  content: " >  ";
-}
-
-ul.breadcrumb:last-child:after {
-  content: '' !important;
-}
-

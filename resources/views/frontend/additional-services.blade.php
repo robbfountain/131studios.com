@@ -14,6 +14,13 @@
 
     <section class="py-10">
         <div class="container mx-auto">
+            <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
+                <fa :icon="['fas','home']" class="mr-2"></fa>
+                <a href="/" class="text-blue no-underline mr-2">Home</a>
+                <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
+                Additional Services
+            </div>
+
             <div class="text-lg text-grey-darker mb-8 leading-normal">
                 We offer a number of additional services for your website and business. If you would like more information or if you need assistance with anything else that
                 may not be listed please give us a call or <a href="/contact"
@@ -37,6 +44,10 @@
                         <div class="py-2 px-4 leading-normal text-grey-darker text-lg">
                             See how your website performs in all the major search engines (Google, Bing, Yahoo!). Get recommendations on how to improve your score.
                         </div>
+                        <div class="text-center py-6">
+                            <a href="/contact"
+                               class="border rounded border-blue text-blue px-4 py-2 hover:bg-blue hover:text-white no-underline">Contact Us</a>
+                        </div>
                     </div>
                 </div>
 
@@ -55,6 +66,32 @@
                         </div>
                         <div class="py-2 px-4 leading-normal text-grey-darker text-lg">
                             Set up your Google Analytics account and integrate into your current website to track visitors and gain insights to your website traffic.
+                        </div>
+                        <div class="text-center py-6">
+                            <a href="/contact"
+                               class="border rounded border-blue text-blue px-4 py-2 hover:bg-blue hover:text-white no-underline">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Service -->
+                <div class="w-1/3 p-2">
+                    <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
+                        <div class="text-center py-4 bg-grey-lighter">
+                            <fa :icon="['fal','globe']" size="3x" class="text-blue"></fa>
+                        </div>
+                        <div class="p-2 text-center">
+                            <h4 class="roboto text-3xl tracking-loose text-blue">Domain Registration</h4>
+                        </div>
+                        <div class="py-3 text-grey-dark text-2xl italic text-center">
+                            At Cost
+                        </div>
+                        <div class="py-2 px-4 leading-normal text-grey-darker text-lg">
+                            We can register register your domain names for you.  From 1+ year intervals at cost. With no additional fees.
+                        </div>
+                        <div class="text-center py-6">
+                            <a href="/contact"
+                               class="border rounded border-blue text-blue px-4 py-2 hover:bg-blue hover:text-white no-underline">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -85,28 +122,6 @@
                 <div class="w-1/3 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
-                            <fa :icon="['fal','globe']" size="3x" class="text-blue"></fa>
-                        </div>
-                        <div class="p-2 text-center">
-                            <h4 class="roboto text-3xl tracking-loose text-blue">Domain Registration</h4>
-                        </div>
-                        <div class="py-3 text-grey-dark text-2xl italic text-center">
-                            At Cost
-                        </div>
-                        <div class="py-2 px-4 leading-normal text-grey-darker text-lg">
-                            Register your domain names in 1+ year intervals at cost.
-                        </div>
-                        <div class="text-center py-6">
-                            <a href="/email-hosting"
-                               class="border rounded border-blue text-blue px-4 py-2 hover:bg-blue hover:text-white no-underline">Explore Features</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Service -->
-                <div class="w-1/3 p-2">
-                    <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
-                        <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','chart-network']" size="3x" class="text-blue"></fa>
                         </div>
                         <div class="p-2 text-center">
@@ -119,8 +134,8 @@
                            Host your DNS on our highly available and scalable cloud Domain Name System (DNS) web service.  Unlimited DNS records per zone.
                         </div>
                         <div class="text-center py-6">
-                            <a href="/dns-hosting"
-                               class="border rounded border-blue text-blue px-4 py-2 hover:bg-blue hover:text-white no-underline">Explore Features</a>
+                            <a href="/contact"
+                               class="border rounded border-blue text-blue px-4 py-2 hover:bg-blue hover:text-white no-underline">Contact Us</a>
                         </div>
                     </div>
                 </div>
@@ -141,7 +156,7 @@
                            We can host your website on industry leading Virtual Private Servers.  Includes 1 hours of monthly maintenance.
                         </div>
                         <div class="text-center py-6">
-                            <a href="/dns-hosting"
+                            <a href="/hosting"
                                class="border rounded border-blue text-blue px-4 py-2 hover:bg-blue hover:text-white no-underline">Explore Features</a>
                         </div>
                     </div>
