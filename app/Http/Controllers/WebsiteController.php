@@ -182,4 +182,19 @@ class WebsiteController extends Controller
         return $this->renderView('services.hosting', 'Hosting');
     }
 
+    /**
+     * @param null $slug
+     *
+     * @return $this
+     */
+    public function handleProjects()
+    {
+
+        return view('frontend.projects')->with([
+            'projects' => Project::visible()->orderBy('lft', 'ASC')->get(),
+            'title' => 'Our Portfolio'
+        ]);
+
+    }
+
 }

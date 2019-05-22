@@ -1,5 +1,6 @@
 <?php
-Route::get('projects','ProjectController@index');
+Route::get('projects','WebsiteController@handle');
+Route::get('projects/{slug}','ProjectController@show')->name('project.show');
 Route::post('contact', 'ContactController@store');
 Route::post('quote','ContactController@quote');
 

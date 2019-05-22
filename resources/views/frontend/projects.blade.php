@@ -2,22 +2,36 @@
 
 
 @section('content')
-    <section class="py-8 px-2">
-        <div class="container mx-auto">
-            <div class="text-center">
-                <h2 class="title font-medium text-3xl my-4">Our Work</h2>
-            </div>
+    <div class="bg-cover lg:py-10 xs:pb-4 flex flex-col"
+         style="background-image: url('images/web-design-greencastle-pa.png');">
 
-            <div class="button-group filters-button-group">
-                <button class="button is-checked" data-filter="*">show all</button>
-                <button class="button" data-filter=".web">metal</button>
-            </div>
-            <div class="text-center flex flex-wrap grid">
+        <div class="container mx-auto text-center">
+            <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
+                style="background-color: rgba(0,0,0,0.5)">
+                Our Portfolio
+            </h1>
+        </div>
+    </div>
+
+    <section class="py-10">
+        <div class="container mx-auto">
+
+            <div class="flex flex-row flex-wrap">
                 @foreach($projects as $project)
-                    <div class=" w-1/3 flex flex-col grid-item {{$project->tagString()}}">
-                        <img src="{{$project->primary_image}}" alt="Not Found">
-                        <div class="bg-blue-darker p-2 text-center text-xl text-white name">
-                            {{$project->title}}
+                    <div class="w-1/3 px-3">
+                        <div class="max-w-sm w-full lg:max-w-full lg:flex">
+                            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('storage/{{$project->primary_image}}');">
+                            </div>
+                            <div class="border-r border-t border-l border-b border-grey-light rounded-b rounded-r flex flex-col p-4 leading-normal bg-white lg:border-l-0 lg:rounded-b-none lg:rounded-r">
+                                <h4 class="font-semibold text-blue">{{$project->title}}</h4>
+                                <div class="mt-3 text-grey-dark text-sm">
+                                    {{$project->description}}
+                                </div>
+                                <div class="mt-4">
+                                    <a href="{{route('project.show', $project->slug)}}">View Project</a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                 @endforeach

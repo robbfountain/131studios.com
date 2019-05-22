@@ -21,7 +21,6 @@
                 Social Media
             </div>
 
-            <h2 class="title roboto">Social Media</h2>
             <div class="flex">
                 <div class="w-1/2">
                     <div class="text-lg text-grey-darker pr-6">

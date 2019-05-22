@@ -31,9 +31,9 @@ class ProjectController extends Controller
     {
         $project = Project::findBySlug($slug);
 
-        return view('frontend.portfolio-item')->with([
-            'heading' => $project->title,
+        return view('frontend.view-project')->with([
             'project' => $project,
+            'title' => $project->title,
         ]);
     }
 }

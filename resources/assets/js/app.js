@@ -10,6 +10,9 @@ require('./bootstrap');
  * for Router, Vuex, Routes etc
  */
 import Vue from 'vue';
+import VueRouter from 'vue-router';
+import routes from './routes';
+
 
 import SmoothScroll from 'vue-smooth-scroll';
 /**
@@ -30,10 +33,21 @@ window.Form = Form;
 import hljs from 'highlight.js';
 window.hljs = hljs;
 
+
+
+/**
+ * Load Vue Router and initialize it
+ */
+Vue.use(VueRouter);
+const router = new VueRouter({
+    routes,
+    mode: 'history'
+});
+
 library.add(fas);
-library.add(far);
-library.add(fal);
-library.add(fab);
+library.add(far)
+library.add(fal)
+library.add(fab)
 
 require('owl.carousel');
 
@@ -63,6 +77,7 @@ Vue.component('Dropdown',require('./components/Dropdown'));
  */
 const app = new Vue({
     el: '#app',
+    router,
     data() {
         return {
             modal: false,

@@ -23,7 +23,7 @@
             <div class="flex flex-row flex-wrap">
 
                 <!-- Service -->
-                <div class="w-1/4 p-2">
+                <div class="w-1/3 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','search']" size="3x" class="text-blue"></fa>
@@ -42,7 +42,7 @@
 
 
                 <!-- Service -->
-                <div class="w-1/4 p-2">
+                <div class="w-1/3 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','analytics']" size="3x" class="text-blue"></fa>
@@ -60,7 +60,7 @@
                 </div>
 
                 <!-- Service -->
-                <div class="w-1/4 p-2">
+                <div class="w-1/3 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','envelope']" size="3x" class="text-blue"></fa>
@@ -82,7 +82,7 @@
                 </div>
 
                 <!-- Service -->
-                <div class="w-1/4 p-2">
+                <div class="w-1/3 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','globe']" size="3x" class="text-blue"></fa>
@@ -104,7 +104,7 @@
                 </div>
 
                 <!-- Service -->
-                <div class="w-1/4 p-2">
+                <div class="w-1/3 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','chart-network']" size="3x" class="text-blue"></fa>
@@ -124,6 +124,30 @@
                         </div>
                     </div>
                 </div>
+
+                <!-- Service -->
+                <div class="w-1/3 p-2">
+                    <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
+                        <div class="text-center py-4 bg-grey-lighter">
+                            <fa :icon="['fal','server']" size="3x" class="text-blue"></fa>
+                        </div>
+                        <div class="p-2 text-center">
+                            <h4 class="roboto text-3xl tracking-loose text-blue">Website Hosting</h4>
+                        </div>
+                        <div class="py-3 text-grey-dark text-2xl italic text-center">
+                            $50 Monthly
+                        </div>
+                        <div class="py-2 px-4 leading-normal text-grey-darker text-lg">
+                           We can host your website on industry leading Virtual Private Servers.  Includes 1 hours of monthly maintenance.
+                        </div>
+                        <div class="text-center py-6">
+                            <a href="/dns-hosting"
+                               class="border rounded border-blue text-blue px-4 py-2 hover:bg-blue hover:text-white no-underline">Explore Features</a>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
 
         </div>

@@ -37,7 +37,7 @@
                         a call and let us know how we can help you.
                     </p>
 
-                    <div class="text-center text-4xl mt-6 text-grey-darkest font-semibold px-4 py-2 border-2 rounded bg-blue-dark text-white">
+                    <div class="text-center text-4xl mt-6 text-blue font-semibold px-4 py-2 border-2 rounded border-blue">
                         Call Us Today! <span class="text-blue-darker">301.992.0962</span>
                     </div>
                 </div>
