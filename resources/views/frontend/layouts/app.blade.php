@@ -46,11 +46,16 @@
                                        class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
                                         Our Services
                                     </a>
-                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/website-design">Website Design</a>
-                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/hosting">Hosting</a>
-                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/social-media">Social Media</a>
-                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/seo">SEO</a>
-                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark" href="/additional-services">Additional Services</a>
+                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
+                                       href="/website-design">Website Design</a>
+                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
+                                       href="/hosting">Hosting</a>
+                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
+                                       href="/social-media">Social Media</a>
+                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
+                                       href="/seo">SEO</a>
+                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
+                                       href="/additional-services">Additional Services</a>
 
                                 </dropdown>
 
@@ -80,7 +85,7 @@
 
                 <footer class="bg-blue-darker py-4 flex flex-col text-grey-light leading-normal border-t">
                     <div class="container mx-auto flex justify-between xs:flex-col lg:flex-row">
-                        <div class="mr-4 pr-4 lg:w-1/3 ">
+                        <div class="mr-12 pr-4 lg:w-1/3 ">
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">About Us</h4>
                             <p>
                                 We are a local Greencastle PA company that specializes in website design, hosting,
@@ -94,7 +99,7 @@
 
                             <div class="mt-4 flex xs:flex-col lg:flex-row">
                                 <a href="http://facebook.com/131studiosweb" target="_blank"
-                                class="text-grey-dark hover:text-grey-darker mr-2">
+                                   class="text-grey-dark hover:text-grey-darker mr-2">
                                     <fa :icon="['fab', 'facebook-square']" size="2x"></fa>
                                 </a>
 
@@ -103,46 +108,60 @@
                                     <fa :icon="['fab', 'twitter-square']" size="2x"></fa>
                                 </a>
                             </div>
+                            <div class="mt-4">
+                                <a href="/privacy" class="no-underline text-grey-light text-sm">Privacy Policy</a>
+                            </div>
 
                         </div>
 
-                        <div class="mr-4 lg:w-1/3">
+                        <div class="mr-4 pl-4 lg:w-1/3">
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">Navigation</h4>
                             <div class="flex">
                                 <div class="flex flex-col mr-12">
                                     <a class="no-underline text-white hover:text-grey-dark" href="/"
-                                       >Home
+                                    >Home
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="/services"
-                                       >Services
+                                    <a class="no-underline text-white hover:text-grey-dark" href="#"
+                                    >Services
                                     </a>
+                                    <ul class="list-reset">
+                                        <li class="ml-2">
+                                            <fa :icon="['far','angle-double-right']" class="mr-1"></fa>
+                                            <a class="text-xs no-underline text-white hover:text-grey-dark"
+                                               href="/website-design">Website Design</a></li>
+                                        <li class="ml-2">
+                                            <fa :icon="['far','angle-double-right']" class="mr-1"></fa>
+                                            <a class="text-xs no-underline text-white hover:text-grey-dark"
+                                               href="/hosting">Hosting</a></li>
+                                        <li class="ml-2">
+                                            <fa :icon="['far','angle-double-right']" class="mr-1"></fa>
+                                            <a class="text-xs no-underline text-white hover:text-grey-dark"
+                                               href="/social-media">Social Media</a></li>
+                                        <li class="ml-2">
+                                            <fa :icon="['far','angle-double-right']" class="mr-1"></fa>
+                                            <a class="text-xs no-underline text-white hover:text-grey-dark" href="/seo">SEO</a>
+                                        </li>
+                                        <li class="ml-2">
+                                            <fa :icon="['far','angle-double-right']" class="mr-1"></fa>
+                                            <a class="text-xs no-underline text-white hover:text-grey-dark"
+                                               href="/additional-services">Additional Services</a></li>
+                                    </ul>
                                     <a class="no-underline text-white hover:text-grey-dark" href="/projects"
-                                       >Our Work
+                                    >Our Work
                                     </a>
                                     <a class="no-underline text-white hover:text-grey-dark" href="/contact"
-                                       >Contact
-                                                                          Us
+                                    >Contact
+                                     Us
                                     </a>
                                 </div>
-                                <div>
-                                    <div class="flex flex-col">
-                                        <a class="text-white hover:text-grey-dark no-underline" href="/privacy">
-                                            Privacy Policy
-                                        </a>
-                                        <a class="text-white hover:text-grey-dark no-underline" href="/terms">
-                                            Terms of Service
-                                        </a>
-                                    </div>
-
-                                </div>
                             </div>
-
                         </div>
 
                         <div class="mr-4 lg:w-1/3">
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">Contact Us</h4>
                             <div class="text-widget">
-                                <div class="mb-3">P.O. Box 704 &middot; Greencastle &middot; PA &middot; 17225</div>
+                                <div class="mb-3">545 Scarlet Circle &middot; Greencastle &middot; PA &middot; 17225
+                                </div>
                                 <div class="mb-3"> Phone: (301) 992-0962</div>
                                 <div class="mb-3">E-Mail: Robb@131studios.com</div>
                             </div>
@@ -158,7 +177,6 @@
 
         <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyC-rbJPsS1QcKxd4NjpFteDQdRV8u-O17M"></script>
-
 
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
@@ -194,12 +212,11 @@
                 var marker = new google.maps.Marker({
                     position: myLatLng,
                     map: map,
-                    title: 'Rhodes Computer Services'
+                    title: '131 Studios'
                 });
             }
 
             google.maps.event.addDomListener(window, 'load', initialize);
         </script>
-
     </body>
 </html>
