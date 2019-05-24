@@ -30,11 +30,11 @@
                                 <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">Website Design</h3>
                             </div>
 
-                            <p class="xs:hidden lg:inline mt-2 text-center leading-normal text-grey text-base">
+                            <p class="mt-2 text-center leading-normal text-grey text-base">
                                 Stand out from your competitors with a professionally designed website from 131 Studios.
                             </p>
 
-                            <div class="xs:hidden lg:inline text-center mt-6">
+                            <div class="text-center mt-6">
                                 <a href="/website-design" class="border rounded px-4 py-2 text-teal-dark no-underline">
                                     Learn More
                                 </a>
@@ -51,10 +51,10 @@
                                 <h3 class="ml-2 text-xl tracking-wide font-normal text-grey-light">Hosting</h3>
                             </div>
 
-                            <p class="xs:hidden lg:inline mt-2 text-center leading-normal text-grey text-base">
+                            <p class="mt-2 text-center leading-normal text-grey text-base">
                                 We can host your website on industry leading Virtual Private Servers (VPS) that are 100%
                                 maintained by us.</p>
-                            <div class="xs:hidden lg:inline text-center mt-6">
+                            <div class="text-center mt-6">
                                 <a href="/hosting" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
                                                                                                                 More</a>
                             </div>
@@ -70,10 +70,10 @@
                                 <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">Social Media</h3>
                             </div>
 
-                            <p class="xs:hidden lg:inline mt-2 text-center leading-normal text-grey text-base">
+                            <p class="mt-2 text-center leading-normal text-grey text-base">
                                 Social media plays a huge role in
                                 getting your business noticed. We can setup and manage your social media accounts. </p>
-                            <div class="xs:hidden lg:inline text-center mt-6">
+                            <div class="text-center mt-6">
                                 <a href="/social-media" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
                                                                                                                      More</a>
                             </div>
@@ -89,11 +89,11 @@
                                 <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">SEO</h3>
                             </div>
 
-                            <p class="xs:hidden lg:inline mt-2 text-center leading-normal text-grey text-base">
+                            <p class="mt-2 text-center leading-normal text-grey text-base">
                                 Your customers need to be able to find you on the web. We can make sure your business is
                                 listed where it should be.
                             </p>
-                            <div class="xs:hidden lg:inline text-center mt-6">
+                            <div class="text-center mt-6">
                                 <a href="/seo" class="border rounded px-4 py-2 text-teal-dark no-underline">
                                     Learn More</a>
                             </div>
@@ -108,8 +108,12 @@
                 <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">How Can We Help <span
                             style="background-color: rgba(0,0,0,0.5);" class="text-white px-3 py-1">You?</span></h2>
                 <div class="flex xs:flex-col lg:flex-row-reverse justify-between">
-                    <div class="xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0">
-                        <img src="/images/family.jpg" alt="The Family" class="p-1 bg-white border">
+                    <div class="relative xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0 lg:px-4">
+                            <iframe src="https://player.vimeo.com/video/338294354"
+                                    style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                                    allow="autoplay; fullscreen" allowfullscreen
+                            class="border-4 rounded border-grey-lighter"></iframe>
+                        <script src="https://player.vimeo.com/api/player.js"></script>
                     </div>
                     <div class="xs:w-full lg:w-1/2 leading-normal text-lg text-grey-dark px-2">
                         <p class="mb-4">

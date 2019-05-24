@@ -16,7 +16,7 @@ class WebsiteController extends Controller
     /**
      * @var
      */
-    protected $title = ['title' => 'Web Design, Hosting & SEO | 131 Studios'];
+    protected $title = ['title' => 'Web Design, Social Media, Hosting & SEO | 131 Studios'];
 
 
     /**
@@ -57,16 +57,25 @@ class WebsiteController extends Controller
         return view('frontend.seo')->with(['title' => 'SEO']);
     }
 
+    /**
+     * @return Factory|View
+     */
     public function handleAdditionalServices()
     {
         return view('frontend.additional-services')->with(['title' => 'Additional Services']);
     }
 
+    /**
+     * @return Factory|View
+     */
     public function handleEmailHosting()
     {
         return view('frontend.email-hosting')->with(['title' => 'Email Hosting']);
     }
 
+    /**
+     * @return Factory|View
+     */
     public function handleDnsHosting()
     {
         return view('frontend.dns-hosting')->with(['title' => 'DNS Hosting and Management']);
@@ -147,7 +156,7 @@ class WebsiteController extends Controller
      */
     public function handleContact()
     {
-        return $this->renderView('Contact', 'Contact Us');
+        return view('frontend.contact')->with(['title' => 'Contact Us']);
     }
 
     /**
@@ -163,7 +172,7 @@ class WebsiteController extends Controller
      */
     public function handlePrivacy()
     {
-        return view('frontend.privacy');
+        return view('frontend.privacy')->with(['title' => 'Privacy Policy | 131 Studios']);
     }
 
     /**
@@ -204,5 +213,4 @@ class WebsiteController extends Controller
         ]);
 
     }
-
 }

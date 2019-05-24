@@ -1,6 +1,6 @@
 <div class="xs:w-full lg:w-1/3 p-2">
     <div class="max-w-sm rounded overflow-hidden shadow-lg">
-        <img src="{{$blog->image}}" alt="{{$blog->title}}">
+        <img src="{{$blog->imageUrl()}}" alt="{{$blog->title}}">
         <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">
                 <a class="text-grey-darkest no-underline hover:underline" href="{{route('blog.show',$blog->slug)}}">{{$blog->title}}</a>
@@ -17,3 +17,4 @@
         </div>
     </div>
 </div>
+

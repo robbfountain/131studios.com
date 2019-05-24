@@ -2,10 +2,10 @@
 
 namespace App;
 
-use App\Classes\ParseMarkdown;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 use Spatie\Tags\HasTags;
+use Illuminate\Support\Str;
+use JD\Cloudder\Facades\Cloudder;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Blog
@@ -26,6 +26,12 @@ class Blog extends Model
     protected $casts = [
         'is_published' => 'bool',
         'is_featured' => 'bool',
+    ];
+
+    protected $imageOptions = [
+        'fetch_format' => 'png',
+        'width' => 'auto',
+        'crop' => 'fit',
     ];
 
     /**
@@ -77,9 +83,17 @@ class Blog extends Model
     public function scopePublished($query)
     {
         return $query->where([
-            ['is_published','=',true],
-            ['published_at','<=', now()]
+            ['is_published', '=', true],
+            ['published_at', '<=', now()],
         ]);
+    }
+
+    /**
+     * @return string
+     */
+    public function preview()
+    {
+        return strip_tags(substr($this->toHtml(), 0, 100));
     }
 
     /**
@@ -90,18 +104,19 @@ class Blog extends Model
         return (new \Parsedown())->text($this->body);
     }
 
-    public function preview()
-    {
-        return strip_tags(substr($this->toHtml(), 0, 100));
-    }
-
+    /**
+     * @return string
+     */
     public function shareUrl()
     {
-        return route('blog.show',$this->slug);
+        return route('blog.show', $this->slug);
     }
 
-    public function imageUrl()
+    /**
+     * @return string
+     */
+    public function imageUrl($options = [])
     {
-        return config('app.url') . '/storage/' . $this->image;
+        return request()->secure() ? Cloudder::secureShow($this->image, array_merge($this->imageOptions, $options)) : Cloudder::show($this->image, array_merge($this->imageOptions, $options));
     }
 }

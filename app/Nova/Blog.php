@@ -2,6 +2,7 @@
 
 namespace App\Nova;
 
+use Silvanite\NovaFieldCloudinary\Fields\CloudinaryImage;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
@@ -51,7 +52,7 @@ class Blog extends Resource
             BelongsTo::make('User'),
             Text::make('Title'),
             Text::make('Slug')->onlyOnForms(),
-            Image::make('Image'),
+            CloudinaryImage::make('Image'),
             Markdown::make('Body'),
             Boolean::make('Published','is_published')->sortable(),
             DateTime::make('Publish Date','published_at')->format('MMM D, YYYY')->sortable(),

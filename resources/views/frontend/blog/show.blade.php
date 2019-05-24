@@ -14,6 +14,7 @@
           href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
     <link rel="canonical" href="{{$blog->shareUrl()}}">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
 @endsection
 
 @section('content')
@@ -32,7 +33,7 @@
                 <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
-                <a href="blog" class="text-blue no-underline mr-2">Blog</a>
+                <a href="/blog" class="text-blue no-underline mr-2">Blog</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
                 {{$blog->title}}
             </div>
@@ -40,15 +41,16 @@
             <div class="flex lg:flex-row xs:flex-col">
                 <div class="blog-container xs:w-full lg:w-2/3 px-4 xs:mb-6 lg:mb-0">
                     <h1 class="text-3xl tracking-wide mont text-grey-darker">{{$blog->title}}</h1>
-                    <div class="mt-3 text-grey text-sm">
-                        Posted by: 131 Studios on {{$blog->published_at->format('F d, Y')}}
-                        <span class="ml-4 border rounded-full px-4 py-0 border-blue text-blue hover:border-blue-light hover:text-blue-light">
-                            {{strtolower($blog->category->name)}}
-                        </span>
+                    <div class="my-3 text-grey-darker text-sm flex items-center">
+                        <img src="{{$blog->user->avatar()}}" alt="{{$blog->user->name}}'s Avatar" class="h-8 w-8 rounded-full mr-2">
+                        <div>
+                            Posted by: <span class="text-blue">{{$blog->user->name}}</span> on {{$blog->published_at->format('F d, Y')}}
+                        </div>
                     </div>
                     <div class="py-2">
-                        <img src="{{$blog->imageUrl()}}" alt="{{$blog->title}}" class="w-full">
+                        <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}" alt="{{$blog->title}}" class="">
                     </div>
+
 
                     {!! $blog->toHtml() !!}
 
