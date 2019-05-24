@@ -79,7 +79,6 @@ class Project extends Model
     {
         return starts_with($this->primary_image, 'http')
             ? $this->primary_image
-            : url($this->primary_image);
+            : url("storage/{$this->primary_image}");
     }
-
 }

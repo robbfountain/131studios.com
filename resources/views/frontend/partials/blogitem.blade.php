@@ -1,4 +1,4 @@
-<div class="w-1/3 p-2">
+<div class="xs:w-full lg:w-1/3 p-2">
     <div class="max-w-sm rounded overflow-hidden shadow-lg">
         <img src="{{$blog->image}}" alt="{{$blog->title}}">
         <div class="px-6 py-4">

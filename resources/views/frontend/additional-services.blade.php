@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <section class="py-10">
+    <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
             <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
@@ -27,10 +27,10 @@
                                                               class="no-underline text-blue font-semibold">send us an email.</a> and we'll be happy to help you.
             </div>
 
-            <div class="flex flex-row flex-wrap">
+            <div class="flex lg:flex-row xs:flex-col lg:flex-wrap">
 
                 <!-- Service -->
-                <div class="w-1/3 p-2">
+                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','search']" size="3x" class="text-blue"></fa>
@@ -53,7 +53,7 @@
 
 
                 <!-- Service -->
-                <div class="w-1/3 p-2">
+                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','analytics']" size="3x" class="text-blue"></fa>
@@ -75,7 +75,7 @@
                 </div>
 
                 <!-- Service -->
-                <div class="w-1/3 p-2">
+                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','globe']" size="3x" class="text-blue"></fa>
@@ -97,7 +97,7 @@
                 </div>
 
                 <!-- Service -->
-                <div class="w-1/3 p-2">
+                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','envelope']" size="3x" class="text-blue"></fa>
@@ -119,7 +119,7 @@
                 </div>
 
                 <!-- Service -->
-                <div class="w-1/3 p-2">
+                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','chart-network']" size="3x" class="text-blue"></fa>
@@ -141,7 +141,7 @@
                 </div>
 
                 <!-- Service -->
-                <div class="w-1/3 p-2">
+                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
                     <div class="flex flex-col border-2 border-blue rounded mr-4 mb-4">
                         <div class="text-center py-4 bg-grey-lighter">
                             <fa :icon="['fal','server']" size="3x" class="text-blue"></fa>

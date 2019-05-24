@@ -12,18 +12,17 @@
         </div>
     </div>
 
-    <section class="py-10">
+    <section class="xs:py-4 lg:py-10">
         <div class="container mx-auto">
             <div class="mb-8 text-base flex items-center p-2 bg-grey-lighter rounded">
-
-            <fa :icon="['fas','home']" class="mr-2"></fa>
+                <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
                 Website Hosting
             </div>
 
-            <div class="flex">
-                <div class="px-4 w-1/2">
+            <div class="flex lg:flex-row xs:flex-col-reverse">
+                <div class="px-4 lg:w-1/2 xs:w-full">
 
                     <div class="text-lg text-grey-darkest leading-normal">
                         <p class="mb-4">
@@ -35,26 +34,29 @@
                                         in the industry
                                         such as Amazon, Digital Ocean and Linode.</p>
 
-                        <p class="mb-4">We take security very seriously. All of our web servers are patched regularly with the latest
-                           security updates. Access to servers is restricted to authorized users only using SSH key
-                           authentication. Password authentication is disabled. All access attempts are logged and monitored
-                           constantly.</p>
+                        <p class="mb-4">We take security very seriously. All of our web servers are patched regularly
+                                        with the latest
+                                        security updates. Access to servers is restricted to authorized users only using
+                                        SSH key
+                                        authentication. Password authentication is disabled. All access attempts are
+                                        logged and monitored
+                                        constantly.</p>
 
                         <p class="mb-4">Your website hosted with 131 Studios will comes with loads of features including
                                         lightning
                                         fast response times, security and support</p>
                     </div>
                 </div>
-                <div class="w-1/2 px-4">
+                <div class="xs:w-full lg:w-1/2 px-4 xs:mb-3 lg:mb-0">
                     <img src="images/web-hosting.jpg" alt="Web Hosting in Greencastle, Chambersburg and Hagerstown">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-10 bg-grey-lightest">
-        <div class="flex container mx-auto">
-            <div class="flex p-3 w-1/4">
+    <section class="xs:py-3 lg:py-10 bg-grey-lightest">
+        <div class="flex lg:flex-row xs:flex-col container mx-auto">
+            <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
                 <div class="mr-4">
                     <fa :icon="['fal','database']" class="mr-2" size="3x"></fa>
                 </div>
@@ -66,7 +68,7 @@
                 </div>
             </div>
 
-            <div class="flex p-3 w-1/4">
+            <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
                 <div class="mr-4">
                     <fa :icon="['fal','shield']" class="mr-2" size="3x"></fa>
                 </div>
@@ -78,7 +80,7 @@
                 </div>
             </div>
 
-            <div class="flex p-3 w-1/4">
+            <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
                 <div class="mr-4">
                     <fa :icon="['fal','wrench']" class="mr-2" size="3x"></fa>
                 </div>
@@ -90,7 +92,7 @@
                 </div>
             </div>
 
-            <div class="flex p-3 w-1/4">
+            <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
                 <div class="mr-4">
                     <fa :icon="['fal','envelope']" class="mr-2" size="3x"></fa>
                 </div>
@@ -99,7 +101,7 @@
                     <div class="mt-2">
                         30GB Storage, Cloud Drive Storage, Ultimate Spam Protection and More. Starting at <a
                                 href="/email-hosting" class="no-underline text-blue">$7/user
-                                                      monthly</a>
+                                                                                     monthly</a>
                     </div>
                 </div>
             </div>

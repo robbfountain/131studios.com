@@ -1,5 +1,10 @@
 @extends('frontend.layouts.app')
 
+@section('meta')
+    <meta name="description"
+          content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today."/>
+@endsection
+
 @section('content')
     <div>
         <div class="bg-cover lg:py-10 xs:pb-4 flex flex-col"
@@ -7,95 +12,94 @@
 
             <div class="container mx-auto">
 
+                <h1 class="mb-8 inline-block text-center text-grey font-normal tracking-wide xs:text-xl lg:text-4xl mt-6 mb-1">
+                    Website Design, Hosting, Social Media Management & SEO.
+                </h1>
 
+                <section class="bg-transparent p-4">
+                    <div class="flex justify-between xs:flex-col lg:flex-row ">
 
-            <h1 class="mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1">
-                Website Design, Hosting, Social Media Management & SEO.
-            </h1>
-
-            <section class="bg-transparent p-4 " id="services">
-                <div class="flex justify-between xs:flex-col lg:flex-row ">
-
-                    <!-- Service Box -->
-                    <div class="w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
-                         style="background-color: rgba(0,0,0,0.6);">
-                        <div class="text-center flex items-center border-b pb-4 justify-center">
-                            <div class="transition bg-white p-2 rounded-full inline-block align-middle">
-                                <fa :icon="['fas','paint-brush']" class="text-blue-dark group-hover:text-white"></fa>
+                        <!-- Service Box -->
+                        <div class="xs:hidden lg:inline xs:w-full lg:w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
+                             style="background-color: rgba(0,0,0,0.6);">
+                            <div class="text-center flex items-center lg:border-b pb-4 lg:justify-center">
+                                <div class="transition bg-white p-2 rounded-full inline-block align-middle">
+                                    <fa :icon="['fas','paint-brush']"
+                                        class="text-blue-dark group-hover:text-white"></fa>
+                                </div>
+                                <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">Website Design</h3>
                             </div>
-                            <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">Website Design</h3>
+
+                            <p class="xs:hidden lg:inline mt-2 text-center leading-normal text-grey text-base">
+                                Stand out from your competitors with a professionally designed website from 131 Studios.
+                            </p>
+
+                            <div class="xs:hidden lg:inline text-center mt-6">
+                                <a href="/website-design" class="border rounded px-4 py-2 text-teal-dark no-underline">
+                                    Learn More
+                                </a>
+                            </div>
                         </div>
 
-                        <p class="mt-2 text-center leading-normal text-grey text-base">
-                            Stand out from your competitors with a professionally designed website from 131 Studios.
-                        </p>
+                        <!-- Service Box -->
+                        <div class="xs:hidden lg:inline xs:w-full lg:w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
+                             style="background-color: rgba(0,0,0,0.6);">
+                            <div class="text-center flex items-center lg:border-b pb-4 lg:justify-center">
+                                <div class="transition bg-white p-2 rounded-full inline-block align-middle">
+                                    <fa :icon="['fas','server']" class="text-blue-dark group-hover:text-white"></fa>
+                                </div>
+                                <h3 class="ml-2 text-xl tracking-wide font-normal text-grey-light">Hosting</h3>
+                            </div>
 
-                        <div class="text-center mt-6">
-                            <a href="/website-design" class="border rounded px-4 py-2 text-teal-dark no-underline">
-                                Learn More
-                            </a>
+                            <p class="xs:hidden lg:inline mt-2 text-center leading-normal text-grey text-base">
+                                We can host your website on industry leading Virtual Private Servers (VPS) that are 100%
+                                maintained by us.</p>
+                            <div class="xs:hidden lg:inline text-center mt-6">
+                                <a href="/hosting" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
+                                                                                                                More</a>
+                            </div>
+                        </div>
+
+                        <!-- Service Box -->
+                        <div class="xs:hidden lg:inline xs:w-full lg:w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
+                             style="background-color: rgba(0,0,0,0.6);">
+                            <div class="text-center flex items-center lg:border-b pb-4 lg:justify-center">
+                                <div class="transition bg-white p-2 rounded-full inline-block align-middle">
+                                    <fa :icon="['fas','share-alt']" class="text-blue-dark group-hover:text-white"></fa>
+                                </div>
+                                <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">Social Media</h3>
+                            </div>
+
+                            <p class="xs:hidden lg:inline mt-2 text-center leading-normal text-grey text-base">
+                                Social media plays a huge role in
+                                getting your business noticed. We can setup and manage your social media accounts. </p>
+                            <div class="xs:hidden lg:inline text-center mt-6">
+                                <a href="/social-media" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
+                                                                                                                     More</a>
+                            </div>
+                        </div>
+
+                        <!-- Service Box -->
+                        <div class="xs:hidden lg:inline xs:w-full lg:w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
+                             style="background-color: rgba(0,0,0,0.6);">
+                            <div class="text-center flex items-center lg:border-b pb-4 lg:justify-center">
+                                <div class="transition bg-white p-2 rounded-full inline-block align-middle">
+                                    <fa :icon="['fas','search']" class="text-blue-dark group-hover:text-white"></fa>
+                                </div>
+                                <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">SEO</h3>
+                            </div>
+
+                            <p class="xs:hidden lg:inline mt-2 text-center leading-normal text-grey text-base">
+                                Your customers need to be able to find you on the web. We can make sure your business is
+                                listed where it should be.
+                            </p>
+                            <div class="xs:hidden lg:inline text-center mt-6">
+                                <a href="/seo" class="border rounded px-4 py-2 text-teal-dark no-underline">
+                                    Learn More</a>
+                            </div>
                         </div>
                     </div>
-
-                    <!-- Service Box -->
-                    <div class="w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
-                         style="background-color: rgba(0,0,0,0.6);">
-                        <div class="text-center flex items-center border-b pb-4 justify-center">
-                            <div class="transition bg-white p-2 rounded-full inline-block align-middle">
-                                <fa :icon="['fas','server']" class="text-blue-dark group-hover:text-white"></fa>
-                            </div>
-                            <h3 class="ml-2 text-xl tracking-wide font-normal text-grey-light">Hosting</h3>
-                        </div>
-
-                        <p class="mt-2 text-center leading-normal text-grey text-base">
-                            We can host your website on industry leading Virtual Private Servers (VPS) that are 100%
-                            maintained by us.</p>
-                        <div class="text-center mt-6">
-                            <a href="/hosting" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
-                                                                                                                   More</a>
-                        </div>
-                    </div>
-
-                    <!-- Service Box -->
-                    <div class="w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
-                         style="background-color: rgba(0,0,0,0.6);">
-                        <div class="text-center flex items-center border-b pb-4 justify-center">
-                            <div class="transition bg-white p-2 rounded-full inline-block align-middle">
-                                <fa :icon="['fas','share-alt']" class="text-blue-dark group-hover:text-white"></fa>
-                            </div>
-                            <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">Social Media</h3>
-                        </div>
-
-                        <p class="mt-2 text-center leading-normal text-grey text-base">
-                            Social media plays a huge role in
-                            getting your business noticed. We can setup and manage your social media accounts. </p>
-                        <div class="text-center mt-6">
-                            <a href="/social-media" class="border rounded px-4 py-2 text-teal-dark no-underline">Learn
-                                                                                                                   More</a>
-                        </div>
-                    </div>
-
-                    <!-- Service Box -->
-                    <div class="w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
-                         style="background-color: rgba(0,0,0,0.6);">
-                        <div class="text-center flex items-center border-b pb-4 justify-center">
-                            <div class="transition bg-white p-2 rounded-full inline-block align-middle">
-                                <fa :icon="['fas','search']" class="text-blue-dark group-hover:text-white"></fa>
-                            </div>
-                            <h3 class="ml-4 text-xl tracking-wide font-normal text-grey-light">SEO</h3>
-                        </div>
-
-                        <p class="mt-2 text-center leading-normal text-grey text-base">
-                            Your customers need to be able to find you on the web. We can make sure your business is
-                            listed where it should be.
-                        </p>
-                        <div class="text-center mt-6">
-                            <a href="/seo" class="border rounded px-4 py-2 text-teal-dark no-underline">
-                                Learn More</a>
-                        </div>
-                    </div>
-                </div>
-            </section>
+                </section>
             </div>
         </div>
 
@@ -103,11 +107,11 @@
             <div class="container mx-auto">
                 <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">How Can We Help <span
                             style="background-color: rgba(0,0,0,0.5);" class="text-white px-3 py-1">You?</span></h2>
-                <div class="flex flex-row-reverse justify-between">
-                    <div class="w-1/2">
+                <div class="flex xs:flex-col lg:flex-row-reverse justify-between">
+                    <div class="xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0">
                         <img src="/images/family.jpg" alt="The Family" class="p-1 bg-white border">
                     </div>
-                    <div class="w-1/2 leading-normal text-lg text-grey-dark px-2">
+                    <div class="xs:w-full lg:w-1/2 leading-normal text-lg text-grey-dark px-2">
                         <p class="mb-4">
                             We get it...It can be difficult to establish your online presence. From designing your
                             website or updating an existing site, there's a lot to handle.
@@ -138,9 +142,9 @@
                 <div class="text-center">
                     <h2 class="title font-medium text-blue-darker text-3xl mb-8">Latest From The Blog</h2>
                 </div>
-                <div class="flex">
+                <div class="flex lg:flex-row xs:flex-col">
                     @foreach($blogs as $blog)
-                       @include('frontend.partials.blogitem',['blog' => $blog])
+                        @include('frontend.partials.blogitem',['blog' => $blog])
                     @endforeach
                 </div>
             </div>

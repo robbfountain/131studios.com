@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <section class="py-10">
+    <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
             <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
@@ -21,8 +21,8 @@
                 Social Media
             </div>
 
-            <div class="flex">
-                <div class="w-1/2">
+            <div class="flex lg:flex-row xs:flex-col-reverse">
+                <div class="xs:w-full lg:w-1/2 lg:mb-0 xs:mb-3">
                     <div class="text-lg text-grey-darkest leading-normal pr-6">
                         <p class="mb-6">
                             There are over 2 billion people on social media networks worldwide.
@@ -40,7 +40,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="w-1/2">
+                <div class="xs:w-full lg:w-1/2 lg:mb-0 xs:mb-3">
                     <img src="/images/social-media.jpg" alt="Social Media">
                 </div>
             </div>

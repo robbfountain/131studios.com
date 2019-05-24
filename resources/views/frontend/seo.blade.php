@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <section class="py-10">
+    <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
             <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
@@ -22,8 +22,8 @@
             </div>
 
 
-            <div class="flex">
-                <div class="w-1/2">
+            <div class="flex lg:flex-row xs:flex-col-reverse">
+                <div class="xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0">
                     <div class="text-lg text-grey-darker pr-6 leading-normal">
                         <p class="mb-6">
                             Your website is the first step in getting your business recognized on the web.
@@ -54,7 +54,7 @@
                     </div>
 
                 </div>
-                <div class="w-1/2">
+                <div class="xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0">
                     <img src="/images/seo.jpg" alt="SEO">
                 </div>
             </div>

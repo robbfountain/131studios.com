@@ -23,6 +23,7 @@
                 <pinned>
                     <header class="container mx-auto py-3">
                         <div class="flex xs:flex-col lg:flex-row justify-between items-center">
+
                             <!-- Logo -->
                             <div class="flex justify-between items-center">
                                 <a href="/" class="">
@@ -56,9 +57,7 @@
                                        href="/seo">SEO</a>
                                     <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
                                        href="/additional-services">Additional Services</a>
-
                                 </dropdown>
-
 
                                 <a href="/projects"
                                    class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
@@ -85,7 +84,7 @@
 
                 <footer class="bg-blue-darker py-4 flex flex-col text-grey-light leading-normal border-t">
                     <div class="container mx-auto flex justify-between xs:flex-col lg:flex-row">
-                        <div class="mr-12 pr-4 lg:w-1/3 ">
+                        <div class="lg:mr-12 pr-4 lg:w-1/3 xs:w-full ">
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">About Us</h4>
                             <p>
                                 We are a local Greencastle PA company that specializes in website design, hosting,
@@ -97,7 +96,7 @@
                                         href="/contact" class="text-grey-dark">email</a> and let us help you today.
                             </p>
 
-                            <div class="mt-4 flex xs:flex-col lg:flex-row">
+                            <div class="mt-4 flex flex-row">
                                 <a href="http://facebook.com/131studiosweb" target="_blank"
                                    class="text-grey-dark hover:text-grey-darker mr-2">
                                     <fa :icon="['fab', 'facebook-square']" size="2x"></fa>
@@ -114,7 +113,7 @@
 
                         </div>
 
-                        <div class="mr-4 pl-4 lg:w-1/3">
+                        <div class="mr-4 lg:pl-4 lg:w-1/3 xs:w-full">
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">Navigation</h4>
                             <div class="flex">
                                 <div class="flex flex-col mr-12">
@@ -157,7 +156,7 @@
                             </div>
                         </div>
 
-                        <div class="mr-4 lg:w-1/3">
+                        <div class="lg:mr-4 lg:w-1/3 xs:w-full">
                             <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">Contact Us</h4>
                             <div class="text-widget">
                                 <div class="mb-3">545 Scarlet Circle &middot; Greencastle &middot; PA &middot; 17225
@@ -180,18 +179,6 @@
 
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">
-            hljs.initHighlightingOnLoad();
-
-            var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-            (function () {
-                var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-                s1.async = true;
-                s1.src = 'https://embed.tawk.to/5af9dcf0227d3d7edc254e50/default';
-                s1.charset = 'UTF-8';
-                s1.setAttribute('crossorigin', '*');
-                s0.parentNode.insertBefore(s1, s0);
-            })();
-
             function toggleMenu() {
                 var element = document.getElementById('menu');
                 if (element.classList.contains('xs:hidden')) {

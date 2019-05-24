@@ -13,14 +13,14 @@
         </div>
     </div>
 
-    <section class="py-10">
+    <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-
-            <div class="flex flex-row flex-wrap">
+            <div class="flex lg:flex-row xs:flex-col lg:flex-wrap">
                 @foreach($projects as $project)
-                    <div class="w-1/3 px-3">
+                    <div class="xs:w-full lg:w-1/3 px-3 mb-4">
                         <div class="max-w-sm w-full lg:max-w-full lg:flex">
-                            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden" style="background-image: url('storage/{{$project->primary_image}}');">
+                            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
+                                 style="background-image: url('{{$project->imagePath()}}');">
                             </div>
                             <div class="border-r border-t border-l border-b border-grey-light rounded-b rounded-r flex flex-col p-4 leading-normal bg-white lg:border-l-0 lg:rounded-b-none lg:rounded-r">
                                 <h4 class="font-semibold text-blue">{{$project->title}}</h4>
@@ -28,7 +28,10 @@
                                     {{$project->description}}
                                 </div>
                                 <div class="mt-4">
-                                    <a href="{{route('project.show', $project->slug)}}">View Project</a>
+                                    <a href="{{$project->url}}"
+                                       target="_blank"
+                                       class="border rounded px-3 py-2 border-blue text-blue no-underline hover:bg-blue hover:text-white">View
+                                                                                                                                          Project</a>
                                 </div>
                             </div>
 

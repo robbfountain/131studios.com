@@ -13,7 +13,7 @@
 
     </div>
 
-    <section class="py-10">
+    <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
             <div class="mb-8 text-base flex items-center p-2 bg-grey-lighter rounded">
                 <fa :icon="['fas','home']" class="mr-2"  ></fa>
@@ -22,8 +22,8 @@
                 Website Design
             </div>
 
-            <div class="flex">
-                <div class="text-lg text-grey-darker pr-6 w-1/2">
+            <div class="flex lg:flex-row xs:flex-col-reverse">
+                <div class="text-lg text-grey-darker lg:pr-6 lg:w-1/2 xs:w-full">
                     <p class="mb-6">Let's face it, in today's digital world your business needs a website that stands our from your
                        competitors.
                        131 Studios designs custom websites for our clients that meet the needs of their business. </p>
@@ -42,16 +42,16 @@
                     </div>
                 </div>
 
-                <div class="px-2 w-1/2">
+                <div class="px-2 xs:w-full lg:w-1/2">
                     <img src="images/website-design-131-studios-formats.jpg" class="-mt-8" alt="Website Design 131 Studios">
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-10 bg-grey-lightest border-t">
-        <div class="container mx-auto flex">
-            <div class="flex p-3 w-1/4">
+    <section class="xs:py-3 lg:py-10 bg-grey-lightest border-t">
+        <div class="container mx-auto flex lg:flex-row xs:flex-col">
+            <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
                 <div class="mr-4">
                     <fa :icon="['fal','star']" class="mr-2" size="3x"></fa>
                 </div>
@@ -64,7 +64,7 @@
             </div>
 
 
-            <div class="flex p-3 w-1/4">
+            <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
                 <div class="mr-4">
                     <fa :icon="['fal','mobile-alt']" class="mr-2" size="3x"></fa>
                 </div>
@@ -77,7 +77,7 @@
             </div>
 
 
-            <div class="flex p-3 w-1/4">
+            <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
                 <div class="mr-4">
                     <fa :icon="['fal','search']" class="mr-2" size="3x"></fa>
                 </div>
@@ -90,7 +90,7 @@
             </div>
 
 
-            <div class="flex p-3 w-1/4">
+            <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
                 <div class="mr-4">
                     <fa :icon="['fal','envelope']" class="mr-2" size="3x"></fa>
                 </div>

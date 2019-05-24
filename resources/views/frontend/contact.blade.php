@@ -11,13 +11,20 @@
             </h1>
         </div>
     </div>
-	<section class="py-10">
+	<section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="flex">
-                <div class="w-3/4 mr-8">
+            <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
+                <fa :icon="['fas','home']" class="mr-2"></fa>
+                <a href="/" class="text-blue no-underline mr-2">Home</a>
+                <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
+                Contact Us
+            </div>
+
+            <div class="flex lg:flex-row xs:flex-col">
+                <div class="xs:w-full lg:w-3/4 xs:mr-0 lg:mr-8 xs:mb-6 lg:mb-0">
                     @include('frontend.contact-form')
                 </div>
-                <div class="w-1/4">
+                <div class="xs:w-full lg:w-1/4">
                     <div class="flex">
                         <div class="mr-3">
                             <fa :icon="['fal','phone']" size="lg"></fa>

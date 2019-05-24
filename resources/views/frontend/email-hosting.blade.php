@@ -13,7 +13,7 @@
         </div>
     </div>
 
-    <section class="py-10">
+    <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
             <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
@@ -29,8 +29,8 @@
                 with an unrivaled set of included features.  Our email hosting is backed by Google and comes with a wide range of features and starts at $7 per user monthly.
             </div>
 
-            <div class="flex flex-row flex-wrap">
-                <div class="flex p-3 w-1/4">
+            <div class="flex lg:flex-row xs:flex-col lg:flex-wrap">
+                <div class="flex p-3 lg:w-1/4 xs:w-full xs:border-b lg:border-b-0">
                     <div class="mr-4">
                         <fa :icon="['fal','at']" class="mr-2" size="3x"></fa>
                     </div>
@@ -42,7 +42,7 @@
                     </div>
                 </div>
 
-                <div class="flex p-3 w-1/4">
+                <div class="flex p-3 lg:w-1/4 xs:w-full xs:border-b lg:border-b-0">
                     <div class="mr-4">
                         <fa :icon="['fal','server']" class="mr-2" size="3x"></fa>
                     </div>
@@ -55,7 +55,7 @@
                 </div>
 
 
-                <div class="flex p-3 w-1/4">
+                <div class="flex p-3 lg:w-1/4 xs:w-full xs:border-b lg:border-b-0">
                     <div class="mr-4">
                         <fa :icon="['fal','shield']" class="mr-2" size="3x"></fa>
                     </div>
@@ -68,7 +68,7 @@
                 </div>
 
 
-                <div class="flex p-3 w-1/4">
+                <div class="flex p-3 lg:w-1/4 xs:w-full xs:border-b lg:border-b-0">
                     <div class="mr-4">
                         <fa :icon="['fal','mobile-alt']" class="mr-2" size="3x"></fa>
                     </div>

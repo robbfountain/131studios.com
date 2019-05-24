@@ -1,7 +1,8 @@
 @extends('frontend.layouts.app')
 
 @section('meta')
-    <link rel="canonical" href="{{$blog->shareUrl()}}">
+    <meta name="description"
+          content="{{$blog->preview()}}"/>
     <meta property="og:site_name" content="{{config('app.name')}}">
     <meta property="og:url" content="{{$blog->shareUrl()}}">
     <meta property="og:type" content="article">
@@ -11,9 +12,9 @@
     <meta property="og:article:published_time" content="{{$blog->published_at}}">
     <link rel="stylesheet"
           href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
+    <link rel="canonical" href="{{$blog->shareUrl()}}">
     <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
 @endsection
-
 
 @section('content')
     <div class="bg-cover lg:py-10 xs:pb-4 flex flex-col"
@@ -25,7 +26,7 @@
             </h1>
         </div>
     </div>
-    <section class="py-6">
+    <section class="xs:py-3 lg:py-6">
         <div class="container mx-auto">
             <div class="mb-6 text-base flex items-center p-2 bg-grey-lighter rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
@@ -36,8 +37,8 @@
                 {{$blog->title}}
             </div>
 
-            <div class="flex">
-                <div class="blog-container w-2/3 px-4">
+            <div class="flex lg:flex-row xs:flex-col">
+                <div class="blog-container xs:w-full lg:w-2/3 px-4 xs:mb-6 lg:mb-0">
                     <h1 class="text-3xl tracking-wide mont text-grey-darker">{{$blog->title}}</h1>
                     <div class="mt-3 text-grey text-sm">
                         Posted by: 131 Studios on {{$blog->published_at->format('F d, Y')}}
@@ -64,7 +65,7 @@
                                 'facebook-share-dialog',
                                 'width=626,height=436');
                                 return false;">
-                                <fa :icon="['fab', 'facebook-square']" size="2x" ></fa>
+                                <fa :icon="['fab', 'facebook-square']" size="2x"></fa>
                             </a>
 
                             <a href="https://twitter.com/intent/tweet?text={{$blog->title}}&url={{$blog->shareUrl()}}"
@@ -73,7 +74,7 @@
                                alt="Share on Twitter"
                                title="Share on Twitter"
                                class="twitter">
-                                <fa :icon="['fab', 'twitter-square']" size="2x" ></fa>
+                                <fa :icon="['fab', 'twitter-square']" size="2x"></fa>
                             </a>
                         </div>
 
@@ -81,7 +82,7 @@
                 </div>
 
 
-                <div class="w-1/3 px-4 flex flex-col border-l">
+                <div class="xs:w-full lg:w-1/3 px-4 flex flex-col xs:border-l-0 lg:border-l">
                     <div>
                         <h2 class="title roboto">
                             Stay Informed
