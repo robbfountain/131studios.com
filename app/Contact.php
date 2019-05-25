@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Contact extends Model
 {
-
     /**
      * @var array
      */

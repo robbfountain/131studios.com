@@ -41,7 +41,6 @@ class Project extends Model
         ];
     }
 
-
     /**
      * @return mixed
      */

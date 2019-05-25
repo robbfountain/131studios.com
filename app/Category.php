@@ -40,7 +40,6 @@ class Category extends Model
         ];
     }
 
-
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
@@ -60,31 +59,10 @@ class Category extends Model
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function articles()
-    {
-        return $this->hasMany(Article::class);
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
     public function project()
     {
         return $this->hasMany(Project::class);
     }
-
-
-    /**
-     * @param $query
-     * @return mixed
-     */
-    public function scopeFirstLevelItems($query)
-    {
-        return $query->where('depth', '1')
-                    ->orWhere('depth', null)
-                    ->orderBy('lft', 'ASC');
-    }
-
 
     /**
      * @return mixed

@@ -28,6 +28,9 @@ class Blog extends Model
         'is_featured' => 'bool',
     ];
 
+    /**
+     * @var array
+     */
     protected $imageOptions = [
         'fetch_format' => 'png',
         'width' => 'auto',
@@ -117,6 +120,8 @@ class Blog extends Model
      */
     public function imageUrl($options = [])
     {
-        return request()->secure() ? Cloudder::secureShow($this->image, array_merge($this->imageOptions, $options)) : Cloudder::show($this->image, array_merge($this->imageOptions, $options));
+        return request()->secure()
+            ? Cloudder::secureShow($this->image, array_merge($this->imageOptions, $options))
+            : Cloudder::show($this->image, array_merge($this->imageOptions, $options));
     }
 }
