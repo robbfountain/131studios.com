@@ -8,7 +8,6 @@
 @section('content')
     <div>
        @banner
-
             <div class="container mx-auto">
 
                 <h1 class="mb-8 inline-block text-center text-grey font-normal tracking-wide xs:text-xl lg:text-4xl mt-6 mb-1">
