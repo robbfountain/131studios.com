@@ -76,7 +76,6 @@ return [
         DispatchServingNovaEvent::class,
         BootTools::class,
         Authorize::class,
-        \Insenseanalytics\LaravelNovaPermission\ForgetCachedPermissions::class,
     ],
 
 ];

@@ -112,7 +112,6 @@
                                     style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
                                     allow="autoplay; fullscreen" allowfullscreen
                             class="border-4 rounded border-grey-lighter"></iframe>
-                        <script src="https://player.vimeo.com/api/player.js"></script>
                     </div>
                     <div class="xs:w-full lg:w-1/2 leading-normal text-lg text-grey-dark px-2">
                         <p class="mb-4">

@@ -2,17 +2,14 @@
 
 namespace App\Nova;
 
-use Silvanite\NovaFieldCloudinary\Fields\CloudinaryImage;
-use Laravel\Nova\Fields\BelongsTo;
+use Spatie\TagsField\Tags;
+use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\ID;
-use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Markdown;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Http\Requests\NovaRequest;
-use Spatie\TagsField\Tags;
+use Laravel\Nova\Fields\BelongsTo;
+use Silvanite\NovaFieldCloudinary\Fields\CloudinaryImage;
 
 class Blog extends Resource
 {
@@ -42,7 +39,8 @@ class Blog extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function fields(Request $request)
@@ -54,9 +52,9 @@ class Blog extends Resource
             Text::make('Slug')->onlyOnForms(),
             CloudinaryImage::make('Image'),
             Markdown::make('Body'),
-            Boolean::make('Published','is_published')->sortable(),
-            DateTime::make('Publish Date','published_at')->format('MMM D, YYYY')->sortable(),
-            Boolean::make('Featured','is_featured')->sortable(),
+            Boolean::make('Published', 'is_published')->sortable(),
+            DateTime::make('Publish Date', 'published_at')->format('MMM D, YYYY')->sortable(),
+            Boolean::make('Featured', 'is_featured')->sortable(),
             Tags::make('Tags'),
 
         ];
@@ -65,7 +63,8 @@ class Blog extends Resource
     /**
      * Get the cards available for the request.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function cards(Request $request)
@@ -76,7 +75,8 @@ class Blog extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function filters(Request $request)
@@ -87,7 +87,8 @@ class Blog extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function lenses(Request $request)
@@ -98,7 +99,8 @@ class Blog extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return array
      */
     public function actions(Request $request)

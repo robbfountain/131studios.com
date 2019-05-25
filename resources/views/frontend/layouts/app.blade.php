@@ -176,6 +176,7 @@
 
         <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyC-rbJPsS1QcKxd4NjpFteDQdRV8u-O17M"></script>
+        <script src="https://player.vimeo.com/api/player.js"></script>
 
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">

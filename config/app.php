@@ -173,10 +173,6 @@ return [
         App\Providers\NovaServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
-        /**
-         * Mailchimp
-         */
-        Spatie\Newsletter\NewsletterServiceProvider::class,
     ],
 
     /*
