@@ -18,15 +18,15 @@
 @endsection
 
 @section('content')
-    <div class="bg-cover lg:py-10 xs:pb-4 flex flex-col"
-         style="background-image: url('../images/web-design-greencastle-pa.png');">
+   @banner¬
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Our Blog
             </h1>
         </div>
-    </div>
+   @endbanner
+
     <section class="xs:py-3 lg:py-6">
         <div class="container mx-auto">
             <div class="mb-6 text-base flex items-center p-2 bg-grey-lighter rounded">

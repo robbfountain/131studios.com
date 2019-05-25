@@ -1,15 +1,14 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    @include('frontend.partials.banner')
-
+   @banner
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Web Hosting for Greencastle, Chambersburg and Hagerstown
             </h1>
         </div>
-    </div>
+   @endbanner
 
     <section class="xs:py-4 lg:py-10">
         <div class="container mx-auto">
@@ -47,7 +46,7 @@
                     </div>
                 </div>
                 <div class="xs:w-full lg:w-1/2 px-4 xs:mb-3 lg:mb-0">
-                    <img src="images/web-hosting.jpg" alt="Web Hosting in Greencastle, Chambersburg and Hagerstown">
+                    <img src="https://res.cloudinary.com/onethirtyone/image/upload/v1558561495/131%20Studios/web-hosting_dgarnv.jpg" alt="Web Hosting in Greencastle, Chambersburg and Hagerstown">
                 </div>
             </div>
         </div>

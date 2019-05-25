@@ -2,7 +2,7 @@
 
 
 @section('content')
-    @include('frontend.partials.banner')
+   @banner
 
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
@@ -10,7 +10,7 @@
                 Our Portfolio
             </h1>
         </div>
-    </div>
+    @endbanner
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">

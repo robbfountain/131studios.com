@@ -7,7 +7,7 @@
 
 @section('content')
     <div>
-        @include('frontend.partials.banner')
+       @banner
 
             <div class="container mx-auto">
 
@@ -100,7 +100,8 @@
                     </div>
                 </section>
             </div>
-        </div>
+        @endbanner
+
 
         <section class="bg-grey-lightest lg:pt-6 lg:pb-10 xs:py-4 xs:px-3 lg:px-0 border-t" id="about">
             <div class="container mx-auto">

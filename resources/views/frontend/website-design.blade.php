@@ -1,35 +1,36 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    @include('frontend.partials.banner')
-
+   @banner
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Website Design
             </h1>
         </div>
-
-    </div>
+   @endbanner
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
             <div class="mb-8 text-base flex items-center p-2 bg-grey-lighter rounded">
-                <fa :icon="['fas','home']" class="mr-2"  ></fa>
+                <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
-                <fa :icon="['far','chevron-right']" size="xs" class="mr-2" ></fa>
+                <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
                 Website Design
             </div>
 
             <div class="flex lg:flex-row xs:flex-col-reverse">
                 <div class="text-lg text-grey-darker lg:pr-6 lg:w-1/2 xs:w-full">
-                    <p class="mb-6">Let's face it, in today's digital world your business needs a website that stands our from your
-                       competitors.
-                       131 Studios designs custom websites for our clients that meet the needs of their business. </p>
+                    <p class="mb-6">Let's face it, in today's digital world your business needs a website that stands
+                                    our from your
+                                    competitors.
+                                    131 Studios designs custom websites for our clients that meet the needs of their
+                                    business. </p>
 
                     <p class="mb-6">We will work with your every step of the way to determine your needs and wants.
-                       We'll make suggestions and recommendations to make sure you're getting what you want and we keep
-                       you informed every step of the process</p>
+                                    We'll make suggestions and recommendations to make sure you're getting what you want
+                                    and we keep
+                                    you informed every step of the process</p>
                     <p>
                         If you currently have a website and just want to make some changes, we can help you out. Just
                         give us
@@ -42,7 +43,8 @@
                 </div>
 
                 <div class="px-2 xs:w-full lg:w-1/2">
-                    <img src="images/website-design-131-studios-formats.jpg" class="-mt-8" alt="Website Design 131 Studios">
+                    <img src="https://res.cloudinary.com/onethirtyone/image/upload/v1558561487/131%20Studios/website-design-131-studios-formats_sbhvbx.jpg"
+                         class="-mt-8" alt="Website Design 131 Studios">
                 </div>
             </div>
         </div>
@@ -57,7 +59,8 @@
                 <div class="flex flex-col text-blue-darker">
                     <h3 class="tracking-wide">Unique Design</h3>
                     <div class="mt-2 leading-normal">
-                        Your website will have a unique design tailored to your business that will stand out from the competition.
+                        Your website will have a unique design tailored to your business that will stand out from the
+                        competition.
                     </div>
                 </div>
             </div>
@@ -70,7 +73,7 @@
                 <div class="flex flex-col text-blue-darker">
                     <h3 class="tracking-wide">Fully Responsive</h3>
                     <div class="mt-2 leading-normal">
-                       Your website will look great on any device...Phones, Tablets and computers
+                        Your website will look great on any device...Phones, Tablets and computers
                     </div>
                 </div>
             </div>

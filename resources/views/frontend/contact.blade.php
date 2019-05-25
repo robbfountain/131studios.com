@@ -1,16 +1,15 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    @include('frontend.partials.banner')
-
+   @banner
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
-               Contact Us
+                Contact Us
             </h1>
         </div>
-    </div>
-	<section class="xs:py-3 lg:py-10">
+    @endbanner
+    <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
             <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
