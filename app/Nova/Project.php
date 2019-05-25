@@ -8,6 +8,7 @@ use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Image;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Textarea;
+use Silvanite\NovaFieldCloudinary\Fields\CloudinaryImage;
 use Spatie\TagsField\Tags;
 
 class Project extends Resource
@@ -49,7 +50,7 @@ class Project extends Resource
             Text::make('Title')->rules('required', 'string'),
             Text::make('Slug')->hideFromIndex(),
             BelongsTo::make('Category'),
-            Image::make('Primary Image'),
+            CloudinaryImage::make('Primary Image'),
             Textarea::make('Description')->rules('required', 'string'),
             Text::make('URL'),
             Boolean::make('Visible'),

@@ -7,8 +7,7 @@
 
 @section('content')
     <div>
-        <div class="bg-cover lg:py-10 xs:pb-4 flex flex-col"
-             style="background-image: url('images/web-design-greencastle-pa.png');">
+        @include('frontend.partials.banner')
 
             <div class="container mx-auto">
 

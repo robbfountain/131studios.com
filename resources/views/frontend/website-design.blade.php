@@ -1,8 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <div class="bg-cover lg:py-10 xs:pb-4 flex flex-col"
-         style="background-image: url('images/web-design-greencastle-pa.png');">
+    @include('frontend.partials.banner')
 
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
