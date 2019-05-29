@@ -102,7 +102,7 @@
                                     <fa :icon="['fab', 'facebook-square']" size="2x"></fa>
                                 </a>
 
-                                <a href="http://facebook.com/131studiosweb" target="_blank"
+                                <a href="https://twitter.com/131Studios" target="_blank"
                                    class="text-grey-dark hover:text-grey-darker">
                                     <fa :icon="['fab', 'twitter-square']" size="2x"></fa>
                                 </a>
