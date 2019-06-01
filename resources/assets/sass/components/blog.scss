@@ -4,25 +4,32 @@
 }
 
 .blog-container > h2 {
-  @apply .text-grey-dark;
-  @apply .text-xl;
-  @apply .my-4;
+  @apply .text-grey-darker;
+  @apply .text-2xl;
+  margin-top: 2rem !important;
 }
 
+.blog-container > h3, h4, h5 {
+  @apply .text-grey-darker;
+  @apply .text-lg;
+  margin-top: 2rem !important;
+}
+
+
 .blog-container > p {
-  @apply .my-2;
+  margin: 1rem 0 !important;
   @apply .leading-normal;
   @apply .text-lg;
   @apply .text-grey-darker;
 }
 
-.blog-container > a {
+.blog-container > p > a:link, a:visited {
   @apply .text-blue;
   @apply .no-underline;
 }
 
-.blog-container > a:hover {
-  @apply .underline;
+.blog-container > p > a:hover {
+  @apply .text-blue-darker;
 }
 
 .blog-container > ol {
