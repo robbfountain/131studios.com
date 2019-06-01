@@ -3622,49 +3622,49 @@
   background: rgba(0, 0, 0, .1);
 }
 
-.blog-container > h1 {
+div.blog-container > h1 {
   color: #606f7b;
   font-size: 1.875rem;
 }
 
-.blog-container > h2 {
+div.blog-container > h2 {
   color: #606f7b;
   font-size: 1.5rem;
   margin-top: 2rem !important;
 }
 
-.blog-container > h3,
-h4,
-h5 {
+div.blog-container > h3,
+div.blog-container > h4,
+div.blog-container > h5 {
   color: #606f7b;
   font-size: 1.125rem;
   margin-top: 2rem !important;
 }
 
-.blog-container > p {
+div.blog-container > p {
   margin: 1rem 0 !important;
   line-height: 1.5;
   font-size: 1.125rem;
   color: #606f7b;
 }
 
-.blog-container > p > a:link,
-a:visited {
+div.blog-container > p > a:link,
+div.blog-container > p > a:visited {
   color: #3490dc;
   text-decoration: none;
 }
 
-.blog-container > p > a:hover {
+div.blog-container > p > a:hover {
   color: #1c3d5a;
 }
 
-.blog-container > ol {
+div.blog-container > ol {
   color: #606f7b;
   margin-top: .75rem;
   margin-bottom: .75rem;
 }
 
-.blog-container > ol li {
+div.blog-container > ol li {
   margin-top: .5rem;
   margin-bottom: .5rem;
 }

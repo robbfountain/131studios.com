@@ -1,44 +1,47 @@
-.blog-container > h1 {
+div.blog-container > h1 {
   @apply .text-grey-darker;
   @apply .text-3xl;
 }
 
-.blog-container > h2 {
+div.blog-container > h2 {
   @apply .text-grey-darker;
   @apply .text-2xl;
   margin-top: 2rem !important;
 }
 
-.blog-container > h3, h4, h5 {
+div.blog-container > h3,
+div.blog-container > h4,
+div.blog-container > h5 {
   @apply .text-grey-darker;
   @apply .text-lg;
   margin-top: 2rem !important;
 }
 
 
-.blog-container > p {
+div.blog-container > p {
   margin: 1rem 0 !important;
   @apply .leading-normal;
   @apply .text-lg;
   @apply .text-grey-darker;
 }
 
-.blog-container > p > a:link, a:visited {
+div.blog-container > p > a:link,
+div.blog-container > p > a:visited {
   @apply .text-blue;
   @apply .no-underline;
 }
 
-.blog-container > p > a:hover {
+div.blog-container > p > a:hover {
   @apply .text-blue-darker;
 }
 
-.blog-container > ol {
+div.blog-container > ol {
   @apply .text-grey-darker;
   @apply .my-3;
 }
 
 
-.blog-container > ol li {
+div.blog-container > ol li {
   @apply .my-2;
 }
 
