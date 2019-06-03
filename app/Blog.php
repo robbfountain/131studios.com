@@ -2,10 +2,10 @@
 
 namespace App;
 
-use Illuminate\Support\Facades\Auth;
 use Spatie\Tags\HasTags;
 use Illuminate\Support\Str;
 use JD\Cloudder\Facades\Cloudder;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -92,13 +92,12 @@ class Blog extends Model
      */
     public function scopePublished($query)
     {
-
-        return Auth::user()->isAdmin()
+        return Auth::check() && Auth::user()->isAdmin()
             ? $query
             : $query->where([
-            ['is_published', '=', true],
-            ['published_at', '<=', now()],
-        ]);
+                ['is_published', '=', true],
+                ['published_at', '<=', now()],
+            ]);
     }
 
 
