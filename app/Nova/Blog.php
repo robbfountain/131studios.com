@@ -56,7 +56,7 @@ class Blog extends Resource
             Markdown::make('Body'),
             Boolean::make('Published', 'is_published')->sortable(),
             DateTime::make('Publish Date', 'published_at')->format('MMM D, YYYY')->sortable(),
-            Tags::make('Tags'),
+            Tags::make('Tags')->onlyOnForms(),
             Heading::make('Project Information'),
 
             new Panel('Project Information', $this->projectFields()),
@@ -67,8 +67,9 @@ class Blog extends Resource
     protected function projectFields()
     {
         return [
+            Text::make('Project Title')->nullable()->onlyOnForms(),
             Markdown::make('Project Description')->nullable(),
-            Text::make('Project URL','url')->nullable(),
+            Text::make('Project URL','url')->nullable()->onlyOnForms(),
         ];
     }
 

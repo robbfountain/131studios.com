@@ -148,6 +148,9 @@
                                     <a class="no-underline text-white hover:text-grey-dark" href="/projects"
                                     >Our Work
                                     </a>
+                                    <a class="no-underline text-white hover:text-grey-dark" href="/blog"
+                                    >Blog
+                                    </a>
                                     <a class="no-underline text-white hover:text-grey-dark" href="/contact"
                                     >Contact
                                      Us

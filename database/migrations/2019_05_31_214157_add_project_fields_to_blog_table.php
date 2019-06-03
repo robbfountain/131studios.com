@@ -15,6 +15,7 @@ class AddProjectFieldsToBlogTable extends Migration
     {
         Schema::table('blogs', function (Blueprint $table) {
             $table->string('url')->nullable();
+            $table->string('project_title')->nullable();
             $table->text('project_description')->nullable();
         });
     }
@@ -28,6 +29,7 @@ class AddProjectFieldsToBlogTable extends Migration
     {
         Schema::table('blogs', function (Blueprint $table) {
             $table->dropColumn('url');
+            $table->string('project_title');
             $table->dropColumn('project_description');
         });
     }
