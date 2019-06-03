@@ -22,18 +22,18 @@
                                 <img src="{{$project->imageUrl()}}"
                                      alt="{{$project->project_title}}"
                                      class="p-2 bg-white rounded border">
-                                
+
                                 <div class="mt-8 text-center ">
                                     <a href="{{$project->url}}"
                                        target="_blank"
-                                    class="border rounded border-blue px-4 py-2 text-sm no-underline text-blue hover:bg-blue hover:text-white">View Project</a>
+                                       class="border rounded border-blue px-4 py-2 text-sm no-underline text-blue hover:bg-blue hover:text-white">View Project</a>
                                 </div>
                             </div>
 
                             <div class="w-1/2 px-2">
                                 <h2 class="text-lg text-grey-darker mb-4">{{$project->project_title}}</h2>
                                 <div class="text-sm leading-normal text-grey-dark">
-                                    {{$project->toHtml()}}
+                                    {!! $project->toHtml() !!}
                                 </div>
 
                                 <div class="text-sm leading-normal text-grey-dark mt-4">
