@@ -33,7 +33,7 @@
                             <div class="w-1/2 px-2">
                                 <h2 class="text-lg text-grey-darker mb-4">{{$project->project_title}}</h2>
                                 <div class="text-sm leading-normal text-grey-dark">
-                                    {{$project->preview()}}
+                                    {{$project->body}}
                                 </div>
 
                                 <div class="text-sm leading-normal text-grey-dark mt-4">
