@@ -26,8 +26,9 @@ class Blog extends Model
      * @var array
      */
     protected $casts = [
-        'is_published' => 'bool',
-        'is_featured'  => 'bool',
+        'is_published'  => 'bool',
+        'is_featured'   => 'bool',
+        'project_title' => 'string',
     ];
 
     /**
@@ -53,6 +54,7 @@ class Blog extends Model
 
         static::creating(function($blog) {
             $blog->slug = Str::slug($blog->title);
+            $blog->user_id = Auth::id();
         });
     }
 
@@ -64,12 +66,48 @@ class Blog extends Model
         return 'slug';
     }
 
+    public function setProjectTitleAttribute($value)
+    {
+        $this->attributes['project_title'] = !is_null($value) && strlen($value) > 1
+            ? $value
+            : $this->blogTitleToProjectTitle();
+    }
+
+    private function blogTitleToProjectTitle()
+    {
+        return str_replace($this->titleSearchTerms(), $this->titleReplaceTerms(), $this->title);
+    }
+
+    private function titleSearchTerms()
+    {
+        return [
+            'Website Launched',
+            'Website Released',
+            'Released',
+        ];
+    }
+
+    private function titleReplaceTerms()
+    {
+        return '';
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function publish()
+    {
+        return $this->update(['is_published' => true, 'published_at' => now()]);
+    }
+
+    public function unpublish()
+    {
+        return $this->update(['is_published' => false]);
     }
 
     /**

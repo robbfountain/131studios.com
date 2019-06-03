@@ -2,6 +2,10 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\PublishBlog;
+use App\Nova\Actions\UnpublishBlog;
+use App\Nova\Filters\BlogCategory;
+use Illuminate\Support\Facades\Auth;
 use Laravel\Nova\Panel;
 use Spatie\TagsField\Tags;
 use Illuminate\Http\Request;
@@ -47,7 +51,10 @@ class Blog extends Resource
      */
     public function actions(Request $request)
     {
-        return [];
+        return [
+            new PublishBlog,
+            new UnpublishBlog,
+        ];
     }
 
     /**
@@ -72,14 +79,14 @@ class Blog extends Resource
     public function fields(Request $request)
     {
         return [
+            BelongsTo::make('User')->hideWhenCreating()->searchable(),
             BelongsTo::make('Category'),
-            BelongsTo::make('User'),
             Text::make('Title'),
-            Text::make('Slug')->onlyOnForms(),
+            Text::make('Slug')->hideWhenCreating()->hideFromIndex(),
             CloudinaryImage::make('Image'),
             Markdown::make('Body'),
-            Boolean::make('Published', 'is_published')->withMeta(["value" => 1])->sortable(),
-            DateTime::make('Publish Date', 'published_at')->format('MMM D, YYYY')->sortable(),
+            Boolean::make('Published', 'is_published')->sortable(),
+            DateTime::make('Publish Date', 'published_at')->format('MMM D, YYYY')->sortable()->nullable()->help('Leave blank to publish now or set a date in the future.'),
             Tags::make('Tags')->onlyOnForms(),
             Heading::make('Project Information')->onlyOnForms(),
 
@@ -91,7 +98,7 @@ class Blog extends Resource
     protected function projectFields()
     {
         return [
-            Text::make('Project Title')->nullable()->hideFromIndex(),
+            Text::make('Project Title')->hideFromIndex()->help('Title will be created automatically or enter manually.'),
             Markdown::make('Project Description')->nullable(),
             Text::make('Project URL', 'url')->nullable()->hideFromIndex(),
         ];
@@ -106,7 +113,9 @@ class Blog extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new BlogCategory,
+        ];
     }
 
     /**
