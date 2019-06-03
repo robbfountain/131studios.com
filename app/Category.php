@@ -24,7 +24,7 @@ class Category extends Model
     /**
      * @var array
      */
-    protected $fillable = ['name', 'parent_id'];
+    protected $fillable = ['name'];
 
     /**
      * Return the sluggable configuration array for this model.
@@ -38,30 +38,6 @@ class Category extends Model
                 'source' => 'slug_or_name',
             ],
         ];
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function parent()
-    {
-        return $this->belongsTo(Category::class, 'parent_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function children()
-    {
-        return $this->hasMany(Category::class, 'parent_id');
-    }
-
-    /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function project()
-    {
-        return $this->hasMany(Project::class);
     }
 
     /**
@@ -79,5 +55,10 @@ class Category extends Model
     public function scopeProject($query)
     {
         return $query->where('name','Project');
+    }
+
+    public function blog()
+    {
+        return $this->belongsTo(Blog::class);
     }
 }
