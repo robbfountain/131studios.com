@@ -6,7 +6,7 @@ use App\Blog;
 
 class BlogController extends Controller
 {
-    
+
     protected $titleSuffix = ' - 131 Studios Blog';
     /**
      * Display a listing of the resource.

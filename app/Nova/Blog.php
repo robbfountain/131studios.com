@@ -2,11 +2,11 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Panel;
 use Spatie\TagsField\Tags;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Markdown;
@@ -39,6 +39,30 @@ class Blog extends Resource
     ];
 
     /**
+     * Get the actions available for the resource.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return array
+     */
+    public function actions(Request $request)
+    {
+        return [];
+    }
+
+    /**
+     * Get the cards available for the request.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return array
+     */
+    public function cards(Request $request)
+    {
+        return [];
+    }
+
+    /**
      * Get the fields displayed by the resource.
      *
      * @param \Illuminate\Http\Request $request
@@ -54,10 +78,10 @@ class Blog extends Resource
             Text::make('Slug')->onlyOnForms(),
             CloudinaryImage::make('Image'),
             Markdown::make('Body'),
-            Boolean::make('Published', 'is_published')->sortable(),
+            Boolean::make('Published', 'is_published')->withMeta(["value" => 1])->sortable(),
             DateTime::make('Publish Date', 'published_at')->format('MMM D, YYYY')->sortable(),
             Tags::make('Tags')->onlyOnForms(),
-            Heading::make('Project Information'),
+            Heading::make('Project Information')->onlyOnForms(),
 
             new Panel('Project Information', $this->projectFields()),
 
@@ -67,22 +91,10 @@ class Blog extends Resource
     protected function projectFields()
     {
         return [
-            Text::make('Project Title')->nullable()->onlyOnForms(),
+            Text::make('Project Title')->nullable()->hideFromIndex(),
             Markdown::make('Project Description')->nullable(),
-            Text::make('Project URL','url')->nullable()->onlyOnForms(),
+            Text::make('Project URL', 'url')->nullable()->hideFromIndex(),
         ];
-    }
-
-    /**
-     * Get the cards available for the request.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return array
-     */
-    public function cards(Request $request)
-    {
-        return [];
     }
 
     /**
@@ -105,18 +117,6 @@ class Blog extends Resource
      * @return array
      */
     public function lenses(Request $request)
-    {
-        return [];
-    }
-
-    /**
-     * Get the actions available for the resource.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return array
-     */
-    public function actions(Request $request)
     {
         return [];
     }
