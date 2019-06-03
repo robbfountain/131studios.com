@@ -40,6 +40,11 @@
 
             <div class="flex lg:flex-row xs:flex-col">
                 <div class="blog-container xs:w-full lg:w-2/3 px-4 xs:mb-6 lg:mb-0">
+                    @if(!$blog->is_published || $blog->published_at > now())
+                        <div class="my-2 p-2 border rounded-lg border-orange bg-orange-lightest text-orange text-sm">
+                            This blog post is not published
+                        </div>
+                    @endif
                     <h1 class="text-3xl tracking-wide mont text-grey-darker">{{$blog->title}}</h1>
                     <div class="my-3 text-grey-darker text-sm flex items-center">
                         <img src="{{$blog->user->avatar()}}" alt="{{$blog->user->name}}'s Avatar" class="h-8 w-8 rounded-full mr-2">

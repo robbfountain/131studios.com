@@ -64,4 +64,9 @@ class User extends Authenticatable
     {
         return Gravatar::get($this->email);
     }
+
+    public function isAdmin()
+    {
+        return $this->email == 'robb@131studios.com';
+    }
 }

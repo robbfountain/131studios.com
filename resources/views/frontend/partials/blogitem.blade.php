@@ -1,5 +1,5 @@
 <div class="xs:w-full lg:w-1/3 p-2">
-    <div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg {{!$blog->is_published || $blog->published_at > now() ? 'border-2 border-orange bg-orange-lightest' : ''}}">
         <img src="{{$blog->imageUrl()}}" alt="{{$blog->title}}">
         <div class="px-6 py-4">
             <div class="font-bold text-xl mb-2">
