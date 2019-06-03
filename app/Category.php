@@ -75,4 +75,9 @@ class Category extends Model
 
         return $this->name;
     }
+
+    public function scopeProject($query)
+    {
+        return $query->where('name','Project');
+    }
 }

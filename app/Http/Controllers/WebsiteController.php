@@ -208,9 +208,16 @@ class WebsiteController extends Controller
     {
 
         return view('frontend.projects')->with([
-            'projects' => Project::visible()->orderBy('lft', 'ASC')->get(),
+            'projects' => $this->getProjects(),
             'title' => 'Our Portfolio'
         ]);
 
+    }
+
+    private function getProjects()
+    {
+        return Blog::published()->whereHas('category', function ($query) {
+            $query->project();
+        })->get();
     }
 }

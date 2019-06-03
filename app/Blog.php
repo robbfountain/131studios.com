@@ -91,6 +91,8 @@ class Blog extends Model
         ]);
     }
 
+
+
     /**
      * @return string
      */

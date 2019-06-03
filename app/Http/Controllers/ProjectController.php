@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Blog;
 use App\Project;
 
 class ProjectController extends Controller
@@ -14,12 +15,17 @@ class ProjectController extends Controller
      */
     public function index($slug = null)
     {
-        return request()->expectsJson()
-            ? response()->json([
-                'data' => Project::visible()->orderBy('title', 'ASC')->get(),
-            ])
-            : view('frontend.projects')->with(['projects' => Project::visible()->orderBy('lft', 'ASC')->get()]);
+        return view('frontend.projects')->with([
+            'projects' => $this->getProjects()
+        ]);
 
+    }
+
+    private function getProjects()
+    {
+        return Blog::visible()->whereHas('category', function ($query) {
+            $query->prjects();
+        })->get();
     }
 
     /**

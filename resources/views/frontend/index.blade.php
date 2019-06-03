@@ -107,9 +107,10 @@
                 <h2 class="text-center title font-medium text-blue-darker text-3xl mb-8">How Can We Help <span
                             style="background-color: rgba(0,0,0,0.5);" class="text-white px-3 py-1">You?</span></h2>
                 <div class="flex xs:flex-col lg:flex-row-reverse justify-between">
-                    <div class="relative xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0 lg:px-4">
+                    <div class="lg:relative xs:inline-block xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0 lg:px-4">
                             <iframe src="https://player.vimeo.com/video/338294354"
-                                    style="position:absolute;top:0;left:0;width:100%;height:100%;" frameborder="0"
+                                    class="lg:absolute lg:pin-t lg:pin-l w-full"
+                                    style="width:100%;height:100%;" frameborder="0"
                                     allow="autoplay; fullscreen" allowfullscreen
                             class="border-4 rounded border-grey-lighter"></iframe>
                     </div>

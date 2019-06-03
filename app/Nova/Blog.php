@@ -2,6 +2,8 @@
 
 namespace App\Nova;
 
+use Laravel\Nova\Fields\Heading;
+use Laravel\Nova\Panel;
 use Spatie\TagsField\Tags;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
@@ -54,9 +56,19 @@ class Blog extends Resource
             Markdown::make('Body'),
             Boolean::make('Published', 'is_published')->sortable(),
             DateTime::make('Publish Date', 'published_at')->format('MMM D, YYYY')->sortable(),
-            Boolean::make('Featured', 'is_featured')->sortable(),
             Tags::make('Tags'),
+            Heading::make('Project Information'),
 
+            new Panel('Project Information', $this->projectFields()),
+
+        ];
+    }
+
+    protected function projectFields()
+    {
+        return [
+            Markdown::make('Project Description')->nullable(),
+            Text::make('Project URL','url')->nullable(),
         ];
     }
 

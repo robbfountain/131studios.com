@@ -19,12 +19,12 @@
                     <div class="xs:w-full lg:w-1/3 px-3 mb-4">
                         <div class="max-w-sm w-full lg:max-w-full lg:flex">
                             <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-                                 style="background-image: url('{{$project->imagePath()}}');">
+                                 style="background-image: url('{{$project->imageUrl()}}');">
                             </div>
                             <div class="border-r border-t border-l border-b border-grey-light rounded-b rounded-r flex flex-col p-4 leading-normal bg-white lg:border-l-0 lg:rounded-b-none lg:rounded-r">
                                 <h4 class="font-semibold text-blue">{{$project->title}}</h4>
                                 <div class="mt-3 text-grey-dark text-sm">
-                                    {{$project->description}}
+                                    {{$project->body}}
                                 </div>
                                 <div class="mt-4">
                                     <a href="{{$project->url}}"
