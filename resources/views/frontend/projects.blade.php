@@ -17,7 +17,7 @@
             <div class="flex lg:flex-row xs:flex-col lg:flex-wrap">
                 @foreach($projects as $project)
                     <div class="w-1/2 p-3">
-                        <div class="w-full border-2 border-grey-lighter bg-grey-lightest rounded p-2 flex xs:flex-col lg:flex-row">
+                        <div class="w-full border-2 {{!$project->is_published || $project->published_at > now() ? 'border-orange bg-orange-lightest' : 'border-grey-lighter bg-grey-lightest'}} rounded p-2 flex xs:flex-col lg:flex-row">
                             <div class="w-1/2 px-2">
                                 <img src="{{$project->imageUrl()}}"
                                      alt="{{$project->project_title}}"
