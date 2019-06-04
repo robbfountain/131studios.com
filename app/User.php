@@ -2,13 +2,10 @@
 
 namespace App;
 
-use App\Traits\ClientTrait;
-use Backpack\Base\app\Notifications\ResetPasswordNotification as ResetPasswordNotification;
 use Backpack\CRUD\CrudTrait;
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
 
 /**
@@ -66,5 +63,10 @@ class User extends Authenticatable
     public function avatar()
     {
         return Gravatar::get($this->email);
+    }
+
+    public function isAdmin()
+    {
+        return $this->email == 'robb@131studios.com';
     }
 }

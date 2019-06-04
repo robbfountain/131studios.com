@@ -2,9 +2,15 @@
 
 namespace App\Nova;
 
+use App\Nova\Actions\PublishBlog;
+use App\Nova\Actions\UnpublishBlog;
+use App\Nova\Filters\BlogCategory;
+use Illuminate\Support\Facades\Auth;
+use Laravel\Nova\Panel;
 use Spatie\TagsField\Tags;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Fields\Heading;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Markdown;
@@ -37,26 +43,17 @@ class Blog extends Resource
     ];
 
     /**
-     * Get the fields displayed by the resource.
+     * Get the actions available for the resource.
      *
      * @param \Illuminate\Http\Request $request
      *
      * @return array
      */
-    public function fields(Request $request)
+    public function actions(Request $request)
     {
         return [
-            BelongsTo::make('Category'),
-            BelongsTo::make('User'),
-            Text::make('Title'),
-            Text::make('Slug')->onlyOnForms(),
-            CloudinaryImage::make('Image'),
-            Markdown::make('Body'),
-            Boolean::make('Published', 'is_published')->sortable(),
-            DateTime::make('Publish Date', 'published_at')->format('MMM D, YYYY')->sortable(),
-            Boolean::make('Featured', 'is_featured')->sortable(),
-            Tags::make('Tags'),
-
+            new PublishBlog,
+            new UnpublishBlog,
         ];
     }
 
@@ -73,6 +70,41 @@ class Blog extends Resource
     }
 
     /**
+     * Get the fields displayed by the resource.
+     *
+     * @param \Illuminate\Http\Request $request
+     *
+     * @return array
+     */
+    public function fields(Request $request)
+    {
+        return [
+            BelongsTo::make('User')->hideWhenCreating()->searchable(),
+            BelongsTo::make('Category'),
+            Text::make('Title'),
+            Text::make('Slug')->hideWhenCreating()->hideFromIndex(),
+            CloudinaryImage::make('Image'),
+            Markdown::make('Body'),
+            Boolean::make('Published', 'is_published')->sortable(),
+            DateTime::make('Publish Date', 'published_at')->format('MMM D, YYYY')->sortable()->nullable()->help('Leave blank to publish now or set a date in the future.'),
+            Tags::make('Tags')->onlyOnForms(),
+            Heading::make('Project Information')->onlyOnForms(),
+
+            new Panel('Project Information', $this->projectFields()),
+
+        ];
+    }
+
+    protected function projectFields()
+    {
+        return [
+            Text::make('Project Title')->hideFromIndex()->help('Title will be created automatically or enter manually.'),
+            Markdown::make('Project Description')->nullable(),
+            Text::make('Project URL', 'url')->nullable()->hideFromIndex(),
+        ];
+    }
+
+    /**
      * Get the filters available for the resource.
      *
      * @param \Illuminate\Http\Request $request
@@ -81,7 +113,9 @@ class Blog extends Resource
      */
     public function filters(Request $request)
     {
-        return [];
+        return [
+            new BlogCategory,
+        ];
     }
 
     /**
@@ -92,18 +126,6 @@ class Blog extends Resource
      * @return array
      */
     public function lenses(Request $request)
-    {
-        return [];
-    }
-
-    /**
-     * Get the actions available for the resource.
-     *
-     * @param \Illuminate\Http\Request $request
-     *
-     * @return array
-     */
-    public function actions(Request $request)
     {
         return [];
     }
