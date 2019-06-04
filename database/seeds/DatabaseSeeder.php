@@ -11,8 +11,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        \App\Category::create(['name' => 'Project']);
+
         $this->call(UsersTableSeeder::class);
-        $this->call(ProjectsTableSeeder::class);
         $this->call(BlogTableSeeder::class);
 
     }

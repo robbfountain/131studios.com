@@ -54,7 +54,7 @@ class Blog extends Model
 
         static::creating(function($blog) {
             $blog->slug = Str::slug($blog->title);
-            $blog->user_id = Auth::id();
+            $blog->user_id = Auth::check() ? Auth::id() : 1;
         });
     }
 
@@ -66,6 +66,9 @@ class Blog extends Model
         return 'slug';
     }
 
+    /**
+     * @param $value
+     */
     public function setProjectTitleAttribute($value)
     {
         $this->attributes['project_title'] = !is_null($value) && strlen($value) > 1
@@ -73,11 +76,17 @@ class Blog extends Model
             : $this->blogTitleToProjectTitle();
     }
 
+    /**
+     * @return mixed
+     */
     private function blogTitleToProjectTitle()
     {
         return str_replace($this->titleSearchTerms(), $this->titleReplaceTerms(), $this->title);
     }
 
+    /**
+     * @return array
+     */
     private function titleSearchTerms()
     {
         return [
@@ -87,6 +96,9 @@ class Blog extends Model
         ];
     }
 
+    /**
+     * @return string
+     */
     private function titleReplaceTerms()
     {
         return '';
@@ -100,11 +112,17 @@ class Blog extends Model
         return $this->belongsTo(Category::class);
     }
 
+    /**
+     * @return bool
+     */
     public function publish()
     {
         return $this->update(['is_published' => true, 'published_at' => now()]);
     }
 
+    /**
+     * @return bool
+     */
     public function unpublish()
     {
         return $this->update(['is_published' => false]);
@@ -118,6 +136,9 @@ class Blog extends Model
         return $this->belongsTo(User::class);
     }
 
+    /**
+     * @param $value
+     */
     public function setPublishedAtAttribute($value)
     {
         $this->attributes['published_at'] = !is_null($value) ? $value : now();

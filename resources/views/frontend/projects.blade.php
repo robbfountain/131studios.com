@@ -3,7 +3,6 @@
 
 @section('content')
     @banner
-
     <div class="container mx-auto text-center">
         <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
             style="background-color: rgba(0,0,0,0.5)">
@@ -16,21 +15,22 @@
         <div class="container mx-auto">
             <div class="flex lg:flex-row xs:flex-col lg:flex-wrap">
                 @foreach($projects as $project)
-                    <div class="w-1/2 p-3">
+                    <div class="lg:w-1/2 xs:w-full p-3">
                         <div class="w-full border-2 {{!$project->is_published || $project->published_at > now() ? 'border-orange bg-orange-lightest' : 'border-grey-lighter bg-grey-lightest'}} rounded p-3 flex xs:flex-col lg:flex-row">
-                            <div class="w-1/2 px-2">
+                            <div class="xs:-full lg:w-1/2 px-2">
                                 <img src="{{$project->imageUrl()}}"
                                      alt="{{$project->project_title}}"
                                      class="p-2 bg-white rounded border">
 
-                                <div class="mt-8 text-center ">
+                                <div class="xs:my-6 lg:mt-8 text-center">
                                     <a href="{{$project->url}}"
                                        target="_blank"
-                                       class="border rounded border-blue px-4 py-2 text-sm no-underline text-blue hover:bg-blue hover:text-white">View Project</a>
+                                       class="border rounded border-blue px-4 py-2 text-sm no-underline text-blue hover:bg-blue hover:text-white">View
+                                                                                                                                                  Project</a>
                                 </div>
                             </div>
 
-                            <div class="w-1/2 px-2">
+                            <div class="xs:w-full lg:w-1/2 px-2">
                                 <h2 class="text-lg text-grey-darker mb-4">{{$project->project_title}}</h2>
                                 <div class="text-sm leading-normal text-grey-dark">
                                     {!! $project->toHtml() !!}
