@@ -2,20 +2,20 @@
 
 namespace App\Http\Controllers;
 
-use App\Contact;
-use App\Http\Requests\LongForm;
-use App\Http\Requests\ShortContactForm;
 use App\Mail\ContactFormSubmitted;
-use App\User;
 use Illuminate\Support\Facades\Mail;
-use Newsletter;
+use App\Http\Requests\ContactRequest;
 
 /**
  * Class ContactController
  * @package App\Http\Controllers
  */
-class ContactController extends Controller {
+class ContactController extends Controller
+{
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('frontend.contact')->with(['title' => 'Contact Us']);
@@ -23,29 +23,15 @@ class ContactController extends Controller {
 
     /**
      * @param ShortContactForm $request
+     *
      * @return \Illuminate\Http\JsonResponse
      */
-    public function store(ShortContactForm $request)
+    public function store(ContactRequest $request)
     {
-        Mail::to('robb@131studios.com')->send(new ContactFormSubmitted($request));
-
-        return response()->json([
-            'status' => 'ok'
-        ]);
-    }
-
-    /**
-     * @param LongForm $request
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function quote(LongForm $request)
-    {
-        Contact::create($request->except(['newsletter']));
-
-        Mail::to('robb@131studios.com')->send(new ContactFormSubmitted($request, false));
+        Mail::to('robb@131studios.com')->send(new ContactFormSubmitted($request->validated()));
 
         return response()->json([
             'status' => 'ok',
-        ],200);
+        ]);
     }
 }
