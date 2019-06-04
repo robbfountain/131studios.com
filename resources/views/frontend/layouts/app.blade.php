@@ -206,7 +206,11 @@
                 });
             }
 
-            google.maps.event.addDomListener(window, 'load', initialize);
+            if(document.getElementById("map_canvas"))
+            {
+                google.maps.event.addDomListener(window, 'load', initialize);
+            }
+
         </script>
     </body>
 </html>
