@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Project;
+use Illuminate\Support\Str;
 use Illuminate\View\View;
 use Illuminate\Contracts\View\Factory;
 
@@ -88,7 +89,7 @@ class WebsiteController extends Controller
      */
     public function index($page = 'index')
     {
-        $methodName = 'handle' . studly_case($page);
+        $methodName = 'handle' . Str::studly($page);
 
         if (method_exists($this, $methodName)) {
             return $this->{$methodName}();
@@ -103,7 +104,6 @@ class WebsiteController extends Controller
     public function handleIndex()
     {
         return view('frontend.index')->with(array_merge($this->title, [
-            'projects' => Project::visible()->orderBy('id', 'DESC')->get(),
             'blogs' => Blog::published()->latest('published_at')->take(4)->get(),
         ]));
     }

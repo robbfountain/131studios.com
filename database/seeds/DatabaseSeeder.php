@@ -1,5 +1,6 @@
 <?php
 
+use App\Category;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -11,10 +12,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        \App\Category::create(['name' => 'Project']);
+        Category::create(['name' => 'Project']);
 
         $this->call(UsersTableSeeder::class);
         $this->call(BlogTableSeeder::class);
-
     }
 }
