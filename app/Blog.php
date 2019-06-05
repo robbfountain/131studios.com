@@ -165,7 +165,7 @@ class Blog extends Model
      */
     public function preview()
     {
-        return strip_tags(substr($this->toHtml(), 0, 100));
+        return strip_tags(substr($this->toHtml(), 0, 100)) . '...';
     }
 
     /**
