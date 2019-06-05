@@ -8,7 +8,7 @@
             <div class="py-3 flex items-center">
                 <img src="{{$blog->user->avatar()}}" class="h-6 w-6 rounded-ful" alt="{{$blog->user->name}}'s Avatar">
                 <div class="ml-2 text-xs text-grey-darker">
-                    Posted {{$blog->created_at->format('M d, Y')}}
+                    Posted {{$blog->published_at->format('M d, Y')}}
                 </div>
             </div>
             <p class="text-grey-dark text-base py-2">
