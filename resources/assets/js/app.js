@@ -35,7 +35,6 @@ library.add(fab);
 Vue.component('fa', FontAwesomeIcon);
 Vue.component('pinned', require('./components/pinned'));
 Vue.component('Contact', require('./components/Contact'));
-Vue.component('Quote', require('./components/Quote'));
 Vue.component('Dropdown',require('./components/Dropdown'));
 Vue.component('SubscriptionForm',require('./components/SubscriptionForm'));
 
