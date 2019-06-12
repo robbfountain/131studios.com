@@ -39,7 +39,7 @@ class WebsiteController extends Controller
      */
     public function handleWebsiteDesign()
     {
-        return view('frontend.website-design')->with(['title' => 'Website Design']);
+        return view('frontend.website-design')->with(['title' => 'Website Design | 131 Studios']);
     }
 
     /**
@@ -47,7 +47,7 @@ class WebsiteController extends Controller
      */
     public function handleHosting()
     {
-        return view('frontend.hosting')->with(['title' => 'Web Hosting In Greencastle, Chambersburg & Hagerstown']);
+        return view('frontend.hosting')->with(['title' => 'Web Hosting In Greencastle, Chambersburg & Hagerstown  | 131 Studios']);
     }
 
     /**
@@ -55,7 +55,7 @@ class WebsiteController extends Controller
      */
     public function handleSeo()
     {
-        return view('frontend.seo')->with(['title' => 'SEO']);
+        return view('frontend.seo')->with(['title' => 'Search Engine Optimization - SEO | 131 Studios']);
     }
 
     /**
@@ -63,7 +63,7 @@ class WebsiteController extends Controller
      */
     public function handleAdditionalServices()
     {
-        return view('frontend.additional-services')->with(['title' => 'Additional Services']);
+        return view('frontend.additional-services')->with(['title' => 'Additional Services | 131 Studios']);
     }
 
     /**
@@ -71,7 +71,7 @@ class WebsiteController extends Controller
      */
     public function handleEmailHosting()
     {
-        return view('frontend.email-hosting')->with(['title' => 'Email Hosting']);
+        return view('frontend.email-hosting')->with(['title' => 'Email Hosting | 131 Studios']);
     }
 
     /**
@@ -79,7 +79,7 @@ class WebsiteController extends Controller
      */
     public function handleDnsHosting()
     {
-        return view('frontend.dns-hosting')->with(['title' => 'DNS Hosting and Management']);
+        return view('frontend.dns-hosting')->with(['title' => 'DNS Hosting and Management | 131 Studios']);
     }
 
     /**
@@ -132,7 +132,7 @@ class WebsiteController extends Controller
      */
     public function handleSocialMedia()
     {
-        return view('frontend.social-media')->with(['title' => 'Social Media']);
+        return view('frontend.social-media')->with(['title' => 'Social Media | 131 Studios']);
     }
 
     /**
@@ -148,7 +148,7 @@ class WebsiteController extends Controller
      */
     public function handleWork()
     {
-        return $this->renderView('projects', 'Our Work');
+        return $this->renderView('projects', 'Our Work | 131 Studios');
     }
 
     /**
@@ -156,7 +156,7 @@ class WebsiteController extends Controller
      */
     public function handleContact()
     {
-        return view('frontend.contact')->with(['title' => 'Contact Us']);
+        return view('frontend.contact')->with(['title' => 'Contact Us | 131 Studios']);
     }
 
     /**

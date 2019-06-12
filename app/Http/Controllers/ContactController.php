@@ -18,7 +18,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        return view('frontend.contact')->with(['title' => 'Contact Us']);
+        return view('frontend.contact')->with(['title' => 'Contact Us | 131 Studios']);
     }
 
     /**
