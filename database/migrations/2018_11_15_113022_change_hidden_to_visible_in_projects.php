@@ -17,13 +17,13 @@ class ChangeHiddenToVisibleInProjects extends Migration
             $table->boolean('visible')->default(true);
         });
 
-        foreach (\App\Project::all() as $project) {
-            $project->update([
-                'visible' => !$project->hidden,
-            ]);
+//        foreach (\App\Project::all() as $project) {
+//            $project->update([
+//                'visible' => !$project->hidden,
+//            ]);
 
 
-        }
+//        }
 
         Schema::table('projects', function (Blueprint $table) {
             $table->dropColumn('hidden');

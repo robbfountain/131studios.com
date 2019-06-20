@@ -24,19 +24,19 @@ class AddProjectFieldsToBlogTable extends Migration
 
         $category = Category::create(['name' => 'Project']);
 
-        Project::all()->each(function ($p) use ($category) {
-            Blog::create([
-                'user_id' => 1,
-                'category_id' => $category->id,
-                'title' => $p->title,
-                'body' => $p->description,
-                'url' => $p->url,
-                'published_at' => now(),
-                'is_published' => $p->visible,
-                'is_featured' => false,
-                'image' => $p->primary_image
-            ]);
-        });
+//        Project::all()->each(function ($p) use ($category) {
+//            Blog::create([
+//                'user_id' => 1,
+//                'category_id' => $category->id,
+//                'title' => $p->title,
+//                'body' => $p->description,
+//                'url' => $p->url,
+//                'published_at' => now(),
+//                'is_published' => $p->visible,
+//                'is_featured' => false,
+//                'image' => $p->primary_image
+//            ]);
+//        });
     }
 
     /**
