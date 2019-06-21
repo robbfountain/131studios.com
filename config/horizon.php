@@ -152,7 +152,7 @@ return [
         'local' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['default','mail','zonelocker','dapper','{dapper.staging}'],
+                'queue' => ['default','mail','{zonelocker}','dapper','{dapper.staging}'],
                 'balance' => 'simple',
                 'processes' => 3,
                 'tries' => 3,
