@@ -13,25 +13,24 @@ import Vue from 'vue';
 /**
  * Import our form class
  */
-import Form from './classes/Form';
+import Form from 'form-class';
 window.Form = Form;
-
 
 import hljs from 'highlight.js';
 hljs.initHighlightingOnLoad();
 
 
 import {library} from '@fortawesome/fontawesome-svg-core'
-import {fas} from '@fortawesome/pro-solid-svg-icons'
-import {far} from '@fortawesome/pro-regular-svg-icons'
-import {fal} from '@fortawesome/pro-light-svg-icons'
-import {fab} from '@fortawesome/free-brands-svg-icons'
+import {faHome, faServer, faPaintBrush, faShareAlt, faSearch} from '@fortawesome/pro-solid-svg-icons'
+import {faChevronRight, faInfoCircle, faBars} from '@fortawesome/pro-regular-svg-icons'
+import {faStar, faMobileAlt, faSearch as falSearch, faPhone, faEnvelope, faSpinner} from '@fortawesome/pro-light-svg-icons'
+import {faTwitterSquare, faFacebookSquare} from '@fortawesome/free-brands-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
-library.add(fas);
-library.add(far);
-library.add(fal);
-library.add(fab);
+library.add(faHome, faServer, faPaintBrush, faShareAlt, faSearch);
+library.add(faChevronRight, faInfoCircle, faBars);
+library.add(faStar, faMobileAlt, falSearch, faPhone, faEnvelope, faSpinner);
+library.add(faTwitterSquare, faFacebookSquare);
 
 /**
  * Global Vue Components
