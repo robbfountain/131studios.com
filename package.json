@@ -31,7 +31,7 @@
     "@fortawesome/pro-solid-svg-icons": "^5.8.2",
     "@fortawesome/vue-fontawesome": "0.1.6",
     "animate.css": "^3.7.0",
-    "highlight.js": "^9.15.6",
+    "highlight.js": "^9.15.10",
     "imagesloaded": "^4.1.4",
     "isotope-layout": "^3.0.6",
     "jquery": "^3.4.1",

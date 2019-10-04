@@ -56,7 +56,6 @@
                         <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}" alt="{{$blog->title}}" class="">
                     </div>
 
-
                     {!! $blog->toHtml() !!}
 
                     <div class="py-4">
@@ -84,7 +83,6 @@
                                 <fa :icon="['fab', 'twitter-square']" size="2x"></fa>
                             </a>
                         </div>
-
                     </div>
                 </div>
 

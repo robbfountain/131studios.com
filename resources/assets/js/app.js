@@ -17,6 +17,10 @@ import Form from './classes/Form';
 window.Form = Form;
 
 
+import hljs from 'highlight.js';
+hljs.initHighlightingOnLoad();
+
+
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {fas} from '@fortawesome/pro-solid-svg-icons'
 import {far} from '@fortawesome/pro-regular-svg-icons'
