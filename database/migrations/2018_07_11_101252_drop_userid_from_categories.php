@@ -14,8 +14,8 @@ class DropUseridFromCategories extends Migration
     public function up()
     {
         Schema::table('categories', function (Blueprint $table){
-            $table->dropForeign('categories_user_id_foreign');
-            $table->dropColumn('user_id');
+//            $table->dropForeign('categories_user_id_foreign');
+//            $table->dropColumn('user_id');
         });
     }
 
