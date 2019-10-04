@@ -22,14 +22,14 @@ hljs.initHighlightingOnLoad();
 
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {faHome, faServer, faPaintBrush, faShareAlt, faSearch} from '@fortawesome/pro-solid-svg-icons'
-import {faChevronRight, faInfoCircle, faBars} from '@fortawesome/pro-regular-svg-icons'
-import {faStar, faMobileAlt, faSearch as falSearch, faPhone, faEnvelope, faSpinner} from '@fortawesome/pro-light-svg-icons'
+import {faChevronRight, faInfoCircle, faBars, faAngleDoubleRight} from '@fortawesome/pro-regular-svg-icons'
+import {faStar, faMobileAlt, faSearch as falSearch, faPhone, faEnvelope, faSpinner, faDatabase, faShield, faWrench, faChartNetwork, faGlobe, faAnalytics, faServer as falServer} from '@fortawesome/pro-light-svg-icons'
 import {faTwitterSquare, faFacebookSquare} from '@fortawesome/free-brands-svg-icons'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
 library.add(faHome, faServer, faPaintBrush, faShareAlt, faSearch);
-library.add(faChevronRight, faInfoCircle, faBars);
-library.add(faStar, faMobileAlt, falSearch, faPhone, faEnvelope, faSpinner);
+library.add(faChevronRight, faInfoCircle, faBars, faAngleDoubleRight);
+library.add(faStar, faMobileAlt, falSearch, faPhone, faEnvelope, faSpinner, faDatabase, faShield, faWrench, faChartNetwork, faGlobe, faAnalytics, falServer);
 library.add(faTwitterSquare, faFacebookSquare);
 
 /**
