@@ -10,11 +10,7 @@
     <meta property="og:description" content="{{$blog->preview()}}">
     <meta property="og:image" content="{{$blog->imageUrl()}}">
     <meta property="og:article:published_time" content="{{$blog->published_at}}">
-    <link rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/styles/default.min.css">
     <link rel="canonical" href="{{$blog->shareUrl()}}">
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.6/highlight.min.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
 @endsection
 
 @section('content')
