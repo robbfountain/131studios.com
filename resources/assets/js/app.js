@@ -21,6 +21,7 @@ hljs.initHighlightingOnLoad();
 
 
 import {library} from '@fortawesome/fontawesome-svg-core'
+
 import {faHome, faServer, faPaintBrush, faShareAlt, faSearch, faCheckCircle } from '@fortawesome/pro-solid-svg-icons'
 import {faChevronRight, faInfoCircle, faBars, faAngleDoubleRight, faAngleRight } from '@fortawesome/pro-regular-svg-icons'
 import {faStar, faMobileAlt, faSearch as falSearch, faPhone, faEnvelope, faSpinner} from '@fortawesome/pro-light-svg-icons'
@@ -30,6 +31,7 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 library.add(faHome, faServer, faPaintBrush, faShareAlt, faSearch, faCheckCircle, faAngleDoubleRight);
 library.add(faChevronRight, faInfoCircle, faBars, faAngleRight);
 library.add(faStar, faMobileAlt, falSearch, faPhone, faEnvelope, faSpinner);
+
 library.add(faTwitterSquare, faFacebookSquare);
 
 /**
