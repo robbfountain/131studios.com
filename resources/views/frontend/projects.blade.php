@@ -4,7 +4,7 @@
 @section('content')
     @banner
     <div class="container mx-auto text-center">
-        <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
+        <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
             style="background-color: rgba(0,0,0,0.5)">
             Our Portfolio
         </h1>
@@ -16,7 +16,7 @@
             <div class="flex lg:flex-row xs:flex-col lg:flex-wrap">
                 @foreach($projects as $project)
                     <div class="lg:w-1/2 xs:w-full p-3">
-                        <div class="w-full border-2 {{!$project->is_published || $project->published_at > now() ? 'border-orange bg-orange-lightest' : 'border-grey-lighter bg-grey-lightest'}} rounded p-3 flex xs:flex-col lg:flex-row">
+                        <div class="w-full border-2 {{!$project->is_published || $project->published_at > now() ? 'border-orange bg-orange-lightest' : 'border-gray-300er bg-gray-300est'}} rounded p-3 flex xs:flex-col lg:flex-row">
                             <div class="xs:-full lg:w-1/2 px-2">
                                 <img src="{{$project->imageUrl()}}"
                                      alt="{{$project->project_title}}"
@@ -31,12 +31,12 @@
                             </div>
 
                             <div class="xs:w-full lg:w-1/2 px-2">
-                                <h2 class="text-lg text-grey-darker mb-4">{{$project->project_title}}</h2>
-                                <div class="text-sm leading-normal text-grey-dark">
+                                <h2 class="text-lg text-gray-600er mb-4">{{$project->project_title}}</h2>
+                                <div class="text-sm leading-normal text-gray-600">
                                     {!! $project->toHtml() !!}
                                 </div>
 
-                                <div class="text-sm leading-normal text-grey-dark mt-4">
+                                <div class="text-sm leading-normal text-gray-600 mt-4">
                                     {{$project->project_description }}
                                 </div>
                             </div>
@@ -54,9 +54,9 @@
                     {{--                            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"--}}
                     {{--                                 style="background-image: url('{{$project->imageUrl()}}');">--}}
                     {{--                            </div>--}}
-                    {{--                            <div class="border-r border-t border-l border-b border-grey-light rounded-b rounded-r flex flex-col p-4 leading-normal bg-white lg:border-l-0 lg:rounded-b-none lg:rounded-r">--}}
+                    {{--                            <div class="border-r border-t border-l border-b border-gray-300 rounded-b rounded-r flex flex-col p-4 leading-normal bg-white lg:border-l-0 lg:rounded-b-none lg:rounded-r">--}}
                     {{--                                <h4 class="font-semibold text-blue">{{$project->title}}</h4>--}}
-                    {{--                                <div class="mt-3 text-grey-dark text-sm">--}}
+                    {{--                                <div class="mt-3 text-gray-600 text-sm">--}}
                     {{--                                    {{$project->body}}--}}
                     {{--                                </div>--}}
                     {{--                                <div class="mt-4">--}}

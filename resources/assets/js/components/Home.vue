@@ -13,7 +13,7 @@
                 <!-- Service Box -->
                 <div class="group mr-4 flex xs:mb-4">
                     <div class="mr-3">
-                        <div class="transition group-hover:bg-blue-darker group-hover:text-white rounded-full border bg-grey-lighter p-6 text-center text-2xl">
+                        <div class="transition group-hover:bg-blue-darker group-hover:text-white rounded-full border bg-gray-300er p-6 text-center text-2xl">
                             <fa icon="code"></fa>
                         </div>
                     </div>
@@ -27,7 +27,7 @@
                 <!-- Service Box -->
                 <div class="group mr-4 flex xs:mb-4">
                     <div class="mr-3">
-                        <div class="rounded-full border bg-grey-lighter p-6 text-center text-2xl">
+                        <div class="rounded-full border bg-gray-300er p-6 text-center text-2xl">
                             <fa icon="paint-brush"></fa>
                         </div>
                     </div>
@@ -41,7 +41,7 @@
                 <!-- Service Box -->
                 <div class="group mr-4 flex xs:mb-4">
                     <div class="mr-3">
-                        <div class="rounded-full border bg-grey-lighter p-6 text-center text-2xl">
+                        <div class="rounded-full border bg-gray-300er p-6 text-center text-2xl">
                             <fa icon="server"></fa>
                         </div>
                     </div>
@@ -68,7 +68,7 @@
             </div>
         </section>
 
-        <section class="py-10 bg-grey-lightest">
+        <section class="py-10 bg-gray-300est">
             <div class="container mx-auto">
                 <div class="text-center">
                     <h2 class="title font-medium text-3xl mt-4 mb-8">Recent Work</h2>
@@ -81,13 +81,13 @@
                             <img :src="project.primary_image" alt="" class="">
                             <div class="px-6 py-4">
                                 <div class="font-bold text-xl mb-2">{{project.title}}</div>
-                                <p class="text-grey-darker">{{project.description}}
+                                <p class="text-gray-600er">{{project.description}}
                                 </p>
                             </div>
                             <div class="px-6 py-4">
-                                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#photography</span>
-                                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker mr-2">#travel</span>
-                                <span class="inline-block bg-grey-lighter rounded-full px-3 py-1 text-sm font-semibold text-grey-darker">#winter</span>
+                                <span class="inline-block bg-gray-300er rounded-full px-3 py-1 text-sm font-semibold text-gray-600er mr-2">#photography</span>
+                                <span class="inline-block bg-gray-300er rounded-full px-3 py-1 text-sm font-semibold text-gray-600er mr-2">#travel</span>
+                                <span class="inline-block bg-gray-300er rounded-full px-3 py-1 text-sm font-semibold text-gray-600er">#winter</span>
 
                             </div>
                         </div>

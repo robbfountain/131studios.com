@@ -3,7 +3,7 @@
 @section('content')
    @banner
         <div class="container mx-auto text-center">
-            <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
+            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Website Design
             </h1>
@@ -12,7 +12,7 @@
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-8 text-base flex items-center p-2 bg-grey-lighter rounded">
+            <div class="mb-8 text-base flex items-center p-2 bg-gray-300er rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
@@ -20,7 +20,7 @@
             </div>
 
             <div class="flex lg:flex-row xs:flex-col-reverse">
-                <div class="text-lg text-grey-darker lg:pr-6 lg:w-1/2 xs:w-full">
+                <div class="text-lg text-gray-600er lg:pr-6 lg:w-1/2 xs:w-full">
                     <p class="mb-6">Let's face it, in today's digital world your business needs a website that stands
                                     our from your
                                     competitors.
@@ -50,7 +50,7 @@
         </div>
     </section>
 
-    <section class="xs:py-3 lg:py-10 bg-grey-lightest border-t">
+    <section class="xs:py-3 lg:py-10 bg-gray-300est border-t">
         <div class="container mx-auto flex lg:flex-row xs:flex-col">
             <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
                 <div class="mr-4">

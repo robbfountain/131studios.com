@@ -16,7 +16,7 @@
 @section('content')
    @banner¬
         <div class="container mx-auto text-center">
-            <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
+            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Our Blog
             </h1>
@@ -25,7 +25,7 @@
 
     <section class="xs:py-3 lg:py-6">
         <div class="container mx-auto">
-            <div class="mb-6 text-base flex items-center p-2 bg-grey-lighter rounded">
+            <div class="mb-6 text-base flex items-center p-2 bg-gray-300er rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
@@ -34,29 +34,31 @@
                 {{$blog->title}}
             </div>
 
-            <div class="flex lg:flex-row xs:flex-col">
-                <div class="blog-container xs:w-full lg:w-2/3 px-4 xs:mb-6 lg:mb-0">
+            <div class="flex justify-center">
+                <div class="blog-container">
                     @if(!$blog->is_published || $blog->published_at > now())
                         <div class="my-2 p-2 border rounded-lg border-orange bg-orange-lightest text-orange text-sm">
                             This blog post is not published
                         </div>
                     @endif
-                    <h1 class="text-3xl tracking-wide mont text-grey-darker">{{$blog->title}}</h1>
-                    <div class="my-3 text-grey-darker text-sm flex items-center">
+
+
+                    <h1>{{$blog->title}}</h1>
+                   <!--  <div class="my-3 text-gray-600er text-sm flex items-center">
                         <img src="{{$blog->user->avatar()}}" alt="{{$blog->user->name}}'s Avatar" class="h-8 w-8 rounded-full mr-2">
                         <div>
                             Posted by: <span class="text-blue">{{$blog->user->name}}</span> on {{$blog->published_at->format('F d, Y')}}
                         </div>
-                    </div>
+                    </div> -->
                     <div class="py-2">
-                        <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}" alt="{{$blog->title}}" class="">
+                        <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}" alt="{{$blog->title}}" class="blog-main-image">
                     </div>
 
                     {!! $blog->toHtml() !!}
 
                     <div class="py-4">
-                        <h5 class="roboto mb-1 text-grey-darkest text-base">Share This!</h5>
-                        <div class="w-1/2 p-2 bg-grey-lightest border rounded border-grey-lighter">
+                        <h5 class="roboto mb-1 text-gray-600est text-base">Share This!</h5>
+                        <div class="w-1/2 p-2 bg-gray-300est border rounded border-gray-300er">
                             <a href="#"
                                alt="Share on Facebook"
                                title="Share on Facebook"
@@ -83,7 +85,7 @@
                 </div>
 
 
-                <div class="xs:w-full lg:w-1/3 px-4 flex flex-col xs:border-l-0 lg:border-l">
+              <!--   <div class="xs:w-full lg:w-1/3 px-4 flex flex-col xs:border-l-0 lg:border-l">
                     <div>
                         <h2 class="title roboto">
                             Stay Informed
@@ -99,7 +101,7 @@
                                     <form action="#" @submit.prevent>
                                         <div class="flex flex-col py-2">
                                             <label for="email"
-                                                   class="required mb-1 text-xs font-semibold uppercase tracking-wide text-grey-darker"
+                                                   class="required mb-1 text-xs font-semibold uppercase tracking-wide text-gray-600er"
                                                    :class="{'text-red' : form.errors.has('email')}">
                                                 Email Address
                                             </label>
@@ -113,7 +115,7 @@
                                         </div>
                                         <div class="flex flex-col py-2">
                                             <label for="name"
-                                                   class="required mb-1 text-xs font-semibold uppercase tracking-wide text-grey-darker"
+                                                   class="required mb-1 text-xs font-semibold uppercase tracking-wide text-gray-600er"
                                                    :class="{'text-red' : form.errors.has('name')}">Name</label>
                                             <input type="text" id="name" v-model="form.name"
                                                    class="w-full border px-3 py-2"
@@ -150,7 +152,7 @@
                                 </li>
                             @endforeach
                         </ul>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>

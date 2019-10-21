@@ -22,7 +22,7 @@ class AddProjectFieldsToBlogTable extends Migration
             $table->text('project_description')->nullable();
         });
 
-        $category = Category::create(['name' => 'Project']);
+        $category = Category::create(['name' => 'Project', 'user_id' => 1]);
 
 //        Project::all()->each(function ($p) use ($category) {
 //            Blog::create([

@@ -1,0 +1,9 @@
+
+.nav-link {
+ @apply .uppercase .mr-4 .text-gray-700 .pb-6 .border-b-4 .border-transparent;
+}
+
+.nav-link:hover {
+  @apply .text-blue-400 .border-blue-400;
+
+}

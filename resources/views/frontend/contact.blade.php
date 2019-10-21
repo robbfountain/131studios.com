@@ -3,7 +3,7 @@
 @section('content')
    @banner
         <div class="container mx-auto text-center">
-            <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
+            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Contact Us
             </h1>
@@ -11,7 +11,7 @@
     @endbanner
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
+            <div class="mb-4 text-base flex items-center p-2 bg-gray-300er rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
@@ -30,7 +30,7 @@
                         <div class="flex flex-col">
                             <h4 class="roboto font-semibold text-base mb-3">Phone</h4>
                             <div class="text-sm">
-                                <a href="tel:1-301-992.0962" class="text-grey-darker no-underline">(301) 992-0962</a>
+                                <a href="tel:1-301-992.0962" class="text-gray-600er no-underline">(301) 992-0962</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="flex flex-col">
                             <h4 class="roboto font-semibold text-base mb-3">Email</h4>
                             <div class="text-sm">
-                                <a href="mailto:robb@131studios.com" class="text-grey-darker no-underline">robb@131studios.com</a>
+                                <a href="mailto:robb@131studios.com" class="text-gray-600er no-underline">robb@131studios.com</a>
                             </div>
                         </div>
                     </div>

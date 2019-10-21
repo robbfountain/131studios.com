@@ -3,7 +3,7 @@
 @section('content')
    @banner
         <div class="container mx-auto text-center">
-            <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
+            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Web Hosting for Greencastle, Chambersburg and Hagerstown
             </h1>
@@ -12,7 +12,7 @@
 
     <section class="xs:py-4 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-8 text-base flex items-center p-2 bg-grey-lighter rounded">
+            <div class="mb-8 text-base flex items-center p-2 bg-gray-300er rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
@@ -22,7 +22,7 @@
             <div class="flex lg:flex-row xs:flex-col-reverse">
                 <div class="px-4 lg:w-1/2 xs:w-full">
 
-                    <div class="text-lg text-grey-darkest leading-normal">
+                    <div class="text-lg text-gray-600est leading-normal">
                         <p class="mb-4">
                             In addition to website design and web app development we can host your website on one
                             of our lightning fast private servers.
@@ -52,7 +52,7 @@
         </div>
     </section>
 
-    <section class="xs:py-3 lg:py-10 bg-grey-lightest">
+    <section class="xs:py-3 lg:py-10 bg-gray-300est">
         <div class="flex lg:flex-row xs:flex-col container mx-auto">
             <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
                 <div class="mr-4">

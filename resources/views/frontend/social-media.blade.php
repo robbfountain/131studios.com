@@ -3,7 +3,7 @@
 @section('content')
    @banner
         <div class="container mx-auto text-center">
-            <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
+            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Social Media
             </h1>
@@ -12,7 +12,7 @@
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
+            <div class="mb-4 text-base flex items-center p-2 bg-gray-300er rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
@@ -21,7 +21,7 @@
 
             <div class="flex lg:flex-row xs:flex-col-reverse">
                 <div class="xs:w-full lg:w-1/2 lg:mb-0 xs:mb-3">
-                    <div class="text-lg text-grey-darkest leading-normal pr-6">
+                    <div class="text-lg text-gray-600est leading-normal pr-6">
                         <p class="mb-6">
                             There are over 2 billion people on social media networks worldwide.
                             Your Facebook, Instagram and LinkedIn profiles will speak volumes and paired with
@@ -33,7 +33,7 @@
                             manage your profiles.
                         </p>
 
-                        <div class="text-center text-4xl mt-6 text-grey-darkest font-semibold">
+                        <div class="text-center text-4xl mt-6 text-gray-600est font-semibold">
                             Call Us Today! <span class="text-blue">301.992.0962</span>
                         </div>
                     </div>

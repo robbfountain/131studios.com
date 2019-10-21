@@ -13,15 +13,19 @@
         ================================================== -->
         <link rel="stylesheet" href="{{mix('css/app.css')}}">
 
+
+        <script src="https://kit.fontawesome.com/1e40d81b84.js" crossorigin="anonymous"></script>
+
+
         <!-- Analytics -->
         @include('frontend.partials.google-analytics')
     </head>
 
-    <body class="bg-white">
+    <body class="bg-gray-100">
         <div id="app">
             <div class="flex flex-col min-h-screen" id="home">
-                <pinned>
-                    <header class="container mx-auto py-3">
+                <pinned class="bg-white shadow">
+                    <header class="container mx-auto py-4">
                         <div class="flex xs:flex-col lg:flex-row justify-between items-center">
 
                             <!-- Logo -->
@@ -29,7 +33,7 @@
                                 <a href="/" class="">
                                     <img src="/images/131-logo-210x53.png" alt="131 Studios Logo">
                                 </a>
-                                <fa :icon="['far','bars']" size="lg" class="text-grey-darker lg:hidden xs:inline"
+                                <fa :icon="['far','bars']" size="lg" class="text-gray-700 lg:hidden xs:inline"
                                     onClick="toggleMenu()"></fa>
                             </div>
 
@@ -38,39 +42,39 @@
                                  id="menu">
 
                                 <a href="/"
-                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4 ">
+                                   class="nav-link">
                                     Home
                                 </a>
 
                                 <dropdown width="200px">
                                     <a slot="trigger" href="#"
-                                       class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                       class="nav-link">
                                         Our Services
                                     </a>
-                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
+                                    <a class="dropdown-menu-link text-gray-700 hover:text-gray-300"
                                        href="/website-design">Website Design</a>
-                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
+                                    <a class="dropdown-menu-link text-gray-700 hover:text-gray-300"
                                        href="/hosting">Hosting</a>
-                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
+                                    <a class="dropdown-menu-link no-underline text-gray-700 hover:text-gray-300"
                                        href="/social-media">Social Media</a>
-                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
+                                    <a class="dropdown-menu-link no-underline text-gray-700 hover:text-gray-300"
                                        href="/seo">SEO</a>
-                                    <a class="dropdown-menu-link no-underline text-grey-darker hover:text-grey-dark"
+                                    <a class="dropdown-menu-link no-underline text-gray-700 hover:text-gray-300"
                                        href="/additional-services">Additional Services</a>
                                 </dropdown>
 
                                 <a href="/projects"
-                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                   class="nav-link">
                                     Our Work
                                 </a>
 
                                 <a href="{{route('blog.index')}}"
-                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                   class="nav-link">
                                     Blog
                                 </a>
 
                                 <a href="/contact"
-                                   class="no-underline uppercase text-grey-darker hover:text-grey-dark xs:mb-2 lg:mr-4">
+                                   class="nav-link">
                                     Contact
                                 </a>
                             </nav>
@@ -82,10 +86,10 @@
                     @yield('content')
                 </div>
 
-                <footer class="bg-blue-darker py-4 flex flex-col text-grey-light leading-normal border-t">
+                <footer class="bg-blue-900 py-4 flex flex-col text-blue-100 leading-normal border-t">
                     <div class="container mx-auto flex justify-between xs:flex-col lg:flex-row">
                         <div class="lg:mr-12 pr-4 lg:w-1/3 xs:w-full ">
-                            <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">About Us</h4>
+                            <h4 class="text-blue-100 text-lg xs:mt-4 lg:mt-0 font-semibold">About Us</h4>
                             <p>
                                 We are a local Greencastle PA company that specializes in website design, hosting,
                                 social media management and SEO. We service Greencastle, Chambersburg, Waynesboro,
@@ -93,65 +97,65 @@
                             </p>
                             <p class="mt-4">
                                 We would love the opportunity to earn your business. Give us a call or send us an <a
-                                        href="/contact" class="text-grey-dark">email</a> and let us help you today.
+                                        href="/contact" class="text-gray-300">email</a> and let us help you today.
                             </p>
 
                             <div class="mt-4 flex flex-row">
                                 <a href="http://facebook.com/131studiosweb" target="_blank"
-                                   class="text-grey-dark hover:text-grey-darker mr-2">
+                                   class="text-gray-300 hover:text-gray-700 mr-2">
                                     <fa :icon="['fab', 'facebook-square']" size="2x"></fa>
                                 </a>
 
                                 <a href="https://twitter.com/131Studios" target="_blank"
-                                   class="text-grey-dark hover:text-grey-darker">
+                                   class="text-gray-300 hover:text-gray-700">
                                     <fa :icon="['fab', 'twitter-square']" size="2x"></fa>
                                 </a>
                             </div>
                             <div class="mt-4">
-                                <a href="/privacy" class="no-underline text-grey-light text-sm">Privacy Policy</a>
+                                <a href="/privacy" class="no-underline text-gray-400 text-sm">Privacy Policy</a>
                             </div>
 
                         </div>
 
                         <div class="mr-4 lg:pl-4 lg:w-1/3 xs:w-full">
-                            <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">Navigation</h4>
+                            <h4 class="text-gray-300 text-lg xs:mt-4 lg:mt-0 font-semibold">Navigation</h4>
                             <div class="flex">
                                 <div class="flex flex-col mr-12">
-                                    <a class="no-underline text-white hover:text-grey-dark" href="/"
+                                    <a class="no-underline text-white hover:text-gray-300" href="/"
                                     >Home
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="#"
+                                    <a class="no-underline text-white hover:text-gray-300" href="#"
                                     >Services
                                     </a>
                                     <ul class="list-reset">
                                         <li class="ml-2">
                                             <fa :icon="['far','angle-double-right']" class="mr-1"></fa>
-                                            <a class="text-xs no-underline text-white hover:text-grey-dark"
+                                            <a class="text-xs no-underline text-white hover:text-gray-300"
                                                href="/website-design">Website Design</a></li>
                                         <li class="ml-2">
                                             <fa :icon="['far','angle-double-right']" class="mr-1"></fa>
-                                            <a class="text-xs no-underline text-white hover:text-grey-dark"
+                                            <a class="text-xs no-underline text-white hover:text-gray-300"
                                                href="/hosting">Hosting</a></li>
                                         <li class="ml-2">
                                             <fa :icon="['far','angle-double-right']" class="mr-1"></fa>
-                                            <a class="text-xs no-underline text-white hover:text-grey-dark"
+                                            <a class="text-xs no-underline text-white hover:text-gray-300"
                                                href="/social-media">Social Media</a></li>
                                         <li class="ml-2">
                                             <fa :icon="['far','angle-double-right']" class="mr-1"></fa>
-                                            <a class="text-xs no-underline text-white hover:text-grey-dark" href="/seo">SEO</a>
+                                            <a class="text-xs no-underline text-white hover:text-gray-300" href="/seo">SEO</a>
                                         </li>
                                         <li class="ml-2">
                                             <fa :icon="['far','angle-double-right']" class="mr-1"></fa>
-                                            <a class="text-xs no-underline text-white hover:text-grey-dark"
+                                            <a class="text-xs no-underline text-white hover:text-gray-300"
                                                href="/additional-services">Additional Services</a></li>
                                     </ul>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="/projects"
+                                    <a class="no-underline text-white hover:text-gray-300" href="/projects"
                                     >Our Work
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="/blog"
+                                    <a class="no-underline text-white hover:text-gray-300" href="/blog"
                                     >Blog
                                     </a>
-                                    <a class="no-underline text-white hover:text-grey-dark" href="/contact"
+                                    <a class="no-underline text-white hover:text-gray-300" href="/contact"
                                     >Contact
                                      Us
                                     </a>
@@ -160,7 +164,7 @@
                         </div>
 
                         <div class="lg:mr-4 lg:w-1/3 xs:w-full">
-                            <h4 class="text-grey-dark text-lg xs:mt-4 lg:mt-0">Contact Us</h4>
+                            <h4 class="text-gray-300 text-lg xs:mt-4 lg:mt-0 font-semibold">Contact Us</h4>
                             <div class="text-widget">
                                 <div class="mb-3">545 Scarlet Circle &middot; Greencastle &middot; PA &middot; 17225
                                 </div>

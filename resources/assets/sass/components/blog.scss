@@ -1,69 +1,105 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
+
+.blog-container {
+  @apply .w-2/3;
+}
+
 div.blog-container > h1 {
-  @apply .text-grey-darker;
-  @apply .text-3xl;
+  @apply .text-gray-800;
+  @apply .text-5xl;
+  @apply .leading-none;
+  @apply .mb-4;
+}
+
+code {
+@apply .px-2 .py-1 .bg-gray-200;
+ font-family: 'Source Code Pro', monospace;
+ color: DeepPink;
 }
 
 div.blog-container > h2 {
-  @apply .text-grey-darker;
+  @apply .text-gray-700;
   @apply .text-2xl;
-  margin-top: 2rem !important;
 }
 
 div.blog-container > h3,
 div.blog-container > h4,
 div.blog-container > h5 {
-  @apply .text-grey-darker;
-  @apply .text-lg;
-  margin-top: 2rem !important;
+  @apply .text-gray-800 .font-semibold;
+  @apply .text-xl;
+  @apply .mt-6;
 }
 
-
 div.blog-container > p {
-  margin: 1rem 0 !important;
+  @apply .mb-6 .mt-3;
   @apply .leading-normal;
-  @apply .text-lg;
-  @apply .text-grey-darker;
+  @apply .text-xl;
+  @apply .text-gray-600;
 }
 
 div.blog-container > p > a:link,
 div.blog-container > p > a:visited {
-  @apply .text-blue;
+  @apply .text-blue-400;
   @apply .no-underline;
+  @apply .border-b-4
 }
 
 div.blog-container > p > a:hover {
-  @apply .text-blue-darker;
+  @apply .text-blue-600;
 }
 
 div.blog-container > ol {
-  @apply .text-grey-darker;
-  @apply .my-3;
+ counter-reset: ol-counter;
 }
 
+div.blog-container > ol li, div.blog-container > ul li {
+  @apply .ml-2 .my-2;
+  @apply .text-xl;
+  @apply .text-gray-700;
+}
 
 div.blog-container > ol li {
-  @apply .my-2;
+  counter-increment: ol-counter;
+}
+
+div.blog-container > ol li:before {
+  content: counter(ol-counter) ". ";
 }
 
 blockquote {
-  @apply .bg-grey-lighter;
-  @apply .border-l-4 .border-grey;
-  margin: 1.5em 0 !important;
-  padding: 2.5em 10px;
-  quotes: "\201C" "\201D" "\2018" "\2019";
+ @apply .relative .mt-6;
+ text-shadow: 0 1px white;
 }
 
 blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  @apply .text-base;
-  @apply .leading-normal;
-  margin-right: 0.25em;
-  vertical-align: -0.4em;
+@apply .text-gray-400;
+content: open-quote;
+ position: absolute;
+ top: -.4em;
+ left: 0;
+ opacity: .2;
+ font-size: 9.5em;
 }
 
 blockquote p {
-  display: inline;
+@apply .pl-10 .pt-6;
+  @apply .text-xl;
+  font-family: Georgia;
+  @apply .italic;
+  @apply .text-gray-700;
+  @apply .inline;
+  @apply .leading-relaxed;
+
+}
+
+cite {
+  font-family: Georgia;
+  @apply .text-gray-600 .text-xl;
+  @apply .ml-12;
+}
+
+cite:before {
+  content: '-- ';
 }
 
 a.facebook {
@@ -72,4 +108,8 @@ a.facebook {
 
 a.twitter {
   color: #1DA1F2;
+}
+
+.blog-main-image {
+  @apply .shadow;
 }

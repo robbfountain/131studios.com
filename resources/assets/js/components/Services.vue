@@ -15,8 +15,8 @@
                     <div class="lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4">
                         <img src="images/code.jpg" alt="" class="w-full">
                         <div class="p-4">
-                            <h2 class="text-2xl text-grey-darkest">Web Development</h2>
-                            <p class="text-grey-darkest leading-normal mt-4">
+                            <h2 class="text-2xl text-gray-600est">Web Development</h2>
+                            <p class="text-gray-600est leading-normal mt-4">
                                 We have over 15 years of web development experience and can custom design almost any
                                 functional aspect of your website. From updating your current website to designing a new
                                 website for your business, we have the creative experience to help. We specialize in
@@ -37,8 +37,8 @@
                     <div class="lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4">
                         <img src="images/hosting.jpg" alt="" class="w-full">
                         <div class="p-4">
-                            <h2 class="text-2xl text-grey-darkest">Hosting & Maintenance</h2>
-                            <p class="text-grey-darkest leading-normal mt-4">
+                            <h2 class="text-2xl text-gray-600est">Hosting & Maintenance</h2>
+                            <p class="text-gray-600est leading-normal mt-4">
                                 We offer robust hosting services at reasonable prices. We host all of our websites on
                                 our own dedicated VPS servers. We offer SSL certificates for all of our websites as a
                                 standard feature and all of our hosting plans include monthly maintenance.
@@ -53,8 +53,8 @@
                     <div class="lg:w-1/3 rounded overflow-hidden shadow-lg lg:mr-8 mb-4">
                         <img src="images/itservices2.jpg" alt="" class="w-full">
                         <div class="p-4">
-                            <h2 class="text-2xl text-grey-darkest">IT Services</h2>
-                            <p class="text-grey-darkest leading-normal mt-4">
+                            <h2 class="text-2xl text-gray-600est">IT Services</h2>
+                            <p class="text-gray-600est leading-normal mt-4">
                                 We offer small office and home office IT Consulting services. From server and
                                 workstation procurement, installation and maintenance to networking and IT security
                                 services, we can help your business run smoothly while you focus on what matters most to

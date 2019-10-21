@@ -12,9 +12,9 @@
                     Default Body Text. Are you sure you want to do something?
                 </slot>
             </div>
-            <div class="bg-grey-lighter px-2 py-3 text-right">
+            <div class="bg-gray-300er px-2 py-3 text-right">
                 <slot name="footer">
-                    <button class="bg-grey-light hover:bg-grey px-3 py-2 border rounded mr-2"
+                    <button class="bg-gray-300 hover:bg-gray-500 px-3 py-2 border rounded mr-2"
                             @click="cancel">Cancel
                     </button>
                     <button class="px-3 py-2 border rounded text-white mr-1"
@@ -42,7 +42,7 @@
                 return this.destructive ? 'bg-red hover:bg-red-dark' : 'bg-green hover:bg-green-dark';
             },
             headerColor() {
-                return this.destructive ? 'bg-red text-white' : 'bg-grey-light';
+                return this.destructive ? 'bg-red text-white' : 'bg-gray-300';
             }
         },
         methods: {

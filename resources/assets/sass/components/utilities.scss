@@ -1,13 +1,12 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
-@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,700i&display=swap');
 
 body {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Nunito', sans-serif;
 }
 
 .required:after {
   content: "*";
-  @apply .text-red;
+  @apply .text-red-700;
   @apply .font-semibold;
 }
 
@@ -21,7 +20,7 @@ body {
 }
 
 .price {
-  @apply .text-grey-dark;
+  @apply .text-gray-700;
   @apply .font-semibold;
 }
 

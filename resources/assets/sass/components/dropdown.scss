@@ -5,9 +5,9 @@
 }
 
 .dropdown-menu-link {
-  @apply .block .no-underline .text-sm .leading-loose .px-4;
+  @apply .block .text-sm .leading-loose .px-4;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.1);
+    @apply .bg-gray-200;
   }
 }

@@ -4,7 +4,7 @@
 
    @banner
         <div class="container mx-auto text-center">
-            <h1 class="px-3 py-3 mb-8 inline-block text-center text-grey font-normal tracking-wide text-4xl mt-6 mb-1"
+            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Email Hosting
             </h1>
@@ -13,7 +13,7 @@
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-4 text-base flex items-center p-2 bg-grey-lighter rounded">
+            <div class="mb-4 text-base flex items-center p-2 bg-gray-300er rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
@@ -22,7 +22,7 @@
                 Email Hosting
             </div>
 
-            <div class="text-lg text-grey-darker mb-8 leading-normal">
+            <div class="text-lg text-gray-600er mb-8 leading-normal">
                Let 131 Studios manage your email accounts and mailing lists. We can host your company's email
                 with an unrivaled set of included features.  Our email hosting is backed by Google and comes with a wide range of features and starts at $7 per user monthly.
             </div>

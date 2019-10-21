@@ -7,7 +7,7 @@
         <section class="mt-8 py-8">
             <div class="flex">
                 <div class="w-1/2 p-10">
-                    <h2 class="text-3xl text-grey-darker">Who We Are</h2>
+                    <h2 class="text-3xl text-gray-600er">Who We Are</h2>
                     <p class="text-lg leading-normal mb-10">
                         We have been in in the web development and IT industry for 15 years. We have a wide range of knowledge of leading industry trends and can help you with your web and IT needs.
                     </p>
@@ -27,7 +27,7 @@
 
             <div class="flex flex-row-reverse">
                 <div class="w-1/2 p-10">
-                    <h2 class="text-3xl text-grey-darker">Who We Are</h2>
+                    <h2 class="text-3xl text-gray-600er">Who We Are</h2>
                     <p class="text-lg leading-normal">
                         We have been in in the web development and IT industry for 15 years. We have a wide range of knowledge of leading industry trends and can help you with your web and IT needs.
                     </p>
