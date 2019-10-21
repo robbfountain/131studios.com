@@ -14,26 +14,31 @@
 @endsection
 
 @section('content')
-   @banner¬
-        <div class="container mx-auto text-center">
-            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
-                style="background-color: rgba(0,0,0,0.5)">
-                Our Blog
-            </h1>
-        </div>
-   @endbanner
+    @banner¬
+    <div class="container mx-auto text-center">
+        <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
+            style="background-color: rgba(0,0,0,0.5)">
+            Our Blog
+        </h1>
+    </div>
+    @endbanner
 
-    <section class="xs:py-3 lg:py-6">
-        <div class="container mx-auto">
-            <div class="mb-6 text-base flex items-center p-2 bg-gray-300er rounded">
-                <fa :icon="['fas','home']" class="mr-2"></fa>
-                <a href="/" class="text-blue no-underline mr-2">Home</a>
+    <section class="">
+        <div class="mb-6 bg-gray-200 text-sm flex items-center p-2 rounded">
+            <div class="container mx-auto">
+                <fa :icon="['fas','home']" class="mr-2 text-blue-900"></fa>
+                <a href="/" class="text-blue-700 no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
-                <a href="/blog" class="text-blue no-underline mr-2">Blog</a>
+                <a href="/blog" class="text-blue-700 no-underline mr-2">Blog</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
-                {{$blog->title}}
+                <span class="text-blue-900">
+                 {{$blog->title}}
+            </span>
             </div>
 
+
+        </div>
+        <div class="container mx-auto ">
             <div class="flex justify-center">
                 <div class="blog-container">
                     @if(!$blog->is_published || $blog->published_at > now())
@@ -44,14 +49,15 @@
 
 
                     <h1>{{$blog->title}}</h1>
-                   <!--  <div class="my-3 text-gray-600er text-sm flex items-center">
+                <!--  <div class="my-3 text-gray-600er text-sm flex items-center">
                         <img src="{{$blog->user->avatar()}}" alt="{{$blog->user->name}}'s Avatar" class="h-8 w-8 rounded-full mr-2">
                         <div>
                             Posted by: <span class="text-blue">{{$blog->user->name}}</span> on {{$blog->published_at->format('F d, Y')}}
                         </div>
                     </div> -->
                     <div class="py-2">
-                        <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}" alt="{{$blog->title}}" class="blog-main-image">
+                        <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
+                             alt="{{$blog->title}}" class="blog-main-image">
                     </div>
 
                     {!! $blog->toHtml() !!}
@@ -85,7 +91,7 @@
                 </div>
 
 
-              <!--   <div class="xs:w-full lg:w-1/3 px-4 flex flex-col xs:border-l-0 lg:border-l">
+            <!--   <div class="xs:w-full lg:w-1/3 px-4 flex flex-col xs:border-l-0 lg:border-l">
                     <div>
                         <h2 class="title roboto">
                             Stay Informed
@@ -143,19 +149,19 @@
                         <h2 class="title roboto">Recent Blog Posts</h2>
                         <ul class="list-reset">
                             @foreach($recent as $blog)
-                                <li class="py-2">
-                                    <div class="flex">
-                                        <fa :icon="['far','chevron-right']" class="mr-2"></fa>
+                <li class="py-2">
+                    <div class="flex">
+                        <fa :icon="['far','chevron-right']" class="mr-2"></fa>
                                         <a href="{{route('blog.show',$blog->slug)}}"
                                            class="text-blue no-underline hover:font-semibold">{{$blog->title}}</a>
                                     </div>
                                 </li>
                             @endforeach
-                        </ul>
-                    </div> -->
+                    </ul>
+                </div> -->
 
-                </div>
             </div>
+        </div>
         </div>
     </section>
 
