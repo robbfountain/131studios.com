@@ -11,12 +11,7 @@
     @endbanner
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-4 text-base flex items-center p-2 bg-gray-@300 rounded">
-                <fa :icon="['fas','home']" class="mr-2"></fa>
-                <a href="/" class="text-blue no-underline mr-2">Home</a>
-                <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
-                Contact Us
-            </div>
+
 
             <div class="flex lg:flex-row xs:flex-col">
                 <div class="xs:w-full lg:w-3/4 xs:mr-0 lg:mr-8 xs:mb-6 lg:mb-0">

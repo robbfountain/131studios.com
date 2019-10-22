@@ -12,12 +12,7 @@
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-4 text-base flex items-center p-2 bg-gray-@300 rounded">
-                <fa :icon="['fas','home']" class="mr-2"></fa>
-                <a href="/" class="text-blue no-underline mr-2">Home</a>
-                <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
-                Social Media
-            </div>
+
 
             <div class="flex lg:flex-row xs:flex-col-reverse">
                 <div class="xs:w-full lg:w-1/2 lg:mb-0 xs:mb-3">

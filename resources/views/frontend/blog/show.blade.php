@@ -26,14 +26,7 @@
     <section class="">
         <div class="mb-6 bg-gray-200 text-sm flex items-center p-2 rounded">
             <div class="container mx-auto">
-                <fa :icon="['fas','home']" class="mr-2 text-blue-900"></fa>
-                <a href="/" class="text-blue-700 no-underline mr-2">Home</a>
-                <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
-                <a href="/blog" class="text-blue-700 no-underline mr-2">Blog</a>
-                <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
-                <span class="text-blue-900">
-                 {{$blog->title}}
-            </span>
+                <a href="/blog" class="text-blue-700 no-underline mr-2"><< back to blog</a>
             </div>
         </div>
 
@@ -41,7 +34,7 @@
             <div class="flex justify-center">
                 <div class="blog-container ">
                     @if(!$blog->is_published || $blog->published_at > now())
-                        <div class="my-2 p-2 border rounded-lg border-orange bg-orange-lightest text-orange text-sm">
+                        <div class="my-2 p-2 border rounded-lg border-orange-600 bg-orange-100 text-orange-600 text-sm">
                             This blog post is not published
                         </div>
                     @endif

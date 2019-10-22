@@ -12,12 +12,7 @@
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-4 text-base flex items-center p-2 bg-gray-@300 rounded">
-                <fa :icon="['fas','home']" class="mr-2"></fa>
-                <a href="/" class="text-blue-600 no-underline mr-2">Home</a>
-                <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
-                Additional Services
-            </div>
+
 
             <div class="text-lg text-gray-600 mb-8 leading-normal">
                 We offer a number of additional services for your website and business. If you would like more information or if you need assistance with anything else that
