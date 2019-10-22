@@ -11,7 +11,7 @@
     @endbanner
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-4 text-base flex items-center p-2 bg-gray-300er rounded">
+            <div class="mb-4 text-base flex items-center p-2 bg-gray-@300 rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
@@ -30,7 +30,7 @@
                         <div class="flex flex-col">
                             <h4 class="roboto font-semibold text-base mb-3">Phone</h4>
                             <div class="text-sm">
-                                <a href="tel:1-301-992.0962" class="text-gray-600er no-underline">(301) 992-0962</a>
+                                <a href="tel:1-301-992.0962" class="text-gray-600 no-underline">(301) 992-0962</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="flex flex-col">
                             <h4 class="roboto font-semibold text-base mb-3">Email</h4>
                             <div class="text-sm">
-                                <a href="mailto:robb@131studios.com" class="text-gray-600er no-underline">robb@131studios.com</a>
+                                <a href="mailto:robb@131studios.com" class="text-gray-600 no-underline">robb@131studios.com</a>
                             </div>
                         </div>
                     </div>

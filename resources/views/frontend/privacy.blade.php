@@ -6,9 +6,9 @@
     <div class="bg-white py-8">
         <div class="container mx-auto">
 
-            <h1 class="text-gray-600er font-normal mb-8">Privacy Policy</h1>
+            <h1 class="text-gray-600 font-normal mb-8">Privacy Policy</h1>
 
-            <h3 class="text-gray-600er my-4">Overview</h3>
+            <h3 class="text-gray-600 my-4">Overview</h3>
 
             <p class="leading-normal my-3"> This privacy policy has been compiled to better serve those who are
                                             concerned with how their 'Personally
@@ -26,7 +26,7 @@
                                             Information in accordance with our website.
             </p>
 
-            <h3 class="text-gray-600er my-4"> What personal information do we collect from the people that visit our
+            <h3 class="text-gray-600 my-4"> What personal information do we collect from the people that visit our
                                                 website?</h3>
 
             <p class="leading-normal my-3">When ordering or registering on our site, as appropriate, you may be asked to
@@ -34,13 +34,13 @@
                                            address, mailing address, credit card information or other details to help
                                            you with your experience.</p>
 
-            <h3 class="text-gray-600er my-4"> When do we collect information?</h3>
+            <h3 class="text-gray-600 my-4"> When do we collect information?</h3>
 
             <p class="leading-normal my-3"> We collect information from you when you register on our site, place an
                                             order or enter information on
                                             our site.
             </p>
-            <h3 class="text-gray-600er my-4"> How do we use your information?</h3>
+            <h3 class="text-gray-600 my-4"> How do we use your information?</h3>
 
             <p class="leading-normal my-3"> We may use the information we collect from you when you register, make a
                                             purchase, sign up for our
@@ -54,7 +54,7 @@
                     To send periodic emails regarding your order or other products and services.
                 </li>
             </ul>
-            <h3 class="text-gray-600er my-4">How do we protect your information?</h3>
+            <h3 class="text-gray-600 my-4">How do we protect your information?</h3>
 
             <p class="leading-normal my-3"> Our website is scanned on a regular basis for security holes and known
                                             vulnerabilities in order to make
@@ -80,7 +80,7 @@
                                             or processed on our
                                             servers.
             </p>
-            <h3 class="text-gray-600er my-4"> Do we use 'cookies'?</h3>
+            <h3 class="text-gray-600 my-4"> Do we use 'cookies'?</h3>
 
             <p class="leading-normal my-3">We do not use cookies for tracking purposes</p>
 
@@ -92,7 +92,7 @@
                                             look
                                             at your browser's Help Menu to learn the correct way to modify your cookies.
             </p>
-            <h3 class="text-gray-600er my-4">If users disable cookies in their browser:</h3>
+            <h3 class="text-gray-600 my-4">If users disable cookies in their browser:</h3>
 
             <p class="leading-normal my-3"> If you turn cookies off, some features will be disabled. Some of the
                                             features that make your site
@@ -101,17 +101,17 @@
             </p>
             However, you will still be able to place orders .
 
-            <h3 class="text-gray-600er my-4"> Third-Party Disclosure</h3>
+            <h3 class="text-gray-600 my-4"> Third-Party Disclosure</h3>
 
             <p class="leading-normal my-3"> We do not sell, trade, or otherwise transfer to outside parties your
                                             Personally Identifiable
                                             Information.</p>
 
-            <h3 class="text-gray-600er my-4"> Third Party Links</h3>
+            <h3 class="text-gray-600 my-4"> Third Party Links</h3>
 
             We do not include or offer third-party products or services on our website.
 
-            <h3 class="text-gray-600er my-4"> California Online Privacy Protection Act</h3>
+            <h3 class="text-gray-600 my-4"> California Online Privacy Protection Act</h3>
 
             <p class="leading-normal my-3"> CalOPPA is the first state law in the nation to require commercial websites
                                             and online services to post
@@ -144,7 +144,7 @@
                                            Page</p>
             <p class="leading-normal my-3">You Can change your personal information by logging in to your account</p>
 
-            <h3 class="text-gray-600er my-4"> CAN SPAM Act</h3>
+            <h3 class="text-gray-600 my-4"> CAN SPAM Act</h3>
 
             <p class="leading-normal my-3"> The CAN-SPAM Act is a law that sets the rules for commercial email,
                                             establishes requirements for
@@ -188,7 +188,7 @@
                                            specifically
                                            market to children under the age of 13 years old.</p>
 
-            <h3 class="text-gray-600er my-4"> Fair Information Practices</h3>
+            <h3 class="text-gray-600 my-4"> Fair Information Practices</h3>
 
             <p class="leading-normal my-3"> The Fair Information Practices Principles form the backbone of privacy law
                                             in the United States and the

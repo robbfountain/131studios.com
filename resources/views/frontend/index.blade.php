@@ -9,16 +9,14 @@
     <div>
        @banner
             <div class="container mx-auto">
-
                 <div class="mb-8 text-center text-gray-300 tracking-wide xs:text-xl lg:text-4xl mt-6 mb-1">
                     <h1 class="">
                         Website Design, Hosting, Social Media Management & SEO.
                     </h1>
                 </div>
 
-
                 <section class="bg-transparent p-4">
-                    <div class="flex justify-between xs:flex-col lg:flex-row ">
+                    <div class="flex justify-between xs:flex-col lg:flex-row">
 
                         <!-- Service Box -->
                         <div class="xs:hidden lg:inline xs:w-full lg:w-1/4 rounded-lg p-4 border mr-4 flex flex-col xs:mb-4"
@@ -103,7 +101,7 @@
         @endbanner
 
 
-        <section class="bg-gray-300est lg:pt-6 lg:pb-10 xs:py-4 xs:px-3 lg:px-0 border-t" id="about">
+        <section class="bg-gray-300 lg:pt-6 lg:pb-10 xs:py-4 xs:px-3 lg:px-0 border-t" id="about">
             <div class="container mx-auto">
                 <h2 class="text-center title font-medium text-blue-900 text-3xl mb-8">How Can We Help <span
                             style="background-color: rgba(0,0,0,0.2);" class="px-3 py-1">You?</span></h2>
@@ -113,7 +111,7 @@
                                     class="lg:absolute lg:pin-t lg:pin-l w-full"
                                     style="width:100%;height:100%;" frameborder="0"
                                     allow="autoplay; fullscreen" allowfullscreen
-                            class="border-4 rounded border-gray-300er"></iframe>
+                            class="border-4 rounded border-gray-@300"></iframe>
                     </div>
                     <div class="xs:w-full lg:w-1/2 leading-normal text-lg text-gray-600 px-2">
                         <p class="mb-4">

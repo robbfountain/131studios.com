@@ -18,6 +18,11 @@ class Blog extends Model
     use HasTags;
 
     /**
+     * @var bool
+     */
+    protected $truncated = false;
+
+    /**
      * @var array
      */
     protected $guarded = [];
@@ -173,7 +178,17 @@ class Blog extends Model
      */
     public function toHtml()
     {
-        return (new \Parsedown())->text($this->body);
+        return (new \Parsedown())->text($this->truncated ? substr($this->body, 0, 500) : $this->body);
+    }
+
+    /**
+     * @return $this
+     */
+    public function truncated()
+    {
+        $this->truncated = true;
+
+        return $this;
     }
 
     /**

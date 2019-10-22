@@ -13,7 +13,7 @@
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-4 text-base flex items-center p-2 bg-gray-300er rounded">
+            <div class="mb-4 text-base flex items-center p-2 bg-gray-@300 rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
@@ -23,7 +23,7 @@
 
             <div class="flex lg:flex-row xs:flex-col-reverse">
                 <div class="xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0">
-                    <div class="text-lg text-gray-600er pr-6 leading-normal">
+                    <div class="text-lg text-gray-600 pr-6 leading-normal">
                         <p class="mb-6">
                             Your website is the first step in getting your business recognized on the web.
                             Having organic traffic to your website and providing relevant content
@@ -46,9 +46,9 @@
                             From there we'll offer recommendations and can even implement the changes we recommend.  We'll continuously monitor your rankings and
                             make necessary changes to help you get to the top.
                         </p>
-                        
-                        <div class="text-center text-4xl mt-6 text-gray-600est font-semibold">
-                            Call Us Today! <span class="text-blue">301.992.0962</span>
+
+                        <div class="text-center text-4xl mt-6 text-gray-600 font-semibold">
+                            Call Us Today! <span class="text-blue-400">301.992.0962</span>
                         </div>
                     </div>
 

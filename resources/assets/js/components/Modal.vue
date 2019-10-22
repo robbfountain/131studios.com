@@ -12,7 +12,7 @@
                     Default Body Text. Are you sure you want to do something?
                 </slot>
             </div>
-            <div class="bg-gray-300er px-2 py-3 text-right">
+            <div class="bg-gray-@300 px-2 py-3 text-right">
                 <slot name="footer">
                     <button class="bg-gray-300 hover:bg-gray-500 px-3 py-2 border rounded mr-2"
                             @click="cancel">Cancel

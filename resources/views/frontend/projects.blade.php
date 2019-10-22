@@ -16,7 +16,7 @@
             <div class="flex lg:flex-row xs:flex-col lg:flex-wrap">
                 @foreach($projects as $project)
                     <div class="lg:w-1/2 xs:w-full p-3">
-                        <div class="w-full border-2 {{!$project->is_published || $project->published_at > now() ? 'border-orange bg-orange-lightest' : 'border-gray-300er bg-gray-300est'}} rounded p-3 flex xs:flex-col lg:flex-row">
+                        <div class="w-full border shadow {{!$project->is_published || $project->published_at > now() ? 'border-orange-500 bg-orange-100' : 'border-gray-300 bg-white'}} rounded p-3 flex xs:flex-col lg:flex-row">
                             <div class="xs:-full lg:w-1/2 px-2">
                                 <img src="{{$project->imageUrl()}}"
                                      alt="{{$project->project_title}}"
@@ -25,15 +25,15 @@
                                 <div class="xs:my-6 lg:mt-8 text-center">
                                     <a href="{{$project->url}}"
                                        target="_blank"
-                                       class="border rounded border-blue px-4 py-2 text-sm no-underline text-blue hover:bg-blue hover:text-white">View
-                                                                                                                                                  Project</a>
+                                       class="border rounded border-blue-600 px-4 py-2 text-sm no-underline text-blue-600 hover:bg-blue-600 hover:text-white">
+                                        View Project</a>
                                 </div>
                             </div>
 
                             <div class="xs:w-full lg:w-1/2 px-2">
-                                <h2 class="text-lg text-gray-600er mb-4">{{$project->project_title}}</h2>
+                                <h2 class="text-xl text-gray-700 mb-4">{{$project->project_title}}</h2>
                                 <div class="text-sm leading-normal text-gray-600">
-                                    {!! $project->toHtml() !!}
+                                    {!! $project->truncated()->toHtml() !!}
                                 </div>
 
                                 <div class="text-sm leading-normal text-gray-600 mt-4">

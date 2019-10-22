@@ -12,7 +12,7 @@
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-            <div class="mb-8 text-base flex items-center p-2 bg-gray-300er rounded">
+            <div class="mb-8 text-base flex items-center p-2 bg-gray-@300 rounded">
                 <fa :icon="['fas','home']" class="mr-2"></fa>
                 <a href="/" class="text-blue no-underline mr-2">Home</a>
                 <fa :icon="['far','chevron-right']" size="xs" class="mr-2"></fa>
@@ -20,7 +20,7 @@
             </div>
 
             <div class="flex lg:flex-row xs:flex-col-reverse">
-                <div class="text-lg text-gray-600er lg:pr-6 lg:w-1/2 xs:w-full">
+                <div class="text-lg text-gray-600 lg:pr-6 lg:w-1/2 xs:w-full">
                     <p class="mb-6">Let's face it, in today's digital world your business needs a website that stands
                                     our from your
                                     competitors.
@@ -37,8 +37,8 @@
                         a call and let us know how we can help you.
                     </p>
 
-                    <div class="text-center text-4xl mt-6 text-blue font-semibold px-4 py-2 border-2 rounded border-blue">
-                        Call Us Today! <span class="text-blue-darker">301.992.0962</span>
+                    <div class="text-center text-4xl mt-6 text-gray-600 font-semibold">
+                        Call Us Today! <span class="text-blue-400">301.992.0962</span>
                     </div>
                 </div>
 
@@ -50,13 +50,13 @@
         </div>
     </section>
 
-    <section class="xs:py-3 lg:py-10 bg-gray-300est border-t">
+    <section class="xs:py-3 lg:py-10 bg-gray-300 border-t">
         <div class="container mx-auto flex lg:flex-row xs:flex-col">
             <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
                 <div class="mr-4">
-                    <fa :icon="['fal','star']" class="mr-2" size="3x"></fa>
+                    <fa :icon="['fal','star']" class="mr-2 text-blue-700" size="3x"></fa>
                 </div>
-                <div class="flex flex-col text-blue-darker">
+                <div class="flex flex-col text-blue-700">
                     <h3 class="tracking-wide">Unique Design</h3>
                     <div class="mt-2 leading-normal">
                         Your website will have a unique design tailored to your business that will stand out from the
@@ -68,9 +68,9 @@
 
             <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
                 <div class="mr-4">
-                    <fa :icon="['fal','mobile-alt']" class="mr-2" size="3x"></fa>
+                    <fa :icon="['fal','mobile-alt']" class="mr-2 text-blue-700" size="3x"></fa>
                 </div>
-                <div class="flex flex-col text-blue-darker">
+                <div class="flex flex-col text-blue-700">
                     <h3 class="tracking-wide">Fully Responsive</h3>
                     <div class="mt-2 leading-normal">
                         Your website will look great on any device...Phones, Tablets and computers
@@ -81,9 +81,9 @@
 
             <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
                 <div class="mr-4">
-                    <fa :icon="['fal','search']" class="mr-2" size="3x"></fa>
+                    <fa :icon="['fal','search']" class="mr-2 text-blue-700" size="3x"></fa>
                 </div>
-                <div class="flex flex-col text-blue-darker">
+                <div class="flex flex-col text-blue-700">
                     <h3 class="tracking-wide">Search Engine Optimized</h3>
                     <div class="mt-2 leading-normal">
                         Get your business recognized by ensuring your site is ranked in all major search engines.
@@ -94,9 +94,9 @@
 
             <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
                 <div class="mr-4">
-                    <fa :icon="['fal','envelope']" class="mr-2" size="3x"></fa>
+                    <fa :icon="['fal','envelope']" class="mr-2 text-blue-700" size="3x"></fa>
                 </div>
-                <div class="flex flex-col text-blue-darker">
+                <div class="flex flex-col text-blue-700">
                     <h3 class="tracking-wide">Email Contact Form</h3>
                     <div class="mt-2 leading-normal">
                         Your visitors can contact you directly from your website with your email contact form.

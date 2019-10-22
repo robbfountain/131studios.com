@@ -49,7 +49,7 @@
 
 
                     <h1>{{$blog->title}}</h1>
-                <!--  <div class="my-3 text-gray-600er text-sm flex items-center">
+                <!--  <div class="my-3 text-gray-600 text-sm flex items-center">
                         <img src="{{$blog->user->avatar()}}" alt="{{$blog->user->name}}'s Avatar" class="h-8 w-8 rounded-full mr-2">
                         <div>
                             Posted by: <span class="text-blue">{{$blog->user->name}}</span> on {{$blog->published_at->format('F d, Y')}}
@@ -63,8 +63,8 @@
                     {!! $blog->toHtml() !!}
 
                     <div class="py-4">
-                        <h5 class="roboto mb-1 text-gray-600est text-base">Share This!</h5>
-                        <div class="w-1/2 p-2 bg-gray-300est border rounded border-gray-300er">
+                        <h5 class="roboto mb-1 text-gray-600 text-base">Share This!</h5>
+                        <div class="w-1/2 p-2 bg-gray-300 border rounded border-gray-@300">
                             <a href="#"
                                alt="Share on Facebook"
                                title="Share on Facebook"
@@ -107,7 +107,7 @@
                                     <form action="#" @submit.prevent>
                                         <div class="flex flex-col py-2">
                                             <label for="email"
-                                                   class="required mb-1 text-xs font-semibold uppercase tracking-wide text-gray-600er"
+                                                   class="required mb-1 text-xs font-semibold uppercase tracking-wide text-gray-600"
                                                    :class="{'text-red' : form.errors.has('email')}">
                                                 Email Address
                                             </label>
@@ -121,7 +121,7 @@
                                         </div>
                                         <div class="flex flex-col py-2">
                                             <label for="name"
-                                                   class="required mb-1 text-xs font-semibold uppercase tracking-wide text-gray-600er"
+                                                   class="required mb-1 text-xs font-semibold uppercase tracking-wide text-gray-600"
                                                    :class="{'text-red' : form.errors.has('name')}">Name</label>
                                             <input type="text" id="name" v-model="form.name"
                                                    class="w-full border px-3 py-2"

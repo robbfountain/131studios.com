@@ -4,17 +4,17 @@
     <div class=" max-w-xs mx-auto align-middle">
         <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
             <div class="mb-4">
-                <label class="block text-gray-600er text-sm font-bold mb-2" for="username">
+                <label class="block text-gray-600 text-sm font-bold mb-2" for="username">
                     Username
                 </label>
-                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600er" id="username"
+                <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-600" id="username"
                        type="text" placeholder="Username">
             </div>
             <div class="mb-6">
-                <label class="block text-gray-600er text-sm font-bold mb-2" for="password">
+                <label class="block text-gray-600 text-sm font-bold mb-2" for="password">
                     Password
                 </label>
-                <input class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-gray-600er mb-3"
+                <input class="shadow appearance-none border border-red rounded w-full py-2 px-3 text-gray-600 mb-3"
                        id="password" type="password" placeholder="******************">
                 <p class="text-red text-xs italic">Please choose a password.</p>
             </div>
