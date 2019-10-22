@@ -28,10 +28,12 @@ class ContactController extends Controller
      */
     public function store(ContactRequest $request)
     {
-        Mail::to('robb@131studios.com')->send(new ContactFormSubmitted($request->validated()));
+        Mail::to('robb@131studios.com')->send(
+            new ContactFormSubmitted($request->validated())
+        );
 
         return response()->json([
             'status' => 'ok',
-        ]);
+        ],200);
     }
 }

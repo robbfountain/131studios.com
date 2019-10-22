@@ -24,7 +24,7 @@ class ProjectController extends Controller
     private function getProjects()
     {
         return Blog::visible()->whereHas('category', function ($query) {
-            $query->prjects();
+            $query->project();
         })->get();
     }
 

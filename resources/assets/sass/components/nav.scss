@@ -1,9 +1,8 @@
 
 .nav-link {
- @apply .uppercase .mr-4 .text-gray-700 .pb-6 .border-b-4 .border-transparent;
+ @apply .uppercase .mr-4 .text-gray-700 .pb-6 .border-b-4 .border-transparent .font-semibold .tracking-wider;
 }
 
 .nav-link:hover {
   @apply .text-blue-400 .border-blue-400;
-
 }

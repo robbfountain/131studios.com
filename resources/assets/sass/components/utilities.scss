@@ -2,21 +2,13 @@
 
 body {
   font-family: 'Nunito', sans-serif;
+  @apply .bg-gray-100;
 }
 
 .required:after {
   content: "*";
   @apply .text-red-700;
   @apply .font-semibold;
-}
-
-.mont {
-  font-family: 'Montserrat', sans-serif;
-}
-
-.roboto {
-  font-family: 'Roboto', sans-serif;
-  font-weight: bold;
 }
 
 .price {
@@ -60,4 +52,8 @@ body {
 
 a {
   transition: color .2s ease-out, background .2s ease-in;
+}
+
+footer {
+ @apply .bg-blue-900 .pb-4 .pt-8 .px-2 .flex .flex-col .text-blue-100 .leading-normal .border-t;
 }

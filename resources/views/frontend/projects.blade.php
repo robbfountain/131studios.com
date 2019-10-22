@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
-
 @section('content')
+
     @banner
     <div class="container mx-auto text-center">
         <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
@@ -12,65 +12,28 @@
     @endbanner
 
     <section class="xs:py-3 lg:py-10">
-        <div class="container mx-auto">
-            <div class="flex lg:flex-row xs:flex-col lg:flex-wrap">
-                @foreach($projects as $project)
-                    <div class="lg:w-1/2 xs:w-full p-3">
-                        <div class="w-full border shadow {{!$project->is_published || $project->published_at > now() ? 'border-orange-500 bg-orange-100' : 'border-gray-300 bg-white'}} rounded p-3 flex xs:flex-col lg:flex-row">
-                            <div class="xs:-full lg:w-1/2 px-2">
-                                <img src="{{$project->imageUrl()}}"
-                                     alt="{{$project->project_title}}"
-                                     class="p-2 bg-white rounded border">
+        <div class="container mx-auto flex lg:flex-row xs:flex-col lg:flex-wrap">
+            @foreach($projects as $project)
+                <div class="lg:w-1/2 xs:w-full p-3 ">
+                    <div class=" min-h-full max-h-full w-full shadow-lg rounded-lg  {{!$project->is_published || $project->published_at > now() ? 'bg-orange-200' : 'bg-white'}} rounded flex xs:flex-col lg:flex-row">
+                        <div class="xs:w-full lg:w-1/2 bg-cover overflow-hidden" style="background-image: url({{$project->imageUrl()}}"></div>
 
-                                <div class="xs:my-6 lg:mt-8 text-center">
-                                    <a href="{{$project->url}}"
-                                       target="_blank"
-                                       class="border rounded border-blue-600 px-4 py-2 text-sm no-underline text-blue-600 hover:bg-blue-600 hover:text-white">
-                                        View Project</a>
-                                </div>
+                        <div class="xs:w-full lg:w-1/2 px-4 py-2">
+                            <h2 class="text-2xl text-gray-700 mb-4 leading-none">{{$project->project_title}}</h2>
+                            <div class="project-container text-sm leading-normal text-gray-600">
+                                {!! $project->truncated()->toHtml() !!}
                             </div>
 
-                            <div class="xs:w-full lg:w-1/2 px-2">
-                                <h2 class="text-xl text-gray-700 mb-4">{{$project->project_title}}</h2>
-                                <div class="text-sm leading-normal text-gray-600">
-                                    {!! $project->truncated()->toHtml() !!}
-                                </div>
+                            <div class="text-sm leading-normal text-gray-600 mt-4">
+                                {{$project->project_description }}
+                            </div>
+                            <div>
 
-                                <div class="text-sm leading-normal text-gray-600 mt-4">
-                                    {{$project->project_description }}
-                                </div>
                             </div>
                         </div>
-
                     </div>
-
-
-
-
-
-
-                    {{--                    <div class="xs:w-full lg:w-1/3 px-3 mb-4">--}}
-                    {{--                        <div class="max-w-sm w-full lg:max-w-full lg:flex">--}}
-                    {{--                            <div class="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"--}}
-                    {{--                                 style="background-image: url('{{$project->imageUrl()}}');">--}}
-                    {{--                            </div>--}}
-                    {{--                            <div class="border-r border-t border-l border-b border-gray-300 rounded-b rounded-r flex flex-col p-4 leading-normal bg-white lg:border-l-0 lg:rounded-b-none lg:rounded-r">--}}
-                    {{--                                <h4 class="font-semibold text-blue">{{$project->title}}</h4>--}}
-                    {{--                                <div class="mt-3 text-gray-600 text-sm">--}}
-                    {{--                                    {{$project->body}}--}}
-                    {{--                                </div>--}}
-                    {{--                                <div class="mt-4">--}}
-                    {{--                                    <a href="{{$project->url}}"--}}
-                    {{--                                       target="_blank"--}}
-                    {{--                                       class="border rounded px-3 py-2 border-blue text-blue no-underline hover:bg-blue hover:text-white">View--}}
-                    {{--                                                                                                                                          Project</a>--}}
-                    {{--                                </div>--}}
-                    {{--                            </div>--}}
-
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
-                @endforeach
-            </div>
+                </div>
+            @endforeach
         </div>
     </section>
 @stop

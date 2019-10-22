@@ -13,28 +13,29 @@
         ================================================== -->
         <link rel="stylesheet" href="{{mix('css/app.css')}}">
 
-
+        <!-- Icons
+        =================================================== -->
         <script src="https://kit.fontawesome.com/1e40d81b84.js" crossorigin="anonymous"></script>
-
 
         <!-- Analytics -->
         @include('frontend.partials.google-analytics')
     </head>
 
-    <body class="bg-gray-100">
+    <body>
         <div id="app">
             <div class="flex flex-col min-h-screen" id="home">
-                <pinned class="bg-white shadow">
+                <pinned class="bg-white shadow border-t-4 border-blue-400">
                     <header class="container mx-auto py-4">
                         <div class="flex xs:flex-col lg:flex-row justify-between items-center">
 
                             <!-- Logo -->
                             <div class="flex justify-between items-center">
-                                <a href="/" class="">
+                                <a href="/">
                                     <img src="/images/131-logo-210x53.png" alt="131 Studios Logo">
                                 </a>
-                                <fa :icon="['far','bars']" size="lg" class="text-gray-700 lg:hidden xs:inline"
-                                    onClick="toggleMenu()"></fa>
+                                <a href="#" onCLic="toggleMenu()">
+                                    <fa :icon="['far','bars']" size="lg" class="text-gray-700 lg:hidden xs:inline"></fa>
+                                </a>
                             </div>
 
                             <!-- Main Navigation -->
@@ -82,11 +83,9 @@
                     </header>
                 </pinned>
 
-                <div class="">
-                    @yield('content')
-                </div>
+                @yield('content')
 
-                <footer class="bg-blue-900 pb-4 pt-8 px-2 flex flex-col text-blue-100 leading-normal border-t">
+                <footer>
                     <div class="container mx-auto flex justify-between w-2/3">
 
                         <div class="w-1/3">
@@ -117,7 +116,7 @@
                         <div class="flex flex-col w-1/3">
                             <div class="flex items-center">
                                 <div class="rounded-full bg-blue-800 mr-3 h-10 w-10">
-                                    <fa :icon="['far','map-pin']" size="lg" class="ml-3 mt-2"></fa>
+                                   <i class="fad fa-map-marker px-3 py-2 fa-lg" style="line-height: inherit;" ></i>
                                 </div>
                                 <div>
                                     <div class="text-sm">
@@ -131,7 +130,8 @@
 
                             <div class="flex items-center mt-3">
                                 <div class="rounded-full bg-blue-800 mr-3 h-10 w-10">
-                                    <fa :icon="['far','phone']" size="lg" class="ml-2 mt-2"></fa>
+                                    <i class="fad fa-phone px-2 py-1 fa-lg" style="line-height: inherit;" ></i>
+
                                 </div>
                                 <div>
                                     <a href="tel:3019920962" class="text-lg font-semibold hover:text-blue-200">301.992.0962</a>
@@ -140,7 +140,8 @@
 
                             <div class="flex items-center mt-3">
                                 <div class="rounded-full bg-blue-800 mr-3 h-10 w-10">
-                                    <fa :icon="['far','envelope']" size="lg" class="ml-2 mt-2"></fa>
+                                    <i class="fad fa-envelope px-2 py-1 fa-lg" style="line-height: inherit;" ></i>
+
                                 </div>
                                 <div>
                                     <a href="mailto:robb@131studios.com" class="text-lg font-semibold hover:text-blue-200">robb@131studios.com</a>
@@ -150,7 +151,7 @@
 
                         <div class="w-1/3">
                             <h5 class="mb-3 font-semibold text-blue-200 text-lg">About Us</h5>
-                            <p>We are a local Greencastle PA company that specializes in website design, hosting, social
+                            <p>We are a local Greencastle, PA company that specializes in website design, hosting, social
                                media management and SEO. We service Greencastle, Chambersburg, Waynesboro, Hagerstown
                                and the surrounding areas.</p>
 

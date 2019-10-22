@@ -206,7 +206,6 @@ class WebsiteController extends Controller
      */
     public function handleProjects()
     {
-
         return view('frontend.projects')->with([
             'projects' => $this->getProjects(),
             'title' => 'Our Portfolio'

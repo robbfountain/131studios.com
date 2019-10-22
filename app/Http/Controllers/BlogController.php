@@ -6,8 +6,8 @@ use App\Blog;
 
 class BlogController extends Controller
 {
-
     protected $titleSuffix = ' - 131 Studios Blog';
+
     /**
      * Display a listing of the resource.
      *
@@ -30,7 +30,6 @@ class BlogController extends Controller
     {
         return view('frontend.blog.show', compact('blog'))->with([
             'title' => $blog->title . $this->titleSuffix,
-            'recent' => Blog::published()->latest('published_at')->take(10)->get()
         ]);
     }
 }

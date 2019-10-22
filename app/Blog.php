@@ -50,6 +50,8 @@ class Blog extends Model
      */
     protected $dates = ['published_at'];
 
+    protected $appends = ['minutes_to_read'];
+
     /**
      * Boot
      */
@@ -189,6 +191,16 @@ class Blog extends Model
         $this->truncated = true;
 
         return $this;
+    }
+
+    public function minutesToRead()
+    {
+        return ceil(str_word_count($this->body) / 300);
+    }
+
+    public function getMinutesToReadAttribute()
+    {
+        return $this->minutesToRead();
     }
 
     /**

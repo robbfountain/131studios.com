@@ -35,26 +35,20 @@
                  {{$blog->title}}
             </span>
             </div>
-
-
         </div>
+
         <div class="container mx-auto ">
             <div class="flex justify-center">
-                <div class="blog-container">
+                <div class="blog-container ">
                     @if(!$blog->is_published || $blog->published_at > now())
                         <div class="my-2 p-2 border rounded-lg border-orange bg-orange-lightest text-orange text-sm">
                             This blog post is not published
                         </div>
                     @endif
 
-
                     <h1>{{$blog->title}}</h1>
-                <!--  <div class="my-3 text-gray-600 text-sm flex items-center">
-                        <img src="{{$blog->user->avatar()}}" alt="{{$blog->user->name}}'s Avatar" class="h-8 w-8 rounded-full mr-2">
-                        <div>
-                            Posted by: <span class="text-blue">{{$blog->user->name}}</span> on {{$blog->published_at->format('F d, Y')}}
-                        </div>
-                    </div> -->
+                        <h6>Original - {{$blog->published_at->format('M j, Y')}} - {{$blog->minutesToRead()}} Minute Read</h6>
+
                     <div class="py-2">
                         <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
                              alt="{{$blog->title}}" class="blog-main-image">
@@ -89,79 +83,44 @@
                         </div>
                     </div>
                 </div>
+            </div>
 
+            <div class="flex justify-center my-6">
+                <subscription-form inline-template class="w-2/3">
+                    <div class="flex flex-col border-t-2 border-blue-300 px-3 pb-6 pt-2">
+                        <div class="w-3/4">
+                            <h2 class="text-gray-800 text-2xl">Stay up to date with all things Laravel </h2>
+                            <p class="text-gray-600 leading-normal text-xl">We periodically send out a brief newsletter hilighting some of our most recent blog
+                                posts, tweets, videos and other useful content.</p>
+                        </div>
 
-            <!--   <div class="xs:w-full lg:w-1/3 px-4 flex flex-col xs:border-l-0 lg:border-l">
-                    <div>
-                        <h2 class="title roboto">
-                            Stay Informed
-                        </h2>
                         <div>
-                            <subscription-form inline-template>
-                                <div>
-                                    <div v-if="form.successful"
-                                         class="mb-4 text-xs text-green-dark bg-green-lightest p-3 border-green border rounded">
-                                        <span class="font-bold">Thanks!</span> Your email has been added to our mailing
-                                                                               list.
-                                    </div>
-                                    <form action="#" @submit.prevent>
-                                        <div class="flex flex-col py-2">
-                                            <label for="email"
-                                                   class="required mb-1 text-xs font-semibold uppercase tracking-wide text-gray-600"
-                                                   :class="{'text-red' : form.errors.has('email')}">
-                                                Email Address
-                                            </label>
-                                            <input type="email" id="email" v-model="form.email"
-                                                   class="w-full border px-3 py-2"
-                                                   :class="{'border-red' : form.errors.has('email')}">
-                                            <span v-if="form.errors.has('email')" class="text-red text-sm">
-                                              @{{form.errors.get('email')}}
-                                        </span>
+                            <form action="#" class="mt-4 w-3/4 bg-white flex justify-between items-center rounded-full border shadow-lg h-12" @submit.prevent>
+                                <i class="fad fa-envelope text-gray-400 fa-lg pl-4"></i>
+                                <input type="email"
+                                       id="email"
+                                       v-model="form.email"
+                                       class="flex-1 text-gray-600 px-3 focus:outline-none text-xl">
 
-                                        </div>
-                                        <div class="flex flex-col py-2">
-                                            <label for="name"
-                                                   class="required mb-1 text-xs font-semibold uppercase tracking-wide text-gray-600"
-                                                   :class="{'text-red' : form.errors.has('name')}">Name</label>
-                                            <input type="text" id="name" v-model="form.name"
-                                                   class="w-full border px-3 py-2"
-                                                   :class="{'border-red' : form.errors.has('name')}">
-                                            <span v-if="form.errors.has('name')" class="text-red text-sm">
-                                            @{{form.errors.get('name')}}
-                                        </span>
-                                        </div>
-
-                                        <div class="py-2">
-                                            <button type="submit" @click="submitForm"
-                                                    class="w-full border px-4 py-2 rounded border-blue font-semibold text-blue uppercase text-sm hover:text-white hover:bg-blue hover:border-transparent">
-                                                <span v-if="form.busy"> <fa :icon="['far','spinner']" spin></fa></span>
-                                                <span v-else> Subscribe</span>
-
-                                            </button>
-                                        </div>
-                                    </form>
-                                </div>
-                            </subscription-form>
+                                <button type="submit"
+                                        @click="submitForm"
+                                        class="focus:outline-none bg-blue-800 text-white rounded-full uppercase text-sm tracking-widest px-3 h-12">
+                                    <i class="far fa-spinner fa-spin mr-1" v-if="form.busy"></i>
+                                    <span> Subscribe</span>
+                                </button>
+                            </form>
+                            <div class="text-green-500 ml-1 mt-3 w-2/3" v-if="form.successful">
+                                Thanks!  Your email address has been added to our mailing list. Don't worry, you can unsubscribe at any time.
+                            </div>
+                            <div class="text-red-500 ml-1 mt-3 w-2/3" v-if="form.errors.has('email')">
+                                Oops.  Please enter a valid email address and try again
+                            </div>
                         </div>
                     </div>
-
-                    <div class="py-8">
-                        <h2 class="title roboto">Recent Blog Posts</h2>
-                        <ul class="list-reset">
-                            @foreach($recent as $blog)
-                <li class="py-2">
-                    <div class="flex">
-                        <fa :icon="['far','chevron-right']" class="mr-2"></fa>
-                                        <a href="{{route('blog.show',$blog->slug)}}"
-                                           class="text-blue no-underline hover:font-semibold">{{$blog->title}}</a>
-                                    </div>
-                                </li>
-                            @endforeach
-                    </ul>
-                </div> -->
-
+                </subscription-form>
             </div>
-        </div>
+
+
         </div>
     </section>
 
