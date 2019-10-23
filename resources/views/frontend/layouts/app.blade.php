@@ -109,6 +109,17 @@
                                     </li>
                                 </ul>
                             </div>
+                            <div class="mt-4 flex flex-row">
+                                <a href="http://facebook.com/131studiosweb" target="_blank"
+                                   class="text-gray-500 hover:text-gray-200 mr-2">
+                                    <fa :icon="['fab', 'facebook-square']" size="2x"></fa>
+                                </a>
+
+                                <a href="https://twitter.com/131Studios" target="_blank"
+                                   class="text-gray-500 hover:text-gray-200">
+                                    <fa :icon="['fab', 'twitter-square']" size="2x"></fa>
+                                </a>
+                            </div>
                             <div class="mt-6 text-gray-500">
                                131 Studios © {{ date('Y') }}
                             </div>
