@@ -18,7 +18,9 @@ mix.js('resources/assets/js/app.js', 'public/js')
      .options({
     processCssUrls: false,
     postCss: [ tailwindcss('./tailwind.config.js') ],
-  }).purgeCss();
+  }).purgeCss({
+    whitelistPatterns: [/language/, /hljs/],
+});
 
 if (mix.inProduction()) {
     mix.version();
