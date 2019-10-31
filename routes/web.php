@@ -24,9 +24,3 @@ Route::get('contact','ContactController@index');
 
 Route::get('/blog','BlogController@index')->name('blog.index');
 Route::get('/blog/{blog}','BlogController@show')->name('blog.show');
-
-Route::get('/tweet', function()
-{
-    return Twitter::postTweet(['status' => 'Testing Tweet From App', 'format' => 'json']);
-});
-

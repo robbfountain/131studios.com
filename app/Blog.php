@@ -6,6 +6,7 @@ use Spatie\Tags\HasTags;
 use Illuminate\Support\Str;
 use JD\Cloudder\Facades\Cloudder;
 use Illuminate\Support\Facades\Auth;
+use Thujohn\Twitter\Facades\Twitter;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -62,6 +63,10 @@ class Blog extends Model
         static::creating(function($blog) {
             $blog->slug = Str::slug($blog->title);
             $blog->user_id = Auth::check() ? Auth::id() : 1;
+        });
+
+        static::created(function ($blog) {
+            Twitter::postTweet(['status' => $blog->title . '\n' . $blog->shareUrl(), 'format' => 'json']);
         });
     }
 
