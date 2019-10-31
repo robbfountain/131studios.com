@@ -12,6 +12,7 @@
     ],
     "require": {
         "php": ">=7.0.0",
+        "atymic/laravel-twitter": "^2.2",
         "creativeorange/gravatar": "^1.0",
         "cviebrock/eloquent-sluggable": "^6.0",
         "davidbadura/faker-markdown-generator": "^1.0",

@@ -1,5 +1,8 @@
 <?php
-Route::get('projects','WebsiteController@handle');
+
+use Thujohn\Twitter\Facades\Twitter;
+
+Route::get('projects', 'WebsiteController@handle');
 Route::get('hosting','WebsiteController@handle');
 Route::get('seo','WebsiteController@handle');
 Route::get('social-media','WebsiteController@handle');
@@ -21,4 +24,9 @@ Route::get('contact','ContactController@index');
 
 Route::get('/blog','BlogController@index')->name('blog.index');
 Route::get('/blog/{blog}','BlogController@show')->name('blog.show');
+
+Route::get('/tweet', function()
+{
+    return Twitter::postTweet(['status' => 'Testing Tweet From App', 'format' => 'json']);
+});
 
