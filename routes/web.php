@@ -24,3 +24,5 @@ Route::get('contact','ContactController@index');
 
 Route::get('/blog','BlogController@index')->name('blog.index');
 Route::get('/blog/{blog}','BlogController@show')->name('blog.show');
+
+Route::webhooks('webhook/webmentions','areyoudrinking1percentmilk?');
