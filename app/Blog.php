@@ -66,8 +66,18 @@ class Blog extends Model
         });
 
         static::created(function ($blog) {
-            Twitter::postTweet(['status' => $blog->title . "\n" . $blog->shareUrl(), 'format' => 'json']);
+            $response = Twitter::postTweet(['status' => $blog->title . "\n" . $blog->shareUrl(), 'format' => 'json']);
+            $this->updateBlogPostWithTweet($response);
         });
+    }
+
+    public function updateBlogPostWithTweet($response)
+    {
+        $payload = json_decode($response);
+
+        $this->update([
+                          'tweet_id' => $payload->id,
+                      ]);
     }
 
     /**
