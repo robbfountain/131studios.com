@@ -5,6 +5,11 @@ namespace App\Classes;
 
 class ParseMarkdown extends \Parsedown
 {
+    /**
+     * @param $Excerpt
+     *
+     * @return array|void
+     */
     protected function inlineLink($Excerpt)
     {
         $Element = array(
@@ -78,6 +83,11 @@ class ParseMarkdown extends \Parsedown
         );
     }
 
+    /**
+     * @param $Excerpt
+     *
+     * @return array|void
+     */
     protected function inlineImage($Excerpt)
     {
         if ( ! isset($Excerpt['text'][1]) or $Excerpt['text'][1] !== '[')

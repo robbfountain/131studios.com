@@ -172,7 +172,9 @@ class Blog extends Model
      */
     public function preview()
     {
-        return strip_tags(substr($this->toHtml(), 0, 100)) . '...';
+        return strip_tags(
+            substr($this->toHtml(), 0, 100)
+               ) . '...';
     }
 
     /**
@@ -180,7 +182,11 @@ class Blog extends Model
      */
     public function toHtml()
     {
-        return (new \Parsedown())->text($this->truncated ? substr($this->body, 0, 500) : $this->body);
+        return (new \Parsedown)->text(
+            $this->truncated
+                ? substr($this->body, 0, 500)
+                : $this->body
+        );
     }
 
     /**
@@ -193,11 +199,17 @@ class Blog extends Model
         return $this;
     }
 
+    /**
+     * @return float
+     */
     public function minutesToRead()
     {
         return ceil(str_word_count($this->body) / 300);
     }
 
+    /**
+     * @return float
+     */
     public function getMinutesToReadAttribute()
     {
         return $this->minutesToRead();

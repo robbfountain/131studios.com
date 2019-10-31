@@ -49,32 +49,32 @@
 
                     {!! $blog->toHtml() !!}
 
-                    <div class="py-4">
-                        <h5 class="roboto mb-1 text-gray-600 text-base">Share This!</h5>
-                        <div class="w-1/2 p-2 bg-gray-300 border rounded border-gray-@300">
-                            <a href="#"
-                               alt="Share on Facebook"
-                               title="Share on Facebook"
-                               class="facebook mr-2"
-                               onclick="
-                              window.open(
-                                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-                                'facebook-share-dialog',
-                                'width=626,height=436');
-                                return false;">
-                                <fa :icon="['fab', 'facebook-square']" size="2x"></fa>
-                            </a>
+{{--                    <div class="py-4">--}}
+{{--                        <h5 class="roboto mb-1 text-gray-600 text-base">Share This!</h5>--}}
+{{--                        <div class="w-1/2 p-2 bg-gray-300 border rounded border-gray-@300">--}}
+{{--                            <a href="#"--}}
+{{--                               alt="Share on Facebook"--}}
+{{--                               title="Share on Facebook"--}}
+{{--                               class="facebook mr-2"--}}
+{{--                               onclick="--}}
+{{--                              window.open(--}}
+{{--                                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),--}}
+{{--                                'facebook-share-dialog',--}}
+{{--                                'width=626,height=436');--}}
+{{--                                return false;">--}}
+{{--                                <fa :icon="['fab', 'facebook-square']" size="2x"></fa>--}}
+{{--                            </a>--}}
 
-                            <a href="https://twitter.com/intent/tweet?text={{$blog->title}}&url={{$blog->shareUrl()}}"
-                               data-url="{{$blog->shareUrl()}}"
-                               data-text="{{$blog->title}}"
-                               alt="Share on Twitter"
-                               title="Share on Twitter"
-                               class="twitter">
-                                <fa :icon="['fab', 'twitter-square']" size="2x"></fa>
-                            </a>
-                        </div>
-                    </div>
+{{--                            <a href="https://twitter.com/intent/tweet?text={{$blog->title}}&url={{$blog->shareUrl()}}"--}}
+{{--                               data-url="{{$blog->shareUrl()}}"--}}
+{{--                               data-text="{{$blog->title}}"--}}
+{{--                               alt="Share on Twitter"--}}
+{{--                               title="Share on Twitter"--}}
+{{--                               class="twitter">--}}
+{{--                                <fa :icon="['fab', 'twitter-square']" size="2x"></fa>--}}
+{{--                            </a>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
                 </div>
             </div>
 

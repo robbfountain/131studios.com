@@ -1,4 +1,4 @@
-<div class="xs:w-full lg:w-1/4 px-3">
+<div class="xs:w-full lg:w-1/4 p-3">
     <div class="min-h-full max-h-full max-w-sm rounded overflow-hidden shadow-lg {{!$blog->is_published || $blog->published_at > now() ? 'border-2 border-orange-400 bg-orange-100' : ''}}">
         <div class="h-64 shadow bg-cover" style="background-image: url({{$blog->imageUrl()}});"></div>
 
