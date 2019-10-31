@@ -18,7 +18,7 @@ class SignatureValidator implements SpatieSignatureValidator
             return false;
         }
 
-        return $request->get('secret') == $config->signing_secret;
+        return $request->get('secret') == $config->signingSecret;
 
     }
 }
