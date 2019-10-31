@@ -80,10 +80,10 @@
 
             <div class="flex justify-center my-6">
                 <subscription-form inline-template class="w-2/3">
-                    <div class="flex flex-col border-t-2 border-blue-300 px-3 pb-6 pt-2">
+                    <div class="flex flex-col border-t-2 border-blue-300 bg-blue-100 px-3 pb-6 pt-2">
                         <div class="w-3/4">
-                            <h2 class="text-gray-800 text-2xl">Stay up to date with all things Laravel </h2>
-                            <p class="text-gray-600 leading-normal text-xl">We periodically send out a brief newsletter hilighting some of our most recent blog
+                            <h2 class="text-gray-800 text-2xl">Stay up to date! </h2>
+                            <p class="text-gray-600 leading-normal text-xl">We periodically send out a brief newsletter highlighting some of our most recent blog
                                 posts, tweets, videos and other useful content.</p>
                         </div>
 
