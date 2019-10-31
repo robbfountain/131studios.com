@@ -9,7 +9,10 @@
 
         <title>{{ $title ?? config('app.name') }} </title>
 
+        <!-- Webmentions -->
         <link href="https://twitter.com/131studios" rel="me">
+        <link rel="webmention" href="https://webmention.io/131studios.com/webmention" />
+        <link rel="pingback" href="https://webmention.io/131studios.com/xmlrpc" />
 
         <!-- CSS
         ================================================== -->
