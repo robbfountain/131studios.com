@@ -8,6 +8,7 @@ use App\WebMention;
 use Spatie\Url\Url;
 use Illuminate\Support\Arr;
 use Illuminate\Bus\Queueable;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
@@ -21,14 +22,17 @@ class ProcessWebmention extends ProcessWebhookJob
         $payload = $this->webhookCall->payload;
 
         if ($this->payloadHasBeenReceivedBefore($payload)) {
+           Log::info('received before');
             return;
         }
 
         if (!$type = $this->getType($payload)) {
+            Log::info('no type');
             return;
         }
 
         if (!$blog = $this->getPost($payload)) {
+            Log::info('no blog');
             return;
         }
 
@@ -68,7 +72,7 @@ class ProcessWebmention extends ProcessWebhookJob
         return $types[$wmProperty];
     }
 
-    private function getPost(array $payload): ?Blog
+    private function getPost(array $payload)
     {
         $url = Arr::get($payload, 'post.wm-target');
 
@@ -77,6 +81,8 @@ class ProcessWebmention extends ProcessWebhookJob
         }
 
         $blogIdSlug = Url::fromString($url)->getSegment(2);
+
+        Log::info($blogIdSlug);
 
         return Blog::where('slug', $blogIdSlug)->first();
     }
