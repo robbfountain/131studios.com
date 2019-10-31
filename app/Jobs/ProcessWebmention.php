@@ -51,7 +51,7 @@ class ProcessWebmention extends ProcessWebhookJob
         return WebMention::where('webmention_id', $webmentionId)->exists();
     }
 
-    private function getType(array $payload): ?string
+    private function getType(array $payload)
     {
         $types = [
             'in-reply-to' => WebMention::TYPE_REPLY,
@@ -68,7 +68,7 @@ class ProcessWebmention extends ProcessWebhookJob
         return $types[$wmProperty];
     }
 
-    private function getPost(array $payload): ?Post
+    private function getPost(array $payload): ?Blog
     {
         $url = Arr::get($payload, 'post.wm-target');
 
@@ -77,7 +77,7 @@ class ProcessWebmention extends ProcessWebhookJob
         }
 
         $blogIdSlug = Url::fromString($url)->getSegment(2);
-        
+
         return Blog::where('slug', $blogIdSlug)->first();
     }
 }
