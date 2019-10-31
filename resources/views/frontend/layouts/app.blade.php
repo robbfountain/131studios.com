@@ -9,6 +9,8 @@
 
         <title>{{ $title ?? config('app.name') }} </title>
 
+        <link href="https://twitter.com/131studios" rel="me">
+
         <!-- CSS
         ================================================== -->
         <link rel="stylesheet" href="{{mix('css/app.css')}}">
