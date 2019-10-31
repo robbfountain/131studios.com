@@ -40,41 +40,45 @@
                     @endif
 
                     <h1>{{$blog->title}}</h1>
-                        <h6>Original - {{$blog->published_at->format('M j, Y')}} - {{$blog->minutesToRead()}} Minute Read</h6>
+                    <h6>Original - {{$blog->published_at->format('M j, Y')}} - {{$blog->minutesToRead()}} Minute
+                        Read</h6>
 
-                    <div class="py-2">
-                        <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
-                             alt="{{$blog->title}}" class="blog-main-image">
-                    </div>
+                    @if($blog->hasImage())
+                        <div class="py-2">
+
+                            <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
+                                 alt="{{$blog->title}}" class="blog-main-image">
+                        </div>
+                    @endif
 
                     {!! $blog->toHtml() !!}
 
-{{--                    <div class="py-4">--}}
-{{--                        <h5 class="roboto mb-1 text-gray-600 text-base">Share This!</h5>--}}
-{{--                        <div class="w-1/2 p-2 bg-gray-300 border rounded border-gray-@300">--}}
-{{--                            <a href="#"--}}
-{{--                               alt="Share on Facebook"--}}
-{{--                               title="Share on Facebook"--}}
-{{--                               class="facebook mr-2"--}}
-{{--                               onclick="--}}
-{{--                              window.open(--}}
-{{--                                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),--}}
-{{--                                'facebook-share-dialog',--}}
-{{--                                'width=626,height=436');--}}
-{{--                                return false;">--}}
-{{--                                <fa :icon="['fab', 'facebook-square']" size="2x"></fa>--}}
-{{--                            </a>--}}
+                    {{--                    <div class="py-4">--}}
+                    {{--                        <h5 class="roboto mb-1 text-gray-600 text-base">Share This!</h5>--}}
+                    {{--                        <div class="w-1/2 p-2 bg-gray-300 border rounded border-gray-@300">--}}
+                    {{--                            <a href="#"--}}
+                    {{--                               alt="Share on Facebook"--}}
+                    {{--                               title="Share on Facebook"--}}
+                    {{--                               class="facebook mr-2"--}}
+                    {{--                               onclick="--}}
+                    {{--                              window.open(--}}
+                    {{--                                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),--}}
+                    {{--                                'facebook-share-dialog',--}}
+                    {{--                                'width=626,height=436');--}}
+                    {{--                                return false;">--}}
+                    {{--                                <fa :icon="['fab', 'facebook-square']" size="2x"></fa>--}}
+                    {{--                            </a>--}}
 
-{{--                            <a href="https://twitter.com/intent/tweet?text={{$blog->title}}&url={{$blog->shareUrl()}}"--}}
-{{--                               data-url="{{$blog->shareUrl()}}"--}}
-{{--                               data-text="{{$blog->title}}"--}}
-{{--                               alt="Share on Twitter"--}}
-{{--                               title="Share on Twitter"--}}
-{{--                               class="twitter">--}}
-{{--                                <fa :icon="['fab', 'twitter-square']" size="2x"></fa>--}}
-{{--                            </a>--}}
-{{--                        </div>--}}
-{{--                    </div>--}}
+                    {{--                            <a href="https://twitter.com/intent/tweet?text={{$blog->title}}&url={{$blog->shareUrl()}}"--}}
+                    {{--                               data-url="{{$blog->shareUrl()}}"--}}
+                    {{--                               data-text="{{$blog->title}}"--}}
+                    {{--                               alt="Share on Twitter"--}}
+                    {{--                               title="Share on Twitter"--}}
+                    {{--                               class="twitter">--}}
+                    {{--                                <fa :icon="['fab', 'twitter-square']" size="2x"></fa>--}}
+                    {{--                            </a>--}}
+                    {{--                        </div>--}}
+                    {{--                    </div>--}}
                 </div>
             </div>
 
@@ -83,12 +87,15 @@
                     <div class="flex flex-col border-t-2 border-blue-300 bg-blue-100 px-3 pb-6 pt-2">
                         <div class="w-3/4">
                             <h2 class="text-gray-800 text-2xl">Stay up to date! </h2>
-                            <p class="text-gray-600 leading-normal text-xl">We periodically send out a brief newsletter highlighting some of our most recent blog
+                            <p class="text-gray-600 leading-normal text-xl">We periodically send out a brief newsletter
+                                highlighting some of our most recent blog
                                 posts, tweets, videos and other useful content.</p>
                         </div>
 
                         <div>
-                            <form action="#" class="mt-4 w-3/4 bg-white flex justify-between items-center rounded-full border shadow-lg h-12" @submit.prevent>
+                            <form action="#"
+                                  class="mt-4 w-3/4 bg-white flex justify-between items-center rounded-full border shadow-lg h-12"
+                                  @submit.prevent>
                                 <i class="fad fa-envelope text-gray-400 fa-lg pl-4"></i>
                                 <input type="email"
                                        id="email"
@@ -103,10 +110,11 @@
                                 </button>
                             </form>
                             <div class="text-green-500 ml-1 mt-3 w-2/3" v-if="form.successful">
-                                Thanks!  Your email address has been added to our mailing list. Don't worry, you can unsubscribe at any time.
+                                Thanks! Your email address has been added to our mailing list. Don't worry, you can
+                                unsubscribe at any time.
                             </div>
                             <div class="text-red-500 ml-1 mt-3 w-2/3" v-if="form.errors.has('email')">
-                                Oops.  Please enter a valid email address and try again
+                                Oops. Please enter a valid email address and try again
                             </div>
                         </div>
                     </div>

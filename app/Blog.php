@@ -237,4 +237,9 @@ class Blog extends Model
             ? Cloudder::secureShow($this->image, array_merge($this->imageOptions, $options))
             : Cloudder::show($this->image, array_merge($this->imageOptions, $options));
     }
+
+    public function hasImage()
+    {
+        return !is_null($this->image);
+    }
 }
