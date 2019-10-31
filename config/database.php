@@ -107,6 +107,8 @@ return [
 
     'redis' => [
 
+        'client' => env('REDIS_CLIENT', 'predis'), //default phpredis
+
         'cluster' => false,
 
         'default' => [
