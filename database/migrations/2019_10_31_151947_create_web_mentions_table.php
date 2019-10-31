@@ -18,6 +18,7 @@ class CreateWebMentionsTable extends Migration
             $table->unsignedBigInteger('blog_id');
             $table->string('type');
             $table->string('webmention_id');
+            $table->string('author_name')->nullable();
             $table->string('author_photo_url')->nullable();
             $table->string('author_url')->nullable();
             $table->string('interaction_url')->nullable();
