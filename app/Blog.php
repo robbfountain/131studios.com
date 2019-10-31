@@ -66,7 +66,7 @@ class Blog extends Model
         });
 
         static::created(function ($blog) {
-            Twitter::postTweet(['status' => $blog->title . '\n' . $blog->shareUrl(), 'format' => 'json']);
+            Twitter::postTweet(['status' => $blog->title . "\n" . $blog->shareUrl(), 'format' => 'json']);
         });
     }
 
