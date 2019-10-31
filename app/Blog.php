@@ -67,15 +67,15 @@ class Blog extends Model
 
         static::created(function ($blog) {
             $response = Twitter::postTweet(['status' => $blog->title . "\n" . $blog->shareUrl(), 'format' => 'json']);
-            static::updateBlogPostWithTweet($response);
+            static::updateBlogPostWithTweet($blog, $response);
         });
     }
 
-    public static function updateBlogPostWithTweet($response)
+    public static function updateBlogPostWithTweet($blog, $response)
     {
         $payload = json_decode($response);
 
-        self::update([
+        $blog->update([
             'tweet_id' => $payload->id,
                       ]);
     }
