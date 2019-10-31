@@ -13,6 +13,12 @@ class SignatureValidator implements SpatieSignatureValidator
 
     public function isValid(Request $request, WebhookConfig $config): bool
     {
-        return true;
+        if(!$request->has('secret'))
+        {
+            return false;
+        }
+
+        return $request->get('secret') == $config->signing_secret;
+
     }
 }
