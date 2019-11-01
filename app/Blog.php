@@ -2,11 +2,11 @@
 
 namespace App;
 
+use Spatie\Url\Url;
 use Spatie\Tags\HasTags;
 use Illuminate\Support\Str;
 use JD\Cloudder\Facades\Cloudder;
 use Illuminate\Support\Facades\Auth;
-use Thujohn\Twitter\Facades\Twitter;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -51,7 +51,23 @@ class Blog extends Model
      */
     protected $dates = ['published_at'];
 
+    /**
+     * @var array
+     */
     protected $appends = ['minutes_to_read'];
+
+    /**
+     * @param $blog
+     * @param $response
+     */
+    public static function updateBlogPostWithTweet($blog, $response)
+    {
+        $payload = json_decode($response);
+
+        $blog->update([
+            'tweet_id' => $payload->id,
+        ]);
+    }
 
     /**
      * Boot
@@ -66,18 +82,9 @@ class Blog extends Model
         });
 
         static::created(function ($blog) {
-            $response = Twitter::postTweet(['status' => $blog->title . "\n" . $blog->shareUrl(), 'format' => 'json']);
-            static::updateBlogPostWithTweet($blog, $response);
+//            $response = Twitter::postTweet(['status' => $blog->title . "\n" . $blog->shareUrl(), 'format' => 'json']);
+//            static::updateBlogPostWithTweet($blog, $response);
         });
-    }
-
-    public static function updateBlogPostWithTweet($blog, $response)
-    {
-        $payload = json_decode($response);
-
-        $blog->update([
-            'tweet_id' => $payload->id,
-                      ]);
     }
 
     /**
@@ -176,9 +183,9 @@ class Blog extends Model
         return Auth::check() && Auth::user()->isAdmin()
             ? $query
             : $query->where([
-                                ['is_published', '=', true],
-                                ['published_at', '<=', now()],
-                            ]);
+                ['is_published', '=', true],
+                ['published_at', '<=', now()],
+            ]);
     }
 
 
@@ -188,8 +195,8 @@ class Blog extends Model
     public function preview()
     {
         return strip_tags(
-                   substr($this->toHtml(), 0, 100)
-               ) . '...';
+            substr($this->toHtml(), 0, 500)
+        );
     }
 
     /**
@@ -217,25 +224,17 @@ class Blog extends Model
     /**
      * @return float
      */
-    public function minutesToRead()
-    {
-        return ceil(str_word_count($this->body) / 300);
-    }
-
-    /**
-     * @return float
-     */
     public function getMinutesToReadAttribute()
     {
         return $this->minutesToRead();
     }
 
     /**
-     * @return string
+     * @return float
      */
-    public function shareUrl()
+    public function minutesToRead()
     {
-        return route('blog.show', $this->slug);
+        return ceil(str_word_count($this->body) / 300);
     }
 
     /**
@@ -248,13 +247,45 @@ class Blog extends Model
             : Cloudder::show($this->image, array_merge($this->imageOptions, $options));
     }
 
+    /**
+     * @return bool
+     */
     public function hasImage()
     {
         return !is_null($this->image);
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function webmention()
     {
         return $this->hasMany(WebMention::class);
+    }
+
+    public function referenceUrl()
+    {
+        return Url::fromString($this->reference_url)->getHost();
+    }
+
+    public function getLinkToFullPost()
+    {
+        if ($this->category->name == 'Tweet') {
+            return $this->tweet;
+        }
+
+        if ($this->category->name == 'Link') {
+            return $this->reference_url;
+        }
+        
+        return $this->shareUrl();
+    }
+
+    /**
+     * @return string
+     */
+    public function shareUrl()
+    {
+        return route('blog.show', $this->slug);
     }
 }

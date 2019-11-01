@@ -17,6 +17,10 @@ use Laravel\Nova\Fields\Markdown;
 use Laravel\Nova\Fields\BelongsTo;
 use Silvanite\NovaFieldCloudinary\Fields\CloudinaryImage;
 
+/**
+ * Class Blog
+ * @package App\Nova
+ */
 class Blog extends Resource
 {
     /**
@@ -79,28 +83,59 @@ class Blog extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('User')->hideWhenCreating()->searchable(),
+            BelongsTo::make('User')
+                ->hideWhenCreating()
+                ->searchable(),
             BelongsTo::make('Category'),
             Text::make('Title'),
-            Text::make('Slug')->hideWhenCreating()->hideFromIndex(),
+            Text::make('Slug')
+                ->hideWhenCreating()
+                ->hideFromIndex(),
+
             CloudinaryImage::make('Image'),
-            Markdown::make('Body'),
-            Boolean::make('Published', 'is_published')->sortable(),
-            DateTime::make('Publish Date', 'published_at')->format('MMM D, YYYY')->sortable()->nullable()->help('Leave blank to publish now or set a date in the future.'),
-            Tags::make('Tags')->onlyOnForms(),
-            Heading::make('Project Information')->onlyOnForms(),
+            Markdown::make('Body')->stacked(),
+            Boolean::make('Published', 'is_published')
+                ->sortable()
+            ->help('Check to publish immediately'),
+
+            DateTime::make('Publish Date', 'published_at')
+                ->format('MMM D, YYYY')
+                ->sortable()
+                ->nullable()
+                ->help('Leave blank to publish now or set a date in the future.'),
+
+            new Panel('Website',$this->websiteFields()),
+
+            new Panel('Tweet', $this->tweetFields()),
 
             new Panel('Project Information', $this->projectFields()),
 
         ];
     }
 
+    public function websiteFields()
+    {
+        return [
+            Text::make('Website URL','reference_url')->nullable(),
+        ];
+    }
+
+    /**
+     * @return array
+     */
     protected function projectFields()
     {
         return [
             Text::make('Project Title')->hideFromIndex()->help('Title will be created automatically or enter manually.'),
-            Markdown::make('Project Description')->nullable(),
+            Markdown::make('Project Description')->nullable()->stacked(),
             Text::make('Project URL', 'url')->nullable()->hideFromIndex(),
+        ];
+    }
+
+    public function tweetFields()
+    {
+        return [
+            Text::Make('Tweet')->nullable(),
         ];
     }
 

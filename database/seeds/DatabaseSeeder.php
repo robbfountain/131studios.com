@@ -12,8 +12,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Category::create(['name' => 'Project']);
-
         $this->call(UsersTableSeeder::class);
         $this->call(BlogTableSeeder::class);
     }

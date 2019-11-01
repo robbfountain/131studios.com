@@ -15,8 +15,10 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blogs = Blog::published()->latest('published_at')->get();
-        return view('frontend.blog.index', compact('blogs'))->with(['title' => 'Our Blog | 131 Studios']);
+        return view('frontend.blog.index')->with([
+            'title' => 'Our Blog | 131 Studios',
+            'blogs' => Blog::published()->latest('published_at')->get()
+        ]);
     }
 
     /**
