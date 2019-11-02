@@ -75,14 +75,6 @@ class WebsiteController extends Controller
     }
 
     /**
-     * @return Factory|View
-     */
-    public function handleDnsHosting()
-    {
-        return view('frontend.dns-hosting')->with(['title' => 'DNS Hosting and Management | 131 Studios']);
-    }
-
-    /**
      * @param string $page
      *
      * @return $this
@@ -109,14 +101,6 @@ class WebsiteController extends Controller
     }
 
     /**
-     * @return WebsiteController
-     */
-    public function handleAbout()
-    {
-        return $this->renderView('about', 'About Us');
-    }
-
-    /**
      * @param $view
      * @param $heading
      *
@@ -135,37 +119,6 @@ class WebsiteController extends Controller
         return view('frontend.social-media')->with(['title' => 'Social Media | 131 Studios']);
     }
 
-    /**
-     * @return WebsiteController
-     */
-    public function handleServices()
-    {
-        return $this->renderView('services', 'Services');
-    }
-
-    /**
-     * @return WebsiteController
-     */
-    public function handleWork()
-    {
-        return $this->renderView('projects', 'Our Work | 131 Studios');
-    }
-
-    /**
-     * @return WebsiteController
-     */
-    public function handleContact()
-    {
-        return view('frontend.contact')->with(['title' => 'Contact Us | 131 Studios']);
-    }
-
-    /**
-     * @return WebsiteController
-     */
-    public function handleQuote()
-    {
-        return $this->renderView('longform', 'Quote');
-    }
 
     /**
      * @return Factory|View
@@ -181,14 +134,6 @@ class WebsiteController extends Controller
     public function handleTerms()
     {
         return view('frontend.terms');
-    }
-
-    /**
-     * @return WebsiteController
-     */
-    public function services()
-    {
-        return $this->renderView('services-alt', 'Services');
     }
 
     /**
@@ -213,6 +158,9 @@ class WebsiteController extends Controller
 
     }
 
+    /**
+     * @return mixed
+     */
     private function getProjects()
     {
         return Blog::published()->whereHas('category', function ($query) {

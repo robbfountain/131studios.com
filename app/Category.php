@@ -7,6 +7,10 @@ use Backpack\CRUD\CrudTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 
+/**
+ * Class Category
+ * @package App
+ */
 class Category extends Model
 {
     use Sluggable, SluggableScopeHelpers;
@@ -52,13 +56,21 @@ class Category extends Model
         return $this->name;
     }
 
+    /**
+     * @param $query
+     *
+     * @return mixed
+     */
     public function scopeProject($query)
     {
         return $query->where('name','Project');
     }
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function blog()
     {
-        return $this->belongsTo(Blog::class);
+        return $this->hasMany(Blog::class);
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Spatie\Url\Url;
-use Spatie\Tags\HasTags;
 use Illuminate\Support\Str;
 use JD\Cloudder\Facades\Cloudder;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +16,26 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Blog extends Model
 {
-    use HasTags;
+
+    /**
+     * Tweet
+     */
+    const TWEET = 'Tweet';
+
+    /**
+     * Link
+     */
+    const LINK = 'Link';
+
+    /**
+     * Original
+     */
+    const ORIGINAL = 'Original';
+
+    /**
+     * Project
+     */
+    const PROJECT = 'Project';
 
     /**
      * @var bool
@@ -57,19 +76,6 @@ class Blog extends Model
     protected $appends = ['minutes_to_read'];
 
     /**
-     * @param $blog
-     * @param $response
-     */
-    public static function updateBlogPostWithTweet($blog, $response)
-    {
-        $payload = json_decode($response);
-
-        $blog->update([
-            'tweet_id' => $payload->id,
-        ]);
-    }
-
-    /**
      * Boot
      */
     protected static function boot()
@@ -79,11 +85,9 @@ class Blog extends Model
         static::creating(function ($blog) {
             $blog->slug = Str::slug($blog->title);
             $blog->user_id = Auth::check() ? Auth::id() : 1;
-        });
-
-        static::created(function ($blog) {
-//            $response = Twitter::postTweet(['status' => $blog->title . "\n" . $blog->shareUrl(), 'format' => 'json']);
-//            static::updateBlogPostWithTweet($blog, $response);
+            $blog->project_title = $blog->category->name == self::PROJECT
+                ? $blog->blogTitleToProjectTitle()
+                : null;
         });
     }
 
@@ -100,17 +104,21 @@ class Blog extends Model
      */
     public function setProjectTitleAttribute($value)
     {
-        $this->attributes['project_title'] = !is_null($value) && strlen($value) > 1
-            ? $value
-            : $this->blogTitleToProjectTitle();
+        $this->attributes['project_title'] = $this->category->name == self::PROJECT
+            ? $this->blogTitleToProjectTitle()
+            : null;
     }
 
     /**
      * @return mixed
      */
-    private function blogTitleToProjectTitle()
+    public function blogTitleToProjectTitle()
     {
-        return str_replace($this->titleSearchTerms(), $this->titleReplaceTerms(), $this->title);
+        return str_replace(
+            $this->titleSearchTerms(),
+            $this->titleReplaceTerms(),
+            $this->title
+        );
     }
 
     /**
@@ -146,7 +154,9 @@ class Blog extends Model
      */
     public function publish()
     {
-        return $this->update(['is_published' => true, 'published_at' => now()]);
+        return tap($this)->update([
+            'is_published' => true,
+        ]);
     }
 
     /**
@@ -154,7 +164,19 @@ class Blog extends Model
      */
     public function unpublish()
     {
-        return $this->update(['is_published' => false]);
+        return tap($this)->update([
+            'is_published' => false,
+        ]);
+    }
+
+    /**
+     * @param $query
+     *
+     * @return mixed
+     */
+    public function scopeUnpublished($query)
+    {
+        return $query->where('is_published', false);
     }
 
     /**
@@ -182,10 +204,23 @@ class Blog extends Model
     {
         return Auth::check() && Auth::user()->isAdmin()
             ? $query
-            : $query->where([
-                ['is_published', '=', true],
-                ['published_at', '<=', now()],
-            ]);
+            : $query->where('is_published', true);
+    }
+
+    /**
+     * @param $query
+     *
+     * @return mixed
+     */
+    public function scopeWaitingForTweet($query)
+    {
+        return $query->where([
+            ['is_published', '=', true],
+            ['tweet_id', '=', null],
+        ])->whereBetween('published_at', [
+            Carbon::now()->startOfDay(),
+            Carbon::now(),
+        ]);
     }
 
 
@@ -263,21 +298,27 @@ class Blog extends Model
         return $this->hasMany(WebMention::class);
     }
 
+    /**
+     * @return string
+     */
     public function referenceUrl()
     {
         return Url::fromString($this->reference_url)->getHost();
     }
 
+    /**
+     * @return mixed|string
+     */
     public function getLinkToFullPost()
     {
-        if ($this->category->name == 'Tweet') {
+        if ($this->category->name == Blog::TWEET) {
             return $this->tweet;
         }
 
-        if ($this->category->name == 'Link') {
+        if ($this->category->name == Blog::LINK) {
             return $this->reference_url;
         }
-        
+
         return $this->shareUrl();
     }
 

@@ -2,19 +2,17 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions\PublishBlog;
-use App\Nova\Actions\UnpublishBlog;
-use App\Nova\Filters\BlogCategory;
-use Illuminate\Support\Facades\Auth;
 use Laravel\Nova\Panel;
-use Spatie\TagsField\Tags;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Heading;
+use Laravel\Nova\Fields\Select;
 use Laravel\Nova\Fields\Boolean;
+use App\Nova\Actions\PublishBlog;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Markdown;
+use App\Nova\Filters\BlogCategory;
 use Laravel\Nova\Fields\BelongsTo;
+use App\Nova\Actions\UnpublishBlog;
 use Silvanite\NovaFieldCloudinary\Fields\CloudinaryImage;
 
 /**
@@ -86,17 +84,27 @@ class Blog extends Resource
             BelongsTo::make('User')
                 ->hideWhenCreating()
                 ->searchable(),
+
             BelongsTo::make('Category'),
+
             Text::make('Title'),
+
             Text::make('Slug')
                 ->hideWhenCreating()
                 ->hideFromIndex(),
 
             CloudinaryImage::make('Image'),
+
             Markdown::make('Body')->stacked(),
+
             Boolean::make('Published', 'is_published')
-                ->sortable()
-            ->help('Check to publish immediately'),
+                ->hideWhenCreating()
+                ->hideWhenUpdating()->sortable(),
+
+            Select::make('State', 'is_published')->options([
+                'true' => 'Published',
+                'false' => 'Draft',
+            ])->onlyOnForms(),
 
             DateTime::make('Publish Date', 'published_at')
                 ->format('MMM D, YYYY')
@@ -104,19 +112,27 @@ class Blog extends Resource
                 ->nullable()
                 ->help('Leave blank to publish now or set a date in the future.'),
 
-            new Panel('Website',$this->websiteFields()),
-
+            new Panel('Website', $this->websiteFields()),
             new Panel('Tweet', $this->tweetFields()),
-
             new Panel('Project Information', $this->projectFields()),
-
         ];
     }
 
     public function websiteFields()
     {
         return [
-            Text::make('Website URL','reference_url')->nullable(),
+            Text::make('Website URL', 'reference_url')
+                ->nullable()
+                ->hideFromIndex(),
+        ];
+    }
+
+    public function tweetFields()
+    {
+        return [
+            Text::Make('Tweet')
+                ->nullable()
+                ->hideFromIndex(),
         ];
     }
 
@@ -126,16 +142,17 @@ class Blog extends Resource
     protected function projectFields()
     {
         return [
-            Text::make('Project Title')->hideFromIndex()->help('Title will be created automatically or enter manually.'),
-            Markdown::make('Project Description')->nullable()->stacked(),
-            Text::make('Project URL', 'url')->nullable()->hideFromIndex(),
-        ];
-    }
+            Text::make('Project Title')
+                ->hideFromIndex()
+                ->help('Title will be created automatically or enter manually.'),
 
-    public function tweetFields()
-    {
-        return [
-            Text::Make('Tweet')->nullable(),
+            Markdown::make('Project Description')
+                ->nullable()
+                ->stacked(),
+
+            Text::make('Project URL', 'url')
+                ->nullable()
+                ->hideFromIndex(),
         ];
     }
 

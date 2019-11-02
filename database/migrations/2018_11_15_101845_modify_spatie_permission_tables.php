@@ -17,19 +17,19 @@ class ModifySpatiePermissionTables extends Migration
         $columnNames = config('permission.column_names');
 
         Schema::table($tableNames['permissions'], function (Blueprint $table) {
-            $table->string('guard_name');
+            $table->string('guard_name')->nullable();
         });
 
         Schema::table($tableNames['roles'], function (Blueprint $table) {
-            $table->string('guard_name');
+            $table->string('guard_name')->nullable();
         });
 
         Schema::table($tableNames['model_has_permissions'], function (Blueprint $table) use ($tableNames, $columnNames) {
-            $table->string('model_type');
+            $table->string('model_type')->nullable();
         });
 
         Schema::table($tableNames['model_has_roles'], function (Blueprint $table) use ($tableNames, $columnNames) {
-            $table->string('model_type');
+            $table->string('model_type')->nullable();
 
         });
     }

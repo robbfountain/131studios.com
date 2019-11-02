@@ -30,6 +30,8 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
+        abort_unless($blog->is_published, 404);
+
         return view('frontend.blog.show', compact('blog'))->with([
             'title' => $blog->title . $this->titleSuffix,
         ]);

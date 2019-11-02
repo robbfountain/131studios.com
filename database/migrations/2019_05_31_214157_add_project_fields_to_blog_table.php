@@ -23,20 +23,6 @@ class AddProjectFieldsToBlogTable extends Migration
         });
 
         $category = Category::create(['name' => 'Project', 'user_id' => 1]);
-
-//        Project::all()->each(function ($p) use ($category) {
-//            Blog::create([
-//                'user_id' => 1,
-//                'category_id' => $category->id,
-//                'title' => $p->title,
-//                'body' => $p->description,
-//                'url' => $p->url,
-//                'published_at' => now(),
-//                'is_published' => $p->visible,
-//                'is_featured' => false,
-//                'image' => $p->primary_image
-//            ]);
-//        });
     }
 
     /**
@@ -47,9 +33,7 @@ class AddProjectFieldsToBlogTable extends Migration
     public function down()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->dropColumn('url');
-            $table->dropColumn('project_title');
-            $table->dropColumn('project_description');
+            $table->dropColumn(['url','project_title','project_description']);
         });
     }
 }

@@ -3,7 +3,9 @@
 namespace App\Console;
 
 use App\Console\Commands\SitemapCommand;
+use App\Console\Commands\TweetBlogCommand;
 use Illuminate\Console\Scheduling\Schedule;
+use App\Console\Commands\PublishBlogCommand;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -15,6 +17,8 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         SitemapCommand::class,
+        PublishBlogCommand::class,
+        TweetBlogCommand::class,
     ];
 
     /**
@@ -28,6 +32,8 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('sitemap:generate')->weekly();
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
+        $schedule->command('studios:publish-blogs')->everyMinute();
+        $schedule->command('studios:tweet-blog')->everyFiveMinutes();
     }
 
     /**

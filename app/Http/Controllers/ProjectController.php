@@ -20,26 +20,4 @@ class ProjectController extends Controller
         ]);
 
     }
-
-    private function getProjects()
-    {
-        return Blog::visible()->whereHas('category', function ($query) {
-            $query->project();
-        })->get();
-    }
-
-    /**
-     * @param $slug
-     *
-     * @return $this
-     */
-    public function show($slug)
-    {
-        $project = Project::findBySlug($slug);
-
-        return view('frontend.view-project')->with([
-            'project' => $project,
-            'title' => $project->title,
-        ]);
-    }
 }

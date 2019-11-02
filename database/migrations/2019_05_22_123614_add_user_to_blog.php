@@ -14,7 +14,7 @@ class AddUserToBlog extends Migration
     public function up()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('user_id')->nullable();
         });
     }
 
