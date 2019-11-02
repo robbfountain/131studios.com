@@ -295,7 +295,7 @@ class Blog extends Model
      */
     public function webmention()
     {
-        return $this->hasMany(WebMention::class);
+        return $this->hasMany(WebMention::class)->orderBy('id','DESC');
     }
 
     /**
@@ -328,5 +328,10 @@ class Blog extends Model
     public function shareUrl()
     {
         return route('blog.show', $this->slug);
+    }
+
+    public function tweetUrl()
+    {
+        return 'https://twitter.com/131studios/status/' . $this->tweet_id;
     }
 }

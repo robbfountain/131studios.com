@@ -53,73 +53,84 @@
 
                     {!! $blog->toHtml() !!}
 
-                    {{--                    <div class="py-4">--}}
-                    {{--                        <h5 class="roboto mb-1 text-gray-600 text-base">Share This!</h5>--}}
-                    {{--                        <div class="w-1/2 p-2 bg-gray-300 border rounded border-gray-@300">--}}
-                    {{--                            <a href="#"--}}
-                    {{--                               alt="Share on Facebook"--}}
-                    {{--                               title="Share on Facebook"--}}
-                    {{--                               class="facebook mr-2"--}}
-                    {{--                               onclick="--}}
-                    {{--                              window.open(--}}
-                    {{--                                'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),--}}
-                    {{--                                'facebook-share-dialog',--}}
-                    {{--                                'width=626,height=436');--}}
-                    {{--                                return false;">--}}
-                    {{--                                <fa :icon="['fab', 'facebook-square']" size="2x"></fa>--}}
-                    {{--                            </a>--}}
+                    @if($blog->tweet_id)
+                        <div class="mt-8 w-1/2">
+                            <h2>Comments</h2>
+                            <div class="mt-8 p-6 text-lg border-l-4 border-blue-twitter bg-blue-200">
+                                You can reply to <a class="underline" href="{{$blog->tweetUrl()}}">this tweet</a> to
+                                comment on this post.
+                            </div>
+                            <div class="mt-8">
+                                @foreach($blog->webmention as $mention)
+                                    <div class="mb-8">
+                                        <div class="flex items-center">
+                                            <div class="mr-4">
+                                                <div class="rounded-full h-8 w-8 overflow-hidden flex justify-center items-center">
+                                                    <img src="{{$mention->author_photo_url}}"
+                                                         alt="{{$mention->author_url}}">
+                                                </div>
 
-                    {{--                            <a href="https://twitter.com/intent/tweet?text={{$blog->title}}&url={{$blog->shareUrl()}}"--}}
-                    {{--                               data-url="{{$blog->shareUrl()}}"--}}
-                    {{--                               data-text="{{$blog->title}}"--}}
-                    {{--                               alt="Share on Twitter"--}}
-                    {{--                               title="Share on Twitter"--}}
-                    {{--                               class="twitter">--}}
-                    {{--                                <fa :icon="['fab', 'twitter-square']" size="2x"></fa>--}}
-                    {{--                            </a>--}}
-                    {{--                        </div>--}}
-                    {{--                    </div>--}}
+                                            </div>
+                                            <div class="flex-1 text-gray-700">
+                                                <a class="font-bold"
+                                                   href="{{$mention->author_url}}">{{$mention->author_name}}</a> <a
+                                                        href="{{$mention->interaction_url}}"
+                                                        class="underline">{{$mention->type}}</a>
+                                                on {{$mention->created_at->format('M d, Y')}}
+                                            </div>
+                                        </div>
+                                        @if($mention->text)
+                                            <div class="mt-2 ml-2 text-gray-700">
+                                                {{$mention->text}}
+                                            </div>
+                                        @endif
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
                 </div>
             </div>
 
-            <div class="flex justify-center my-6">
-                <subscription-form inline-template class="w-2/3">
-                    <div class="flex flex-col border-t-2 border-blue-300 bg-blue-100 px-3 pb-6 pt-2">
-                        <div class="w-3/4">
-                            <h2 class="text-gray-800 text-2xl">Stay up to date! </h2>
-                            <p class="text-gray-600 leading-normal text-xl">We periodically send out a brief newsletter
-                                highlighting some of our most recent blog
-                                posts, tweets, videos and other useful content.</p>
-                        </div>
 
-                        <div>
-                            <form action="#"
-                                  class="mt-4 w-3/4 bg-white flex justify-between items-center rounded-full border shadow-lg h-12"
-                                  @submit.prevent>
-                                <i class="fad fa-envelope text-gray-400 fa-lg pl-4"></i>
-                                <input type="email"
-                                       id="email"
-                                       v-model="form.email"
-                                       class="flex-1 text-gray-600 px-3 focus:outline-none text-xl">
+            {{--            <div class="flex justify-center my-6">--}}
+            {{--                <subscription-form inline-template class="w-2/3">--}}
+            {{--                    <div class="flex flex-col border-t-2 border-blue-300 bg-blue-100 px-3 pb-6 pt-2">--}}
+            {{--                        <div class="w-3/4">--}}
+            {{--                            <h2 class="text-gray-800 text-2xl">Stay up to date! </h2>--}}
+            {{--                            <p class="text-gray-600 leading-normal text-xl">We periodically send out a brief newsletter--}}
+            {{--                                highlighting some of our most recent blog--}}
+            {{--                                posts, tweets, videos and other useful content.</p>--}}
+            {{--                        </div>--}}
 
-                                <button type="submit"
-                                        @click="submitForm"
-                                        class="focus:outline-none bg-blue-800 text-white rounded-full uppercase text-sm tracking-widest px-3 h-12">
-                                    <i class="far fa-spinner fa-spin mr-1" v-if="form.busy"></i>
-                                    <span> Subscribe</span>
-                                </button>
-                            </form>
-                            <div class="text-green-500 ml-1 mt-3 w-2/3" v-if="form.successful">
-                                Thanks! Your email address has been added to our mailing list. Don't worry, you can
-                                unsubscribe at any time.
-                            </div>
-                            <div class="text-red-500 ml-1 mt-3 w-2/3" v-if="form.errors.has('email')">
-                                Oops. Please enter a valid email address and try again
-                            </div>
-                        </div>
-                    </div>
-                </subscription-form>
-            </div>
+            {{--                        <div>--}}
+            {{--                            <form action="#"--}}
+            {{--                                  class="mt-4 w-3/4 bg-white flex justify-between items-center rounded-full border shadow-lg h-12"--}}
+            {{--                                  @submit.prevent>--}}
+            {{--                                <i class="fad fa-envelope text-gray-400 fa-lg pl-4"></i>--}}
+            {{--                                <input type="email"--}}
+            {{--                                       id="email"--}}
+            {{--                                       v-model="form.email"--}}
+            {{--                                       class="flex-1 text-gray-600 px-3 focus:outline-none text-xl">--}}
+
+            {{--                                <button type="submit"--}}
+            {{--                                        @click="submitForm"--}}
+            {{--                                        class="focus:outline-none bg-blue-800 text-white rounded-full uppercase text-sm tracking-widest px-3 h-12">--}}
+            {{--                                    <i class="far fa-spinner fa-spin mr-1" v-if="form.busy"></i>--}}
+            {{--                                    <span> Subscribe</span>--}}
+            {{--                                </button>--}}
+            {{--                            </form>--}}
+            {{--                            <div class="text-green-500 ml-1 mt-3 w-2/3" v-if="form.successful">--}}
+            {{--                                Thanks! Your email address has been added to our mailing list. Don't worry, you can--}}
+            {{--                                unsubscribe at any time.--}}
+            {{--                            </div>--}}
+            {{--                            <div class="text-red-500 ml-1 mt-3 w-2/3" v-if="form.errors.has('email')">--}}
+            {{--                                Oops. Please enter a valid email address and try again--}}
+            {{--                            </div>--}}
+            {{--                        </div>--}}
+            {{--                    </div>--}}
+            {{--                </subscription-form>--}}
+            {{--            </div>--}}
 
 
         </div>

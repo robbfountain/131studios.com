@@ -7,47 +7,50 @@ use App\Blog;
 use App\WebMention;
 use Spatie\Url\Url;
 use Illuminate\Support\Arr;
-use Illuminate\Bus\Queueable;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Bus\Dispatchable;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Queue\SerializesModels;
 use Spatie\WebhookClient\ProcessWebhookJob;
 
+/**
+ * Class ProcessWebmention
+ * @package App\Jobs
+ */
 class ProcessWebmention extends ProcessWebhookJob
 {
+    /**
+     *
+     */
     public function handle()
     {
         $payload = $this->webhookCall->payload;
 
         if ($this->payloadHasBeenReceivedBefore($payload)) {
-           Log::info('received before');
             return;
         }
 
         if (!$type = $this->getType($payload)) {
-            Log::info('no type');
             return;
         }
 
         if (!$blog = $this->getPost($payload)) {
-            Log::info('no blog');
             return;
         }
 
         WebMention::create([
-                               'blog_id' => $blog->id,
-                               'type' => $type,
-                               'webmention_id' => Arr::get($payload, 'post.wm-id'),
-                               'author_name' => Arr::get($payload, 'post.author.name'),
-                               'author_photo_url' => Arr::get($payload, 'post.author.photo'),
-                               'author_url' => Arr::get($payload, 'post.author.url'),
-                               'interaction_url' => Arr::get($payload, 'post.url'),
-                               'text' => Arr::get($payload, 'post.content.text'),
-                           ]);
+            'blog_id' => $blog->id,
+            'type' => $type,
+            'webmention_id' => Arr::get($payload, 'post.wm-id'),
+            'author_name' => Arr::get($payload, 'post.author.name'),
+            'author_photo_url' => Arr::get($payload, 'post.author.photo'),
+            'author_url' => Arr::get($payload, 'post.author.url'),
+            'interaction_url' => Arr::get($payload, 'post.url'),
+            'text' => Arr::get($payload, 'post.content.text'),
+        ]);
     }
 
+    /**
+     * @param array $payload
+     *
+     * @return bool
+     */
     private function payloadHasBeenReceivedBefore(array $payload): bool
     {
         $webmentionId = Arr::get($payload, 'post.wm-id');
@@ -55,6 +58,11 @@ class ProcessWebmention extends ProcessWebhookJob
         return WebMention::where('webmention_id', $webmentionId)->exists();
     }
 
+    /**
+     * @param array $payload
+     *
+     * @return mixed|null
+     */
     private function getType(array $payload)
     {
         $types = [
@@ -72,6 +80,11 @@ class ProcessWebmention extends ProcessWebhookJob
         return $types[$wmProperty];
     }
 
+    /**
+     * @param array $payload
+     *
+     * @return |null
+     */
     private function getPost(array $payload)
     {
         $url = Arr::get($payload, 'post.wm-target');
@@ -81,9 +94,7 @@ class ProcessWebmention extends ProcessWebhookJob
         }
 
         $blogIdSlug = Url::fromString($url)->getSegment(2);
-
-        Log::info($blogIdSlug);
-
+        
         return Blog::where('slug', $blogIdSlug)->first();
     }
 }

@@ -13,17 +13,17 @@ class WebMention extends Model
     /**
      * Reply
      */
-    const TYPE_REPLY = 'reply';
+    const TYPE_REPLY = 'replied';
 
     /**
      * Like
      */
-    const TYPE_LIKE = 'like';
+    const TYPE_LIKE = 'liked';
 
     /**
      * Retweet
      */
-    const TYPE_RETWEET = 'retweet';
+    const TYPE_RETWEET = 'retweeted';
 
     /**
      * @var array

@@ -92,6 +92,8 @@ module.exports = {
         700: '#2b6cb0',
         800: '#2c5282',
         900: '#2a4365',
+
+        'twitter': '#00acee'
       },
       indigo: {
         100: '#ebf4ff',
