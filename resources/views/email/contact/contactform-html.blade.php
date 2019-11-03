@@ -85,29 +85,27 @@ $style = [
                                         <!-- Greeting -->
                                         <h1 style="{{ $style['header-1'] }}">
                                      
-                                             Hello! {{env('APP_NAME')}}
+                                             Hello! {{config('app.name')}}
                                             
                                         </h1>
 
                                         <!-- Intro -->
                                         
                                             <p style="{{ $style['paragraph'] }}">
-                                               {{$info->name }}  has just submitted a contact form on your website.  Below are the details of the message
+                                               {{$contact['name'] }}  has just submitted a contact form on your website.  Below are the details of the message
                                             </p>
 
-                                            <p>Name: {{$info->name}}</p>
-                                            <p>Email: {{$info->email}}</p>
-                                            <p>Subject: {{$info->subject}}</p>
+                                            <p>Name: {{$contact['name']}}</p>
+                                            <p>Email: {{$contact['email']}}</p>
+                                            <p>Subject: {{$contact['subject']}}</p>
                                             <p>Message:</p>
-                                            <p>{{$info->message}}</p>
+                                            <p>{{$contact['message']}}</p>
                                      
  
                                         <!-- Salutation -->
                                         <p style="{{ $style['paragraph'] }}">
-                                            Regards,<br>{{ env('COMPANY_NAME') }}
+                                            Regards,<br>{{ config('app.name') }}
                                         </p>
-
-        
                                     </td>
                                 </tr>
                             </table>
@@ -122,7 +120,7 @@ $style = [
                                     <td style="{{ $fontFamily }} {{ $style['email-footer_cell'] }}">
                                         <p style="{{ $style['paragraph-sub'] }}">
                                             &copy; {{ date('Y') }}
-                                            <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ env('COMPANY_NAME') }}</a>.
+                                            <a style="{{ $style['anchor'] }}" href="{{ url('/') }}" target="_blank">{{ config('app.name') }}</a>.
                                             All rights reserved.
                                         </p>
                                     </td>

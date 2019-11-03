@@ -2,12 +2,16 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
+use App\Notifications\SendContactFormEmail;
+use App\User;
+use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
-use App\Mail\ContactFormSubmitted;
-use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Notification;
 
 class ContactControllerTest extends TestCase
 {
+    use DatabaseMigrations;
+
     /** @test * */
     public function Index_returns_a_view()
     {
@@ -23,7 +27,9 @@ class ContactControllerTest extends TestCase
     /** @test * */
     public function Store_sends_an_email()
     {
-        Mail::fake();
+        Notification::fake();
+
+        factory(User::class)->create();
 
         $contact = [
             'name' => 'Joe Blow',
@@ -31,14 +37,15 @@ class ContactControllerTest extends TestCase
             'message' => 'fake message sent for testing',
         ];
 
-        Mail::assertNothingSent();
+        Notification::assertNothingSent();
 
         $response = $this->postJson(route('contact.store'), $contact);
 
-        $response->assertStatus(200);
+        $response->assertStatus(204);
 
-        Mail::assertSent(ContactFormSubmitted::class, function ($mail) use ($contact) {
-            return $mail->info['name'] === $contact['name'];
-        });
+        // Assert a notification was sent to the given users...
+        Notification::assertSentTo(
+            [User::find(1)], SendContactFormEmail::class
+        );
     }
 }

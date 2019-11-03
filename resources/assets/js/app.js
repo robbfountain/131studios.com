@@ -31,7 +31,6 @@ import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 library.add(faHome, faServer, faPaintBrush, faShareAlt, faSearch, faCheckCircle, faAngleDoubleRight);
 library.add(faChevronRight, faInfoCircle, faBars, faAngleRight, faMapPin, faPhoner, faEnveloper);
 library.add(faStar, faMobileAlt, falSearch, faPhone, faEnvelope, faSpinner, faDatabase, faShield, faWrench, faAnalytics, faGlobe, faChartNetwork, faServerL);
-
 library.add(faTwitterSquare, faFacebookSquare);
 
 /**

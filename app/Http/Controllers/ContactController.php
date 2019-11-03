@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactFormSubmitted;
-use Illuminate\Support\Facades\Mail;
+use App\User;
 use App\Http\Requests\ContactRequest;
+use App\Notifications\SendContactFormEmail;
 
 /**
  * Class ContactController
@@ -12,13 +12,14 @@ use App\Http\Requests\ContactRequest;
  */
 class ContactController extends Controller
 {
-
     /**
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index()
     {
-        return view('frontend.contact')->with(['title' => 'Contact Us | 131 Studios']);
+        return view('frontend.contact')->with([
+            'title' => 'Contact Us | 131 Studios',
+        ]);
     }
 
     /**
@@ -28,12 +29,10 @@ class ContactController extends Controller
      */
     public function store(ContactRequest $request)
     {
-        Mail::to('robb@131studios.com')->send(
-            new ContactFormSubmitted($request->validated())
+        User::find(1)->notify(
+            new SendContactFormEmail($request->validated())
         );
 
-        return response()->json([
-            'status' => 'ok',
-        ],200);
+        return response()->json([], 204);
     }
 }

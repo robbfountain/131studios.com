@@ -94,7 +94,7 @@ class ProcessWebmention extends ProcessWebhookJob
         }
 
         $blogIdSlug = Url::fromString($url)->getSegment(2);
-        
+
         return Blog::where('slug', $blogIdSlug)->first();
     }
 }

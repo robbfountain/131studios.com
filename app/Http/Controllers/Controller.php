@@ -10,4 +10,9 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
+
+    /**
+     * @var
+     */
+    protected $title = ['title' => 'Web Design, Social Media, Hosting & SEO | 131 Studios'];
 }

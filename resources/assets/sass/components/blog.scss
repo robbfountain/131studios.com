@@ -8,6 +8,10 @@
   @apply w-full;
 }
 
+.blog-container-short {
+  @apply px-4;
+}
+
 .blog-container,
 .blog-container-full {
   @apply mb-12;
@@ -33,7 +37,8 @@ code {
 }
 
 div.blog-container h2,
-div.blog-container-full h2 {
+div.blog-container-full h2,
+div.blog-container-short h2 {
   @apply .text-gray-700;
   @apply .text-2xl;
 }
@@ -50,10 +55,11 @@ div.blog-container-full h5 {
 }
 
 div.blog-container h6,
-div.blog-container-full h6 {
-  @apply .text-gray-600;
+div.blog-container-full h6,
+div.blog-container-short h6 {
+  @apply .text-gray-700;
   @apply .text-lg;
-  @apply .mb-4;
+  @apply .mb-4 .mt-2;
 }
 
 div.blog-container p,
@@ -64,12 +70,23 @@ div.blog-container-full p {
   @apply .text-gray-600;
 }
 
+div.blog-container-short p {
+  @apply .mb-3 .mt-1;
+  @apply .leading-normal;
+  @apply .text-base;
+  @apply .text-gray-600;
+}
+
 div.blog-container p a:link,
 div.blog-container p a:visited,
 div.blog-container-full p a:link,
 div.blog-container-full p a:visited,
+div.blog-container-short p a:link,
+div.blog-container-short p a:visited,
 div.blog-container-full a.more:visited,
-div.blog-container-full a.more:link {
+div.blog-container-full a.more:link,
+div.blog-container-short a.more:visited,
+div.blog-container-short a.more:link{
   @apply .text-blue-400;
   @apply .no-underline;
   @apply .border-b-4;

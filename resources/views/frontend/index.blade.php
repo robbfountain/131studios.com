@@ -138,10 +138,10 @@
 
         <section class="bg-white border-t lg:py-12 xs:py-4 xs:px-3 lg:px-0 " id="blogs">
             <div class="container mx-auto">
-                <h2 class="title font-medium text-blue-900 text-3xl mb-8">Latest From The Blog</h2>
+                <h2 class="title font-medium text-blue-900 text-3xl mb-12">Latest From The Blog</h2>
                 <div class="flex lg:flex-row xs:flex-col">
                     @foreach($blogs as $blog)
-                        @include('frontend.partials.blogitem',['blog' => $blog])
+                        @include('frontend.blog.blog-item-front',['blog' => $blog])
                     @endforeach
                 </div>
             </div>

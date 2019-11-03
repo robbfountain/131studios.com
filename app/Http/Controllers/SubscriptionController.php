@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Subscription;
-use Illuminate\Http\Request;
+use App\Http\Requests\SubscriptionRequest;
 
 class SubscriptionController extends Controller
 {
@@ -14,13 +14,11 @@ class SubscriptionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SubscriptionRequest $request)
     {
-        $attributes = $request->validate([
-            'email' => 'required|email',
-        ]);
-
-        Subscription::create($attributes);
+        Subscription::create(
+            $request->validated()
+        );
 
         return response()->json([], 204);
     }

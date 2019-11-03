@@ -3,10 +3,10 @@
 namespace App;
 
 use Backpack\CRUD\CrudTrait;
+use Spatie\Permission\Traits\HasRoles;
+use Illuminate\Notifications\Notifiable;
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Spatie\Permission\Traits\HasRoles;
 
 /**
  * Class User
@@ -15,6 +15,11 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     use Notifiable;
+
+    /**
+     *  Administrators
+     */
+    const ADMIN = ['robb@131studios.com'];
 
     /**
      * The attributes that are mass assignable.
@@ -42,6 +47,7 @@ class User extends Authenticatable
 
     /**
      * @param $query
+     *
      * @return mixed
      */
     public function scopeContact($query)
@@ -65,8 +71,11 @@ class User extends Authenticatable
         return Gravatar::get($this->email);
     }
 
+    /**
+     * @return bool
+     */
     public function isAdmin()
     {
-        return $this->email == 'robb@131studios.com';
+        return in_array($this->email, self::ADMIN);
     }
 }
