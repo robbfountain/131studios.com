@@ -16,7 +16,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Blog extends Model
 {
-
     /**
      * Tweet
      */
@@ -97,16 +96,6 @@ class Blog extends Model
     public function getRouteKeyName()
     {
         return 'slug';
-    }
-
-    /**
-     * @param $value
-     */
-    public function setProjectTitleAttribute($value)
-    {
-        $this->attributes['project_title'] = $this->category->name == self::PROJECT
-            ? $this->blogTitleToProjectTitle()
-            : null;
     }
 
     /**
@@ -223,7 +212,6 @@ class Blog extends Model
         ]);
     }
 
-
     /**
      * @return string
      */
@@ -273,6 +261,8 @@ class Blog extends Model
     }
 
     /**
+     * @param array $options
+     *
      * @return string
      */
     public function imageUrl($options = [])
@@ -330,8 +320,12 @@ class Blog extends Model
         return route('blog.show', $this->slug);
     }
 
+    /**
+     * @return string
+     */
     public function tweetUrl()
     {
         return 'https://twitter.com/131studios/status/' . $this->tweet_id;
     }
 }
+
