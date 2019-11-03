@@ -11,15 +11,6 @@ body {
   @apply .font-semibold;
 }
 
-.price {
-  @apply .text-gray-700;
-  @apply .font-semibold;
-}
-
-.price span {
-  @apply .line-through;
-}
-
 .fb {
   background: rgb(59, 89, 152);
 }
