@@ -10,14 +10,22 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 
+/**
+ * Class SendTweetForNewBlog
+ * @package App\Jobs
+ */
 class SendTweetForNewBlog implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
+
     /**
      * @var Blog
      */
     public $blog;
 
+    /**
+     * @var
+     */
     public $response;
 
     /**
