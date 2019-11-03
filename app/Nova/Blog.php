@@ -118,6 +118,9 @@ class Blog extends Resource
         ];
     }
 
+    /**
+     * @return array
+     */
     public function websiteFields()
     {
         return [
@@ -127,6 +130,9 @@ class Blog extends Resource
         ];
     }
 
+    /**
+     * @return array
+     */
     public function tweetFields()
     {
         return [

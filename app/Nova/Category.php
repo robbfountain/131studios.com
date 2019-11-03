@@ -29,7 +29,6 @@ class Category extends Resource
      * @var array
      */
     public static $search = [
-        'id',
         'name',
     ];
 
@@ -42,7 +41,6 @@ class Category extends Resource
     public function fields(Request $request)
     {
         return [
-            ID::make()->sortable(),
             Text::make('Name')->sortable(),
             Text::make('Slug'),
         ];
