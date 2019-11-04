@@ -38,7 +38,7 @@
                                 <a href="/">
                                     <img src="/images/131-logo-210x53.png" alt="131 Studios Logo">
                                 </a>
-                                <a href="#" onCLic="toggleMenu()">
+                                <a href="#" onCLick="toggleMenu()">
                                     <fa :icon="['far','bars']" size="lg" class="text-gray-700 lg:hidden xs:inline"></fa>
                                 </a>
                             </div>
@@ -69,7 +69,7 @@
                                        href="/additional-services">Additional Services</a>
                                 </dropdown>
 
-                                <a href="/projects"
+                                <a href="{{route('project.index')}}"
                                    class="nav-link">
                                     Our Work
                                 </a>
@@ -79,7 +79,7 @@
                                     Blog
                                 </a>
 
-                                <a href="/contact"
+                                <a href="{{route('contact.index')}}"
                                    class="nav-link">
                                     Contact
                                 </a>
