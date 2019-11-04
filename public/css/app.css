@@ -10827,8 +10827,18 @@ video {
   background-color: #edf2f7;
 }
 
-.blog-container {
-  width: 66.666667%;
+@media only screen and (max-width: 1024px) {
+  .blog-container {
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+}
+
+@media only screen and (min-width: 1025px) {
+  .blog-container {
+    width: 66.666667%;
+  }
 }
 
 .blog-container-full {

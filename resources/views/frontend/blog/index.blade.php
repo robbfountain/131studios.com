@@ -11,7 +11,7 @@
     @endbanner
 
     <section class="bg-white lg:py-10 xs:pb-4 px-2">
-        <div class="container mx-auto w-2/3">
+        <div class="container mx-auto xs:w-full lg:w-2/3">
             <div class="flex flex-col ">
                 @foreach($blogs as $blog)
                     @include('frontend.blog.blogitem')

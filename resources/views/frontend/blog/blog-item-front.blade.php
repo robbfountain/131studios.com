@@ -1,4 +1,4 @@
-<div class="w-1/4 mt-6 blog-container-short category category-{{$blog->category->name}} {{!$blog->is_published || $blog->published_at > now() ? 'bg-orange-100' : ''}}">
+<div class="lg:w-1/4 xs:w-full xs:mb-4 lg:mb-0 mt-6 blog-container-short category category-{{$blog->category->name}} {{!$blog->is_published || $blog->published_at > now() ? 'bg-orange-100' : ''}}">
     <h2>
         <a href="{{route('blog.show',$blog->slug)}}">{{$blog->title}}</a>
     </h2>
