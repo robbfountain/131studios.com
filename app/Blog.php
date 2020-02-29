@@ -3,11 +3,11 @@
 namespace App;
 
 use Carbon\Carbon;
-use Spatie\Url\Url;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use JD\Cloudder\Facades\Cloudder;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\Model;
+use Spatie\Url\Url;
 
 /**
  * Class Blog
@@ -285,7 +285,7 @@ class Blog extends Model
      */
     public function webmention()
     {
-        return $this->hasMany(WebMention::class)->orderBy('id','DESC');
+        return $this->hasMany(WebMention::class)->orderBy('id', 'DESC');
     }
 
     /**
@@ -325,12 +325,12 @@ class Blog extends Model
      */
     public function tweetUrl()
     {
-        return 'https://twitter.com/131studios/status/' . $this->tweet_id ?: $this->tweet;
+        return 'https://twitter.com/131studios/status/' . $this->tweetId();
     }
 
     public function tweetId()
     {
-        return $this->tweet_id ?: $this->tweet ?: null;
+        return !is_null($this->tweet_id) ? $this->tweet_id : is_null($this->tweet) ? $this->tweet : null;
     }
 }
 
