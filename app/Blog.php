@@ -330,7 +330,7 @@ class Blog extends Model
 
     public function tweetId()
     {
-        return !is_null($this->tweet_id) ? $this->tweet_id : is_null($this->tweet) ? $this->tweet : null;
+        return !is_null($this->tweet_id) ? $this->tweet_id : !is_null($this->tweet) ? $this->tweet : null;
     }
 }
 
