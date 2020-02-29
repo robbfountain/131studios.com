@@ -102,8 +102,8 @@ class Blog extends Resource
                 ->hideWhenUpdating()->sortable(),
 
             Select::make('State', 'is_published')->options([
-                'true' => 'Published',
-                'false' => 'Draft',
+                '1' => 'Published',
+                '0' => 'Draft',
             ])->onlyOnForms(),
 
             DateTime::make('Publish Date', 'published_at')
