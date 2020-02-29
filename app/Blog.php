@@ -325,7 +325,12 @@ class Blog extends Model
      */
     public function tweetUrl()
     {
-        return 'https://twitter.com/131studios/status/' . $this->tweet_id;
+        return 'https://twitter.com/131studios/status/' . $this->tweet_id ?: $this->tweet;
+    }
+
+    public function tweetId()
+    {
+        return $this->tweet_id ?: $this->tweet;
     }
 }
 
