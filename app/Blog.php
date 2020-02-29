@@ -330,7 +330,7 @@ class Blog extends Model
 
     public function tweetId()
     {
-        return $this->tweet_id ?: $this->tweet;
+        return $this->tweet_id ?: $this->tweet ?: null;
     }
 }
 

@@ -53,7 +53,7 @@
 
                     {!! $blog->toHtml() !!}
 
-                    @if($blog->tweet_id)
+                    @if($blog->tweetId())
                         <div class="mt-8 xsLw-full lg:w-1/2">
                             <h2>Comments</h2>
                             <div class="mt-8 p-6 text-lg border-l-4 border-blue-twitter bg-blue-200">
