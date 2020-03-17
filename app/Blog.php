@@ -218,7 +218,7 @@ class Blog extends Model
     public function preview()
     {
         return strip_tags(
-            substr($this->toHtml(), 0, 500)
+            Str::words($this->toHtml(), 50,'...')
         );
     }
 
@@ -229,7 +229,7 @@ class Blog extends Model
     {
         return (new \Parsedown)->text(
             $this->truncated
-                ? substr($this->body, 0, 500)
+                ? Str::words($this->body, 50,'...')
                 : $this->body
         );
     }
