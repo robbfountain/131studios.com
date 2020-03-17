@@ -4,9 +4,7 @@
 
     @include('nova::auth.partials.header')
 
-    <form
-            class="bg-white shadow rounded-lg p-8 max-w-login mx-auto"
-    >
+    <form class="bg-white shadow rounded-lg p-8 max-w-login mx-auto">
 
         @component('nova::auth.partials.heading')
             {{ __('Welcome Back!') }}
