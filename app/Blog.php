@@ -59,7 +59,7 @@ class Blog extends Model
      * @var array
      */
     protected $imageOptions = [
-        'fetch_format' => 'png',
+        'fetch_format' => 'auto',
         'width' => 'auto',
         'crop' => 'fit',
     ];
