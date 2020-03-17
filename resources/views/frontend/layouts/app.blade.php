@@ -182,7 +182,7 @@
         </div>
 
         <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyC-rbJPsS1QcKxd4NjpFteDQdRV8u-O17M"></script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key={{env('GOOGLE_API_KEY')}}"></script>
         <script src="https://player.vimeo.com/api/player.js"></script>
 
         <script type="text/javascript">
