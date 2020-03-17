@@ -142,7 +142,7 @@ return [
         'production' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['mail', 'studios'],
+                'queue' => ['studios'],
                 'balance' => 'simple',
                 'processes' => 10,
                 'tries' => 3,
@@ -162,7 +162,7 @@ return [
         'staging' => [
             'supervisor-1' => [
                 'connection' => 'redis',
-                'queue' => ['mail', 'studios'],
+                'queue' => ['studios'],
                 'balance' => 'simple',
                 'processes' => 3,
                 'tries' => 3,
