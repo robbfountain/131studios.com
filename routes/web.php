@@ -56,3 +56,5 @@ Route::webhooks('webhook/webmentions');
 
 // Oauth
 Route::get('/oauth/{provider}', 'Auth\OauthController@redirect')->name('nova.login.google');
+Route::get('/oauth/{provider}/callback', 'Auth\OauthController@callback');
+
