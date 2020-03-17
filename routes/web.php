@@ -52,3 +52,7 @@ Route::get('blog/{blog}', 'BlogController@show')
 
 // Webhooks
 Route::webhooks('webhook/webmentions');
+
+
+// Oauth
+Route::get('/oauth/{provider}', 'Auth\OauthController@redirect')->name('nova.login.google');

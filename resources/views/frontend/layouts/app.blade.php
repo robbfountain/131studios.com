@@ -188,7 +188,7 @@
         <script type="text/javascript">
             function toggleMenu() {
                 var element = document.getElementById('menu');
-                if (element.classList.contains('xs:hidden')) {
+                if (element.classList.contains('xs:hidden')) {t
                     element.classList.remove('xs:hidden');
                 } else {
                     element.classList.add('xs:hidden');

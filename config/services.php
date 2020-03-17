@@ -40,6 +40,12 @@ return [
         'consumer_secret' => env('TWITTER_CONSUMER_SECRET'),
         'access_token'    => env('TWITTER_ACCESS_TOKEN'),
         'access_secret'   => env('TWITTER_ACCESS_SECRET')
-    ]
+    ],
+
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_CLIENT_REDIRECT'),
+    ],
 
 ];
