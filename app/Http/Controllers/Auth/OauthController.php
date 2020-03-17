@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 
+/**
+ * Class OauthController
+ * @package App\Http\Controllers\Auth
+ */
 class OauthController extends Controller
 {
     /**
@@ -28,11 +32,12 @@ class OauthController extends Controller
         if ($this->isAnAllowedDomainUser($user)) {
             $this->findOrCreateUser($user);
 
-            return redirect('/home');
+            return redirect()->intended(Nova::path());
         }
 
-        return redirect('/login')
-            ->withErrors('You must be a member of the 131Studios Organization to Login');
+        return redirect()->route('nova.login')->withErrors([
+            'email' => 'You must be a member of the 131Studios Organization to Login',
+        ]);
     }
 
     /**
@@ -56,7 +61,15 @@ class OauthController extends Controller
             ['name' => $user->getName(), 'password' => bcrypt(Str::random(8)),]
         );
 
-        Auth::loginUsingId($authorizedUser->id);
+        $this->guard()->login($authorizedUser);
+    }
+
+    /**
+     * @return mixed
+     */
+    private function guard()
+    {
+        return Auth::guard(config('nova.guard'));
     }
 
     /**
