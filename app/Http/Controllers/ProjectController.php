@@ -28,6 +28,6 @@ class ProjectController extends Controller
     {
         return Blog::published()->whereHas('category', function ($query) {
             $query->project();
-        })->orderBy('created_at','DESC')->get();
+        })->orderBy('published_at','DESC')->get();
     }
 }
