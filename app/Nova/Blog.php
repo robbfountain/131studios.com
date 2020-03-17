@@ -93,7 +93,7 @@ class Blog extends Resource
                 ->hideWhenCreating()
                 ->hideFromIndex(),
 
-            Text::make('Image')->hideFromIndex()->help('Image Url'),
+            CloudinaryImage::make('Image'),
 
             Markdown::make('Body')->stacked(),
 
