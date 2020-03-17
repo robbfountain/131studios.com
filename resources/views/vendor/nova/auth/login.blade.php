@@ -18,11 +18,11 @@
                     {{ $errors->first('email') }}
                 @endif
             </p>
+        @else
+            <p class="m-4 text-center">
+                You can only sign in with a <span class="font-bold">131 Studios </span>account.
+            </p>
         @endif
-
-        <p class="m-4 text-center">
-            You can only sign in with a <span class="font-bold">131 Studios </span>account.
-        </p>
 
         <a class="w-full h- btn btn-default btn-primary hover:bg-primary-dark text-center"
            href="{{ route('nova.login.google','google') }}">
