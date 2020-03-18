@@ -75,7 +75,15 @@ class Blog extends Model
     /**
      * @var array
      */
-    protected $appends = ['minutes_to_read'];
+    protected $appends = [
+        'minutes_to_read',
+    ];
+
+
+    /**
+     * @var array
+     */
+    protected $with = ['category'];
 
     /**
      * Boot
@@ -92,6 +100,21 @@ class Blog extends Model
                 : null;
         });
     }
+
+    /**
+     *
+     */
+    public function toSearchableArray()
+    {
+        $array = $this->toArray();
+
+        $array['category'] = $this->category->name;
+        $array['minutes_to_read']  = $this->minutesToRead();
+        $array['link_to_full_post'] = $this->getLinkToFullPost();
+
+        return $array;
+    }
+
 
     /**
      * @return mixed
@@ -305,6 +328,11 @@ class Blog extends Model
     public function referenceUrl()
     {
         return Url::fromString($this->reference_url)->getHost();
+    }
+
+    public function getLinkToFullPostAttribute($value)
+    {
+        return $this->getLinkToFullPost();
     }
 
     /**

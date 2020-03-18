@@ -33,17 +33,20 @@
                         </ais-search-box>
 
                         <ais-hits>
-                            <article
-                                    slot="item"
-                                    slot-scope="{ item }"
-                                    class="hit"
-                            >
-                                <div class="product-desc-wrapper">
-                                    <div class="product-name">
-                                        <ais-highlight attribute="title" :hit="item"/>
-                                    </div>
+                            <div slot-scope="{ items }">
+                                <div v-for="blog in items"
+                                     :key="blog.objectID"
+                                     class="py-4">
+                                    <h1 class="text-2xl">
+                                        <a href="#">@{{blog.title}}</a>
+                                    </h1>
+
+                                    <h6>
+                                        @{{blog.category.name}}
+                                        - @{{blog.published_at}} @{{ blog.reference_url ? ' - ' . blog.reference_url : '' }}
+                                    </h6>
                                 </div>
-                            </article>
+                            </div>
                         </ais-hits>
                     </ais-instant-search>
                 </blog-search>

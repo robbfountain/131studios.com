@@ -13,20 +13,7 @@
     <section class="bg-white lg:py-10 xs:pb-4 px-2">
         <div class="container mx-auto flex">
             <div class="w-2/5 border-r pr-12">
-                <ul class="text-right">
-                    @foreach($categories as $category)
-                        <li class="py-1">
-                            <a class="text-xl text-gray-600  {{request()->get('c') == $category->slug ? 'font-bold text-gray-800' : 'font-semibold'}}" href="blog?c={{$category->slug}}">
-                                {{$category->name}}
-                            </a>
-                        </li>
-                    @endforeach
-                    <li class="py-2">
-                        <a class="text-xl text-gray-600" href="search">
-                            Search
-                        </a>
-                    </li>
-                </ul>
+                @include('frontend.blog.partials._categories')
             </div>
 
             <div class="flex flex-col pl-10  ">
