@@ -2,17 +2,17 @@
 
 namespace App\Nova;
 
-use Laravel\Nova\Panel;
-use Illuminate\Http\Request;
-use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Boolean;
 use App\Nova\Actions\PublishBlog;
+use App\Nova\Actions\UnpublishBlog;
+use App\Nova\Filters\BlogCategory;
+use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\DateTime;
 use Laravel\Nova\Fields\Markdown;
-use App\Nova\Filters\BlogCategory;
-use Laravel\Nova\Fields\BelongsTo;
-use App\Nova\Actions\UnpublishBlog;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Panel;
 use Silvanite\NovaFieldCloudinary\Fields\CloudinaryImage;
 
 /**
@@ -87,7 +87,8 @@ class Blog extends Resource
 
             BelongsTo::make('Category'),
 
-            Text::make('Title'),
+            Text::make('Title')
+                ->rules(['required','string']),
 
             Text::make('Slug')
                 ->hideWhenCreating()
@@ -95,16 +96,19 @@ class Blog extends Resource
 
             CloudinaryImage::make('Image'),
 
-            Markdown::make('Body')->stacked(),
+            Markdown::make('Body')
+                ->stacked()
+                ->rules(['required','string']),
 
             Boolean::make('Published', 'is_published')
                 ->hideWhenCreating()
-                ->hideWhenUpdating()->sortable(),
+                ->hideWhenUpdating()
+                ->sortable(),
 
             Select::make('State', 'is_published')->options([
                 '1' => 'Published',
                 '0' => 'Draft',
-            ])->onlyOnForms(),
+            ])->onlyOnForms()->rules(['required']),
 
             DateTime::make('Publish Date', 'published_at')
                 ->format('MMM D, YYYY')
