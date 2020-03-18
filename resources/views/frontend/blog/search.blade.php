@@ -48,6 +48,8 @@
                                 </div>
                             </div>
                         </ais-hits>
+
+                        <ais-pagination />
                     </ais-instant-search>
                 </blog-search>
             </div>
