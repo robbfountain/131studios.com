@@ -32,6 +32,10 @@
                             </div>
                         </ais-search-box>
 
+                        <div>
+                            <ais-stats />
+                        </div>
+
                         <ais-hits>
                             <div slot-scope="{ items }" class="mt-6">
                                 <div v-for="blog in items"
