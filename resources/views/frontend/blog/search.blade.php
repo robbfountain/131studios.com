@@ -33,7 +33,7 @@
                         </ais-search-box>
 
                         <ais-hits>
-                            <div slot-scope="{ items }">
+                            <div slot-scope="{ items }" class="mt-6">
                                 <div v-for="blog in items"
                                      :key="blog.objectID"
                                      class="py-4">
@@ -41,7 +41,7 @@
                                         <a :href="blog.link_to_full_post">@{{blog.title}}</a>
                                     </h1>
 
-                                    <h6>
+                                    <h6 class="text-base text-gray-500">
                                         @{{blog.category}}
                                         - @{{blog.published_for_humans}} @{{ blog.reference_url ? ' - ' . blog.link_to_full_post : '' }}
                                     </h6>
