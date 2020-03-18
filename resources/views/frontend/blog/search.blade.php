@@ -32,8 +32,13 @@
                             </div>
                         </ais-search-box>
 
-                        <div>
-                            <ais-stats />
+                        <div class="py-2">
+                            <ais-stats>
+                                <p slot-scope="{ hitsPerPage, nbPages, nbHits, page, processingTimeMS, query }">
+                                    Page {{ page + 1 }} of {{ nbPages }} with {{ hitsPerPage }} hits per page  -
+                                    {{ nbHits }} hits retrieved in {{ processingTimeMS }}ms for <q>{{ query }}</q>
+                                </p>
+                            </ais-stats>
                         </div>
 
                         <ais-hits>
