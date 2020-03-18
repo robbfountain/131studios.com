@@ -43,7 +43,7 @@
 
                                     <h6>
                                         @{{blog.category}}
-                                        - @{{dt(blog.published_at)}} @{{ blog.reference_url ? ' - ' . blog.link_to_full_post : '' }}
+                                        - @{{blog.published_for_humans)}} @{{ blog.reference_url ? ' - ' . blog.link_to_full_post : '' }}
                                     </h6>
                                 </div>
                             </div>

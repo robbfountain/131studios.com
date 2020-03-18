@@ -1,6 +1,6 @@
 <script>
     import algoliasearch from 'algoliasearch/lite';
-
+    import moment from 'moment';
     export default {
         data() {
             return {
@@ -10,11 +10,5 @@
                 ),
             };
         },
-
-        methods: {
-            dt(date){
-                return moment(data).format('MMM Do YYYY');
-            }
-        }
     }
 </script>

@@ -111,6 +111,7 @@ class Blog extends Model
         $array['category'] = $this->category->name;
         $array['minutes_to_read']  = $this->minutesToRead();
         $array['link_to_full_post'] = $this->getLinkToFullPost();
+        $array['published_for_humans'] = $this->published_at->format('M d, Y');
 
         return $array;
     }
