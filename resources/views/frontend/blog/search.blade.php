@@ -59,7 +59,10 @@
                             </div>
                         </ais-hits>
 
-                        <ais-pagination :show-previous="false" :show-next="false" />
+                        <ais-pagination
+                                :show-previous="false"
+                                :show-next="false"/>
+
                     </ais-instant-search>
                 </blog-search>
             </div>
