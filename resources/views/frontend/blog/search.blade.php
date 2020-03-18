@@ -38,7 +38,7 @@
                                      :key="blog.objectID"
                                      class="py-4">
                                     <h1 class="text-2xl">
-                                        <a href="#">@{{blog.title}}</a>
+                                        <a :href="blog.link_to_full_post">@{{blog.title}}</a>
                                     </h1>
 
                                     <h6>
