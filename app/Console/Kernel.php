@@ -32,7 +32,7 @@ class Kernel extends ConsoleKernel
     {
         $schedule->command('sitemap:generate')->weekly();
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
-        $schedule->command('studios:publish-blogs')->everyMinute();
+//        $schedule->command('studios:publish-blogs')->everyMinute();
         $schedule->command('studios:tweet-blog')->everyFiveMinutes();
     }
 
