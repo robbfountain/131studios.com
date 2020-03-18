@@ -10,5 +10,11 @@
                 ),
             };
         },
+
+        methods: {
+            dt(date){
+                return moment(data).format('MMM Do YYYY');
+            }
+        }
     }
 </script>
