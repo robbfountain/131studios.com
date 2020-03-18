@@ -34,9 +34,9 @@
 
                         <div class="py-2">
                             <ais-stats>
-                                <p slot-scope="{ hitsPerPage, nbPages, nbHits, page, processingTimeMS, query }">
-                                    Page {{ page + 1 }} of {{ nbPages }} with {{ hitsPerPage }} hits per page  -
-                                    {{ nbHits }} hits retrieved in {{ processingTimeMS }}ms for <q>{{ query }}</q>
+                                <p class="text-sm text-gray-600"
+                                   slot-scope="{ hitsPerPage, nbPages, page }">
+                                    Page @{{ page + 1 }} of @{{ nbPages }} with @{{ hitsPerPage }} results per page
                                 </p>
                             </ais-stats>
                         </div>
@@ -52,13 +52,14 @@
 
                                     <h6 class="text-base text-gray-500">
                                         @{{blog.category}}
-                                        - @{{blog.published_for_humans}} @{{ blog.reference_url ? ' - ' . blog.link_to_full_post : '' }}
+                                        - @{{blog.published_for_humans}} @{{ blog.reference_url ? ' - ' .
+                                        blog.link_to_full_post : '' }}
                                     </h6>
                                 </div>
                             </div>
                         </ais-hits>
 
-                        <ais-pagination />
+                        <ais-pagination/>
                     </ais-instant-search>
                 </blog-search>
             </div>
