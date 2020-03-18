@@ -9,6 +9,8 @@ require('./bootstrap');
  * Import the main vue components we need
  */
 import Vue from 'vue';
+import InstantSearch from 'vue-instantsearch';
+Vue.use(InstantSearch);
 
 /**
  * Import our form class
@@ -41,6 +43,7 @@ Vue.component('pinned', require('./components/pinned'));
 Vue.component('Contact', require('./components/Contact'));
 Vue.component('Dropdown',require('./components/Dropdown'));
 Vue.component('SubscriptionForm',require('./components/SubscriptionForm'));
+Vue.component('BlogSearch', require('./components/blog-search'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to

@@ -53,8 +53,14 @@ Route::get('blog/{blog}', 'BlogController@show')
 // Webhooks
 Route::webhooks('webhook/webmentions');
 
-
 // Oauth
-Route::get('/oauth/{provider}', 'Auth\OauthController@redirect')->name('nova.login.google');
+Route::get('/oauth/{provider}', 'Auth\OauthController@redirect')
+    ->name('nova.login.google');
 Route::get('/oauth/{provider}/callback', 'Auth\OauthController@callback');
+
+// Search
+Route::get('search','SearchController@index')
+    ->name('search.index');
+Route::post('search','SearchController@show')
+    ->name('search.show');
 

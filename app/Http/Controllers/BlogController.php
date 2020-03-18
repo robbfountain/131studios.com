@@ -3,9 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
+use App\Category;
+use Illuminate\Http\Request;
 
+/**
+ * Class BlogController
+ * @package App\Http\Controllers
+ */
 class BlogController extends Controller
 {
+    /**
+     * @var string
+     */
     protected $titleSuffix = ' - 131 Studios Blog';
 
     /**
@@ -13,12 +22,29 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $blogs = Blog::published();
+
+        if ($request->has('c')) {
+            $blogs->wherehas('category', function ($query) use ($request) {
+                $query->where('slug', $request->get('c'));
+            });
+        }
+
         return view('frontend.blog.index')->with([
             'title' => 'Our Blog | 131 Studios',
-            'blogs' => Blog::published()->latest('published_at')->get()
+            'blogs' => $blogs->latest('published_at')->get(),
+            'categories' => $this->getCategories(),
         ]);
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getCategories()
+    {
+        return Category::has('blog')->get();
     }
 
     /**

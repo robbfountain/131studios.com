@@ -15,9 +15,10 @@ class ProjectController extends Controller
      */
     public function index($slug = null)
     {
-        return view('frontend.projects')->with([
-            'projects' => $this->getProjects(),
-            'title' => 'Our Portfolio'
+        return view('frontend.blog.index')->with([
+            'blogs' => $this->getProjects(),
+            'title' => 'Our Portfolio',
+            'heading' => 'Our Portfolio',
         ]);
     }
 

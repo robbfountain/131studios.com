@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use JD\Cloudder\Facades\Cloudder;
+use Laravel\Scout\Searchable;
 use Spatie\Url\Url;
 
 /**
@@ -16,6 +17,8 @@ use Spatie\Url\Url;
  */
 class Blog extends Model
 {
+    use Searchable;
+
     /**
      * Tweet
      */
@@ -88,6 +91,14 @@ class Blog extends Model
                 ? $blog->blogTitleToProjectTitle()
                 : null;
         });
+    }
+
+    /**
+     * @return mixed
+     */
+    public function shouldBeSearchable()
+    {
+        return $this->isPublished();
     }
 
     /**
@@ -328,9 +339,20 @@ class Blog extends Model
         return 'https://twitter.com/131studios/status/' . $this->tweetId();
     }
 
+    /**
+     * @return mixed|null
+     */
     public function tweetId()
     {
         return !is_null($this->tweet_id) ? $this->tweet_id : (!is_null($this->tweet) ? $this->tweet : null);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function isPublished()
+    {
+        return $this->is_published;
     }
 }
 
