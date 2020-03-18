@@ -42,8 +42,7 @@
                                     </h1>
 
                                     <h6>
-                                        @{{blog.category.name}}
-                                        - @{{blog.published_at}} @{{ blog.reference_url ? ' - ' . blog.reference_url : '' }}
+                                        @{{blog.category}}
                                     </h6>
                                 </div>
                             </div>
