@@ -20,25 +20,34 @@
                 <h2 class="text-3xl font-semibold text-gray-800">{{$heading}}</h2>
                 <blog-search inline-template>
                     <ais-instant-search
-                            index-name="dev_blogs"
+                            index-name="{{env('SCOUT_PREFIX')}}blogs"
                             :search-client="searchClient">
-                        <ais-search-box
-                                class="border-gray-200 font-semibold text-lg text-gray-500 border-b-4 w-full p-2 bg-gray-100">
+
+                        <ais-search-box>
+                            <div slot-scope="{ currentRefinement, isSearchStalled, refine }">
+                                <input type="search"
+                                       v-model="currentRefinement"
+                                       @input="refine($event.currentTarget.value)"
+                                       class="border-gray-200 font-semibold text-lg text-gray-500 border-b-4 w-full p-2 bg-gray-100">
+                            </div>
                         </ais-search-box>
 
+                        <ais-hits>
+                            <article
+                                    slot="item"
+                                    slot-scope="{ item }"
+                                    class="hit"
+                            >
+                                <div class="product-desc-wrapper">
+                                    <div class="product-name">
+                                        <ais-highlight attribute="title" :hit="item"/>
+                                    </div>
+                                </div>
+                            </article>
+                        </ais-hits>
                     </ais-instant-search>
                 </blog-search>
             </div>
         </div>
     </section>
 @endsection
-<script>
-    export default {
-        components: {AisHits}
-    }
-</script>
-<script>
-    export default {
-        components: {AisHits}
-    }
-</script>

@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
-use App\Project;
+use App\Category;
 
 class ProjectController extends Controller
 {
-
     /**
      * @param null $slug
      *
-     * @return $this
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index($slug = null)
     {
@@ -19,6 +18,7 @@ class ProjectController extends Controller
             'blogs' => $this->getProjects(),
             'title' => 'Our Portfolio',
             'heading' => 'Our Portfolio',
+            'categories' => Category::has('blog')->get(),
         ]);
     }
 
@@ -29,6 +29,6 @@ class ProjectController extends Controller
     {
         return Blog::published()->whereHas('category', function ($query) {
             $query->project();
-        })->orderBy('published_at','DESC')->get();
+        })->orderBy('published_at', 'DESC')->get();
     }
 }
