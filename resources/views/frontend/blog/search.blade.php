@@ -61,7 +61,9 @@
 
                         <ais-pagination
                                 :show-previous="false"
-                                :show-next="false"/>
+                                :show-next="false" >
+
+                        </ais-pagination>
 
                     </ais-instant-search>
                 </blog-search>
