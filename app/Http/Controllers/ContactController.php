@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\User;
 use App\Http\Requests\ContactRequest;
 use App\Notifications\SendContactFormEmail;
+use Illuminate\Support\Facades\Notification;
 
 /**
  * Class ContactController
@@ -23,15 +23,14 @@ class ContactController extends Controller
     }
 
     /**
-     * @param ShortContactForm $request
+     * @param \App\Http\Requests\ContactRequest $request
      *
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(ContactRequest $request)
     {
-        User::find(1)->notify(
-            new SendContactFormEmail($request->validated())
-        );
+        Notification::route('mail', config('studios.contact_recipient'))
+            ->notify(new SendContactFormEmail($request->validated()));
 
         return response()->json([], 204);
     }

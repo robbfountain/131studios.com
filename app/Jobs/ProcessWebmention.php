@@ -16,7 +16,7 @@ use Spatie\WebhookClient\ProcessWebhookJob;
 class ProcessWebmention extends ProcessWebhookJob
 {
     /**
-     *
+     * Handle the Job
      */
     public function handle()
     {

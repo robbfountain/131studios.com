@@ -4,11 +4,11 @@ namespace App\Jobs;
 
 use App\Blog;
 use Illuminate\Bus\Queueable;
-use Thujohn\Twitter\Facades\Twitter;
-use Illuminate\Queue\SerializesModels;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Thujohn\Twitter\Facades\Twitter;
 
 /**
  * Class SendTweetForNewBlog
@@ -60,7 +60,6 @@ class SendTweetForNewBlog implements ShouldQueue
             'tweet_id' => $payload->id,
         ]);
     }
-
 
     /**
      * @return $this

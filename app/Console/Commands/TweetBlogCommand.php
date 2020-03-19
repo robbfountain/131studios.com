@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Blog;
-use Illuminate\Console\Command;
 use App\Jobs\SendTweetForNewBlog;
+use Illuminate\Console\Command;
 
 /**
  * Class TweetBlogCommand
@@ -25,7 +25,6 @@ class TweetBlogCommand extends Command
      * @var string
      */
     protected $description = 'Creates a new Tweet based on a newly published blog entry.';
-
 
     /**
      * @var
@@ -54,5 +53,4 @@ class TweetBlogCommand extends Command
             SendTweetForNewBlog::dispatch($blog);
         });
     }
-
 }
