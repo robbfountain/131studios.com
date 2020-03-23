@@ -64,7 +64,6 @@
                                 :show-next="false" >
 
                         </ais-pagination>
-
                     </ais-instant-search>
                 </blog-search>
             </div>
