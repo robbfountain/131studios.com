@@ -40,7 +40,7 @@
                     @endif
 
                     <h1>{{$blog->title}}</h1>
-                    <h6>Original - {{$blog->published_at->format('M j, Y')}} - {{$blog->minutesToRead()}} Minute
+                    <h6>{{$blog->category->name}} - {{$blog->published_at->format('M j, Y')}} - {{$blog->minutesToRead()}} Minute
                         Read</h6>
 
                     @if($blog->hasImage())
