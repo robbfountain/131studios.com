@@ -116,6 +116,14 @@ class Blog extends Model
         return $array;
     }
 
+    /**
+     * @return bool
+     */
+    public function isOriginal()
+    {
+        return $this->category->name === self::ORIGINAL;
+    }
+
 
     /**
      * @return mixed

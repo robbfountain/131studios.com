@@ -40,8 +40,9 @@
                     @endif
 
                     <h1>{{$blog->title}}</h1>
-                    <h6>{{$blog->category->name}} - {{$blog->published_at->format('M j, Y')}} - {{$blog->minutesToRead()}} Minute
-                        Read</h6>
+                    <h6>{{$blog->category->name}} - {{$blog->published_at->format('M j, Y')}} {{$blog->isOriginal() ? '-' .  $blog->minutesToRead() . ' Minute
+                        Read' : ''}}
+                    </h6>
 
                     @if($blog->hasImage())
                         <div class="py-2">
@@ -53,14 +54,14 @@
 
                     {!! $blog->toHtml() !!}
 
-                        @if($blog->tweet)
-                            <a href="{{$blog->tweet}}">Twitter</a>
-                        @endif
+                    @if($blog->tweet)
+                        <a href="{{$blog->tweet}}">Twitter</a>
+                    @endif
 
-                        @if($blog->reference_url)
-                            <a href="{{$blog->reference_url}}"
-                            class="underline text-lg text-gray-600 hover:text-gray-500">{{$blog->reference_url}}</a>
-                        @endif
+                    @if($blog->reference_url)
+                        <a href="{{$blog->reference_url}}"
+                           class="underline text-lg text-gray-600 hover:text-gray-500">{{$blog->reference_url}}</a>
+                    @endif
 
                     @if($blog->tweetId())
                         <div class="mt-8 xsLw-full lg:w-1/2">
