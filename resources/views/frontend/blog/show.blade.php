@@ -53,6 +53,14 @@
 
                     {!! $blog->toHtml() !!}
 
+                        @if($blog->tweet)
+                            <a href="{{$blog->tweet}}">Twitter</a>
+                        @endif
+
+                        @if($blog->reference_url)
+                            <a href="{{$blog->reference_url}}">{{$blog->reference_url}}</a>
+                        @endif
+
                     @if($blog->tweetId())
                         <div class="mt-8 xsLw-full lg:w-1/2">
                             <h2>Comments</h2>

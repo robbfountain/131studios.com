@@ -331,6 +331,11 @@ class Blog extends Model
         return Url::fromString($this->reference_url)->getHost();
     }
 
+    /**
+     * @param $value
+     *
+     * @return mixed|string
+     */
     public function getLinkToFullPostAttribute($value)
     {
         return $this->getLinkToFullPost();
