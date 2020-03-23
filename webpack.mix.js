@@ -16,10 +16,10 @@ require('laravel-mix-purgecss');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
-    .tailwind('./tailwind.config.js')
-    .purgeCss({
-        whitelistPatterns: [/language/, /hljs/],
-    });
+    .tailwind('./tailwind.config.js');
+    // .purgeCss({
+    //     whitelistPatterns: [/language/, /hljs/],
+    // });
 
 if (mix.inProduction()) {
     mix.version();
