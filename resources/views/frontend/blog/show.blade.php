@@ -58,7 +58,8 @@
                         @endif
 
                         @if($blog->reference_url)
-                            <a href="{{$blog->reference_url}}">{{$blog->reference_url}}</a>
+                            <a href="{{$blog->reference_url}}"
+                            class="text-lg text-gray-600 hover:text-gray-500">{{$blog->reference_url}}</a>
                         @endif
 
                     @if($blog->tweetId())
