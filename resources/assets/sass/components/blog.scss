@@ -173,22 +173,27 @@ a.twitter {
   color: #1DA1F2;
 }
 
+/* purgecss ignore */
 .category {
   @apply pt-8 border-t-8;
 }
 
+/* purgecss ignore */
 .category-Tweet {
   border-color: #00acee;
 }
 
+/* purgecss ignore */
 .category-Project {
   border-color: #0565A8;
 }
 
+/* purgecss ignore */
 .category-Link {
   @apply border-purple-300;
 }
 
+/* purgecss ignore */
 .category-Original {
   @apply border-yellow-300;
 }
