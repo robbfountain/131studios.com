@@ -63,6 +63,13 @@
                            class="underline text-lg text-gray-600 hover:text-gray-500">{{$blog->reference_url}}</a>
                     @endif
 
+                    @if($blog->url)
+                        <div>
+                            <a href="{{$project->url}}"
+                               class="text-gray-600 hover:text-gray-500 text-lg">Visit {{$project->blogTitleToProjectTitle()}}</a>
+                        </div>
+                    @endif
+
                     @if($blog->tweetId())
                         <div class="mt-8 xsLw-full lg:w-1/2">
                             <h2>Comments</h2>
