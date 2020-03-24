@@ -28,7 +28,8 @@
                                 {{$project->project_description }}
                             </div>
                             <div>
-
+                                <a href="{{$project->reference_url}}"
+                                class="text-gray-600 hover:text-gray-500 text-lg">Visit {{$project->blogTitleToProjectTitle()}}</a>
                             </div>
                         </div>
                     </div>
