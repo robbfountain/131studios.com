@@ -65,8 +65,8 @@
 
                     @if($blog->url)
                         <div>
-                            <a href="{{$project->url}}"
-                               class="text-gray-600 hover:text-gray-500 text-lg">Visit {{$project->blogTitleToProjectTitle()}}</a>
+                            <a href="{{$blog->url}}"
+                               class="text-gray-600 hover:text-gray-500 text-lg">Visit {{$blog->blogTitleToProjectTitle()}}</a>
                         </div>
                     @endif
 
