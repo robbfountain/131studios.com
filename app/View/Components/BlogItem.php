@@ -8,15 +8,17 @@ class BlogItem extends Component
 {
     public $blog;
 
+    public $type;
+
     /**
      * Create a new component instance.
      *
      * @param $blog
      */
-    public function __construct($blog)
+    public function __construct($blog, $type = 'col')
     {
-        //
         $this->blog = $blog;
+        $this->type = $type;
     }
 
     /**
@@ -27,5 +29,10 @@ class BlogItem extends Component
     public function render()
     {
         return view('components.blog-item');
+    }
+
+    public function isColumn()
+    {
+        return $this->type === 'col';
     }
 }

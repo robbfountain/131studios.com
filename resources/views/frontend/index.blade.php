@@ -147,7 +147,7 @@
             <h2 class="title font-medium text-blue-900 text-3xl mb-12">Latest From The Blog</h2>
             <div class="flex lg:flex-row xs:flex-col">
                 @foreach($blogs as $blog)
-                    @include('frontend.blog.blog-item-front',['blog' => $blog])
+                    <x-blog-item type="row" :blog="$blog"/>
                 @endforeach
             </div>
         </div>

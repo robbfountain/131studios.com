@@ -40,13 +40,13 @@
                     @endif
 
                     <h1>{{$blog->title}}</h1>
-                    <h6>{{$blog->category->name}} - {{$blog->published_at->format('M j, Y')}} {{$blog->isOriginal() ? '-' .  $blog->minutesToRead() . ' Minute
-                        Read' : ''}}
+
+                    <h6>{{$blog->category->name}} - {{$blog->published_at->format('M j, Y')}} {{$blog->isOriginal() ? '-' .  $blog->minutesToRead() . ' minute
+                        read' : ''}}
                     </h6>
 
                     @if($blog->hasImage())
                         <div class="py-2">
-
                             <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
                                  alt="{{$blog->title}}" class="blog-main-image">
                         </div>
@@ -79,29 +79,7 @@
                             </div>
                             <div class="mt-8">
                                 @foreach($blog->webmention as $mention)
-                                    <div class="mb-8">
-                                        <div class="flex items-center">
-                                            <div class="mr-4">
-                                                <div class="rounded-full h-8 w-8 overflow-hidden flex justify-center items-center">
-                                                    <img src="{{$mention->author_photo_url}}"
-                                                         alt="{{$mention->author_url}}">
-                                                </div>
-
-                                            </div>
-                                            <div class="flex-1 text-gray-700">
-                                                <a class="font-bold"
-                                                   href="{{$mention->author_url}}">{{$mention->author_name}}</a> <a
-                                                        href="{{$mention->interaction_url}}"
-                                                        class="underline">{{$mention->type}}</a>
-                                                on {{$mention->created_at->format('M d, Y')}}
-                                            </div>
-                                        </div>
-                                        @if($mention->text)
-                                            <div class="mt-2 ml-2 text-gray-700">
-                                                {{$mention->text}}
-                                            </div>
-                                        @endif
-                                    </div>
+                                   <x-web-mention :mention="$mention" />
                                 @endforeach
                             </div>
                         </div>

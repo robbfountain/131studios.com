@@ -33,6 +33,7 @@
                 <pinned class="bg-white shadow border-t-4 border-blue-400">
                     <header class="container mx-auto py-4">
                         <div class="flex xs:flex-col lg:flex-row justify-between items-center">
+
                             <!-- Logo -->
                             <div class="flex justify-between items-center xs:w-full lg:w-1/4 xs:px-3 xl:px-0">
                                 <a href="/">
@@ -58,15 +59,15 @@
                                        class="uppercase xs:mr-0 xs:pb-0 lg:mr-4 text-gray-700 lg:pb-6 border-b-4 border-transparent font-semibold tracking-wider hover:text-blue-400 hover:border-blue-400">
                                         Our Services
                                     </a>
-                                    <a class="dropdown-menu-link text-gray-700 hover:text-gray-300"
+                                    <a class="dropdown-menu-link text-gray-700 hover:text-gray-600"
                                        href="/website-design">Website Design</a>
-                                    <a class="dropdown-menu-link text-gray-700 hover:text-gray-300"
+                                    <a class="dropdown-menu-link text-gray-700 hover:text-gray-600"
                                        href="/hosting">Hosting</a>
-                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-300"
+                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-600"
                                        href="/social-media">Social Media</a>
-                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-300"
+                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-600"
                                        href="/seo">SEO</a>
-                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-300"
+                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-600"
                                        href="/additional-services">Additional Services</a>
                                 </dropdown>
 
@@ -144,7 +145,6 @@
                             <div class="flex items-center mt-3">
                                 <div class="rounded-full bg-blue-800 mr-3 h-10 w-10">
                                     <i class="fad fa-phone px-2 py-1 fa-lg" style="line-height: inherit;" ></i>
-
                                 </div>
                                 <div>
                                     <a href="tel:3019920962" class="text-lg font-semibold hover:text-blue-200">301.992.0962</a>

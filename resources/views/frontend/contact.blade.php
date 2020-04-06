@@ -9,6 +9,7 @@
             </h1>
         </div>
     </x-banner>
+
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
             <div class="flex lg:flex-row xs:flex-col pt-4">

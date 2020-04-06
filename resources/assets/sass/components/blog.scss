@@ -12,26 +12,26 @@
  }
 }
 
-.blog-container-full {
+.blog-container-column {
   @apply w-full;
 }
 
-.blog-container-short {
+.blog-container-row {
   @apply px-4;
 }
 
 .blog-container,
-.blog-container-full {
+.blog-container-column {
   @apply mb-12;
 }
 
 .blog-container img,
-.blog-container-full img {
+.blog-container-column img {
   @apply shadow-lg w-full rounded-lg;
 }
 
 div.blog-container h1,
-div.blog-container-full h1 {
+div.blog-container-column h1 {
   @apply .text-gray-800;
   @apply .text-4xl;
   @apply .leading-none;
@@ -45,8 +45,8 @@ code {
 }
 
 div.blog-container h2,
-div.blog-container-full h2,
-div.blog-container-short h2 {
+div.blog-container-column h2,
+div.blog-container-row h2 {
   @apply .text-gray-700;
   @apply .text-2xl;
 }
@@ -54,31 +54,31 @@ div.blog-container-short h2 {
 div.blog-container h3,
 div.blog-container h4,
 div.blog-container h5,
-div.blog-container-full h3,
-div.blog-container-full h4,
-div.blog-container-full h5 {
+div.blog-container-column h3,
+div.blog-container-column h4,
+div.blog-container-column h5 {
   @apply .text-gray-800 .font-semibold;
   @apply .text-xl;
   @apply .mt-6;
 }
 
 div.blog-container h6,
-div.blog-container-full h6,
-div.blog-container-short h6 {
+div.blog-container-column h6,
+div.blog-container-row h6 {
   @apply .text-gray-700;
   @apply .text-lg;
   @apply .mb-4 .mt-2;
 }
 
 div.blog-container p,
-div.blog-container-full p {
+div.blog-container-column p {
   @apply .mb-6 .mt-3;
   @apply .leading-normal;
   @apply .text-xl;
   @apply .text-gray-600;
 }
 
-div.blog-container-short p {
+div.blog-container-row p {
   @apply .mb-3 .mt-1;
   @apply .leading-normal;
   @apply .text-base;
@@ -87,14 +87,14 @@ div.blog-container-short p {
 
 div.blog-container p a:link,
 div.blog-container p a:visited,
-div.blog-container-full p a:link,
-div.blog-container-full p a:visited,
-div.blog-container-short p a:link,
-div.blog-container-short p a:visited,
-div.blog-container-full a.more:visited,
-div.blog-container-full a.more:link,
-div.blog-container-short a.more:visited,
-div.blog-container-short a.more:link{
+div.blog-container-column p a:link,
+div.blog-container-column p a:visited,
+div.blog-container-row p a:link,
+div.blog-container-row p a:visited,
+div.blog-container-column a.more:visited,
+div.blog-container-column a.more:link,
+div.blog-container-row a.more:visited,
+div.blog-container-row a.more:link{
   @apply .text-blue-400;
   @apply .no-underline;
   @apply .border-b-4;
@@ -102,31 +102,31 @@ div.blog-container-short a.more:link{
 }
 
 div.blog-container p a:hover,
-div.blog-container-full p a:hover {
+div.blog-container-column p a:hover {
   @apply .text-blue-600;
 }
 
 div.blog-container ol,
-div.blog-container-full ol {
+div.blog-container-column ol {
   counter-reset: ol-counter;
 }
 
 div.blog-container ol li,
 div.blog-container ul li,
-div.blog-container-full ol li,
-div.blog-container-full ul li {
+div.blog-container-column ol li,
+div.blog-container-column ul li {
   @apply .ml-2 .my-2;
   @apply .text-xl;
   @apply .text-gray-700;
 }
 
 div.blog-container ol li,
-div.blog-container-full ol li {
+div.blog-container-column ol li {
   counter-increment: ol-counter;
 }
 
 div.blog-container ol li:before,
-div.blog-container-full ol li:before {
+div.blog-container-column ol li:before {
   content: counter(ol-counter) ". ";
 }
 

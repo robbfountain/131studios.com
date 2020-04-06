@@ -13,13 +13,12 @@
     <section class="bg-white lg:py-10 xs:pb-4 px-2">
         <div class="container mx-auto flex">
             <div class="w-2/5 border-r pr-12">
-                @include('frontend.blog.partials._categories')
+                <x-categories :categories="$categories" />
             </div>
 
             <div class="flex flex-col pl-10  ">
                 @foreach($blogs as $blog)
                     <x-blog-item :blog="$blog" />
-{{--                    @include('frontend.blog.blogitem')--}}
                 @endforeach
             </div>
         </div>
