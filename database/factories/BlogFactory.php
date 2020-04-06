@@ -1,15 +1,18 @@
 <?php
 
 use App\Blog;
+use App\Category;
+use App\User;
+use DavidBadura\FakerMarkdownGenerator\FakerProvider;
 use Faker\Generator as Faker;
 
 $factory->define(Blog::class, function (Faker $faker) {
 
-    $faker->addProvider(new \DavidBadura\FakerMarkdownGenerator\FakerProvider($faker));
+    $faker->addProvider(new FakerProvider($faker));
 
     return [
-        'category_id' => factory('App\Category')->create()->id,
-        'user_id' => factory('App\User')->create()->id,
+        'category_id' => factory(Category::class)->create()->id,
+        'user_id' => factory(User::class)->create()->id,
         'title' => $faker->sentence,
         'image' => $faker->imageUrl(),
         'is_published' => true,
@@ -22,7 +25,7 @@ $factory->define(Blog::class, function (Faker $faker) {
 
 $factory->state(Blog::class, 'project', function (Faker $faker) {
     return [
-        'category_id' => \App\Category::where('name', 'Project')->first()->id
+        'category_id' => Category::where('name', 'Project')->first()->id
     ];
 });
 

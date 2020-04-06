@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9576422b4515379fe9d099f8aebeeea9",
+    "content-hash": "dda55ccab881dd9ec65a41c361ff598f",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -598,94 +598,6 @@
                 "sluggable"
             ],
             "time": "2020-03-05T02:01:38+00:00"
-        },
-        {
-            "name": "davidbadura/faker-markdown-generator",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DavidBadura/FakerMarkdownGenerator.git",
-                "reference": "acfeeedb3d3f2bd9092823818c65733360d71b5d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DavidBadura/FakerMarkdownGenerator/zipball/acfeeedb3d3f2bd9092823818c65733360d71b5d",
-                "reference": "acfeeedb3d3f2bd9092823818c65733360d71b5d",
-                "shasum": ""
-            },
-            "require": {
-                "davidbadura/markdown-builder": "^1.0",
-                "fzaninotto/faker": "^1.6",
-                "php": ">=5.4.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "DavidBadura\\FakerMarkdownGenerator\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "DavidBadura",
-                    "email": "d.badura@gmx.de"
-                }
-            ],
-            "description": "Faker Markdown Generator",
-            "keywords": [
-                "faker",
-                "generator",
-                "markdown"
-            ],
-            "time": "2016-06-28T18:33:06+00:00"
-        },
-        {
-            "name": "davidbadura/markdown-builder",
-            "version": "1.0.4",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/DavidBadura/markdown-builder.git",
-                "reference": "7e5a9106522d513dcd138afad714da1188556a0d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/DavidBadura/markdown-builder/zipball/7e5a9106522d513dcd138afad714da1188556a0d",
-                "reference": "7e5a9106522d513dcd138afad714da1188556a0d",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "DavidBadura\\MarkdownBuilder\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "DavidBadura",
-                    "email": "d.badura@gmx.de"
-                }
-            ],
-            "description": "Markdown Builder",
-            "keywords": [
-                "builder",
-                "markdown",
-                "render",
-                "writer"
-            ],
-            "time": "2018-05-21T09:17:46+00:00"
         },
         {
             "name": "davidpiesse/nova-audio",
@@ -1549,56 +1461,6 @@
                 "whoops"
             ],
             "time": "2020-01-15T10:00:00+00:00"
-        },
-        {
-            "name": "fzaninotto/faker",
-            "version": "v1.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/fzaninotto/Faker.git",
-                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
-                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^5.3.3 || ^7.0"
-            },
-            "require-dev": {
-                "ext-intl": "*",
-                "phpunit/phpunit": "^4.8.35 || ^5.7",
-                "squizlabs/php_codesniffer": "^2.9.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.9-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Faker\\": "src/Faker/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "François Zaninotto"
-                }
-            ],
-            "description": "Faker is a PHP library that generates fake data for you.",
-            "keywords": [
-                "data",
-                "faker",
-                "fixtures"
-            ],
-            "time": "2019-12-12T13:22:17+00:00"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -6726,45 +6588,29 @@
             "time": "2020-02-25T20:42:23+00:00"
         },
         {
-            "name": "beyondcode/laravel-dump-server",
-            "version": "1.4.0",
+            "name": "davidbadura/faker-markdown-generator",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/beyondcode/laravel-dump-server.git",
-                "reference": "1f1d18a2e43f96fd67c9f0269c53f8c3814867d9"
+                "url": "https://github.com/DavidBadura/FakerMarkdownGenerator.git",
+                "reference": "acfeeedb3d3f2bd9092823818c65733360d71b5d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beyondcode/laravel-dump-server/zipball/1f1d18a2e43f96fd67c9f0269c53f8c3814867d9",
-                "reference": "1f1d18a2e43f96fd67c9f0269c53f8c3814867d9",
+                "url": "https://api.github.com/repos/DavidBadura/FakerMarkdownGenerator/zipball/acfeeedb3d3f2bd9092823818c65733360d71b5d",
+                "reference": "acfeeedb3d3f2bd9092823818c65733360d71b5d",
                 "shasum": ""
             },
             "require": {
-                "illuminate/console": "5.6.*|5.7.*|5.8.*|^6.0|^7.0",
-                "illuminate/http": "5.6.*|5.7.*|5.8.*|^6.0|^7.0",
-                "illuminate/support": "5.6.*|5.7.*|5.8.*|^6.0|^7.0",
-                "php": "^7.1",
-                "symfony/var-dumper": "^5.0"
-            },
-            "require-dev": {
-                "larapack/dd": "^1.0",
-                "phpunit/phpunit": "^7.0"
+                "davidbadura/markdown-builder": "^1.0",
+                "fzaninotto/faker": "^1.6",
+                "php": ">=5.4.0"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "BeyondCode\\DumpServer\\DumpServerServiceProvider"
-                    ]
-                }
-            },
             "autoload": {
                 "psr-4": {
-                    "BeyondCode\\DumpServer\\": "src"
-                },
-                "files": [
-                    "helpers.php"
-                ]
+                    "DavidBadura\\FakerMarkdownGenerator\\": "src/"
+                }
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -6772,19 +6618,62 @@
             ],
             "authors": [
                 {
-                    "name": "Marcel Pociot",
-                    "email": "marcel@beyondco.de",
-                    "homepage": "https://beyondco.de",
-                    "role": "Developer"
+                    "name": "DavidBadura",
+                    "email": "d.badura@gmx.de"
                 }
             ],
-            "description": "Symfony Var-Dump Server for Laravel",
-            "homepage": "https://github.com/beyondcode/laravel-dump-server",
+            "description": "Faker Markdown Generator",
             "keywords": [
-                "beyondcode",
-                "laravel-dump-server"
+                "faker",
+                "generator",
+                "markdown"
             ],
-            "time": "2020-03-04T15:23:26+00:00"
+            "time": "2016-06-28T18:33:06+00:00"
+        },
+        {
+            "name": "davidbadura/markdown-builder",
+            "version": "1.0.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/DavidBadura/markdown-builder.git",
+                "reference": "7e5a9106522d513dcd138afad714da1188556a0d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/DavidBadura/markdown-builder/zipball/7e5a9106522d513dcd138afad714da1188556a0d",
+                "reference": "7e5a9106522d513dcd138afad714da1188556a0d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "DavidBadura\\MarkdownBuilder\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "DavidBadura",
+                    "email": "d.badura@gmx.de"
+                }
+            ],
+            "description": "Markdown Builder",
+            "keywords": [
+                "builder",
+                "markdown",
+                "render",
+                "writer"
+            ],
+            "time": "2018-05-21T09:17:46+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -6876,6 +6765,56 @@
             "time": "2019-10-21T16:45:58+00:00"
         },
         {
+            "name": "fzaninotto/faker",
+            "version": "v1.9.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "reference": "fc10d778e4b84d5bd315dad194661e091d307c6f",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.3.3 || ^7.0"
+            },
+            "require-dev": {
+                "ext-intl": "*",
+                "phpunit/phpunit": "^4.8.35 || ^5.7",
+                "squizlabs/php_codesniffer": "^2.9.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2019-12-12T13:22:17+00:00"
+        },
+        {
             "name": "hamcrest/hamcrest-php",
             "version": "v1.2.2",
             "source": {
@@ -6960,6 +6899,7 @@
                     "email": "jakub.onderka@gmail.com"
                 }
             ],
+            "abandoned": "php-parallel-lint/php-console-color",
             "time": "2018-09-29T17:23:10+00:00"
         },
         {
@@ -7006,6 +6946,7 @@
                 }
             ],
             "description": "Highlight PHP code in terminal",
+            "abandoned": "php-parallel-lint/php-console-highlighter",
             "time": "2018-09-29T18:48:56+00:00"
         },
         {

@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Contracts\View\Factory;
-use Illuminate\Http\Request;
 use Illuminate\View\View;
 
 class SocialMediaController extends Controller
@@ -14,7 +13,7 @@ class SocialMediaController extends Controller
     public function index()
     {
         return view('frontend.social-media')->with([
-            'title' => 'Social Media | 131 Studios'
+            'title' => 'Social Media | 131 Studios',
         ]);
     }
 }

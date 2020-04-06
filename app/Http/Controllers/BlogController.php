@@ -52,7 +52,7 @@ class BlogController extends Controller
      *
      * @param Blog $blog
      *
-     * @return view
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show(Blog $blog)
     {

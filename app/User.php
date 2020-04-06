@@ -2,8 +2,6 @@
 
 namespace App;
 
-use Backpack\CRUD\CrudTrait;
-use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -44,16 +42,6 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
-
-    /**
-     * @param $query
-     *
-     * @return mixed
-     */
-    public function scopeContact($query)
-    {
-        return $query->role('Contact Recipient');
-    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
