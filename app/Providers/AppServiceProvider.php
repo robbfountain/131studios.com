@@ -14,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Blade::component('frontend.partials.banner', 'banner');
+        //
     }
 
     /**

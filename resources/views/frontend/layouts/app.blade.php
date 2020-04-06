@@ -49,10 +49,9 @@
                             <nav class="flex xs:flex-col xs:min-w-full lg:flex-row lg:min-w-0 xs:hidden lg:inline xs:pt-3 lg:pt-0 xs:pl-3 lg:px-0"
                                  id="menu">
 
-                                <a href="/"
-                                   class="uppercase xs:mr-0 xs:pb-0 lg:mr-4 text-gray-700 lg:pb-6 border-b-4 border-transparent font-semibold tracking-wider hover:text-blue-400 hover:border-blue-400">
+                                <x-nav :to="route('index')">
                                     Home
-                                </a>
+                                </x-nav>
 
                                 <dropdown width="200px">
                                     <a slot="trigger" href="#"
@@ -71,20 +70,17 @@
                                        href="/additional-services">Additional Services</a>
                                 </dropdown>
 
-                                <a href="{{route('project.index')}}"
-                                   class="uppercase xs:mr-0 xs:pb-0 lg:mr-4 text-gray-700 lg:pb-6 border-b-4 border-transparent font-semibold tracking-wider hover:text-blue-400 hover:border-blue-400">
+                                <x-nav :to="route('project.index')">
                                     Our Work
-                                </a>
+                                </x-nav>
 
-                                <a href="{{route('blog.index')}}"
-                                   class="uppercase xs:mr-0 xs:pb-0 lg:mr-4 text-gray-700 lg:pb-6 border-b-4 border-transparent font-semibold tracking-wider hover:text-blue-400 hover:border-blue-400">
+                                <x-nav :to="route('blog.index')">
                                     Blog
-                                </a>
+                                </x-nav>
 
-                                <a href="{{route('contact.index')}}"
-                                   class="uppercase xs:mr-0 xs:pb-0 lg:mr-4 text-gray-700 lg:pb-6 border-b-4 border-transparent font-semibold tracking-wider hover:text-blue-400 hover:border-blue-400">
+                                <x-nav :to="route('contact.index')">
                                     Contact
-                                </a>
+                                </x-nav>
                             </nav>
                         </div>
                     </header>
@@ -94,7 +90,6 @@
 
                 <footer>
                     <div class="container mx-auto flex xs:flex-col-reverse lg:flex-row justify-between xs:w-full lg:w-2/3">
-
                         <div class="xs:w-full lg:w-1/3 xs:mb-6 lg:mb-0">
                             <img src="/images/131-logo-210x53.png" alt="131 Studios Logo">
                             <div class="mt-8">
@@ -213,7 +208,6 @@
             if (document.getElementById("map_canvas")) {
                 google.maps.event.addDomListener(window, 'load', initialize);
             }
-
         </script>
     </body>
 </html>

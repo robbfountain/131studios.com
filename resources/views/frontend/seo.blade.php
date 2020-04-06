@@ -1,7 +1,7 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-   @banner
+   <x-banner>
 
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
@@ -9,13 +9,10 @@
                SEO
             </h1>
         </div>
-    @endbanner
+    </x-banner>
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-
-
-
             <div class="flex lg:flex-row xs:flex-col-reverse">
                 <div class="xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0">
                     <div class="text-lg text-gray-600 pr-6 leading-normal">

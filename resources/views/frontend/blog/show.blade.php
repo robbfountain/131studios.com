@@ -14,14 +14,14 @@
 @endsection
 
 @section('content')
-    @banner¬
-    <div class="container mx-auto text-center">
-        <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
-            style="background-color: rgba(0,0,0,0.5)">
-            Our Blog
-        </h1>
-    </div>
-    @endbanner
+    <x-banner>
+        <div class="container mx-auto text-center">
+            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
+                style="background-color: rgba(0,0,0,0.5)">
+                Our Blog
+            </h1>
+        </div>
+    </x-banner>
 
     <section class="">
         <div class="mb-6 bg-gray-200 text-sm flex items-center p-2 rounded">
