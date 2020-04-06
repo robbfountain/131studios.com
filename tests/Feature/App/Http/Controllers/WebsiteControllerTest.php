@@ -76,7 +76,7 @@ class WebsiteControllerTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertViewIs('frontend.projects');
+        $response->assertViewIs('frontend.blog.index');
     }
 
     /** @test * */

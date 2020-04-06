@@ -10,7 +10,7 @@ use Tests\TestCase;
 
 class PublishBlogCommandTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseMigrations;
 
     public $unpublished;
 
@@ -18,7 +18,7 @@ class PublishBlogCommandTest extends TestCase
 
     public function setUp(): void
     {
-//        parent::setUp();
+        parent::setUp();
 
         $this->unpublished = factory(Blog::class)->state('unpublished')->create();
         $this->future = factory(Blog::class)->state('future')->create();

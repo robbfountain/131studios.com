@@ -52,14 +52,6 @@ class User extends Authenticatable
     }
 
     /**
-     * @return mixed
-     */
-    public function avatar()
-    {
-        return Gravatar::get($this->email);
-    }
-
-    /**
      * @return bool
      */
     public function isAdmin()

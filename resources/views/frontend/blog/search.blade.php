@@ -13,7 +13,7 @@
     <section class="bg-white lg:py-10 xs:pb-4 px-2">
         <div class="container mx-auto flex">
             <div class="w-1/5 border-r px-6">
-                @include('frontend.blog.partials._categories')
+               <x-categories :categories="$categories" />
             </div>
 
             <div class="flex flex-col pl-10 flex-1">

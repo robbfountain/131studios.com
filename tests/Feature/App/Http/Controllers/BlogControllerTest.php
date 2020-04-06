@@ -55,6 +55,5 @@ class BlogControllerTest extends TestCase
        $response = $this->get(route('blog.show', $blog->slug));
 
        $response->assertStatus(404);
-
    }
 }

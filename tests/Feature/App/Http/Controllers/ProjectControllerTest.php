@@ -17,8 +17,6 @@ class ProjectControllerTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertViewIs('frontend.projects');
-
-        $response->assertViewHas('projects');
+        $response->assertViewIs('frontend.blog.index');
     }
 }

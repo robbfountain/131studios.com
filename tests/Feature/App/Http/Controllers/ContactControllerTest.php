@@ -5,6 +5,7 @@ namespace Tests\Feature\App\Http\Controllers;
 use App\Notifications\SendContactFormEmail;
 use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Notifications\AnonymousNotifiable;
 use Tests\TestCase;
 use Illuminate\Support\Facades\Notification;
 
@@ -27,6 +28,8 @@ class ContactControllerTest extends TestCase
     /** @test * */
     public function Store_sends_an_email()
     {
+        $this->withExceptionHandling();
+
         Notification::fake();
 
         factory(User::class)->create();
@@ -45,7 +48,7 @@ class ContactControllerTest extends TestCase
 
         // Assert a notification was sent to the given users...
         Notification::assertSentTo(
-            [User::find(1)], SendContactFormEmail::class
+            new AnonymousNotifiable, SendContactFormEmail::class
         );
     }
 }
