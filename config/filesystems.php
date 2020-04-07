@@ -56,27 +56,16 @@ return [
 
         's3' => [
             'driver' => 's3',
-            'key' => 'your-key',
-            'secret' => 'your-secret',
-            'region' => 'your-region',
-            'bucket' => 'your-bucket',
+            'key' => env('AWS_ACCESS_KEY_ID'),
+            'secret' => env('AWS_SECRET_ACCESS_KEY'),
+            'region' => env('AWS_DEFAULT_REGION'),
+            'bucket' => env('AWS_BUCKET'),
+            'endpoint' => env('AWS_URL'),
         ],
 
         'uploads' => [
             'driver' => 'local',
             'root' => public_path('uploads'),
-        ],
-
-        // used for Backpack/BackupManager
-        'backups' => [
-            'driver' => 'local',
-            'root'   => storage_path('backups'), // that's where your backups are stored by default: storage/backups
-        ],
-
-        // used for Backpack/LogManager
-        'storage' => [
-            'driver' => 'local',
-            'root'   => storage_path(),
         ],
 
         'cloudinary' => [

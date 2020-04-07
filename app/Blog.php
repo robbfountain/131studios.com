@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use JD\Cloudder\Facades\Cloudder;
 use Laravel\Scout\Searchable;
+use OneThirtyOne\Mime\Message;
 use Spatie\Url\Url;
 
 /**
@@ -83,6 +84,16 @@ class Blog extends Model
     protected $with = ['category'];
 
     /**
+     * @param \OneThirtyOne\Mime\Message $message
+     *
+     * @return mixed
+     */
+    public static function hasCurrentBlogPost(Message $message)
+    {
+        return self::where('title', $message->subject)->exists();
+    }
+
+    /**
      * Boot.
      */
     protected static function boot()
@@ -114,6 +125,38 @@ class Blog extends Model
     }
 
     /**
+     * @return float
+     */
+    public function minutesToRead()
+    {
+        return ceil(str_word_count($this->body) / 300);
+    }
+
+    /**
+     * @return mixed|string
+     */
+    public function getLinkToFullPost()
+    {
+        if ($this->category->name == self::TWEET) {
+            return $this->tweet;
+        }
+
+        if ($this->category->name == self::LINK) {
+            return $this->reference_url;
+        }
+
+        return $this->shareUrl();
+    }
+
+    /**
+     * @return string
+     */
+    public function shareUrl()
+    {
+        return route('blog.show', $this->slug);
+    }
+
+    /**
      * @return bool
      */
     public function isOriginal()
@@ -127,6 +170,14 @@ class Blog extends Model
     public function shouldBeSearchable()
     {
         return $this->isPublished();
+    }
+
+    /**
+     * @return mixed
+     */
+    public function isPublished()
+    {
+        return $this->is_published;
     }
 
     /**
@@ -220,7 +271,7 @@ class Blog extends Model
      */
     public function setPublishedAtAttribute($value)
     {
-        $this->attributes['published_at'] = ! is_null($value) ? $value : now();
+        $this->attributes['published_at'] = !is_null($value) ? $value : now();
     }
 
     /**
@@ -292,14 +343,6 @@ class Blog extends Model
     }
 
     /**
-     * @return float
-     */
-    public function minutesToRead()
-    {
-        return ceil(str_word_count($this->body) / 300);
-    }
-
-    /**
      * @param array $options
      *
      * @return string
@@ -316,7 +359,7 @@ class Blog extends Model
      */
     public function hasImage()
     {
-        return ! is_null($this->image);
+        return !is_null($this->image);
     }
 
     /**
@@ -346,35 +389,11 @@ class Blog extends Model
     }
 
     /**
-     * @return mixed|string
-     */
-    public function getLinkToFullPost()
-    {
-        if ($this->category->name == self::TWEET) {
-            return $this->tweet;
-        }
-
-        if ($this->category->name == self::LINK) {
-            return $this->reference_url;
-        }
-
-        return $this->shareUrl();
-    }
-
-    /**
-     * @return string
-     */
-    public function shareUrl()
-    {
-        return route('blog.show', $this->slug);
-    }
-
-    /**
      * @return string
      */
     public function tweetUrl()
     {
-        return 'https://twitter.com/131studios/status/'.$this->tweetId();
+        return 'https://twitter.com/131studios/status/' . $this->tweetId();
     }
 
     /**
@@ -382,14 +401,6 @@ class Blog extends Model
      */
     public function tweetId()
     {
-        return ! is_null($this->tweet_id) ? $this->tweet_id : (! is_null($this->tweet) ? $this->tweet : null);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function isPublished()
-    {
-        return $this->is_published;
+        return !is_null($this->tweet_id) ? $this->tweet_id : (!is_null($this->tweet) ? $this->tweet : null);
     }
 }

@@ -18,6 +18,7 @@ return [
     'except' => [
         'horizon*',
         'telescope*',
+        'admin*',
     ],
 
     /*

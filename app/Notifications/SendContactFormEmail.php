@@ -11,6 +11,9 @@ class SendContactFormEmail extends Notification implements ShouldQueue
 {
     use Queueable;
 
+    /**
+     * @var
+     */
     public $contact;
 
     /**
