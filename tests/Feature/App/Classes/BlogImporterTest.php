@@ -37,7 +37,6 @@ class BlogImporterTest extends TestCase
         $blog = BlogImporter::messageToBlogPost($this->message);
 
         $this->assertInstanceOf(BlogImporter::class, $blog);
-
     }
 
     /** @test */
@@ -91,8 +90,7 @@ class BlogImporterTest extends TestCase
 
         $blog = BlogImporter::messageToBlogPost($this->message)->toArray();
 
-        $this->assertSame('https://twitter.com/status/123456',$blog['tweet']);
-
+        $this->assertSame('https://twitter.com/status/123456', $blog['tweet']);
     }
 
     /** @test */
@@ -102,8 +100,7 @@ class BlogImporterTest extends TestCase
 
         $blog = BlogImporter::messageToBlogPost($this->message)->toArray();
 
-        $this->assertSame('https://131studios.com',$blog['reference_url']);
-
+        $this->assertSame('https://131studios.com', $blog['reference_url']);
     }
 
     /** @test */
@@ -113,7 +110,6 @@ class BlogImporterTest extends TestCase
 
         $blog = BlogImporter::messageToBlogPost($this->message)->toArray();
 
-        $this->assertSame('This is a test body',$blog['body']);
-
+        $this->assertSame('This is a test body', $blog['body']);
     }
 }

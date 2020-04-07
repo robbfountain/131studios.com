@@ -271,7 +271,7 @@ class Blog extends Model
      */
     public function setPublishedAtAttribute($value)
     {
-        $this->attributes['published_at'] = !is_null($value) ? $value : now();
+        $this->attributes['published_at'] = ! is_null($value) ? $value : now();
     }
 
     /**
@@ -359,7 +359,7 @@ class Blog extends Model
      */
     public function hasImage()
     {
-        return !is_null($this->image);
+        return ! is_null($this->image);
     }
 
     /**
@@ -393,7 +393,7 @@ class Blog extends Model
      */
     public function tweetUrl()
     {
-        return 'https://twitter.com/131studios/status/' . $this->tweetId();
+        return 'https://twitter.com/131studios/status/'.$this->tweetId();
     }
 
     /**
@@ -401,6 +401,6 @@ class Blog extends Model
      */
     public function tweetId()
     {
-        return !is_null($this->tweet_id) ? $this->tweet_id : (!is_null($this->tweet) ? $this->tweet : null);
+        return ! is_null($this->tweet_id) ? $this->tweet_id : (! is_null($this->tweet) ? $this->tweet : null);
     }
 }
