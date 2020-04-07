@@ -3,7 +3,7 @@
 namespace App\Listeners;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
+use OneThirtyOne\Mime\Facades\MessageCollector;
 
 class FetchS3Messages implements ShouldQueue
 {
@@ -20,11 +20,14 @@ class FetchS3Messages implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param  object  $event
+     * @param object $event
+     *
      * @return void
      */
     public function handle($event)
     {
+        MessageCollector::fromBucket()->each(function ($message) {
 
+        });
     }
 }
