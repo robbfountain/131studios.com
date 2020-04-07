@@ -10,12 +10,11 @@ abstract class TestCase extends BaseTestCase
 {
     use CreatesApplication;
 
-    protected function setUp() :void
+    protected function setUp(): void
     {
         parent::setUp();
         DB::statement('PRAGMA foreign_keys=on;');
     }
-
 
     protected function signIn($user = null)
     {

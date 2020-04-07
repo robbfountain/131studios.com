@@ -10,8 +10,7 @@ use Laravel\Nova\Nova;
 use Laravel\Socialite\Facades\Socialite;
 
 /**
- * Class OauthController
- * @package App\Http\Controllers\Auth
+ * Class OauthController.
  */
 class OauthController extends Controller
 {
@@ -54,13 +53,12 @@ class OauthController extends Controller
 
     /**
      * @param $user
-     *
      */
     private function findOrCreateUser($user)
     {
         $authorizedUser = User::firstOrCreate(
             ['email' => $user->getEmail()],
-            ['name' => $user->getName(), 'password' => bcrypt(Str::random(8)),]
+            ['name' => $user->getName(), 'password' => bcrypt(Str::random(8))]
         );
 
         $this->guard()->login($authorizedUser);

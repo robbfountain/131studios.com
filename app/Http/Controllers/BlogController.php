@@ -7,8 +7,7 @@ use App\Category;
 use Illuminate\Http\Request;
 
 /**
- * Class BlogController
- * @package App\Http\Controllers
+ * Class BlogController.
  */
 class BlogController extends Controller
 {
@@ -59,7 +58,7 @@ class BlogController extends Controller
         abort_unless($blog->is_published, 404);
 
         return view('frontend.blog.show', compact('blog'))->with([
-            'title' => $blog->title . $this->titleSuffix,
+            'title' => $blog->title.$this->titleSuffix,
         ]);
     }
 }

@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 /**
- * Class HostingController
- * @package App\Http\Controllers
+ * Class HostingController.
  */
 class HostingController extends Controller
 {
@@ -16,7 +13,7 @@ class HostingController extends Controller
     public function index()
     {
         return view('frontend.hosting')->with([
-            'title' => 'Web Hosting In Greencastle, Chambersburg & Hagerstown  | 131 Studios'
+            'title' => 'Web Hosting In Greencastle, Chambersburg & Hagerstown  | 131 Studios',
         ]);
     }
 }

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\View\View;
 
 class WebsiteDesignController extends Controller
 {

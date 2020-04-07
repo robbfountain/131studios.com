@@ -5,23 +5,22 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class WebMention
- * @package App
+ * Class WebMention.
  */
 class WebMention extends Model
 {
     /**
-     * Reply
+     * Reply.
      */
     const TYPE_REPLY = 'replied';
 
     /**
-     * Like
+     * Like.
      */
     const TYPE_LIKE = 'liked';
 
     /**
-     * Retweet
+     * Retweet.
      */
     const TYPE_RETWEET = 'retweeted';
 

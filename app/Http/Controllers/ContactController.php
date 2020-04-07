@@ -7,8 +7,7 @@ use App\Notifications\SendContactFormEmail;
 use Illuminate\Support\Facades\Notification;
 
 /**
- * Class ContactController
- * @package App\Http\Controllers
+ * Class ContactController.
  */
 class ContactController extends Controller
 {

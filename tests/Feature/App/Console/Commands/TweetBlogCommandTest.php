@@ -3,12 +3,11 @@
 namespace Tests\Feature\App\Console\Commands;
 
 use App\Blog;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Tests\TestCase;
 use App\Jobs\SendTweetForNewBlog;
-use Illuminate\Support\Facades\Bus;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Facades\Bus;
+use Tests\TestCase;
 
 class TweetBlogCommandTest extends TestCase
 {
