@@ -27,7 +27,6 @@ class FetchS3Messages implements ShouldQueue
     public function handle($event)
     {
         MessageCollector::fromBucket()->each(function ($message) {
-
         });
     }
 }
