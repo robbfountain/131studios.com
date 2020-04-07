@@ -3,19 +3,16 @@
 namespace Tests\Feature\App\Http\Controllers;
 
 use App\Blog;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
-use Intervention\Image\Exception\NotFoundException;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class BlogControllerTest extends TestCase
 {
-   use DatabaseMigrations;
+    use DatabaseMigrations;
 
-   /** @test **/
-   public function Index_shows_a_view()
-   {
+    /** @test **/
+    public function Index_shows_a_view()
+    {
         $response = $this->get(route('blog.index'));
 
         $response->assertStatus(200);
@@ -25,11 +22,11 @@ class BlogControllerTest extends TestCase
         $response->assertViewHas('title');
 
         $response->assertViewHas('blogs');
-   }
+    }
 
-   /** @test **/
-   public function Show_displays_a_blog()
-   {
+    /** @test **/
+    public function Show_displays_a_blog()
+    {
         $blog = factory(Blog::class)->create();
 
         $response = $this->get(route('blog.show', $blog->slug));
@@ -43,17 +40,17 @@ class BlogControllerTest extends TestCase
         $response->assertViewHas('blog');
 
         $response->assertSee($blog->title);
-   }
+    }
 
-   /** @test **/
-   public function Show_will_not_display_unpublished_blog()
-   {
-       $this->withExceptionHandling();
+    /** @test **/
+    public function Show_will_not_display_unpublished_blog()
+    {
+        $this->withExceptionHandling();
 
-       $blog = factory(Blog::class)->state('unpublished')->create();
+        $blog = factory(Blog::class)->state('unpublished')->create();
 
-       $response = $this->get(route('blog.show', $blog->slug));
+        $response = $this->get(route('blog.show', $blog->slug));
 
-       $response->assertStatus(404);
-   }
+        $response->assertStatus(404);
+    }
 }

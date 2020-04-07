@@ -2,21 +2,19 @@
 
 namespace App\Jobs;
 
-
 use App\Blog;
 use App\WebMention;
-use Spatie\Url\Url;
 use Illuminate\Support\Arr;
+use Spatie\Url\Url;
 use Spatie\WebhookClient\ProcessWebhookJob;
 
 /**
- * Class ProcessWebmention
- * @package App\Jobs
+ * Class ProcessWebmention.
  */
 class ProcessWebmention extends ProcessWebhookJob
 {
     /**
-     * Handle the Job
+     * Handle the Job.
      */
     public function handle()
     {
@@ -26,11 +24,11 @@ class ProcessWebmention extends ProcessWebhookJob
             return;
         }
 
-        if (!$type = $this->getType($payload)) {
+        if (! $type = $this->getType($payload)) {
             return;
         }
 
-        if (!$blog = $this->getPost($payload)) {
+        if (! $blog = $this->getPost($payload)) {
             return;
         }
 
@@ -73,8 +71,8 @@ class ProcessWebmention extends ProcessWebhookJob
 
         $wmProperty = Arr::get($payload, 'post.wm-property');
 
-        if (!array_key_exists($wmProperty, $types)) {
-            return null;
+        if (! array_key_exists($wmProperty, $types)) {
+            return;
         }
 
         return $types[$wmProperty];
@@ -89,8 +87,8 @@ class ProcessWebmention extends ProcessWebhookJob
     {
         $url = Arr::get($payload, 'post.wm-target');
 
-        if (!$url) {
-            return null;
+        if (! $url) {
+            return;
         }
 
         $blogIdSlug = Url::fromString($url)->getSegment(2);

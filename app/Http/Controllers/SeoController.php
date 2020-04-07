@@ -2,11 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 /**
- * Class SeoController
- * @package App\Http\Controllers
+ * Class SeoController.
  */
 class SeoController extends Controller
 {
@@ -16,7 +13,7 @@ class SeoController extends Controller
     public function index()
     {
         return view('frontend.seo')->with([
-            'title' => 'Search Engine Optimization - SEO | 131 Studios'
+            'title' => 'Search Engine Optimization - SEO | 131 Studios',
         ]);
     }
 }

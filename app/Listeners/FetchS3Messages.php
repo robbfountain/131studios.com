@@ -3,7 +3,6 @@
 namespace App\Listeners;
 
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class FetchS3Messages implements ShouldQueue
 {
@@ -25,6 +24,5 @@ class FetchS3Messages implements ShouldQueue
      */
     public function handle($event)
     {
-
     }
 }

@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Spatie\WebhookClient\SignatureValidator\SignatureValidator as SpatieSignatureValidator;
 use Spatie\WebhookClient\WebhookConfig;
 
-
 class SignatureValidator implements SpatieSignatureValidator
 {
     /**
@@ -17,7 +16,7 @@ class SignatureValidator implements SpatieSignatureValidator
      */
     public function isValid(Request $request, WebhookConfig $config): bool
     {
-        if (!$request->has('secret')) {
+        if (! $request->has('secret')) {
             return false;
         }
 

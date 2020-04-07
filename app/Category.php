@@ -2,14 +2,12 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
-use Backpack\CRUD\CrudTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
+use Illuminate\Database\Eloquent\Model;
 
 /**
- * Class Category
- * @package App
+ * Class Category.
  */
 class Category extends Model
 {
@@ -63,7 +61,7 @@ class Category extends Model
      */
     public function scopeProject($query)
     {
-        return $query->where('name','Project');
+        return $query->where('name', 'Project');
     }
 
     /**
