@@ -59,8 +59,10 @@ Route::get('/oauth/{provider}', 'Auth\OauthController@redirect')
 Route::get('/oauth/{provider}/callback', 'Auth\OauthController@callback');
 
 // Search
-Route::get('search','SearchController@index')
+Route::get('search', 'SearchController@index')
     ->name('search.index');
-Route::post('search','SearchController@show')
+Route::post('search', 'SearchController@show')
     ->name('search.show');
 
+// AWS SNS
+Route::post('/sns/handle', 'OneThirtyOne\Sns\Controllers\SnsController@handle');

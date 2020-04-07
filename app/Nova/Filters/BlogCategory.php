@@ -15,7 +15,6 @@ class BlogCategory extends Filter
      */
     public $component = 'select-filter';
 
-
     /**
      * Apply the filter to the given query.
      *
@@ -38,7 +37,7 @@ class BlogCategory extends Filter
     public function options(Request $request)
     {
         return [
-            'Projects' => Category::where('name','Project')->first()->id,
+            'Projects' => Category::where('name', 'Project')->first()->id,
         ];
     }
 }

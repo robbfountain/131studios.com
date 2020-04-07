@@ -20,7 +20,7 @@ return [
     'apiSecret'  => env('CLOUDINARY_API_SECRET'),
 
     'scaling'    => [
-      //
+        //
     ],
 
 ];

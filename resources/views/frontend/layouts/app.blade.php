@@ -24,6 +24,7 @@
 
         <!-- Analytics -->
         @include('frontend.partials.google-analytics')
+
     </head>
 
     <body>
@@ -60,15 +61,15 @@
                                         Our Services
                                     </a>
                                     <a class="dropdown-menu-link text-gray-700 hover:text-gray-600"
-                                       href="/website-design">Website Design</a>
+                                       href="{{route('website-design.index')}}">Website Design</a>
                                     <a class="dropdown-menu-link text-gray-700 hover:text-gray-600"
-                                       href="/hosting">Hosting</a>
+                                       href="{{route('hosting.index')}}">Hosting</a>
                                     <a class="dropdown-menu-link  text-gray-700 hover:text-gray-600"
-                                       href="/social-media">Social Media</a>
+                                       href="{{route('social-media.index')}}">Social Media</a>
                                     <a class="dropdown-menu-link  text-gray-700 hover:text-gray-600"
-                                       href="/seo">SEO</a>
+                                       href="{{route('seo.index')}}">SEO</a>
                                     <a class="dropdown-menu-link  text-gray-700 hover:text-gray-600"
-                                       href="/additional-services">Additional Services</a>
+                                       href="{{route('additional-services.index')}}">Additional Services</a>
                                 </dropdown>
 
                                 <x-nav :to="route('project.index')">
@@ -96,19 +97,19 @@
                             <div class="mt-8">
                                 <ul class="flex">
                                     <li class="mr-3">
-                                        <a href="/" class="hover:text-blue-200">Home</a>
+                                        <a href="{{route('index')}}" class="hover:text-blue-200">Home</a>
                                     </li>
                                     <li class="mr-3">
                                         <a href="#top" class="hover:text-blue-200">Services</a>
                                     </li>
                                     <li class="mr-3">
-                                        <a href="/projects" class="hover:text-blue-200">Work</a>
+                                        <a href="{{route('project.index')}}" class="hover:text-blue-200">Work</a>
                                     </li>
                                     <li class="mr-3">
-                                        <a href="/blog" class="hover:text-blue-200">Blog</a>
+                                        <a href="{{route('blog.index')}}" class="hover:text-blue-200">Blog</a>
                                     </li>
                                     <li class="mr-3">
-                                        <a href="/contact" class="hover:text-blue-200">Contact</a>
+                                        <a href="{{route('contact.index')}}" class="hover:text-blue-200">Contact</a>
                                     </li>
                                 </ul>
                             </div>

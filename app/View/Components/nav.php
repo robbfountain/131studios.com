@@ -5,8 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Class nav
- * @package App\View\Components
+ * Class nav.
  */
 class nav extends Component
 {
