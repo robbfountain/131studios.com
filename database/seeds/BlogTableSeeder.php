@@ -20,28 +20,28 @@ class BlogTableSeeder extends Seeder
 
         factory(Blog::class, 5)->create([
             'user_id' => 1,
-            'category_id' => 1
+            'category_id' => 1,
 
         ]);
 
         factory(Blog::class, 5)->create([
             'user_id' => 1,
-            'category_id' => 2
+            'category_id' => 2,
         ]);
 
         factory(Blog::class, 5)->create([
             'user_id' => 1,
-            'category_id' => 3
+            'category_id' => 3,
         ]);
 
         factory(Blog::class, 5)->create([
             'user_id' => 1,
-            'category_id' => 4
+            'category_id' => 4,
         ]);
 
         factory(Blog::class, 5)->create([
             'user_id' => 1,
-            'category_id' => 5
+            'category_id' => 5,
         ]);
     }
 }

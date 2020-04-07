@@ -5,8 +5,7 @@ namespace App\Http\Controllers;
 use App\Blog;
 
 /**
- * Class IndexController
- * @package App\Http\Controllers
+ * Class IndexController.
  */
 class IndexController extends Controller
 {

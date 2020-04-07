@@ -6,8 +6,8 @@ use App\Notifications\SendContactFormEmail;
 use App\User;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Illuminate\Notifications\AnonymousNotifiable;
-use Tests\TestCase;
 use Illuminate\Support\Facades\Notification;
+use Tests\TestCase;
 
 class ContactControllerTest extends TestCase
 {

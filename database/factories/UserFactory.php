@@ -14,4 +14,3 @@ $factory->define(App\User::class,
             'remember_token' => str_random(10),
         ];
     });
-
