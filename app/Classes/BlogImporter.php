@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Classes;
-
 
 use App\Category;
 use Carbon\Carbon;
@@ -10,8 +8,7 @@ use Illuminate\Support\Str;
 use OneThirtyOne\Mime\Message;
 
 /**
- * Class BlogImporter
- * @package App\Classes
+ * Class BlogImporter.
  */
 class BlogImporter
 {
@@ -83,7 +80,7 @@ class BlogImporter
     {
         $publish = Str::of($this->body)->match('/\@publish\((.*?)\)/');
 
-        return !$this->shouldBePublished()
+        return ! $this->shouldBePublished()
             ? Carbon::parse($publish)
             : Carbon::now();
     }
@@ -94,7 +91,7 @@ class BlogImporter
      */
     protected function categoryFromSubject()
     {
-        if (!$this->category = Str::of($this->title)->match('/\[(.*?)\]/')) {
+        if (! $this->category = Str::of($this->title)->match('/\[(.*?)\]/')) {
             throw new \Exception('Category Not Found');
         }
 
@@ -126,7 +123,6 @@ class BlogImporter
      */
     protected function referenceUrlFromBody()
     {
-        return null;
     }
 
     /**
@@ -134,12 +130,10 @@ class BlogImporter
      */
     protected function tweetFromBody()
     {
-        return null;
     }
 
     protected function blogPostFromBody()
     {
         return $this->body;
     }
-
 }

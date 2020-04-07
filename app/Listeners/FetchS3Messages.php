@@ -8,8 +8,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use OneThirtyOne\Mime\Facades\MessageCollector;
 
 /**
- * Class FetchS3Messages
- * @package App\Listeners
+ * Class FetchS3Messages.
  */
 class FetchS3Messages implements ShouldQueue
 {
@@ -33,7 +32,7 @@ class FetchS3Messages implements ShouldQueue
     public function handle($event)
     {
         MessageCollector::fromBucket()->each(function ($message) {
-            if (!Blog::hasCurrentBlogPost($message)) {
+            if (! Blog::hasCurrentBlogPost($message)) {
                 $blog = BlogImporter::messageToBlogPost($message);
 
                 Blog::create(
