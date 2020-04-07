@@ -2,20 +2,18 @@
 
 namespace App;
 
-use Illuminate\Notifications\Notifiable;
-use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 /**
- * Class User
- * @package App
+ * Class User.
  */
 class User extends Authenticatable
 {
     use Notifiable;
 
     /**
-     *  Administrators
+     *  Administrators.
      */
     const ADMIN = ['robb@131studios.com'];
 

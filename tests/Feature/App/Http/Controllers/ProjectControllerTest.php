@@ -2,9 +2,8 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
-use App\Blog;
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class ProjectControllerTest extends TestCase
 {

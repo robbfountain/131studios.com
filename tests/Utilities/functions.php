@@ -30,11 +30,9 @@ function make($class, $attributes = [], $times = null)
  */
 function role($role)
 {
-    if (is_array($role))
-    {
+    if (is_array($role)) {
         $return = [];
-        foreach ($role as $item)
-        {
+        foreach ($role as $item) {
             $return[] = create('Spatie\Permission\Models\Role', ['name' => $item]);
         }
 
@@ -51,11 +49,9 @@ function role($role)
  */
 function permission($permission)
 {
-    if (is_array($permission))
-    {
+    if (is_array($permission)) {
         $return = [];
-        foreach ($permission as $item)
-        {
+        foreach ($permission as $item) {
             $return[] = create('Spatie\Permission\Models\Permission', ['name' => $item]);
         }
 
@@ -64,7 +60,6 @@ function permission($permission)
 
     return create('Spatie\Permission\Models\Permission', ['name' => $permission]);
 }
-
 
 /**
  * @param $role

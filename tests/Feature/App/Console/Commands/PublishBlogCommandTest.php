@@ -4,7 +4,6 @@ namespace Tests\Feature\App\Console\Commands;
 
 use App\Blog;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
 use Tests\TestCase;
 
@@ -44,5 +43,3 @@ class PublishBlogCommandTest extends TestCase
         $this->assertFalse($this->future->fresh()->is_published);
     }
 }
-
-

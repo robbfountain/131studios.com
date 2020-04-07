@@ -3,11 +3,11 @@
 namespace App\Nova\Actions;
 
 use Illuminate\Bus\Queueable;
-use Laravel\Nova\Actions\Action;
-use Illuminate\Support\Collection;
-use Laravel\Nova\Fields\ActionFields;
-use Illuminate\Queue\SerializesModels;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Collection;
+use Laravel\Nova\Actions\Action;
+use Laravel\Nova\Fields\ActionFields;
 
 class PublishBlog extends Action
 {
@@ -23,7 +23,7 @@ class PublishBlog extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        foreach($models as $model) {
+        foreach ($models as $model) {
             $model->publish();
         }
     }

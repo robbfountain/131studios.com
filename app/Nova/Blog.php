@@ -16,8 +16,7 @@ use Laravel\Nova\Panel;
 use Silvanite\NovaFieldCloudinary\Fields\CloudinaryImage;
 
 /**
- * Class Blog
- * @package App\Nova
+ * Class Blog.
  */
 class Blog extends Resource
 {
@@ -88,7 +87,7 @@ class Blog extends Resource
             BelongsTo::make('Category'),
 
             Text::make('Title')
-                ->rules(['required','string']),
+                ->rules(['required', 'string']),
 
             Text::make('Slug')
                 ->hideWhenCreating()
@@ -98,7 +97,7 @@ class Blog extends Resource
 
             Markdown::make('Body')
                 ->stacked()
-                ->rules(['required','string']),
+                ->rules(['required', 'string']),
 
             Boolean::make('Published', 'is_published')
                 ->hideWhenCreating()
