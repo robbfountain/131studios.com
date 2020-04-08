@@ -3,15 +3,15 @@
 namespace Tests\Feature\App\Console\Commands;
 
 use App\Blog;
-use Tests\TestCase;
 use App\Jobs\SendTweetForNewBlog;
-use Illuminate\Support\Facades\Bus;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Facades\Artisan;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Facades\Bus;
+use Tests\TestCase;
 
 class TweetBlogCommandTest extends TestCase
 {
-    use DatabaseMigrations;
+    use RefreshDatabase;
 
     /** @test * */
     public function It_tweets_a_published_blog_from_today()

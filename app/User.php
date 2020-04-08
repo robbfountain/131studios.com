@@ -2,22 +2,18 @@
 
 namespace App;
 
-use Backpack\CRUD\CrudTrait;
-use Spatie\Permission\Traits\HasRoles;
-use Illuminate\Notifications\Notifiable;
-use Creativeorange\Gravatar\Facades\Gravatar;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 /**
- * Class User
- * @package App
+ * Class User.
  */
 class User extends Authenticatable
 {
     use Notifiable;
 
     /**
-     *  Administrators
+     *  Administrators.
      */
     const ADMIN = ['robb@131studios.com'];
 
@@ -46,29 +42,11 @@ class User extends Authenticatable
     ];
 
     /**
-     * @param $query
-     *
-     * @return mixed
-     */
-    public function scopeContact($query)
-    {
-        return $query->role('Contact Recipient');
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function blogs()
     {
         return $this->hasMany(Blog::class);
-    }
-
-    /**
-     * @return mixed
-     */
-    public function avatar()
-    {
-        return Gravatar::get($this->email);
     }
 
     /**

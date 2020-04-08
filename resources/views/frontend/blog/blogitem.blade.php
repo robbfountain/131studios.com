@@ -1,4 +1,4 @@
-<div class="blog-container-full category  category-{{$blog->category->name}} {{!$blog->is_published || $blog->published_at > now() ? 'bg-orange-100' : ''}}">
+<div class="blog-container-column category category-{{$blog->category->name}} {{!$blog->is_published || $blog->published_at > now() ? 'bg-orange-100' : ''}}">
     <h1>
         <a href="{{route('blog.show',$blog->slug)}}">{{$blog->title}}</a>
     </h1>

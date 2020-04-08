@@ -24,6 +24,7 @@
 
         <!-- Analytics -->
         @include('frontend.partials.google-analytics')
+
     </head>
 
     <body>
@@ -33,6 +34,7 @@
                 <pinned class="bg-white shadow border-t-4 border-blue-400">
                     <header class="container mx-auto py-4">
                         <div class="flex xs:flex-col lg:flex-row justify-between items-center">
+
                             <!-- Logo -->
                             <div class="flex justify-between items-center xs:w-full lg:w-1/4 xs:px-3 xl:px-0">
                                 <a href="/">
@@ -49,42 +51,38 @@
                             <nav class="flex xs:flex-col xs:min-w-full lg:flex-row lg:min-w-0 xs:hidden lg:inline xs:pt-3 lg:pt-0 xs:pl-3 lg:px-0"
                                  id="menu">
 
-                                <a href="/"
-                                   class="uppercase xs:mr-0 xs:pb-0 lg:mr-4 text-gray-700 lg:pb-6 border-b-4 border-transparent font-semibold tracking-wider hover:text-blue-400 hover:border-blue-400">
+                                <x-nav :to="route('index')">
                                     Home
-                                </a>
+                                </x-nav>
 
                                 <dropdown width="200px">
                                     <a slot="trigger" href="#"
                                        class="uppercase xs:mr-0 xs:pb-0 lg:mr-4 text-gray-700 lg:pb-6 border-b-4 border-transparent font-semibold tracking-wider hover:text-blue-400 hover:border-blue-400">
                                         Our Services
                                     </a>
-                                    <a class="dropdown-menu-link text-gray-700 hover:text-gray-300"
-                                       href="/website-design">Website Design</a>
-                                    <a class="dropdown-menu-link text-gray-700 hover:text-gray-300"
-                                       href="/hosting">Hosting</a>
-                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-300"
-                                       href="/social-media">Social Media</a>
-                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-300"
-                                       href="/seo">SEO</a>
-                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-300"
-                                       href="/additional-services">Additional Services</a>
+                                    <a class="dropdown-menu-link text-gray-700 hover:text-gray-600"
+                                       href="{{route('website-design.index')}}">Website Design</a>
+                                    <a class="dropdown-menu-link text-gray-700 hover:text-gray-600"
+                                       href="{{route('hosting.index')}}">Hosting</a>
+                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-600"
+                                       href="{{route('social-media.index')}}">Social Media</a>
+                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-600"
+                                       href="{{route('seo.index')}}">SEO</a>
+                                    <a class="dropdown-menu-link  text-gray-700 hover:text-gray-600"
+                                       href="{{route('additional-services.index')}}">Additional Services</a>
                                 </dropdown>
 
-                                <a href="{{route('project.index')}}"
-                                   class="uppercase xs:mr-0 xs:pb-0 lg:mr-4 text-gray-700 lg:pb-6 border-b-4 border-transparent font-semibold tracking-wider hover:text-blue-400 hover:border-blue-400">
+                                <x-nav :to="route('project.index')">
                                     Our Work
-                                </a>
+                                </x-nav>
 
-                                <a href="{{route('blog.index')}}"
-                                   class="uppercase xs:mr-0 xs:pb-0 lg:mr-4 text-gray-700 lg:pb-6 border-b-4 border-transparent font-semibold tracking-wider hover:text-blue-400 hover:border-blue-400">
+                                <x-nav :to="route('blog.index')">
                                     Blog
-                                </a>
+                                </x-nav>
 
-                                <a href="{{route('contact.index')}}"
-                                   class="uppercase xs:mr-0 xs:pb-0 lg:mr-4 text-gray-700 lg:pb-6 border-b-4 border-transparent font-semibold tracking-wider hover:text-blue-400 hover:border-blue-400">
+                                <x-nav :to="route('contact.index')">
                                     Contact
-                                </a>
+                                </x-nav>
                             </nav>
                         </div>
                     </header>
@@ -94,25 +92,24 @@
 
                 <footer>
                     <div class="container mx-auto flex xs:flex-col-reverse lg:flex-row justify-between xs:w-full lg:w-2/3">
-
                         <div class="xs:w-full lg:w-1/3 xs:mb-6 lg:mb-0">
                             <img src="/images/131-logo-210x53.png" alt="131 Studios Logo">
                             <div class="mt-8">
                                 <ul class="flex">
                                     <li class="mr-3">
-                                        <a href="/" class="hover:text-blue-200">Home</a>
+                                        <a href="{{route('index')}}" class="hover:text-blue-200">Home</a>
                                     </li>
                                     <li class="mr-3">
                                         <a href="#top" class="hover:text-blue-200">Services</a>
                                     </li>
                                     <li class="mr-3">
-                                        <a href="/projects" class="hover:text-blue-200">Work</a>
+                                        <a href="{{route('project.index')}}" class="hover:text-blue-200">Work</a>
                                     </li>
                                     <li class="mr-3">
-                                        <a href="/blog" class="hover:text-blue-200">Blog</a>
+                                        <a href="{{route('blog.index')}}" class="hover:text-blue-200">Blog</a>
                                     </li>
                                     <li class="mr-3">
-                                        <a href="/contact" class="hover:text-blue-200">Contact</a>
+                                        <a href="{{route('contact.index')}}" class="hover:text-blue-200">Contact</a>
                                     </li>
                                 </ul>
                             </div>
@@ -149,7 +146,6 @@
                             <div class="flex items-center mt-3">
                                 <div class="rounded-full bg-blue-800 mr-3 h-10 w-10">
                                     <i class="fad fa-phone px-2 py-1 fa-lg" style="line-height: inherit;" ></i>
-
                                 </div>
                                 <div>
                                     <a href="tel:3019920962" class="text-lg font-semibold hover:text-blue-200">301.992.0962</a>
@@ -213,7 +209,6 @@
             if (document.getElementById("map_canvas")) {
                 google.maps.event.addDomListener(window, 'load', initialize);
             }
-
         </script>
     </body>
 </html>

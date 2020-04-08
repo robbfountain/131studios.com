@@ -2,9 +2,8 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
-use App\Blog;
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class ProjectControllerTest extends TestCase
 {
@@ -17,8 +16,6 @@ class ProjectControllerTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertViewIs('frontend.projects');
-
-        $response->assertViewHas('projects');
+        $response->assertViewIs('frontend.blog.index');
     }
 }

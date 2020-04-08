@@ -7,8 +7,7 @@ use App\Jobs\SendTweetForNewBlog;
 use Illuminate\Console\Command;
 
 /**
- * Class TweetBlogCommand
- * @package App\Console\Commands
+ * Class TweetBlogCommand.
  */
 class TweetBlogCommand extends Command
 {
@@ -49,7 +48,7 @@ class TweetBlogCommand extends Command
     public function handle()
     {
         Blog::waitingForTweet()->each(function ($blog) {
-            $this->comment('Posting Tweet for ' . $blog->title);
+            $this->comment('Posting Tweet for '.$blog->title);
             SendTweetForNewBlog::dispatch($blog);
         });
     }

@@ -2,26 +2,24 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Tests\TestCase;
 
 class WebsiteControllerTest extends TestCase
 {
     use DatabaseMigrations;
 
-    /** @test **/
+    /** @test * */
     public function Website_design_returns_a_view()
     {
-         $response = $this->get(route('website-design.index'));
+        $response = $this->get(route('website-design.index'));
 
-         $response->assertStatus(200);
+        $response->assertStatus(200);
 
-         $response->assertViewIs('frontend.website-design');
+        $response->assertViewIs('frontend.website-design');
     }
 
-    /** @test **/
+    /** @test * */
     public function Hosting_returns_a_view()
     {
         $response = $this->get(route('hosting.index'));
@@ -31,7 +29,7 @@ class WebsiteControllerTest extends TestCase
         $response->assertViewIs('frontend.hosting');
     }
 
-    /** @test **/
+    /** @test * */
     public function Seo_returns_a_view()
     {
         $response = $this->get(route('seo.index'));
@@ -41,7 +39,7 @@ class WebsiteControllerTest extends TestCase
         $response->assertViewIs('frontend.seo');
     }
 
-    /** @test **/
+    /** @test * */
     public function Additional_services_returns_a_view()
     {
         $response = $this->get(route('additional-services.index'));
@@ -51,7 +49,7 @@ class WebsiteControllerTest extends TestCase
         $response->assertViewIs('frontend.additional-services');
     }
 
-    /** @test **/
+    /** @test * */
     public function Email_hosting_returns_a_view()
     {
         $response = $this->get(route('email-hosting.index'));
@@ -61,7 +59,7 @@ class WebsiteControllerTest extends TestCase
         $response->assertViewIs('frontend.email-hosting');
     }
 
-    /** @test **/
+    /** @test * */
     public function Social_media_returns_a_view()
     {
         $response = $this->get(route('social-media.index'));
@@ -71,17 +69,17 @@ class WebsiteControllerTest extends TestCase
         $response->assertViewIs('frontend.social-media');
     }
 
-    /** @test **/
+    /** @test * */
     public function Projects_returns_a_view()
     {
         $response = $this->get(route('project.index'));
 
         $response->assertStatus(200);
 
-        $response->assertViewIs('frontend.projects');
+        $response->assertViewIs('frontend.blog.index');
     }
 
-    /** @test **/
+    /** @test * */
     public function Index_returns_a_view()
     {
         $response = $this->get(route('index'));

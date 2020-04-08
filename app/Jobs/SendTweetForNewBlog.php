@@ -11,8 +11,7 @@ use Illuminate\Queue\SerializesModels;
 use Thujohn\Twitter\Facades\Twitter;
 
 /**
- * Class SendTweetForNewBlog
- * @package App\Jobs
+ * Class SendTweetForNewBlog.
  */
 class SendTweetForNewBlog implements ShouldQueue
 {
@@ -50,7 +49,7 @@ class SendTweetForNewBlog implements ShouldQueue
     }
 
     /**
-     * Updates Blog post in database
+     * Updates Blog post in database.
      */
     private function updateBlogPostWithTweet()
     {
@@ -67,7 +66,7 @@ class SendTweetForNewBlog implements ShouldQueue
     private function postTweet()
     {
         $this->response = Twitter::postTweet([
-            'status' => $this->blog->title . "\n" . $this->blog->shareUrl(),
+            'status' => $this->blog->title."\n".$this->blog->shareUrl(),
             'format' => 'json',
         ]);
 

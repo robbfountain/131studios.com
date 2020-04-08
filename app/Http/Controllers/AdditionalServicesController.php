@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
 use Illuminate\Contracts\View\Factory;
+use Illuminate\View\View;
 
 class AdditionalServicesController extends Controller
 {
@@ -16,5 +16,4 @@ class AdditionalServicesController extends Controller
             'title' => 'Additional Services | 131 Studios',
         ]);
     }
-
 }

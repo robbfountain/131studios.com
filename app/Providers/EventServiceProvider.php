@@ -2,8 +2,10 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Event;
+use App\Listeners\FetchS3Messages;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
+use OneThirtyOne\Sns\Events\SnsEvent;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -13,7 +15,9 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        //
+        SnsEvent::class => [
+            FetchS3Messages::class,
+        ],
     ];
 
     /**

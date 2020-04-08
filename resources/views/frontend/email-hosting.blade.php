@@ -1,19 +1,17 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-
-   @banner
+   <x-banner>
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Email Hosting
             </h1>
         </div>
-    @endbanner
+    </x-banner>
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-
 
             <div class="text-lg text-gray-600 mb-8 leading-normal">
                Let 131 Studios manage your email accounts and mailing lists. We can host your company's email
@@ -45,7 +43,6 @@
                     </div>
                 </div>
 
-
                 <div class="flex p-3 lg:w-1/4 xs:w-full xs:border-b lg:border-b-0">
                     <div class="mr-4">
                         <fa :icon="['fal','shield']" class="mr-2" size="3x"></fa>
@@ -58,7 +55,6 @@
                     </div>
                 </div>
 
-
                 <div class="flex p-3 lg:w-1/4 xs:w-full xs:border-b lg:border-b-0">
                     <div class="mr-4">
                         <fa :icon="['fal','mobile-alt']" class="mr-2" size="3x"></fa>
@@ -70,10 +66,7 @@
                         </div>
                     </div>
                 </div>
-
             </div>
-
         </div>
-
     </section>
 @endsection

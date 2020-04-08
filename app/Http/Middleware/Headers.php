@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Support\Facades\Auth;
 
 class Headers
 {
@@ -17,7 +16,8 @@ class Headers
     public function handle($request, Closure $next)
     {
         $response = $next($request);
-        $response->header('X-Frame-Options',' ALLOW FROM https://131studios.com');
+        $response->header('X-Frame-Options', ' ALLOW FROM https://131studios.com');
+
         return $response;
     }
 }

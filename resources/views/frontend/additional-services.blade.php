@@ -1,19 +1,17 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-   @banner
+   <x-banner>
         <div class="container mx-auto text-center">
             <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
                 style="background-color: rgba(0,0,0,0.5)">
                 Additional Services
             </h1>
         </div>
-    @endbanner
+   </x-banner>
 
     <section class="xs:py-3 lg:py-10">
         <div class="container mx-auto">
-
-
             <div class="text-lg text-gray-600 mb-8 leading-normal">
                 We offer a number of additional services for your website and business. If you would like more information or if you need assistance with anything else that
                 may not be listed please give us a call or <a href="/contact"
@@ -43,7 +41,6 @@
                         </div>
                     </div>
                 </div>
-
 
                 <!-- Service -->
                 <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
@@ -80,7 +77,7 @@
                             At Cost
                         </div>
                         <div class="py-2 px-4 leading-normal text-gray-600 text-lg">
-                            We can register register your domain names for you.  From 1+ year intervals at cost. With no additional fees.
+                            We can register your domain names for you.  From 1+ year intervals at cost. With no additional fees.
                         </div>
                         <div class="text-center py-6">
                             <a href="/contact"
@@ -154,11 +151,7 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
-
         </div>
-
     </section>
 @endsection

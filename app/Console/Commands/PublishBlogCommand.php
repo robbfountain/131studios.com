@@ -41,7 +41,7 @@ class PublishBlogCommand extends Command
     {
         Blog::unpublished()->get()->each(function ($blog) {
             if ($blog->published_at->lt(Carbon::now())) {
-                $this->comment('Publishing ' . $blog->title);
+                $this->comment('Publishing '.$blog->title);
                 $blog->publish();
             }
         });

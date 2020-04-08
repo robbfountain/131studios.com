@@ -29,12 +29,12 @@
 
         <button type="submit" @click="send"
                 class="mt-8 rounded border border-blue-800 text-blue-800 px-4 py-3 hover:bg-blue-800 hover:text-white">
-               <span v-if="form.busy">
-                   <fa :icon="['fal','spinner']" spin></fa>
-               </span>
+            <span v-if="form.busy">
+                <fa :icon="['fal','spinner']" spin></fa>
+            </span>
             <span v-else>
-                     Send Message
-                </span>
+                Send Message
+            </span>
         </button>
     </form>
 </contact>
