@@ -13,15 +13,13 @@ class BlogTableSeeder extends Seeder
      */
     public function run()
     {
-        Category::create(['name' => 'Project']);
-        Category::create(['name' => 'Tweet']);
-        Category::create(['name' => 'Link']);
-        Category::create(['name' => 'Original']);
+        factory(Category::class)->create(['name' => 'Tweet']);
+        factory(Category::class)->create(['name' => 'Link']);
+        factory(Category::class)->create(['name' => 'Original']);
 
         factory(Blog::class, 5)->create([
             'user_id' => 1,
             'category_id' => 1,
-
         ]);
 
         factory(Blog::class, 5)->create([

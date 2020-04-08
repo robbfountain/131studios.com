@@ -1,9 +1,13 @@
-/**
- * First we will load all of this project's JavaScript dependencies which
- * includes Vue and other libraries. It is a great starting point when
- * building robust, powerful web applications using Vue and Laravel.
- */
-require('./bootstrap');
+window.axios = require('axios');
+
+window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+let token = document.head.querySelector('meta[name="csrf-token"]');
+
+window.axios.defaults.headers.common = {
+    'X-CSRF-TOKEN': token.content,
+    'X-Requested-With': 'XMLHttpRequest',
+};
 
 /**
  * Import the main vue components we need
@@ -18,32 +22,28 @@ Vue.use(InstantSearch);
 import Form from 'form-class';
 window.Form = Form;
 
+/**
+ * Hilight JS
+ */
 import hljs from 'highlight.js';
 hljs.initHighlightingOnLoad();
 
-
+/**
+ * Font Awesome
+ */
 import {library} from '@fortawesome/fontawesome-svg-core'
 
 import {faHome, faServer, faPaintBrush, faShareAlt, faSearch, faCheckCircle } from '@fortawesome/pro-solid-svg-icons'
 import {faChevronRight, faInfoCircle, faBars, faAngleDoubleRight, faAngleRight, faMapPin, faPhone as faPhoner, faEnvelope as faEnveloper } from '@fortawesome/pro-regular-svg-icons'
 import {faStar, faMobileAlt, faSearch as falSearch, faPhone, faEnvelope, faSpinner, faDatabase, faShield, faWrench, faAnalytics, faGlobe, faChartNetwork, faServer as faServerL} from '@fortawesome/pro-light-svg-icons'
 import {faTwitterSquare, faFacebookSquare} from '@fortawesome/free-brands-svg-icons'
-import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
 library.add(faHome, faServer, faPaintBrush, faShareAlt, faSearch, faCheckCircle, faAngleDoubleRight);
 library.add(faChevronRight, faInfoCircle, faBars, faAngleRight, faMapPin, faPhoner, faEnveloper);
 library.add(faStar, faMobileAlt, falSearch, faPhone, faEnvelope, faSpinner, faDatabase, faShield, faWrench, faAnalytics, faGlobe, faChartNetwork, faServerL);
 library.add(faTwitterSquare, faFacebookSquare);
 
-/**
- * Global Vue Components
- */
-Vue.component('fa', FontAwesomeIcon);
-Vue.component('pinned', require('./components/pinned'));
-Vue.component('Contact', require('./components/Contact'));
-Vue.component('Dropdown',require('./components/Dropdown'));
-Vue.component('SubscriptionForm',require('./components/SubscriptionForm'));
-Vue.component('BlogSearch', require('./components/blog-search'));
+import "./components";
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
