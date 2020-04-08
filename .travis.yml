@@ -1,24 +1,24 @@
 dist: bionic
-
 language: php
-
 php:
-  - 7.4
-
+- 7.4
 addons:
   mariadb: 10.4
-
 cache:
   directories:
-    - node_modules
-    - vendor
-
+  - node_modules
+  - vendor
+install:
+  - echo "{\"http-basic\":{\"nova.laravel.com\":{\"username\":\"${NOVA_USERNAME}\",\"password\":\"${NOVA_PASSWORD}\"}}}" > auth.json
 before_script:
-    - cp .env.travis .env
-    - sudo mysql -e 'CREATE DATABASE testing;'
-    - travis_retry composer self-update
-    - travis_retry composer install --no-interaction
-    - php artisan migrate --no-interaction -vvv
-
+- cp .env.travis .env
+- sudo mysql -e 'CREATE DATABASE testing;'
+- travis_retry composer self-update
+- travis_retry composer install --no-interaction
+- php artisan migrate --no-interaction -vvv
 script:
-  - vendor/bin/phpunit
+- vendor/bin/phpunit
+env:
+  global:
+  - secure: UeNRZZpAsdzHrxvmOFPneC51ADlhzjszSD9LhMV+Xb4Hrv4exg7zXLKDS5B4p71Ut0b5fWPk0Y6/cZGJIt32HqA1IrjypmEdFFBXObXCgfvHG+aNmiwNKwEi8bkoDiTUeNl7gymIRhDifTsLaVRTq59Bag4jOGRZ61chXjaPRxj2N4N2j7b3N708kO4ReZMTpQhgdv0S+YYew59C792Mki698rhHYNUpbgN26GLyCHkOJwj1xSGoGyrSfLOXmb1Gm1SBmLW7gHzmpIm5+eq0PniPK29O0N82mzwA64LMJGNxwuy5/Akkhy/X7MbW98vt/4IuyjCPE7rag50ySlNNwUazCf9/rzrdecofHB1cDZePTvt9BlFOKoqo52fy8lbiul01vXeQSaU4rRh5u1anV/uyLd48oZggxTjkXMzjKq/iczzF0kxVMaWsXlQ5QtbqTtTCCfhLRSN+QDqLc9AaVu4rk66FlfFoLflY76DWPgtvoK+YEmbadV+W4ZXygIPpoxAuIpMjjPfV28MHFk1u+59JTP2Abw+69+cCcwKBbIje++AUqvxHPx0a7etQewHQnVRG+E2ydIEoPCks8QyACMVMoIr9T/PNwBbPZ6IBZEadCJp8q4yn3a5PqNrjpL7dpc4vN9Ko26c+pwyLtXZ+UFjc9IiuvGknjK5MoCtMswA=
+  - secure: GKeW5JD5+b+Q9l9F6q+m/C1AvCL2cWUZOhgt+BX6GjPQp/8FBszJQeSg3EYxnAqky8b2H8Qji2ul3wMzfim6IftlEd/3sXpV3su/76GM38yhRb6bwcuWqCW4YibkiiEizVxm9yhJSPL0YQ986wpFG+9ONW7NYu85sAWV1sh6K5rffpKQ7kUrVxgTgRJX4Yca+XqOL1XwkOJAeDyTDYG0MoJQWhZqqnewuYdi7DCxeTRR1aWOv0msc/ZZyeOVX5e0T2EdTyhsU10VjJO4+A1hS8ouE1IhfqzuhkCOy5lEuFKHKL2JgviZK4Ykwo3jd/B/CSgnBlG0hLnil8uxOmS6QKP10nv5CMbWOYLpT0yP7WXgKV02LuFtuMcaCsPDkE3F+HOaWYiDt+wukElF17FCE4byhTS0PFrHFaMSl+evVIOPs8Zdh8FBfzWGW+1epCbUFs57vZv9LaNeyAnc7xjSRpJjVGNawPuykUam9aCDu5yo4/WE/JT5JLblrlETfCag6pON6DZP2Flil9q3lRxTrpHhAv7iZmiho/74guuxa4aCTzshR0vZ8dVWhHTRKVLNus/0F0Nflr+41CTy/N5CLQXozVO75cFynGLRwz27zOXZzRcLzGwFQwzlLnheLRfuP7qhOSSkD5IwDUVLiu2LbPV9GbpUWseiFfUeWnZo2+g=
