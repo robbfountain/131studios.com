@@ -13,9 +13,9 @@ class BlogTableSeeder extends Seeder
      */
     public function run()
     {
-       factory(Category::class)->create(['name' => 'Tweet']);
-       factory(Category::class)->create(['name' => 'Link']);
-       factory(Category::class)->create(['name' => 'Original']);
+        factory(Category::class)->create(['name' => 'Tweet']);
+        factory(Category::class)->create(['name' => 'Link']);
+        factory(Category::class)->create(['name' => 'Original']);
 
         factory(Blog::class, 5)->create([
             'user_id' => 1,
