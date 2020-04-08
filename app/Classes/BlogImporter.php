@@ -32,6 +32,16 @@ class BlogImporter
      */
     protected $category;
 
+
+    /**
+     * @var array
+     */
+    protected $regexp = [
+        'publish' => '/\@publish\((.*?)\)/',
+        'tweet' => '/\@tweet\((.*?)\)/',
+        'referenceUrl' => '/\@referenceUrl\((.*?)\)/',
+    ];
+
     /**
      * BlogImporter constructor.
      *
@@ -74,24 +84,12 @@ class BlogImporter
     }
 
     /**
-     * @return \Carbon\Carbon
-     */
-    protected function publishDate()
-    {
-        $publish = Str::of($this->body)->match('/\@publish\((.*?)\)/');
-
-        return ! $this->shouldBePublished()
-            ? Carbon::parse($publish)
-            : Carbon::now();
-    }
-
-    /**
      * @return int
      * @throws \Exception
      */
     protected function categoryFromSubject()
     {
-        if (! $this->category = Str::of($this->title)->match('/\[(.*?)\]/')) {
+        if (!$this->category = Str::of($this->title)->match('/\[(.*?)\]/')) {
             throw new \Exception('Category Not Found');
         }
 
@@ -109,6 +107,14 @@ class BlogImporter
     }
 
     /**
+     * @return string|string[]|null
+     */
+    protected function blogPostFromBody()
+    {
+        return preg_replace('/\@(.*?)\((.*?)\)/','',$this->body);
+    }
+
+    /**
      * @return bool
      */
     protected function shouldBePublished()
@@ -119,10 +125,25 @@ class BlogImporter
     }
 
     /**
+     * @return \Carbon\Carbon
+     */
+    protected function publishDate()
+    {
+        $publish = Str::of($this->body)->match('/\@publish\((.*?)\)/');
+
+        return !$this->shouldBePublished()
+            ? Carbon::parse($publish)
+            : Carbon::now();
+    }
+
+    /**
      * @return null
      */
     protected function referenceUrlFromBody()
     {
+        $referenceUrl = Str::of($this->body)->match('/\@referenceUrl\((.*?)\)/');
+
+        return strlen($referenceUrl) ? $referenceUrl : null;
     }
 
     /**
@@ -130,10 +151,9 @@ class BlogImporter
      */
     protected function tweetFromBody()
     {
-    }
+        $tweet = Str::of($this->body)->match('/\@tweet\((.*?)\)/');
 
-    protected function blogPostFromBody()
-    {
-        return $this->body;
+        return strlen($tweet) ? $tweet : null;
+
     }
 }

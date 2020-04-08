@@ -22,10 +22,10 @@ class BlogImporterTest extends TestCase
             'robb@131studios.com',
             'blogcreate@131studios.com',
             '[Original] This is a test subject',
-            "@publish(now)\n
+            "This is a test body\n
+            @publish(now)\n
             @tweet(https://twitter.com/status/123456)\n
-            @ref(https://131studios.com)\n
-            This is a test body\n",
+            @referenceUrl(https://131studios.com)",
             []);
     }
 
@@ -90,7 +90,7 @@ class BlogImporterTest extends TestCase
 
         $blog = BlogImporter::messageToBlogPost($this->message)->toArray();
 
-        $this->assertSame('https://twitter.com/status/123456', $blog['tweet']);
+        $this->assertEquals('https://twitter.com/status/123456', $blog['tweet']);
     }
 
     /** @test */
@@ -100,7 +100,7 @@ class BlogImporterTest extends TestCase
 
         $blog = BlogImporter::messageToBlogPost($this->message)->toArray();
 
-        $this->assertSame('https://131studios.com', $blog['reference_url']);
+        $this->assertEquals('https://131studios.com', $blog['reference_url']);
     }
 
     /** @test */
@@ -110,6 +110,6 @@ class BlogImporterTest extends TestCase
 
         $blog = BlogImporter::messageToBlogPost($this->message)->toArray();
 
-        $this->assertSame('This is a test body', $blog['body']);
+        $this->assertEquals('This is a test body', trim($blog['body']));
     }
 }
