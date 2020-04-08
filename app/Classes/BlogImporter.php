@@ -101,7 +101,7 @@ class BlogImporter
     protected function titleFromSubject()
     {
         return strlen($this->category)
-            ? Str::of($this->title)->after($this->category . ']')
+            ? Str::of($this->title)->after($this->category.']')
             : $this->title;
     }
 

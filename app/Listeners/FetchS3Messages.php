@@ -32,7 +32,7 @@ class FetchS3Messages implements ShouldQueue
     public function handle($event)
     {
         MessageCollector::fromBucket()->each(function ($message) {
-            if (!Blog::hasCurrentBlogPost($message)) {
+            if (! Blog::hasCurrentBlogPost($message)) {
                 $blog = BlogImporter::messageToBlogPost($message);
 
                 Blog::create(
