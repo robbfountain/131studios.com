@@ -16,7 +16,6 @@
   "require": {
     "php": ">=7.4.0",
     "algolia/algoliasearch-client-php": "^2.2",
-    "cviebrock/eloquent-sluggable": "^7.0",
     "doctrine/dbal": "^2.9",
     "erusev/parsedown": "^1.7",
     "fideloper/proxy": "^4.2",
