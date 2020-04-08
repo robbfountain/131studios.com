@@ -67,4 +67,4 @@ Route::post('search', 'SearchController@show')
     ->name('search.show');
 
 // AWS SNS
-Route::post('/sns/handle', 'OneThirtyOne\Sns\Controllers\SnsController@handle');
+Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');
