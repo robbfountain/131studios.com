@@ -5,14 +5,14 @@ namespace App;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Str;
 
 /**
  * Class Category.
  */
 class Category extends Model
 {
+    use Sluggable, SluggableScopeHelpers;
+
     /**
      * @var string
      */
@@ -29,15 +29,29 @@ class Category extends Model
     protected $fillable = ['name'];
 
     /**
-     * Boot.
+     * Return the sluggable configuration array for this model.
+     *
+     * @return array
      */
-    protected static function boot()
+    public function sluggable()
     {
-        parent::boot();
+        return [
+            'slug' => [
+                'source' => 'slug_or_name',
+            ],
+        ];
+    }
 
-        static::creating(function ($category) {
-            $category->slug = Str::slug($category->name);
-        });
+    /**
+     * @return mixed
+     */
+    public function getSlugOrNameAttribute()
+    {
+        if ($this->slug != '') {
+            return $this->slug;
+        }
+
+        return $this->name;
     }
 
     /**

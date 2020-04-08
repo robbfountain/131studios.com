@@ -7,6 +7,7 @@
                 form: new Form({
                     name: '',
                     email: '',
+                    phone: '',
                     message: '',
                 }),
             }

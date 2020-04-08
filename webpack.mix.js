@@ -14,14 +14,17 @@ require('laravel-mix-purgecss');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
+    .extract([
+        'vue',
+        'axios',
+    ])
     .sass('resources/assets/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,
         postCss: [ tailwindcss('./tailwind.config.js') ],
+    }).purgeCss({
+        whitelistPatterns: [/language/, /hljs/, /[\w-/:]*[\w-/:]/g, /category-.*?/],
     });
-    // .purgeCss({
-    //     whitelistPatterns: [/language/, /hljs/],
-    // });
 
 if (mix.inProduction()) {
     mix.version();
