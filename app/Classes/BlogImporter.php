@@ -32,7 +32,6 @@ class BlogImporter
      */
     protected $category;
 
-
     /**
      * @var array
      */
@@ -89,7 +88,7 @@ class BlogImporter
      */
     protected function categoryFromSubject()
     {
-        if (!$this->category = Str::of($this->title)->match('/\[(.*?)\]/')) {
+        if (! $this->category = Str::of($this->title)->match('/\[(.*?)\]/')) {
             throw new \Exception('Category Not Found');
         }
 
@@ -111,7 +110,7 @@ class BlogImporter
      */
     protected function blogPostFromBody()
     {
-        return preg_replace('/\@(.*?)\((.*?)\)/','',$this->body);
+        return preg_replace('/\@(.*?)\((.*?)\)/', '', $this->body);
     }
 
     /**
@@ -131,7 +130,7 @@ class BlogImporter
     {
         $publish = Str::of($this->body)->match('/\@publish\((.*?)\)/');
 
-        return !$this->shouldBePublished()
+        return ! $this->shouldBePublished()
             ? Carbon::parse($publish)
             : Carbon::now();
     }
@@ -154,6 +153,5 @@ class BlogImporter
         $tweet = Str::of($this->body)->match('/\@tweet\((.*?)\)/');
 
         return strlen($tweet) ? $tweet : null;
-
     }
 }
