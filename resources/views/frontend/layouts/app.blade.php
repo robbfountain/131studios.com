@@ -92,8 +92,8 @@
 
                 <footer>
                     <div class="container mx-auto flex xs:flex-col-reverse lg:flex-row justify-between xs:w-full lg:w-2/3">
-                        <div class="xs:w-full lg:w-1/3 xs:mb-6 lg:mb-0">
-                            <img src="/images/131-logo-210x53.png" alt="131 Studios Logo">
+                        <div class="xs:w-full lg:w-1/3 xs:mb-6 lg:mb-0 lg:px-4">
+                            <img src="https://res.cloudinary.com/onethirtyone/image/upload/v1586458286/131%20Studios/131-logo-dark-bg_wwbm3o.png" class="h-12" alt="131 Studios Logo">
                             <div class="mt-8">
                                 <ul class="flex">
                                     <li class="mr-3">
@@ -128,7 +128,7 @@
                                131 Studios © {{ date('Y') }}
                             </div>
                         </div>
-                        <div class="flex flex-col xs:w-full lg:w-1/3 xs:mb-6 lg:mb-0">
+                        <div class="flex flex-col xs:w-full lg:w-1/3 xs:mb-6 lg:mb-0 lg:px-4">
                             <div class="flex items-center">
                                 <div class="rounded-full bg-blue-800 mr-3 h-10 w-10">
                                    <i class="fad fa-map-marker px-3 py-2 fa-lg" style="line-height: inherit;" ></i>
@@ -137,7 +137,7 @@
                                     <div class="text-sm">
                                         545 Scarlet Circle
                                     </div>
-                                    <div class="text-base -mt-1 font-semibold">
+                                    <div class="text-sm -mt-1 font-semibold">
                                         Greencastle, PA
                                     </div>
                                 </div>
@@ -148,7 +148,7 @@
                                     <i class="fad fa-phone px-2 py-1 fa-lg" style="line-height: inherit;" ></i>
                                 </div>
                                 <div>
-                                    <a href="tel:3019920962" class="text-lg font-semibold hover:text-blue-200">301.992.0962</a>
+                                    <a href="tel:3019920962" class="text-lg font-semibold hover:text-blue-200">(301) 992-0962</a>
                                 </div>
                             </div>
 
