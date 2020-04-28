@@ -92,7 +92,7 @@
 
                 <footer>
                     <div class="container mx-auto flex xs:flex-col-reverse lg:flex-row justify-between xs:w-full lg:w-2/3">
-                        <div class="xs:w-full lg:w-1/3 xs:mb-6 lg:mb-0 lg:px-4">
+                        <div class="xs:w-full lg:w-1/3 xs:mb-6 lg:mb-0 md:px-4">
                             <img src="https://res.cloudinary.com/onethirtyone/image/upload/v1586458286/131%20Studios/131-logo-dark-bg_wwbm3o.png" class="h-12" alt="131 Studios Logo">
                             <div class="mt-8">
                                 <ul class="flex">
@@ -124,7 +124,7 @@
                                     <fa :icon="['fab', 'twitter-square']" size="2x"></fa>
                                 </a>
                             </div>
-                            <div class="mt-6 text-gray-500">
+                            <div class="mt-6 text-gray-500 tracking-wide">
                                131 Studios © {{ date('Y') }}
                             </div>
                         </div>
@@ -143,7 +143,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-center mt-3">
+                            <div class="flex items-center mt-4">
                                 <div class="rounded-full bg-blue-800 mr-3 h-10 w-10">
                                     <i class="fad fa-phone px-2 py-1 fa-lg" style="line-height: inherit;" ></i>
                                 </div>
@@ -152,8 +152,8 @@
                                 </div>
                             </div>
 
-                            <div class="flex items-center mt-3">
-                                <div class="rounded-full bg-blue-800 mr-3 h-10 w-10">
+                            <div class="flex items-center mt-4">
+                                <div class="rounded-full bg-blue-800 mr-4 h-10 w-10">
                                     <i class="fad fa-envelope px-2 py-1 fa-lg" style="line-height: inherit;" ></i>
 
                                 </div>
