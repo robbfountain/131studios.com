@@ -25,7 +25,7 @@
                                 <fa :icon="['fas','paint-brush']"
                                     class="text-gray-900 group-hover:text-white"></fa>
                             </div>
-                            <h3 class="ml-4 text-xl tracking-wider font-normal text-gray-400 font-semibold">Website
+                            <h3 class="ml-4 text-xl tracking-wider font-normal text-gray-400 font-semibold">Web
                                 Design</h3>
                         </div>
 
