@@ -404,8 +404,19 @@ class Blog extends Model
         return !is_null($this->tweet_id) ? $this->tweet_id : (!is_null($this->tweet) ? $this->tweet : null);
     }
 
+    /**
+     * @return bool
+     */
+    public function isProject()
+    {
+        return $this->category->name == self::PROJECT;
+    }
+
+    /**
+     * @return mixed
+     */
     public function title()
     {
-        return $this->category->name == self::PROJECT ? $this->blogTitleToProjectTitle() : $this->title;
+        return $this->isProject() ? $this->blogTitleToProjectTitle() : $this->title;
     }
 }
