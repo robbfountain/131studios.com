@@ -16,6 +16,14 @@
         </h6>
     @endif
 
+    @if($blog->isProject() && $blog->hasImage())
+        <div class="py-2">
+            <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
+                 alt="{{$blog->title()}}" class="blog-main-image">
+        </div>
+
+    @endif
+
     <p>
         {!! $blog->preview()!!}
     </p>
