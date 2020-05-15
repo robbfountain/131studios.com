@@ -3,6 +3,11 @@
 // Website
 use App\Blog;
 
+// Rick Roll
+Route::redirect('.env', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+Route::redirect('wp-login.php', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+Route::redirect('wp-admin', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
+
 Route::get('/', 'IndexController@index')
     ->name('index');
 
