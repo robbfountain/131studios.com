@@ -4,8 +4,15 @@ namespace App\View\Components;
 
 use Illuminate\View\Component;
 
+/**
+ * Class Categories
+ * @package App\View\Components
+ */
 class Categories extends Component
 {
+    /**
+     * @var
+     */
     public $categories;
 
     /**
