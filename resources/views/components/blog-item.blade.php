@@ -23,7 +23,6 @@
                      alt="{{$blog->title()}}" class="blog-main-image">
             </a>
         </div>
-
     @endif
 
     <p>
