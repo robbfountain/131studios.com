@@ -105,7 +105,7 @@
                         <div class="">
                             <span class="inline-flex rounded-md shadow-sm">
                                 <button @click="send" type="submit" class="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                                    <fa :icon="['far','spinner']" spin v-if="form.busy" class="mr-1"></fa>
+                                    <fa :icon="['fal','spinner']" spin v-if="form.busy" class="mr-1"></fa>
                                     Submit
                                 </button>
                             </span>
