@@ -31,7 +31,7 @@
     "sass": "^1.15.2",
     "sass-loader": "^8.0.0",
     "sweetalert2": "^7.33.1",
-    "tailwindcss": "^1.2.0",
+    "tailwindcss": "^1.0",
     "vue": "^2.5.17",
     "vue-instantsearch": "^2.7.0",
     "vue-loader": "^14.2.4",
