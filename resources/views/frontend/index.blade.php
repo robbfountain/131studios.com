@@ -164,8 +164,13 @@
 @section('scripts')
     <script>
         var player = new Vimeo.Player('intro-video');
-        player.on('play', function () {
-            console.log('Played the video');
+        var videoId;
+        player.getVideoId().then( (id) => {
+            videoId = id;
+        })
+
+        player.on('play',  () => {
+            axios.post('/stats/videos/' + videoId + '/views');
         });
     </script>
 @endsection

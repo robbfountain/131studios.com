@@ -1,7 +1,6 @@
 <?php
 
 // Website
-use App\Blog;
 
 // Rick Roll
 Route::redirect('.env', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
@@ -73,3 +72,8 @@ Route::post('search', 'SearchController@show')
 
 // AWS SNS
 Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');
+
+
+// Track Views
+Route::post('/stats/videos/{video:video_id}/views', 'VideoController@update')
+    ->name('video.increment.views');
