@@ -53,7 +53,8 @@
 
                         <p class="mt-2 text-center leading-normal text-gray-400 ">
                             Host your website on industry leading Private Servers that are 100%
-                            maintained by us.</p>
+                            maintained by us.
+                        </p>
                         <div class="text-center mt-6">
                             <a href="/hosting"
                                class="border border-blue-100 hover:bg-blue-400 hover:text-white rounded-lg px-3 py-1 text-blue-100">Learn
@@ -73,7 +74,8 @@
                         </div>
 
                         <p class="mt-2 text-center leading-normal text-gray-400 ">
-                            Get your business noticed on social networks by letting us manage you social media accounts. </p>
+                            Get your business noticed on social networks by letting us manage you social media
+                            accounts. </p>
                         <div class="text-center mt-6">
                             <a href="/social-media"
                                class="border border-blue-100 hover:bg-blue-400 hover:text-white rounded-lg px-3 py-1 text-blue-100">Learn
@@ -111,10 +113,11 @@
             <h2 class="text-center title text-blue-900 text-3xl mb-8">How Can We Help You?</h2>
             <div class="flex xs:flex-col lg:flex-row-reverse justify-between">
                 <div class="lg:relative xs:inline-block xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0 lg:px-4">
-                    <iframe src="https://player.vimeo.com/video/338294354"
-                            class="lg:absolute lg:pin-t lg:pin-l w-full "
-                            style="width:100%; height:100%;" frameborder="0"
-                            allow="autoplay; fullscreen" allowfullscreen></iframe>
+                    <div data-vimeo-id="338294354" data-vimeo-width="600" id="intro-video"></div>
+                    {{--                    <iframe src="https://player.vimeo.com/video/338294354"--}}
+                    {{--                            class="lg:absolute lg:pin-t lg:pin-l w-full "--}}
+                    {{--                            style="width:100%; height:100%;" frameborder="0"--}}
+                    {{--                            allow="autoplay; fullscreen" allowfullscreen></iframe>--}}
                 </div>
                 <div class="xs:w-full lg:w-1/2 leading-normal text-lg text-gray-600 px-2">
                     <p class="mb-4">
@@ -156,4 +159,13 @@
     <section class="border-t h-64">
         <div id="map_canvas" class="w-full min-h-full mb-8"></div>
     </section>
-@stop
+@endsection
+
+@section('scripts')
+    <script>
+        var player = new Vimeo.Player('intro-video');
+        player.on('play', function () {
+            console.log('Played the video');
+        });
+    </script>
+@endsection

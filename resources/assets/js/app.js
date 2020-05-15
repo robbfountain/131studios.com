@@ -43,7 +43,15 @@ library.add(faChevronRight, faInfoCircle, faBars, faAngleRight, faMapPin, faPhon
 library.add(faStar, faMobileAlt, falSearch, faPhone, faEnvelope, faSpinner, faDatabase, faShield, faWrench, faAnalytics, faGlobe, faChartNetwork, faServerL);
 library.add(faTwitterSquare, faFacebookSquare);
 
+/**
+ * Vue Components
+ */
 import "./components";
+
+/**
+ * Vimeo
+ */
+import '@vimeo/player';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
