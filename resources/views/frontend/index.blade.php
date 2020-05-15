@@ -21,7 +21,7 @@
                     <div class="xs:hidden lg:inline xs:w-full lg:w-1/4 rounded-lg p-4 shadow-2xl mr-4 flex flex-col xs:mb-4"
                          style="background-color: rgba(0,0,0,0.5);">
                         <div class="text-center flex items-center lg:border-b border-gray-900 pb-4 lg:justify-center">
-                            <div class="transition bg-gray-400 h-8 w-8 rounded-full inline-block align-middle p-1">
+                            <div class="transition bg-gray-400 h-8 w-8 rounded-lg inline-block align-middle p-1">
                                 <fa :icon="['fas','paint-brush']"
                                     class="text-gray-900 group-hover:text-white"></fa>
                             </div>
@@ -35,7 +35,7 @@
 
                         <div class="text-center mt-6">
                             <a href="/website-design"
-                               class="border border-blue-100 hover:bg-blue-400 hover:text-blue-900 rounded-full px-3 py-1 text-blue-100">
+                               class="border border-blue-100 hover:bg-blue-400 hover:text-white rounded-lg px-3 py-1 text-blue-100">
                                 Learn More
                             </a>
                         </div>
@@ -45,7 +45,7 @@
                     <div class="xs:hidden lg:inline xs:w-full lg:w-1/4 rounded-lg p-4 shadow-2xl mr-4 flex flex-col xs:mb-4"
                          style="background-color: rgba(0,0,0,0.5);">
                         <div class="text-center flex items-center lg:border-b border-gray-900 pb-4 lg:justify-center">
-                            <div class="transition bg-gray-400 h-8 w-8 rounded-full inline-block align-middle p-1">
+                            <div class="transition bg-gray-400 h-8 w-8 rounded-lg inline-block align-middle p-1">
                                 <fa :icon="['fas','server']" class="text-gray-900 group-hover:text-white"></fa>
                             </div>
                             <h3 class="ml-4 text-xl tracking-wider font-normal text-gray-400 font-semibold">Hosting</h3>
@@ -56,7 +56,7 @@
                             maintained by us.</p>
                         <div class="text-center mt-6">
                             <a href="/hosting"
-                               class="border border-blue-100 hover:bg-blue-400 hover:text-blue-900 rounded-full px-3 py-1 text-blue-100">Learn
+                               class="border border-blue-100 hover:bg-blue-400 hover:text-white rounded-lg px-3 py-1 text-blue-100">Learn
                                 More</a>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                     <div class="xs:hidden lg:inline xs:w-full lg:w-1/4 rounded-lg p-4 shadow-2xl mr-4 flex flex-col xs:mb-4"
                          style="background-color: rgba(0,0,0,0.5);">
                         <div class="text-center flex items-center lg:border-b border-gray-900 pb-4 lg:justify-center">
-                            <div class="transition bg-gray-400 h-8 w-8 rounded-full inline-block align-middle p-1">
+                            <div class="transition bg-gray-400 h-8 w-8 rounded-lg inline-block align-middle p-1">
                                 <fa :icon="['fas','share-alt']" class="text-gray-900 group-hover:text-white"></fa>
                             </div>
                             <h3 class="ml-4 text-xl tracking-wider font-normal text-gray-400 font-semibold">Social
@@ -73,10 +73,10 @@
                         </div>
 
                         <p class="mt-2 text-center leading-normal text-gray-400 ">
-                            Get your business noticed by letting us manage you social media accounts. </p>
+                            Get your business noticed on social networks by letting us manage you social media accounts. </p>
                         <div class="text-center mt-6">
                             <a href="/social-media"
-                               class="border border-blue-100 hover:bg-blue-400 hover:text-blue-900 rounded-full px-3 py-1 text-blue-100">Learn
+                               class="border border-blue-100 hover:bg-blue-400 hover:text-white rounded-lg px-3 py-1 text-blue-100">Learn
                                 More</a>
                         </div>
                     </div>
@@ -85,7 +85,7 @@
                     <div class="xs:hidden lg:inline xs:w-full lg:w-1/4 rounded-lg p-4 shadow-2xl mr-4 flex flex-col xs:mb-4"
                          style="background-color: rgba(0,0,0,0.5);">
                         <div class="text-center flex items-center lg:border-b border-gray-900 pb-4 lg:justify-center">
-                            <div class="transition bg-gray-400 h-8 w-8 rounded-full inline-block align-middle p-1">
+                            <div class="transition bg-gray-400 h-8 w-8 rounded-lg inline-block align-middle p-1">
                                 <fa :icon="['fas','search']" class="text-gray-900 group-hover:text-white"></fa>
                             </div>
                             <h3 class="ml-4 text-xl tracking-wider font-normal text-gray-400 font-semibold">SEO</h3>
@@ -97,7 +97,7 @@
                         </p>
                         <div class="text-center mt-6">
                             <a href="/seo"
-                               class="border border-blue-100 hover:bg-blue-400 hover:text-blue-900 rounded-full px-3 py-1 text-blue-100">
+                               class="border border-blue-100 hover:bg-blue-400 hover:text-white rounded-lg px-3 py-1 text-blue-100">
                                 Learn More</a>
                         </div>
                     </div>
@@ -112,7 +112,7 @@
             <div class="flex xs:flex-col lg:flex-row-reverse justify-between">
                 <div class="lg:relative xs:inline-block xs:w-full lg:w-1/2 xs:mb-3 lg:mb-0 lg:px-4">
                     <iframe src="https://player.vimeo.com/video/338294354"
-                            class="lg:absolute lg:pin-t lg:pin-l w-full border-4 rounded border-gray-300"
+                            class="lg:absolute lg:pin-t lg:pin-l w-full "
                             style="width:100%; height:100%;" frameborder="0"
                             allow="autoplay; fullscreen" allowfullscreen></iframe>
                 </div>
