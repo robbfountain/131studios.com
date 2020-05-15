@@ -63,30 +63,49 @@
                         <div>
                             <label for="full_name" class="sr-only">Full name</label>
                             <div class="relative rounded-md shadow-sm">
-                                <input v-model="form.name" id="full_name" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Full name" />
+                                <input v-model="form.name"
+                                       id="full_name"
+                                       class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
+                                       placeholder="Full name"
+                                :class="{'border-red-500': form.errors.has('name')}"/>
                             </div>
                         </div>
                         <div>
                             <label for="email" class="sr-only">Email</label>
                             <div class="relative rounded-md shadow-sm">
-                                <input v-model="form.email" id="email" type="email" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Email" />
+                                <input v-model="form.email"
+                                       id="email"
+                                       type="email"
+                                       class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
+                                       placeholder="Email"
+                                       :class="{'border-red-500': form.errors.has('email')}"/>
                             </div>
                         </div>
                         <div>
                             <label for="phone" class="sr-only">Phone</label>
                             <div class="relative rounded-md shadow-sm">
-                                <input v-model="form.phone" id="phone" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Phone" />
+                                <input v-model="form.phone"
+                                       id="phone"
+                                       class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
+                                       placeholder="Phone"
+                                       :class="{'border-red-500': form.errors.has('phone')}"/>
                             </div>
                         </div>
                         <div>
                             <label for="message" class="sr-only">Message</label>
                             <div class="relative rounded-md shadow-sm">
-                                <textarea v-model="form.message" id="message" rows="4" class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150" placeholder="Message"></textarea>
+                                <textarea v-model="form.message"
+                                          id="message"
+                                          rows="4"
+                                          class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
+                                          placeholder="Message"
+                                          :class="{'border-red-500': form.errors.has('message')}"></textarea>
                             </div>
                         </div>
                         <div class="">
                             <span class="inline-flex rounded-md shadow-sm">
                                 <button @click="send" type="submit" class="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                                    <fa :icon="['far','spinner']" spin v-if="form.busy" class="mr-1""></fa>
                                     Submit
                                 </button>
                             </span>
