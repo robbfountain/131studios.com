@@ -7,7 +7,7 @@ use Illuminate\View\Component;
 /**
  * Class nav.
  */
-class nav extends Component
+class Nav extends Component
 {
     /**
      * @var
