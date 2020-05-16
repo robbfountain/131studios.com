@@ -20,7 +20,7 @@
         <div class="py-2">
             <a href="{{$blog->url}}" target="_blank">
                 <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
-                     alt="{{$blog->title()}}" class="blog-main-image">
+                     alt="{{$blog->blogTitle()}}" class="blog-main-image">
             </a>
         </div>
     @endif
