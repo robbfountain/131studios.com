@@ -415,7 +415,7 @@ class Blog extends Model
     /**
      * @return mixed
      */
-    public function title()
+    public function blogTitle()
     {
         return $this->isProject() ? $this->blogTitleToProjectTitle() : $this->title;
     }
