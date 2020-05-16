@@ -106,21 +106,21 @@ class Blog extends Resource
                 ->stacked()
                 ->rules(['required', 'string']),
 //
-//            Boolean::make('Published', 'is_published')
-//                ->hideWhenCreating()
-//                ->hideWhenUpdating()
-//                ->sortable(),
-//
-//            Select::make('State', 'is_published')->options([
-//                '1' => 'Published',
-//                '0' => 'Draft',
-//            ])->onlyOnForms()->rules(['required']),
-//
-//            DateTime::make('Publish Date', 'published_at')
-//                ->format('MMM D, YYYY')
-//                ->sortable()
-//                ->nullable()
-//                ->help('Leave blank to publish now or set a date in the future.'),
+            Boolean::make('Published', 'is_published')
+                ->hideWhenCreating()
+                ->hideWhenUpdating()
+                ->sortable(),
+
+            Select::make('State', 'is_published')->options([
+                '1' => 'Published',
+                '0' => 'Draft',
+            ])->onlyOnForms()->rules(['required']),
+
+            DateTime::make('Publish Date', 'published_at')
+                ->format('MMM D, YYYY')
+                ->sortable()
+                ->nullable()
+                ->help('Leave blank to publish now or set a date in the future.'),
 
 //            new Panel('Website', $this->websiteFields()),
 //            new Panel('Tweet', $this->tweetFields()),
