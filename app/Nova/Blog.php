@@ -96,9 +96,9 @@ class Blog extends Resource
             Text::make('Title')
                 ->rules(['required', 'string']),
 //
-            Text::make('Slug')
-                ->hideWhenCreating()
-                ->hideFromIndex(),
+//            Text::make('Slug')
+//                ->hideWhenCreating()
+//                ->hideFromIndex(),
 //
 //            CloudinaryImage::make('Image'),
 //
