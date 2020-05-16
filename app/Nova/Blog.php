@@ -122,9 +122,9 @@ class Blog extends Resource
                 ->nullable()
                 ->help('Leave blank to publish now or set a date in the future.'),
 
-//            new Panel('Website', $this->websiteFields()),
-//            new Panel('Tweet', $this->tweetFields()),
-//            new Panel('Project Information', $this->projectFields()),
+            new Panel('Website', $this->websiteFields()),
+            new Panel('Tweet', $this->tweetFields()),
+            new Panel('Project Information', $this->projectFields()),
         ];
     }
 
