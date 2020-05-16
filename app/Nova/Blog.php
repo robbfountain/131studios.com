@@ -100,7 +100,7 @@ class Blog extends Resource
                 ->hideWhenCreating()
                 ->hideFromIndex(),
 //
-            CloudinaryImage::make('Image'),
+//            CloudinaryImage::make('Image'),
 //
 //            Markdown::make('Body')
 //                ->stacked()
