@@ -93,8 +93,8 @@ class Blog extends Resource
 //
             BelongsTo::make('Category'),
 
-            Text::make('Title')
-                ->rules(['required', 'string']),
+//            Text::make('Title')
+//                ->rules(['required', 'string']),
 //
 //            Text::make('Slug')
 //                ->hideWhenCreating()
@@ -102,9 +102,9 @@ class Blog extends Resource
 //
 //            CloudinaryImage::make('Image'),
 //
-//            Markdown::make('Body')
-//                ->stacked()
-//                ->rules(['required', 'string']),
+            Markdown::make('Body')
+                ->stacked()
+                ->rules(['required', 'string']),
 //
 //            Boolean::make('Published', 'is_published')
 //                ->hideWhenCreating()
