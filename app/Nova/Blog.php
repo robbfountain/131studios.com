@@ -90,12 +90,12 @@ class Blog extends Resource
             BelongsTo::make('User')
                 ->hideWhenCreating()
                 ->searchable(),
-//
+
             BelongsTo::make('Category'),
 
-//            Text::make('Title')
-//                ->rules(['required', 'string']),
-//
+            Text::make('Title')
+                ->rules(['required', 'string']),
+
             Text::make('Slug')
                 ->hideWhenCreating()
                 ->hideFromIndex(),
