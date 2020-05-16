@@ -5,6 +5,7 @@ namespace App\Nova;
 use App\Nova\Actions\PublishBlog;
 use App\Nova\Actions\UnpublishBlog;
 use App\Nova\Filters\BlogCategory;
+use App\Nova\Metrics\BlogsByCategory;
 use App\Nova\Metrics\BlogViews;
 use App\Nova\Metrics\BlogViewsPerDay;
 use Illuminate\Http\Request;
@@ -71,7 +72,8 @@ class Blog extends Resource
     {
         return [
             new BlogViews,
-            new BlogViewsPerDay
+            new BlogViewsPerDay,
+            new BlogsByCategory
         ];
     }
 
