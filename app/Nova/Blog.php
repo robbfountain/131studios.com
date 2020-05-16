@@ -92,9 +92,9 @@ class Blog extends Resource
                 ->searchable(),
 //
             BelongsTo::make('Category'),
-//
-            Text::make('Title')
-                ->rules(['required', 'string']),
+
+//            Text::make('Title')
+//                ->rules(['required', 'string']),
 //
 //            Text::make('Slug')
 //                ->hideWhenCreating()
