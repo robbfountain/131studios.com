@@ -87,40 +87,40 @@ class Blog extends Resource
     public function fields(Request $request)
     {
         return [
-            BelongsTo::make('User')
-                ->hideWhenCreating()
-                ->searchable(),
-
-            BelongsTo::make('Category'),
-
-            Text::make('Title')
-                ->rules(['required', 'string']),
-
-            Text::make('Slug')
-                ->hideWhenCreating()
-                ->hideFromIndex(),
-
-            CloudinaryImage::make('Image'),
-
-            Markdown::make('Body')
-                ->stacked()
-                ->rules(['required', 'string']),
-
-            Boolean::make('Published', 'is_published')
-                ->hideWhenCreating()
-                ->hideWhenUpdating()
-                ->sortable(),
-
-            Select::make('State', 'is_published')->options([
-                '1' => 'Published',
-                '0' => 'Draft',
-            ])->onlyOnForms()->rules(['required']),
-
-            DateTime::make('Publish Date', 'published_at')
-                ->format('MMM D, YYYY')
-                ->sortable()
-                ->nullable()
-                ->help('Leave blank to publish now or set a date in the future.'),
+//            BelongsTo::make('User')
+//                ->hideWhenCreating()
+//                ->searchable(),
+//
+//            BelongsTo::make('Category'),
+//
+//            Text::make('Title')
+//                ->rules(['required', 'string']),
+//
+//            Text::make('Slug')
+//                ->hideWhenCreating()
+//                ->hideFromIndex(),
+//
+//            CloudinaryImage::make('Image'),
+//
+//            Markdown::make('Body')
+//                ->stacked()
+//                ->rules(['required', 'string']),
+//
+//            Boolean::make('Published', 'is_published')
+//                ->hideWhenCreating()
+//                ->hideWhenUpdating()
+//                ->sortable(),
+//
+//            Select::make('State', 'is_published')->options([
+//                '1' => 'Published',
+//                '0' => 'Draft',
+//            ])->onlyOnForms()->rules(['required']),
+//
+//            DateTime::make('Publish Date', 'published_at')
+//                ->format('MMM D, YYYY')
+//                ->sortable()
+//                ->nullable()
+//                ->help('Leave blank to publish now or set a date in the future.'),
 
 //            new Panel('Website', $this->websiteFields()),
 //            new Panel('Tweet', $this->tweetFields()),
