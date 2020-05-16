@@ -1,11 +1,11 @@
 <div class="{{$isColumn ? 'blog-container-column' : 'blog-container-row'}} category category-{{$blog->category->name}} {{!$blog->is_published || $blog->published_at > now() ? 'bg-orange-100' : ''}}">
     @if($isColumn)
         <h1>
-            <a href="{{route('blog.show',$blog->slug)}}">{{$blog->title()}}</a>
+            <a href="{{route('blog.show',$blog->slug)}}">{{$blog->blogTitle()}}</a>
         </h1>
     @else
         <h2>
-            <a href="{{route('blog.show',$blog->slug)}}">{{$blog->title()}}</a>
+            <a href="{{route('blog.show',$blog->slug)}}">{{$blog->blogTitle()}}</a>
         </h2>
     @endif
 
