@@ -87,9 +87,9 @@ class Blog extends Resource
     public function fields(Request $request)
     {
         return [
-//            BelongsTo::make('User')
-//                ->hideWhenCreating()
-//                ->searchable(),
+            BelongsTo::make('User')
+                ->hideWhenCreating()
+                ->searchable(),
 //
 //            BelongsTo::make('Category'),
 //
