@@ -71,8 +71,8 @@ class Blog extends Resource
     public function cards(Request $request)
     {
         return [
-            new BlogViews,
-            new BlogViewsPerDay,
+//            new BlogViews,
+//            new BlogViewsPerDay,
 //            new BlogsByCategory
         ];
     }
