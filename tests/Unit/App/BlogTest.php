@@ -97,4 +97,16 @@ class BlogTest extends TestCase
         $this->assertEquals($link->reference_url, $link->getLinkToFullPost());
         $this->assertEquals($blog->shareUrl(), $blog->getLinkToFullPost());
     }
+
+    /** @test * */
+    public function It_counts_views()
+    {
+        $blog = factory(Blog::class)->create();
+
+        $this->assertEquals(0, $blog->views);
+
+        $blog->increment('views');
+
+        $this->assertEquals(1, $blog->views);
+    }
 }

@@ -5,6 +5,8 @@ namespace App\Nova;
 use App\Nova\Actions\PublishBlog;
 use App\Nova\Actions\UnpublishBlog;
 use App\Nova\Filters\BlogCategory;
+use App\Nova\Metrics\BlogViews;
+use App\Nova\Metrics\BlogViewsPerDay;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
@@ -67,7 +69,10 @@ class Blog extends Resource
      */
     public function cards(Request $request)
     {
-        return [];
+        return [
+            new BlogViews,
+            new BlogViewsPerDay
+        ];
     }
 
     /**
