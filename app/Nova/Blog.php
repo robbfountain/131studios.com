@@ -91,7 +91,7 @@ class Blog extends Resource
                 ->hideWhenCreating()
                 ->searchable(),
 //
-//            BelongsTo::make('Category'),
+            BelongsTo::make('Category'),
 //
 //            Text::make('Title')
 //                ->rules(['required', 'string']),
