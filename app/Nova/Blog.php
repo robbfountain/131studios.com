@@ -99,13 +99,13 @@ class Blog extends Resource
             Text::make('Slug')
                 ->hideWhenCreating()
                 ->hideFromIndex(),
-//
-//            CloudinaryImage::make('Image'),
-//
+
+            CloudinaryImage::make('Image'),
+
             Markdown::make('Body')
                 ->stacked()
                 ->rules(['required', 'string']),
-//
+
             Boolean::make('Published', 'is_published')
                 ->hideWhenCreating()
                 ->hideWhenUpdating()
