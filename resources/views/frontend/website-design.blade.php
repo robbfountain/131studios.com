@@ -30,7 +30,7 @@
                         a call and let us know how we can help you.
                     </p>
 
-                    <div class="text-center text-4xl mt-6 text-gray-600 font-semibold">
+                    <div class="text-center text-4xl mt-6 text-gray-600 font-bold">
                         Call Us Today! <span class="text-blue-400">301.992.0962</span>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                     <fa :icon="['fal','star']" class="mr-2 text-blue-700" size="3x"></fa>
                 </div>
                 <div class="flex flex-col text-blue-700">
-                    <h3 class="tracking-wide">Unique Design</h3>
+                    <h3 class="text-lg tracking-wide font-bold text-blue-800">Unique Design</h3>
                     <div class="mt-2 leading-normal">
                         Your website will have a unique design tailored to your business that will stand out from the
                         competition.
@@ -63,7 +63,7 @@
                     <fa :icon="['fal','mobile-alt']" class="mr-2 text-blue-700" size="3x"></fa>
                 </div>
                 <div class="flex flex-col text-blue-700">
-                    <h3 class="tracking-wide">Fully Responsive</h3>
+                    <h3 class="text-lg tracking-wide font-bold text-blue-800">Fully Responsive</h3>
                     <div class="mt-2 leading-normal">
                         Your website will look great on any device...Phones, Tablets and computers
                     </div>
@@ -75,7 +75,7 @@
                     <fa :icon="['fal','search']" class="mr-2 text-blue-700" size="3x"></fa>
                 </div>
                 <div class="flex flex-col text-blue-700">
-                    <h3 class="tracking-wide">Search Engine Optimized</h3>
+                    <h3 class="text-lg tracking-wide font-bold text-blue-800">Search Engine Optimized</h3>
                     <div class="mt-2 leading-normal">
                         Get your business recognized by ensuring your site is ranked in all major search engines.
                     </div>
@@ -87,7 +87,7 @@
                     <fa :icon="['fal','envelope']" class="mr-2 text-blue-700" size="3x"></fa>
                 </div>
                 <div class="flex flex-col text-blue-700">
-                    <h3 class="tracking-wide">Email Contact Form</h3>
+                    <h3 class="text-lg tracking-wide font-bold text-blue-800">Email Contact Form</h3>
                     <div class="mt-2 leading-normal">
                         Your visitors can contact you directly from your website with your email contact form.
                     </div>
