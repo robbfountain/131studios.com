@@ -5,8 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Class BlogItem
- * @package App\View\Components
+ * Class BlogItem.
  */
 class BlogItem extends Component
 {

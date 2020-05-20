@@ -23,8 +23,6 @@ class BlogsByCategory extends Partition
                 if ($value) {
                     return Category::find($value)->name;
                 }
-
-                return null;
             });
     }
 
