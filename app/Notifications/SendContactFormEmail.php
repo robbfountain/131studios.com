@@ -46,6 +46,8 @@ class SendContactFormEmail extends Notification implements ShouldQueue
     public function toMail($notifiable)
     {
         return (new MailMessage)
+            ->subject('['. config('app.name') . '] Contact Form Submitted')
+            ->replyTo($this->contact['email'])
             ->view('email.contact.contactform-html', ['contact' => $this->contact]);
     }
 }
