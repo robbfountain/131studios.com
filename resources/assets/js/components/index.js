@@ -3,7 +3,7 @@ import {FontAwesomeIcon} from "@fortawesome/vue-fontawesome";
 
 import Pinned from "./Pinned";
 import Contact from "./Contact";
-import Dropdown from "./Dropdown";
+import Dropdown from "./drop-down";
 import SubscriptionForm from "./SubscriptionForm";
 import BlogSearch from "./blog-search";
 
@@ -13,6 +13,6 @@ import BlogSearch from "./blog-search";
 Vue.component('fa', FontAwesomeIcon);
 Vue.component('pinned', Pinned);
 Vue.component('Contact', Contact);
-Vue.component('Dropdown', Dropdown);
+Vue.component('drop-down', Dropdown);
 Vue.component('SubscriptionForm', SubscriptionForm);
 Vue.component('BlogSearch', BlogSearch);
