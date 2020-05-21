@@ -59,9 +59,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="hidden md:block md:ml-10 md:pr-4">
-                                    <button
-                                            class="inline-flex items-center space-x-2 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">
+                                <div class="relative hidden md:block md:ml-10 md:pr-4">
+                                    <button type="button"
+                                            class="group inline-flex items-center font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">
                                         <span>Our Services</span>
                                         <!-- Item active: "text-gray-600", Item inactive: "text-gray-400" -->
                                         <svg class="text-gray-400 h-5 w-5 group-hover:text-gray-500 group-focus:text-gray-500 transition ease-in-out duration-150"
@@ -82,7 +82,7 @@
      From: "opacity-100 translate-y-0"
      To: "opacity-0 translate-y-1"
  -->
-                                    <div class="absolute right-1/2 transform translate-x-1/3 mt-3 px-2 w-screen max-w-xs sm:px-0">
+                                    <div class=" absolute right-1/2 transform translate-x-1/3 mt-3 px-2 w-screen max-w-xs sm:px-0">
                                         <div class="rounded-lg shadow-lg">
                                             <div class="rounded-lg shadow-xs overflow-hidden">
                                                 <div class="z-20 relative grid gap-6 bg-white px-5 py-6 sm:gap-8 sm:p-8">
