@@ -1,12 +1,9 @@
 <?php
 
-
 namespace App\Classes;
 
-
 /**
- * Class Review
- * @package App\Classes
+ * Class Review.
  */
 class Review
 {

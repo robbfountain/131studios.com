@@ -1,15 +1,12 @@
 <?php
 
-
 namespace App\Classes;
-
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 
 /**
- * Class Reviews
- * @package App\Classes
+ * Class Reviews.
  */
 class Reviews
 {
@@ -20,7 +17,6 @@ class Reviews
     protected $url;
 
     protected $results;
-
 
     public function __construct()
     {
@@ -40,7 +36,6 @@ class Reviews
             return new Review($review);
         });
     }
-
 
     private function url()
     {
