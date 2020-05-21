@@ -17,7 +17,7 @@ class IndexController extends Controller
     {
         return view('frontend.index')->with(array_merge($this->title, [
             'blogs' => Blog::published()->latest('published_at')->take(3)->get(),
-            'review' => (new Reviews())->get()->random()
+            'review' => (new Reviews())->get()->random(),
         ]));
     }
 }
