@@ -1,15 +1,12 @@
 <?php
 
-
 namespace App\Classes;
-
 
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Http;
 
 /**
- * Class Reviews
- * @package App\Classes
+ * Class Reviews.
  */
 class Reviews
 {
@@ -28,8 +25,8 @@ class Reviews
      */
     public function __construct()
     {
-        $this->placeId = env('GOOGLE_PLACE_ID');
-        $this->apiKey = env('GOOGLE_PLACES_SECRET');
+        $this->placeId = env('GOOGLE_PLACES_ID');
+        $this->apiKey = env('GOOGLE_PLACES_KEY');
     }
 
     /**
@@ -47,7 +44,6 @@ class Reviews
             return Review::fromJsonResponse($review);
         });
     }
-
 
     /**
      * @return string
