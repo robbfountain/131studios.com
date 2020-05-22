@@ -57,4 +57,14 @@ class Review
 
         throw new \Exception("Property {$property} does not exist.");
     }
+
+    /**
+     * @param $response
+     *
+     * @return static
+     */
+    public static function fromJsonResponse($response)
+    {
+        return new static($response);
+    }
 }
