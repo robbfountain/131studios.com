@@ -10,20 +10,38 @@ use Illuminate\Support\Facades\Http;
  */
 class Reviews
 {
+    /**
+     * @var mixed
+     */
     protected $placeId;
 
+    /**
+     * @var mixed
+     */
     protected $apiKey;
 
+    /**
+     * @var
+     */
     protected $url;
 
+    /**
+     * @var
+     */
     protected $results;
 
+    /**
+     * Reviews constructor.
+     */
     public function __construct()
     {
-        $this->placeId = env('GOOGLE_PLACE_ID');
-        $this->apiKey = env('GOOGLE_PLACES_SECRET');
+        $this->placeId = env('GOOGLE_PLACES_ID');
+        $this->apiKey = env('GOOGLE_PLACES_KEY');
     }
 
+    /**
+     * @return \Illuminate\Support\Collection
+     */
     public function get()
     {
         $response = HTTP::get(
@@ -37,6 +55,9 @@ class Reviews
         });
     }
 
+    /**
+     * @return string
+     */
     private function url()
     {
         return "https://maps.googleapis.com/maps/api/place/details/json?placeid={$this->placeId}&key={$this->apiKey}";

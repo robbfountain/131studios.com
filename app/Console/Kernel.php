@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\PublishBlogCommand;
+use App\Console\Commands\ReviewsCommand;
 use App\Console\Commands\SitemapCommand;
 use App\Console\Commands\TweetBlogCommand;
 use Illuminate\Console\Scheduling\Schedule;
@@ -19,6 +20,7 @@ class Kernel extends ConsoleKernel
         SitemapCommand::class,
         PublishBlogCommand::class,
         TweetBlogCommand::class,
+        ReviewsCommand::class,
     ];
 
     /**
@@ -34,6 +36,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
 //        $schedule->command('studios:publish-blogs')->everyMinute();
         $schedule->command('studios:tweet-blog')->everyFiveMinutes();
+        $schedule->command('studios:reviews')->daily();
     }
 
     /**
