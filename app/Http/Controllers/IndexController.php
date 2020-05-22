@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Blog;
-use App\Classes\Reviews;
 use App\Testimonial;
 
 /**

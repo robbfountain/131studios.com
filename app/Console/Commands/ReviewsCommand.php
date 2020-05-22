@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Testimonial;
-use Illuminate\Console\Command;
 use Facades\App\Classes\Reviews;
+use Illuminate\Console\Command;
 
 class ReviewsCommand extends Command
 {
@@ -43,7 +43,7 @@ class ReviewsCommand extends Command
         Reviews::get()->each(function ($review) {
             $model = Testimonial::firstOrCreate([
                 'author' => $review->author,
-            ],[
+            ], [
                 'profile_photo' => $review->profile_photo,
                 'rating' => $review->rating,
                 'text' => $review->text,
