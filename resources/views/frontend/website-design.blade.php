@@ -3,17 +3,11 @@
 @section('content')
     <x-banner>
         <div class="container mx-auto text-center">
-            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
-                style="background-color: rgba(0,0,0,0.5)">
                 Website Design
-            </h1>
         </div>
     </x-banner>
 
-    <section class="xs:py-3 lg:py-10">
-        <div class="container mx-auto">
-            <div class="flex lg:flex-row xs:flex-col-reverse">
-                <div class="text-lg text-gray-600 lg:pr-6 lg:w-1/2 xs:w-full">
+   <x-service-offering service="Website Design" image="https://res.cloudinary.com/onethirtyone/image/upload/v1558561487/131%20Studios/website-design-131-studios-formats_sbhvbx.jpg">
                     <p class="mb-6">Let's face it, in today's digital world your business needs a website that stands
                         our from your
                         competitors.
@@ -33,15 +27,10 @@
                     <div class="text-center text-4xl mt-6 text-gray-600 font-bold">
                         Call Us Today! <span class="text-blue-400">301.992.0962</span>
                     </div>
-                </div>
+   </x-service-offering>
 
-                <div class="px-2 xs:w-full lg:w-1/2">
-                    <img src="https://res.cloudinary.com/onethirtyone/image/upload/v1558561487/131%20Studios/website-design-131-studios-formats_sbhvbx.jpg"
-                         class="-mt-8" alt="Website Design 131 Studios">
-                </div>
-            </div>
-        </div>
-    </section>
+
+
 
     <section class="xs:py-3 lg:py-10 bg-gray-300 border-t">
         <div class="container mx-auto flex lg:flex-row xs:flex-col">

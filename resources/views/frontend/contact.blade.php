@@ -1,14 +1,17 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-    <x-banner />
+    <x-banner>
+        Contact Us
+        <x-slot name="subtitle">We'd love to hear from you</x-slot>
+    </x-banner>
     <div class="relative bg-white">
         <div class="absolute inset-0">
             <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50"></div>
         </div>
         <contact inline-template>
             <div class="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
-                <div class="bg-gray-50 py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
+                <div class="bg-white py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
                     <div class="max-w-lg mx-auto">
                         <h2 class="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
                             Get in touch
@@ -101,7 +104,7 @@
                             <div class="">
                                 <span class="inline-flex rounded-md shadow-sm">
                                     <button @click="send" type="submit"
-                                            class="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-800 hover:bg-blue-700 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                                            class="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
                                         <fa :icon="['fal','spinner']" spin v-if="form.busy" class="mr-1"></fa>
                                         Submit
                                     </button>

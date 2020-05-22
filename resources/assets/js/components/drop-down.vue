@@ -11,7 +11,7 @@
             </span>
         </div>
 
-        <div v-if="isOpen" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
+        <div v-if="isOpen" class="z-auto origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
              :class="{'transition ease-in duration-75 transform opacity-0 scale-95' : !isOpen, 'transition ease-out duration-100 tranform opacity-100 scale-100' : isOpen }">
             <div class="rounded-md bg-white shadow-xs">
                 <slot/>
