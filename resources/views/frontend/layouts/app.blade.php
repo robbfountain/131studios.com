@@ -31,7 +31,7 @@
         <div id="app">
            @yield('content')
 
-            <footer class="bg-indigo-900 overflow-hidden text-indigo-100 border-t">
+            <footer class="bg-indigo-700 overflow-hidden text-indigo-100 border-t">
                 <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
                     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
                         <div class="grid xs:grid-cols-1 md:grid-cols-3 gap-8 xl:col-span-3">
@@ -141,39 +141,6 @@
         <script type="text/javascript" src="{{mix('js/manifest.js')}}"></script>
         <script type="text/javascript" src="{{mix('js/vendor.js')}}"></script>
         <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key={{env('GOOGLE_API_KEY')}}"></script>
-        <script src="https://player.vimeo.com/api/player.js"></script>
-
-        <script type="text/javascript">
-            function toggleMenu() {
-                var element = document.getElementById('menu');
-                if (element.classList.contains('xs:hidden')) {
-                    element.classList.remove('xs:hidden');
-                } else {
-                    element.classList.add('xs:hidden');
-                }
-            }
-
-            function initialize() {
-                var myLatLng = {lat: 39.7904, lng: -77.7278};
-
-                var map = new google.maps.Map(document.getElementById('map_canvas'), {
-                    zoom: 8,
-                    center: myLatLng
-                });
-
-                var marker = new google.maps.Marker({
-                    position: myLatLng,
-                    map: map,
-                    title: '131 Studios'
-                });
-            }
-
-            if (document.getElementById("map_canvas")) {
-                google.maps.event.addDomListener(window, 'load', initialize);
-            }
-        </script>
-
         @yield('scripts','')
     </body>
 </html>
