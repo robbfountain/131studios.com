@@ -1,4 +1,4 @@
-<div class="relative bg-gray-50 overflow-hidden">
+<div class="z-20 relative bg-gray-50 overflow-hidden">
     <div class="relative pt-6 pb-6 sm:pb-6 md:pb-6 lg:pb-6 xl:pb-6">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
             <nav class="relative flex items-center justify-between sm:h-10 md:justify-center">

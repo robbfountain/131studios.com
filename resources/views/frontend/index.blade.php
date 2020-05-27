@@ -151,9 +151,9 @@
                 <div class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                     <div class="sm:text-center lg:text-left">
                         <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-                            Let us design
+                            The Local Source for
                             <br class="xl:hidden"/>
-                            <span class="text-indigo-600">your website.</span>
+                            <span class="text-indigo-600">your website needs.</span>
                         </h2>
                         <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                             Servicing Greencastle, Hagerstown, Waynesboro, Chambersburg and the surrounding
@@ -191,7 +191,7 @@
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center">
                 <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-                    The Local Source for Your Website Services
+                   Our Service Offerings
                 </h3>
                 <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
                     We get it...It can be difficult to establish your online presence. From designing your
