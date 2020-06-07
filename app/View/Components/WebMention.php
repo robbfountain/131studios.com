@@ -5,8 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Class WebMention
- * @package App\View\Components
+ * Class WebMention.
  */
 class WebMention extends Component
 {

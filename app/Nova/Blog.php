@@ -73,7 +73,7 @@ class Blog extends Resource
         return [
             new BlogViews,
             new BlogViewsPerDay,
-            new BlogsByCategory
+            new BlogsByCategory,
         ];
     }
 

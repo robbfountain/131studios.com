@@ -5,8 +5,7 @@ namespace App\View\Components;
 use Illuminate\View\Component;
 
 /**
- * Class Categories
- * @package App\View\Components
+ * Class Categories.
  */
 class Categories extends Component
 {
