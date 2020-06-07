@@ -60,7 +60,7 @@ class BlogController extends Controller
         $blog->increment('views');
 
         return view('frontend.blog.show', compact('blog'))->with([
-            'title' => $blog->title . $this->titleSuffix,
+            'title' => $blog->title.$this->titleSuffix,
         ]);
     }
 }

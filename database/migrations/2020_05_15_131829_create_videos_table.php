@@ -26,6 +26,7 @@ class CreateVideosTable extends Migration
             ['video_id' => '338294354'] // Intro Video
         );
     }
+
     /**
      * Reverse the migrations.
      *

@@ -45,7 +45,7 @@ $factory->state(Blog::class, 'future', function (Faker $faker) {
 
 $factory->state(Blog::class, 'tweet', function (Faker $faker) {
     return [
-        'tweet' => 'https://twitter.com/' . $faker->word . '/' . $faker->word,
+        'tweet' => 'https://twitter.com/'.$faker->word.'/'.$faker->word,
     ];
 });
 
