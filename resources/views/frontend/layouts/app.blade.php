@@ -10,9 +10,9 @@
         <title>{{ $title ?? config('app.name') }} </title>
 
         <!-- Webmentions -->
-        <link href="https://twitter.com/131studios" rel="me" />
-        <link rel="webmention" href="https://webmention.io/131studios.com/webmention" />
-        <link rel="pingback" href="https://webmention.io/131studios.com/xmlrpc" />
+        <link href="https://twitter.com/131studios" rel="me"/>
+        <link rel="webmention" href="https://webmention.io/131studios.com/webmention"/>
+        <link rel="pingback" href="https://webmention.io/131studios.com/xmlrpc"/>
 
         <!-- CSS
         ================================================== -->
@@ -29,7 +29,7 @@
 
     <body>
         <div id="app">
-           @yield('content')
+            @yield('content')
 
             <footer class="bg-indigo-700 overflow-hidden text-indigo-100 border-t">
                 <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
@@ -119,7 +119,9 @@
                             <div class="">
                                 <h5 class="mb-3 font-semibold text-indigo-200 text-lg">About Us</h5>
 
-                                <p>We are a local Greencastle, PA company that specializes in website design, hosting,
+                                <p class="text-blue">We are a local Greencastle, PA company that specializes in website
+                                    design,
+                                    hosting,
                                     social
                                     media management and SEO. We service Greencastle, Chambersburg, Waynesboro,
                                     Hagerstown
