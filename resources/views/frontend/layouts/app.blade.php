@@ -32,7 +32,6 @@
     </head>
 
     <body>
-        <div>
            @yield('content')
 
             <footer class="bg-indigo-700 overflow-hidden text-indigo-100 border-t">
@@ -141,7 +140,6 @@
                     </div>
                 </div>
             </footer>
-        </div>
 
         <livewire:scripts />
         <script type="text/javascript" src="{{mix('js/manifest.js')}}"></script>

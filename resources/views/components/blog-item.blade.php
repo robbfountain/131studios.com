@@ -1,37 +1,24 @@
-<div class="{{$isColumn ? 'blog-container-column' : 'blog-container-row'}} category category-{{$blog->category->name}} {{!$blog->is_published || $blog->published_at > now() ? 'bg-orange-100' : ''}}">
-    @if($isColumn)
-        <h1>
-            <a href="{{route('blog.show',$blog->slug)}}">{{$blog->blogTitle()}}</a>
-        </h1>
-    @else
-        <h2>
-            <a href="{{route('blog.show',$blog->slug)}}">{{$blog->blogTitle()}}</a>
-        </h2>
-    @endif
+<div class="mb-12 category category-{{$blog->category->name}} {{!$blog->is_published || $blog->published_at > now() ? 'bg-orange-100 bg-opacity-50' : ''}}">
+
+    <h1 class="text-4xl leading-none mb-4 ">
+        <a class="text-gray-800 text-4xl hover:text-gray-700 transition ease-in-out duration-150"
+           href="{{route('blog.show',$blog->slug)}}">{{$blog->blogTitle()}}</a>
+    </h1>
 
     @if(!$blog->isProject())
-        <h6>
+        <h6 class="text-gray-700 text-lg mb-2">
             {{$blog->category->name}}
             - {{$blog->published_at->format('M d, Y')}} {{ $blog->reference_url ? ' - ' . $blog->referenceUrl() : '' }}
         </h6>
     @endif
 
-    @if($blog->isProject() && $blog->hasImage())
-        <div class="py-2">
-            <a href="{{$blog->url}}" target="_blank">
-                <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
-                     alt="{{$blog->blogTitle()}}" class="blog-main-image">
-            </a>
-        </div>
-    @endif
-
-    <p>
+    <p class="text-gray-600 leading-normal text-xl mb-6 mt-3">
         {!! $blog->preview()!!}
     </p>
 
     @if(!$blog->isProject())
         <div class="mt-6">
-            <a class="more" href="{{$blog->getLinkToFullPost()}}">
+            <a class="text-lg border-b-4 text-indigo-500 hover:border-indigo-500 hover:text-indigo-600 transition ease-in-out duration-150" href="{{$blog->getLinkToFullPost()}}">
                 Read More
             </a>
             @if($blog->reference_url)

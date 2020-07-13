@@ -1,157 +1,89 @@
 @extends('frontend.layouts.app')
 
 @section('content')
-   <x-banner>
-        <div class="container mx-auto text-center">
-            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
-                style="background-color: rgba(0,0,0,0.5)">
-                Additional Services
-            </h1>
-        </div>
-   </x-banner>
+    <x-banner>
+        Additional <span class="text-indigo-500">Services</span>
+        <x-slot name="subtitle">We offer a wide range of additional services. If there is something you need but don't
+            see it listed, just <a class="text-indigo-500 hover:text-indigo-600 transition ease-in-out duration-150"
+                                   href="{{route('contact.index')}}">ask us.</a></x-slot>
+    </x-banner>
 
-    <section class="xs:py-3 lg:py-10">
-        <div class="container mx-auto">
-            <div class="text-lg text-gray-600 mb-8 leading-normal">
-                We offer a number of additional services for your website and business. If you would like more information or if you need assistance with anything else that
-                may not be listed please give us a call or <a href="/contact"
-                                                              class="no-underline text-blue-600 font-semibold">send us an email.</a> and we'll be happy to help you.
-            </div>
+    <section class="py-12 bg-white">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
+                <x-feature icon="search">
 
-            <div class="flex lg:flex-row xs:flex-col lg:flex-wrap">
+                    <x-slot name="title">SEO Checkup</x-slot>
+                    <x-slot name="price">FREE ($99 Value)</x-slot>
 
-                <!-- Service -->
-                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
-                    <div class="flex flex-col border-2 border-blue-600 rounded mr-4 mb-4">
-                        <div class="text-center py-4 bg-gray-@300">
-                            <fa :icon="['fal','search']" size="3x" class="text-blue-600"></fa>
-                        </div>
-                        <div class="p-2 text-center">
-                            <h4 class=" text-3xl tracking-loose text-blue-600">SEO Checkup</h4>
-                        </div>
-                        <div class="py-3 text-gray-600 text-2xl italic text-center">
-                            FREE ($99 Value)
-                        </div>
-                        <div class="py-2 px-4 leading-normal text-gray-600 text-lg">
-                            See how your website performs in all the major search engines (Google, Bing, Yahoo!). Get recommendations on how to improve your score.
-                        </div>
-                        <div class="text-center py-6">
-                            <a href="/contact"
-                               class="border rounded border-blue-600 text-blue-600 px-4 py-2 hover:bg-blue hover:text-white no-underline">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
+                    See how your website performs in all the major search engines (Google, Bing, Yahoo!). Get
+                    recommendations on how to improve your score.
 
-                <!-- Service -->
-                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
-                    <div class="flex flex-col border-2 border-blue-600 rounded mr-4 mb-4">
-                        <div class="text-center py-4 bg-gray-@300">
-                            <fa :icon="['fal','analytics']" size="3x" class="text-blue-600"></fa>
-                        </div>
-                        <div class="p-2 text-center">
-                            <h4 class=" text-3xl tracking-loose text-blue-600">Google Analytics</h4>
-                        </div>
-                        <div class="py-3 text-gray-600 text-2xl italic text-center">
-                            $50
-                        </div>
-                        <div class="py-2 px-4 leading-normal text-gray-600 text-lg">
-                            Set up your Google Analytics account and integrate into your current website to track visitors and gain insights to your website traffic.
-                        </div>
-                        <div class="text-center py-6">
-                            <a href="/contact"
-                               class="border rounded border-blue-600 text-blue-600 px-4 py-2 hover:bg-blue hover:text-white no-underline">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
+                </x-feature>
 
-                <!-- Service -->
-                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
-                    <div class="flex flex-col border-2 border-blue-600 rounded mr-4 mb-4">
-                        <div class="text-center py-4 bg-gray-@300">
-                            <fa :icon="['fal','globe']" size="3x" class="text-blue-600"></fa>
-                        </div>
-                        <div class="p-2 text-center">
-                            <h4 class=" text-3xl tracking-loose text-blue-600">Domain Registration</h4>
-                        </div>
-                        <div class="py-3 text-gray-600 text-2xl italic text-center">
-                            At Cost
-                        </div>
-                        <div class="py-2 px-4 leading-normal text-gray-600 text-lg">
-                            We can register your domain names for you.  From 1+ year intervals at cost. With no additional fees.
-                        </div>
-                        <div class="text-center py-6">
-                            <a href="/contact"
-                               class="border rounded border-blue-600 text-blue-600 px-4 py-2 hover:bg-blue hover:text-white no-underline">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
+                <x-feature icon="analytics">
 
-                <!-- Service -->
-                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
-                    <div class="flex flex-col border-2 border-blue-600 rounded mr-4 mb-4">
-                        <div class="text-center py-4 bg-gray-@300">
-                            <fa :icon="['fal','envelope']" size="3x" class="text-blue-600"></fa>
-                        </div>
-                        <div class="p-2 text-center">
-                            <h4 class=" text-3xl tracking-loose text-blue-600">Email Hosting</h4>
-                        </div>
-                        <div class="py-3 text-gray-600 text-2xl italic text-center">
-                            $7/user Monthly
-                        </div>
-                        <div class="py-2 px-4 leading-normal text-gray-600 text-lg">
-                            Send professional email from your business web address (you@yourcompany.com) with 30 GB storage per account.
-                        </div>
-                        <div class="text-center py-6">
-                            <a href="/email-hosting"
-                               class="border rounded border-blue-600 text-blue-600 px-4 py-2 hover:bg-blue hover:text-white no-underline">Explore Features</a>
-                        </div>
-                    </div>
-                </div>
+                    <x-slot name="title">Google Analytics</x-slot>
+                    <x-slot name="price">$50</x-slot>
 
-                <!-- Service -->
-                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
-                    <div class="flex flex-col border-2 border-blue-600 rounded mr-4 mb-4">
-                        <div class="text-center py-4 bg-gray-@300">
-                            <fa :icon="['fal','chart-network']" size="3x" class="text-blue-600"></fa>
-                        </div>
-                        <div class="p-2 text-center">
-                            <h4 class=" text-3xl tracking-loose text-blue-600">DNS Management</h4>
-                        </div>
-                        <div class="py-3 text-gray-600 text-2xl italic text-center">
-                            $5/Zone Monthly
-                        </div>
-                        <div class="py-2 px-4 leading-normal text-gray-600 text-lg">
-                           Host your DNS on our highly available and scalable cloud Domain Name System (DNS) web service.  Unlimited DNS records per zone.
-                        </div>
-                        <div class="text-center py-6">
-                            <a href="/contact"
-                               class="border rounded border-blue-600 text-blue-600 px-4 py-2 hover:bg-blue hover:text-white no-underline">Contact Us</a>
-                        </div>
-                    </div>
-                </div>
+                    Set up your Google Analytics account and integrate into your current website to track
+                    visitors and gain insights to your website traffic.
 
-                <!-- Service -->
-                <div class="xs:w-full lg:w-1/3 xs:mb-3 lg:mb-0 p-2">
-                    <div class="flex flex-col border-2 border-blue-600 rounded mr-4 mb-4">
-                        <div class="text-center py-4 bg-gray-@300">
-                            <fa :icon="['fal','server']" size="3x" class="text-blue-600"></fa>
-                        </div>
-                        <div class="p-2 text-center">
-                            <h4 class=" text-3xl tracking-loose text-blue-600">Website Hosting</h4>
-                        </div>
-                        <div class="py-3 text-gray-600 text-2xl italic text-center">
-                            $50 Monthly
-                        </div>
-                        <div class="py-2 px-4 leading-normal text-gray-600 text-lg">
-                           We can host your website on industry leading Virtual Private Servers.  Includes 1 hours of monthly maintenance.
-                        </div>
-                        <div class="text-center py-6">
-                            <a href="/hosting"
-                               class="border rounded border-blue-600 text-blue-600 px-4 py-2 hover:bg-blue hover:text-white no-underline">Explore Features</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </x-feature>
+
+                <x-feature icon="globe">
+
+                    <x-slot name="title">Domain Registration</x-slot>
+                    <x-slot name="price">$15</x-slot>
+
+                    We can register your domain names for you. From 1+ year intervals at cost. With no additional fees.
+
+                </x-feature>
+
+                <x-feature icon="envelope">
+
+                    <x-slot name="title">Email Hosting</x-slot>
+                    <x-slot name="price">$7/user per month</x-slot>
+
+                    Send professional email from your business web address (you@yourcompany.com) with 30 GB storage per account.
+
+                </x-feature>
+
+                <x-feature icon="chart-network">
+
+                    <x-slot name="title">DNS Management </x-slot>
+                    <x-slot name="price">$5/domain per month</x-slot>
+
+                    Host your DNS on our highly available and scalable cloud Domain Name System (DNS) web service. Unlimited DNS records per zone.
+
+                </x-feature>
+
+                <x-feature icon="server">
+
+                    <x-slot name="title">Website Hosting</x-slot>
+                    <x-slot name="price">$50/month</x-slot>
+
+                    We can host your website on industry leading Virtual Private Servers. Includes 1 hours of monthly maintenance.
+
+                </x-feature>
+            </ul>
         </div>
     </section>
+
+    <div class="bg-gray-50">
+        <div class="max-w-screen-xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8 lg:flex lg:items-center lg:justify-between">
+            <h2 class="text-3xl leading-9 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
+                Ready to dive in?
+                <br>
+                <span class="text-indigo-600">Contact us to get started.</span>
+            </h2>
+            <div class="mt-8 flex lg:flex-shrink-0 lg:mt-0">
+                <div class="inline-flex rounded-md shadow">
+                    <a href="{{route('contact.index')}}}}" class="inline-flex items-center justify-center px-5 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out">
+                        Get started
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 @endsection

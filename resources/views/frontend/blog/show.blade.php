@@ -15,24 +15,19 @@
 
 @section('content')
     <x-banner>
-        <div class="container mx-auto text-center">
-            <h1 class="px-3 py-3 mb-8 inline-block text-center text-gray-500 font-normal tracking-wide text-4xl mt-6 mb-1"
-                style="background-color: rgba(0,0,0,0.5)">
-                Our Blog
-            </h1>
-        </div>
+        {!!  $heading ?? 'Our <span class="text-indigo-500">Blog</span>' !!}
     </x-banner>
 
     <section class="">
         <div class="mb-6 bg-gray-200 text-sm flex items-center p-2 rounded">
             <div class="container mx-auto">
-                <a href="/blog" class="text-blue-700 no-underline mr-2"><< back to blog</a>
+                <a href="/blog" class="text-indigo-700 no-underline mr-2"><< back to blog</a>
             </div>
         </div>
 
-        <div class="container mx-auto ">
+        <div class="container mx-auto">
             <div class="flex justify-center">
-                <div class="blog-container ">
+                <div class="prose xl:prose-2xl ">
                     @if(!$blog->is_published || $blog->published_at > now())
                         <div class="my-2 p-2 border rounded-lg border-orange-600 bg-orange-100 text-orange-600 text-sm">
                             This blog post is not published
@@ -71,9 +66,9 @@
                     @endif
 
                     @if($blog->tweetId())
-                        <div class="mt-8 xsLw-full lg:w-1/2">
+                        <div class="mt-8 xs:w-full lg:w-1/2">
                             <h2>Comments</h2>
-                            <div class="mt-8 p-6 text-lg border-l-4 border-blue-twitter bg-blue-200">
+                            <div class="mt-8 p-6 text-lg border-l-4 border-indigo-twitter bg-indigo-200">
                                 You can reply to <a class="underline" href="{{$blog->tweetUrl()}}">this tweet</a> to
                                 comment on this post.
                             </div>
@@ -86,49 +81,6 @@
                     @endif
                 </div>
             </div>
-
-
-            {{--            <div class="flex justify-center my-6">--}}
-            {{--                <subscription-form inline-template class="w-2/3">--}}
-            {{--                    <div class="flex flex-col border-t-2 border-blue-300 bg-blue-100 px-3 pb-6 pt-2">--}}
-            {{--                        <div class="w-3/4">--}}
-            {{--                            <h2 class="text-gray-800 text-2xl">Stay up to date! </h2>--}}
-            {{--                            <p class="text-gray-600 leading-normal text-xl">We periodically send out a brief newsletter--}}
-            {{--                                highlighting some of our most recent blog--}}
-            {{--                                posts, tweets, videos and other useful content.</p>--}}
-            {{--                        </div>--}}
-
-            {{--                        <div>--}}
-            {{--                            <form action="#"--}}
-            {{--                                  class="mt-4 w-3/4 bg-white flex justify-between items-center rounded-full border shadow-lg h-12"--}}
-            {{--                                  @submit.prevent>--}}
-            {{--                                <i class="fad fa-envelope text-gray-400 fa-lg pl-4"></i>--}}
-            {{--                                <input type="email"--}}
-            {{--                                       id="email"--}}
-            {{--                                       v-model="form.email"--}}
-            {{--                                       class="flex-1 text-gray-600 px-3 focus:outline-none text-xl">--}}
-
-            {{--                                <button type="submit"--}}
-            {{--                                        @click="submitForm"--}}
-            {{--                                        class="focus:outline-none bg-blue-800 text-white rounded-full uppercase text-sm tracking-widest px-3 h-12">--}}
-            {{--                                    <i class="far fa-spinner fa-spin mr-1" v-if="form.busy"></i>--}}
-            {{--                                    <span> Subscribe</span>--}}
-            {{--                                </button>--}}
-            {{--                            </form>--}}
-            {{--                            <div class="text-green-500 ml-1 mt-3 w-2/3" v-if="form.successful">--}}
-            {{--                                Thanks! Your email address has been added to our mailing list. Don't worry, you can--}}
-            {{--                                unsubscribe at any time.--}}
-            {{--                            </div>--}}
-            {{--                            <div class="text-red-500 ml-1 mt-3 w-2/3" v-if="form.errors.has('email')">--}}
-            {{--                                Oops. Please enter a valid email address and try again--}}
-            {{--                            </div>--}}
-            {{--                        </div>--}}
-            {{--                    </div>--}}
-            {{--                </subscription-form>--}}
-            {{--            </div>--}}
-
-
         </div>
     </section>
-
 @endsection

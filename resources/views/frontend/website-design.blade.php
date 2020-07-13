@@ -2,14 +2,16 @@
 
 @section('content')
     <x-banner>
-        <div class="container mx-auto text-center">
-            Website Design
-        </div>
+
+        Website <span class="text-indigo-500">Design</span>
+
+        <x-slot name="subtitle">Professionally designed websites at affordable prices.</x-slot>
+
     </x-banner>
 
     <x-service-offering
-        service="Website Design"
-        image="https://res.cloudinary.com/onethirtyone/image/upload/v1558561487/131%20Studios/website-design-131-studios-formats_sbhvbx.jpg">
+            service="Website Design"
+            image="https://res.cloudinary.com/onethirtyone/image/upload/v1558561487/131%20Studios/website-design-131-studios-formats_sbhvbx.jpg">
         <p class="mb-6">Let's face it, in today's digital world your business needs a website that stands
             our from your
             competitors.

@@ -2,15 +2,15 @@
 
 @section('content')
     <x-banner>
-        Contact Us
+        Contact <span class="text-indigo-500">Us</span>
         <x-slot name="subtitle">We'd love to hear from you</x-slot>
     </x-banner>
     <div class="relative bg-white">
         <div class="absolute inset-0">
             <div class="absolute inset-y-0 left-0 w-1/2 bg-gray-50"></div>
         </div>
-        <contact inline-template>
-            <div class="relative max-w-7xl mx-auto lg:grid lg:grid-cols-5">
+        <div>
+            <div class="relative  mx-auto lg:grid lg:grid-cols-5">
                 <div class="bg-white py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
                     <div class="max-w-lg mx-auto">
                         <h2 class="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
@@ -58,62 +58,10 @@
                 </div>
                 <div class="bg-white py-16 px-4 sm:px-6 lg:col-span-3 lg:py-24 lg:px-8 xl:pl-12">
                     <div class="max-w-lg mx-auto lg:max-w-none">
-                        <form action="#" method="POST" class="grid grid-cols-1 row-gap-6" @submit.prevent>
-                            <div>
-                                <label for="full_name" class="sr-only">Full name</label>
-                                <div class="relative rounded-md shadow-sm">
-                                    <input v-model="form.name"
-                                           id="full_name"
-                                           class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
-                                           placeholder="Full name"
-                                           :class="{'border-red-500': form.errors.has('name')}"/>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="email" class="sr-only">Email</label>
-                                <div class="relative rounded-md shadow-sm">
-                                    <input v-model="form.email"
-                                           id="email"
-                                           type="email"
-                                           class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
-                                           placeholder="Email"
-                                           :class="{'border-red-500': form.errors.has('email')}"/>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="phone" class="sr-only">Phone</label>
-                                <div class="relative rounded-md shadow-sm">
-                                    <input v-model="form.phone"
-                                           id="phone"
-                                           class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
-                                           placeholder="Phone"
-                                           :class="{'border-red-500': form.errors.has('phone')}"/>
-                                </div>
-                            </div>
-                            <div>
-                                <label for="message" class="sr-only">Message</label>
-                                <div class="relative rounded-md shadow-sm">
-                                <textarea v-model="form.message"
-                                          id="message"
-                                          rows="4"
-                                          class="form-input block w-full py-3 px-4 placeholder-gray-500 transition ease-in-out duration-150"
-                                          placeholder="Message"
-                                          :class="{'border-red-500': form.errors.has('message')}"></textarea>
-                                </div>
-                            </div>
-                            <div class="">
-                                <span class="inline-flex rounded-md shadow-sm">
-                                    <button @click="send" type="submit"
-                                            class="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                                        <fa :icon="['fal','spinner']" spin v-if="form.busy" class="mr-1"></fa>
-                                        Submit
-                                    </button>
-                                </span>
-                            </div>
-                        </form>
+                        <livewire:contact-us />
                     </div>
                 </div>
             </div>
-        </contact>
+        </div>
     </div>
 @stop

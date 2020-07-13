@@ -1,7 +1,6 @@
 @extends('frontend.layouts.app')
 
 
-
 @section('content')
     <div class="bg-white py-8">
         <div class="container mx-auto">
