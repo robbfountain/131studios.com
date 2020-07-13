@@ -2,7 +2,12 @@
 
 @section('content')
     <x-banner>
-        {{ $heading ?: 'Our Blog' }}
+        {{ isset($heading) ? $heading : 'Our Blog' }}
+
+       <x-slot name="subtitle">
+            We like to blog about all sorts of stuff in the development, security and design world.
+            Here's some of our recend entries.
+       </x-slot>
     </x-banner>
 
     <section class="bg-white lg:py-10 xs:pb-4 px-2">

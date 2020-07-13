@@ -1,11 +1,15 @@
 <div class="relative bg-gray-50 overflow-hidden">
     <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
         <div class="relative h-full max-w-screen-xl mx-auto">
-            <img class="h-128 absolute left-full transform translate-y-1/2 -translate-x-1/2 origin-bottom-left opacity-10"
-                 src="https://res.cloudinary.com/onethirtyone/image/upload/v1558561480/131%20Studios/logo-hero-2_rb9sf2.png">
+            <img
+                class="h-128 absolute left-full transform translate-y-1/2 -translate-x-1/2 origin-bottom-left opacity-10"
+                src="https://res.cloudinary.com/onethirtyone/image/upload/v1558561480/131%20Studios/logo-hero-2_rb9sf2.png"
+                alt="131 Studios Logo">
 
-            {{--            <img class="absolute left-full transform -translate-y-1/4 -translate-x-1/2 opacity-10 origin-top-right"--}}
-            {{--                 src="https://res.cloudinary.com/onethirtyone/image/upload/v1558561480/131%20Studios/logo-hero-2_rb9sf2.png">--}}
+            <img
+                class="h-128 absolute top-0 transform translate-y-0 translate-x-1/4 origin-top-left opacity-10"
+                src="https://res.cloudinary.com/onethirtyone/image/upload/v1558561480/131%20Studios/logo-hero-2_rb9sf2.png"
+            alt="131 Studios Logo">
         </div>
     </div>
 
@@ -30,51 +34,60 @@
                         </div>
                     </div>
                 </div>
-                <div class="hidden md:block">
-                    <drop-down>
-                        <template v-slot:trigger>Our Services</template>
+                <div class="hidden md:block relative"
+                     x-data="{open : false}">
+                    <a href="#"
+                       class="ml-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+                       @click="open=!open">
+                        Our Services
+                        <i class="ml-1 far fa-chevron-down"></i>
+                    </a>
+                    <div x-show="open"
+                         @click.away="open = false"
+                         x-transition:enter="transition ease-out duration-300"
+                         x-transition:enter-start="opacity-0 transform scale-90"
+                         x-transition:enter-end="opacity-100 transform scale-100"
+                         x-transition:leave="transition ease-in duration-300"
+                         x-transition:leave-start="opacity-100 transform scale-100"
+                         x-transition:leave-end="opacity-0 transform scale-90"
+                         class="absolute p-2 bg-white shadow-lg rounded-lg">
                         <div class="py-1">
                             <a href="{{route('website-design.index')}}"
-                               class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                <fa :icon="['fas','paint-brush']"
-                                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                                    fill="currentColor"></fa>
+                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                                <i class="fas fa-paint-brush mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                                ></i>
                                 Website Design
                             </a>
                             <a href="{{route('hosting.index')}}"
-                               class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                <fa :icon="['fas','server']"
-                                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                                    fill="currentColor"></fa>
+                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                                <i class="fas fa-server mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                                ></i>
                                 Hosting
                             </a>
                         </div>
                         <div class="py-1">
                             <a href="{{route('social-media.index')}}"
-                               class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                <fa :icon="['fas','share-alt']"
-                                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                                    fill="currentColor"></fa>
+                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                                <i class="fas fa-share-alt mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                                ></i>
                                 Social Media
                             </a>
                             <a href="{{route('seo.index')}}"
-                               class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                <fa :icon="['fas','search']"
-                                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                                    fill="currentColor"></fa>
+                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                                <i class="fas fa-search mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                                ></i>
                                 Search Engine Optimization (SEO)
                             </a>
                         </div>
                         <div class="py-1">
                             <a href="{{route('additional-services.index')}}"
-                               class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                <fa :icon="['fas','plus']"
-                                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                                    fill="currentColor"></fa>
+                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                                <i class="fas fa-plus mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                                ></i>
                                 Additional Services
                             </a>
                         </div>
-                    </drop-down>
+                    </div>
                     <a href="{{route('project.index')}}"
                        class="ml-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Our
                         Work</a>
