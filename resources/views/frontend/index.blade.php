@@ -14,7 +14,7 @@
                     <polygon points="50,0 100,0 50,100 0,100"/>
                 </svg>
 
-                <navigation inline-template>
+                <div x-data="{open: false}">
                     <div>
                         <div class="relative pt-6 px-4 sm:px-6 lg:px-8">
                             <nav class="relative flex items-center justify-between sm:h-10 lg:justify-start">
@@ -27,7 +27,7 @@
                                         </a>
                                         <div class="-mr-2 flex items-center md:hidden">
                                             <button type="button"
-                                                    @click="isOpen=true"
+                                                    @click="open = true"
                                                     class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                                                 <svg class="h-6 w-6" stroke="currentColor" fill="none"
                                                      viewBox="0 0 24 24">
@@ -38,53 +38,63 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="hidden md:block md:ml-10 md:pr-4">
-                                    <drop-down>
-                                        <template v-slot:trigger>Our Services</template>
+                                <div class="relative hidden md:block md:ml-10 md:pr-4"
+                                x-data="{dropdownOpen : false}">
+                                    <a href="#"
+                                       class="font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+                                       @click="dropdownOpen=!dropdownOpen">
+                                        Our Services
+                                        <i class="far fa-chevron-down ml-1"></i>
+                                    </a>
+                                    <div x-show="dropdownOpen"
+                                         @click.away="dropdownOpen=false"
+                                         x-transition:enter="transition ease-out duration-300"
+                                         x-transition:enter-start="opacity-0 transform scale-90"
+                                         x-transition:enter-end="opacity-100 transform scale-100"
+                                         x-transition:leave="transition ease-in duration-300"
+                                         x-transition:leave-start="opacity-100 transform scale-100"
+                                         x-transition:leave-end="opacity-0 transform scale-90"
+                                         class="absolute p-2 bg-white shadow-lg rounded-lg">
                                         <div class="py-1">
                                             <a href="{{route('website-design.index')}}"
-                                               class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                                <fa :icon="['fas','paint-brush']"
-                                                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                                                    fill="currentColor"></fa>
+                                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                                                <i class="fas fa-paint-brush mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500">
+                                                </i>
                                                 Website Design
                                             </a>
                                             <a href="{{route('hosting.index')}}"
-                                               class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                                <fa :icon="['fas','server']"
-                                                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                                                <fa class="fas fa-server mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
                                                     fill="currentColor"></fa>
                                                 Hosting
                                             </a>
                                         </div>
                                         <div class="py-1">
                                             <a href="{{route('social-media.index')}}"
-                                               class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                                <fa :icon="['fas','share-alt']"
-                                                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                                                <fa class="fas fa-share-alt mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
                                                     fill="currentColor"></fa>
                                                 Social Media
                                             </a>
                                             <a href="{{route('seo.index')}}"
-                                               class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                                <fa :icon="['fas','search']"
-                                                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                                                <fa class="fas fa-search mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
                                                     fill="currentColor"></fa>
                                                 Search Engine Optimization (SEO)
                                             </a>
                                         </div>
                                         <div class="py-1">
                                             <a href="{{route('additional-services.index')}}"
-                                               class="group flex items-center px-4 py-2 text-sm leading-5 text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                                <fa :icon="['fas','plus']"
-                                                    class="mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
+                                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                                                <fa class="fas fa-plus mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
                                                     fill="currentColor"></fa>
                                                 Additional Services
                                             </a>
                                         </div>
-                                    </drop-down>
+                                    </div>
+
                                     <a href="{{route('project.index')}}"
-                                       class="font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Our
+                                       class="ml-8 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Our
                                         Work</a>
                                     <a href="{{route('blog.index')}}"
                                        class="ml-8 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Blog</a>
@@ -95,18 +105,14 @@
                             </nav>
                         </div>
 
-                        <!--
-                          Mobile menu, show/hide based on menu open state.
-
-                          Entering: "duration-150 ease-out"
-                            From: "opacity-0 scale-95"
-                            To: "opacity-100 scale-100"
-                          Leaving: "duration-100 ease-in"
-                            From: "opacity-100 scale-100"
-                            To: "opacity-0 scale-95"
-                        -->
                         <div class="absolute top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden"
-                             v-if="isOpen">
+                             x-show="open"
+                             x-transition:enter="transition ease-out duration-300"
+                             x-transition:enter-start="opacity-0 transform scale-90"
+                             x-transition:enter-end="opacity-100 transform scale-100"
+                             x-transition:leave="transition ease-in duration-300"
+                             x-transition:leave-start="opacity-100 transform scale-100"
+                             x-transition:leave-end="opacity-0 transform scale-90">
                             <div class="rounded-lg shadow-md">
                                 <div class="rounded-lg bg-white shadow-xs overflow-hidden">
                                     <div class="px-5 py-3 flex items-center justify-between">
@@ -117,7 +123,7 @@
                                         </div>
                                         <div class="-mr-2">
                                             <button type="button"
-                                                    @click="isOpen = false"
+                                                    @click="open = false"
                                                     class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out">
                                                 <svg class="h-6 w-6" stroke="currentColor" fill="none"
                                                      viewBox="0 0 24 24">
@@ -141,19 +147,23 @@
                                            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
                                             Search Engine Optimization (SEO)</a>
                                         <a href="{{route('additional-services.index')}}"
-                                           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Additional
-                                            Services</a>
+                                           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                                            Additional Services
+                                        </a>
                                         <a href="{{route('blog.index')}}"
-                                           class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Blog</a>
+                                           class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                                            Blog
+                                        </a>
                                         <a href="{{route('contact.index')}}"
                                            class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Contact
-                                            Us</a>
+                                            Us
+                                        </a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </navigation>
+                </div>
                 <div class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                     <div class="sm:text-center lg:text-left">
                         <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
@@ -192,12 +202,11 @@
         </div>
     </div>
 
-
     <div class="py-12 bg-gray-50">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="lg:text-center">
                 <h3 class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl sm:leading-10">
-                   Our Service Offerings
+                    Our Service Offerings
                 </h3>
                 <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
                     We get it...It can be difficult to establish your online presence. From designing your
@@ -213,8 +222,9 @@
                     <li>
                         <div class="flex">
                             <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                                    <fa :icon="['fas','paint-brush']"></fa>
+                                <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                    <i class="fas fa-paint-brush"></i>
 
                                 </div>
                             </div>
@@ -232,8 +242,9 @@
                     <li class="mt-10 md:mt-0">
                         <div class="flex">
                             <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                                    <fa :icon="['fas','server']"></fa>
+                                <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                    <i class="fas fa-server"></i>
 
                                 </div>
                             </div>
@@ -250,8 +261,9 @@
                     <li class="mt-10 md:mt-0">
                         <div class="flex">
                             <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                                    <fa :icon="['fas','share-alt']"></fa>
+                                <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                    <i class="fas fa-share-alt"></i>
                                 </div>
                             </div>
                             <div class="ml-4">
@@ -268,8 +280,9 @@
                     <li class="mt-10 md:mt-0">
                         <div class="flex">
                             <div class="flex-shrink-0">
-                                <div class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
-                                    <fa :icon="['fas','search']"></fa>
+                                <div
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                    <i class="fas fa-search"></i>
                                 </div>
                             </div>
                             <div class="ml-4">
@@ -298,7 +311,7 @@
                 </h2>
                 <p class="mt-3 text-xl leading-7 text-gray-500 sm:mt-4">
                     We like to blog about all sorts of stuff in the development, security and design world.
-                    Here's some of our recend entries.
+                    Here's some of our recent entries.
                 </p>
             </div>
             <div class="mt-12 grid gap-16 border-t-2 border-gray-100 pt-12 lg:grid-cols-3 lg:col-gap-5 lg:row-gap-12">
@@ -312,9 +325,10 @@
 
     <section class="py-12 bg-gray-50 overflow-hidden md:py-20 lg:py-16">
         <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <svg class="absolute top-full right-full transform translate-x-1/3 -translate-y-1/4 lg:translate-x-1/2 xl:-translate-y-1/2"
-                 width="404" height="404" fill="none" viewBox="0 0 404 404" role="img"
-                 aria-labelledby="svg-workcation">
+            <svg
+                class="absolute top-full right-full transform translate-x-1/3 -translate-y-1/4 lg:translate-x-1/2 xl:-translate-y-1/2"
+                width="404" height="404" fill="none" viewBox="0 0 404 404" role="img"
+                aria-labelledby="svg-workcation">
                 <title id="svg-workcation">Workcation</title>
                 <defs>
                     <pattern id="ad119f34-7694-4c31-947f-5c9d249b21f3" x="0" y="0" width="20" height="20"

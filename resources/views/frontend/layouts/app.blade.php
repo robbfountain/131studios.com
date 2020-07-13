@@ -18,6 +18,10 @@
         ================================================== -->
         <link rel="stylesheet" href="{{mix('css/app.css')}}">
 
+        <!-- LIVEWIRE
+        ================================================== -->
+        <livewire:styles />
+
         <!-- Icons
         =================================================== -->
         <script src="https://kit.fontawesome.com/1e40d81b84.js" crossorigin="anonymous"></script>
@@ -28,7 +32,7 @@
     </head>
 
     <body>
-        <div id="app">
+        <div>
            @yield('content')
 
             <footer class="bg-indigo-700 overflow-hidden text-indigo-100 border-t">
@@ -65,12 +69,12 @@
                                 <div class="mt-4 flex flex-row">
                                     <a href="http://facebook.com/131studiosweb" target="_blank"
                                        class="text-gray-200 hover:text-indigo-400 transition ease-in-out duration-150 mr-2">
-                                        <fa :icon="['fab', 'facebook-square']" size="2x"></fa>
+                                        <i class="fab fa-facebook-square fa-2x"></i>
                                     </a>
 
                                     <a href="https://twitter.com/131Studios" target="_blank"
                                        class="text-gray-200 hover:text-indigo-400 transition ease-in-out duration-150 mr-2">
-                                        <fa :icon="['fab', 'twitter-square']" size="2x"></fa>
+                                        <i class="fab fa-twitter-square fa-2x"></i>
                                     </a>
                                 </div>
                                 <div class="mt-6 text-gray-200 tracking-wide">
@@ -135,9 +139,9 @@
                     </div>
                 </div>
             </footer>
-
         </div>
 
+        <livewire:scripts />
         <script type="text/javascript" src="{{mix('js/manifest.js')}}"></script>
         <script type="text/javascript" src="{{mix('js/vendor.js')}}"></script>
         <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
