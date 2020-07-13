@@ -25,9 +25,9 @@
             </div>
         </div>
 
-        <div class="container mx-auto">
+        <div class="container mx-auto prose lg:prose-xl">
             <div class="flex justify-center">
-                <div class="prose xl:prose-2xl ">
+                <div class="">
                     @if(!$blog->is_published || $blog->published_at > now())
                         <div class="my-2 p-2 border rounded-lg border-orange-600 bg-orange-100 text-orange-600 text-sm">
                             This blog post is not published
