@@ -39,6 +39,14 @@ class Blog extends Model
     const PROJECT = 'Project';
 
     /**
+     * Default Image
+     */
+    protected $defaultImages = [
+        'Link' => 'Depositphotos_42907667_l-2015_mdlgii',
+        'Original' => '',
+    ];
+
+    /**
      * @var bool
      */
     protected $truncated = false;
@@ -350,8 +358,13 @@ class Blog extends Model
     public function imageUrl($options = [])
     {
         return request()->secure()
-            ? Cloudder::secureShow($this->image, array_merge($this->imageOptions, $options))
-            : Cloudder::show($this->image, array_merge($this->imageOptions, $options));
+            ? Cloudder::secureShow($this->getImage(), array_merge($this->imageOptions, $options))
+            : Cloudder::show($this->getImage(), array_merge($this->imageOptions, $options));
+    }
+
+    public function getImage()
+    {
+        return $this->image ?? $this->defaultImages[$this->category->name];
     }
 
     /**

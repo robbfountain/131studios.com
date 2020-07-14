@@ -9,7 +9,7 @@
                     {{$blog->category->name}}
                 </a>
             </p>
-            <a href="{{route('blog.show', $blog->slug)}}" class="block">
+            <a href="{{$blog->getLinkToFullPost() }}" class="block">
                 <h3 class="mt-2 text-xl leading-7 font-semibold text-gray-900">
                     {{$blog->blogTitle()}}
                 </h3>
