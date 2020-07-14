@@ -2,6 +2,7 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
+use App\Testimonial;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
@@ -76,12 +77,14 @@ class WebsiteControllerTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertViewIs('frontend.blog.index');
+        $response->assertViewIs('frontend.project.projects');
     }
 
     /** @test * */
     public function Index_returns_a_view()
     {
+        factory(Testimonial::class)->create();
+
         $response = $this->get(route('index'));
 
         $response->assertStatus(200);
