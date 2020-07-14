@@ -130,41 +130,6 @@ div.blog-container-column ol li:before {
   content: counter(ol-counter) ". ";
 }
 
-blockquote {
-  @apply .relative .mt-6;
-  text-shadow: 0 1px white;
-}
-
-blockquote p {
-  @apply .pl-10 .pt-6;
-  @apply .text-xl;
-  font-family: Georgia;
-  @apply .italic;
-  @apply .text-gray-700;
-  @apply .inline;
-  @apply .leading-relaxed;
-}
-
-blockquote p:before {
-  @apply .text-gray-400;
-  content: open-quote;
-  position: absolute;
-  top: -.4em;
-  opacity: .3;
-  left: -.1em;
-  font-size: 6.5em;
-}
-
-cite {
-  font-family: Georgia;
-  @apply .text-gray-600 .text-xl;
-  @apply .ml-12;
-}
-
-cite:before {
-  content: '-- ';
-}
-
 a.facebook {
   color: #3C5A99;
 }
@@ -178,22 +143,18 @@ a.twitter {
   @apply pt-8 border-t-8;
 }
 
-/* purgecss ignore */
 .category-Tweet {
   @apply border-blue-100 text-blue-800;
 }
 
-/* purgecss ignore */
 .category-Project {
   @apply border-indigo-100 text-indigo-800;
 }
 
-/* purgecss ignore */
 .category-Link {
   @apply border-gray-100 text-gray-800;
 }
 
-/* purgecss ignore */
 .category-Original {
   @apply border-yellow-300 text-yellow-800;
 }

@@ -14,17 +14,9 @@
 @endsection
 
 @section('content')
-    <x-banner>
-        {!!  $heading ?? 'Our <span class="text-indigo-500">Blog</span>' !!}
-    </x-banner>
+    <x-banner :condensed="true" />
 
-    <section class="">
-        <div class="mb-6 bg-gray-200 text-sm flex items-center p-2 rounded">
-            <div class="container mx-auto">
-                <a href="/blog" class="text-indigo-700 no-underline mr-2"><< back to blog</a>
-            </div>
-        </div>
-
+    <section class="bg-gray-50">
         <div class="container mx-auto">
             <div class="flex justify-center">
                 <div class="prose xl:prose-2xl ">

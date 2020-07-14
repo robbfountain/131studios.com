@@ -1,19 +1,23 @@
-<div class="relative bg-gray-50 overflow-hidden">
-    <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
-        <div class="relative h-full max-w-screen-xl mx-auto">
-            <img
+@props(['condensed' => false,])
+
+<div class="relative bg-gray-50">
+    @if(!$condensed)
+        <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
+            <div class="relative h-full max-w-screen-xl mx-auto">
+                <img
                     class="h-128 absolute left-full transform translate-y-1/2 -translate-x-1/2 origin-bottom-left opacity-10"
                     src="https://res.cloudinary.com/onethirtyone/image/upload/v1558561480/131%20Studios/logo-hero-2_rb9sf2.png"
                     alt="131 Studios Logo">
 
-            <img
+                <img
                     class="h-128 absolute top-0 transform translate-y-0 translate-x-1/4 origin-top-left opacity-10"
                     src="https://res.cloudinary.com/onethirtyone/image/upload/v1558561480/131%20Studios/logo-hero-2_rb9sf2.png"
                     alt="131 Studios Logo">
+            </div>
         </div>
-    </div>
+    @endif
 
-    <div class="relative pt-6 pb-12 sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32"
+    <div class="relative pt-6 {{$condensed ? 'sm:pb-12' : 'sm:pb-16 md:pb-20 lg:pb-28 xl:pb-32'}}"
          x-data="{open : false}">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6">
             <nav class="relative flex items-center justify-between sm:h-10 md:justify-center">
@@ -158,30 +162,32 @@
                 </div>
             </div>
         </div>
-        <div class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
-            <div class="text-center">
-                <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
-                    {{$slot}}
-                    <br class="xl:hidden"/>
-                    <span class="text-indigo-600">{{$titleExpanded ?? ''}}</span>
-                </h2>
-                <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
-                    {{$subtitle ?? ''}}
-                </p>
-                <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
-                    {{$cta ?? ''}}
-                    {{--                    <div class="rounded-md shadow">--}}
-                    {{--                        <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">--}}
-                    {{--                            Get started--}}
-                    {{--                        </a>--}}
-                    {{--                    </div>--}}
-                    {{--                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">--}}
-                    {{--                        <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:shadow-outline-blue transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">--}}
-                    {{--                            Live demo--}}
-                    {{--                        </a>--}}
-                    {{--                    </div>--}}
+        @if(!$condensed)
+            <div class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
+                <div class="text-center">
+                    <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+                        {{$slot}}
+                        <br class="xl:hidden"/>
+                        <span class="text-indigo-600">{{$titleExpanded ?? ''}}</span>
+                    </h2>
+                    <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                        {{$subtitle ?? ''}}
+                    </p>
+                    <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
+                        {{$cta ?? ''}}
+                        {{--                    <div class="rounded-md shadow">--}}
+                        {{--                        <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">--}}
+                        {{--                            Get started--}}
+                        {{--                        </a>--}}
+                        {{--                    </div>--}}
+                        {{--                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">--}}
+                        {{--                        <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-600 bg-white hover:text-indigo-500 focus:outline-none focus:shadow-outline-blue transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">--}}
+                        {{--                            Live demo--}}
+                        {{--                        </a>--}}
+                        {{--                    </div>--}}
+                    </div>
                 </div>
             </div>
-        </div>
+        @endif
     </div>
 </div>
