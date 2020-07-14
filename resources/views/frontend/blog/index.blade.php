@@ -11,10 +11,13 @@
     </x-banner>
 
     <section class="bg-white px-2 py-10">
-        <div class="flex flex-col pl-10 items-center  ">
-            @foreach($blogs as $blog)
-                <x-blog-item :blog="$blog"/>
-            @endforeach
+        <div class="container mx-auto">
+            <div class="flex flex-col pl-10 items-center  ">
+                @foreach($blogs as $blog)
+                    <x-blog-item :blog="$blog"/>
+                @endforeach
+            </div>
         </div>
+
     </section>
 @endsection

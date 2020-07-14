@@ -23,7 +23,9 @@ class BlogController extends Controller
      */
     public function index(Request $request)
     {
-        $blogs = Blog::published();
+        $blogs = Blog::published()->whereHas('category', function ($query) {
+            $query->where('name', '!=', Blog::PROJECT);
+        });
 
         if ($request->has('c')) {
             $blogs->wherehas('category', function ($query) use ($request) {
@@ -32,9 +34,7 @@ class BlogController extends Controller
         }
 
         return view('frontend.blog.index')->with([
-            'title' => 'Our Blog | 131 Studios',
             'blogs' => $blogs->latest('published_at')->get(),
-            'categories' => $this->getCategories(),
         ]);
     }
 

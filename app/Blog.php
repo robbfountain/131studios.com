@@ -248,6 +248,7 @@ class Blog extends Model
         ]);
     }
 
+
     /**
      * @param $query
      *
@@ -411,6 +412,8 @@ class Blog extends Model
     {
         return $this->category->name == self::PROJECT;
     }
+
+
 
     /**
      * @return mixed
