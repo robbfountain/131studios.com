@@ -19,7 +19,6 @@ class BlogControllerTest extends TestCase
 
         $response->assertViewIs('frontend.blog.index');
 
-
         $response->assertViewHas('blogs');
     }
 
