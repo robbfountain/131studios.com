@@ -2,7 +2,7 @@
 
 @section('content')
     <x-banner>
-        Web Hosting
+        Web<x-slot name="titleExpanded">Hosting</x-slot>
         <x-slot name="subtitle">Offering reliable web hosting for Greencastle, Chambersburg and Hagerstown</x-slot>
     </x-banner>
 
@@ -18,7 +18,7 @@
         <p class="py-4">We utilize industry leading virtual private servers from some of the top
             names
             in the industry
-            such as <a class="text-indigo-600 hover:text-indigo-900 transition ease-in-out duration-150" href="https://aws.amazon.com">Amazon AWS</a>, Digital Ocean and Linode.</p>
+            such as <a class="text-indigo-600 hover:text-indigo-900 transition ease-in-out duration-150" href="https://aws.amazon.com">AWS</a>, Digital Ocean and Linode.</p>
 
         <p class="py-4">We take security very seriously. All of our web servers are patched
             regularly
@@ -39,7 +39,7 @@
         <div class="flex lg:flex-row xs:flex-col container mx-auto">
             <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
                 <div class="mr-4">
-                    <fa :icon="['fal','database']" class="mr-2" size="3x"></fa>
+                    <i class="fal fa-database mr-2 fa-3x"></i>
                 </div>
                 <div class="text-blue-darker flex flex-col">
                     <h3 class="tracking-wide">MySQL Databases</h3>
@@ -51,7 +51,7 @@
 
             <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
                 <div class="mr-4">
-                    <fa :icon="['fal','shield']" class="mr-2" size="3x"></fa>
+                    <i class="fal fa-shield mr-2 fa-3x"></i>
                 </div>
                 <div class="flex flex-col text-blue-darker">
                     <h3 class="tracking-wide">Unmatched Security</h3>
@@ -63,7 +63,7 @@
 
             <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
                 <div class="mr-4">
-                    <fa :icon="['fal','wrench']" class="mr-2" size="3x"></fa>
+                    <i class="fal fa-wrench mr-2 fa-3x"></i>
                 </div>
                 <div class="flex flex-col text-blue-darker">
                     <h3 class="tracking-wide">Top Notch Support </h3>
@@ -75,7 +75,7 @@
 
             <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
                 <div class="mr-4">
-                    <fa :icon="['fal','envelope']" class="mr-2" size="3x"></fa>
+                    <i class="fal fa-envelope mr-2 fa-3x"></i>
                 </div>
                 <div class="flex flex-col text-blue-darker">
                     <h3 class="tracking-wide">Email Options</h3>

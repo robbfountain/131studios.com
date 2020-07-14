@@ -2,7 +2,7 @@
 
     <h1 class="text-4xl leading-none mb-4 ">
         <a class="text-gray-800 text-4xl hover:text-gray-700 transition ease-in-out duration-150"
-           href="{{route('blog.show',$blog->slug)}}">{{$blog->blogTitle()}}</a>
+           href="{{$blog->getLinkToFullPost()}}">{{$blog->blogTitle()}}</a>
     </h1>
 
     @if(!$blog->isProject())
@@ -18,7 +18,8 @@
 
     @if(!$blog->isProject())
         <div class="mt-6">
-            <a class="text-lg border-b-4 text-indigo-500 hover:border-indigo-500 hover:text-indigo-600 transition ease-in-out duration-150" href="{{$blog->getLinkToFullPost()}}">
+            <a class="text-lg border-b-4 text-indigo-500 hover:border-indigo-500 hover:text-indigo-600 transition ease-in-out duration-150"
+               href="{{$blog->getLinkToFullPost()}}">
                 Read More
             </a>
             @if($blog->reference_url)

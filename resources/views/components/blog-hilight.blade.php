@@ -1,6 +1,6 @@
 <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
     <div class="flex-shrink-0">
-        <img class="h-48 w-full object-cover" src="{{$blog->image}}" alt="{{$blog->title}}" />
+        <img class="h-48 w-full object-cover" src="{{$blog->imageUrl()}}" alt="{{$blog->title}}" />
     </div>
     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
         <div class="flex-1">
