@@ -17,9 +17,9 @@
     <x-banner :condensed="true" />
 
     <section class="bg-gray-50">
-        <div class="container mx-auto">
+        <div class="container mx-auto prose lg:prose-xl">
             <div class="flex justify-center">
-                <div class="prose xl:prose-2xl ">
+                <div class="">
                     @if(!$blog->is_published || $blog->published_at > now())
                         <div class="my-2 p-2 border rounded-lg border-orange-600 bg-orange-100 text-orange-600 text-sm">
                             This blog post is not published
@@ -28,7 +28,7 @@
 
                     <h1>{{$blog->title}}</h1>
 
-                    <h6>{{$blog->category->name}} - {{$blog->published_at->format('M j, Y')}} {{$blog->isOriginal() ? '-' .  $blog->minutesToRead() . ' minute
+                    <h6>{{$blog->category->name}} - {{$blog->published_at->format('M j, Y')}} {{$blog->isOriginal() ? '- ' .  $blog->minutesToRead() . ' minute
                         read' : ''}}
                     </h6>
 
