@@ -13,15 +13,15 @@ window.axios.defaults.headers.common = {
 /**
  * Import the main vue components we need
  */
-import Vue from 'vue';
-import InstantSearch from 'vue-instantsearch';
-Vue.use(InstantSearch);
+// import Vue from 'vue';
+// import InstantSearch from 'vue-instantsearch';
+// Vue.use(InstantSearch);
 
 /**
  * Import our form class
  */
-import Form from 'form-class';
-window.Form = Form;
+// import Form from 'form-class';
+// window.Form = Form;
 
 /**
  * Hilight JS
@@ -32,22 +32,22 @@ hljs.initHighlightingOnLoad();
 /**
  * Font Awesome
  */
-import {library} from '@fortawesome/fontawesome-svg-core'
+// import {library} from '@fortawesome/fontawesome-svg-core'
 
-import {faHome, faServer, faPaintBrush, faShareAlt, faSearch, faCheckCircle, faPlus } from '@fortawesome/pro-solid-svg-icons'
-import {faChevronRight, faInfoCircle, faBars, faAngleDoubleRight, faAngleRight, faMapPin, faPhone as faPhoner, faEnvelope as faEnveloper } from '@fortawesome/pro-regular-svg-icons'
-import {faStar, faMobileAlt, faSearch as falSearch, faPhone, faEnvelope, faSpinner, faDatabase, faShield, faWrench, faAnalytics, faGlobe, faChartNetwork, faServer as faServerL, faAt} from '@fortawesome/pro-light-svg-icons'
-import {faTwitterSquare, faFacebookSquare} from '@fortawesome/free-brands-svg-icons'
+// import {faHome, faServer, faPaintBrush, faShareAlt, faSearch, faCheckCircle, faPlus } from '@fortawesome/pro-solid-svg-icons'
+// import {faChevronRight, faInfoCircle, faBars, faAngleDoubleRight, faAngleRight, faMapPin, faPhone as faPhoner, faEnvelope as faEnveloper } from '@fortawesome/pro-regular-svg-icons'
+// import {faStar, faMobileAlt, faSearch as falSearch, faPhone, faEnvelope, faSpinner, faDatabase, faShield, faWrench, faAnalytics, faGlobe, faChartNetwork, faServer as faServerL, faAt} from '@fortawesome/pro-light-svg-icons'
+// import {faTwitterSquare, faFacebookSquare} from '@fortawesome/free-brands-svg-icons'
 
-library.add(faPlus, faHome, faServer, faPaintBrush, faShareAlt, faSearch, faCheckCircle, faAngleDoubleRight);
-library.add(faChevronRight, faInfoCircle, faBars, faAngleRight, faMapPin, faPhoner, faEnveloper);
-library.add(faAt, faStar, faMobileAlt, falSearch, faPhone, faEnvelope, faSpinner, faDatabase, faShield, faWrench, faAnalytics, faGlobe, faChartNetwork, faServerL);
-library.add(faTwitterSquare, faFacebookSquare);
+// library.add(faPlus, faHome, faServer, faPaintBrush, faShareAlt, faSearch, faCheckCircle, faAngleDoubleRight);
+// library.add(faChevronRight, faInfoCircle, faBars, faAngleRight, faMapPin, faPhoner, faEnveloper);
+// library.add(faAt, faStar, faMobileAlt, falSearch, faPhone, faEnvelope, faSpinner, faDatabase, faShield, faWrench, faAnalytics, faGlobe, faChartNetwork, faServerL);
+// library.add(faTwitterSquare, faFacebookSquare);
 
 /**
  * Vue Components
  */
-import "./components";
+// import "./components";
 
 /**
  * Vimeo
@@ -64,6 +64,6 @@ import 'alpinejs';
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-const app = new Vue({
-    el: '#app',
-});
+// const app = new Vue({
+//     el: '#app',
+// });
