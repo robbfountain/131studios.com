@@ -39,7 +39,7 @@ class Blog extends Model
     const PROJECT = 'Project';
 
     /**
-     * Default Image
+     * Default Image.
      */
     protected $defaultImages = [
         'Link' => 'Depositphotos_42907667_l-2015_mdlgii',
