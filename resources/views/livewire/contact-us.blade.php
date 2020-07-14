@@ -40,14 +40,15 @@
                       placeholder="Message">
             </textarea>
             @error('message') <span class="text-sm text-red-500">{{ $message }}</span> @enderror
-
         </div>
     </div>
     <div class="">
         <span class="inline-flex rounded-md shadow-sm">
             <button type="submit"
                     class="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
-                <i class="fal' fa-spinner fa-spin mr-1" wire:loading></i>
+                <span wire:loading>
+                    <i class="fal fa-spinner fa-spin mr-1" ></i>
+                </span>
                 Submit
             </button>
         </span>

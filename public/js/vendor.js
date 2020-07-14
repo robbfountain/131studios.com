@@ -14311,4 +14311,4 @@ module.exports = __webpack_require__(/*! axios */"./node_modules/axios/index.js"
 
 /***/ })
 
-}]);
+},[[1,"/js/manifest"]]]);

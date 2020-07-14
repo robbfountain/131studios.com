@@ -2,7 +2,7 @@
 
 @section('content')
     <x-banner>
-        {!!  $heading ?? 'Our <span class="text-indigo-500">Blog</span>' !!}
+        Our <span class="text-indigo-500">Blog</span>
 
         <x-slot name="subtitle">
             We like to blog about all sorts of stuff in the development, security and design world.
@@ -18,6 +18,5 @@
                 @endforeach
             </div>
         </div>
-
     </section>
 @endsection
