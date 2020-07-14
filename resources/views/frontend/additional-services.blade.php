@@ -10,7 +10,7 @@
 
     <section class="py-12 bg-white">
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
-            <ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
+           <x-feature-container>
                 <x-feature icon="search">
 
                     <x-slot name="title">SEO Checkup</x-slot>
@@ -66,7 +66,7 @@
                     We can host your website on industry leading Virtual Private Servers. Includes 1 hours of monthly maintenance.
 
                 </x-feature>
-            </ul>
+           </x-feature-container>
         </div>
     </section>
 

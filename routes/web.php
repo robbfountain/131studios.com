@@ -13,6 +13,9 @@ Route::get('/', 'IndexController@index')
 Route::get('projects', 'ProjectController@index')
     ->name('project.index');
 
+Route::view('services', 'frontend.services')
+    ->name('services.index');
+
 Route::get('hosting', 'HostingController@index')
     ->name('hosting.index');
 

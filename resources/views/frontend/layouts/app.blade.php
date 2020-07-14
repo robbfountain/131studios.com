@@ -48,7 +48,7 @@
                                                class="hover:text-indigo-400 transition ease-in-out duration-150">Home</a>
                                         </li>
                                         <li class="mr-3">
-                                            <a href="#top"
+                                            <a href="{{route('services.index')}}"
                                                class="hover:text-indigo-400 transition ease-in-out duration-150">Services</a>
                                         </li>
                                         <li class="mr-3">
