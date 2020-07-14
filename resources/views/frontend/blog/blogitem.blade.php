@@ -5,7 +5,8 @@
 
     <h6>
         {{$blog->category->name}}
-        - {{$blog->published_at->format('M d, Y')}} {{ $blog->reference_url ? ' - ' . $blog->referenceUrl() : '' }}
+        - {{$blog->published_at->format('M d, Y')}} {{ $blog->reference_url ? ' - ' . $blog->referenceUrl() : '' }} {{$blog->isOriginal() ? '- ' .  $blog->minutesToRead() . ' minute
+                        read' : ''}}
     </h6>
 
     <p>

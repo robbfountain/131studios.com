@@ -43,7 +43,7 @@ class Blog extends Model
      */
     protected $defaultImages = [
         'Link' => 'Depositphotos_42907667_l-2015_mdlgii',
-        'Original' => '',
+        'Original' => '131%20Studios/logo-hero-2_rb9sf2',
     ];
 
     /**

@@ -7,8 +7,8 @@
 
     @if(!$blog->isProject())
         <h6 class="text-gray-700 text-lg mb-2">
-            {{$blog->category->name}}
-            - {{$blog->published_at->format('M d, Y')}} {{ $blog->reference_url ? ' - ' . $blog->referenceUrl() : '' }}
+            {{$blog->published_at->format('M d, Y')}} {{ $blog->reference_url ? ' - ' . $blog->referenceUrl() : '' }} {{$blog->isOriginal() ? '- ' .  $blog->minutesToRead() . ' minute
+                        read' : ''}}
         </h6>
     @endif
 
