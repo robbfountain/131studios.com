@@ -56,7 +56,8 @@
                          x-transition:leave="transition ease-in duration-300"
                          x-transition:leave-start="opacity-100 transform scale-100"
                          x-transition:leave-end="opacity-0 transform scale-90"
-                         class="absolute p-2 bg-white shadow-lg rounded-lg">
+                         class="absolute p-2 bg-white shadow-lg rounded-lg"
+                    x-cloak>
                         <div class="py-1">
                             <a href="{{route('website-design.index')}}"
                                class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">

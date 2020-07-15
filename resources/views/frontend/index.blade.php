@@ -39,7 +39,7 @@
                                     </div>
                                 </div>
                                 <div class="relative hidden md:block md:ml-10 md:pr-4"
-                                x-data="{dropdownOpen : false}">
+                                     x-data="{dropdownOpen : false}">
                                     <a href="#"
                                        class="font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
                                        @click="dropdownOpen=!dropdownOpen">
@@ -54,7 +54,8 @@
                                          x-transition:leave="transition ease-in duration-300"
                                          x-transition:leave-start="opacity-100 transform scale-100"
                                          x-transition:leave-end="opacity-0 transform scale-90"
-                                         class="absolute p-2 bg-white shadow-lg rounded-lg">
+                                         class="absolute p-2 bg-white shadow-lg rounded-lg"
+                                         x-cloak>
                                         <div class="py-1">
                                             <a href="{{route('website-design.index')}}"
                                                class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
@@ -344,8 +345,11 @@
 
             <div class="relative">
 
-                <img class="mx-auto" src="https://res.cloudinary.com/onethirtyone/image/upload/v1586456860/131%20Studios/131-logo-160x40_ru0pze.png" alt="">
-                <h2 class="text-center mt-3 text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">Client Testimonials</h2>
+                <img class="mx-auto"
+                     src="https://res.cloudinary.com/onethirtyone/image/upload/v1586456860/131%20Studios/131-logo-160x40_ru0pze.png"
+                     alt="">
+                <h2 class="text-center mt-3 text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
+                    Client Testimonials</h2>
                 <blockquote class="mt-8">
                     <div class="max-w-3xl mx-auto text-center text-2xl leading-9 font-medium text-gray-900">
                         <p>
