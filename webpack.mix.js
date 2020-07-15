@@ -15,7 +15,6 @@ require('laravel-mix-purgecss');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .extract([
-        'vue',
         'axios',
     ])
     .sass('resources/assets/sass/app.scss', 'public/css')
@@ -29,5 +28,3 @@ mix.js('resources/assets/js/app.js', 'public/js')
 if (mix.inProduction()) {
     mix.version();
 }
-
-// mix.browserSync('131studios.test');
