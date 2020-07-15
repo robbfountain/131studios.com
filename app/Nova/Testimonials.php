@@ -12,7 +12,7 @@ class Testimonials extends Resource
      *
      * @var string
      */
-    public static $model = \App\Testimonials::class;
+    public static $model = Testimonials::class;
 
     /**
      * The single value that should be used to represent the resource when being displayed.
