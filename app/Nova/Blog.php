@@ -93,13 +93,18 @@ class Blog extends Resource
 
             BelongsTo::make('Category'),
 
-            Text::make('Title')->rules(['required', 'string']),
+            Text::make('Title')
+                ->rules(['required', 'string']),
 
             Text::make('Slug')
                 ->hideWhenCreating()
                 ->hideFromIndex(),
 
             CloudinaryImage::make('Image'),
+
+            Markdown::make('Preview')
+                ->stacked()
+                ->rules(['string']),
 
             Markdown::make('Body')
                 ->stacked()

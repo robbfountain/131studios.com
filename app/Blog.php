@@ -197,38 +197,6 @@ class Blog extends Model
     }
 
     /**
-     * @return mixed
-     */
-    public function blogTitleToProjectTitle()
-    {
-        return str_replace(
-            $this->titleSearchTerms(),
-            $this->titleReplaceTerms(),
-            $this->title
-        );
-    }
-
-    /**
-     * @return array
-     */
-    private function titleSearchTerms()
-    {
-        return [
-            'Website Launched',
-            'Website Released',
-            'Released',
-        ];
-    }
-
-    /**
-     * @return string
-     */
-    private function titleReplaceTerms()
-    {
-        return '';
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */
     public function category()
@@ -279,7 +247,7 @@ class Blog extends Model
      */
     public function setPublishedAtAttribute($value)
     {
-        $this->attributes['published_at'] = ! is_null($value) ? $value : now();
+        $this->attributes['published_at'] = !is_null($value) ? $value : now();
     }
 
     /**
@@ -315,7 +283,9 @@ class Blog extends Model
      */
     public function preview()
     {
-        return Str::words($this->toHtml(), 50, '...');
+        return (new \Parsedown)->text(
+            $this->preview ?? Str::words($this->body, 50, '...')
+        );
     }
 
     /**
@@ -370,7 +340,7 @@ class Blog extends Model
      */
     public function hasImage()
     {
-        return ! is_null($this->image);
+        return !is_null($this->image);
     }
 
     /**
@@ -404,7 +374,7 @@ class Blog extends Model
      */
     public function tweetUrl()
     {
-        return 'https://twitter.com/131studios/status/'.$this->tweetId();
+        return 'https://twitter.com/131studios/status/' . $this->tweetId();
     }
 
     /**
@@ -412,7 +382,15 @@ class Blog extends Model
      */
     public function tweetId()
     {
-        return ! is_null($this->tweet_id) ? $this->tweet_id : (! is_null($this->tweet) ? $this->tweet : null);
+        return !is_null($this->tweet_id) ? $this->tweet_id : (!is_null($this->tweet) ? $this->tweet : null);
+    }
+
+    /**
+     * @return mixed
+     */
+    public function blogTitle()
+    {
+        return $this->isProject() ? $this->blogTitleToProjectTitle() : $this->title;
     }
 
     /**
@@ -426,8 +404,32 @@ class Blog extends Model
     /**
      * @return mixed
      */
-    public function blogTitle()
+    public function blogTitleToProjectTitle()
     {
-        return $this->isProject() ? $this->blogTitleToProjectTitle() : $this->title;
+        return str_replace(
+            $this->titleSearchTerms(),
+            $this->titleReplaceTerms(),
+            $this->title
+        );
+    }
+
+    /**
+     * @return array
+     */
+    private function titleSearchTerms()
+    {
+        return [
+            'Website Launched',
+            'Website Released',
+            'Released',
+        ];
+    }
+
+    /**
+     * @return string
+     */
+    private function titleReplaceTerms()
+    {
+        return '';
     }
 }
