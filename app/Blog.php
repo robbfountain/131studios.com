@@ -315,9 +315,7 @@ class Blog extends Model
      */
     public function preview()
     {
-        return strip_tags(
-            Str::words($this->toHtml(), 50, '...')
-        );
+        return Str::words($this->toHtml(), 50, '...');
     }
 
     /**
