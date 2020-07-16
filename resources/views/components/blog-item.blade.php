@@ -1,4 +1,4 @@
-<div class="prose lg:prose-xl mb-12 category category-{{$blog->category->name}} {{!$blog->is_published || $blog->published_at > now() ? 'bg-orange-100 bg-opacity-50' : ''}}">
+<div class="mb-12 category category-{{$blog->category->name}} {{!$blog->is_published || $blog->published_at > now() ? 'bg-orange-100 bg-opacity-50' : ''}}">
 
     <h1 class="text-4xl leading-none mb-4 ">
         <a class="text-gray-800 text-4xl hover:text-gray-700 transition ease-in-out duration-150"
@@ -12,7 +12,7 @@
         </h6>
     @endif
 
-    <p class="text-gray-600 leading-normal text-xl mb-6 mt-3">
+    <p class="prose lg:prose-xl text-gray-600 leading-normal text-xl mb-6 mt-3">
         {!! $blog->preview()!!}
     </p>
 
