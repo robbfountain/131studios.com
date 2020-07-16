@@ -35,57 +35,37 @@
             fast response times, security and support</p>
     </x-service-offering>
 
-    <section class="xs:py-3 lg:py-10 bg-gray-100">
-        <div class="flex lg:flex-row xs:flex-col container mx-auto">
-            <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
-                <div class="mr-4">
-                    <i class="fal fa-database mr-2 fa-3x"></i>
-                </div>
-                <div class="text-blue-darker flex flex-col">
-                    <h3 class="tracking-wide">MySQL Databases</h3>
-                    <div class="mt-3">
-                        Unlimited MySQL databases with nightly backups.
-                    </div>
-                </div>
-            </div>
+    <section class="xs:py-3 lg:py-10 bg-white">
+        <x-feature-container>
+            <x-feature icon="database">
+                <x-slot name="title">
+                    MySQL Databases
+                </x-slot>
+                Unlimited MySQL databases with nightly backups.
+            </x-feature>
 
-            <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
-                <div class="mr-4">
-                    <i class="fal fa-shield mr-2 fa-3x"></i>
-                </div>
-                <div class="flex flex-col text-blue-darker">
-                    <h3 class="tracking-wide">Unmatched Security</h3>
-                    <div class="mt-3 ">
-                        Firewall with access control. SSH access and 24/7 monitoring.
-                    </div>
-                </div>
-            </div>
+            <x-feature icon="shield">
+                <x-slot name="title">
+                    Unmatched Security
+                </x-slot>
+                Firewall with access control. SSH access and 24/7 monitoring.
+            </x-feature>
 
-            <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
-                <div class="mr-4">
-                    <i class="fal fa-wrench mr-2 fa-3x"></i>
-                </div>
-                <div class="flex flex-col text-blue-darker">
-                    <h3 class="tracking-wide">Top Notch Support </h3>
-                    <div class="mt-2">
-                        1 Hour of professional maintenance per month. 99.9% uptime guarantee
-                    </div>
-                </div>
-            </div>
+            <x-feature icon="wrench">
+                <x-slot name="title">
+                   Top Notch Support
+                </x-slot>
+                One Hour of professional maintenance per month. 99.9% uptime guarantee
+            </x-feature>
 
-            <div class="flex p-3 xs:w-full lg:w-1/4 lg:border-b-0 xs:border-b xs:mb-3 lg:mb-0">
-                <div class="mr-4">
-                    <i class="fal fa-envelope mr-2 fa-3x"></i>
-                </div>
-                <div class="flex flex-col text-blue-darker">
-                    <h3 class="tracking-wide">Email Options</h3>
-                    <div class="mt-2">
-                        30GB Storage, Cloud Drive Storage, Ultimate Spam Protection and More. Starting at <a
-                                href="/email-hosting" class="no-underline text-blue">$7/user
-                            monthly</a>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <x-feature icon="envelope">
+                <x-slot name="title">
+                   Email Options
+                </x-slot>
+                30GB Storage, Cloud Drive Storage, Ultimate Spam Protection and More. Starting at <a
+                        href="/email-hosting" class="no-underline text-blue">$7/user
+                    monthly</a>
+            </x-feature>
+        </x-feature-container>
     </section>
 @endsection

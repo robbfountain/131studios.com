@@ -34,55 +34,36 @@
     </x-service-offering>
 
     <section class="xs:py-3 lg:py-10 bg-white border-t">
-        <div class="container mx-auto flex lg:flex-row sm:flex-col">
-            <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
-                <div class="mr-4">
-                    <i class="fal fa-star mr-2 text-indigo-700 fa-3x"></i>
-                </div>
-                <div class="flex flex-col text-indigo-700">
-                    <h3 class="text-lg tracking-wide font-bold text-indigo-800">Unique Design</h3>
-                    <div class="mt-2 leading-normal">
-                        Your website will have a unique design tailored to your business that will stand out from the
-                        competition.
-                    </div>
-                </div>
-            </div>
+        <x-feature-container>
+                <x-feature icon="star">
+                    <x-slot name="title">
+                       Unique Design
+                    </x-slot>
+                    Your website will have a unique design tailored to your business that will stand out from the
+                    competition.
+                </x-feature>
 
-            <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
-                <div class="mr-4">
-                    <i class="fal fa-mobile-alt mr-2 text-indigo-700 fa-3x"></i>
-                </div>
-                <div class="flex flex-col text-indigo-700">
-                    <h3 class="text-lg tracking-wide font-bold text-indigo-800">Fully Responsive</h3>
-                    <div class="mt-2 leading-normal">
-                        Your website will look great on any device...Phones, Tablets and computers
-                    </div>
-                </div>
-            </div>
+                <x-feature icon="mobile-alt">
+                    <x-slot name="title">
+                       Fully Responsive
+                    </x-slot>
+                    Your website will look great on any device...Phones, Tablets and computers
 
-            <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
-                <div class="mr-4">
-                    <i class="fal fa-search mr-2 text-indigo-700 fa-3x"></i>
-                </div>
-                <div class="flex flex-col text-indigo-700">
-                    <h3 class="text-lg tracking-wide font-bold text-indigo-800">Search Engine Optimized</h3>
-                    <div class="mt-2 leading-normal">
-                        Get your business recognized by ensuring your site is ranked in all major search engines.
-                    </div>
-                </div>
-            </div>
+                </x-feature>
 
-            <div class="flex p-3 lg:w-1/4 xs:w-full xs:mb-3 lg:mb-0 xs:border-b lg:border-b-0">
-                <div class="mr-4">
-                    <i class="fal fa-envelope mr-2 text-indigo-700 fa-3x"></i>
-                </div>
-                <div class="flex flex-col text-indigo-700">
-                    <h3 class="text-lg tracking-wide font-bold text-indigo-800">Email Contact Form</h3>
-                    <div class="mt-2 leading-normal">
-                        Your visitors can contact you directly from your website with your email contact form.
-                    </div>
-                </div>
-            </div>
-        </div>
+                <x-feature icon="search">
+                    <x-slot name="title">
+                      Search Engine Optimized
+                    </x-slot>
+                    Get your business recognized by ensuring your site is ranked in all major search engines.
+                </x-feature>
+
+                <x-feature icon="envelope">
+                    <x-slot name="title">
+                        Email Contact Form
+                    </x-slot>
+                    Your visitors can contact you directly from your website with your email contact form.
+                </x-feature>
+            </x-feature-container>
     </section>
 @endsection

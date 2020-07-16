@@ -8,7 +8,6 @@
         <div class="ml-4">
             <div class="flex justify-between items-center">
                 <h4 class="text-lg leading-6 font-medium text-gray-900">{{$title}}</h4>
-                <span class="text-xs px-2 py-1 rounded-full bg-green-100 mt-1 text-gray-600">{{$price}}</span>
             </div>
 
             <p class="mt-2 text-base leading-6 text-gray-500">
