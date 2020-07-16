@@ -13,26 +13,30 @@ a.twitter {
   @apply pt-8 border-t-8;
 }
 
+/* purgecss ignore */
 .category-Tweet {
   @apply border-blue-100 ;
 }
-
+/* purgecss ignore */
 .category-Project {
   @apply border-indigo-100 ;
 }
 
+/* purgecss ignore */
 .category-Link {
   @apply border-gray-100 ;
 }
-
+/* purgecss ignore */
 .category-Original {
   @apply border-yellow-300 ;
 }
 
+/* purgecss ignore */
 .category-Package {
   @apply border-gray-800;
 }
 
+/* purgecss ignore */
 .blog-main-image {
   @apply .shadow;
 }
