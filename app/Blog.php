@@ -38,6 +38,12 @@ class Blog extends Model
      */
     const PROJECT = 'Project';
 
+
+    /**
+     * Package
+     */
+    const PACKAGE = 'Package';
+
     /**
      * Default Image.
      */
@@ -77,7 +83,9 @@ class Blog extends Model
     /**
      * @var array
      */
-    protected $dates = ['published_at'];
+    protected $dates = [
+        'published_at'
+    ];
 
     /**
      * @var array
