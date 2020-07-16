@@ -12,7 +12,7 @@
         </h6>
     @endif
 
-    <p class="prose lg:prose-xl text-gray-600 leading-normal text-xl mb-6 mt-3">
+    <p class="text-gray-600 leading-normal text-xl mb-6 mt-3">
         {!! $blog->preview()!!}
     </p>
 
