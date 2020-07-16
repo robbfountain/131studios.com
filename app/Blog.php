@@ -177,7 +177,7 @@ class Blog extends Model
      */
     public function isOriginal()
     {
-        return $this->category->name === self::ORIGINAL;
+        return $this->category->name === self::ORIGINA || $this->category->name === self::PACKAGE;
     }
 
     /**
