@@ -32,6 +32,8 @@ class ContactUs extends Component
 
         Notification::route('mail', config('studios.contact_recipient'))
             ->notify(new SendContactFormEmail($validated));
+
+        session()->flash('message', 'Message Sent, Thanks!');
     }
 
     public function render()
