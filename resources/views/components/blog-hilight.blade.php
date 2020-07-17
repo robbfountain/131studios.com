@@ -14,7 +14,7 @@
                     {{$blog->blogTitle()}}
                 </h3>
                 <p class="mt-3 text-base leading-6 text-gray-500">
-                    {{$blog->preview()}}
+                    {{$blog->getPreview()}}
                 </p>
             </a>
         </div>
@@ -61,7 +61,7 @@
 {{--            {{$blog->blogTitle()}}--}}
 {{--        </h3>--}}
 {{--        <p class="mt-3 text-base leading-6 text-gray-500">--}}
-{{--            {!! $blog->preview()!!}--}}
+{{--            {!! $blog->getPreview()!!}--}}
 {{--        </p>--}}
 {{--    </a>--}}
 {{--    <div class="mt-6 flex items-center">--}}

@@ -288,7 +288,7 @@ class Blog extends Model
     /**
      * @return string
      */
-    public function preview()
+    public function getPreview()
     {
         return (new \Parsedown)->text(
             $this->preview ?? Str::words($this->body, 50, '...')

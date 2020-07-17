@@ -13,7 +13,7 @@
     @endif
 
     <p class="text-gray-600 leading-normal text-xl mb-6 mt-3">
-        {!! $blog->preview()!!}
+        {!! $blog->getPreview()!!}
     </p>
 
     @if(!$blog->isProject())

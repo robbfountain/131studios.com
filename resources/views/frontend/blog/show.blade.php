@@ -2,12 +2,12 @@
 
 @section('meta')
     <meta name="description"
-          content="{{$blog->preview()}}"/>
+          content="{{$blog->getPreview()}}"/>
     <meta property="og:site_name" content="{{config('app.name')}}">
     <meta property="og:url" content="{{$blog->shareUrl()}}">
     <meta property="og:type" content="article">
     <meta property="og:title" content="{{$blog->title}}">
-    <meta property="og:description" content="{{$blog->preview()}}">
+    <meta property="og:description" content="{{$blog->getPreview()}}">
     <meta property="og:image" content="{{$blog->imageUrl()}}">
     <meta property="og:article:published_time" content="{{$blog->published_at}}">
     <link rel="canonical" href="{{$blog->shareUrl()}}">

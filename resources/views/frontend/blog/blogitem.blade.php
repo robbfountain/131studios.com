@@ -10,7 +10,7 @@
     </h6>
 
     <p>
-        {!! $blog->preview()!!}
+        {!! $blog->getPreview()!!}
     </p>
 
     <div class="mt-6">
