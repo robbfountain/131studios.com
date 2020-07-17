@@ -17,9 +17,9 @@
     <x-banner :condensed="true" />
 
     <section class="bg-gray-50 py-0 xs:py-8">
-        <div class="md:container mx-auto prose sm:prose-sm lg:prose-lg xl:prose-xl px-0 xs:px-4 mx:px-2">
+        <div class="xs:container mx-auto prose sm:prose-sm lg:prose-lg xl:prose-xl px-0 xs:px-4 mx:px-2">
             <div class="flex justify-center">
-                <div class="">
+                <div>
                     @if(!$blog->is_published || $blog->published_at > now())
                         <div class="my-2 p-2 border rounded-lg border-orange-600 bg-orange-100 text-orange-600 text-sm">
                             This blog post is not published
@@ -35,7 +35,7 @@
                     @if($blog->hasImage())
                         <div class="py-2">
                             <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
-                                 alt="{{$blog->title}}" class="blog-main-image">
+                                 alt="{{$blog->title}}" class="">
                         </div>
                     @endif
 
