@@ -104,7 +104,8 @@ class Blog extends Resource
 
             Markdown::make('Preview')
                 ->stacked()
-                ->rules(['string']),
+                ->rules(['string'])
+            ->onlyOnForms(),
 
             Markdown::make('Body')
                 ->stacked()
