@@ -15,7 +15,6 @@
   ],
   "require": {
     "php": ">=7.4.0",
-    "algolia/algoliasearch-client-php": "^2.2",
     "creativeorange/gravatar": "^1.0",
     "cviebrock/eloquent-sluggable": "^7.0",
     "doctrine/dbal": "^2.9",
@@ -28,7 +27,6 @@
     "laravel/helpers": "^1.1",
     "laravel/horizon": "^4.0",
     "laravel/nova": "^3.0",
-    "laravel/scout": "^8.0",
     "laravel/socialite": "^4.3",
     "laravel/tinker": "^2.0",
     "league/flysystem-aws-s3-v3": "^1.0",

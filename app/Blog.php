@@ -16,7 +16,6 @@ use Spatie\Url\Url;
  */
 class Blog extends Model
 {
-    use Searchable;
 
     /**
      * Tweet.
