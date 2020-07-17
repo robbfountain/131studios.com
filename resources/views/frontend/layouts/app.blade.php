@@ -24,7 +24,8 @@
 
         <!-- Icons
         =================================================== -->
-        <script src="https://kit.fontawesome.com/1e40d81b84.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/1e40d81b84.js"
+                crossorigin="anonymous"></script>
 
         <!-- Analytics -->
         @include('frontend.partials.google-analytics')
