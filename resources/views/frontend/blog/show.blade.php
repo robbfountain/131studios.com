@@ -34,8 +34,8 @@
 
                     @if($blog->hasImage())
                         <div class="py-2">
-{{--                            <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"--}}
-{{--                                 alt="{{$blog->title}}" class="">--}}
+                            <img src="{{$blog->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
+                                 alt="{{$blog->title}}" class="">
                         </div>
                     @endif
 
