@@ -30,10 +30,15 @@
                 crossorigin="anonymous"></script>
 
 
+        <!-- AlpineJs
+        ================================================== -->
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
                 defer></script>
 
+        <!-- HilightJs
+       ================================================== -->
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script>
 
 
         <!-- Analytics -->
