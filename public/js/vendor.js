@@ -2008,25 +2008,13 @@ process.umask = function() { return 0; };
 
 /***/ }),
 
-/***/ "./node_modules/vue/dist/vue.common.js":
-/*!*********************************************!*\
-  !*** ./node_modules/vue/dist/vue.common.js ***!
-  \*********************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module build failed: Error: ENOENT: no such file or directory, open '/Users/robb/Code/131studios/node_modules/vue/dist/vue.common.js'");
-
-/***/ }),
-
 /***/ 1:
-/*!***********************!*\
-  !*** multi vue axios ***!
-  \***********************/
+/*!*******************!*\
+  !*** multi axios ***!
+  \*******************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! vue */"./node_modules/vue/dist/vue.common.js");
 module.exports = __webpack_require__(/*! axios */"./node_modules/axios/index.js");
 
 
