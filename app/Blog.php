@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use JD\Cloudder\Facades\Cloudder;
-use Laravel\Scout\Searchable;
 use OneThirtyOne\Mime\Message;
 use Spatie\Url\Url;
 
@@ -176,7 +175,8 @@ class Blog extends Model
      */
     public function isOriginal()
     {
-        return $this->category->name === self::ORIGINAL || $this->category->name === self::PACKAGE;
+        return $this->category->name === self::ORIGINAL
+            || $this->category->name === self::PACKAGE;
     }
 
     /**
