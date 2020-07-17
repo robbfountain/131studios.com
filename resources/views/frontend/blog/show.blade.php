@@ -16,8 +16,8 @@
 @section('content')
     <x-banner :condensed="true" />
 
-    <section class="bg-gray-50">
-        <div class="container mx-auto prose lg:prose-xl">
+    <section class="bg-gray-50 py-0 xs:py-8">
+        <div class="md:container md:mx-auto prose sm:prose-sm lg:prose-lg xl:prose-xl px-0 xs:px-4 mx:px-2">
             <div class="flex justify-center">
                 <div class="">
                     @if(!$blog->is_published || $blog->published_at > now())

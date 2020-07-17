@@ -11,7 +11,7 @@
     </x-banner>
 
     <section class="bg-white px-2 py-10">
-        <div class="container mx-auto">
+        <div class="md:container mx-auto">
             <div class="flex flex-col pl-10 ">
                 @foreach($blogs as $blog)
                     <x-blog-item :blog="$blog"/>
