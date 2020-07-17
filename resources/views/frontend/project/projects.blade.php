@@ -2,7 +2,7 @@
 
 @section('content')
     <x-banner>
-        Our <span class="text-indigo-500">Work</span>
+        Our <span class="text-blue-500">Work</span>
         <x-slot name="subtitle">
            Check out some of the work we have performed for our clients.
         </x-slot>

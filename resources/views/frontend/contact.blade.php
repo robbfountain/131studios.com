@@ -2,7 +2,7 @@
 
 @section('content')
     <x-banner>
-        Contact <span class="text-indigo-500">Us</span>
+        Contact <span class="text-blue-500">Us</span>
         <x-slot name="subtitle">We'd love to hear from you</x-slot>
     </x-banner>
     <div class="relative bg-white">

@@ -23,7 +23,7 @@
         </p>
 
         <div class="text-center text-4xl mt-6 text-gray-600 font-semibold">
-            Call Us Today! <span class="text-indigo-500 hover:text-indigo-800 transition ease-in-out duration-150">301.992.0962</span>
+            Call Us Today! <span class="text-blue-500 hover:text-blue-800 transition ease-in-out duration-150">301.992.0962</span>
         </div>
     </x-service-offering>
 @endsection

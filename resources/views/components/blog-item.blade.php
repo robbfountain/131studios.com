@@ -18,7 +18,7 @@
 
     @if(!$blog->isProject())
         <div class="mt-6">
-            <a class="text-lg border-b-4 text-indigo-500 hover:border-indigo-500 hover:text-indigo-600 transition ease-in-out duration-150"
+            <a class="text-lg border-b-4 text-blue-500 hover:border-blue-500 hover:text-blue-600 transition ease-in-out duration-150"
                href="{{$blog->getLinkToFullPost()}}">
                 Read More
             </a>

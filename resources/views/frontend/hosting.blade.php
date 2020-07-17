@@ -18,7 +18,7 @@
         <p class="py-4">We utilize industry leading virtual private servers from some of the top
             names
             in the industry
-            such as <a class="text-indigo-600 hover:text-indigo-900 transition ease-in-out duration-150" href="https://aws.amazon.com">AWS</a>, Digital Ocean and Linode.</p>
+            such as <a class="text-blue-600 hover:text-blue-900 transition ease-in-out duration-150" href="https://aws.amazon.com">AWS</a>, Digital Ocean and Linode.</p>
 
         <p class="py-4">We take security very seriously. All of our web servers are patched
             regularly

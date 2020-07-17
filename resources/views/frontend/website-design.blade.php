@@ -3,7 +3,7 @@
 @section('content')
     <x-banner>
 
-        Website <span class="text-indigo-500">Design</span>
+        Website <span class="text-blue-500">Design</span>
 
         <x-slot name="subtitle">Professionally designed websites at affordable prices.</x-slot>
 
@@ -29,7 +29,7 @@
         </p>
 
         <div class="text-center text-4xl mt-6 text-gray-600 font-bold">
-            Call Us Today! <span class="text-indigo-400">301.992.0962</span>
+            Call Us Today! <span class="text-blue-400">301.992.0962</span>
         </div>
     </x-service-offering>
 

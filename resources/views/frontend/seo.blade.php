@@ -37,7 +37,7 @@
         </p>
 
         <div class="text-center text-4xl mt-6 text-gray-600 font-semibold">
-            Call Us Today! <span class="text-indigo-500">301.992.0962</span>
+            Call Us Today! <span class="text-blue-500">301.992.0962</span>
         </div>
     </x-service-offering>
 

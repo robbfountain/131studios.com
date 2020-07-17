@@ -45,7 +45,7 @@
     <div class="flex items-center">
         <span class="inline-flex rounded-md shadow-sm">
             <button type="submit"
-                    class="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-700 focus:outline-none focus:border-indigo-700 focus:shadow-outline-indigo active:bg-indigo-700 transition duration-150 ease-in-out">
+                    class="inline-flex justify-center py-3 px-6 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-500 hover:bg-blue-700 focus:outline-none focus:border-blue-700 focus:shadow-outline-indigo active:bg-blue-700 transition duration-150 ease-in-out">
                 <span wire:loading wire:target="sendEmail">
                     <i class="fal fa-spinner fa-spin mr-1"></i>
                 </span>

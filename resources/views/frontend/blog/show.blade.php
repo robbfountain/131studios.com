@@ -60,7 +60,7 @@
                     @if($blog->tweetId())
                         <div class="mt-8 xs:w-full lg:w-1/2">
                             <h2>Comments</h2>
-                            <div class="mt-8 p-6 text-lg border-l-4 border-indigo-twitter bg-indigo-200">
+                            <div class="mt-8 p-6 text-lg border-l-4 border-blue-twitter bg-blue-200">
                                 You can reply to <a class="underline" href="{{$blog->tweetUrl()}}">this tweet</a> to
                                 comment on this post.
                             </div>

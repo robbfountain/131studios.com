@@ -174,23 +174,23 @@
                         <h2 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
                             The Local Source for
                             <br class="xl:hidden"/>
-                            <span class="text-indigo-600">your website needs.</span>
+                            <span class="text-blue-600">your website needs.</span>
                         </h2>
                         <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
                             Servicing Greencastle, Hagerstown, Waynesboro, Chambersburg and the surrounding
                             areas, we guarantee your business will stand out from your competitors with a
-                            professionally designed website from <span class="text-indigo-600">131
+                            professionally designed website from <span class="text-blue-600">131
                                 Studios</span>
                         <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                             <div class="rounded-md shadow">
                                 <a href="{{route('contact.index')}}"
-                                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:shadow-outline transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
                                     Let's Get Started
                                 </a>
                             </div>
                             <div class="mt-3 sm:mt-0 sm:ml-3">
                                 <a href="{{route('services.index')}}"
-                                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-indigo-700 bg-indigo-100 hover:text-indigo-600 hover:bg-indigo-50 focus:outline-none focus:shadow-outline focus:border-indigo-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
+                                   class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-blue-700 bg-blue-100 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:shadow-outline focus:border-blue-300 transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">
                                     Browse Our Services
                                 </a>
                             </div>
@@ -228,7 +228,7 @@
                         <div class="flex">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
                                     <i class="fas fa-paint-brush"></i>
 
                                 </div>
@@ -248,7 +248,7 @@
                         <div class="flex">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
                                     <i class="fas fa-server"></i>
 
                                 </div>
@@ -267,7 +267,7 @@
                         <div class="flex">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
                                     <i class="fas fa-share-alt"></i>
                                 </div>
                             </div>
@@ -286,7 +286,7 @@
                         <div class="flex">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-indigo-500 text-white">
+                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
                                     <i class="fas fa-search"></i>
                                 </div>
                             </div>
@@ -367,7 +367,7 @@
                                 <div class="text-base leading-6 font-medium text-gray-900">{{$review->author}}</div>
 
                                 @if($review->company)
-                                    <svg class="hidden md:block mx-1 h-5 w-5 text-indigo-600"
+                                    <svg class="hidden md:block mx-1 h-5 w-5 text-blue-600"
                                          fill="currentColor"
                                          viewBox="0 0 20 20">
                                         <path d="M11 0h3L9 20H6l5-20z"/>
