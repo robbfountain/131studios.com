@@ -14,9 +14,6 @@ require('laravel-mix-purgecss');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-    .extract([
-        'axios',
-    ])
     .sass('resources/assets/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,
