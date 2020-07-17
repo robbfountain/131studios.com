@@ -17,6 +17,8 @@
         <!-- CSS
         ================================================== -->
         <link rel="stylesheet" href="{{mix('css/app.css')}}">
+        <link rel="stylesheet"
+              href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/tomorrow-night-bright.min.css">
 
         <!-- LIVEWIRE
         ================================================== -->
@@ -27,8 +29,12 @@
         <script src="https://kit.fontawesome.com/1e40d81b84.js"
                 crossorigin="anonymous"></script>
 
+
         <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
                 defer></script>
+
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
+
 
         <!-- Analytics -->
         @include('frontend.partials.google-analytics')
@@ -147,7 +153,6 @@
         </footer>
 
         <livewire:scripts/>
-        <script type="text/javascript" src="{{mix('js/app.js')}}"></script>
         @yield('scripts','')
     </body>
 </html>
