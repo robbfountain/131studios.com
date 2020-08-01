@@ -15,7 +15,6 @@ use Spatie\Url\Url;
  */
 class Blog extends Model
 {
-
     /**
      * Tweet.
      */
@@ -36,9 +35,8 @@ class Blog extends Model
      */
     const PROJECT = 'Project';
 
-
     /**
-     * Package
+     * Package.
      */
     const PACKAGE = 'Package';
 
@@ -82,7 +80,7 @@ class Blog extends Model
      * @var array
      */
     protected $dates = [
-        'published_at'
+        'published_at',
     ];
 
     /**
@@ -254,7 +252,7 @@ class Blog extends Model
      */
     public function setPublishedAtAttribute($value)
     {
-        $this->attributes['published_at'] = !is_null($value) ? $value : now();
+        $this->attributes['published_at'] = ! is_null($value) ? $value : now();
     }
 
     /**
@@ -303,7 +301,7 @@ class Blog extends Model
         return (new \Parsedown)->text(
             $this->truncated
                 ? Str::words($this->body, 50, '...')
-                : $this->preview . "<br />\n" . $this->body
+                : $this->preview."<br />\n".$this->body
         );
     }
 
@@ -347,7 +345,7 @@ class Blog extends Model
      */
     public function hasImage()
     {
-        return !is_null($this->image);
+        return ! is_null($this->image);
     }
 
     /**
@@ -381,7 +379,7 @@ class Blog extends Model
      */
     public function tweetUrl()
     {
-        return 'https://twitter.com/131studios/status/' . $this->tweetId();
+        return 'https://twitter.com/131studios/status/'.$this->tweetId();
     }
 
     /**
@@ -389,7 +387,7 @@ class Blog extends Model
      */
     public function tweetId()
     {
-        return !is_null($this->tweet_id) ? $this->tweet_id : (!is_null($this->tweet) ? $this->tweet : null);
+        return ! is_null($this->tweet_id) ? $this->tweet_id : (! is_null($this->tweet) ? $this->tweet : null);
     }
 
     /**
