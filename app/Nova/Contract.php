@@ -69,7 +69,6 @@ class Contract extends Resource
             Currency::make('Deposit', 'deposit')->help('Leave blank to automatically calculate.')
             ->hideFromIndex(),
 
-
         ];
     }
 
@@ -119,7 +118,7 @@ class Contract extends Resource
     public function actions(Request $request)
     {
         return [
-            CreateContractDocument::make()
+            CreateContractDocument::make(),
         ];
     }
 }

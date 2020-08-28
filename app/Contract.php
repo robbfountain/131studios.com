@@ -11,6 +11,6 @@ class Contract extends Model
     protected $casts = [
         'starts_at' => 'date',
         'approval_milestone' => 'date',
-        'ends_at' => 'date'
+        'ends_at' => 'date',
     ];
 }

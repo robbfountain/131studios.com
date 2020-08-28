@@ -8,7 +8,6 @@ class Feature extends Component
 {
     public $icon;
 
-
     /**
      * Create a new component instance.
      *
