@@ -59,6 +59,14 @@ Route::get('blog', 'BlogController@index')
 Route::get('blog/{blog}', 'BlogController@show')
     ->name('blog.show');
 
+Route::get('contract/{contract}', 'ContractController@show')
+    ->middleware(['Owner'])
+    ->name('contract.show');
+
+Route::get('contract/{contract}/pdf', 'ContractController@pdf')
+    ->middleware(['Owner'])
+    ->name('contract.pdf');
+
 // Webhooks
 Route::webhooks('webhook/webmentions');
 

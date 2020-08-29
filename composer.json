@@ -15,6 +15,7 @@
   ],
   "require": {
     "php": ">=7.4.0",
+    "barryvdh/laravel-dompdf": "^0.8.6",
     "creativeorange/gravatar": "^1.0",
     "cviebrock/eloquent-sluggable": "^7.0",
     "doctrine/dbal": "^2.9",

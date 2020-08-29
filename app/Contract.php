@@ -13,4 +13,14 @@ class Contract extends Model
         'approval_milestone' => 'date',
         'ends_at' => 'date',
     ];
+
+    protected $appends = [
+        'balance',
+    ];
+    
+    public function getBalanceAttribute()
+    {
+        return number_format($this->total_cost - $this->deposit,2);
+    }
+
 }

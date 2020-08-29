@@ -48,6 +48,7 @@ class Contract extends Resource
     {
         return [
             Heading::make('Client Info'),
+            Text::make('Business Name')->rules(['string']),
             Text::make('Client Name', 'name')->rules(['required', 'string']),
             Text::make('Client Email', 'email')->rules(['required', 'email']),
             Place::make('Client Address', 'address')
