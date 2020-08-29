@@ -17,10 +17,9 @@ class Contract extends Model
     protected $appends = [
         'balance',
     ];
-    
+
     public function getBalanceAttribute()
     {
-        return number_format($this->total_cost - $this->deposit,2);
+        return number_format($this->total_cost - $this->deposit, 2);
     }
-
 }
