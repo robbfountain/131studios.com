@@ -21,7 +21,10 @@ class CreateContractDocument extends Action
      */
     public function handle(ActionFields $fields, Collection $models)
     {
-        //
+        foreach($models as $model)
+        {
+            return Action::redirect(route('contract.pdf',$model->id));
+        }
     }
 
     /**
