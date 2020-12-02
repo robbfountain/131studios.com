@@ -223,7 +223,7 @@
             </div>
 
             <div class="mt-10">
-                <ul class="md:grid md:grid-cols-2 md:col-gap-8 md:row-gap-10">
+                <ul class="md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-10">
                     <li>
                         <div class="flex">
                             <div class="flex-shrink-0">
@@ -319,7 +319,7 @@
                     Here's some of our recent entries.
                 </p>
             </div>
-            <div class="mt-12 grid gap-16 border-t-2 border-gray-100 pt-12 lg:grid-cols-3 lg:col-gap-5 lg:row-gap-12">
+            <div class="mt-12 grid gap-16 border-t-2 border-gray-100 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
                 @foreach($blogs as $blog)
                     <x-blog-hilight :blog="$blog"/>
                 @endforeach
