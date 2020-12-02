@@ -332,8 +332,8 @@
             <svg
                 class="absolute top-full right-full transform translate-x-1/3 -translate-y-1/4 lg:translate-x-1/2 xl:-translate-y-1/2"
                 width="404" height="404" fill="none" viewBox="0 0 404 404" role="img"
-                aria-labelledby="svg-workcation">
-                <title id="svg-workcation">Workcation</title>
+                aria-labelledby="svg-131studios">
+                <title id="svg-131studios">131 Studios</title>
                 <defs>
                     <pattern id="ad119f34-7694-4c31-947f-5c9d249b21f3" x="0" y="0" width="20" height="20"
                              patternUnits="userSpaceOnUse">
@@ -344,7 +344,6 @@
             </svg>
 
             <div class="relative">
-
                 <img class="mx-auto"
                      src="https://res.cloudinary.com/onethirtyone/image/upload/v1586456860/131%20Studios/131-logo-160x40_ru0pze.png"
                      alt="131 Studios Logo">
@@ -361,7 +360,7 @@
                             <div class="md:flex-shrink-0">
                                 <img class="mx-auto h-10 w-10 rounded-full"
                                      src="{{$review->profile_photo}}"
-                                     alt="Profile Image"/>
+                                     alt="{{$review->author }}'s Profile Image"/>
                             </div>
                             <div class="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
                                 <div class="text-base leading-6 font-medium text-gray-900">{{$review->author}}</div>
