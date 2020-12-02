@@ -18,10 +18,11 @@
                 </p>
             </a>
         </div>
-    </div>
-    <div class="mt-6">
-        <a href="{{$project->url}}">
-            Visit {{$project->title}} <i class="far fa-external-link"></i>
-        </a>
+        <div class="mt-6">
+            <a href="{{$project->url}}"
+            class="text-sm text-blue-500 hover:text-blue-700 transition duration-100 ease-in-out">
+                Visit {{$project->blogTitleToProjectTitle()}} <i class="far fa-external-link"></i>
+            </a>
+        </div>
     </div>
 </div>
