@@ -1,6 +1,6 @@
 <div class="flex flex-col rounded-lg shadow-lg overflow-hidden">
     <div class="flex-shrink-0">
-        <img class="h-48 w-full object-cover" src="{{$project->imageUrl()}}" alt="{{$project->title}}" />
+        <img class="h-48 w-full object-cover" src="{{$project->imageUrl()}}" alt="{{$project->title}}"/>
     </div>
     <div class="flex-1 bg-white p-6 flex flex-col justify-between">
         <div class="flex-1">
@@ -19,7 +19,8 @@
             </span>
             <div class="mt-6">
                 <a href="{{$project->url}}"
-                   class="text-sm text-blue-500 hover:text-blue-700 transition duration-100 ease-in-out">
+                   class="text-sm text-blue-500 hover:text-blue-700 transition duration-100 ease-in-out"
+                   target="_blank">
                     Visit {{$project->blogTitleToProjectTitle()}} <i class="far fa-external-link"></i>
                 </a>
             </div>
