@@ -20,8 +20,8 @@ class CreateAssessmentsTable extends Migration
             $table->string('company_website')->nullable();
             $table->string('street_address')->nullable();
             $table->string('city')->nullable();
-            $table->string('state',2)->nullable();
-            $table->string('zip',5)->nullable();
+            $table->string('state', 2)->nullable();
+            $table->string('zip', 5)->nullable();
             $table->longText('about')->nullable();
             $table->string('first_name');
             $table->string('last_name');

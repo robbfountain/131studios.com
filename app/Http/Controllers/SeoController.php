@@ -25,7 +25,7 @@ class SeoController extends Controller
     public function assessment($uuid = null)
     {
         return view('frontend.seo.seo-assessment')->with([
-            'client' => $this->getClient($uuid)
+            'client' => $this->getClient($uuid),
         ]);
     }
 
