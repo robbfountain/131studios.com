@@ -1,53 +1,53 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro&display=swap');
 
 div.project-container  h1 {
-  @apply .text-gray-800;
-  @apply .text-5xl;
-  @apply .leading-none;
-  @apply .mb-4;
+  @apply text-gray-800;
+  @apply text-5xl;
+  @apply leading-none;
+  @apply mb-4;
 }
 
 code {
-  @apply .px-2 .py-1 .bg-gray-200;
+  @apply px-2 .py-1 .bg-gray-200;
   font-family: 'Source Code Pro', monospace;
   color: DeepPink;
 }
 
 div.project-container > h2 {
-  @apply .text-gray-700;
-  @apply .text-2xl;
+  @apply text-gray-700;
+  @apply text-2xl;
 }
 
 div.project-container > h3,
 div.project-container > h4,
 div.project-container > h5 {
-  @apply .text-gray-800 .font-semibold;
-  @apply .text-xl;
-  @apply .mt-6;
+  @apply text-gray-800 font-semibold;
+  @apply text-xl;
+  @apply mt-6;
 }
 
 div.project-container > h6 {
-  @apply .text-gray-600;
-  @apply .text-lg;
-  @apply .mb-4;
+  @apply text-gray-600;
+  @apply text-lg;
+  @apply mb-4;
 }
 
 div.project-container  p {
-  @apply .mb-6 .mt-3;
-  @apply .leading-normal;
-  @apply .text-xl;
-  @apply .text-gray-600;
+  @apply mb-6 .mt-3;
+  @apply leading-normal;
+  @apply text-xl;
+  @apply text-gray-600;
 }
 
 div.project-container > p > a:link,
 div.project-container > p > a:visited {
-  @apply .text-blue-400;
-  @apply .no-underline;
-  @apply .border-b-4;
+  @apply text-blue-400;
+  @apply no-underline;
+  @apply border-b-4;
 }
 
 div.project-container > p > a:hover {
-  @apply .text-blue-600;
+  @apply text-blue-600;
 }
 
 div.project-container > ol {
@@ -55,9 +55,9 @@ div.project-container > ol {
 }
 
 div.project-container > ol li, div.project-container > ul li {
-  @apply .ml-2 .my-2;
-  @apply .text-xl;
-  @apply .text-gray-700;
+  @apply ml-2 .my-2;
+  @apply text-xl;
+  @apply text-gray-700;
 }
 
 div.project-container > ol li {
@@ -69,12 +69,12 @@ div.project-container > ol li:before {
 }
 
 blockquote {
-  @apply .relative .mt-6;
+  @apply relative .mt-6;
   text-shadow: 0 1px white;
 }
 
 //blockquote:before {
-//@apply .text-gray-400;
+//@apply text-gray-400;
 //content: open-quote;
 // position: absolute;
 // top: -.4em;
@@ -84,17 +84,17 @@ blockquote {
 //}
 
 blockquote p {
-  @apply .pl-10 .pt-6;
-  @apply .text-xl;
+  @apply pl-10 .pt-6;
+  @apply text-xl;
   font-family: Georgia;
-  @apply .italic;
-  @apply .text-gray-700;
-  @apply .inline;
-  @apply .leading-relaxed;
+  @apply italic;
+  @apply text-gray-700;
+  @apply inline;
+  @apply leading-relaxed;
 }
 
 blockquote > p:before {
-  @apply .text-gray-400;
+  @apply text-gray-400;
   content: open-quote;
   position: absolute;
   top: -.4em;
@@ -105,8 +105,8 @@ blockquote > p:before {
 
 cite {
   font-family: Georgia;
-  @apply .text-gray-600 .text-xl;
-  @apply .ml-12;
+  @apply text-gray-600 text-xl;
+  @apply ml-12;
 }
 
 cite:before {
@@ -122,10 +122,10 @@ a.twitter {
 }
 
 .blog-main-image {
-  @apply .shadow;
+  @apply shadow;
 }
 
 .hljs {
-  @apply .shadow-lg;
-  @apply .mb-3;
+  @apply shadow-lg;
+  @apply mb-3;
 }

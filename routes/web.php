@@ -7,63 +7,66 @@ Route::redirect('.env', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 Route::redirect('wp-login.php', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 Route::redirect('wp-admin', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 
-Route::get('/', 'IndexController@index')
+Route::get('/', 'App\Http\Controllers\IndexController@index')
     ->name('index');
 
-Route::get('projects', 'ProjectController@index')
+Route::get('projects', 'App\Http\Controllers\ProjectController@index')
     ->name('project.index');
 
-Route::view('services', 'frontend.services')
+Route::view('services', 'App\Http\Controllers\frontend.services')
     ->name('services.index');
 
-Route::get('hosting', 'HostingController@index')
+Route::get('hosting', 'App\Http\Controllers\HostingController@index')
     ->name('hosting.index');
 
-Route::get('seo', 'SeoController@index')
+Route::get('seo', 'App\Http\Controllers\SeoController@index')
     ->name('seo.index');
 
-Route::get('social-media', 'SocialMediaController@index')
+Route::get('seo/assessment/{uuid?}', \App\Http\Livewire\SeoAssessment::class)
+    ->name('seo.assessment');
+
+Route::get('social-media', 'App\Http\Controllers\SocialMediaController@index')
     ->name('social-media.index');
 
-Route::get('additional-services', 'AdditionalServicesController@index')
+Route::get('additional-services', 'App\Http\Controllers\AdditionalServicesController@index')
     ->name('additional-services.index');
 
-Route::get('website-design', 'WebsiteDesignController@index')
+Route::get('website-design', 'App\Http\Controllers\WebsiteDesignController@index')
     ->name('website-design.index');
 
-Route::get('email-hosting', 'EmailHostingController@index')
+Route::get('email-hosting', 'App\Http\Controllers\EmailHostingController@index')
     ->name('email-hosting.index');
 
-Route::view('privacy', 'frontend.privacy', [
+Route::view('privacy', 'App\Http\Controllers\frontend.privacy', [
     'title' => 'Privacy Policy | 131 Studios',
 ])->name('privacy.index');
 
-Route::view('terms', 'frontend.terms')
+Route::view('terms', 'App\Http\Controllers\frontend.terms')
     ->name('terms.index');
 
 // Subscriptions
-Route::post('subscribe', 'SubscriptionController@store')
+Route::post('subscribe', 'App\Http\Controllers\SubscriptionController@store')
     ->name('subscription.store');
 
 // Contact
-Route::post('contact', 'ContactController@store')
+Route::post('contact', 'App\Http\Controllers\ContactController@store')
     ->name('contact.store');
 
-Route::get('contact', 'ContactController@index')
+Route::get('contact', 'App\Http\Controllers\ContactController@index')
     ->name('contact.index');
 
 // Blog
-Route::get('blog', 'BlogController@index')
+Route::get('blog', 'App\Http\Controllers\BlogController@index')
     ->name('blog.index');
 
-Route::get('blog/{blog}', 'BlogController@show')
+Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
     ->name('blog.show');
 
-Route::get('contract/{contract}', 'ContractController@show')
+Route::get('contract/{contract}', 'App\Http\Controllers\ContractController@show')
     ->middleware(['Owner'])
     ->name('contract.show');
 
-Route::get('contract/{contract}/pdf', 'ContractController@pdf')
+Route::get('contract/{contract}/pdf', 'App\Http\Controllers\ContractController@pdf')
     ->middleware(['Owner'])
     ->name('contract.pdf');
 
@@ -71,19 +74,19 @@ Route::get('contract/{contract}/pdf', 'ContractController@pdf')
 Route::webhooks('webhook/webmentions');
 
 // Oauth
-Route::get('/oauth/{provider}', 'Auth\OauthController@redirect')
+Route::get('/oauth/{provider}', 'App\Http\Controllers\Auth\OauthController@redirect')
     ->name('nova.login.google');
-Route::get('/oauth/{provider}/callback', 'Auth\OauthController@callback');
+Route::get('/oauth/{provider}/callback', 'App\Http\Controllers\Auth\OauthController@callback');
 
 // Search
-Route::get('search', 'SearchController@index')
+Route::get('search', 'App\Http\Controllers\SearchController@index')
     ->name('search.index');
-Route::post('search', 'SearchController@show')
+Route::post('search', 'App\Http\Controllers\SearchController@show')
     ->name('search.show');
 
 // AWS SNS
 Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');
 
 // Track Views
-Route::post('/stats/videos/{video:video_id}/views', 'VideoController@update')
+Route::post('/stats/videos/{video:video_id}/views', 'App\Http\Controllers\VideoController@update')
     ->name('video.increment.views');

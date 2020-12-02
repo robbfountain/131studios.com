@@ -347,7 +347,7 @@
 
                 <img class="mx-auto"
                      src="https://res.cloudinary.com/onethirtyone/image/upload/v1586456860/131%20Studios/131-logo-160x40_ru0pze.png"
-                     alt="">
+                     alt="131 Studios Logo">
                 <h2 class="text-center mt-3 text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
                     Client Testimonials</h2>
                 <blockquote class="mt-8">
@@ -361,7 +361,7 @@
                             <div class="md:flex-shrink-0">
                                 <img class="mx-auto h-10 w-10 rounded-full"
                                      src="{{$review->profile_photo}}"
-                                     alt=""/>
+                                     alt="Profile Image"/>
                             </div>
                             <div class="mt-3 text-center md:mt-0 md:ml-4 md:flex md:items-center">
                                 <div class="text-base leading-6 font-medium text-gray-900">{{$review->author}}</div>
