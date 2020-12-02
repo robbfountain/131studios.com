@@ -13,7 +13,7 @@ Route::get('/', 'App\Http\Controllers\IndexController@index')
 Route::get('projects', 'App\Http\Controllers\ProjectController@index')
     ->name('project.index');
 
-Route::view('services', 'App\Http\Controllers\frontend.services')
+Route::view('services', 'frontend.services')
     ->name('services.index');
 
 Route::get('hosting', 'App\Http\Controllers\HostingController@index')
@@ -37,11 +37,11 @@ Route::get('website-design', 'App\Http\Controllers\WebsiteDesignController@index
 Route::get('email-hosting', 'App\Http\Controllers\EmailHostingController@index')
     ->name('email-hosting.index');
 
-Route::view('privacy', 'App\Http\Controllers\frontend.privacy', [
+Route::view('privacy', 'frontend.privacy', [
     'title' => 'Privacy Policy | 131 Studios',
 ])->name('privacy.index');
 
-Route::view('terms', 'App\Http\Controllers\frontend.terms')
+Route::view('terms', 'frontend.terms')
     ->name('terms.index');
 
 // Subscriptions
