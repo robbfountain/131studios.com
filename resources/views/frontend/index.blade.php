@@ -115,7 +115,7 @@
                              x-transition:leave-start="opacity-100 transform scale-100"
                              x-transition:leave-end="opacity-0 transform scale-90">
                             <div class="rounded-lg shadow-md">
-                                <div class="rounded-lg bg-white shadow-xs overflow-hidden">
+                                <div class="rounded-lg bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                                     <div class="px-5 py-3 flex items-center justify-between">
                                         <div>
                                             <img class="h-8 w-auto"

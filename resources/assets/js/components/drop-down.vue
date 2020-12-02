@@ -13,7 +13,7 @@
 
         <div v-if="isOpen" class="z-40 origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg"
              :class="{'transition ease-in duration-75 transform opacity-0 scale-95' : !isOpen, 'transition ease-out duration-100 tranform opacity-100 scale-100' : isOpen }">
-            <div class="rounded-md bg-white shadow-xs">
+            <div class="rounded-md bg-white ring-1 ring-black ring-opacity-5">
                 <slot/>
             </div>
         </div>
