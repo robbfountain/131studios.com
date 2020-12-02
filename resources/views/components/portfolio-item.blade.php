@@ -19,4 +19,9 @@
             </a>
         </div>
     </div>
+    <div class="mt-6">
+        <a href="{{$project->url}}">
+            Visit {{$project->title}} <i class="far fa-external-link"></i>
+        </a>
+    </div>
 </div>
