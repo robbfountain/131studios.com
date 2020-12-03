@@ -200,10 +200,17 @@
             </div>
         </div>
         <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-            <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-                 src="https://res.cloudinary.com/onethirtyone/image/upload/f_auto,q_75/v1558561494/131%20Studios/web-design-greencastle-pa_hlntpm.png"
-                 alt="Web Design Greencastle PA"
-            />
+            @if(now()->month == 12)
+                <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+                     src="https://res.cloudinary.com/onethirtyone/image/upload/v1606964876/131%20Studios/IMG_2948_ivlv7c.jpg"
+                     alt="Web Design Greencastle PA"
+                />
+            @else
+                <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+                     src="https://res.cloudinary.com/onethirtyone/image/upload/f_auto,q_75/v1558561494/131%20Studios/web-design-greencastle-pa_hlntpm.png"
+                     alt="Web Design Greencastle PA"
+                />
+            @endif
         </div>
     </div>
 
@@ -228,7 +235,7 @@
                         <div class="flex">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                        class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
                                     <i class="fas fa-paint-brush"></i>
 
                                 </div>
@@ -248,7 +255,7 @@
                         <div class="flex">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                        class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
                                     <i class="fas fa-server"></i>
 
                                 </div>
@@ -267,7 +274,7 @@
                         <div class="flex">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                        class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
                                     <i class="fas fa-share-alt"></i>
                                 </div>
                             </div>
@@ -286,7 +293,7 @@
                         <div class="flex">
                             <div class="flex-shrink-0">
                                 <div
-                                    class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
+                                        class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
                                     <i class="fas fa-search"></i>
                                 </div>
                             </div>
@@ -330,9 +337,9 @@
     <section class="py-12 bg-gray-50 overflow-hidden md:py-20 lg:py-16">
         <div class="relative max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
             <svg
-                class="absolute top-full right-full transform translate-x-1/3 -translate-y-1/4 lg:translate-x-1/2 xl:-translate-y-1/2"
-                width="404" height="404" fill="none" viewBox="0 0 404 404" role="img"
-                aria-labelledby="svg-131studios">
+                    class="absolute top-full right-full transform translate-x-1/3 -translate-y-1/4 lg:translate-x-1/2 xl:-translate-y-1/2"
+                    width="404" height="404" fill="none" viewBox="0 0 404 404" role="img"
+                    aria-labelledby="svg-131studios">
                 <title id="svg-131studios">131 Studios</title>
                 <defs>
                     <pattern id="ad119f34-7694-4c31-947f-5c9d249b21f3" x="0" y="0" width="20" height="20"
