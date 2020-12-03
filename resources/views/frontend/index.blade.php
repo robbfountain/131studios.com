@@ -202,7 +202,7 @@
         <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
             @if(now()->month == 12)
                 <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
-                     src="https://res.cloudinary.com/onethirtyone/image/upload/v1606964876/131%20Studios/IMG_2948_ivlv7c.jpg"
+                     src="https://res.cloudinary.com/onethirtyone/image/upload/f_auto,q_75/v1606964876/131%20Studios/IMG_2948_ivlv7c.jpg"
                      alt="Web Design Greencastle PA"
                 />
             @else
