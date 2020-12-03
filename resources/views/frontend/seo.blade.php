@@ -14,7 +14,7 @@
     <x-service-offering service="SEO"
                         image="https://res.cloudinary.com/onethirtyone/image/upload/v1558561491/131%20Studios/seo_u1svnp.jpg">
         <p class="mb-6">
-            Your website is the first step in getting your business recognized on the web.
+            Launching your website is only the first step in getting your business recognized on the web.
             Having organic traffic to your website and providing relevant content
             will help rank your website towards the top of major search engines such as Google, Bing and
             Yahoo!.
