@@ -28,7 +28,7 @@
         </p>
 
         <p class="mb-6">
-            We'll start with a <span class="font-semibold">FREE</span> SEO analysis that provides a
+            We'll start with a <span class="font-semibold text-blue-500">FREE</span> SEO analysis that provides a
             starting point
             for improving your website's rank. From there we will optimize your site to make sure you're
             not penalized for irrelevant
