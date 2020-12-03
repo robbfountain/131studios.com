@@ -177,7 +177,7 @@
                             <span class="text-blue-600">your website needs.</span>
                         </h2>
                         <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                            Servicing Greencastle, Hagerstown, Waynesboro, Chambersburg and the surrounding
+                            Serving Greencastle, Hagerstown, Waynesboro, Chambersburg and the surrounding
                             areas, we guarantee your business will stand out from your competitors with a
                             professionally designed website from <span class="text-blue-600">131
                                 Studios</span>
