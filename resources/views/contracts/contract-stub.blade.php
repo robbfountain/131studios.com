@@ -67,7 +67,7 @@
                         Monthly Fee for Services: <span
                                 class="font-bold underline pb-2">${{$contract->total_cost}}</span></li>
                     <li class="ml-2 mb-2">Initial Term (Months): <span
-                                class="font-bold underline pb-2">${{$contract->monthly_billing_duration}}</span></li>
+                                class="font-bold underline pb-2">{{$contract->monthly_billing_duration}}</span></li>
                     <li class="ml-2 mb-2">Total Cost for initial {{$contract->monthly_billing_duration}} months: <span
                                 class="font-bold underline pb-2">${{$contract->total_cost * $contract->monthly_billing_duration}}</span>
                     </li>
