@@ -22,7 +22,8 @@
                         class="font-bold underline pb-2">{{$contract->created_at->format('M d, Y')}}</span> (the
                 “Effective Date”), by
                 and
-                between <span class="font-bold underline pb-2">{{$contract->business_name}} operated by {{$contract->name}}</span>, with an address of <span
+                between <span class="font-bold underline pb-2">{{$contract->business_name}} operated
+                    by {{$contract->name}}</span>, with an address of <span
                         class="font-bold underline pb-2">{{$contract->address}}</span> (the “Client”) and
                 <span class="font-bold underline pb-2">{{$contract->designer}}</span>, (the “Designer”), collectively
                 “the Parties.”
@@ -30,28 +31,24 @@
 
             <h2 class="font-bold text-lg mb-2">Project Description</h2>
 
-            <p class="mb-6">
-                Client wishes to hire Designer to create a Website. The specific requirements and the
-                details as stated by Client are as follows:
-            </p>
-
             <div class="p-3 m-8  border-l-4 border-gray-1s00">
                 {!! $contract->scope !!}
             </div>
-
 
             <h2 class="font-bold text-lg mb-2">Schedule</h2>
             <p class="mb-6">The Parties agree to the following schedule:</p>
 
             <ul>
-                <li class="ml-2 mb-2">Initial Design Date: <span class="font-bold underline pb-2">{{$contract->starts_at->format('M d, Y')}}</span></li>
+                <li class="ml-2 mb-2">Initial Design Date: <span
+                            class="font-bold underline pb-2">{{$contract->starts_at->format('M d, Y')}}</span></li>
                 @if($contract->approval_milestone)
-                <li class="ml-2 mb-2">Client Comment/Approval Date: <span
-                            class="font-bold underline pb-2">{{$contract->approval_milestone->format('M d, Y')}}</span></li>
+                    <li class="ml-2 mb-2">Client Comment/Approval Date: <span
+                                class="font-bold underline pb-2">{{$contract->approval_milestone->format('M d, Y')}}</span>
+                    </li>
                 @endif
-                <li class="ml-2 mb-2">Final Design Date: <span class="font-bold underline pb-2">{{$contract->ends_at->format('M d, Y')}}</span></li>
+                <li class="ml-2 mb-2">Final Design Date: <span
+                            class="font-bold underline pb-2">{{$contract->ends_at->format('M d, Y')}}</span></li>
             </ul>
-
 
             <h2 class="font-bold text-lg mb-2 mt-6">Revisions</h2>
             <p class="mb-6">Client shall be entitled to <span
@@ -63,12 +60,28 @@
             <h2 class="font-bold text-lg mb-2">Payment</h2>
             <p class="mb-6"> The Parties agree to the following Payment and Payment Terms:</p>
             <ul>
-                <li class="ml-2 mb-2">Total Fee for Services: <span
-                            class="font-bold underline pb-2">${{$contract->total_cost}}</span></li>
-                <li class="ml-2 mb-2">Upfront Fee (Due Before Project Start Date): <span
-                            class="font-bold underline pb-2">${{$contract->deposit}}</span></li>
-                <li class="ml-2 mb-2">Remaining Balance Due (Due on Final Design Date): <span class="font-bold underline pb-2">${{$contract->balance}}</span></li>
+                @if($contract->is_monthly)
+                    <li class="ml-2 mb-2">
+                        Monthly Fee for Services: <span
+                                class="font-bold underline pb-2">${{$contract->total_cost}}</span></li>
+                    <li class="ml-2 mb-2">Initial Term (Months): <span
+                                class="font-bold underline pb-2">${{$contract->monthly_billing_duration}}</span></li>
+                    <li class="ml-2 mb-2">Total Cost for initial {{$contract->monthly_billing_duration}} months: <span
+                                class="font-bold underline pb-2">${{$contract->total_cost * $contract->monthly_billing_duration}}</span></li>
+                @else
+                    <li class="ml-2 mb-2">
+                        Total Fee for Services: <span
+                                class="font-bold underline pb-2">${{$contract->total_cost}}</span></li>
+                    <li class="ml-2 mb-2">Deposit (Due Before Project Start Date): <span
+                                class="font-bold underline pb-2">${{$contract->deposit}}</span></li>
+                    <li class="ml-2 mb-2">Remaining Balance Due (Due on Final Design Date): <span
+                                class="font-bold underline pb-2">${{$contract->balance}}</span></li>
+                @endif
             </ul>
+
+            @if($contract->is_monthly)
+                <p class="mt-4">After initial term, client will be billed monthly at current rate of ${{$contract->total_cost}}</p>
+            @endif
 
 
             <h2 class="font-bold text-lg mb-2 mt-6">Confidentiality.</h2>

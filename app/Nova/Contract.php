@@ -4,6 +4,7 @@ namespace App\Nova;
 
 use App\Nova\Actions\CreateContractDocument;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Date;
 use Laravel\Nova\Fields\Heading;
@@ -66,9 +67,12 @@ class Contract extends Resource
             Currency::make('Revision Cost', 'revision_cost')
                 ->hideFromIndex(),
             Heading::make('Project Cost'),
+            Boolean::make('Billed Monthly','is_monthly'),
             Currency::make('Project Cost', 'total_cost')->rules(['required', 'numeric']),
             Currency::make('Deposit', 'deposit')->help('Leave blank to automatically calculate.')
             ->hideFromIndex(),
+            Number::make('Monthly Billing Duration')->nullable()
+            ->help('How many consecutive months to bill client upon agreement '),
 
         ];
     }
