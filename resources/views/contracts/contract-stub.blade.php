@@ -38,23 +38,37 @@
             <h2 class="font-bold text-lg mb-2">Schedule</h2>
             <p class="mb-6">The Parties agree to the following schedule:</p>
 
-            <h3 class="font-semibold mb-2">Project Start Date: <span class="text-gray-800">{{$contract->starts_at->format('M d, Y')}}</span></h3>
-            <p class="mb-6">This is the date that the agreement was presented to the client OR the date when the agreement was signed, whichever comes later.</p>
+            <h3 class="font-semibold mb-2">Project Start Date: <span
+                        class="text-gray-800">{{$contract->starts_at->format('M d, Y')}}</span></h3>
+            <p class="mb-6">This is the date that the agreement was presented to the client OR the date when the
+                agreement was signed, whichever comes later.
+                @if($contract->deposit > 0)
+                    At this time the initial deposit of <span class="font-semibold">${{$contract->deposit}}</span> will
+                    be due.
+                @endif
+            </p>
 
-            <h3 class="font-semibold mb-2">Draft Design Presentation Date: <span class="text-gray-800">{{$contract->approval_milestone->format('M d, Y')}}</span></h3>
-            <p class="mb-6">This is the date when the designer will present the first draft of the project to the client for review and comments.</p>
+            <h3 class="font-semibold mb-2">Draft Design Presentation Date: <span
+                        class="text-gray-800">{{$contract->approval_milestone->format('M d, Y')}}</span></h3>
+            <p class="mb-6">This is the date when the designer will present the first draft of the project to the client
+                for review and comments.</p>
 
-            <h3 class="font-semibold mb-2">Project Delivery Date: <span class="text-gray-800">{{$contract->ends_at->format('M d, Y')}}</span></h3>
-            <p class="mb-6">This is the date when the designer will hand over the final version of the project to the client. Final payment (if applicable) will be due at this time.</p>
+            <h3 class="font-semibold mb-2">Project Delivery Date: <span
+                        class="text-gray-800">{{$contract->ends_at->format('M d, Y')}}</span></h3>
+            <p class="mb-6">This is the date when the designer will hand over the final version of the project to the
+                client. Final payment will be due at this time.</p>
 
             <h3 class="font-semibold mb-2">Notes Regarding Project Dates/Milestones</h3>
-            <p class="mb-6">We pride ourselves on punctuality and meeting deadlines but we do realize that things happen and other things come up. This is a team effort and there are steps in the process
-            that require your attention and timeliness as well.  Unfortunately, If we don't receive the feedback and responses to our submissions in a timely manner, this will cause delays. </p>
+            <p class="mb-6">We pride ourselves on punctuality and meeting deadlines but we do realize that things happen
+                and other things come up. This is a team effort and there are steps in the process
+                that require your attention and timeliness as well. Unfortunately, If we don't receive the feedback and
+                responses to our submissions in a timely manner, this will cause delays. </p>
 
             <h2 class="font-bold text-lg mb-2 mt-6">Revisions</h2>
             <p class="mb-6">Client shall be entitled to <span
-                        class="font-bold underline pb-2">{{$contract->revisions}}</span> revision(s) of the project. A revision is a complete "do over" where we start our design over from scratch.
-                If this happens, any milestone dates will be adjusted.  Any revisions
+                        class="font-bold underline pb-2">{{$contract->revisions}}</span> revision(s) of the project. A
+                revision is a complete "do over" where we start our design over from scratch.
+                If this happens, any milestone dates will be adjusted. Any revisions
                 beyond <span class="font-bold underline pb-2">{{$contract->revisions}}</span> shall be billed at a
                 rate of <span class="font-bold underline pb-2">${{$contract->revision_cost}}</span> per revision.
             </p>
@@ -71,6 +85,9 @@
                     <li class="ml-2 mb-2">Total Cost for initial {{$contract->monthly_billing_duration}} months: <span
                                 class="font-bold underline pb-2">${{$contract->total_cost * $contract->monthly_billing_duration}}</span>
                     </li>
+                    @if($contract->deposit > 0)
+                        <li class="ml-2 mb-2">Initial Deposit Due: {{$contract->deposit}}</li>
+                    @endif
                 @else
                     <li class="ml-2 mb-2">
                         Total Fee for Services: <span
