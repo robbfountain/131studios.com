@@ -69,7 +69,7 @@ class Contract extends Resource
             Heading::make('Project Cost'),
             Boolean::make('Billed Monthly','is_monthly'),
             Currency::make('Project Cost', 'total_cost')->rules(['required', 'numeric']),
-            Currency::make('Deposit', 'deposit')->help('Leave blank to automatically calculate.')
+            Currency::make('Deposit', 'deposit')->help('Leave blank to automatically calculate.')->default(0)
             ->hideFromIndex(),
             Number::make('Monthly Billing Duration')->nullable()
             ->help('How many consecutive months to bill client upon agreement '),
