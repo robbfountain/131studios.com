@@ -84,6 +84,10 @@ Route::get('search', 'App\Http\Controllers\SearchController@index')
 Route::post('search', 'App\Http\Controllers\SearchController@show')
     ->name('search.show');
 
+Route::get('contract/{contract:uuid}', 'App\Http\Controllers\ContractController@show')
+    ->name('contract.show')
+    ->middleware(['signed']);
+
 // AWS SNS
 Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');
 

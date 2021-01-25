@@ -12,6 +12,7 @@ use Laravel\Nova\Fields\Number;
 use Laravel\Nova\Fields\Place;
 use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Fields\Trix;
+use Pdewit\ExternalUrl\ExternalUrl;
 
 class Contract extends Resource
 {
@@ -27,7 +28,7 @@ class Contract extends Resource
      *
      * @var string
      */
-    public static $title = 'id';
+    public static $title = 'business_name';
 
     /**
      * The columns that should be searched.
@@ -36,6 +37,8 @@ class Contract extends Resource
      */
     public static $search = [
         'id',
+        'business_name',
+        'name'
     ];
 
     /**
@@ -49,30 +52,49 @@ class Contract extends Resource
     {
         return [
             Heading::make('Client Info'),
-            Text::make('Business Name')->rules(['string']),
-            Text::make('Client Name', 'name')->rules(['required', 'string']),
-            Text::make('Client Email', 'email')->rules(['required', 'email']),
+            Boolean::make('Approved', 'is_approved')
+                ->help('Select to approve contract and generate invoice.')
+                ->hideWhenCreating(),
+            Text::make('Business Name')
+                ->rules(['string']),
+            Text::make('Client Name', 'name')
+                ->rules(['required', 'string'])
+                ->hideFromIndex(),
+            Text::make('Client Email', 'email')
+                ->rules(['required', 'email'])
+                ->hideFromIndex(),
             Place::make('Client Address', 'address')
-                ->onlyOnForms(),
-            Text::make('Client Phone', 'phone'),
-            Trix::make('Project Scope', 'scope')->rules(['required'])
+                ->hideFromIndex(),
+            Text::make('Client Phone', 'phone')
+                ->hideFromIndex(),
+            Trix::make('Project Scope', 'scope')
+                ->rules(['required'])
                 ->hideFromIndex(),
             Heading::make('Milestones'),
             Date::make('Start Date', 'starts_at'),
-            Date::make('Approval Date', 'approval_milestone'),
-            Date::make('Project End', 'ends_at'),
-            Heading::make('Revisions'),
+            Date::make('Approval Date', 'approval_milestone')
+                ->hideFromIndex(),
+            Date::make('Project End', 'ends_at')
+                ->hideFromIndex(),
+            Heading::make('Revisions')
+                ->hideFromIndex(),
             Number::make('Revisions Allowed', 'revisions')
                 ->hideFromIndex(),
             Currency::make('Revision Cost', 'revision_cost')
                 ->hideFromIndex(),
             Heading::make('Project Cost'),
-            Boolean::make('Billed Monthly','is_monthly'),
+            Boolean::make('Billed Monthly', 'is_monthly')
+            ->help('Setup monthly billing vs. single project cost.'),
             Currency::make('Project Cost', 'total_cost')->rules(['required', 'numeric']),
-            Currency::make('Deposit', 'deposit')->help('Leave blank to automatically calculate.')->default(0)
-            ->hideFromIndex(),
-            Number::make('Monthly Billing Duration')->nullable()
-            ->help('How many consecutive months to bill client upon agreement '),
+            Currency::make('Deposit', 'deposit')
+                ->default(0)
+                ->hideFromIndex(),
+            Number::make('Monthly Billing Duration')
+                ->nullable()
+                ->help('How many consecutive months to bill client upon agreement '),
+            ExternalUrl::make('Signed URL', function () {
+                return $this->signed_url;
+            })->linkText('Contract Link'),
 
         ];
     }

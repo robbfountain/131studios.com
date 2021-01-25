@@ -2,7 +2,9 @@
 
 namespace App;
 
+use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Contract extends Model
 {
@@ -35,9 +37,8 @@ class Contract extends Model
         });
 
         Contract::creating(function ($model) {
-            if (is_null($model->deposit)) {
-                $model->deposit = 0.00;
-            }
+            $model->uuid = Str::uuid();
+            $model->signed_url = URL::signedRoute('contract.show', ['uuid' => $model->uuid]);
         });
     }
 

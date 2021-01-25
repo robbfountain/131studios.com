@@ -51,7 +51,7 @@ class ContractController extends Controller
      */
     public function show(Contract $contract)
     {
-        return view('contracts.contract-stub', compact('contract'));
+        return view('contracts.contract', compact('contract'));
     }
 
     public function pdf(Contract $contract)

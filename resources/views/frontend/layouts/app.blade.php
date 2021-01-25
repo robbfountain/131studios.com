@@ -22,7 +22,7 @@
 
         <!-- LIVEWIRE
         ================================================== -->
-        <livewire:styles/>
+       @livewireStyles
 
         <!-- Icons
         =================================================== -->
@@ -157,7 +157,7 @@
             </div>
         </footer>
 
-        <livewire:scripts/>
+        @livewireScripts
         @yield('scripts','')
     </body>
 </html>

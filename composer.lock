@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0884dbec401c73df86e9677bfa17d7d0",
+    "content-hash": "967c683cf48d116a13754007d6586f4c",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -4200,6 +4200,51 @@
                 "source": "https://github.com/paragonie/random_compat"
             },
             "time": "2020-10-15T10:06:57+00:00"
+        },
+        {
+            "name": "pdewit/nova-external-url",
+            "version": "1.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pdewit/nova-external-url.git",
+                "reference": "3fe3b8cb62740dd833773665cbf4380c345c3206"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pdewit/nova-external-url/zipball/3fe3b8cb62740dd833773665cbf4380c345c3206",
+                "reference": "3fe3b8cb62740dd833773665cbf4380c345c3206",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Pdewit\\ExternalUrl\\FieldServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Pdewit\\ExternalUrl\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "An external URL Laravel Nova field.",
+            "keywords": [
+                "laravel",
+                "nova"
+            ],
+            "support": {
+                "issues": "https://github.com/pdewit/nova-external-url/issues",
+                "source": "https://github.com/pdewit/nova-external-url/tree/master"
+            },
+            "time": "2018-11-26T14:51:33+00:00"
         },
         {
             "name": "phenx/php-font-lib",

@@ -3,6 +3,7 @@
 namespace App\Http;
 
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
+use Illuminate\Routing\Middleware\ValidateSignature;
 
 class Kernel extends HttpKernel
 {
@@ -55,5 +56,6 @@ class Kernel extends HttpKernel
         'acp' => \App\Http\Middleware\acp::class,
         'Headers' => \App\Http\Middleware\Headers::class,
         'Owner' => \App\Http\Middleware\SiteOwner::class,
+        'signed' => ValidateSignature::class
     ];
 }
