@@ -92,7 +92,7 @@
         @endif
 
 
-        <h2 class="font-bold text-2xl mt-6">Confidentiality.</h2>
+        <h2 class="font-bold text-2xl mt-6">Confidentiality</h2>
         <p class="mb-6">During the course of this Agreement, it may be necessary for Client to share proprietary
             information, including trade secrets, industry knowledge, and other confidential information, to
             Designer in
@@ -101,6 +101,7 @@
             information at any time, even after the Agreement is fulfilled. Designer also will not use any of this
             proprietary information for his/her personal benefit at any time, even after the Agreement is
             fulfilled.</p>
+
         <h2 class="font-bold text-2xl">Ownership Rights</h2>
         <p class="mb-6">Client continues to own any and all proprietary information it shares with Designer
             during
@@ -146,6 +147,7 @@
             SALES, EXPOSURE, BRAND RECOGNITION, OR THE LIKE. DESIGNER HAS NO RESPONSIBILITY TO CLIENT IF THE WEBSITE
             DOES
             NOT LEAD TO CLIENT’S DESIRED RESULT(S).</p>
+
         <h2 class="font-bold text-2xl">Limitation of Liability</h2>
         <p class="mb-6">UNDER NO CIRCUMSTANCES SHALL EITHER PARTY
             BE LIABILE TO THE OTHER PARTY OR ANY
@@ -154,11 +156,13 @@
             REVENUE
             OR
             ANTICIPATED PROFIT OR LOST BUSINESS, COSTS OF DELAY OR FAILURE OF DELIVERY.</p>
+
         <h2 class="font-bold text-2xl">Legal Fees</h2>
         <p class="mb-6">In the event of a dispute resulting in legal action, the
             successful party will be entitled to
             its
             legal fees, including, but not limited to its attorneys’ fees.</p>
+
         <h2 class="font-bold text-2xl">Legal and Binding Agreement</h2>
         <p class="mb-6">This Agreement is legal and binding
             between the Parties as stated above. This
@@ -169,7 +173,6 @@
         <p class="mb-6">The Parties agree to the terms and conditions set forth above as demonstrated by their
             signatures as
             follows:</p>
-
 
         <h2 class="font-bold text-2xl">“CLIENT”</h2>
         <div class="flex justify-between">
