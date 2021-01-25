@@ -64,15 +64,16 @@
         <ul>
             @if($contract->is_monthly)
                 <li class="ml-2 mb-2">
-                    Monthly Fee for Services: <span
+                    Monthly fee for services: <span
                             class="font-bold underline pb-2">${{$contract->total_cost}}</span></li>
-                <li class="ml-2 mb-2">Initial Term (Months): <span
+                <li class="ml-2 mb-2">Initial term (months): <span
                             class="font-bold underline pb-2">{{$contract->monthly_billing_duration}}</span></li>
-                <li class="ml-2 mb-2">Total Cost for initial {{$contract->monthly_billing_duration}} months: <span
+                <li class="ml-2 mb-2">Total cost for initial {{$contract->monthly_billing_duration}} months: <span
                             class="font-bold underline pb-2">${{$contract->total_cost * $contract->monthly_billing_duration}}</span>
                 </li>
                 @if($contract->deposit > 0)
-                    <li class="ml-2 mb-2">Initial Deposit Due: {{$contract->deposit}}</li>
+                    <li class="ml-2 mb-2">Initial deposit due upon Contract Signing: {{$contract->deposit}}</li>
+                    <li class="ml-2 mb-3">Remainder of balance due at final project delivery: ${{$contract->total_cost * $contract->monthly_billing_duration - $contract->deposit}}</li>
                 @endif
             @else
                 <li class="ml-2 mb-2">
