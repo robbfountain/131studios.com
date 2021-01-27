@@ -15,13 +15,15 @@ class ContractApproval extends Component
     
     public function approve()
     {
-//        $this->validate();
+        $this->validate();
 
         $this->contract->update([
             'is_approved' => true,
             'approved_by' => $this->name,
             'approved_at' => now(),
         ]);
+
+        $this->dispatchBrowserEvent('contract-approved');
     }
 
     public function render()

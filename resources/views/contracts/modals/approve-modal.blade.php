@@ -1,1 +1,1 @@
-@livewire('contract-approval', ['contract' => $contract])
+@livewire('contract-approval',['contract' => $contract])

@@ -6,6 +6,7 @@ use App\Nova\Metrics\VideoViews;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
+use Spatie\ServerMonitor\Models\Host;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {
@@ -68,7 +69,9 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            //
+            \Insenseanalytics\NovaServerMonitor\NovaServerMonitor::make()
+                ->onConnection('mysql')->hosts($this->getHosts())
+                ->checks(['mysql','diskspace']),
         ];
     }
 
@@ -80,5 +83,10 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function register()
     {
         //
+    }
+
+    public function getHosts()
+    {
+        return Host::all()->pluck('name')->toArray();
     }
 }
