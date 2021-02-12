@@ -69,9 +69,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function tools()
     {
         return [
-            \Insenseanalytics\NovaServerMonitor\NovaServerMonitor::make()
-                ->onConnection('mysql')->hosts($this->getHosts())
-                ->checks(['mysql','diskspace']),
+            //
         ];
     }
 

@@ -2,7 +2,6 @@
 
 namespace App\Nova;
 
-use App\Nova\Actions\CreateContractDocument;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Currency;
@@ -84,7 +83,7 @@ class Contract extends Resource
                 ->hideFromIndex(),
             Heading::make('Project Cost'),
             Boolean::make('Billed Monthly', 'is_monthly')
-            ->help('Setup monthly billing vs. single project cost.'),
+                ->help('Setup monthly billing vs. single project cost.'),
             Currency::make('Project Cost', 'total_cost')->rules(['required', 'numeric']),
             Currency::make('Deposit', 'deposit')
                 ->default(0)
@@ -145,7 +144,12 @@ class Contract extends Resource
     public function actions(Request $request)
     {
         return [
-            CreateContractDocument::make(),
+            (new Actions\PublishContract())
+                ->confirmText('Publishing this contract will create the user account and client billing account.  An email will be sent to the client with details to view the contract.')
+                ->confirmButtonText('Publish')
+                ->onlyOnDetail(),
+            (new Actions\CreateContractDocument)
+            ->onlyOnDetail(),
         ];
     }
 }

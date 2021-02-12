@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Events\ContractWasApproved;
 use Livewire\Component;
 
 class ContractApproval extends Component
@@ -12,7 +13,7 @@ class ContractApproval extends Component
     protected $rules = [
         'name' => 'required|min:6',
     ];
-    
+
     public function approve()
     {
         $this->validate();
@@ -23,6 +24,7 @@ class ContractApproval extends Component
             'approved_at' => now(),
         ]);
 
+        event(new ContractWasApproved($this->contract));
         $this->dispatchBrowserEvent('contract-approved');
     }
 
