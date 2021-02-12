@@ -57,7 +57,7 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     protected function cards()
     {
         return [
-            new VideoViews,
+            //
         ];
     }
 
@@ -81,10 +81,5 @@ class NovaServiceProvider extends NovaApplicationServiceProvider
     public function register()
     {
         //
-    }
-
-    public function getHosts()
-    {
-        return Host::all()->pluck('name')->toArray();
     }
 }
