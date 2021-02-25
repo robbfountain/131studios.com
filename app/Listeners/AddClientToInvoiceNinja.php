@@ -30,12 +30,12 @@ class AddClientToInvoiceNinja implements ShouldQueue
      */
     public function handle($event)
     {
-        $name = Str::of($event->contract->name)->explode(' ');
+        $name = Str::of($event->contract->user->name)->explode(' ');
 
-        $client = new Client($event->contract->email, $name->first(), $name->last(), $event->contract->business_name);
+        $client = new Client($event->contract->user->email, $name->first(), $name->last(), $event->contract->business_name);
         $client->save();
 
-        User::where('email', $event->contract->email)
+        User::where('email', $event->contract->user->email)
             ->first()
             ->update([
                 'client_id' => $client->id

@@ -26,6 +26,8 @@ class SendClientContractNotification
      */
     public function handle($event)
     {
-        $event->contract->notify(new NotifyUserOfPublishedContract($event->contract));
+        $event->contract->user->notify(
+            new NotifyUserOfPublishedContract($event->contract)
+        );
     }
 }

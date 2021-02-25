@@ -65,14 +65,17 @@ Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
 /**
  * Contract
  */
-Route::get('contract/{contract}', 'App\Http\Controllers\ContractController@show')
-    ->middleware(['Owner'])
-    ->name('contract.show');
+//Route::get('contract/{contract}', 'App\Http\Controllers\ContractController@show')
+//    ->middleware(['Owner'])
+//    ->name('contract.show');
 
 Route::get('contract/{contract}/pdf', 'App\Http\Controllers\ContractController@pdf')
     ->middleware(['Owner'])
     ->name('contract.pdf');
 
+Route::get('contract/{contract:uuid}', 'App\Http\Controllers\ContractController@show')
+    ->name('contract.show')
+    ->middleware(['signed']);
 
 // Webhooks
 Route::webhooks('webhook/webmentions');
@@ -88,9 +91,6 @@ Route::get('search', 'App\Http\Controllers\SearchController@index')
 Route::post('search', 'App\Http\Controllers\SearchController@show')
     ->name('search.show');
 
-Route::get('contract/{contract:uuid}', 'App\Http\Controllers\ContractController@show')
-    ->name('contract.show')
-    ->middleware(['signed']);
 
 // AWS SNS
 Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');

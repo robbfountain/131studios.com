@@ -45,12 +45,12 @@ class Contract extends Model
 
         Contract::updating(function ($model) {
             $model->uuid = $model->uuid ?? Str::uuid();
-            $model->signed_url = $model->signed_url ?? URL::signedRoute('contract.show', ['uuid' => $model->uuid]);
+            $model->signed_url = $model->signed_url ?? URL::signedRoute('contract.show', $model->uuid);
         });
 
         Contract::creating(function ($model) {
             $model->uuid = Str::uuid();
-            $model->signed_url = URL::signedRoute('contract.show', ['uuid' => $model->uuid]);
+            $model->signed_url = URL::signedRoute('contract.show', $model->uuid);
         });
     }
 
@@ -69,5 +69,10 @@ class Contract extends Model
         return tap($this)->update([
             'is_published' => true
         ]);
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }

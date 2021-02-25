@@ -30,7 +30,7 @@ class NotifyUserOfPublishedContract extends Notification
     /**
      * Get the notification's delivery channels.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
      * @return array
      */
     public function via($notifiable)
@@ -41,24 +41,25 @@ class NotifyUserOfPublishedContract extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
     {
         return (new MailMessage)
-                    ->subject('['.config('app.name').']' . 'Service Contract for ' . $this->contract->business_name)
-                    ->greeting('Hi ' . $this->contract->name)
-                    ->line('131 Studios is pleased to present ' . $this->contract->business_name . ' with a contract for service.')
-                    ->line('Please use the link below to view the proposal and sign the contract.')
-                    ->action('View & Sign ', $this->contract->signed_url)
-                    ->line('Thank you for allowing us to serve you.');
+            ->subject('[' . config('app.name') . ']' . 'Service Contract for ' . $this->contract->business_name)
+            ->greeting('Hello ' . $notifiable->name)
+            ->line('131 Studios is pleased to present ' . $this->contract->business_name . ' with a contract for service.')
+            ->line('Please use the link below to view the proposal and sign the contract.')
+            ->action('View & Sign ', $this->contract->signed_url)
+            ->line('If you have any further questions please don\'t hesitate to contact us at 301.992.0962')
+            ->line('Thank you for allowing us to serve you.');
     }
 
     /**
      * Get the array representation of the notification.
      *
-     * @param  mixed  $notifiable
+     * @param mixed $notifiable
      * @return array
      */
     public function toArray($notifiable)

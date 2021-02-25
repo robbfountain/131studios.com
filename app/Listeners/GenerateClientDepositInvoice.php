@@ -29,7 +29,7 @@ class GenerateClientDepositInvoice implements ShouldQueue
     public function handle($event)
     {
         $client = Client::find(
-            User::where('email', $event->contract->email)->first()->client_id
+            User::where('email', $event->contract->user->email)->first()->client_id
         );
 
         $invoice = $client->createInvoice();

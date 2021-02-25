@@ -31,7 +31,6 @@ class EventServiceProvider extends ServiceProvider
         ],
 
         ContractWasPublished::class => [
-            CreateUserAccount::class,
             AddClientToInvoiceNinja::class,
             SendClientContractNotification::class
         ]

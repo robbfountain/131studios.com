@@ -3,6 +3,7 @@
 namespace App\Nova;
 
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\BelongsTo;
 use Laravel\Nova\Fields\Boolean;
 use Laravel\Nova\Fields\Currency;
 use Laravel\Nova\Fields\Date;
@@ -56,12 +57,15 @@ class Contract extends Resource
                 ->hideWhenCreating(),
             Text::make('Business Name')
                 ->rules(['string']),
-            Text::make('Client Name', 'name')
-                ->rules(['required', 'string'])
-                ->hideFromIndex(),
-            Text::make('Client Email', 'email')
-                ->rules(['required', 'email'])
-                ->hideFromIndex(),
+            BelongsTo::make('User')
+                ->searchable()
+                ->showCreateRelationButton(),
+//            Text::make('Client Name', 'name')
+//                ->rules(['required', 'string'])
+//                ->hideFromIndex(),
+//            Text::make('Client Email', 'email')
+//                ->rules(['required', 'email'])
+//                ->hideFromIndex(),
             Place::make('Client Address', 'address')
                 ->hideFromIndex(),
             Text::make('Client Phone', 'phone')
@@ -70,21 +74,32 @@ class Contract extends Resource
                 ->rules(['required'])
                 ->hideFromIndex(),
             Heading::make('Milestones'),
-            Date::make('Start Date', 'starts_at'),
+            Date::make('Start Date', 'starts_at')
+                ->rules(['required']),
             Date::make('Approval Date', 'approval_milestone')
+                ->rules(['required'])
                 ->hideFromIndex(),
             Date::make('Project End', 'ends_at')
+                ->rules(['required'])
                 ->hideFromIndex(),
             Heading::make('Revisions')
                 ->hideFromIndex(),
             Number::make('Revisions Allowed', 'revisions')
+                ->rules(['required'])
+                ->default(function () {
+                    return 0;
+                })
                 ->hideFromIndex(),
             Currency::make('Revision Cost', 'revision_cost')
+                ->default(function () {
+                    return 0.00;
+                })
                 ->hideFromIndex(),
             Heading::make('Project Cost'),
             Boolean::make('Billed Monthly', 'is_monthly')
                 ->help('Setup monthly billing vs. single project cost.'),
-            Currency::make('Project Cost', 'total_cost')->rules(['required', 'numeric']),
+            Currency::make('Project Cost', 'total_cost')
+                ->rules(['required', 'numeric']),
             Currency::make('Deposit', 'deposit')
                 ->default(0)
                 ->hideFromIndex(),
@@ -145,11 +160,11 @@ class Contract extends Resource
     {
         return [
             (new Actions\PublishContract())
-                ->confirmText('Publishing this contract will create the user account and client billing account.  An email will be sent to the client with details to view the contract.')
+                ->confirmText('Publishing this contract will create the client billing account.  An email will be sent to the client with details to view the contract.')
                 ->confirmButtonText('Publish')
                 ->onlyOnDetail(),
             (new Actions\CreateContractDocument)
-            ->onlyOnDetail(),
+                ->onlyOnDetail(),
         ];
     }
 }
