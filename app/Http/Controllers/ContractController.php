@@ -57,7 +57,10 @@ class ContractController extends Controller
     public function pdf(Contract $contract)
     {
         $pdf = App::make('dompdf.wrapper');
-        $pdf->loadHTML(view('contracts.contract-stub', compact('contract'))->render());
+        $pdf->loadHTML(
+            view('contracts.contract-stub', compact('contract'))->render() .
+            view('contracts.contract-signature', compact('contract'))->render()
+        );
 
         return $pdf->download(
             Str::kebab("{$contract->name}-website-contract-{$contract->created_at->format('mdy')}.pdf")

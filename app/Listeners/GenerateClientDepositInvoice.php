@@ -5,9 +5,10 @@ namespace App\Listeners;
 use App\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Queue\InteractsWithQueue;
+use Illuminate\Support\Carbon;
 use InvoiceNinja\Models\Client;
 
-class GenerateClientDepositInvoice
+class GenerateClientDepositInvoice implements ShouldQueue
 {
     /**
      * Create the event listener.
@@ -30,5 +31,13 @@ class GenerateClientDepositInvoice
         $client = Client::find(
             User::where('email', $event->contract->email)->first()->client_id
         );
+
+        $invoice = $client->createInvoice();
+        $invoice->addInvoiceItem('CONSULTING', '**'.$event->contract->business_name."**\nConsulting services from 131 Studios", $event->contract->total_cost);
+        $invoice->due_date = Carbon::parse($event->contract->ends_at)->format('Y-m-d');
+        $invoice->partial = $event->contract->deposit;
+        $invoice->partial_due_date = Carbon::now()->addDays(10)->format('Y-m-d');
+        $invoice->private_notes = 'Invoice Auto-Generated from Signed Contract ' . $event->contract->signed_url;
+        $invoice->save();
     }
 }

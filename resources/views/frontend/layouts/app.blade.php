@@ -40,6 +40,7 @@
         <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
         <script>hljs.initHighlightingOnLoad();</script>
 
+        <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
 
         <!-- Analytics -->
         @include('frontend.partials.google-analytics')
@@ -158,6 +159,6 @@
         </footer>
 
         @livewireScripts
-        @yield('scripts','')
+        @stack('scripts')
     </body>
 </html>

@@ -8,6 +8,7 @@ use App\Listeners\AddClientToInvoiceNinja;
 use App\Listeners\CreateUserAccount;
 use App\Listeners\FetchS3Messages;
 use App\Listeners\GenerateClientDepositInvoice;
+use App\Listeners\SendClientContractNotification;
 use App\Listeners\SendContractEmailToUser;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
@@ -24,6 +25,7 @@ class EventServiceProvider extends ServiceProvider
         SnsEvent::class => [
             FetchS3Messages::class,
         ],
+
         ContractWasApproved::class => [
             GenerateClientDepositInvoice::class
         ],
@@ -31,6 +33,7 @@ class EventServiceProvider extends ServiceProvider
         ContractWasPublished::class => [
             CreateUserAccount::class,
             AddClientToInvoiceNinja::class,
+            SendClientContractNotification::class
         ]
     ];
 

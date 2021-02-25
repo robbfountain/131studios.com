@@ -27,6 +27,7 @@
     "@tailwindcss/typography": "^0.3.0",
     "alpinejs": "^2.7.0",
     "autoprefixer": "^10.0.4",
-    "postcss": "^8.1.10"
+    "postcss": "^8.1.10",
+    "signature_pad": "^3.0.0-beta.4"
   }
 }

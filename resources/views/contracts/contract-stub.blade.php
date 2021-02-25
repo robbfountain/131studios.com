@@ -170,21 +170,9 @@
     The
     Parties each represent that they have the authority to enter into this Agreement.</p>
 
-<p class="mb-6">The Parties agree to the terms and conditions set forth above as demonstrated by their
-    signatures as
+<p class="mb-6">The Client agrees to the terms and conditions set forth above as demonstrated by their
+    signature as
     follows:</p>
-
-<h2 class="font-bold text-2xl">“CLIENT”</h2>
-<div class="flex justify-between">
-    <div class="mb-12">Signed: _____________________________________</div>
-    <div class="mb-12">Date: _______________________________________</div>
-</div>
-
-<h2 class="font-bold text-2xl">“DESIGNER”</h2>
-<div class="flex justify-between">
-    <div class="mb-12">Signed: _____________________________________</div>
-    <div class="mb-12">Date: ______________________________________</div>
-</div>
 
 
 

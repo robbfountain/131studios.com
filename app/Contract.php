@@ -3,6 +3,7 @@
 namespace App;
 
 use App\Events\ContractWasPublished;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
@@ -14,7 +15,7 @@ use Laravel\Nova\Actions\Actionable;
  */
 class Contract extends Model
 {
-    use Actionable;
+    use Actionable, Notifiable;
 
     /**
      * @var array
@@ -28,6 +29,7 @@ class Contract extends Model
         'starts_at' => 'date',
         'approval_milestone' => 'date',
         'ends_at' => 'date',
+        'approved_at' => 'datetime',
     ];
 
     protected $appends = [

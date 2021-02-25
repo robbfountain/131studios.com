@@ -62,6 +62,9 @@ Route::get('blog', 'App\Http\Controllers\BlogController@index')
 Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
     ->name('blog.show');
 
+/**
+ * Contract
+ */
 Route::get('contract/{contract}', 'App\Http\Controllers\ContractController@show')
     ->middleware(['Owner'])
     ->name('contract.show');
@@ -69,6 +72,7 @@ Route::get('contract/{contract}', 'App\Http\Controllers\ContractController@show'
 Route::get('contract/{contract}/pdf', 'App\Http\Controllers\ContractController@pdf')
     ->middleware(['Owner'])
     ->name('contract.pdf');
+
 
 // Webhooks
 Route::webhooks('webhook/webmentions');
