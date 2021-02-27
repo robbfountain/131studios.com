@@ -10,7 +10,6 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
   },
   "devDependencies": {
-    "@tailwindcss/ui": "^0.*",
     "cross-env": "^7.0",
     "highlight.js": "^9.18.3",
     "laravel-mix": "^5.0.5",
@@ -18,7 +17,7 @@
     "resolve-url-loader": "^3.1.0",
     "sass": "^1.26.10",
     "sass-loader": "^8.0.0",
-    "tailwindcss": "^2.0.1",
+    "tailwindcss": "^2.0",
     "vue-template-compiler": "^2.6.12"
   },
   "dependencies": {

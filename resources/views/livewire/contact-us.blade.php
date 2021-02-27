@@ -50,6 +50,7 @@
 
         @if (session()->has('message'))
             <span class="text-green-500 ml-3">
+                <i class="far fa-check mr-2"></i>
                 {{ session('message') }}
             </span>
         @endif

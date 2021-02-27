@@ -14,8 +14,7 @@ class RemoveClientFieldsFromContractsTable extends Migration
     public function up()
     {
         Schema::table('contracts', function (Blueprint $table) {
-            $table->dropColumn('name');
-            $table->dropColumn('email');
+            $table->dropColumn(['name','email']);
         });
     }
 

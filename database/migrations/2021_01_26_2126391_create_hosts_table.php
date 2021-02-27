@@ -30,6 +30,6 @@ class CreateHostsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('hosts');
+        Schema::dropIfExists('hosts');
     }
 }
