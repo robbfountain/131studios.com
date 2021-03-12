@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use App\Events\ContractWasApproved;
 use App\Events\ContractWasPublished;
-use App\Listeners\AddClientToInvoiceNinja;
+use App\Listeners\AddClientToAccountingSoftware;
 use App\Listeners\CreateUserAccount;
 use App\Listeners\FetchS3Messages;
 use App\Listeners\GenerateClientDepositInvoice;
@@ -31,7 +31,7 @@ class EventServiceProvider extends ServiceProvider
         ],
 
         ContractWasPublished::class => [
-            AddClientToInvoiceNinja::class,
+            AddClientToAccountingSoftware::class,
             SendClientContractNotification::class
         ]
     ];

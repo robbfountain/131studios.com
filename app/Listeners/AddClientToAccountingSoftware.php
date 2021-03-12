@@ -10,7 +10,7 @@ use Illuminate\Support\Str;
 use InvoiceNinja\Models\Client;
 use InvoiceNinja\Config as NinjaConfig;
 
-class AddClientToInvoiceNinja implements ShouldQueue
+class AddClientToAccountingSoftware implements ShouldQueue
 {
     /**
      * Create the event listener.

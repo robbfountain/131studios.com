@@ -15,28 +15,33 @@ class Contract extends Component
 
     public function sign()
     {
-       $this->contract->update([
-           'signature_image' => $this->signature,
-           'ip_address' => Request::ip(),
-           'user_agent' => Request::userAgent(),
-           'approved_at' => now(),
-           'approved_by' => auth()->user()->name,
-           'is_approved' => true,
-       ]);
+        $this->validate([
+            'signature' => 'required'
+        ]);
 
-       event(new ContractWasApproved($this->contract, User::where('email', $this->contract->email)->first()));
+        $this->contract->update([
+            'signature_image' => $this->signature,
+            'ip_address' => Request::ip(),
+            'user_agent' => Request::userAgent(),
+            'approved_at' => now(),
+            'is_approved' => true,
+        ]);
 
-       session()->flash('message', 'Thank you');
+        event(new ContractWasApproved(
+            $this->contract, User::where('email', $this->contract->user->email)->first()
+        ));
+
+        session()->flash('message', 'Thank you');
     }
 
     public function throwError()
     {
-        session()->flash('error','You must sign the contract');
+        session()->flash('error', 'You must sign the contract');
     }
 
     public function clearError()
     {
-        session()->flash('error','');
+        session()->flash('error', '');
     }
 
     public function render()
