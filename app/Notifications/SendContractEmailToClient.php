@@ -4,7 +4,6 @@ namespace App\Notifications;
 
 use App\Contract;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -51,7 +50,7 @@ class SendContractEmailToClient extends Notification
     {
         return (new MailMessage)
             ->subject("{$this->contract->business_name} Quote and Service Contract from 131 Studios")
-            ->greeting('Hello ' . $this->contract->name)
+            ->greeting('Hello '.$this->contract->name)
             ->line('Thank you for giving us the opportunity to earn your business.')
             ->line('We have prepared a quote and contract for the project we have discussed.')
             ->line('Please click the link below to view and sign the contract.')

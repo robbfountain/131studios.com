@@ -3,8 +3,6 @@
 namespace App\Listeners;
 
 use App\Notifications\NotifyUserOfPublishedContract;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class SendClientContractNotification
 {
