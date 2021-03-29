@@ -22,11 +22,14 @@ class IndexController extends Controller
         ]));
     }
 
-    public function randomTestimonial()
+    /**
+     * @return Testimonial|Testimonial[]|\Illuminate\Database\Eloquent\Collection|mixed
+     */
+    private function randomTestimonial()
     {
         $testimonials = Testimonial::all();
 
-        return $testimonials->isNotEmpty() ? $testimonials->random() : new Testimonia;
+        return $testimonials->isNotEmpty() ? $testimonials->random() : new Testimonial;
 
     }
 }
