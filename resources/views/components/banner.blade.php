@@ -1,6 +1,6 @@
 @props(['condensed' => false,])
 
-<div class="relative bg-gray-50">
+<div class="relative bg-gradient-to-b from-blue-100">
     @if(!$condensed)
         <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
             <div class="relative h-full max-w-screen-xl mx-auto">
