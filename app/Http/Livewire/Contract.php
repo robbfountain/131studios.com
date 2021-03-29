@@ -16,7 +16,7 @@ class Contract extends Component
     public function sign()
     {
         $this->validate([
-            'signature' => 'required'
+            'signature' => 'required',
         ]);
 
         $this->contract->update([
@@ -48,5 +48,4 @@ class Contract extends Component
     {
         return view('livewire.contract');
     }
-
 }

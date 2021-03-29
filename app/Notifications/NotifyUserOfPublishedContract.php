@@ -4,7 +4,6 @@ namespace App\Notifications;
 
 use App\Contract;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -47,9 +46,9 @@ class NotifyUserOfPublishedContract extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage)
-            ->subject('[' . config('app.name') . ']' . 'Service Contract for ' . $this->contract->business_name)
-            ->greeting('Hello ' . $notifiable->name)
-            ->line('131 Studios is pleased to present ' . $this->contract->business_name . ' with a contract for service.')
+            ->subject('['.config('app.name').']'.'Service Contract for '.$this->contract->business_name)
+            ->greeting('Hello '.$notifiable->name)
+            ->line('131 Studios is pleased to present '.$this->contract->business_name.' with a contract for service.')
             ->line('Please use the link below to view the proposal and sign the contract.')
             ->action('View & Sign ', $this->contract->signed_url)
             ->line('If you have any further questions please don\'t hesitate to contact us at 301.992.0962')
