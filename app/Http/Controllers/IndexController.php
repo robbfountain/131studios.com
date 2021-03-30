@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Testimonial;
-use function PHPUnit\Framework\isEmpty;
 
 /**
  * Class IndexController.
@@ -30,6 +29,5 @@ class IndexController extends Controller
         $testimonials = Testimonial::all();
 
         return $testimonials->isNotEmpty() ? $testimonials->random() : new Testimonial;
-
     }
 }
