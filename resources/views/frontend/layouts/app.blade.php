@@ -5,8 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        @yield('meta')
-
+        @yield('meta','')
         <title>{{ $title ?? config('app.name') }} </title>
 
         <!-- Webmentions -->
@@ -22,7 +21,7 @@
 
         <!-- LIVEWIRE
         ================================================== -->
-       @livewireStyles
+        @livewireStyles
 
         <!-- Icons
         =================================================== -->
@@ -56,8 +55,8 @@
                     <div class="grid xs:grid-cols-1 md:grid-cols-3 gap-8 xl:col-span-3">
                         <div class="">
                             <img
-                                src="https://res.cloudinary.com/onethirtyone/image/upload/v1586458286/131%20Studios/131-logo-dark-bg_wwbm3o.png"
-                                class="h-12" alt="131 Studios Logo">
+                                    src="https://res.cloudinary.com/onethirtyone/image/upload/v1586458286/131%20Studios/131-logo-dark-bg_wwbm3o.png"
+                                    class="h-12" alt="131 Studios Logo">
                             <div class="mt-8">
                                 <ul class="flex">
                                     <li class="mr-3">

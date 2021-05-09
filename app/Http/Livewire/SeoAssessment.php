@@ -83,6 +83,7 @@ class SeoAssessment extends Component
     {
         return view('livewire.seo-assessment')
             ->extends('frontend.layouts.app')
-            ->section('content');
+            ->section('content')
+            ->layoutData(['meta' => '<meta name="description" content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today."/>']);
     }
 }
