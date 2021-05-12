@@ -2,11 +2,9 @@
 
 namespace App\Providers;
 
-use App\Nova\Metrics\VideoViews;
 use Illuminate\Support\Facades\Gate;
 use Laravel\Nova\Nova;
 use Laravel\Nova\NovaApplicationServiceProvider;
-use Spatie\ServerMonitor\Models\Host;
 
 class NovaServiceProvider extends NovaApplicationServiceProvider
 {

@@ -27,7 +27,7 @@ class AddPaymentTermsToContractsTable extends Migration
     public function down()
     {
         Schema::table('contracts', function (Blueprint $table) {
-            $table->dropColumn(['is_monthly','monthly_billing_duration']);
+            $table->dropColumn(['is_monthly', 'monthly_billing_duration']);
         });
     }
 }
