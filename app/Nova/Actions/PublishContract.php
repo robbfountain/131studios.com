@@ -14,7 +14,7 @@ class PublishContract extends Action implements ShouldQueue
 {
     use InteractsWithQueue, Queueable;
 
-    public $name = "Publish Contract";
+    public $name = 'Publish Contract';
 
     /**
      * Perform the action on the given models.
@@ -26,7 +26,7 @@ class PublishContract extends Action implements ShouldQueue
     public function handle(ActionFields $fields, Collection $models)
     {
         foreach ($models as $model) {
-            if (!$model->isPublished()) {
+            if (! $model->isPublished()) {
                 $model->publish();
 
                 event(new ContractWasPublished($model));

@@ -63,7 +63,7 @@ Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
     ->name('blog.show');
 
 /**
- * Contract
+ * Contract.
  */
 //Route::get('contract/{contract}', 'App\Http\Controllers\ContractController@show')
 //    ->middleware(['Owner'])
@@ -90,7 +90,6 @@ Route::get('search', 'App\Http\Controllers\SearchController@index')
     ->name('search.index');
 Route::post('search', 'App\Http\Controllers\SearchController@show')
     ->name('search.show');
-
 
 // AWS SNS
 Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');

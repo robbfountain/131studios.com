@@ -17,7 +17,6 @@ class AddApprovedFieldsToContractTable extends Migration
             $table->string('ip_address')->nullable();
             $table->string('user_agent')->nullable();
             $table->text('signature_image')->nullable();
-
         });
     }
 
@@ -29,7 +28,7 @@ class AddApprovedFieldsToContractTable extends Migration
     public function down()
     {
         Schema::table('contracts', function (Blueprint $table) {
-            $table->dropColumn(['ip_address','user_agent','signature_image']);
+            $table->dropColumn(['ip_address', 'user_agent', 'signature_image']);
         });
     }
 }

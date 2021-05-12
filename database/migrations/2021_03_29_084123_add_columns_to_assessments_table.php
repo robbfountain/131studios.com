@@ -14,7 +14,6 @@ class AddColumnsToAssessmentsTable extends Migration
     public function up()
     {
         Schema::table('assessments', function (Blueprint $table) {
-
             $table->uuid('uuid')->nullable()->change();
             $table->string('business_name')->nullable()->change();
             $table->string('first_name')->nullable()->change();
@@ -62,7 +61,7 @@ class AddColumnsToAssessmentsTable extends Migration
                 'dont_choose_reasons',
                 'penalized',
                 'other_domains',
-                'anything_else'
+                'anything_else',
             ]);
         });
     }

@@ -2,13 +2,10 @@
 
 namespace App\Listeners;
 
-use App\Notifications\SendContractEmailToClient;
 use App\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Str;
 use InvoiceNinja\Models\Client;
-use InvoiceNinja\Config as NinjaConfig;
 
 class AddClientToAccountingSoftware implements ShouldQueue
 {
@@ -38,7 +35,7 @@ class AddClientToAccountingSoftware implements ShouldQueue
         User::where('email', $event->contract->user->email)
             ->first()
             ->update([
-                'client_id' => $client->id
+                'client_id' => $client->id,
             ]);
     }
 }

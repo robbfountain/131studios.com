@@ -58,7 +58,7 @@ class ContractController extends Controller
     {
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadHTML(
-            view('contracts.contract-stub', compact('contract'))->render() .
+            view('contracts.contract-stub', compact('contract'))->render().
             view('contracts.contract-signature', compact('contract'))->render()
         );
 

@@ -38,7 +38,7 @@ class Contract extends Resource
     public static $search = [
         'id',
         'business_name',
-        'name'
+        'name',
     ];
 
     /**
@@ -60,12 +60,12 @@ class Contract extends Resource
             BelongsTo::make('User')
                 ->searchable()
                 ->showCreateRelationButton(),
-//            Text::make('Client Name', 'name')
-//                ->rules(['required', 'string'])
-//                ->hideFromIndex(),
-//            Text::make('Client Email', 'email')
-//                ->rules(['required', 'email'])
-//                ->hideFromIndex(),
+            //            Text::make('Client Name', 'name')
+            //                ->rules(['required', 'string'])
+            //                ->hideFromIndex(),
+            //            Text::make('Client Email', 'email')
+            //                ->rules(['required', 'email'])
+            //                ->hideFromIndex(),
             Place::make('Client Address', 'address')
                 ->hideFromIndex(),
             Text::make('Client Phone', 'phone')
