@@ -2,16 +2,14 @@
 
 namespace App;
 
-use App\Events\ContractWasPublished;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\URL;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Laravel\Nova\Actions\Actionable;
 
 /**
- * Class Contract
- * @package App
+ * Class Contract.
  */
 class Contract extends Model
 {
@@ -36,9 +34,6 @@ class Contract extends Model
         'balance',
     ];
 
-    /**
-     *
-     */
     public static function boot()
     {
         parent::boot();
@@ -67,10 +62,10 @@ class Contract extends Model
     public function publish()
     {
         return tap($this)->update([
-            'is_published' => true
+            'is_published' => true,
         ]);
     }
-    
+
     public function user()
     {
         return $this->belongsTo(User::class);

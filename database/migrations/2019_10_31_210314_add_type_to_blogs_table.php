@@ -27,7 +27,7 @@ class AddTypeToBlogsTable extends Migration
     public function down()
     {
         Schema::table('blogs', function (Blueprint $table) {
-            $table->dropColumn(['tweet','reference_url']);
+            $table->dropColumn(['tweet', 'reference_url']);
         });
     }
 }
