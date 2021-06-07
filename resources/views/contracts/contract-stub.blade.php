@@ -6,7 +6,7 @@
     “Effective Date”), by
     and
     between <span class="font-bold underline pb-2">{{$contract->business_name}} operated
-        by {{$contract->name}}</span>, with an address of <span
+        by {{$contract->user->name}}</span>, with an address of <span
             class="font-bold underline pb-2">{{$contract->address}}</span> (the “Client”) and
     <span class="font-bold underline pb-2">{{$contract->designer}}</span>, (the “Designer”), collectively
     “the Parties.”
