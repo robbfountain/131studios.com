@@ -16,7 +16,6 @@
                     Download PDF
                 </a>
             @endif
-
         </div>
 
         @livewire('contract',['contract' => $contract])
