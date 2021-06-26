@@ -21,7 +21,7 @@ class AddColumnsToAssessmentsTable extends Migration
             $table->string('last_name')->nullable()->change();
             $table->string('email')->nullable()->change();
 
-            $table->string('phone')->nullable();
+//            $table->string('phone')->nullable();
             $table->longText('success_factors')->nullable();
             $table->longText('important_actions')->nullable();
             $table->longText('keywords')->nullable();
