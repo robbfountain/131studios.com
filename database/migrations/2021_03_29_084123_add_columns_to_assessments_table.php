@@ -47,9 +47,6 @@ class AddColumnsToAssessmentsTable extends Migration
     {
         Schema::table('assessments', function (Blueprint $table) {
             $table->dropColumn([
-                'city',
-                'state',
-                'zip',
                 'about',
                 'success_factors',
                 'important_actions',
