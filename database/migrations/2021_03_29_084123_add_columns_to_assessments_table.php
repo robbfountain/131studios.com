@@ -34,7 +34,7 @@ class AddColumnsToAssessmentsTable extends Migration
             $table->longText('other_domains')->nullable();
             $table->longText('anything_else')->nullable();
 
-            $table->dateTime('notified_at')->nullable();
+//            $table->dateTime('notified_at')->nullable();
         });
     }
 
