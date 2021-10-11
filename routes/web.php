@@ -94,6 +94,6 @@ Route::post('search', 'App\Http\Controllers\SearchController@show')
 // AWS SNS
 Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');
 
-Route::redirect('subdreamer/admin/{any?}', url('/'), 301);
+Route::redirect('subdreamer/admin/pages.php', url('/'), 301);
 Route::redirect('customer/{any}', url('/projects'), 301);
 
