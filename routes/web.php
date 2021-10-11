@@ -1,6 +1,8 @@
 <?php
 
 // Website
+Route::redirect('subdreamer/admin/pages.php', url('/'), 301);
+
 
 // Rick Roll
 Route::redirect('.env', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
@@ -94,6 +96,5 @@ Route::post('search', 'App\Http\Controllers\SearchController@show')
 // AWS SNS
 Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');
 
-Route::redirect('subdreamer/admin/pages.php', url('/'), 301);
 Route::redirect('customer/{any}', url('/projects'), 301);
 
