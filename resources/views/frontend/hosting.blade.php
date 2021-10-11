@@ -3,11 +3,24 @@
 @section('meta')
     <meta name="description"
           content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today."/>
+    <meta name="twitter:card" content="131 Studios"/>
+    <meta name="twitter:site" content="@131Studios"/>
+    <meta property="twitter:title" content="131 Studios">
+    <meta property="twitter:description"
+          content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
+    <meta property="twitter :image" content="{{$blog->imageUrl()}}">
+    <meta name="twitter:creator" content="@131Studios"/>
+    <meta property="og:site_name" content="{{config('app.name')}}">
+    <meta property="og:url" content="{{route('hosting.index')}}">
+    <meta property="og:title" content="131 Studios">
+    <meta property="og:description"
+          content="{Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
 @endsection
 
 @section('content')
     <x-banner>
-        Web<x-slot name="titleExpanded">Hosting</x-slot>
+        Web
+        <x-slot name="titleExpanded">Hosting</x-slot>
         <x-slot name="subtitle">Offering reliable web hosting for Greencastle, Chambersburg and Hagerstown</x-slot>
     </x-banner>
 
@@ -23,7 +36,8 @@
         <p class="py-4">We utilize industry leading virtual private servers from some of the top
             names
             in the industry
-            such as <a class="text-blue-600 hover:text-blue-900 transition ease-in-out duration-150" href="https://aws.amazon.com">AWS</a>, Digital Ocean and Linode.</p>
+            such as <a class="text-blue-600 hover:text-blue-900 transition ease-in-out duration-150"
+                       href="https://aws.amazon.com">AWS</a>, Digital Ocean and Linode.</p>
 
         <p class="py-4">We take security very seriously. All of our web servers are patched
             regularly
@@ -58,14 +72,14 @@
 
             <x-feature icon="wrench">
                 <x-slot name="title">
-                   Top Notch Support
+                    Top Notch Support
                 </x-slot>
                 One Hour of professional maintenance per month. 99.9% uptime guarantee
             </x-feature>
 
             <x-feature icon="envelope">
                 <x-slot name="title">
-                   Email Options
+                    Email Options
                 </x-slot>
                 30GB Storage, Cloud Drive Storage, Ultimate Spam Protection and More. Starting at <a
                         href="/email-hosting" class="no-underline text-blue">$7/user

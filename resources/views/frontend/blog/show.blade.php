@@ -5,6 +5,9 @@
           content="{{$blog->getPreview()}}"/>
     <meta name="twitter:card" content="{{$blog->getPreview()}}" />
     <meta name="twitter:site" content="@131Studios" />
+    <meta property="twitter:title" content="{{$blog->title}}">
+    <meta property="twitter:description" content="{{$blog->getPreview()}}">
+    <meta property="twitter :image" content="{{$blog->imageUrl()}}">
     <meta name="twitter:creator" content="@131Studios" />
     <meta property="og:site_name" content="{{config('app.name')}}">
     <meta property="og:url" content="{{$blog->shareUrl()}}">
