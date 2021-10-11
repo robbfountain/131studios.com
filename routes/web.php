@@ -91,10 +91,9 @@ Route::get('search', 'App\Http\Controllers\SearchController@index')
 Route::post('search', 'App\Http\Controllers\SearchController@show')
     ->name('search.show');
 
-
 // AWS SNS
 Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');
 
-// Track Views
-Route::post('/stats/videos/{video:video_id}/views', 'App\Http\Controllers\VideoController@update')
-    ->name('video.increment.views');
+Route::redirect('subdreamer/{any?}', url('/'), 301);
+Route::redirect('customer/{any?}', url('/projects'), 301);
+
