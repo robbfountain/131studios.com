@@ -1,7 +1,9 @@
 <?php
 
 // Website
-Route::redirect('subdreamer/admin/{any}', '/');
+Route::get('subdreamer/admin/pages.php', function() {
+    return Redirect::route('index');
+});
 
 
 // Rick Roll
@@ -58,9 +60,11 @@ Route::get('contact', 'App\Http\Controllers\ContactController@index')
     ->name('contact.index');
 
 // Blog
-Route::redirect('blog/testing-webmentions', '/blog');
 Route::get('blog', 'App\Http\Controllers\BlogController@index')
-    ->name('blog.index');
+    ->name('blog.index')
+    ->missing(function (Request $request) {
+        return Redirect::route('blog.index');
+    });
 
 Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
     ->name('blog.show');
