@@ -65,7 +65,7 @@ Route::get('blog', 'App\Http\Controllers\BlogController@index')
 
 Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
     ->name('blog.show')
-    ->missing(function (Request $request) {
+    ->missing(function (Illuminate\Http\Request $request) {
         return Redirect::route('blog.index');
     });
 
