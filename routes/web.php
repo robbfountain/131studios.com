@@ -1,7 +1,7 @@
 <?php
 
 // Website
-Route::get('subdreamer/admin/pages.php', function() {
+Route::get('/subdreamer/admin/{any}', function() {
     return Redirect::route('index');
 });
 
