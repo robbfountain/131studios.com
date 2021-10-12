@@ -1,7 +1,6 @@
 <?php
 
 // Website
-Route::redirect('subdreamer/admin/pages.php', url('/'), 301);
 
 
 // Rick Roll
