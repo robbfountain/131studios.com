@@ -12,6 +12,7 @@
     <meta property="og:url" content="{{route('project.index')}}">
     <meta property="og:title" content="131 Studios">
     <meta property="og:description" content="{Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
+    <link rel="canonical" href="{{route('project.index')}}">
 @endsection
 
 @section('content')
