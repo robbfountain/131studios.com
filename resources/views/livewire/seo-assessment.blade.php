@@ -1,4 +1,7 @@
 <div>
+    @section('meta')
+        <meta name="robots" content="noindex" />
+    @endsection
 
     <x-banner>
         SEO <span class="text-blue-500">Assessment</span>

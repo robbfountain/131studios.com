@@ -16,7 +16,7 @@ class ProjectController extends Controller
     {
         return view('frontend.project.projects')->with([
             'projects' => $this->getProjects(),
-            'title' => 'Our Portfolio',
+            'title' => 'Our Portfolio | 131 Studios',
             'heading' => 'Our Portfolio',
             'categories' => Category::has('blog')->get(),
         ]);
