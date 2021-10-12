@@ -61,13 +61,13 @@ Route::get('contact', 'App\Http\Controllers\ContactController@index')
 
 // Blog
 Route::get('blog', 'App\Http\Controllers\BlogController@index')
-    ->name('blog.index')
+    ->name('blog.index');
+
+Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
+    ->name('blog.show')
     ->missing(function (Request $request) {
         return Redirect::route('blog.index');
     });
-
-Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
-    ->name('blog.show');
 
 /**
  * Contract
