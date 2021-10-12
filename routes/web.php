@@ -57,6 +57,7 @@ Route::get('contact', 'App\Http\Controllers\ContactController@index')
     ->name('contact.index');
 
 // Blog
+Route::redirect('blog/testing-webmentions', '/blog');
 Route::get('blog', 'App\Http\Controllers\BlogController@index')
     ->name('blog.index');
 
