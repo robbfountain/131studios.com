@@ -1,9 +1,9 @@
 <div class="mb-12 category category-{{$blog->category->name}} {{!$blog->is_published || $blog->published_at > now() ? 'bg-orange-100 bg-opacity-50' : ''}}">
 
-    <h1 class="text-4xl leading-none mb-4 ">
-        <a class="text-gray-800 text-4xl hover:text-gray-700 transition ease-in-out duration-150"
+    <div class="mb-4 ">
+        <a class="text-4xl leading-none text-gray-800 hover:text-gray-700 transition ease-in-out duration-150"
            href="{{$blog->getLinkToFullPost()}}">{{$blog->blogTitle()}}</a>
-    </h1>
+    </div>
 
     @if(!$blog->isProject())
         <h6 class="text-gray-700 text-lg mb-2">
