@@ -1,10 +1,12 @@
 <?php
 
 // Website
-Route::get('/subdreamer/admin/{any}', function() {
+Route::get('/subdreamer/admin/{any}.php', function() {
     return Redirect::route('index');
 });
 
+// Redirects
+Route::redirect('blog/website-launch-for-the-dapper-house-barber-shop', '/');
 
 // Rick Roll
 Route::redirect('.env', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
