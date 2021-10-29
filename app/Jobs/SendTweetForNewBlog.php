@@ -30,7 +30,7 @@ class SendTweetForNewBlog implements ShouldQueue
     /**
      * Create a new job instance.
      *
-     * @param Blog $blog
+     * @param  Blog  $blog
      */
     public function __construct(Blog $blog)
     {

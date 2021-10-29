@@ -96,8 +96,7 @@ class Blog extends Model
     protected $with = ['category'];
 
     /**
-     * @param \OneThirtyOne\Mime\Message $message
-     *
+     * @param  \OneThirtyOne\Mime\Message  $message
      * @return mixed
      */
     public static function hasCurrentBlogPost(Message $message)
@@ -231,7 +230,6 @@ class Blog extends Model
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopeUnpublished($query)
@@ -257,7 +255,6 @@ class Blog extends Model
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopePublished($query)
@@ -269,7 +266,6 @@ class Blog extends Model
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopeWaitingForTweet($query)
@@ -324,8 +320,7 @@ class Blog extends Model
     }
 
     /**
-     * @param array $options
-     *
+     * @param  array  $options
      * @return string
      */
     public function imageUrl($options = [])
@@ -366,7 +361,6 @@ class Blog extends Model
 
     /**
      * @param $value
-     *
      * @return mixed|string
      */
     public function getLinkToFullPostAttribute($value)

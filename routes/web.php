@@ -1,7 +1,7 @@
 <?php
 
 // Website
-Route::get('/subdreamer/admin/{any}.php', function() {
+Route::get('/subdreamer/admin/{any}.php', function () {
     return Redirect::route('index');
 });
 
@@ -72,7 +72,7 @@ Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
     });
 
 /**
- * Contract
+ * Contract.
  */
 //Route::get('contract/{contract}', 'App\Http\Controllers\ContractController@show')
 //    ->middleware(['Owner'])
@@ -104,4 +104,3 @@ Route::post('search', 'App\Http\Controllers\SearchController@show')
 Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');
 
 Route::redirect('customer/{any}', url('/projects'), 301);
-

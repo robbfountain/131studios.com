@@ -22,8 +22,7 @@ class ContactController extends Controller
     }
 
     /**
-     * @param \App\Http\Requests\ContactRequest $request
-     *
+     * @param  \App\Http\Requests\ContactRequest  $request
      * @return \Illuminate\Http\JsonResponse
      */
     public function store(ContactRequest $request)

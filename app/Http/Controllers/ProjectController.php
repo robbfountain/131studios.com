@@ -8,8 +8,7 @@ use App\Category;
 class ProjectController extends Controller
 {
     /**
-     * @param null $slug
-     *
+     * @param  null  $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index($slug = null)

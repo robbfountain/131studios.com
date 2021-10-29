@@ -3,8 +3,6 @@
 namespace App\Listeners;
 
 use App\Notifications\NotifyUserOfPublishedContract;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 
 class SendClientContractNotification
 {
@@ -21,7 +19,7 @@ class SendClientContractNotification
     /**
      * Handle the event.
      *
-     * @param object $event
+     * @param  object  $event
      * @return void
      */
     public function handle($event)

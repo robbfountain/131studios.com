@@ -22,8 +22,8 @@ class BlogItem extends Component
     /**
      * Create a new component instance.
      *
-     * @param        $blog
-     * @param string $type
+     * @param  $blog
+     * @param  string  $type
      */
     public function __construct($blog, $type = 'col')
     {

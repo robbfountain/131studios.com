@@ -49,8 +49,7 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param Blog $blog
-     *
+     * @param  Blog  $blog
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show(Blog $blog)
