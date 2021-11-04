@@ -21,6 +21,7 @@
         <x-slot name="titleExpanded">(SEO)</x-slot>
     </x-banner>
 
+
     <x-service-offering service="SEO"
                         image="https://res.cloudinary.com/onethirtyone/image/upload/v1558561491/131%20Studios/seo_u1svnp.jpg">
         <p class="mb-6">
@@ -38,7 +39,7 @@
         </p>
 
         <p class="mb-6">
-            We'll start with a <a href="{{route('seo.assessment')}}" class="font-semibold text-blue-500 hover:text-blue-700 transition ease-in-out duration-150">FREE</a> SEO analysis that provides a
+            We'll start with a <a href="{{route('seo.assessment')}}">FREE</a> SEO analysis that provides a
             starting point
             for improving your website's rank. From there we will optimize your site to make sure you're
             not penalized for irrelevant
@@ -51,8 +52,8 @@
             make necessary changes to help you get to the top.
         </p>
 
-        <div class="text-center text-4xl mt-6 text-gray-600 font-semibold">
-            Call Us Today! <span class="text-blue-500">301.992.0962</span>
+        <div class="text-center text-4xl mt-8 text-gray-600">
+            Call Us Today! <a href="tel:3019920962" class="text-blue-700 hover:text-sky-700">301.992.0962</a>
         </div>
     </x-service-offering>
 

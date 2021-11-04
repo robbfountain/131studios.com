@@ -4,9 +4,68 @@
 
 @import 'components/blog.scss';
 @import 'components/utilities.scss';
-//@import 'components/nav';
-//@import 'components/project';
-//@import 'components/algolia';
+
+.parallax {
+
+  /* Set a specific height */
+  min-height: 500px;
+
+  /* Create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.parsedown a {
+  @apply text-blue-500 transition;
+  @apply hover:text-blue-800 hover:underline;
+}
+
+.circular-chart {
+  display: block;
+  margin: 10px auto;
+  max-width: 80%;
+  max-height: 200px;
+}
+
+.circle-bg {
+  fill: none;
+  stroke: #eee;
+  stroke-width: 3.8;
+}
+
+.circle {
+  fill: none;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  animation: progress 1s ease-out forwards;
+}
+
+.success {
+  stroke: #4CC790;
+}
+
+.danger {
+  stroke: #EF4444;
+}
+
+.warning {
+  stroke: #F59E0B;
+}
+
+@keyframes progress {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}
+
+.percentage {
+  fill: #666;
+  font-family: sans-serif;
+  font-size: 0.5em;
+  text-anchor: middle;
+}
 
 
 

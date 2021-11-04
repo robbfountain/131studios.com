@@ -1,7 +1,7 @@
 <?php
 
 // Website
-Route::get('/subdreamer/admin/{any}.php', function() {
+Route::get('/subdreamer/admin/{any}.php', function () {
     return Redirect::route('index');
 });
 
@@ -19,6 +19,14 @@ Route::get('/', 'App\Http\Controllers\IndexController@index')
 Route::get('projects', 'App\Http\Controllers\ProjectController@index')
     ->name('project.index');
 
+Route::get('case-studies', function () {
+    return;
+})->name('case-studies.index');
+
+Route::get('site-analysis', function () {
+    return view('frontend.site-analysis');
+})->name('site-analysis.index');
+
 Route::view('services', 'frontend.services')
     ->name('services.index');
 
@@ -28,20 +36,8 @@ Route::get('hosting', 'App\Http\Controllers\HostingController@index')
 Route::get('seo', 'App\Http\Controllers\SeoController@index')
     ->name('seo.index');
 
-Route::get('seo/assessment/{uuid?}', \App\Http\Livewire\SeoAssessment::class)
-    ->name('seo.assessment');
-
-Route::get('social-media', 'App\Http\Controllers\SocialMediaController@index')
-    ->name('social-media.index');
-
-Route::get('additional-services', 'App\Http\Controllers\AdditionalServicesController@index')
-    ->name('additional-services.index');
-
 Route::get('website-design', 'App\Http\Controllers\WebsiteDesignController@index')
     ->name('website-design.index');
-
-Route::get('email-hosting', 'App\Http\Controllers\EmailHostingController@index')
-    ->name('email-hosting.index');
 
 Route::view('privacy', 'frontend.privacy', [
     'title' => 'Privacy Policy | 131 Studios',
@@ -92,6 +88,7 @@ Route::webhooks('webhook/webmentions');
 // Oauth
 Route::get('/oauth/{provider}', 'App\Http\Controllers\Auth\OauthController@redirect')
     ->name('nova.login.google');
+
 Route::get('/oauth/{provider}/callback', 'App\Http\Controllers\Auth\OauthController@callback');
 
 // Search

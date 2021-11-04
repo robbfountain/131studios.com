@@ -29,6 +29,6 @@ class IndexController extends Controller
     {
         $testimonials = Testimonial::all();
 
-        return $testimonials->isNotEmpty() ? $testimonials->random() : new Testimonial;
+        return $testimonials->isNotEmpty() ? $testimonials->random(2) : new Testimonial;
     }
 }

@@ -1,6 +1,6 @@
 @props(['condensed' => false,])
 
-<div class="relative bg-gradient-to-b from-blue-100">
+<div class="relative bg-gradient-to-b from-blue-700 to-sky-700 overflow-hidden">
     @if(!$condensed)
         <div class="hidden sm:block sm:absolute sm:inset-y-0 sm:h-full sm:w-full">
             <div class="relative h-full max-w-screen-xl mx-auto">
@@ -43,10 +43,9 @@
                 <div class="hidden md:block relative"
                      x-data="{open : false}">
                     <a href="#"
-                       class="ml-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
+                       class="ml-6 font-medium text-white hover:text-gray-300 focus:outline-none focus:text-blue-400 transition duration-150 ease-in-out"
                        @click="open=!open">
-                        Our Services
-                        <i class="ml-1 far fa-chevron-down"></i>
+                        Services
                     </a>
                     <div x-show="open"
                          @click.away="open = false"
@@ -60,49 +59,38 @@
                     x-cloak>
                         <div class="py-1">
                             <a href="{{route('website-design.index')}}"
-                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-blue-400">
                                 <i class="fas fa-paint-brush mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
                                 ></i>
                                 Website Design
                             </a>
                             <a href="{{route('hosting.index')}}"
-                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-blue-400">
                                 <i class="fas fa-server mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
                                 ></i>
                                 Hosting
                             </a>
                         </div>
                         <div class="py-1">
-                            <a href="{{route('social-media.index')}}"
-                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                <i class="fas fa-share-alt mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                                ></i>
-                                Social Media
-                            </a>
                             <a href="{{route('seo.index')}}"
-                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
+                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-blue-400">
                                 <i class="fas fa-search mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
                                 ></i>
                                 Search Engine Optimization (SEO)
                             </a>
                         </div>
-                        <div class="py-1">
-                            <a href="{{route('additional-services.index')}}"
-                               class="group flex items-center px-4 py-2 text-sm leading-5 rounded-md text-gray-700 hover:bg-gray-100 hover:text-gray-900 focus:outline-none focus:bg-gray-100 focus:text-gray-900">
-                                <i class="fas fa-plus mr-3 h-5 w-5 text-gray-400 group-hover:text-gray-500 group-focus:text-gray-500"
-                                ></i>
-                                Additional Services
-                            </a>
-                        </div>
                     </div>
+                    <a href="{{route('case-studies.index')}}"
+                       class="ml-6 font-medium text-white hover:text-gray-300 focus:outline-none focus:text-blue-400 transition duration-150 ease-in-out">Case Studies
+                        </a>
                     <a href="{{route('project.index')}}"
-                       class="ml-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Our
-                        Work</a>
+                       class="ml-6 font-medium text-white hover:text-gray-300 focus:outline-none focus:text-blue-400 transition duration-150 ease-in-out">
+                        Projects</a>
                     <a href="{{route('blog.index')}}"
-                       class="ml-10 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Blog</a>
+                       class="ml-10 font-medium text-white hover:text-gray-300 focus:outline-none focus:text-blue-400 transition duration-150 ease-in-out">Blog</a>
                     <a href="{{route('contact.index')}}"
-                       class="ml-10 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out">Contact
-                        Us</a>
+                       class="ml-10 font-medium text-white hover:text-gray-300 focus:outline-none focus:text-blue-400 transition duration-150 ease-in-out">Contact
+                        </a>
                 </div>
             </nav>
         </div>
@@ -136,19 +124,22 @@
                         </div>
                     </div>
                     <div class="px-2 pt-2 pb-3">
-                        <a href="{{route('additional-services.index')}}"
-                           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Our
+                        <a href="{{route('services.index')}}"
+                           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-blue-400 focus:bg-gray-50 transition duration-150 ease-in-out">Our
                             Services</a>
+                        <a href="{{route('case-studies.index')}}"
+                           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-blue-400 focus:bg-gray-50 transition duration-150 ease-in-out">
+                            Case Studies</a>
                         <a href="{{route('project.index')}}"
-                           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Our
-                            Work</a>
+                           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-blue-400 focus:bg-gray-50 transition duration-150 ease-in-out">Projects
+                            </a>
                         <a href="{{route('blog.index')}}"
-                           class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">
+                           class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-blue-400 focus:bg-gray-50 transition duration-150 ease-in-out">
                             Blog
                         </a>
                         <a href="{{route('contact.index')}}"
-                           class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-gray-900 focus:bg-gray-50 transition duration-150 ease-in-out">Contact
-                            Us</a>
+                           class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-blue-400 focus:bg-gray-50 transition duration-150 ease-in-out">Contact
+                            </a>
                     </div>
                 </div>
             </div>
@@ -156,26 +147,16 @@
         @if(!$condensed)
             <div class="mt-10 mx-auto max-w-screen-xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 xl:mt-28">
                 <div class="text-center">
-                    <h1 class="text-4xl tracking-tight leading-10 font-extrabold text-gray-900 sm:text-5xl sm:leading-none md:text-6xl">
+                    <h1 class="text-4xl leading-10 font-bold text-white sm:text-5xl sm:leading-none md:text-6xl">
                         {{$slot}}
                         <br class="xl:hidden"/>
-                        <span class="text-blue-600">{{$titleExpanded ?? ''}}</span>
+                        <span class="text-blue-400">{{$titleExpanded ?? ''}}</span>
                     </h1>
-                    <p class="mt-3 max-w-md mx-auto text-base text-gray-500 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
+                    <p class="mt-3 max-w-md mx-auto text-base text-blue-200 sm:text-lg md:mt-5 md:text-xl md:max-w-3xl">
                         {{$subtitle ?? ''}}
                     </p>
                     <div class="mt-5 max-w-md mx-auto sm:flex sm:justify-center md:mt-8">
                         {{$cta ?? ''}}
-                        {{--                    <div class="rounded-md shadow">--}}
-                        {{--                        <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-blue-600 hover:bg-blue-500 focus:outline-none focus:shadow-outline-indigo transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">--}}
-                        {{--                            Get started--}}
-                        {{--                        </a>--}}
-                        {{--                    </div>--}}
-                        {{--                    <div class="mt-3 rounded-md shadow sm:mt-0 sm:ml-3">--}}
-                        {{--                        <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base leading-6 font-medium rounded-md text-blue-600 bg-white hover:text-blue-500 focus:outline-none focus:shadow-outline-blue transition duration-150 ease-in-out md:py-4 md:text-lg md:px-10">--}}
-                        {{--                            Live demo--}}
-                        {{--                        </a>--}}
-                        {{--                    </div>--}}
                     </div>
                 </div>
             </div>

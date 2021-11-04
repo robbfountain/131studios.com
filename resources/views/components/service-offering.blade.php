@@ -6,14 +6,13 @@
                 <polygon points="50,0 100,0 50,100 0,100"/>
             </svg>
             <div class="relative pt-2 px-4 sm:px-6 lg:px-8">
-                <div class="text-lg text-gray-500 leading-normal px-4">
+                <div class="prose prose-blue text-base text-gray-500 px-4 mt-10">
                    {{$slot}}
                 </div>
-
             </div>
         </div>
     </div>
-    <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+    <div class="lg:absolute shadow-lg lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="{{$image ?? ''}}"
              alt="{{$service}}">
     </div>
