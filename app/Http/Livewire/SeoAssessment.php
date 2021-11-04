@@ -40,7 +40,7 @@ class SeoAssessment extends Component
     ];
 
     /**
-     * @param null $uuid
+     * @param  null  $uuid
      */
     public function mount($uuid = null)
     {

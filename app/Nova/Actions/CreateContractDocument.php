@@ -12,7 +12,7 @@ class CreateContractDocument extends Action
 {
     use InteractsWithQueue, Queueable;
 
-    public $name = "Download Contract";
+    public $name = 'Download Contract';
 
     /**
      * Perform the action on the given models.

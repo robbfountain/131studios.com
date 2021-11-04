@@ -2,12 +2,12 @@
 
 namespace App\Console;
 
+use App\Console\Commands\MigrateProjectsCommand;
 use App\Console\Commands\PublishBlogCommand;
 use App\Console\Commands\ReviewsCommand;
 use App\Console\Commands\SitemapCommand;
 use App\Console\Commands\TweetBlogCommand;
 use Illuminate\Console\Scheduling\Schedule;
-use App\Console\Commands\MigrateProjectsCommand;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -22,14 +22,13 @@ class Kernel extends ConsoleKernel
         PublishBlogCommand::class,
         TweetBlogCommand::class,
         ReviewsCommand::class,
-        MigrateProjectsCommand::class
+        MigrateProjectsCommand::class,
     ];
 
     /**
      * Define the application's command schedule.
      *
-     * @param \Illuminate\Console\Scheduling\Schedule $schedule
-     *
+     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
      * @return void
      */
     protected function schedule(Schedule $schedule)

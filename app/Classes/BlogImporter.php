@@ -56,8 +56,7 @@ class BlogImporter
     }
 
     /**
-     * @param \OneThirtyOne\Mime\Message $message
-     *
+     * @param  \OneThirtyOne\Mime\Message  $message
      * @return \App\Classes\BlogImporter
      */
     public static function messageToBlogPost(Message $message)
@@ -67,6 +66,7 @@ class BlogImporter
 
     /**
      * @return array
+     *
      * @throws \Exception
      */
     public function toArray()
@@ -84,6 +84,7 @@ class BlogImporter
 
     /**
      * @return int
+     *
      * @throws \Exception
      */
     protected function categoryFromSubject()

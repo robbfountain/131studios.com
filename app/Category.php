@@ -56,7 +56,6 @@ class Category extends Model
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopeProject($query)

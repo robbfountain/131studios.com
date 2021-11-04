@@ -9,9 +9,8 @@ use Spatie\WebhookClient\WebhookConfig;
 class SignatureValidator implements SpatieSignatureValidator
 {
     /**
-     * @param Request       $request
-     * @param WebhookConfig $config
-     *
+     * @param  Request  $request
+     * @param  WebhookConfig  $config
      * @return bool
      */
     public function isValid(Request $request, WebhookConfig $config): bool

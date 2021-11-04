@@ -2,12 +2,10 @@
 
 namespace App\Traits;
 
-use App\Project;
 use JD\Cloudder\Facades\Cloudder;
 
 trait HandlesImages
 {
-
     /**
      * @var array
      */
@@ -24,7 +22,6 @@ trait HandlesImages
 
     /**
      * @param  array  $options
-     *
      * @return string
      */
     public function imageUrl($options = [])
@@ -39,6 +36,6 @@ trait HandlesImages
      */
     public function hasImage()
     {
-        return !is_null($this->image);
+        return ! is_null($this->image);
     }
 }

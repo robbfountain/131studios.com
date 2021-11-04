@@ -3,7 +3,6 @@
 namespace App\Classes;
 
 use Illuminate\Support\Arr;
-use App\Models\PageInsight;
 use Illuminate\Support\Str;
 
 class PageInsights
@@ -34,7 +33,6 @@ class PageInsights
 
     /**
      * @param  array  $insights
-     *
      * @return static
      */
     public static function make(array $insights): self
@@ -44,7 +42,6 @@ class PageInsights
 
     /**
      * @param $metric
-     *
      * @return string[]
      */
     public static function ratingScale($metric): array
@@ -94,7 +91,6 @@ class PageInsights
     /**
      * @param $key
      * @param  string|null  $metric
-     *
      * @return array|\ArrayAccess|mixed
      */
     public function get($key, string $metric = 'audits')
@@ -112,7 +108,6 @@ class PageInsights
 
     /**
      * @param $key
-     *
      * @return array|\ArrayAccess|mixed
      */
     public function category($key)

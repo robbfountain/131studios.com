@@ -2,8 +2,6 @@
 
 namespace App\Classes;
 
-use App\Models\Monitor;
-use App\Models\PageInsight;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Http;
 
@@ -31,7 +29,6 @@ class PageInsightsResponse
 
     /**
      * @param $url
-     *
      * @return array|mixed
      */
     public static function createForUrl($url)

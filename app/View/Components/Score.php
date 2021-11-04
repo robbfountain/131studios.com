@@ -2,8 +2,8 @@
 
 namespace App\View\Components;
 
-use Illuminate\Support\Arr;
 use App\Classes\PageInsights;
+use Illuminate\Support\Arr;
 use Illuminate\View\Component;
 
 class Score extends Component

@@ -56,6 +56,6 @@ class Kernel extends HttpKernel
         'acp' => \App\Http\Middleware\acp::class,
         'Headers' => \App\Http\Middleware\Headers::class,
         'Owner' => \App\Http\Middleware\SiteOwner::class,
-        'signed' => ValidateSignature::class
+        'signed' => ValidateSignature::class,
     ];
 }
