@@ -79,6 +79,12 @@
                 To: "opacity-0 scale-95"
             -->
             <div x-show="mobileMenu"
+                 x-transition:enter="ease-out duration-150"
+                 x-transition:enter-start="opacity-0 scale-95"
+                 x-transition:enter-end="opacity-100 scale-100"
+                 x-transition:leave="ease-in duration-100"
+                 x-transition:leave-start="opacity-100 scale-100"
+                 x-transition:leave-end="opacity-0 scale-95"
                  class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
                 <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div class="px-5 pt-4 flex items-center justify-between">
@@ -115,8 +121,8 @@
 
                         </div>
                         <div class="mt-6 px-5">
-                            <a href="#"
-                               class="block text-center w-full py-3 px-4 rounded-md shadow bg-indigo-600 text-white font-medium hover:bg-indigo-700">
+                            <a href="{{route('site-analysis.index')}}"
+                               class="block text-center w-full py-3 px-4 rounded-md shadow bg-blue-600 text-white font-medium hover:bg-blue-700">
                                 Free Website Analysis</a>
                         </div>
                         <div class="mt-6 px-5">
