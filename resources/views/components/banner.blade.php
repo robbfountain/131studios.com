@@ -80,9 +80,6 @@
                             </a>
                         </div>
                     </div>
-                    <a href="{{route('case-studies.index')}}"
-                       class="ml-6 font-medium text-white hover:text-gray-300 focus:outline-none focus:text-blue-400 transition duration-150 ease-in-out">Case Studies
-                        </a>
                     <a href="{{route('project.index')}}"
                        class="ml-6 font-medium text-white hover:text-gray-300 focus:outline-none focus:text-blue-400 transition duration-150 ease-in-out">
                         Projects</a>
@@ -127,9 +124,6 @@
                         <a href="{{route('services.index')}}"
                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-blue-400 focus:bg-gray-50 transition duration-150 ease-in-out">Our
                             Services</a>
-                        <a href="{{route('case-studies.index')}}"
-                           class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-blue-400 focus:bg-gray-50 transition duration-150 ease-in-out">
-                            Case Studies</a>
                         <a href="{{route('project.index')}}"
                            class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-gray-900 hover:bg-gray-50 focus:outline-none focus:text-blue-400 focus:bg-gray-50 transition duration-150 ease-in-out">Projects
                             </a>

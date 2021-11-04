@@ -39,7 +39,7 @@
         </p>
 
         <p class="mb-6">
-            We'll start with a <a href="{{route('seo.assessment')}}">FREE</a> SEO analysis that provides a
+            We'll start with a <a href="{{route('site-analysis.index')}}">FREE</a> website analysis that provides a
             starting point
             for improving your website's rank. From there we will optimize your site to make sure you're
             not penalized for irrelevant

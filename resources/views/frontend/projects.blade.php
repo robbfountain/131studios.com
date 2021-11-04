@@ -28,7 +28,7 @@
             <div class="bg-white h-1/3 sm:h-2/3"></div>
         </div>
         <div class="relative max-w-7xl mx-auto">
-            <div class="mt-12 grid gap-5 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
+            <div class="mt-12 grid gap-y-16 gap-1 max-w-lg mx-auto lg:grid-cols-3 lg:max-w-none">
                 @foreach($projects as $project)
                     <x-portfolio-item :project="$project" />
                 @endforeach

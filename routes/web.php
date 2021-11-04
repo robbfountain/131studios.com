@@ -13,15 +13,17 @@ Route::redirect('.env', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 Route::redirect('wp-login.php', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 Route::redirect('wp-admin', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 
+/**
+ * Main Website Routes
+ */
 Route::get('/', 'App\Http\Controllers\IndexController@index')
     ->name('index');
 
 Route::get('projects', 'App\Http\Controllers\ProjectController@index')
     ->name('project.index');
 
-Route::get('case-studies', function () {
-    return;
-})->name('case-studies.index');
+Route::get('projects/{project:slug}', 'App\Http\Controllers\ProjectController@show')
+    ->name('project.show');
 
 Route::get('site-analysis', function () {
     return view('frontend.site-analysis');

@@ -26,6 +26,7 @@ class SiteAnalysis extends Component
      * @var PageInsights|null
      */
     protected ?PageInsights $pageInsights = null;
+
     /**
      * @var string[]
      */
@@ -33,9 +34,10 @@ class SiteAnalysis extends Component
         'url' => 'required|url',
     ];
 
+    protected $queryString = ['url'];
+
     public function updatedCaptcha($token)
     {
-        dd('here');
         $response = Http::post('https://www.google.com/recaptcha/api/siteverify?secret='.env('RECAPTCHA_SECRET_KEY').'&response='.$token);
         $this->captcha = $response->json()['score'];
 

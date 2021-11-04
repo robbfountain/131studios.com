@@ -7,6 +7,7 @@ use App\Console\Commands\ReviewsCommand;
 use App\Console\Commands\SitemapCommand;
 use App\Console\Commands\TweetBlogCommand;
 use Illuminate\Console\Scheduling\Schedule;
+use App\Console\Commands\MigrateProjectsCommand;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
 class Kernel extends ConsoleKernel
@@ -21,6 +22,7 @@ class Kernel extends ConsoleKernel
         PublishBlogCommand::class,
         TweetBlogCommand::class,
         ReviewsCommand::class,
+        MigrateProjectsCommand::class
     ];
 
     /**

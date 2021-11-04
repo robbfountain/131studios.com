@@ -32,7 +32,7 @@
                             Get in touch
                         </h2>
                         <p class="mt-3 text-lg leading-6 text-gray-500">
-                            Drop us a line using the form opposite. We can also be reached via any of the methods below.
+                            Drop us a line and we will get back to you promptly. We can also be reached via any of the methods below.
                         </p>
                         <dl class="mt-8 text-base leading-6 text-gray-500">
                             <div>

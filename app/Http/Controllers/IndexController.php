@@ -16,7 +16,7 @@ class IndexController extends Controller
     public function index()
     {
         return view('frontend.index')->with(array_merge($this->title, [
-            'blogs' => Blog::published()->latest('published_at')->take(3)->get(),
+            'blogs' => Blog::blogPost()->latest('published_at')->take(3)->get(),
             'review' => $this->randomTestimonial(),
             'title' => 'Web Design, SEO, Social Media & Hosting | 131 Studios'
         ]));

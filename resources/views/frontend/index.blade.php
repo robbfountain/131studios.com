@@ -49,9 +49,6 @@
                             <a href="{{route('services.index')}}"
                                class="text-base font-medium text-white hover:text-gray-300">Services</a>
 
-                            <a href="{{route('case-studies.index')}}"
-                               class="text-base font-medium text-white hover:text-gray-300">Case Studies</a>
-
                             <a href="{{route('project.index')}}"
                                class="text-base font-medium text-white hover:text-gray-300">Projects</a>
 
@@ -106,10 +103,6 @@
                         <div class="px-2 space-y-1">
                             <a href="{{route('services.index')}}"
                                class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Services</a>
-
-                            <a href="{{route('case-studies.index')}}"
-                               class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Case
-                                Studies</a>
 
                             <a href="{{route('project.index')}}"
                                class="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-50">Projects</a>
@@ -166,11 +159,11 @@
                                     business on the web increasing traffic and revenue.
                                 </p>
                                 <div class="mt-10 sm:mt-12">
-                                    <form action="#" class="sm:max-w-xl sm:mx-auto lg:mx-0">
+                                    <form action="{{route('site-analysis.index')}}" method="GET" class="sm:max-w-xl sm:mx-auto lg:mx-0">
                                         <div class="sm:flex">
                                             <div class="flex min-w-0 flex-1">
-                                                <label for="email" class="sr-only">Website address</label>
-                                                <input id="email" type="email" placeholder="yourwebsite.com"
+                                                <label for="url" class="sr-only">Website address</label>
+                                                <input id="url" name="url" type="text" placeholder="yourwebsite.com"
                                                        class="block w-full px-4 py-3 rounded-md border-0 text-base text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-300 focus:ring-offset-gray-900">
                                             </div>
                                             <div class="mt-3 sm:mt-0 sm:ml-3">
