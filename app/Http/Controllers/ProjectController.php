@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
-use App\Project;
 use App\Category;
+use App\Project;
 
 class ProjectController extends Controller
 {
     /**
-     * @param null $slug
-     *
+     * @param  null  $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index($slug = null)
@@ -22,10 +20,10 @@ class ProjectController extends Controller
             'categories' => Category::has('blog')->get(),
         ]);
     }
-    
+
     public function show(Project $project)
     {
-        return view('frontend.project.show',compact('project'));
+        return view('frontend.project.show', compact('project'));
     }
 
     /**

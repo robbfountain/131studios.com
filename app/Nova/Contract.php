@@ -38,14 +38,13 @@ class Contract extends Resource
     public static $search = [
         'id',
         'business_name',
-        'name'
+        'name',
     ];
 
     /**
      * Get the fields displayed by the resource.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function fields(Request $request)
@@ -60,12 +59,12 @@ class Contract extends Resource
             BelongsTo::make('User')
                 ->searchable()
                 ->showCreateRelationButton(),
-//            Text::make('Client Name', 'name')
-//                ->rules(['required', 'string'])
-//                ->hideFromIndex(),
-//            Text::make('Client Email', 'email')
-//                ->rules(['required', 'email'])
-//                ->hideFromIndex(),
+            //            Text::make('Client Name', 'name')
+            //                ->rules(['required', 'string'])
+            //                ->hideFromIndex(),
+            //            Text::make('Client Email', 'email')
+            //                ->rules(['required', 'email'])
+            //                ->hideFromIndex(),
             Place::make('Client Address', 'address')
                 ->hideFromIndex(),
             Text::make('Client Phone', 'phone')
@@ -116,8 +115,7 @@ class Contract extends Resource
     /**
      * Get the cards available for the request.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function cards(Request $request)
@@ -128,8 +126,7 @@ class Contract extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function filters(Request $request)
@@ -140,8 +137,7 @@ class Contract extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function lenses(Request $request)
@@ -152,8 +148,7 @@ class Contract extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param \Illuminate\Http\Request $request
-     *
+     * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function actions(Request $request)

@@ -14,7 +14,7 @@ Route::redirect('wp-login.php', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 Route::redirect('wp-admin', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 
 /**
- * Main Website Routes
+ * Main Website Routes.
  */
 Route::get('/', 'App\Http\Controllers\IndexController@index')
     ->name('index');
@@ -70,7 +70,7 @@ Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
     });
 
 /**
- * Contract
+ * Contract.
  */
 //Route::get('contract/{contract}', 'App\Http\Controllers\ContractController@show')
 //    ->middleware(['Owner'])
@@ -103,4 +103,3 @@ Route::post('search', 'App\Http\Controllers\SearchController@show')
 Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');
 
 Route::redirect('customer/{any}', url('/projects'), 301);
-

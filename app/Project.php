@@ -2,12 +2,10 @@
 
 namespace App;
 
-use Illuminate\Support\Str;
 use App\Traits\HandlesImages;
-use JD\Cloudder\Facades\Cloudder;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Project extends Model
 {
@@ -26,10 +24,10 @@ class Project extends Model
             $project->slug = Str::slug($project->title);
         });
     }
-    
+
     public function scopePublished($query)
     {
-        return $query->where('is_published',true);
+        return $query->where('is_published', true);
     }
 
     /**
@@ -43,5 +41,4 @@ class Project extends Model
                 : $this->preview."<br />\n".$this->body
         );
     }
-
 }

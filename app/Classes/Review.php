@@ -42,8 +42,8 @@ class Review
 
     /**
      * @param $property
-     *
      * @return mixed
+     *
      * @throws \Exception
      */
     public function __get($property)
@@ -57,7 +57,6 @@ class Review
 
     /**
      * @param $response
-     *
      * @return static
      */
     public static function fromJsonResponse($response)

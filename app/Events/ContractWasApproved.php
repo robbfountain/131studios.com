@@ -4,11 +4,8 @@ namespace App\Events;
 
 use App\Contract;
 use App\User;
-use Illuminate\Broadcasting\Channel;
 use Illuminate\Broadcasting\InteractsWithSockets;
-use Illuminate\Broadcasting\PresenceChannel;
 use Illuminate\Broadcasting\PrivateChannel;
-use Illuminate\Contracts\Broadcasting\ShouldBroadcast;
 use Illuminate\Foundation\Events\Dispatchable;
 use Illuminate\Queue\SerializesModels;
 
@@ -29,8 +26,8 @@ class ContractWasApproved
     /**
      * Create a new event instance.
      *
-     * @param Contract $contract
-     * @param User $user
+     * @param  Contract  $contract
+     * @param  User  $user
      */
     public function __construct(Contract $contract, User $user)
     {

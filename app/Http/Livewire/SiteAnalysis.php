@@ -2,13 +2,13 @@
 
 namespace App\Http\Livewire;
 
-use Http;
-use App\PageInsight;
-use Livewire\Component;
-use Illuminate\Support\Str;
 use App\Classes\PageInsights;
 use App\Classes\PageInsightsResponse;
+use App\PageInsight;
+use Http;
 use Illuminate\Support\Facades\Request;
+use Illuminate\Support\Str;
+use Livewire\Component;
 
 class SiteAnalysis extends Component
 {
@@ -41,7 +41,7 @@ class SiteAnalysis extends Component
         $response = Http::post('https://www.google.com/recaptcha/api/siteverify?secret='.env('RECAPTCHA_SECRET_KEY').'&response='.$token);
         $this->captcha = $response->json()['score'];
 
-        if (!$this->captcha > .3) {
+        if (! $this->captcha > .3) {
             dd('i worked');
             $this->analyze();
         } else {
@@ -49,9 +49,6 @@ class SiteAnalysis extends Component
         }
     }
 
-    /**
-     *
-     */
     public function analyze()
     {
         $this->validate();
@@ -60,13 +57,12 @@ class SiteAnalysis extends Component
             PageInsightsResponse::createForUrl($this->url)
         );
 
-       PageInsight::create([
+        PageInsight::create([
             'uuid' => Str::uuid(),
             'url' => $this->url,
             'ip_address' => Request::ip(),
             'user_agent' => Request::userAgent(),
         ]);
-
     }
 
     /**

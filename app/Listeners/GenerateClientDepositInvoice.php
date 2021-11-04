@@ -4,7 +4,6 @@ namespace App\Listeners;
 
 use App\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Carbon;
 use InvoiceNinja\Models\Client;
 
@@ -23,7 +22,7 @@ class GenerateClientDepositInvoice implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param object $event
+     * @param  object  $event
      * @return void
      */
     public function handle($event)
@@ -37,7 +36,7 @@ class GenerateClientDepositInvoice implements ShouldQueue
         $invoice->due_date = Carbon::parse($event->contract->ends_at)->format('Y-m-d');
         $invoice->partial = $event->contract->deposit;
         $invoice->partial_due_date = Carbon::now()->addDays(10)->format('Y-m-d');
-        $invoice->private_notes = 'Invoice Auto-Generated from Signed Contract ' . $event->contract->signed_url;
+        $invoice->private_notes = 'Invoice Auto-Generated from Signed Contract '.$event->contract->signed_url;
         $invoice->save();
     }
 }
