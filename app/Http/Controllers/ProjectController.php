@@ -23,7 +23,10 @@ class ProjectController extends Controller
 
     public function show(Project $project)
     {
-        return view('frontend.project.show', compact('project'));
+        return view('frontend.project.show',[
+            'project' => $project,
+            'title' => $project->title . ' | 131 Studios',
+        ]);
     }
 
     /**
