@@ -7,6 +7,9 @@ Route::get('/subdreamer/admin/{any}.php', function () {
 
 // Redirects
 Route::redirect('blog/website-launch-for-the-dapper-house-barber-shop', '/');
+Route::redirect('additional-services','/services');
+Route::redirect('email-hosting','/services');
+Route::redirect('social-media','/services');
 
 // Rick Roll
 Route::redirect('.env', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
