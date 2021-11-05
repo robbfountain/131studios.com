@@ -13,7 +13,7 @@
                        placeholder="Enter your website URL">
                 @error('url')<div class="block text-red-500 text-sm">{{$message}}</div>@enderror
             </div>
-            <button
+            <button wire:click.prevent="analyze"
                     data-sitekey="{{env('RECAPTCHA_SITE_KEY')}}"
                     data-callback='onClick'
                     data-action='submit'
