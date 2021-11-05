@@ -38,7 +38,7 @@ class Project extends Model
         return (new \Parsedown)->text(
             $this->truncated
                 ? Str::words($this->content, 50, '...')
-                : $this->body
+                : $this->content
         );
     }
 }
