@@ -2,10 +2,10 @@
 
 namespace App;
 
-use App\Traits\HandlesImages;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use App\Traits\HandlesImages;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Project extends Model
 {
@@ -36,9 +36,7 @@ class Project extends Model
     public function toHtml()
     {
         return (new \Parsedown)->text(
-            $this->truncated
-                ? Str::words($this->content, 50, '...')
-                : $this->content
+            $this->content
         );
     }
 }
