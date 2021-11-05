@@ -7,9 +7,9 @@ Route::get('/subdreamer/admin/{any}.php', function () {
 
 // Redirects
 Route::redirect('blog/website-launch-for-the-dapper-house-barber-shop', '/');
-Route::redirect('additional-services','/services');
-Route::redirect('email-hosting','/services');
-Route::redirect('social-media','/services');
+Route::redirect('additional-services', '/services');
+Route::redirect('email-hosting', '/services');
+Route::redirect('social-media', '/services');
 
 // Rick Roll
 Route::redirect('.env', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
@@ -29,10 +29,10 @@ Route::get('projects/{project:slug}', 'App\Http\Controllers\ProjectController@sh
     ->name('project.show');
 
 Route::get('site-analysis', function () {
-    return view('frontend.site-analysis',['title' => 'Site Analysis | 131 Studios']);
+    return view('frontend.site-analysis', ['title' => 'Site Analysis | 131 Studios']);
 })->name('site-analysis.index');
 
-Route::view('services', 'frontend.services',['title' => 'Services | 131 Studios'])
+Route::view('services', 'frontend.services', ['title' => 'Services | 131 Studios'])
     ->name('services.index');
 
 Route::get('hosting', 'App\Http\Controllers\HostingController@index')
@@ -48,7 +48,7 @@ Route::view('privacy', 'frontend.privacy', [
     'title' => 'Privacy Policy | 131 Studios',
 ])->name('privacy.index');
 
-Route::view('terms', 'frontend.terms')
+Route::view('terms', 'frontend.terms', ['title' => 'Terms & Conditions | 131 Studios'])
     ->name('terms.index');
 
 // Subscriptions
