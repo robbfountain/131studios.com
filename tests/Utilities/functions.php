@@ -1,9 +1,8 @@
 <?php
 /**
- * @param       $class
- * @param array $attributes
- * @param null  $times
- *
+ * @param  $class
+ * @param  array  $attributes
+ * @param  null  $times
  * @return mixed
  */
 function create($class, $attributes = [], $times = null)
@@ -12,10 +11,9 @@ function create($class, $attributes = [], $times = null)
 }
 
 /**
- * @param       $class
- * @param array $attributes
- * @param null  $times
- *
+ * @param  $class
+ * @param  array  $attributes
+ * @param  null  $times
  * @return mixed
  */
 function make($class, $attributes = [], $times = null)
@@ -25,7 +23,6 @@ function make($class, $attributes = [], $times = null)
 
 /**
  * @param $role
- *
  * @return array|mixed
  */
 function role($role)
@@ -44,7 +41,6 @@ function role($role)
 
 /**
  * @param $permission
- *
  * @return array|mixed
  */
 function permission($permission)

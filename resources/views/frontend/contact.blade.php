@@ -17,7 +17,7 @@
 
 @section('content')
     <x-banner>
-        Contact <span class="text-blue-500">Us</span>
+        Contact Us
         <x-slot name="subtitle">We'd love to hear from you</x-slot>
     </x-banner>
     <div class="relative bg-white">
@@ -28,11 +28,11 @@
             <div class="relative  mx-auto lg:grid lg:grid-cols-5">
                 <div class="bg-white py-16 px-4 sm:px-6 lg:col-span-2 lg:px-8 lg:py-24 xl:pr-12">
                     <div class="max-w-lg mx-auto">
-                        <h2 class="text-2xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
+                        <h2 class="text-2xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl sm:leading-9">
                             Get in touch
                         </h2>
                         <p class="mt-3 text-lg leading-6 text-gray-500">
-                            Drop us a line using the form opposite. We can also be reached via any of the methods below.
+                            Drop us a line and we will get back to you promptly. We can also be reached via any of the methods below.
                         </p>
                         <dl class="mt-8 text-base leading-6 text-gray-500">
                             <div>

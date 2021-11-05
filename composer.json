@@ -42,6 +42,7 @@
     "livewire/livewire": "^2.0",
     "nunomaduro/collision": "^5.0",
     "onethirtyone/aws-s3-mime-handler": "^1.0",
+    "parsedown/laravel": "^1.2",
     "pdewit/nova-external-url": "^1.0",
     "predis/predis": "^1.1",
     "silvanite/nova-field-cloudinary": "^1.1",

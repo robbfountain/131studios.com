@@ -2,7 +2,7 @@
     <div class="flex">
         <div class="flex-shrink-0">
             <div class="flex items-center justify-center h-12 w-12 rounded-md bg-blue-500 text-white">
-                <i class="far fa-{{$icon}} fa-lg"></i>
+                {{$icon}}
             </div>
         </div>
         <div class="ml-4">

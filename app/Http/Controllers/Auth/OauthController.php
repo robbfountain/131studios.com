@@ -23,7 +23,6 @@ class OauthController extends Controller
 
     /**
      * @param $provider
-     *
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
     public function callback($provider)
@@ -43,7 +42,6 @@ class OauthController extends Controller
 
     /**
      * @param $user
-     *
      * @return bool
      */
     private function isAnAllowedDomainUser($user)
@@ -74,7 +72,6 @@ class OauthController extends Controller
 
     /**
      * @param $provider
-     *
      * @return \Symfony\Component\HttpFoundation\RedirectResponse
      */
     public function redirect($provider)

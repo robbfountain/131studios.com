@@ -45,8 +45,7 @@ class ProcessWebmention extends ProcessWebhookJob
     }
 
     /**
-     * @param array $payload
-     *
+     * @param  array  $payload
      * @return bool
      */
     private function payloadHasBeenReceivedBefore(array $payload): bool
@@ -57,8 +56,7 @@ class ProcessWebmention extends ProcessWebhookJob
     }
 
     /**
-     * @param array $payload
-     *
+     * @param  array  $payload
      * @return mixed|null
      */
     private function getType(array $payload)
@@ -79,8 +77,7 @@ class ProcessWebmention extends ProcessWebhookJob
     }
 
     /**
-     * @param array $payload
-     *
+     * @param  array  $payload
      * @return |null
      */
     private function getPost(array $payload)

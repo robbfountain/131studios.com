@@ -18,7 +18,7 @@
 
 @section('content')
     <x-banner>
-        Our <span class="text-blue-500">Blog</span>
+        Our Blog
 
         <x-slot name="subtitle">
             We like to blog about all sorts of stuff in the development, security and design world.

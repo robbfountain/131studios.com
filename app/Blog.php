@@ -2,11 +2,12 @@
 
 namespace App;
 
+use App\Traits\HandlesImages;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
-use JD\Cloudder\Facades\Cloudder;
 use OneThirtyOne\Mime\Message;
 use Spatie\Url\Url;
 
@@ -15,6 +16,8 @@ use Spatie\Url\Url;
  */
 class Blog extends Model
 {
+    use HasFactory, HandlesImages;
+
     /**
      * Tweet.
      */
@@ -70,15 +73,6 @@ class Blog extends Model
     /**
      * @var array
      */
-    protected $imageOptions = [
-        'fetch_format' => 'auto',
-        'width' => 'auto',
-        'crop' => 'fit',
-    ];
-
-    /**
-     * @var array
-     */
     protected $dates = [
         'published_at',
     ];
@@ -96,8 +90,7 @@ class Blog extends Model
     protected $with = ['category'];
 
     /**
-     * @param \OneThirtyOne\Mime\Message $message
-     *
+     * @param  \OneThirtyOne\Mime\Message  $message
      * @return mixed
      */
     public static function hasCurrentBlogPost(Message $message)
@@ -231,7 +224,6 @@ class Blog extends Model
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopeUnpublished($query)
@@ -257,7 +249,6 @@ class Blog extends Model
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopePublished($query)
@@ -269,7 +260,6 @@ class Blog extends Model
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopeWaitingForTweet($query)
@@ -280,6 +270,14 @@ class Blog extends Model
         ])->whereBetween('published_at', [
             Carbon::now()->startOfDay(),
             Carbon::now(),
+        ]);
+    }
+
+    public function scopeBlogPost($query)
+    {
+        return $query->where([
+            ['category_id', '!=', 5],
+            ['is_published', true],
         ]);
     }
 
@@ -324,31 +322,6 @@ class Blog extends Model
     }
 
     /**
-     * @param array $options
-     *
-     * @return string
-     */
-    public function imageUrl($options = [])
-    {
-        return request()->secure()
-            ? Cloudder::secureShow($this->getImage(), array_merge($this->imageOptions, $options))
-            : Cloudder::show($this->getImage(), array_merge($this->imageOptions, $options));
-    }
-
-    public function getImage()
-    {
-        return $this->image ?? $this->defaultImages[$this->category->name];
-    }
-
-    /**
-     * @return bool
-     */
-    public function hasImage()
-    {
-        return ! is_null($this->image);
-    }
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
     public function webmention()
@@ -366,7 +339,6 @@ class Blog extends Model
 
     /**
      * @param $value
-     *
      * @return mixed|string
      */
     public function getLinkToFullPostAttribute($value)

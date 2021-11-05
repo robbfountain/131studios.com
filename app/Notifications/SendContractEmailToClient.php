@@ -4,7 +4,6 @@ namespace App\Notifications;
 
 use App\Contract;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
@@ -21,7 +20,7 @@ class SendContractEmailToClient extends Notification
     /**
      * Create a new notification instance.
      *
-     * @param Contract $contract
+     * @param  Contract  $contract
      * @param $url
      */
     public function __construct(Contract $contract, $url)
@@ -33,7 +32,7 @@ class SendContractEmailToClient extends Notification
     /**
      * Get the notification's delivery channels.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      * @return array
      */
     public function via($notifiable)
@@ -44,14 +43,14 @@ class SendContractEmailToClient extends Notification
     /**
      * Get the mail representation of the notification.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      * @return \Illuminate\Notifications\Messages\MailMessage
      */
     public function toMail($notifiable)
     {
         return (new MailMessage)
             ->subject("{$this->contract->business_name} Quote and Service Contract from 131 Studios")
-            ->greeting('Hello ' . $this->contract->name)
+            ->greeting('Hello '.$this->contract->name)
             ->line('Thank you for giving us the opportunity to earn your business.')
             ->line('We have prepared a quote and contract for the project we have discussed.')
             ->line('Please click the link below to view and sign the contract.')
@@ -63,7 +62,7 @@ class SendContractEmailToClient extends Notification
     /**
      * Get the array representation of the notification.
      *
-     * @param mixed $notifiable
+     * @param  mixed  $notifiable
      * @return array
      */
     public function toArray($notifiable)

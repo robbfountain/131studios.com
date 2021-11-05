@@ -15,7 +15,7 @@ class BlogHilight extends Component
     /**
      * Create a new component instance.
      *
-     * @param \App\Blog $blog
+     * @param  \App\Blog  $blog
      */
     public function __construct(Blog $blog)
     {

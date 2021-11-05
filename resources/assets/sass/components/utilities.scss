@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css?family=Nunito:300,300i,400,400i,600,600i,700,700i&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,600,600i,700,700i&display=swap');
 
 [x-cloak] {
     display: none;
 }
 
 body {
-  font-family: 'Nunito', sans-serif;
-  @applybg-gray-50;
+  font-family: 'Poppins', sans-serif;
+  @apply bg-gray-50;
 }
 
 .required:after {
   content: "*";
-  @applytext-red-700;
-  @applyfont-semibold;
+  @apply text-red-700;
+  @apply font-semibold;
 }
 
 .fb {

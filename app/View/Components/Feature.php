@@ -13,7 +13,7 @@ class Feature extends Component
      *
      * @param $icon
      */
-    public function __construct($icon)
+    public function __construct($icon = null)
     {
         $this->icon = $icon;
     }

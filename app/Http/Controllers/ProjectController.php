@@ -2,24 +2,28 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
 use App\Category;
+use App\Project;
 
 class ProjectController extends Controller
 {
     /**
-     * @param null $slug
-     *
+     * @param  null  $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function index($slug = null)
     {
-        return view('frontend.project.projects')->with([
+        return view('frontend.projects')->with([
             'projects' => $this->getProjects(),
-            'title' => 'Our Portfolio | 131 Studios',
-            'heading' => 'Our Portfolio',
+            'title' => 'Our Work | 131 Studios',
+            'heading' => 'Our Work',
             'categories' => Category::has('blog')->get(),
         ]);
+    }
+
+    public function show(Project $project)
+    {
+        return view('frontend.project.show', compact('project'));
     }
 
     /**
@@ -27,8 +31,6 @@ class ProjectController extends Controller
      */
     private function getProjects()
     {
-        return Blog::published()->whereHas('category', function ($query) {
-            $query->project();
-        })->orderBy('published_at', 'DESC')->get();
+        return Project::published()->orderBy('created_at', 'DESC')->get();
     }
 }
