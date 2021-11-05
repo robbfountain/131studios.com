@@ -99,9 +99,8 @@
                 <x-slot name="title">
                     Email Options
                 </x-slot>
-                30GB Storage, Cloud Drive Storage, Ultimate Spam Protection and More. Starting at <a
-                        href="/email-hosting" class="no-underline text-blue">$7/user
-                    monthly</a>
+                30GB Storage, Cloud Drive Storage, Ultimate Spam Protection and More. Starting at $7/user
+                    monthly.
             </x-feature>
         </x-feature-container>
     </section>
