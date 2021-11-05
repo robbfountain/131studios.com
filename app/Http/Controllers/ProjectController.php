@@ -17,7 +17,6 @@ class ProjectController extends Controller
             'projects' => $this->getProjects(),
             'title' => 'Our Work | 131 Studios',
             'heading' => 'Our Work',
-            'categories' => Category::has('blog')->get(),
         ]);
     }
 
