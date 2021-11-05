@@ -68,16 +68,6 @@
                 </nav>
             </div>
 
-            <!--
-              Mobile menu, show/hide based on menu open state.
-
-              Entering: "duration-150 ease-out"
-                From: "opacity-0 scale-95"
-                To: "opacity-100 scale-100"
-              Leaving: "duration-100 ease-in"
-                From: "opacity-100 scale-100"
-                To: "opacity-0 scale-95"
-            -->
             <div x-show="mobileMenu"
                  x-transition:enter="ease-out duration-150"
                  x-transition:enter-start="opacity-0 scale-95"
@@ -125,11 +115,11 @@
                                class="block text-center w-full py-3 px-4 rounded-md shadow bg-blue-600 text-white font-medium hover:bg-blue-700">
                                 Free Website Analysis</a>
                         </div>
-                        <div class="mt-6 px-5">
-                            <p class="text-center text-base font-medium text-gray-500">Existing customer? <a href="#"
-                                                                                                             class="text-gray-900 hover:underline">Login</a>
-                            </p>
-                        </div>
+{{--                        <div class="mt-6 px-5">--}}
+{{--                            <p class="text-center text-base font-medium text-gray-500">Existing customer? <a href="#"--}}
+{{--                                                                                                             class="text-gray-900 hover:underline">Login</a>--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -314,7 +304,7 @@
                                 <div class="flex {{$review->first()->company ? 'items-start' : 'items-center'}}">
                                     <div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
                                         <img class="h-12 w-12 rounded-full" src="{{$review->first()->profile_photo}}"
-                                             alt="">
+                                             alt="{{$review->first()->author}}">
                                     </div>
                                     <div class="ml-4">
                                         <div class="text-base font-medium text-white">{{$review->first()->author}}</div>
@@ -343,7 +333,7 @@
                                     <div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
                                         <img class="h-12 w-12 rounded-full"
                                              src="{{$review->last()->profile_photo}}"
-                                             alt="">
+                                             alt="{{$review->last()->author}}">
                                     </div>
                                     <div class="ml-4">
                                         <div class="text-base font-medium text-white">{{$review->last()->author}}</div>
