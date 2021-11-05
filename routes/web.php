@@ -29,10 +29,10 @@ Route::get('projects/{project:slug}', 'App\Http\Controllers\ProjectController@sh
     ->name('project.show');
 
 Route::get('site-analysis', function () {
-    return view('frontend.site-analysis');
+    return view('frontend.site-analysis',['title' => 'Site Analysis | 131 Studios']);
 })->name('site-analysis.index');
 
-Route::view('services', 'frontend.services')
+Route::view('services', 'frontend.services',['title' => 'Services | 131 Studios'])
     ->name('services.index');
 
 Route::get('hosting', 'App\Http\Controllers\HostingController@index')
