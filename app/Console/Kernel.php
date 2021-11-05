@@ -37,7 +37,7 @@ class Kernel extends ConsoleKernel
         $schedule->command('horizon:snapshot')->everyFiveMinutes();
 //        $schedule->command('studios:publish-blogs')->everyMinute();
         $schedule->command('studios:tweet-blog')->everyFiveMinutes();
-        $schedule->command('studios:reviews')->daily();
+//        $schedule->command('studios:reviews')->daily();
     }
 
     /**
