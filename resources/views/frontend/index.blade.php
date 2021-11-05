@@ -165,7 +165,8 @@
                                     business on the web increasing traffic and revenue.
                                 </p>
                                 <div class="mt-10 sm:mt-12">
-                                    <form action="{{route('site-analysis.index')}}" method="GET" class="sm:max-w-xl sm:mx-auto lg:mx-0">
+                                    <form action="{{route('site-analysis.index')}}" method="GET"
+                                          class="sm:max-w-xl sm:mx-auto lg:mx-0">
                                         <div class="sm:flex">
                                             <div class="flex min-w-0 flex-1">
                                                 <label for="url" class="sr-only">Website address</label>
@@ -226,7 +227,8 @@
                                         </svg>
                                     </div>
                                     <h3 class="text-xl font-medium text-gray-900">Search Engine Optimization</h3>
-                                    <p class="mt-4 text-base text-gray-500">We optimize your site and content making it easier
+                                    <p class="mt-4 text-base text-gray-500">We optimize your site and content making it
+                                        easier
                                         for search engines to
                                         understand what your website is about. We get your website in front of your
                                         customers ahead of your competition. </p>
@@ -249,7 +251,8 @@
                                     </div>
                                     <h3 class="text-xl font-medium text-gray-900">Website Design</h3>
                                     <p class="mt-4 text-base text-gray-500">
-                                        We provide stunning, unique websites showcasing your business and services. Promote and
+                                        We provide stunning, unique websites showcasing your business and services.
+                                        Promote and
                                         sell your products and services with professional solutions such as appointment
                                         schedulers, shopping carts and contact forms.
                                     </p>
@@ -271,11 +274,14 @@
                                         </svg>
                                     </div>
                                     <h3 class="text-xl font-medium text-gray-900">Website Hosting</h3>
-                                    <p class="mt-4 text-base text-gray-500">From high traffic web applications to local business
-                                        profiles, we use industry leading server and implement the highest levels of security to ensure your website and data are available and secure.</p>
+                                    <p class="mt-4 text-base text-gray-500">From high traffic web applications to local
+                                        business
+                                        profiles, we use industry leading server and implement the highest levels of
+                                        security to ensure your website and data are available and secure.</p>
                                 </div>
                                 <div class="p-6 bg-gray-50 rounded-bl-2xl rounded-br-2xl md:px-8">
-                                    <a href="{{route('hosting.index')}}" class="text-base font-medium text-blue-700 hover:text-blue-600">
+                                    <a href="{{route('hosting.index')}}"
+                                       class="text-base font-medium text-blue-700 hover:text-blue-600">
                                         Learn more.<span aria-hidden="true"> &rarr;</span></a>
                                 </div>
                             </div>
@@ -307,7 +313,8 @@
                             <footer class="mt-8">
                                 <div class="flex {{$review->first()->company ? 'items-start' : 'items-center'}}">
                                     <div class="flex-shrink-0 inline-flex rounded-full border-2 border-white">
-                                        <img class="h-12 w-12 rounded-full" src="{{$review->first()->profile_photo}}" alt="">
+                                        <img class="h-12 w-12 rounded-full" src="{{$review->first()->profile_photo}}"
+                                             alt="">
                                     </div>
                                     <div class="ml-4">
                                         <div class="text-base font-medium text-white">{{$review->first()->author}}</div>
