@@ -7,6 +7,11 @@
 
 
 @section('content')
+    <x-banner>
+
+            Privacy Policy
+
+    </x-banner>
     <div class="bg-white py-8">
         <div class="container mx-auto">
 

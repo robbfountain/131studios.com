@@ -6,6 +6,11 @@
 @endsection
 
 @section('content')
+    <x-banner>
+        <x-slot name="titleExpanded">
+            Terms & Conditions
+        </x-slot>
+    </x-banner>
     <div class="bg-white py-8">
         <div class="container mx-auto">
             <h2 class="font-normal mb-8 text-gray-600"> Web Site Terms and Conditions of Use</h2>

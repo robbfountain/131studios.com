@@ -9,10 +9,12 @@
     <meta property="twitter:description"
           content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
     <meta name="twitter:creator" content="@131Studios"/>
+    <meta name=”twitter:image” content=”{{asset('images/131-logo-210x53.png')}}” />
     <meta property="og:site_name" content="{{config('app.name')}}">
     <meta property="og:url" content="{{url('/')}}">
     <meta property="og:title" content="131 Studios">
     <meta property="og:type" content="website" />
+    <meta property="og:image" content="{{asset('images/131-logo-210x53.png')}}">
     <meta property="og:description"
           content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
     <link rel="canonical" href="{{url('/')}}">
