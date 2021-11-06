@@ -7,9 +7,7 @@
 
 @section('content')
     <x-banner>
-        <x-slot name="titleExpanded">
             Terms & Conditions
-        </x-slot>
     </x-banner>
     <div class="bg-white py-8">
         <div class="container mx-auto">
