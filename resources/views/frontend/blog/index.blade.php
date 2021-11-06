@@ -1,6 +1,5 @@
 @extends('frontend.layouts.app')
 
-
 @section('meta')
     <link rel="canonical" href="{{route('index')}}" />
     <meta name="description"
