@@ -14,7 +14,6 @@
     <meta property="og:title" content="131 Studios">
     <meta property="og:image" content="{{asset('images/131-logo-210x53.png')}}">
     <meta property="og:description" content="{Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
-    <link rel="canonical" href="{{route('services.index')}}">
 @endsection
 
 @section('content')
