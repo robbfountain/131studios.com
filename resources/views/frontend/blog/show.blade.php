@@ -83,7 +83,7 @@
 
                     <div class="mt-12 p-4 rounded-md bg-blue-50">
                         <h5 class="font-bold">You may also enjoy reading...</h5>
-                        @foreach(\App\Blog::blogPost()->related($blog->category->id)->take(4)->get() as $related)
+                        @foreach(\App\Blog::blogPost()->related($blog->category->id)->where('id','!=',$blog->id)->take(4)->get() as $related)
                             <div class="py-1">
                                 <a class="text-base" href="{{$related->getLinkToFullPost()}}">
                                     {{$related->title}}
