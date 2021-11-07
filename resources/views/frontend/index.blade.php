@@ -9,11 +9,11 @@
     <meta property="twitter:description"
           content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
     <meta name="twitter:creator" content="@131Studios"/>
-    <meta name=”twitter:image” content=”{{asset('images/131-logo-210x53.png')}}” />
+    <meta name=”twitter:image” content=”{{asset('images/131-logo-210x53.png')}}”/>
     <meta property="og:site_name" content="{{config('app.name')}}">
     <meta property="og:url" content="{{url('/')}}">
     <meta property="og:title" content="131 Studios">
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content="website"/>
     <meta property="og:image" content="{{asset('images/131-logo-210x53.png')}}">
     <meta property="og:description"
           content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
@@ -71,13 +71,7 @@
                 </nav>
             </div>
 
-            <div x-show="mobileMenu"
-                 x-transition:enter="ease-out duration-150"
-                 x-transition:enter-start="opacity-0 scale-95"
-                 x-transition:enter-end="opacity-100 scale-100"
-                 x-transition:leave="ease-in duration-100"
-                 x-transition:leave-start="opacity-100 scale-100"
-                 x-transition:leave-end="opacity-0 scale-95"
+            <div x-show="mobileMenu" x-transition
                  class="absolute z-10 top-0 inset-x-0 p-2 transition transform origin-top md:hidden">
                 <div class="rounded-lg shadow-md bg-white ring-1 ring-black ring-opacity-5 overflow-hidden">
                     <div class="px-5 pt-4 flex items-center justify-between">
@@ -118,11 +112,11 @@
                                class="block text-center w-full py-3 px-4 rounded-md shadow bg-blue-600 text-white font-medium hover:bg-blue-700">
                                 Free Website Analysis</a>
                         </div>
-{{--                        <div class="mt-6 px-5">--}}
-{{--                            <p class="text-center text-base font-medium text-gray-500">Existing customer? <a href="#"--}}
-{{--                                                                                                             class="text-gray-900 hover:underline">Login</a>--}}
-{{--                            </p>--}}
-{{--                        </div>--}}
+                        {{--                        <div class="mt-6 px-5">--}}
+                        {{--                            <p class="text-center text-base font-medium text-gray-500">Existing customer? <a href="#"--}}
+                        {{--                                                                                                             class="text-gray-900 hover:underline">Login</a>--}}
+                        {{--                            </p>--}}
+                        {{--                        </div>--}}
                     </div>
                 </div>
             </div>
@@ -132,7 +126,7 @@
             <div class="pt-10 bg-gradient-to-b from-blue-700 to-sky-700 sm:pt-16 lg:pt-8 lg:pb-14 lg:overflow-hidden">
                 <div class="mx-auto max-w-7xl lg:px-8">
                     <div class="lg:grid lg:grid-cols-2 lg:gap-8">
-                        <div class="mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
+                        <div class=" mx-auto max-w-md px-4 sm:max-w-2xl sm:px-6 sm:text-center lg:px-0 lg:text-left lg:flex lg:items-center">
                             <div class="lg:py-24">
                                 {{--                                <a href="#"--}}
                                 {{--                                   class="inline-flex items-center text-white bg-black rounded-full p-1 pr-2 sm:text-base lg:text-sm xl:text-base hover:text-gray-200">--}}
@@ -147,10 +141,14 @@
                                 {{--                                              clip-rule="evenodd"/>--}}
                                 {{--                                    </svg>--}}
                                 {{--                                </a>--}}
-                                <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
-                                    <span class="block">Take your website</span>
-                                    <span class="block text-blue-400">to the next level</span>
-                                </h1>
+                                <div class="opacity-0" x-data
+                                     x-intersect="$el.classList.add('opacity-100','animate__animated','animate__fadeInDown')">
+                                    <h1 class="mt-4 text-4xl tracking-tight font-extrabold text-white sm:mt-5 sm:text-6xl lg:mt-6 xl:text-6xl">
+                                        <span class="block">Take your website</span>
+                                        <span class="block text-blue-400">to the next level</span>
+                                    </h1>
+                                </div>
+
                                 <p class="mt-3 text-base text-gray-300 sm:mt-5 sm:text-xl lg:text-lg xl:text-xl">
                                     Business in Greencastle, Chambersburg and Hagerstown trust <span
                                             class="text-sky-400">131 Studios</span>. Our
@@ -199,7 +197,7 @@
                             What We Do
                         </h3>
                         <p class="mt-4 max-w-2xl text-xl leading-7 text-gray-500 lg:mx-auto">
-                            We get it...It can be difficult to establish your online presence. From designing your
+                            We get it! It's difficult to establish your online presence. From designing your
                             website
                             or updating an existing site, there's a lot to handle. We want to make this process easy
                             for
@@ -207,7 +205,7 @@
                         </p>
                     </div>
 
-                    <div class="mt-20">
+                    <div class="mt-20 opacity-0" x-data x-intersect="$el.classList.add('opacity-100','animate__animated','animate__fadeInUp')">
                         <div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
                             <div class="flex flex-col bg-white rounded-2xl shadow-xl">
                                 <div class="flex-1 relative pt-16 px-6 pb-8 md:px-8">
@@ -290,7 +288,7 @@
             </div>
 
             <section class="bg-gradient-to-b from-blue-700 to-sky-700">
-                <div class="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8 opacity-0" x-data x-intersect="$el.classList.add('opacity-100','animate__animated','animate__fadeInUp')">
                     <div class="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-sky-700 lg:pr-16">
 
                         <blockquote class="mt-6 md:flex-grow md:flex md:flex-col">
@@ -363,7 +361,7 @@
                             Here's some of our recent entries.
                         </p>
                     </div>
-                    <div class="mt-12 grid gap-16 border-t-2 border-gray-100 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12">
+                    <div class="mt-12 grid gap-16 border-t-2 border-gray-100 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12 opacity-0" x-data x-intersect="$el.classList.add('opacity-100','animate__animated','animate__fadeInUp')">
                         @foreach($blogs as $blog)
                             <x-blog-hilight :blog="$blog"/>
                         @endforeach

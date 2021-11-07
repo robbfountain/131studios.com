@@ -23,10 +23,13 @@
         ================================================== -->
         @livewireStyles
 
-    <!-- AlpineJs
-        ================================================== -->
-        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js"
-                defer></script>
+    <!-- Alpine Plugins -->
+        <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
+
+
+        <!-- AlpineJs
+            ================================================== -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
         <!-- HilightJs
        ================================================== -->

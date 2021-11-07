@@ -1,7 +1,3 @@
-/**
- * Alpine JS
- */
-import 'alpinejs';
 
 /**
  * Signature Pad
