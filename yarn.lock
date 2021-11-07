@@ -916,6 +916,11 @@
     "postcss-selector-parser" "^6.0.4"
     "quick-lru" "^5.1.1"
 
+"@tailwindcss/line-clamp@^0.2.2":
+  "integrity" "sha512-NgA4Ds+/eCiO+6O3SooRsfJ8m7M2+QvNvHwOjBQq7FIYoWwAV4I4Wu4fjHeuO9Yi6p47ceHUKEGGEBh0ozQodg=="
+  "resolved" "https://registry.npmjs.org/@tailwindcss/line-clamp/-/line-clamp-0.2.2.tgz"
+  "version" "0.2.2"
+
 "@tailwindcss/typography@^0.3.0":
   "integrity" "sha512-HyZ+3Eay8SGaPq7kcFoANZLr4EjeXQ19yjjb9fp6B0PHHpvZoe00jdsnpnooMEbx9J5rQ93nxPUG3MQmXVxGMQ=="
   "resolved" "https://registry.npmjs.org/@tailwindcss/typography/-/typography-0.3.1.tgz"
@@ -7039,7 +7044,7 @@
     "unquote" "~1.1.1"
     "util.promisify" "~1.0.0"
 
-"tailwindcss@^2.0", "tailwindcss@^2.0.3":
+"tailwindcss@^2.0", "tailwindcss@^2.0.3", "tailwindcss@>=2.0.0 || >=3.0.0-alpha.1":
   "integrity" "sha512-WhgR0oiBxGOZ9jY0yVfaJCHnckR7U74Fs/BMsYxGdwGJQ5Hd/HlaKD26bEJFZOvYScJo0QcUj2ImldzedsG7Bw=="
   "resolved" "https://registry.npmjs.org/tailwindcss/-/tailwindcss-2.0.4.tgz"
   "version" "2.0.4"
