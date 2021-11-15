@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\TrustProxies;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Routing\Middleware\ValidateSignature;
 
@@ -31,6 +32,7 @@ class Kernel extends HttpKernel
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            TrustProxies::class,
         ],
 
         'api' => [
@@ -53,7 +55,6 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'acp' => \App\Http\Middleware\acp::class,
         'Headers' => \App\Http\Middleware\Headers::class,
         'Owner' => \App\Http\Middleware\SiteOwner::class,
         'signed' => ValidateSignature::class,
