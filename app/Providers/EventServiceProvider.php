@@ -20,18 +20,6 @@ class EventServiceProvider extends ServiceProvider
      * @var array
      */
     protected $listen = [
-        SnsEvent::class => [
-            FetchS3Messages::class,
-        ],
-
-        ContractWasApproved::class => [
-            GenerateClientDepositInvoice::class,
-        ],
-
-        ContractWasPublished::class => [
-            AddClientToAccountingSoftware::class,
-            SendClientContractNotification::class,
-        ],
     ];
 
     /**

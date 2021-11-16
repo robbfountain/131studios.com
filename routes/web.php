@@ -1,6 +1,16 @@
 <?php
 
 // Website
+use App\Http\Controllers\SeoController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\HostingController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\ContractController;
+use App\Http\Controllers\Auth\OauthController;
+use App\Http\Controllers\WebsiteDesignController;
+
 Route::get('/subdreamer/admin/{any}.php', function () {
     return Redirect::route('index');
 });
@@ -19,29 +29,31 @@ Route::redirect('wp-admin', 'https://www.youtube.com/watch?v=dQw4w9WgXcQ');
 /**
  * Main Website Routes.
  */
-Route::get('/', 'App\Http\Controllers\IndexController@index')
+Route::get('/', IndexController::class)
     ->name('index');
 
-Route::get('projects', 'App\Http\Controllers\ProjectController@index')
+Route::get('projects', ProjectController::class)
     ->name('project.index');
 
-Route::get('projects/{project:slug}', 'App\Http\Controllers\ProjectController@show')
+Route::get('projects/{project:slug}', [ProjectController::class, 'show'])
     ->name('project.show');
 
 Route::get('site-analysis', function () {
-    return view('frontend.site-analysis', ['title' => 'Site Analysis | 131 Studios']);
+    return view('frontend.site-analysis', [
+        'title' => 'Site Analysis | 131 Studios',
+    ]);
 })->name('site-analysis.index');
 
 Route::view('services', 'frontend.services', ['title' => 'Services | 131 Studios'])
     ->name('services.index');
 
-Route::get('hosting', 'App\Http\Controllers\HostingController@index')
+Route::get('hosting', HostingController::class)
     ->name('hosting.index');
 
-Route::get('seo', 'App\Http\Controllers\SeoController@index')
+Route::get('seo', SeoController::class)
     ->name('seo.index');
 
-Route::get('website-design', 'App\Http\Controllers\WebsiteDesignController@index')
+Route::get('website-design', WebsiteDesignController::class)
     ->name('website-design.index');
 
 Route::view('privacy', 'frontend.privacy', [
@@ -51,22 +63,15 @@ Route::view('privacy', 'frontend.privacy', [
 Route::view('terms', 'frontend.terms', ['title' => 'Terms & Conditions | 131 Studios'])
     ->name('terms.index');
 
-// Subscriptions
-Route::post('subscribe', 'App\Http\Controllers\SubscriptionController@store')
-    ->name('subscription.store');
-
 // Contact
-Route::post('contact', 'App\Http\Controllers\ContactController@store')
-    ->name('contact.store');
-
-Route::get('contact', 'App\Http\Controllers\ContactController@index')
+Route::get('contact', ContactController::class)
     ->name('contact.index');
 
 // Blog
-Route::get('blog', 'App\Http\Controllers\BlogController@index')
+Route::get('blog', BlogController::class)
     ->name('blog.index');
 
-Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
+Route::get('blog/{blog}', [BlogController::class, 'show'])
     ->name('blog.show')
     ->missing(function (Illuminate\Http\Request $request) {
         return Redirect::route('blog.index');
@@ -75,15 +80,11 @@ Route::get('blog/{blog}', 'App\Http\Controllers\BlogController@show')
 /**
  * Contract.
  */
-//Route::get('contract/{contract}', 'App\Http\Controllers\ContractController@show')
-//    ->middleware(['Owner'])
-//    ->name('contract.show');
-
-Route::get('contract/{contract}/pdf', 'App\Http\Controllers\ContractController@pdf')
+Route::get('contract/{contract}/pdf', [ContractController::class, 'pdf'])
     ->middleware(['Owner'])
     ->name('contract.pdf');
 
-Route::get('contract/{contract:uuid}', 'App\Http\Controllers\ContractController@show')
+Route::get('contract/{contract:uuid}', [ContractController::class, 'show'])
     ->name('contract.show')
     ->middleware(['signed']);
 
@@ -91,18 +92,9 @@ Route::get('contract/{contract:uuid}', 'App\Http\Controllers\ContractController@
 Route::webhooks('webhook/webmentions');
 
 // Oauth
-Route::get('/oauth/{provider}', 'App\Http\Controllers\Auth\OauthController@redirect')
+Route::get('/oauth/{provider}', [OauthController::class, 'redirect'])
     ->name('nova.login.google');
 
-Route::get('/oauth/{provider}/callback', 'App\Http\Controllers\Auth\OauthController@callback');
-
-// Search
-Route::get('search', 'App\Http\Controllers\SearchController@index')
-    ->name('search.index');
-Route::post('search', 'App\Http\Controllers\SearchController@show')
-    ->name('search.show');
-
-// AWS SNS
-Route::any('/sns/handle', '\OneThirtyOne\Sns\Controllers\SnsController@handle');
+Route::get('/oauth/{provider}/callback', [OauthController::class, 'redirect']);
 
 Route::redirect('customer/{any}', url('/projects'), 301);

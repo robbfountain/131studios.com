@@ -24,31 +24,4 @@ class ContactControllerTest extends TestCase
 
         $response->assertViewHas('title');
     }
-
-    /** @test * */
-    public function Store_sends_an_email()
-    {
-        $this->withExceptionHandling();
-
-        Notification::fake();
-
-        factory(User::class)->create();
-
-        $contact = [
-            'name' => 'Joe Blow',
-            'email' => 'joeblow@email.com',
-            'message' => 'fake message sent for testing',
-        ];
-
-        Notification::assertNothingSent();
-
-        $response = $this->postJson(route('contact.store'), $contact);
-
-        $response->assertStatus(204);
-
-        // Assert a notification was sent to the given users...
-        Notification::assertSentTo(
-            new AnonymousNotifiable, SendContactFormEmail::class
-        );
-    }
 }

@@ -11,7 +11,7 @@ class ProjectController extends Controller
      * @param  null  $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index($slug = null)
+    public function __invoke($slug = null)
     {
         return view('frontend.projects')->with([
             'projects' => $this->getProjects(),

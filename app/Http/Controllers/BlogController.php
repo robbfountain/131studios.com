@@ -21,7 +21,7 @@ class BlogController extends Controller
      *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function index(Request $request)
+    public function __invoke(Request $request)
     {
         $blogs = Blog::published()->whereHas('category', function ($query) {
             $query->where('name', '!=', Blog::PROJECT);

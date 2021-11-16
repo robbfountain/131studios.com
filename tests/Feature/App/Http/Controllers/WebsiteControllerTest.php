@@ -40,35 +40,6 @@ class WebsiteControllerTest extends TestCase
         $response->assertViewIs('frontend.seo');
     }
 
-    /** @test * */
-    public function Additional_services_returns_a_view()
-    {
-        $response = $this->get(route('additional-services.index'));
-
-        $response->assertStatus(200);
-
-        $response->assertViewIs('frontend.additional-services');
-    }
-
-    /** @test * */
-    public function Email_hosting_returns_a_view()
-    {
-        $response = $this->get(route('email-hosting.index'));
-
-        $response->assertStatus(200);
-
-        $response->assertViewIs('frontend.email-hosting');
-    }
-
-    /** @test * */
-    public function Social_media_returns_a_view()
-    {
-        $response = $this->get(route('social-media.index'));
-
-        $response->assertStatus(200);
-
-        $response->assertViewIs('frontend.social-media');
-    }
 
     /** @test * */
     public function Projects_returns_a_view()
@@ -77,13 +48,13 @@ class WebsiteControllerTest extends TestCase
 
         $response->assertStatus(200);
 
-        $response->assertViewIs('frontend.project.projects');
+        $response->assertViewIs('frontend.projects');
     }
 
     /** @test * */
     public function Index_returns_a_view()
     {
-        factory(Testimonial::class)->create();
+        factory(Testimonial::class,2)->create();
 
         $response = $this->get(route('index'));
 

@@ -10,7 +10,7 @@ class WebsiteDesignController extends Controller
     /**
      * @return Factory|View
      */
-    public function index()
+    public function __invoke()
     {
         return view('frontend.website-design')->with([
             'title' => 'Website Design | 131 Studios',
