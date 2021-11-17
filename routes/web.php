@@ -95,6 +95,6 @@ Route::webhooks('webhook/webmentions');
 Route::get('/oauth/{provider}', [OauthController::class, 'redirect'])
     ->name('nova.login.google');
 
-Route::get('/oauth/{provider}/callback', [OauthController::class, 'redirect']);
+Route::get('/oauth/{provider}/callback', [OauthController::class, 'callback']);
 
 Route::redirect('customer/{any}', url('/projects'), 301);
