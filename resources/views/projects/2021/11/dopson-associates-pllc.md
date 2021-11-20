@@ -1,5 +1,5 @@
 ---
-title: Dopson &amp; Associates, PLLC
+title: Dopson & Associates, PLLC
 preview_image: 131Studios/aHMLEa6aLj68Z8gjpYhgzYpdAeJjbBe9mvc1vLAg.png
 hidden: false
 published: 11/4/21

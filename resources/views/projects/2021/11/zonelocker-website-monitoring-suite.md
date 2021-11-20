@@ -1,5 +1,5 @@
 ---
-title: ZoneLocker Website Monitoring Suite Released
+title: ZoneLocker Website Monitoring Suite
 preview_image: 131Studios/HoyV8IzXr5YBjkilv10c5L3BtHkP6I5VJhHSJBHG.png
 hidden: true
 published: 11/4/21

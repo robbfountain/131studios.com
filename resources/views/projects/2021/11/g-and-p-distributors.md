@@ -1,5 +1,5 @@
 ---
-title: G &amp; P Distributors
+title: G & P Distributors, Inc.
 preview_image: 131Studios/QAPC37hFSTCxymWvnaQzaOySZWIlNlBepNyQsaG9.png
 hidden: false
 published: 11/4/21

@@ -1,5 +1,5 @@
 ---
-title: Tapestry Technologies, Inc. Website Launched
+title: Tapestry Technologies, Inc.
 preview_image: 131Studios/7MOmjij0DD28QDXnqqMzyeGknbLnuQ8tf8Whm1nr.png
 hidden: false
 published: 11/4/21

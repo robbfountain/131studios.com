@@ -1,5 +1,5 @@
 ---
-title: The Dapper House Barber Shop Website Launched
+title: The Dapper House Barber Shop
 preview_image: 131Studios/zx61SRYIy7gQCvyeVjj3JPJxlbrhINmI0pZQdelZ.png
 hidden: false
 published: 11/4/21
