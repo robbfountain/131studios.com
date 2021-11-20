@@ -2,21 +2,20 @@
 
 namespace App\Classes;
 
-use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
-use League\CommonMark\Inline\Element\Image;
+use Illuminate\Support\Str;
+use League\CommonMark\ConfigurableEnvironmentInterface;
 use League\CommonMark\Event\DocumentParsedEvent;
 use League\CommonMark\Extension\ExtensionInterface;
-use League\CommonMark\ConfigurableEnvironmentInterface;
+use League\CommonMark\Inline\Element\Image;
 
 class S3ParserExtension implements ExtensionInterface
 {
-
     public function register(ConfigurableEnvironmentInterface $environment)
     {
         $environment->addEventListener(DocumentParsedEvent::class, [$this, 'onDocumentParsed']);
     }
-    
+
     public function onDocumentParsed(DocumentParsedEvent $event)
     {
         $walker = $event->getDocument()->walker();
@@ -24,7 +23,7 @@ class S3ParserExtension implements ExtensionInterface
         while ($event = $walker->next()) {
             $node = $event->getNode();
 
-            if (!$node instanceof Image || !$event->isEntering()) {
+            if (! $node instanceof Image || ! $event->isEntering()) {
                 continue;
             }
 

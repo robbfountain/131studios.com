@@ -2,14 +2,14 @@
 
 namespace App;
 
-use Carbon\Carbon;
-use Spatie\Url\Url;
-use Illuminate\Support\Str;
 use App\Traits\HandlesImages;
-use OneThirtyOne\Mime\Message;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Database\Eloquent\Model;
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use OneThirtyOne\Mime\Message;
+use Spatie\Url\Url;
 
 /**
  * Class Blog.
@@ -91,7 +91,6 @@ class Blog extends Model
 
     /**
      * @param  \OneThirtyOne\Mime\Message  $message
-     *
      * @return mixed
      */
     public static function hasCurrentBlogPost(Message $message)
@@ -225,7 +224,6 @@ class Blog extends Model
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopeUnpublished($query)
@@ -246,12 +244,11 @@ class Blog extends Model
      */
     public function setPublishedAtAttribute($value)
     {
-        $this->attributes['published_at'] = !is_null($value) ? $value : now();
+        $this->attributes['published_at'] = ! is_null($value) ? $value : now();
     }
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopePublished($query)
@@ -263,7 +260,6 @@ class Blog extends Model
 
     /**
      * @param $query
-     *
      * @return mixed
      */
     public function scopeWaitingForTweet($query)
@@ -349,7 +345,6 @@ class Blog extends Model
 
     /**
      * @param $value
-     *
      * @return mixed|string
      */
     public function getLinkToFullPostAttribute($value)
@@ -370,7 +365,7 @@ class Blog extends Model
      */
     public function tweetId()
     {
-        return !is_null($this->tweet_id) ? $this->tweet_id : (!is_null($this->tweet) ? $this->tweet : null);
+        return ! is_null($this->tweet_id) ? $this->tweet_id : (! is_null($this->tweet) ? $this->tweet : null);
     }
 
     /**

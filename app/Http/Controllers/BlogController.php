@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use App\Blog;
 use App\Category;
 use App\Classes\BlogReader;
-use Illuminate\Http\Request;
 use App\Classes\Filters\Hidden;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 /**
@@ -37,7 +37,6 @@ class BlogController extends Controller
      * Display the specified resource.
      *
      * @param  Blog  $blog
-     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($year, $month, $slug)
@@ -51,7 +50,6 @@ class BlogController extends Controller
         }
 
         abort('404');
-
     }
 
     /**

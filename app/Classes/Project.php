@@ -3,11 +3,11 @@
 namespace App\Classes;
 
 use Carbon\Carbon;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class Project
 {
@@ -30,8 +30,8 @@ class Project
 
     /**
      * @param $path
-     *
      * @return Blog
+     *
      * @throws FileNotFoundException
      */
     public static function getByPath($path): Project
@@ -50,7 +50,7 @@ class Project
      */
     public function categories()
     {
-        return !is_null($this->object->matter('categories'))
+        return ! is_null($this->object->matter('categories'))
             ? explode(',', Str::of($this->object->matter('categories'))->trim())
             : [];
     }
@@ -65,7 +65,6 @@ class Project
 
     /**
      * @param $property
-     *
      * @return mixed
      */
     public function __get($property)

@@ -2,16 +2,10 @@
 
 namespace App\Classes;
 
-use Carbon\Carbon;
-use App\Interfaces\Filter;
-use Illuminate\Support\Str;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Storage;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class BlogReader extends FileReader
 {
-
     /**
      * @var string
      */
@@ -26,5 +20,4 @@ class BlogReader extends FileReader
             return new Blog($item);
         });
     }
-
 }

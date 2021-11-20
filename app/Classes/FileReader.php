@@ -2,11 +2,11 @@
 
 namespace App\Classes;
 
-use Carbon\Carbon;
 use App\Interfaces\Filter;
-use Illuminate\Support\Str;
+use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 abstract class FileReader
@@ -43,6 +43,7 @@ abstract class FileReader
             ->allFiles())
             ->map(function ($item) {
                 $object = YamlFrontMatter::parse(Storage::disk(static::$disk)->get($item));
+
                 return [
                     'object' => $object,
                     'path' => $item,
@@ -74,7 +75,7 @@ abstract class FileReader
     }
 
     /**
-     * Sorts the blog collection
+     * Sorts the blog collection.
      */
     public function sortBy()
     {
@@ -85,7 +86,6 @@ abstract class FileReader
 
     /**
      * @param $take
-     *
      * @return BlogReader
      */
     public function take($take): FileReader
@@ -99,7 +99,6 @@ abstract class FileReader
 
     /**
      * @param  array  $filters
-     *
      * @return BlogReader
      */
     public function applyFilters(array $filters): FileReader
