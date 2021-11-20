@@ -29,7 +29,7 @@ class BlogController extends Controller
         return view('frontend.blog.index')->with([
             'blogs' => BlogReader::fromFilesystem()->applyFilters([
                 new Hidden,
-            ])->get(),
+            ])->desc()->get(),
         ]);
     }
 
