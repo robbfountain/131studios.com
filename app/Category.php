@@ -3,7 +3,6 @@
 namespace App;
 
 use Cviebrock\EloquentSluggable\Sluggable;
-use Cviebrock\EloquentSluggable\SluggableScopeHelpers;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -11,7 +10,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Category extends Model
 {
-
     /**
      * @var string
      */
@@ -32,7 +30,7 @@ class Category extends Model
      *
      * @return array
      */
-    public function sluggable() :array
+    public function sluggable(): array
     {
         return [
             'slug' => [

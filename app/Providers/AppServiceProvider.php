@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use InvoiceNinja\Config as NinjaConfig;
 
 class AppServiceProvider extends ServiceProvider
 {

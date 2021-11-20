@@ -41,14 +41,14 @@ class ProjectToFileCommand extends Command
     {
         Project::all()->each(function ($project) {
             $fileContents = view('frontend.partials.project-to-file', compact('project'))->render();
-            if (!Storage::disk('projects')
+            if (! Storage::disk('projects')
                 ->exists($project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.$project->slug.'.md')) {
                 Storage::disk('projects')
                     ->put($project->created_at->format('Y').'/'.$project->created_at->format('m').'/'.$project->slug.'.md',
                         $fileContents);
-                $this->line('Copied ' . $project->title);
+                $this->line('Copied '.$project->title);
             } else {
-                $this->comment('Skipping ' . $project->title);
+                $this->comment('Skipping '.$project->title);
             }
         });
 

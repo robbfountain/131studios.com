@@ -2,8 +2,6 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
-use App\Blog;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
 use Tests\TestCase;
 
 class BlogControllerTest extends TestCase
@@ -30,6 +28,5 @@ class BlogControllerTest extends TestCase
     public function Show_will_not_display_unpublished_blog()
     {
         $this->markTestSkipped('Skipping: Refactoring Blog');
-
     }
 }

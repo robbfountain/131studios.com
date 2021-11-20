@@ -3,16 +3,15 @@
 namespace App\Classes;
 
 use Carbon\Carbon;
-use Illuminate\Support\Str;
-use Spatie\YamlFrontMatter\Document;
-use Illuminate\Support\Facades\Storage;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
 use GrahamCampbell\Markdown\Facades\Markdown;
 use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
+use Spatie\YamlFrontMatter\Document;
+use Spatie\YamlFrontMatter\YamlFrontMatter;
 
 class Blog
 {
-
     /**
      * @var mixed
      */
@@ -35,7 +34,6 @@ class Blog
 
     /**
      * @param $blog
-     *
      */
     public function __construct($blog)
     {
@@ -47,8 +45,8 @@ class Blog
 
     /**
      * @param $path
-     *
      * @return Blog
+     *
      * @throws FileNotFoundException
      */
     public static function getByPath($path): Blog
@@ -68,7 +66,7 @@ class Blog
      */
     public function categories()
     {
-        return !is_null($this->object->matter('categories'))
+        return ! is_null($this->object->matter('categories'))
             ? explode(',', Str::of($this->object->matter('categories'))->trim())
             : [];
     }
@@ -83,7 +81,6 @@ class Blog
 
     /**
      * @param $property
-     *
      * @return mixed
      */
     public function __get($property)

@@ -28,20 +28,20 @@ return [
     // block, Torchlight will look for code snippets in the
     // following directories.
     'snippet_directories' => [
-        resource_path()
+        resource_path(),
     ],
 
     // Global options to control blocks-level settings.
     // https://torchlight.dev/docs/options
     'options' => [
         // Turn line numbers on or off globally.
-         'lineNumbers' => true,
+        'lineNumbers' => true,
 
         // Control the `style` attribute applied to line numbers.
-         'lineNumbersStyle' => 'margin-right: 1em; -webkit-user-select: none; user-select: none;',
+        'lineNumbersStyle' => 'margin-right: 1em; -webkit-user-select: none; user-select: none;',
 
         // Turn on +/- diff indicators.
-         'diffIndicators' => true,
+        'diffIndicators' => true,
 
         // If there are any diff indicators for a line, put them
         // in place of the line number to save horizontal space.
@@ -49,6 +49,6 @@ return [
 
         // When lines are collapsed, this is the text that will
         // be shown to indicate that they can be expanded.
-         'summaryCollapsedIndicator' => '...',
-    ]
+        'summaryCollapsedIndicator' => '...',
+    ],
 ];
