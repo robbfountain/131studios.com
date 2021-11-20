@@ -14,8 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        NinjaConfig::setURL(env('NINJA_API_URL'));
-        NinjaConfig::setToken(env('NINJA_API_TOKEN'));
+        //
     }
 
     /**
@@ -25,5 +24,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        //
     }
 }

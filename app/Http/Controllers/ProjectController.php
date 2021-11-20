@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
-use App\Project;
+use App\Classes\ProjectReader;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
     /**
      * @param  null  $slug
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function __invoke($slug = null)
@@ -20,19 +21,22 @@ class ProjectController extends Controller
         ]);
     }
 
-    public function show(Project $project)
-    {
-        return view('frontend.project.show',[
-            'project' => $project,
-            'title' => $project->title . ' | 131 Studios',
-        ]);
-    }
-
     /**
      * @return mixed
      */
     private function getProjects()
     {
-        return Project::published()->orderBy('created_at', 'DESC')->get();
+        return ProjectReader::fromFilesystem()->desc()->get();
+    }
+
+    public function show($year, $month, $slug)
+    {
+        if (Storage::disk('projects')->exists("$year/$month/$slug.md")) {
+            $project = \App\Classes\Project::getByPath("$year/$month/$slug.md");
+
+            return view('frontend.project.show', compact('project'));
+        }
+
+        abort('404');
     }
 }

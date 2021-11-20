@@ -75,6 +75,16 @@ return [
             'cloud_name' => env('CLOUDINARY_CLOUD_NAME'),
         ],
 
+        'blogs' => [
+            'driver' => 'local',
+            'root' => resource_path('views/blogs'),
+        ],
+
+        'projects' => [
+            'driver' => 'local',
+            'root' => resource_path('views/projects'),
+        ],
+
     ],
 
 ];

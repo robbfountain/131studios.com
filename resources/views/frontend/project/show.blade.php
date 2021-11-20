@@ -10,33 +10,27 @@
           content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
     <meta name="twitter:creator" content="@131Studios"/>
     <meta property="og:site_name" content="{{config('app.name')}}">
-    <meta property="og:url" content="{{route('project.show',$project->slug)}}">
+    <meta property="og:url"
+          content="{{route('project.show',['year'=>$project->published->format('Y'),'month'=>$project->published->format('m'),'slug'=>$project->slug])}}">
     <meta property="og:title" content="{{$project->title}}">
     <meta property="og:description"
           content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
 @endsection
 
 @section('content')
-    <x-banner :condensed="true" />
+    <x-banner :condensed="true"/>
 
     <section class="bg-gray-50 py-0 xs:py-8">
         <div class="xs:container mx-auto prose sm:prose-sm lg:prose-lg xl:prose-xl px-0 xs:px-4 mx:px-2">
             <div class="flex justify-center">
                 <div>
-                    @if(!$project->is_published)
-                        <div class="my-2 p-2 border rounded-lg border-orange-600 bg-orange-100 text-orange-600 text-sm">
-                            This project is not published
-                        </div>
-                    @endif
 
                     <h1>{{$project->title}}</h1>
 
-                    @if($project->hasImage())
-                        <div class="py-2">
-                            <img src="{{$project->imageUrl(['crop' => 'fill', 'width' => 960, 'height' => 240])}}"
-                                 alt="{{$project->title}}" class="">
-                        </div>
-                    @endif
+                    <div class="py-2">
+                        <img src="{{\Illuminate\Support\Facades\Storage::disk('s3')->temporaryUrl($project->preview_image,now()->addMinutes(10))}}"
+                             alt="{{$project->title}}" class="">
+                    </div>
 
                     {!! $project->toHtml() !!}
 

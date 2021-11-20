@@ -11,7 +11,6 @@ use Tests\TestCase;
 
 class ContactControllerTest extends TestCase
 {
-    use DatabaseMigrations;
 
     /** @test * */
     public function Index_returns_a_view()

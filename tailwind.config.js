@@ -17,6 +17,7 @@ module.exports = {
                 transparent: 'transparent',
                 current: 'currentColor',
                 sky: colors.lightBlue,
+                pink: colors.pink,
             }
         }
     },
