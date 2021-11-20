@@ -1,17 +1,17 @@
 ---
 title: using google API SDK to read files from google drive
 categories: Development, Laravel
-summary: In this blog we detail the process of using the Google API SDK to get files from a Google Drive shared folder.
+summary: In this blog, we detail the process of using the Google API SDK to get files from a Google Drive shared folder.
 preview_image:
 preview_image_twitter:
-hidden: true
+hidden: false
 author: Robb Fountain
 published: 11/18/21
 ---
 
 ### Introduction
 
-Recently, we were performing some work for a client.  The client wanted us to showcase picures of recent projects their company had completed.  We use Google Workspace for our organizeation which means we use Google Drive for most of our storage.  mWe wanted to give the client the ability to upload photos to a folder in our Google Drive and then have those images displayed on their website.  We use AWS exclusively for hosting our client's websites and we also make use of Amazon S3 for storing all of our client's assets.  So if the client uploads their pictures to Google Drive, and we use S3 to host our client asset files, we needed a way for the files to get from Google Drive to AWS.
+Recently, we were performing some work for a client.  The client wanted us to showcase pictures of recent projects their company had completed.  We use Google Workspace for our organization which means we use Google Drive. We wanted to give the client the ability to upload photos to a folder in our Google Drive and then have those images displayed on their website.  We use AWS exclusively for hosting our client's websites and we also make use of Amazon S3 for storing all of our client's assets.  So if the client uploads their pictures to Google Drive, and we use S3 to host our client asset files, we needed a way for the files to get from Google Drive to AWS.
 
 We developed 2 ways of handling this task.
 
@@ -33,7 +33,7 @@ Then enable access to the Google Drive API
 
 ![Enable Google Drive](131Studios/enable_google_drive_api.png){.shadow-md .rounded-md}
 
-At this point we have a service account and have given the account access to the Google Drive API but we still haven't given the account access to OUR Google Drive.  In our case I created a Google Drive folder for the client and shared it to them.  I also need to give the service account access to that same folder.
+At this point, we have a service account and have given the account access to the Google Drive API but we still haven't given the account access to OUR Google Drive.  In our case, I created a Google Drive folder for the client and shared it with them.  We also need to give the service account access to that same folder.
 
 ![Share With People](131Studios/share_with_people.png){.shadow-md .rounded-md}
 
@@ -44,13 +44,13 @@ composer require google/apiclient
 ```
 
 ### Making the API Calls
-Next, we need to place our `credentials.json`{.inline-code} file into our `storage/app` directory. This will allow the API to authenticate as our service account.
+Next, we need to place our `credentials.json`{.inline-code} file into our `storage/app`{.inline-code} directory. This will allow the API to authenticate as our service account.
 
-Let's create a controller for our test called `GoogleDriveController.php` in our `app\Http\Controllers` directory.  Let's create an `show` function where we can test this out.  First we'll make a connection to the Google Drive Client.
+Let's create a class called `GoogleDriveController.php` in our `app\Classes`{.inline-code} directory.  Let's create a `getFilesFromGoogleDrive`{.inline-code} function where we can test this out.  First, we'll make a connection to the Google Drive Client.
 
 ```php
 
-    public function show()
+    public function getFilesFromGoogleDrive()
     {
         if (!file_exists(config('services.google_drive.credentials_file'))) {
             throw new \Exception('Cannot find credentials file');
@@ -68,9 +68,9 @@ Let's create a controller for our test called `GoogleDriveController.php` in our
 
 ```
 
-The Google Drive Client API needs to know how to autenticae us and also what scopes we are requesting access to.  You can find more about Google Drive scopes [here](https://developers.google.com/identity/protocols/oauth2/scopes#drive).
+The Google Drive Client API needs to know how to authenticate us and also what scopes we are requesting access to.  You can find more about Google Drive scopes [here](https://developers.google.com/identity/protocols/oauth2/scopes#drive).
 
-Now that we have our client established, let's make some calls to the Google Drive API.  We'll add to the ```show``` method above
+Now that we have our client established, let's make some calls to the Google Drive API.  We'll add to the `getFilesFromGoogleDrive`{.inline-code} method above
 
 ```php
 	// Access the Google Drive Service
@@ -102,9 +102,9 @@ Now that we have our client established, let's make some calls to the Google Dri
 	} while ($pageToken !== null);
 ```
 
-Here's what we just did.  First we set up our Google Drive Service by instantiating it and passing our auth client.  Once we have that established we use the `listFiles` method and give it the parameters we want to retrieve.  we are wrapping this in a `do while` loop so we are sure to get all files in case there are multiple pages. Each iteration of the loop passes the `nextPageToken` keeping track of where we are.  When the files are returned we merge it with the existing `$files` variable.  After it's done retrieving the files we will have an array containing all the file ids and name.
+Here's what we just did.  First, we set up our Google Drive Service by instantiating it and passing our auth client.  Once we have that established we use the `listFiles` method and give it the parameters we want to retrieve.  we are wrapping this in a `do while`{.inline-code} loop so we are sure to get all files in case there are multiple pages. Each iteration of the loop passes the `nextPageToken` keeping track of where we are.  When the files are returned we merge them with the existing `$files`{.inline-code} variable.  After it's done retrieving the files we will have an array containing all the file ids and names.
 
-Let's say we wanted to get an individual file and it's contents.  We can do that by calling the `get()` method on the Google Drive service
+Let's say we wanted to get an individual file and its contents.  We can do that by calling the `get()`{.inline-code} method on the Google Drive service
 
 ```php
 $fileId = 'Xw4r04304s2324234l'; // File ID
@@ -118,12 +118,12 @@ while (!$file->getBody()->eof()) {
 
 ```
 
-The `get()` will return the file metadata but if you want to download the file, supply the `['alt' => 'media']` option when calling the method to get the actual contents.
+The `get()` will return the file metadata but if you want to download the file, supply the `['alt' => 'media']`{.inline-code} option when calling the method to get the actual contents.
 
 
 ### Pulling it all together
-In this blog you learned how to create a Google Drive service account and link it to a shared folder in your Google Drive.  You were then able to use the Google API SDK in your project to list the contents of your Google Drive and downlaod files from it.  You can further expand on this by adding your own methods to add or delete files and folders.
+Now that we have the ability to crawl our Google Drive folder and retrieve the files, we can create a Laravel scheduled task to retrieve those files on a given interval
 
 
-
-
+### Conclusion
+In this blog, you learned how to create a Google Drive service account and link it to a shared folder in your Google Drive.  You were then able to use the Google API SDK in your project to list the contents of your Google Drive and download files from it.  You can further expand on this by adding your own methods to add or delete files and folders.
