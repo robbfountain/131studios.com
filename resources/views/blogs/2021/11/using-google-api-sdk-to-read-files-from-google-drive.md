@@ -118,7 +118,7 @@ while (!$file->getBody()->eof()) {
 
 ```
 
-The `get()` will return the file metadata but if you want to download the file, supply the `['alt' => 'media']`{.inline-code} option when calling the method to get the actual contents.
+The `get()`{.inline-code} will return the file metadata but if you want to download the file, supply the `['alt' => 'media']`{.inline-code} option when calling the method to get the actual contents.
 
 
 ### Pulling it all together
