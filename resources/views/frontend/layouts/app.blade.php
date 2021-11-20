@@ -26,21 +26,13 @@
     <!-- Alpine Plugins -->
         <script defer src="https://unpkg.com/@alpinejs/intersect@3.x.x/dist/cdn.min.js"></script>
 
-
         <!-- AlpineJs
             ================================================== -->
         <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
 
-        <!-- HilightJs
-       ================================================== -->
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js"></script>
-        <script>hljs.initHighlightingOnLoad();</script>
-
-        <script src="https://cdn.jsdelivr.net/npm/signature_pad@2.3.2/dist/signature_pad.min.js"></script>
-
         @stack('scripts')
 
-    <!-- Analytics -->
+        <!-- Analytics -->
         @include('frontend.partials.google-analytics')
 
     </head>

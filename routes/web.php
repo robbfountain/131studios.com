@@ -1,14 +1,14 @@
 <?php
 
 // Website
-use App\Http\Controllers\SeoController;
+use App\Http\Controllers\Auth\OauthController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\IndexController;
-use App\Http\Controllers\ProjectController;
-use App\Http\Controllers\HostingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ContractController;
-use App\Http\Controllers\Auth\OauthController;
+use App\Http\Controllers\HostingController;
+use App\Http\Controllers\IndexController;
+use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\SeoController;
 use App\Http\Controllers\WebsiteDesignController;
 
 Route::get('/subdreamer/admin/{any}.php', function () {
@@ -35,7 +35,7 @@ Route::get('/', IndexController::class)
 Route::get('projects', ProjectController::class)
     ->name('project.index');
 
-Route::get('projects/{project:slug}', [ProjectController::class, 'show'])
+Route::get('projects/{year}/{month}/{slug}', [ProjectController::class, 'show'])
     ->name('project.show');
 
 Route::get('site-analysis', function () {
@@ -71,11 +71,14 @@ Route::get('contact', ContactController::class)
 Route::get('blog', BlogController::class)
     ->name('blog.index');
 
-Route::get('blog/{blog}', [BlogController::class, 'show'])
+Route::get('blog/{year}/{month}/{slug}', [BlogController::class, 'show'])
     ->name('blog.show')
     ->missing(function (Illuminate\Http\Request $request) {
         return Redirect::route('blog.index');
     });
+
+Route::get('blog/category/{category}', \App\Http\Controllers\BlogCategoryController::class)
+    ->name('blog.category');
 
 /**
  * Contract.
@@ -87,9 +90,6 @@ Route::get('contract/{contract}/pdf', [ContractController::class, 'pdf'])
 Route::get('contract/{contract:uuid}', [ContractController::class, 'show'])
     ->name('contract.show')
     ->middleware(['signed']);
-
-// Webhooks
-Route::webhooks('webhook/webmentions');
 
 // Oauth
 Route::get('/oauth/{provider}', [OauthController::class, 'redirect'])

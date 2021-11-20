@@ -40,7 +40,6 @@ class WebsiteControllerTest extends TestCase
         $response->assertViewIs('frontend.seo');
     }
 
-
     /** @test * */
     public function Projects_returns_a_view()
     {
@@ -54,7 +53,7 @@ class WebsiteControllerTest extends TestCase
     /** @test * */
     public function Index_returns_a_view()
     {
-        factory(Testimonial::class,2)->create();
+        factory(Testimonial::class, 2)->create();
 
         $response = $this->get(route('index'));
 

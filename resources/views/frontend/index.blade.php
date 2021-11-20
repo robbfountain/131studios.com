@@ -205,7 +205,8 @@
                         </p>
                     </div>
 
-                    <div class="mt-20 opacity-0" x-data x-intersect="$el.classList.add('opacity-100','animate__animated','animate__fadeInUp')">
+                    <div class="mt-20 opacity-0" x-data
+                         x-intersect="$el.classList.add('opacity-100','animate__animated','animate__fadeInUp')">
                         <div class="grid grid-cols-1 gap-y-20 lg:grid-cols-3 lg:gap-y-0 lg:gap-x-8">
                             <div class="flex flex-col bg-white rounded-2xl shadow-xl">
                                 <div class="flex-1 relative pt-16 px-6 pb-8 md:px-8">
@@ -288,7 +289,8 @@
             </div>
 
             <section class="bg-gradient-to-b from-blue-700 to-sky-700">
-                <div class="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8 opacity-0" x-data x-intersect="$el.classList.add('opacity-100','animate__animated','animate__fadeInUp')">
+                <div class="max-w-7xl mx-auto md:grid md:grid-cols-2 md:px-6 lg:px-8 opacity-0" x-data
+                     x-intersect="$el.classList.add('opacity-100','animate__animated','animate__fadeInUp')">
                     <div class="py-12 px-4 sm:px-6 md:flex md:flex-col md:py-16 md:pl-0 md:pr-10 md:border-r md:border-sky-700 lg:pr-16">
 
                         <blockquote class="mt-6 md:flex-grow md:flex md:flex-col">
@@ -350,24 +352,63 @@
                 </div>
             </section>
 
+
+            <!-- This example requires Tailwind CSS v2.0+ -->
             <div class="bg-white pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
-                <div class="relative max-w-7xl mx-auto">
-                    <div class="text-center">
-                        <h2 class="text-3xl leading-9 tracking-tight font-extrabold text-gray-900 sm:text-4xl sm:leading-10">
-                            From the Blog
+                <div class="relative max-w-lg mx-auto divide-y-2 divide-gray-200 lg:max-w-7xl">
+                    <div>
+                        <h2 class="text-3xl tracking-tight font-extrabold text-gray-900 sm:text-4xl">
+                            From The Blog
                         </h2>
-                        <p class="mt-3 max-w-2xl mx-auto text-xl leading-7 text-gray-500 sm:mt-4">
+                        <p class="mt-3 text-xl text-gray-500 sm:mt-4">
                             We like to blog about all sorts of stuff in the development, security and design world.
                             Here's some of our recent entries.
                         </p>
                     </div>
-                    <div class="mt-12 grid gap-16 border-t-2 border-gray-100 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12 opacity-0" x-data x-intersect="$el.classList.add('opacity-100','animate__animated','animate__fadeInUp')">
+                    <div class="mt-12 grid gap-16 pt-12 lg:grid-cols-3 lg:gap-x-5 lg:gap-y-12 opacity-0" x-data
+                         x-intersect="$el.classList.add('opacity-100','animate__animated','animate__fadeInUp')">
                         @foreach($blogs as $blog)
-                            <x-blog-hilight :blog="$blog"/>
+                            <div>
+                                <div>
+                                    @foreach($blog->categories as $category)
+                                        <a href="{{route('blog.category',$category)}}" class="inline-block">
+                                            <span class="inline-flex items-center px-3 py-0.5 rounded-full text-sm font-medium {{$category}}">
+                                                {{$category}}
+                                            </span>
+                                        </a>
+                                    @endforeach
+                                </div>
+                                <a href="{{route('blog.show',['year'=>$blog->published->format('Y'),'month'=>$blog->published->format('m'),'slug'=>$blog->slug])}}"
+                                   class="block mt-4">
+                                    <p class="text-xl font-semibold text-gray-900">
+                                        {{$blog->title}}
+                                    </p>
+                                    <div class="mt-2 flex items-center">
+                                        <div class="">
+                                            <div class="flex space-x-1 text-sm text-gray-500">
+                                                <time datetime="2020-03-16">
+                                                    {{$blog->published->format('M j, Y')}}
+                                                </time>
+                                                <span aria-hidden="true">
+                                                    &middot;
+                                                </span>
+                                                <span>
+                                                    {{$blog->minutesToRead()}} {{ __('minute read')}}
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="mt-3 text-base text-gray-500">
+                                        {{$blog->summary}}
+                                    </p>
+                                </a>
+                            </div>
                         @endforeach
                     </div>
                 </div>
             </div>
+
+
         </main>
     </div>
 @endsection

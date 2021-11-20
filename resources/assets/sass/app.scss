@@ -7,9 +7,46 @@
 
 @import '../../../node_modules/animate.css/animate.css';
 
-.parsedown a {
-  @apply text-blue-500 transition;
-  @apply hover:text-blue-800 hover:underline;
+a._permalink {
+  @apply text-gray-200 mr-2 no-underline;
+
+  &:hover {
+    @apply text-gray-300
+  }
+}
+
+code {
+  @apply text-pink-400;
+}
+
+.table-of-contents {
+  @apply bg-gray-100 px-2 py-1 rounded-md;
+  list-style: none;
+}
+
+.table-of-contents li {
+  margin: 0;
+  padding: 0;
+}
+
+.inline-code {
+  @apply px-2 py-1 bg-gray-100 rounded-md text-pink-400 #{!important};
+}
+
+.Development {
+ @apply bg-indigo-100 text-indigo-800;
+}
+
+.Laravel {
+ @apply bg-red-100 text-red-800;
+}
+
+.AWS {
+  @apply bg-yellow-300 text-yellow-800;
+}
+
+.Package {
+  @apply bg-gray-200 text-gray-800;
 }
 
 .circular-chart {

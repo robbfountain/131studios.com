@@ -26,7 +26,7 @@ class CreateProjectsTable extends Migration
             $table->timestamps();
         });
 
-        Artisan::call('projects:migrate');
+//        Artisan::call('projects:migrate');
     }
 
     /**

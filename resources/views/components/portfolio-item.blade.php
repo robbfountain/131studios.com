@@ -1,12 +1,14 @@
 <div class="flex flex-col rounded-md overflow-hidden">
     <div class="flex-shrink-0 border">
-        <img class="h-64 w-full object-cover" src="{{$project->imageUrl()}}" alt="{{$project->title}}"/>
+        <img class="h-64 w-full object-cover"
+             src="{{\Illuminate\Support\Facades\Storage::disk('s3')->temporaryUrl($project->preview_image, now()->addMinutes(10))}}"
+             alt="{{$project->title}}"/>
     </div>
     <div class="mt-2">
         <h2 class="font-semibold text-lg text-gray-600">{{$project->title}}</h2>
     </div>
     <div class="mt-4 inline-flex">
-        <a href="{{route('project.show', $project->slug)}}"
+        <a href="{{route('project.show',['year' => $project->published->format('Y'),'month'=>$project->published->format('m'),'slug'=> $project->slug])}}"
            class="text-sm text-blue-500 hover:text-blue-700 transition duration-100 ease-in-out">
             More Info
         </a>

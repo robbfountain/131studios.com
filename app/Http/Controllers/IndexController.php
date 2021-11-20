@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
+use App\Classes\BlogReader;
+use App\Classes\Filters\Hidden;
 use App\Testimonial;
 
 /**
@@ -16,7 +17,7 @@ class IndexController extends Controller
     public function __invoke()
     {
         return view('frontend.index')->with(array_merge($this->title, [
-            'blogs' => Blog::blogPost()->latest('published_at')->take(3)->get(),
+            'blogs' => BlogReader::fromFilesystem()->applyFilters([new Hidden()])->take(3)->desc()->get(),
             'review' => $this->randomTestimonial(),
             'title' => 'SEO, Web Design & Hosting | 131 Studios',
         ]));

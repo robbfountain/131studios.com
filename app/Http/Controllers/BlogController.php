@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Blog;
 use App\Category;
+use App\Classes\BlogReader;
+use App\Classes\Filters\Hidden;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 /**
  * Class BlogController.
@@ -23,27 +26,11 @@ class BlogController extends Controller
      */
     public function __invoke(Request $request)
     {
-        $blogs = Blog::published()->whereHas('category', function ($query) {
-            $query->where('name', '!=', Blog::PROJECT);
-        });
-
-        if ($request->has('c')) {
-            $blogs->wherehas('category', function ($query) use ($request) {
-                $query->where('slug', $request->get('c'));
-            });
-        }
-
         return view('frontend.blog.index')->with([
-            'blogs' => $blogs->latest('published_at')->get(),
+            'blogs' => BlogReader::fromFilesystem()->applyFilters([
+                new Hidden,
+            ])->get(),
         ]);
-    }
-
-    /**
-     * @return mixed
-     */
-    private function getCategories()
-    {
-        return Category::has('blog')->get();
     }
 
     /**
@@ -52,14 +39,24 @@ class BlogController extends Controller
      * @param  Blog  $blog
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show(Blog $blog)
+    public function show($year, $month, $slug)
     {
-        abort_unless($blog->is_published, 404);
+        if (Storage::disk('blogs')->exists("$year/$month/$slug.md")) {
+            $blog = \App\Classes\Blog::getByPath("$year/$month/$slug.md");
 
-        $blog->increment('views');
+            return view('frontend.blog.show', compact('blog'))->with([
+                'title' => $blog->title.$this->titleSuffix,
+            ]);
+        }
 
-        return view('frontend.blog.show', compact('blog'))->with([
-            'title' => $blog->title.$this->titleSuffix,
-        ]);
+        abort('404');
+    }
+
+    /**
+     * @return mixed
+     */
+    private function getCategories()
+    {
+        return Category::has('blog')->get();
     }
 }

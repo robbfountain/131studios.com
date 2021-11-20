@@ -2,11 +2,10 @@
 
 namespace App\Console;
 
-use App\Console\Commands\MigrateProjectsCommand;
-use App\Console\Commands\PublishBlogCommand;
+use App\Console\Commands\BlogToFileCommand;
+use App\Console\Commands\ProjectToFileCommand;
 use App\Console\Commands\ReviewsCommand;
 use App\Console\Commands\SitemapCommand;
-use App\Console\Commands\TweetBlogCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 
@@ -19,10 +18,11 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         SitemapCommand::class,
-        PublishBlogCommand::class,
-        TweetBlogCommand::class,
+        //        TweetBlogCommand::class,
         ReviewsCommand::class,
-        MigrateProjectsCommand::class,
+        //        MigrateProjectsCommand::class,
+        //        BlogToFileCommand::class,
+        ProjectToFileCommand::class,
     ];
 
     /**

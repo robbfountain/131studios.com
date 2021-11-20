@@ -3,7 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use InvoiceNinja\Config as NinjaConfig;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -14,8 +13,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        NinjaConfig::setURL(env('NINJA_API_URL'));
-        NinjaConfig::setToken(env('NINJA_API_TOKEN'));
+        //
     }
 
     /**
@@ -25,5 +23,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        //
     }
 }
