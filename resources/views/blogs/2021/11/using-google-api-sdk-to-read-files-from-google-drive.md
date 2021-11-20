@@ -46,7 +46,7 @@ composer require google/apiclient
 ### Making the API Calls
 Next, we need to place our `credentials.json`{.inline-code} file into our `storage/app`{.inline-code} directory. This will allow the API to authenticate as our service account.
 
-Let's create a class called `GoogleDriveController.php` in our `app\Classes`{.inline-code} directory.  Let's create a `getFilesFromGoogleDrive`{.inline-code} function where we can test this out.  First, we'll make a connection to the Google Drive Client.
+Let's create a class called `GoogleDriveController.php`{.inline-code} in our `app\Classes`{.inline-code} directory.  Let's create a `getFilesFromGoogleDrive`{.inline-code} function where we can test this out.  First, we'll make a connection to the Google Drive Client.
 
 ```php
 
