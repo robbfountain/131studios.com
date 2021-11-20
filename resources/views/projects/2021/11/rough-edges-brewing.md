@@ -7,4 +7,4 @@ url: https://roughedgesbrewing.com
 slug: rough-edges-brewing-website-launched
 ---
 
-Rough Edges relys heavily on Untap&#039;d to log all their beers.  We helped Rough Edges by creating a brand new website and uses the Untap&#039;d API to display their current beers in rotation.
+Rough Edges relies heavily on Untap'd to log all their beers.  We helped Rough Edges by creating a brand new website and uses the Untap'd API to display their current beers in rotation.
