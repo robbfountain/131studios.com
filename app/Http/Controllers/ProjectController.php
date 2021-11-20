@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Classes\Filters\Hidden;
 use App\Classes\Project;
 use App\Classes\ProjectReader;
-use App\Classes\Filters\Hidden;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
     /**
      * @param  null  $slug
-     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function __invoke($slug = null)
@@ -35,8 +34,8 @@ class ProjectController extends Controller
      * @param $year
      * @param $month
      * @param $slug
-     *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|void
+     *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     public function show($year, $month, $slug)
@@ -44,7 +43,7 @@ class ProjectController extends Controller
         if (Storage::disk('projects')->exists("$year/$month/$slug.md")) {
             $project = Project::getByPath("$year/$month/$slug.md");
 
-            return view('frontend.project.show',[
+            return view('frontend.project.show', [
                 'project' => $project,
                 'title' => $project->title,
             ]);
