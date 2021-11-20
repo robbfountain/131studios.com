@@ -25,7 +25,7 @@ We will be using the Google Drive v3 API to access our drive content.  The first
 
 Head over to your Google Cloud Console and create a service account for your Google Drive access in your current project
 
-![Create Service Account](131Studios/create_service_account.png){.shadow-md .rounded-md}
+![Create Service Account](131Studios/create_service_account2.png){.shadow-md .rounded-md}
 
 Once the service account is created, generate a private key in `json` and download the private key locally. We'll need this later.
 
