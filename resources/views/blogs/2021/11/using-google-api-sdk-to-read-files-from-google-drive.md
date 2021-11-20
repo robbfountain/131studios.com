@@ -102,7 +102,7 @@ Now that we have our client established, let's make some calls to the Google Dri
 	} while ($pageToken !== null);
 ```
 
-Here's what we just did.  First, we set up our Google Drive Service by instantiating it and passing our auth client.  Once we have that established we use the `listFiles` method and give it the parameters we want to retrieve.  we are wrapping this in a `do while`{.inline-code} loop so we are sure to get all files in case there are multiple pages. Each iteration of the loop passes the `nextPageToken` keeping track of where we are.  When the files are returned we merge them with the existing `$files`{.inline-code} variable.  After it's done retrieving the files we will have an array containing all the file ids and names.
+Here's what we just did.  First, we set up our Google Drive Service by instantiating it and passing our auth client.  Once we have that established we use the `listFiles`{.inline-code} method and give it the parameters we want to retrieve.  we are wrapping this in a `do while`{.inline-code} loop so we are sure to get all files in case there are multiple pages. Each iteration of the loop passes the `nextPageToken`{.inline-code} keeping track of where we are.  When the files are returned we merge them with the existing `$files`{.inline-code} variable.  After it's done retrieving the files we will have an array containing all the file ids and names.
 
 Let's say we wanted to get an individual file and its contents.  We can do that by calling the `get()`{.inline-code} method on the Google Drive service
 
