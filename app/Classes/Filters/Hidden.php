@@ -9,7 +9,6 @@ class Hidden implements Filter
 {
     /**
      * @param  Collection  $items
-     *
      * @return Collection
      */
     public function apply(Collection $items): Collection

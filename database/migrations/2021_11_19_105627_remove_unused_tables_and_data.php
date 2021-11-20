@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class RemoveUnusedTablesAndData extends Migration
@@ -28,14 +27,6 @@ class RemoveUnusedTablesAndData extends Migration
         Schema::dropIfExists('videos');
         Schema::dropIfExists('web_mentions');
         Schema::dropIfExists('webhook_calls');
-
-
-
-
-
-
-
-
     }
 
     /**

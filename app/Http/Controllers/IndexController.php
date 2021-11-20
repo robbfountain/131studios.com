@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Testimonial;
 use App\Classes\BlogReader;
 use App\Classes\Filters\Hidden;
+use App\Testimonial;
 
 /**
  * Class IndexController.

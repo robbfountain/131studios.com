@@ -9,7 +9,6 @@ class ProjectController extends Controller
 {
     /**
      * @param  null  $slug
-     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function __invoke($slug = null)
