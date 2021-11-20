@@ -12,10 +12,6 @@ use Illuminate\Contracts\Filesystem\FileNotFoundException;
 
 class Blog
 {
-    /**
-     * @var
-     */
-    public $blog;
 
     /**
      * @var mixed
