@@ -27,7 +27,7 @@ Head over to your Google Cloud Console and create a service account for your Goo
 
 ![Create Service Account](131Studios/create_service_account2.png){.shadow-md .rounded-md}
 
-Once the service account is created, generate a private key in `json` and download the private key locally. We'll need this later.
+Once the service account is created, generate a private key in `json`{.inline-code} and download the private key locally. We'll need this later.
 
 Then enable access to the Google Drive API
 
