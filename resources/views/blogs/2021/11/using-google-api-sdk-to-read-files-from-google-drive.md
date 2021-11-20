@@ -4,7 +4,7 @@ categories: Development, Laravel
 summary: In this blog we detail the process of using the Google API SDK to get files from a Google Drive shared folder.
 preview_image:
 preview_image_twitter:
-hidden: false
+hidden: true
 author: Robb Fountain
 published: 11/18/21
 ---
