@@ -4,7 +4,6 @@
 use App\Http\Controllers\Auth\OauthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
-use App\Http\Controllers\ContractController;
 use App\Http\Controllers\HostingController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProjectController;

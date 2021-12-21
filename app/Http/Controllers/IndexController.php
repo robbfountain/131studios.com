@@ -17,7 +17,7 @@ class IndexController extends Controller
     public function __invoke()
     {
         return view('frontend.index')->with(array_merge($this->title, [
-            'blogs' => BlogReader::fromFilesystem()->applyFilters([new Hidden()])->take(3)->desc()->get(),
+            'blogs' => BlogReader::fromFilesystem()->applyFilters([new Hidden()])->desc()->take(3)->get(),
             'review' => $this->randomTestimonial(),
             'title' => 'SEO, Web Design & Hosting | 131 Studios',
         ]));
