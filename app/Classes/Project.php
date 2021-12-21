@@ -17,6 +17,7 @@ class Project
     public $path;
     public $slug;
     public $title;
+    public $preview_image;
 
     public function __construct($project)
     {
@@ -74,6 +75,7 @@ class Project
         }
 
         $toFormat = ['title'];
+
         if (in_array($property, $toFormat)) {
             return Str::of($this->object->matter($property))->title();
         }

@@ -34,8 +34,9 @@ abstract class FileReader
         $this->items = $items;
     }
 
+
     /**
-     * @return BlogReader
+     * @return FileReader
      */
     public static function fromFilesystem(): FileReader
     {
@@ -51,6 +52,9 @@ abstract class FileReader
                     'published' => Carbon::parse($object->matter('published')),
                     'hidden' => (bool) $object->matter('hidden'),
                     'categories' => $object->matter('categories'),
+                    'url' => $object->matter('url'),
+                    'preview_image' => $object->matter('preview_image'),
+                    'preview_image_twitter' => $object->matter('preview_image_twitter'),
                 ];
             });
 

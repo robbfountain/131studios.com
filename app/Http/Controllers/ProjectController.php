@@ -2,16 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Classes\Filters\Hidden;
 use App\Classes\Project;
+use Illuminate\Support\Str;
 use App\Classes\ProjectReader;
+use App\Classes\Filters\Hidden;
 use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
     /**
      * @param  null  $slug
-     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     *
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\View\View
      */
     public function __invoke($slug = null)
     {
@@ -27,13 +29,18 @@ class ProjectController extends Controller
      */
     private function getProjects()
     {
-        return ProjectReader::fromFilesystem()->applyFilters([new Hidden])->desc()->get();
+        return ProjectReader::fromFilesystem()
+            ->applyFilters([
+                    new Hidden,
+                ]
+            )->desc()->get();
     }
 
     /**
      * @param $year
      * @param $month
      * @param $slug
+     *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|void
      *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
@@ -45,7 +52,7 @@ class ProjectController extends Controller
 
             return view('frontend.project.show', [
                 'project' => $project,
-                'title' => $project->title,
+                'title' => Str::title($project->title),
             ]);
         }
 
