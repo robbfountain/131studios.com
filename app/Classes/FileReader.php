@@ -34,7 +34,6 @@ abstract class FileReader
         $this->items = $items;
     }
 
-
     /**
      * @return FileReader
      */
