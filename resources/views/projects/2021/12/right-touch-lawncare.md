@@ -1,5 +1,5 @@
 ---
-title: right touch lawn care
+title: Right Touch Lawn Care
 preview_image: 131Studios/right_touch_lawncare.png
 preview_image_twitter: 131Studios/right_touch_lawncare.png
 hidden: false
