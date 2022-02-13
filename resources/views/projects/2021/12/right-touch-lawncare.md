@@ -12,7 +12,7 @@ slug: right-touch-lawncare
 [Right Touch Lawn Care, LLC](http://righttouchlawncarellc.com) is a local, Greencastle based lawn care company that serves the greater Franklin County area including Greencastle, Waynesboro and Chambersburg.  The business is owned by a retired U.S. Navy Veteran and his two sons.  They have spent the past 6 years building a successful business by providing top-notch lawn care services for the community.  Over the years they have expanded their service offerings to include snow removal, junk removal, Spring & Fall Cleanup and much more.  Check out [their new website](https://righttouchlawncarellc.com) for all their services.
 
 ## Scope of Project
-Right Touch Lawn Care contacted us to help them design and host their webisite.  Until now, they never had a website or Google My Business page and they wanted to reach more customers to advertise their services. Their main focus was to showcase their current work and expand their customer base by introducing them to their additional services.
+Right Touch Lawn Care contacted us to help them design and host their website.  Until now, they never had a website or Google My Business page and they wanted to reach more customers to advertise their services. Their main focus was to showcase their current work and expand their customer base by introducing them to their additional services.
 
 ## What we did
 We sat down with the owners to discover what they were looking for in their new website.  A big focus was to showcase completed projects.  We designed a brand-new website and made sure to showcase all their service offerings as well as their completed projects.  
