@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    on-failure: ABORT
+
+    runtime-versions:
+      php: 8.0
+      nodejs: 12.x
+
+    commands:
+      -  |
+        #Install composer
+        php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+        php composer-setup.php ;
+        php -r "unlink('composer-setup.php');" ;
+        mv composer.phar /usr/local/bin/composer
+
+  pre_build:
+    commands:
+      - |
+        rm -rf composer.lock
+        composer install --no-interaction --prefer-dist --optimize-autoloader
+        composer require laravel/vapor-cli --update-with-dependencies
+
+  build:
+    on-failure: ABORT
+    commands:
+      - |
+        echo Deploying to Vapor...
+        php vendor/bin/vapor deploy production --commit="${CODEBUILD_RESOLVED_SOURCE_VERSION}"

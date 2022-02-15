@@ -7,7 +7,7 @@ published: 2/13/22
 url: https://snydersattractions.com
 slug: snyders-attractions
 ---
-## Right Touch Lawn Care
+## Snyder's Attractions
 [Snyder's Attractions](http://snydersattractions.com) is a family owned and operated travel carnival that provides clean,safe and affordable entertainments.  Snyder's Attractions has been serving the local community for decades and offers some of the best carnival food in the industry.  
 
 ## Scope of Project

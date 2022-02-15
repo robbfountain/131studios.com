@@ -8,7 +8,7 @@ url: https://righttouchlawncarellc.com
 slug: right-touch-lawncare
 ---
 
-## Snyder's Attractions
+## Right Touch Lawn Care
 [Right Touch Lawn Care, LLC](http://righttouchlawncarellc.com) is a local, Greencastle based lawn care company that serves the greater Franklin County area including Greencastle, Waynesboro and Chambersburg.  The business is owned by a retired U.S. Navy Veteran and his two sons.  They have spent the past 6 years building a successful business by providing top-notch lawn care services for the community.  Over the years they have expanded their service offerings to include snow removal, junk removal, Spring & Fall Cleanup and much more.  Check out [their new website](https://righttouchlawncarellc.com) for all their services.
 
 ## Scope of Project
