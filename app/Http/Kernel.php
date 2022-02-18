@@ -2,7 +2,6 @@
 
 namespace App\Http;
 
-use Fruitcake\Cors\HandleCors;
 use App\Http\Middleware\TrustProxies;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
 use Illuminate\Routing\Middleware\ValidateSignature;
