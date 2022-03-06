@@ -14,6 +14,14 @@ Route::get('/subdreamer/admin/{any}.php', function () {
     return Redirect::route('index');
 });
 
+Route::get('/sitemap.xml', function () {
+    return response()->redirectTo(config('app.asset_url').'/sitemap.xml', 302, [
+        'Content-Type' => 'application/plain',
+        'Cache-Control' => 'public, max-age=3600',
+    ]);
+});
+
+
 // Redirects
 Route::redirect('blog/website-launch-for-the-dapper-house-barber-shop', '/');
 Route::redirect('additional-services', '/services');

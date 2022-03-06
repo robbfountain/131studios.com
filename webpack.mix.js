@@ -17,8 +17,10 @@ mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
     .options({
         processCssUrls: false,
-        postCss: [ tailwindcss('./tailwind.config.js') ],
+        postCss: [tailwindcss('./tailwind.config.js')],
     });
+
+mix.copy('resources/static/sitemap.xml', 'public/sitemap.xml');
 
 if (mix.inProduction()) {
     mix.version();
