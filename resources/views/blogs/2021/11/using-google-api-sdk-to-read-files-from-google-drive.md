@@ -1,5 +1,5 @@
 ---
-title: using google API SDK to read files from google drive
+title: Using Google API SDK to Read Files from Google Drive
 categories: Development, Laravel
 summary: In this blog, we detail the process of using the Google API SDK to get files from a Google Drive shared folder.
 preview_image:

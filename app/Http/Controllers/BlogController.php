@@ -36,8 +36,12 @@ class BlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  Blog  $blog
+     * @param $year
+     * @param $month
+     * @param $slug
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
      */
     public function show($year, $month, $slug)
     {

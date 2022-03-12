@@ -89,10 +89,10 @@ class Blog
             return $this->{$property}();
         }
 
-        $toFormat = ['title'];
-        if (in_array($property, $toFormat)) {
-            return Str::of($this->object->matter($property))->title();
-        }
+//        $toFormat = ['title'];
+//        if (in_array($property, $toFormat)) {
+//            return Str::of($this->object->matter($property))->title();
+//        }
 
         return $this->object->matter($property);
     }

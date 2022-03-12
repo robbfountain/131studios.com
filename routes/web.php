@@ -21,7 +21,6 @@ Route::get('/sitemap.xml', function () {
     ]);
 });
 
-
 // Redirects
 Route::redirect('blog/website-launch-for-the-dapper-house-barber-shop', '/');
 Route::redirect('additional-services', '/services');

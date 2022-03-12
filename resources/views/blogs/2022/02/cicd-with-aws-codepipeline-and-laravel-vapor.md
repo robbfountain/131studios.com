@@ -1,9 +1,9 @@
 ---
 title: CICD With AWS CodePipeline and Laravel Vapor
-categories: laravel,AWS
+categories: Laravel,AWS
 summary: Use AWS CodePipeline to deploy a CI/CD Pipeline to run PHPUnit tests on a Laravel project and deploy to Laravel Vapor
-preview_image: images/devops.jpg
-preview_image_twitter: images/devops.jpg
+preview_image: 131Studios/devops.jpg
+preview_image_twitter: 131Studios/devops.jpg
 hidden: false
 published: 2/15/22
 ---

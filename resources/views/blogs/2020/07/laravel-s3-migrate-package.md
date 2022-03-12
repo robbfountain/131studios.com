@@ -1,5 +1,5 @@
 ---
-title: Laravel Migrate Assets to S3 Package
+title: A Package to Migrate Assets to AWS S3
 categories: Package, Laravel, Development
 summary: Migrate your assets from local storage to Amazon S3 to reduce bandwidth and storage costs.
 preview_image:

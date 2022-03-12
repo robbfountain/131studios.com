@@ -25,7 +25,7 @@ class BlogItem extends Component
      * @param  $blog
      * @param  string  $type
      */
-    public function __construct($blog, $type = 'col')
+    public function __construct($blog, string $type = 'col')
     {
         $this->blog = $blog;
         $this->type = $type;

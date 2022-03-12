@@ -34,7 +34,6 @@ abstract class FileReader
         $this->items = $items;
     }
 
-
     /**
      * @return FileReader
      */
@@ -43,7 +42,9 @@ abstract class FileReader
         $items = collect(Storage::disk(static::$disk)
             ->allFiles())
             ->map(function ($item) {
-                $object = YamlFrontMatter::parse(Storage::disk(static::$disk)->get($item));
+                $object = YamlFrontMatter::parse(
+                    Storage::disk(static::$disk)->get($item)
+                );
 
                 return [
                     'object' => $object,
