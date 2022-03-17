@@ -1,6 +1,7 @@
 <?php
 
 // Website
+use App\Http\Controllers\ShowBlogController;
 use App\Http\Controllers\Auth\OauthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
@@ -8,6 +9,7 @@ use App\Http\Controllers\HostingController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\ProjectController;
 use App\Http\Controllers\SeoController;
+use App\Http\Controllers\BlogCategoryController;
 use App\Http\Controllers\WebsiteDesignController;
 
 Route::get('/subdreamer/admin/{any}.php', function () {
@@ -77,30 +79,13 @@ Route::get('contact', ContactController::class)
 Route::get('blog', BlogController::class)
     ->name('blog.index');
 
-Route::get('blog/{year}/{month}/{slug}', [BlogController::class, 'show'])
+Route::get('blog/{year}/{month}/{slug}', ShowBlogController::class)
     ->name('blog.show')
     ->missing(function (Illuminate\Http\Request $request) {
         return Redirect::route('blog.index');
     });
 
-Route::get('blog/category/{category}', \App\Http\Controllers\BlogCategoryController::class)
+Route::get('blog/category/{category}', BlogCategoryController::class)
     ->name('blog.category');
-
-/**
- * Contract.
- */
-Route::get('contract/{contract}/pdf', [ContractController::class, 'pdf'])
-    ->middleware(['Owner'])
-    ->name('contract.pdf');
-
-Route::get('contract/{contract:uuid}', [ContractController::class, 'show'])
-    ->name('contract.show')
-    ->middleware(['signed']);
-
-// Oauth
-Route::get('/oauth/{provider}', [OauthController::class, 'redirect'])
-    ->name('nova.login.google');
-
-Route::get('/oauth/{provider}/callback', [OauthController::class, 'callback']);
 
 Route::redirect('customer/{any}', url('/projects'), 301);

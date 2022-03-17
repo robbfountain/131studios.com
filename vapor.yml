@@ -3,6 +3,11 @@ name: 131studios
 environments:
     production:
         domain: 131studios.com
+        subnets:
+            - subnet-08d8f8c6a1bab760d
+            - subnet-0c7fd8142a44257bb
+        security-groups:
+            - sg-0afe82f4bf72dbdd6
         concurrency: 50
         memory: 1024
         cli-memory: 512
