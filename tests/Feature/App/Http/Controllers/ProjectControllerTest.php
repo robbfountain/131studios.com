@@ -2,15 +2,15 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
+use Illuminate\Support\Facades\Storage;
 use Tests\TestCase;
 
 class ProjectControllerTest extends TestCase
 {
     use DatabaseMigrations;
 
-    public function setUp():void
+    public function setUp(): void
     {
         parent::setUp();
 
