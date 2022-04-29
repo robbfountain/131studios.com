@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Blog;
-use App\Category;
-use Illuminate\View\View;
 use App\Classes\BlogReader;
 use App\Classes\Filters\Hidden;
-use Illuminate\Http\Request;
 use Illuminate\Contracts\View\Factory;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\Http\Request;
+use Illuminate\View\View;
 
 /**
  * Class BlogController.
