@@ -2,17 +2,18 @@
 
 namespace Tests\Feature\App\Http\Controllers;
 
-use Tests\TestCase;
 use Illuminate\Support\Facades\Storage;
+use Tests\TestCase;
 
 class BlogControllerTest extends TestCase
 {
-    public function setUp():void
+    public function setUp(): void
     {
         parent::setUp();
 
         Storage::fake();
     }
+
     /** @test **/
     public function Index_shows_a_view()
     {
