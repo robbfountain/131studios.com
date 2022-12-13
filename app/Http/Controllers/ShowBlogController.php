@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\View\View;
-use Illuminate\Http\Request;
+use Illuminate\Contracts\Filesystem\FileNotFoundException;
 use Illuminate\Contracts\View\Factory;
 use Illuminate\Support\Facades\Storage;
-use Illuminate\Contracts\Filesystem\FileNotFoundException;
+use Illuminate\View\View;
 
 class ShowBlogController extends Controller
 {
@@ -18,8 +17,8 @@ class ShowBlogController extends Controller
      * @param $year
      * @param $month
      * @param $slug
-     *
      * @return Factory|View
+     *
      * @throws FileNotFoundException
      */
     public function __invoke($year, $month, $slug)
@@ -33,6 +32,5 @@ class ShowBlogController extends Controller
         }
 
         abort('404');
-
     }
 }
