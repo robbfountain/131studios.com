@@ -2,17 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Classes\Project;
-use Illuminate\Support\Str;
-use App\Classes\ProjectReader;
 use App\Classes\Filters\Hidden;
+use App\Classes\Project;
+use App\Classes\ProjectReader;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 
 class ProjectController extends Controller
 {
     /**
      * @param  null  $slug
-     *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\View\View
      */
     public function __invoke($slug = null)
@@ -31,8 +30,8 @@ class ProjectController extends Controller
     {
         return ProjectReader::fromFilesystem()
             ->applyFilters([
-                    new Hidden,
-                ]
+                new Hidden,
+            ]
             )->desc()->get();
     }
 
@@ -40,7 +39,6 @@ class ProjectController extends Controller
      * @param $year
      * @param $month
      * @param $slug
-     *
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|void
      *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
