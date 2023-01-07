@@ -1,7 +1,7 @@
 ---
 title: My Digital Ads
 preview_image: 131Studios/J793jcrCXd5czjMR2pqeGFtjJGbm3elDV1QWPjZc.png
-hidden: false
+hidden: true
 published: 11/4/21
 url: https://mydigitalads.com
 slug: my-digital-ads

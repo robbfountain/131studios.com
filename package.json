@@ -30,6 +30,7 @@
     "alpinejs": "^3.0",
     "animate.css": "^4.1.1",
     "autoprefixer": "^10.0.4",
+    "puppeteer": "^19.4.1",
     "signature_pad": "^3.0.0-beta.4",
     "tailwindcss": "^2.0"
   }

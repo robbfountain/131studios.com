@@ -3,6 +3,7 @@
 namespace App\Console;
 
 use App\Console\Commands\BlogToFileCommand;
+use App\Console\Commands\BrowserShotCommand;
 use App\Console\Commands\ProjectToFileCommand;
 use App\Console\Commands\ReviewsCommand;
 use App\Console\Commands\SitemapCommand;
@@ -23,12 +24,14 @@ class Kernel extends ConsoleKernel
         //        MigrateProjectsCommand::class,
         //        BlogToFileCommand::class,
         ProjectToFileCommand::class,
+        BrowserShotCommand::class,
     ];
 
     /**
      * Define the application's command schedule.
      *
      * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     *
      * @return void
      */
     protected function schedule(Schedule $schedule)
@@ -38,6 +41,7 @@ class Kernel extends ConsoleKernel
 //        $schedule->command('studios:publish-blogs')->everyMinute();
         $schedule->command('studios:tweet-blog')->everyFiveMinutes();
 //        $schedule->command('studios:reviews')->daily();
+        $schedule->command('browsershot:process')->hourly();
     }
 
     /**

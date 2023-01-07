@@ -1,7 +1,7 @@
 ---
 title: Elaine's Elite Errand Service
 preview_image: 131Studios/GxC7pd8ztbneFYaAe40uk4tICr22TEZVIo78MCWI.png
-hidden: false
+hidden: true
 published: 11/4/21
 url: https://elaineseliteerrandservice.com
 slug: elaines-elite-errand-service-website-launched

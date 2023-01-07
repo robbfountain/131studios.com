@@ -28,7 +28,7 @@
                     <h1>{{$title}}</h1>
 
                     <div class="py-2">
-                        <img src="{{\Illuminate\Support\Facades\Storage::disk('s3')->temporaryUrl($project->preview_image,now()->addMinutes(10))}}"
+                        <img src="{{url('images/screenshots/'.$project->slug.'.png')}}"
                              alt="{{$title}}" class="">
                     </div>
 

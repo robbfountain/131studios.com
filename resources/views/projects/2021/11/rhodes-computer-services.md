@@ -1,7 +1,7 @@
 ---
 title: Rhodes Computer Services
 preview_image: 131Studios/tRsItp21T2KB7vnS6uDV1zz5e5XrIp8OKbtbjQQo.png
-hidden: false
+hidden: true
 published: 11/4/21
 url: https://rhodescomputerservices.com
 slug: rhodes-computer-services
