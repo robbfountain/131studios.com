@@ -2,10 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Classes\BlogReader;
+use App\Classes\Filters\Hidden;
 use App\Classes\ProjectReader;
 use Illuminate\Console\Command;
-use App\Classes\Filters\Hidden;
 use Spatie\Browsershot\Browsershot;
 use Illuminate\Support\Facades\Storage;
 
@@ -51,7 +50,7 @@ class BrowserShotCommand extends Command
             if (Storage::disk('s3')->exists('131Studios/screenshots/'.$project->url.'.png')) {
                 $this->comment('Screenshot exists for '.$project->url.'...skipping');
             } else {
-                if (!is_null($project->url)) {
+                if (! is_null($project->url)) {
                     $this->line('Getting screenshot for '.$project->url);
                     try {
                         Storage::disk('s3')
