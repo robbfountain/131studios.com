@@ -2,10 +2,9 @@
 
 namespace App\Console\Commands;
 
-use App\Classes\BlogReader;
+use App\Classes\Filters\Hidden;
 use App\Classes\ProjectReader;
 use Illuminate\Console\Command;
-use App\Classes\Filters\Hidden;
 use Spatie\Browsershot\Browsershot;
 
 class BrowserShotCommand extends Command
@@ -51,14 +50,14 @@ class BrowserShotCommand extends Command
             if (file_exists($path)) {
                 $this->comment('Screenshot exists for '.$project->url.'...skipping');
             } else {
-                if (!is_null($project->url)) {
+                if (! is_null($project->url)) {
                     $this->line('Getting screenshot for '.$project->url);
                     try {
                         Browsershot::url($project->url)
                             ->windowSize(1920, 1080)
                             ->setDelay(8000)
                             ->fullPage()
-                            ->save($path);;
+                            ->save($path);
                     } catch (\Exception $e) {
                         $this->error('Could not resolve '.$project->url);
                     }
