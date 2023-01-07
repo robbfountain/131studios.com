@@ -5,8 +5,8 @@ namespace App\Console\Commands;
 use App\Classes\Filters\Hidden;
 use App\Classes\ProjectReader;
 use Illuminate\Console\Command;
-use Spatie\Browsershot\Browsershot;
 use Illuminate\Support\Facades\Storage;
+use Spatie\Browsershot\Browsershot;
 
 class BrowserShotCommand extends Command
 {
