@@ -14,9 +14,9 @@ class ShowBlogController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param $year
-     * @param $month
-     * @param $slug
+     * @param  $year
+     * @param  $month
+     * @param  $slug
      * @return Factory|View
      *
      * @throws FileNotFoundException

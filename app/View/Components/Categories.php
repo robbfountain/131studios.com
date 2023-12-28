@@ -17,7 +17,7 @@ class Categories extends Component
     /**
      * Create a new component instance.
      *
-     * @param $categories
+     * @param  $categories
      */
     public function __construct($categories)
     {

@@ -33,7 +33,7 @@ class Blog
     protected $path;
 
     /**
-     * @param $blog
+     * @param  $blog
      */
     public function __construct($blog)
     {
@@ -44,7 +44,7 @@ class Blog
     }
 
     /**
-     * @param $path
+     * @param  $path
      * @return Blog
      *
      * @throws FileNotFoundException
@@ -80,7 +80,7 @@ class Blog
     }
 
     /**
-     * @param $property
+     * @param  $property
      * @return mixed
      */
     public function __get($property)

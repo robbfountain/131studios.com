@@ -27,7 +27,7 @@ abstract class FileReader
     protected string $sortBy = 'desc';
 
     /**
-     * @param $items
+     * @param  $items
      */
     public function __construct($items)
     {
@@ -90,7 +90,7 @@ abstract class FileReader
     }
 
     /**
-     * @param $take
+     * @param  $take
      * @return BlogReader
      */
     public function take($take): FileReader

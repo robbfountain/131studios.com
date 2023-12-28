@@ -30,7 +30,7 @@ class Review
     /**
      * Review constructor.
      *
-     * @param $review
+     * @param  $review
      */
     public function __construct($review)
     {
@@ -41,7 +41,7 @@ class Review
     }
 
     /**
-     * @param $property
+     * @param  $property
      * @return mixed
      *
      * @throws \Exception
@@ -56,7 +56,7 @@ class Review
     }
 
     /**
-     * @param $response
+     * @param  $response
      * @return static
      */
     public static function fromJsonResponse($response)

@@ -20,7 +20,7 @@ class Assessment extends Model
     }
 
     /**
-     * @param $uuid
+     * @param  $uuid
      * @return mixed
      */
     public static function findByUuid($uuid)
