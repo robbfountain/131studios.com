@@ -1,6 +1,6 @@
 ---
 title: Rough Edges Brewing
-preview_image: 131Studios/j23BhFts7zkSK9m5jYjxXHYUpGDFCXiCXmDmG0bt.png
+preview_image: 131Studios/screenshots/rough-edges-brewing.png
 hidden: false
 published: 01/05/23
 url: https://roughedgesbrewing.com
