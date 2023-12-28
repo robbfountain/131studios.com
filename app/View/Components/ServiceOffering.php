@@ -13,7 +13,7 @@ class ServiceOffering extends Component
     /**
      * Create a new component instance.
      *
-     * @param $image
+     * @param  $image
      */
     public function __construct($service, $image)
     {

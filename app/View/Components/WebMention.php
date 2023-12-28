@@ -17,7 +17,7 @@ class WebMention extends Component
     /**
      * Create a new component instance.
      *
-     * @param $mention
+     * @param  $mention
      */
     public function __construct($mention)
     {

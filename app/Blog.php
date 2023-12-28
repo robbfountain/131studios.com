@@ -223,7 +223,7 @@ class Blog extends Model
     }
 
     /**
-     * @param $query
+     * @param  $query
      * @return mixed
      */
     public function scopeUnpublished($query)
@@ -240,7 +240,7 @@ class Blog extends Model
     }
 
     /**
-     * @param $value
+     * @param  $value
      */
     public function setPublishedAtAttribute($value)
     {
@@ -248,7 +248,7 @@ class Blog extends Model
     }
 
     /**
-     * @param $query
+     * @param  $query
      * @return mixed
      */
     public function scopePublished($query)
@@ -259,7 +259,7 @@ class Blog extends Model
     }
 
     /**
-     * @param $query
+     * @param  $query
      * @return mixed
      */
     public function scopeWaitingForTweet($query)
@@ -344,7 +344,7 @@ class Blog extends Model
     }
 
     /**
-     * @param $value
+     * @param  $value
      * @return mixed|string
      */
     public function getLinkToFullPostAttribute($value)

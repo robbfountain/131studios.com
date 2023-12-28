@@ -13,7 +13,7 @@ class Category implements Filter
     protected string $category;
 
     /**
-     * @param $category
+     * @param  $category
      */
     public function __construct($category)
     {
