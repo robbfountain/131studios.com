@@ -14,7 +14,7 @@ class CategoryLink extends Component
     /**
      * Create a new component instance.
      *
-     * @param $slug
+     * @param  $slug
      */
     public function __construct($slug)
     {

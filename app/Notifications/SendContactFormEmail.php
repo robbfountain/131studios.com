@@ -19,7 +19,7 @@ class SendContactFormEmail extends Notification implements ShouldQueue
     /**
      * Create a new notification instance.
      *
-     * @param $contact
+     * @param  $contact
      */
     public function __construct($contact)
     {

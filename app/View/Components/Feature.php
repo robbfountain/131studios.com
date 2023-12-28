@@ -11,7 +11,7 @@ class Feature extends Component
     /**
      * Create a new component instance.
      *
-     * @param $icon
+     * @param  $icon
      */
     public function __construct($icon = null)
     {

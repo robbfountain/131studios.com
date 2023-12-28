@@ -30,7 +30,7 @@ class Project
     }
 
     /**
-     * @param $path
+     * @param  $path
      * @return Blog
      *
      * @throws FileNotFoundException
@@ -65,7 +65,7 @@ class Project
     }
 
     /**
-     * @param $property
+     * @param  $property
      * @return mixed
      */
     public function __get($property)

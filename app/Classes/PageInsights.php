@@ -41,7 +41,7 @@ class PageInsights
     }
 
     /**
-     * @param $metric
+     * @param  $metric
      * @return string[]
      */
     public static function ratingScale($metric): array
@@ -89,7 +89,7 @@ class PageInsights
     }
 
     /**
-     * @param $key
+     * @param  $key
      * @param  string|null  $metric
      * @return array|\ArrayAccess|mixed
      */
@@ -107,7 +107,7 @@ class PageInsights
     }
 
     /**
-     * @param $key
+     * @param  $key
      * @return array|\ArrayAccess|mixed
      */
     public function category($key)

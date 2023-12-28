@@ -36,9 +36,9 @@ class ProjectController extends Controller
     }
 
     /**
-     * @param $year
-     * @param $month
-     * @param $slug
+     * @param  $year
+     * @param  $month
+     * @param  $slug
      * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|void
      *
      * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException

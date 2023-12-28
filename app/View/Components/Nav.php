@@ -17,7 +17,7 @@ class Nav extends Component
     /**
      * Create a new component instance.
      *
-     * @param $to
+     * @param  $to
      */
     public function __construct($to)
     {

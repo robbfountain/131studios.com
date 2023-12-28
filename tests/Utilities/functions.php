@@ -22,7 +22,7 @@ function make($class, $attributes = [], $times = null)
 }
 
 /**
- * @param $role
+ * @param  $role
  * @return array|mixed
  */
 function role($role)
@@ -40,7 +40,7 @@ function role($role)
 }
 
 /**
- * @param $permission
+ * @param  $permission
  * @return array|mixed
  */
 function permission($permission)
@@ -58,7 +58,7 @@ function permission($permission)
 }
 
 /**
- * @param $role
+ * @param  $role
  */
 function assign($role)
 {

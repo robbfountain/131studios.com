@@ -28,7 +28,7 @@ class PageInsightsResponse
     }
 
     /**
-     * @param $url
+     * @param  $url
      * @return array|mixed
      */
     public static function createForUrl($url)
