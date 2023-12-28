@@ -1,7 +1,7 @@
 <div class="flex flex-col rounded-md overflow-hidden">
     <div class="h-64 overflow-hidden flex-shrink-0 border">
         <img class="w-full "
-             src="{{url('images/screenshots/'.$project->slug.'.png')}}"
+             src="{{\Illuminate\Support\Facades\Storage::disk('s3')->temporaryUrl('131Studios/screenshots/'.$project->url.'.png',now()->addMinutes(10))}}"
              alt="{{$project->title}}"/>
     </div>
     <div class="mt-2">
