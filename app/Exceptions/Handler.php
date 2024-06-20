@@ -4,6 +4,7 @@ namespace App\Exceptions;
 
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Sentry\Laravel\Integration;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -22,12 +23,20 @@ class Handler extends ExceptionHandler
         \Illuminate\Validation\ValidationException::class,
     ];
 
+    public function register(): void
+    {
+        $this->reportable(function (Throwable $e) {
+            Integration::captureUnhandledException($e);
+        });
+    }
+
     /**
      * Report or log an exception.
      *
      * This is a great spot to send exceptions to Sentry, Bugsnag, etc.
      *
      * @param  \Throwable  $exception
+     *
      * @return void
      *
      * @throws \Exception
@@ -42,6 +51,7 @@ class Handler extends ExceptionHandler
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Throwable  $exception
+     *
      * @return \Illuminate\Http\Response
      *
      * @throws \Throwable
@@ -56,6 +66,7 @@ class Handler extends ExceptionHandler
      *
      * @param  \Illuminate\Http\Request  $request
      * @param  \Illuminate\Auth\AuthenticationException  $exception
+     *
      * @return \Illuminate\Http\Response
      */
     protected function unauthenticated($request, AuthenticationException $exception)

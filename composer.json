@@ -37,6 +37,7 @@
     "nunomaduro/collision": "^5.0",
     "parsedown/laravel": "^1.2",
     "predis/predis": "^1.1",
+    "sentry/sentry-laravel": "^4.6",
     "spatie/browsershot": "^3.57",
     "spatie/laravel-sitemap": "^5.3",
     "spatie/ray": "^1.31",
