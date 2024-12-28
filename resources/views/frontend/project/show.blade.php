@@ -2,19 +2,19 @@
 
 @section('meta')
     <meta name="description"
-          content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today."/>
+          content="{{$project->title}} | 131 Studios Portfolio."/>
     <meta name="twitter:card" content="131 Studios"/>
     <meta name="twitter:site" content="@131Studios"/>
     <meta property="twitter:title" content="{{$title}}">
     <meta property="twitter:description"
-          content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
+          content="{{$project->title}} | 131 Studios Portfolio.">
     <meta name="twitter:creator" content="@131Studios"/>
     <meta property="og:site_name" content="{{config('app.name')}}">
     <meta property="og:url"
           content="{{route('project.show',['year'=>$project->published->format('Y'),'month'=>$project->published->format('m'),'slug'=>$project->slug])}}">
     <meta property="og:title" content="{{$title}}">
     <meta property="og:description"
-          content="Web Design, Social Media, Hosting and SEO for Greencastle, Chambersburg and Hagerstown.  Get your FREE SEO Checkup Today.">
+          content="{{$project->title}} | 131 Studios Portfolio.">
 @endsection
 
 @section('content')
