@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Illuminate\Support\Str;
 use App\Classes\Filters\Hidden;
 use App\Classes\ProjectReader;
 use Illuminate\Console\Command;
@@ -15,7 +16,7 @@ class BrowserShotCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'browsershot:process';
+    protected $signature = 'browsershot:process {--force : Force the operation to run when in production}';
 
     /**
      * The console command description.
@@ -47,20 +48,21 @@ class BrowserShotCommand extends Command
             ])->get();
 
         foreach ($projects as $project) {
-            if (Storage::disk('s3')->exists('131Studios/screenshots/'.$project->url.'.png')) {
-                $this->comment('Screenshot exists for '.$project->url.'...skipping');
+            $assetName = Str::of($project->title)->slug('-');
+            if (Storage::disk('s3')->exists('131Studios/screenshots/'.$assetName.'.png') && ! $this->option('force')) {
+                $this->comment('Screenshot exists for '.$project->title.'...skipping');
             } else {
                 if (! is_null($project->url)) {
                     $this->line('Getting screenshot for '.$project->url);
                     try {
                         Storage::disk('s3')
-                            ->put('131Studios/screenshots/'.$project->url.'.png', Browsershot::url($project->url)
+                            ->put('131Studios/screenshots/'.$assetName.'.png', Browsershot::url($project->url)
                                 ->windowSize(1920, 1080)
                                 ->setDelay(8000)
                                 ->fullPage()
                                 ->screenshot());
                     } catch (\Exception $e) {
-                        $this->error($e->getMessage());
+                        $this->error('Could not resolve URL...skipping');
                     }
                 } else {
                     $this->error('No url defined');

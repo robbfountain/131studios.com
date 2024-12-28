@@ -27,18 +27,20 @@
 
                     <h1>{{$title}}</h1>
 
-                    <div class="py-2">
-                        <img src="{{url('images/screenshots/'.$project->slug.'.png')}}"
-                             alt="{{$title}}" class="">
-                    </div>
-
                     {!! $project->toHtml() !!}
 
                     @if($project->url)
-                        <div>
-                            <a href="{{$project->url}}"
-                               class="text-gray-600 hover:text-gray-500 text-lg border-b-4 -pb-4 -mb-2  ">Visit {{$title}}</a>
+                        <div class="flex space-x-4 items-center">
+                            <div class="w-1/2">
+{{--                                <img src="{{\Illuminate\Support\Facades\Storage::disk('s3')->temporaryUrl($project->preview_image,now()->addMinutes(10))}}"--}}
+{{--                                     alt="{{$title}}" class="h-48 r w-96">--}}
+                            </div>
+                            <div class="px-6">
+                                <a href="{{$project->url}}"
+                                   class="text-gray-600 hover:text-gray-500 text-lg border-b-4 -pb-4 -mb-2  ">Visit {{$title}}</a>
+                            </div>
                         </div>
+
                     @endif
                 </div>
             </div>
