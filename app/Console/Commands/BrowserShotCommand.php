@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Support\Str;
 use App\Classes\Filters\Hidden;
 use App\Classes\ProjectReader;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Str;
 use Spatie\Browsershot\Browsershot;
 
 class BrowserShotCommand extends Command
